@@ -2,6 +2,8 @@ export interface Collection {
   name: string;
   link: string;
   metadataPath?: string;
+  /** When true, the header CTA is non-linked copy (e.g. coming soon). */
+  comingSoon?: boolean;
   images: string[];
 }
 
@@ -10,6 +12,7 @@ export const collections: Collection[] = [
   {
     name: "Molly Degen Punks",
     link: "https://mollyverse.art/",
+    comingSoon: true,
     metadataPath: "/img/nft/molly-degen-punks/metadata",
     images: [
       "/img/nft/molly-degen-punks/2.png",

@@ -23,6 +23,7 @@ interface NFTModalProps {
   collectionName: string;
   collectionLink: string;
   metadataUrl: string | null;
+  comingSoon?: boolean;
   onClose: () => void;
 }
 
@@ -38,7 +39,14 @@ function formatValue(value: string | number, traitType?: string): string {
     .replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
-export const NFTModal = ({ image, collectionName, collectionLink, metadataUrl, onClose }: NFTModalProps) => {
+export const NFTModal = ({
+  image,
+  collectionName,
+  collectionLink,
+  metadataUrl,
+  comingSoon = false,
+  onClose,
+}: NFTModalProps) => {
   const [metadata, setMetadata] = useState<NFTMetadata | null>(null);
   const [loading, setLoading] = useState(false);
   const { t } = useLanguage();
@@ -145,14 +153,23 @@ export const NFTModal = ({ image, collectionName, collectionLink, metadataUrl, o
 
               {/* Mint button */}
               <div className="px-8 py-6 mt-auto border-t border-stone-200/10">
-                <a
-                  href={collectionLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center w-full border border-stone-200/20 text-stone-300 font-bold px-8 py-4 rounded-full transition-all duration-300 hover:bg-violet-500 hover:border-violet-500 hover:text-stone-200 text-sm tracking-wide"
-                >
-                  {t.nfts.mint}
-                </a>
+                {comingSoon ? (
+                  <span
+                    role="status"
+                    className="flex items-center justify-center w-full border border-stone-200/10 text-slate-500 font-bold px-8 py-4 rounded-full text-sm tracking-wide cursor-default select-none"
+                  >
+                    {t.nfts.comingSoon}
+                  </span>
+                ) : (
+                  <a
+                    href={collectionLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-full border border-stone-200/20 text-stone-300 font-bold px-8 py-4 rounded-full transition-all duration-300 hover:bg-violet-500 hover:border-violet-500 hover:text-stone-200 text-sm tracking-wide"
+                  >
+                    {t.nfts.mint}
+                  </a>
+                )}
               </div>
             </div>
           )}

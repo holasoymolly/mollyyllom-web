@@ -16,6 +16,7 @@ interface SelectedNFT {
   collectionName: string;
   collectionLink: string;
   metadataUrl: string | null;
+  comingSoon: boolean;
 }
 
 function getMetadataUrl(imagePath: string, metadataPath: string): string {
@@ -43,6 +44,7 @@ export const NFTsGallery: React.FC<NFTsGalleryProps> = ({ collections }) => {
       metadataUrl: collection.metadataPath
         ? getMetadataUrl(image, collection.metadataPath)
         : null,
+      comingSoon: collection.comingSoon === true,
     });
   };
 
@@ -71,14 +73,23 @@ export const NFTsGallery: React.FC<NFTsGalleryProps> = ({ collections }) => {
                   {collection.name}
                 </h2>
               </div>
-              <a
-                href={collection.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="shrink-0 border border-stone-200/20 text-stone-300 font-bold px-7 py-3.5 rounded-full text-sm transition-all duration-300 hover:bg-violet-500 hover:border-violet-500 hover:text-stone-200 whitespace-nowrap w-fit"
-              >
-                {t.nfts.viewCollection}
-              </a>
+              {collection.comingSoon ? (
+                <span
+                  role="status"
+                  className="shrink-0 border border-stone-200/10 text-slate-500 font-bold px-7 py-3.5 rounded-full text-sm whitespace-nowrap w-fit cursor-default select-none"
+                >
+                  {t.nfts.comingSoon}
+                </span>
+              ) : (
+                <a
+                  href={collection.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0 border border-stone-200/20 text-stone-300 font-bold px-7 py-3.5 rounded-full text-sm transition-all duration-300 hover:bg-violet-500 hover:border-violet-500 hover:text-stone-200 whitespace-nowrap w-fit"
+                >
+                  {t.nfts.viewCollection}
+                </a>
+              )}
             </div>
 
             {/* Scrolling image strip */}
@@ -121,6 +132,7 @@ export const NFTsGallery: React.FC<NFTsGalleryProps> = ({ collections }) => {
           collectionName={selected.collectionName}
           collectionLink={selected.collectionLink}
           metadataUrl={selected.metadataUrl}
+          comingSoon={selected.comingSoon}
           onClose={() => setSelected(null)}
         />
       )}
