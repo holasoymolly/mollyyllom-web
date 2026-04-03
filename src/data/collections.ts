@@ -12,7 +12,6 @@ export const collections: Collection[] = [
   {
     name: "Molly Degen Punks",
     link: "https://mollyverse.art/",
-    comingSoon: true,
     metadataPath: "/img/nft/molly-degen-punks/metadata",
     images: [
       "/img/nft/molly-degen-punks/2.png",
