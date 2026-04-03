@@ -16,7 +16,7 @@ No test suite is configured.
 
 ## Architecture
 
-**Next.js 15.3.9 App Router** portfolio site for MOLLY YLLOM, a graphic design studio. Deployed on Vercel. Primary language is Spanish, CV section is bilingual (ES/EN).
+**Next.js 15.3.9 App Router** portfolio site for MOLLY YLLOM, a graphic design studio. Deployed on Vercel. Fully bilingual (ES/EN) — site-wide language toggle via `LanguageContext`, CV section has its own `CVLangToggle`.
 
 ### Two-layer component pattern
 - `src/app/` — Thin Next.js route files. Each `page.tsx` imports and renders from `pageComponents/`.
@@ -25,7 +25,9 @@ No test suite is configured.
 
 ### Data files
 - `src/projects.tsx` — All portfolio projects as static data. Exports `activeProjects` (ordered array) and `projectsBySlug` (lookup map).
-- `src/data/collections.ts` — NFT collections for `/nfts`.
+- `src/data/collections.ts` — NFT collections for `/nfts`. Each collection has `name`, `link`, `images`, optional `metadataPath`, and optional `comingSoon` (disables buttons, shows "próximamente"/"coming soon" instead).
+- `src/i18n/translations.ts` — All UI strings for the site-wide ES/EN toggle.
+- `src/context/LanguageContext.tsx` — `useLanguage()` hook providing `lang`, `t` (translations), and `toggleLanguage`.
 - `src/pageComponents/DownloadsPage/downloadData.ts` — Downloads page data.
 
 ### Routes
