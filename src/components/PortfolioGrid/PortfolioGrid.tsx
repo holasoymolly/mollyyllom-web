@@ -1,7 +1,7 @@
 'use client';
 
 import { activeProjects } from "@/projects";
-import Link from "next/link";
+import { TransitionLink } from "@/components/TransitionLink";
 import { ProtectedImage } from "@/components/ProtectedImage";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -21,13 +21,13 @@ export const PortfolioGrid = ({ showHeader = true }: { showHeader?: boolean }) =
               {t.portfolio.title}
             </h2>
           </div>
-          <Link
+          <TransitionLink
             href="/proyectos"
             className="text-indigo-950 font-semibold hover:text-violet-500 transition-colors duration-300 text-sm tracking-wide flex items-center gap-1 group"
           >
             {t.portfolio.viewAll}
             <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
-          </Link>
+          </TransitionLink>
         </div>
       )}
 
@@ -60,9 +60,9 @@ export const PortfolioGrid = ({ showHeader = true }: { showHeader?: boolean }) =
 
           if (item.slug) {
             return (
-              <a key={index} href={`/proyectos/${item.slug}`} className={className}>
+              <TransitionLink key={index} href={`/proyectos/${item.slug}`} className={className}>
                 {inner}
-              </a>
+              </TransitionLink>
             );
           }
 

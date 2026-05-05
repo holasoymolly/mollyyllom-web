@@ -1,6 +1,6 @@
 'use client'
 
-import Link from "next/link"
+import { TransitionLink } from "@/components/TransitionLink"
 import { motion } from "framer-motion"
 import { ProtectedNextImage } from "@/components/ProtectedNextImage"
 import { web2Resume } from "@/cv/data/resumeData/web2"
@@ -98,9 +98,9 @@ export function NormieCV({ lang = 'en' }: { lang?: Lang }) {
 
           {/* Back link */}
           <div className="mb-12">
-            <Link href="/" className="text-slate-500 hover:text-slate-300 text-xs font-medium tracking-widest uppercase transition-colors duration-200">
+            <TransitionLink href="/" className="text-slate-500 hover:text-slate-300 text-xs font-medium tracking-widest uppercase transition-colors duration-200">
               ← mollyyllom.com
-            </Link>
+            </TransitionLink>
           </div>
 
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-12">

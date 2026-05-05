@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AppDrawer } from "../AppDrawer";
+import { TransitionLink } from "../TransitionLink";
 import { useLanguage } from "@/context/LanguageContext";
 
 export const Header = () => {
@@ -32,7 +32,7 @@ export const Header = () => {
       <div className="w-full flex items-center justify-between py-4 px-6 md:px-16 lg:px-24">
 
         {/* Logo — swap on hover only */}
-        <Link href="/" className="flex-shrink-0 group relative block" style={{ width: 110, height: 71 }}>
+        <TransitionLink href="/" className="flex-shrink-0 group relative block" style={{ width: 110, height: 71 }}>
           <Image
             src="/img/logo/molly-yllom-logo-homepage.webp"
             alt="Molly Yllom"
@@ -50,7 +50,7 @@ export const Header = () => {
             draggable={false}
             className="absolute top-0 left-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
           />
-        </Link>
+        </TransitionLink>
 
         {/* Right side: hamburger (mobile) or nav + lang toggle (desktop) */}
         <div className="flex items-center gap-6">
@@ -60,7 +60,7 @@ export const Header = () => {
             {navLinks.map(({ href, label }) => {
               const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
               return (
-                <Link
+                <TransitionLink
                   key={href}
                   href={href}
                   className={`relative text-sm font-semibold transition-colors duration-200 group pb-0.5 ${
@@ -71,7 +71,7 @@ export const Header = () => {
                   <span className={`absolute -bottom-0.5 left-0 h-[2px] bg-violet-500 rounded-full transition-all duration-300 ${
                     isActive ? 'w-full' : 'w-0 group-hover:w-full'
                   }`} />
-                </Link>
+                </TransitionLink>
               );
             })}
           </nav>

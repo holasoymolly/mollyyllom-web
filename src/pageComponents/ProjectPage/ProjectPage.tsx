@@ -3,7 +3,7 @@
 import { FC } from 'react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import Link from 'next/link';
+import { TransitionLink } from '@/components/TransitionLink';
 import { projectsBySlug, activeProjects } from '../../projects';
 import { QuoteBanner } from '@/components/QuoteBanner';
 import { ProtectedImage } from '@/components/ProtectedImage';
@@ -30,9 +30,9 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
         <main className="flex flex-col justify-center items-center h-[80vh] text-center px-6">
           <h1 className="text-5xl font-black text-indigo-950">{t.projects.notFound}</h1>
           <p className="text-indigo-950/60 mt-4">{t.projects.notFoundSub}</p>
-          <Link href="/proyectos" className="mt-8 bg-indigo-950 text-stone-200 font-bold py-3 px-8 rounded-full transition-colors duration-300 hover:bg-violet-500">
+          <TransitionLink href="/proyectos" className="mt-8 bg-indigo-950 text-stone-200 font-bold py-3 px-8 rounded-full transition-colors duration-300 hover:bg-violet-500">
             {t.projects.viewAll}
-          </Link>
+          </TransitionLink>
         </main>
         <Footer />
       </div>
@@ -51,13 +51,13 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           className="mb-6"
         >
-          <Link
+          <TransitionLink
             href="/proyectos"
             className="inline-flex items-center gap-2 text-slate-400 hover:text-violet-400 transition-colors duration-200 text-xs font-bold tracking-[0.2em] uppercase group"
           >
             <span className="inline-block transition-transform duration-200 group-hover:-translate-x-1">←</span>
             {t.projects.backLink}
-          </Link>
+          </TransitionLink>
         </motion.div>
         <motion.p
           className="text-violet-400 text-xs font-bold tracking-[0.3em] uppercase mb-6"
@@ -124,7 +124,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
       {(prevProject || nextProject) && (
         <section className="bg-stone-200 border-t border-indigo-950/10 grid grid-cols-1 md:grid-cols-2">
           {prevProject?.slug ? (
-            <Link
+            <TransitionLink
               href={`/proyectos/${prevProject.slug}`}
               className="relative flex items-center gap-5 px-6 md:px-16 lg:px-24 py-10 border-b md:border-b-0 md:border-r border-indigo-950/10 group hover:bg-indigo-950/5 transition-colors duration-300 overflow-hidden"
             >
@@ -139,11 +139,11 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
                   {prevProject.title}
                 </span>
               </div>
-            </Link>
+            </TransitionLink>
           ) : <div />}
 
           {nextProject?.slug ? (
-            <Link
+            <TransitionLink
               href={`/proyectos/${nextProject.slug}`}
               className="relative flex items-center justify-end gap-5 px-6 md:px-16 lg:px-24 py-10 text-right group hover:bg-indigo-950/5 transition-colors duration-300 overflow-hidden"
             >
@@ -158,7 +158,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
               <div className="shrink-0 w-16 h-16 rounded overflow-hidden border border-indigo-950/10">
                 <ProtectedImage src={nextProject.portfolioImage} alt={nextProject.title} className="w-full h-full object-cover" />
               </div>
-            </Link>
+            </TransitionLink>
           ) : <div />}
         </section>
       )}

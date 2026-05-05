@@ -46,6 +46,15 @@ No test suite is configured.
 | `/cv/web3` | `Web3CV` | Web3 CV, English |
 | `/cv/es/web3` | `Web3CV` | Web3 CV, Spanish |
 
+### Navigation & page transitions
+The site uses the native **View Transitions API** for all internal navigation, enabled via `experimental: { viewTransition: true }` in `next.config.ts`. The crossfade keyframes (`cv-fade-out` / `cv-fade-in`, 350ms ease-in-out) live in `src/app/globals.css` and respect `prefers-reduced-motion`.
+
+**Always use `<TransitionLink>` from `@/components/TransitionLink` for internal links** — never plain `<a>` or `next/link` `<Link>`. `TransitionLink` wraps `next/link` and intercepts the click to call `React.startTransition(() => router.push(href))`, which Next.js hooks into the View Transitions API. It correctly delegates modifier-key clicks (cmd/ctrl/shift), `target="_blank"`, and `mailto:` / `tel:` / `http(s)://` URLs to the browser.
+
+For programmatic navigation from buttons (e.g. the CV toggles in `CVVersionToggle` / `CVLangToggle`), call `React.startTransition(() => router.push(href))` directly — same effect.
+
+External links (Calendly, social) stay as plain `<a target="_blank">`.
+
 ### Analytics
 `src/app/layout.tsx` includes Google Analytics (`G-Q3TSX67D2J`), Vercel Analytics, Vercel Speed Insights, LaunchMyNFT scripts.
 
@@ -190,7 +199,7 @@ src/cv/
 - **No site Header/Footer** on CV pages — CVs are standalone documents. A discreet `← mollyyllom.com` link sits inside the hero section (top-left), aligned with content padding.
 - **Brand CV** (`/cv`, `/cv/es`): alternating dark/light sections matching the main site pattern.
 - **Web3 CV** (`/cv/web3`, `/cv/es/web3`): fully dark (`bg-indigo-950` throughout), violet accents, darker atmosphere aligned with the NFTs page aesthetic.
-- **Page transition:** Native View Transitions API via `experimental: { viewTransition: true }` (Next.js 15.1+). Toggles use `React.startTransition(() => router.push(href))` — Next.js hooks this into the View Transitions API automatically. CSS crossfade (350ms) defined in `globals.css`. No AnimatePresence/CVPageTransition wrapper needed.
+- **Page transition:** Uses the same site-wide View Transitions setup (see "Navigation & page transitions" above). The CV's `← mollyyllom.com` back link uses `<TransitionLink>`; `CVVersionToggle` / `CVLangToggle` use `<button>` + `React.startTransition(() => router.push(href))` because they need the active-state styling on a button. No AnimatePresence/CVPageTransition wrapper needed.
 - **Language toggle** (`CVLangToggle`) and **version toggle** (`CVVersionToggle`) are cross-aware: switching language keeps the current mode, switching mode keeps the current language.
 - **Skills stay in English** in both language versions — standard for design/tech CVs.
 - **Profile photos:** `molly_pfp.jpg` (brand), `molly_pfp_web3.jpg` (web3) — both in `public/img/molly/`. Size: `w-64 h-64 md:w-80 md:h-80`, circular with violet glow shadow.

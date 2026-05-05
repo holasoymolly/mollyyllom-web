@@ -1,8 +1,9 @@
 'use client';
 
+import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { TransitionLink } from "@/components/TransitionLink";
 import { RiInstagramLine } from '@/icons/RiInstagramLine';
 import { RiBehanceFill } from '@/icons/RiBehanceFill';
 import { IcOutlineTiktok } from '@/icons/IcOutlineTiktok';
@@ -21,6 +22,8 @@ interface AppDrawerProps {
   onClose: () => void;
 }
 
+const drawerEase: [number, number, number, number] = [0.32, 0.72, 0, 1];
+
 export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose }) => {
   const pathname = usePathname();
   const { lang, t, toggleLang } = useLanguage();
@@ -33,15 +36,22 @@ export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose }) => {
     { href: '/nfts',      label: t.nav.nfts,      num: '05' },
   ];
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const original = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = original; };
+  }, [isOpen]);
+
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 bg-indigo-950 z-50 flex flex-col px-8 pt-6 pb-10"
-          initial={{ opacity: 0, x: '100%' }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: '100%' }}
-          transition={{ type: 'spring', stiffness: 280, damping: 28 }}
+          className="fixed inset-0 bg-indigo-950 z-50 flex flex-col px-8 pt-6 pb-10 will-change-transform"
+          initial={{ x: '100%' }}
+          animate={{ x: 0 }}
+          exit={{ x: '100%' }}
+          transition={{ duration: 0.32, ease: drawerEase }}
         >
           {/* Close + lang toggle */}
           <div className="flex items-center justify-between mb-10">
@@ -73,11 +83,11 @@ export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose }) => {
               return (
                 <motion.div
                   key={href}
-                  initial={{ opacity: 0, x: 24 }}
+                  initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.07, duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+                  transition={{ delay: 0.08 + i * 0.04, duration: 0.32, ease: drawerEase }}
                 >
-                  <Link
+                  <TransitionLink
                     href={href}
                     onClick={onClose}
                     className={`flex items-center gap-5 py-5 border-b border-stone-200/10 group ${
@@ -90,7 +100,7 @@ export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose }) => {
                     <span className="text-4xl font-black leading-none tracking-tight group-hover:text-violet-400 transition-colors duration-200">
                       {label}
                     </span>
-                  </Link>
+                  </TransitionLink>
                 </motion.div>
               );
             })}
@@ -99,9 +109,9 @@ export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose }) => {
           {/* CTA + social */}
           <motion.div
             className="flex flex-col gap-6 pt-8"
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ delay: 0.28, duration: 0.32, ease: drawerEase }}
           >
             <a
               href={t.quoteBanner.url}

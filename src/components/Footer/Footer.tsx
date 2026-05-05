@@ -6,7 +6,7 @@ import { IcRoundFacebook } from '@/icons/IcRoundFacebook';
 import { RiBehanceFill } from '@/icons/RiBehanceFill';
 import { RiInstagramLine } from '@/icons/RiInstagramLine';
 import { XIcon } from '@/icons/XIcon';
-import Link from 'next/link';
+import { TransitionLink } from '@/components/TransitionLink';
 import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -28,14 +28,14 @@ export const Footer: React.FC = () => {
 
         {/* Logo + tagline */}
         <div className="flex flex-col gap-5">
-          <Link href="/" className="inline-block w-fit">
+          <TransitionLink href="/" className="inline-block w-fit">
             <img
               src="/img/logo/molly-yllom-stacked.png"
               alt="Molly Yllom"
               className="h-16 w-auto object-contain opacity-90"
               draggable={false}
             />
-          </Link>
+          </TransitionLink>
           <p className="text-violet-400 text-sm leading-relaxed max-w-[220px]">
             {t.footer.tagline}
           </p>
@@ -47,13 +47,13 @@ export const Footer: React.FC = () => {
             {t.footer.pages}
           </span>
           {navLinks.map(({ href, label }) => (
-            <Link
+            <TransitionLink
               key={href}
               href={href}
               className="text-stone-300 text-sm font-medium hover:text-violet-400 transition-colors duration-200 w-fit"
             >
               {label}
-            </Link>
+            </TransitionLink>
           ))}
         </nav>
 
