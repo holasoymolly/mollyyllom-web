@@ -81,7 +81,7 @@ export const Header = () => {
           {/* Language toggle */}
           <button
             onClick={toggleLang}
-            aria-label="Cambiar idioma"
+            aria-label={t.nav.toggleLang}
             className="flex items-center gap-1 border border-indigo-950/20 rounded-full px-3 py-1 text-xs font-bold tracking-widest select-none hover:border-violet-500 transition-colors duration-200"
           >
             <span className={lang === 'es' ? 'text-violet-600' : 'text-indigo-950/35'}>ES</span>
@@ -89,13 +89,15 @@ export const Header = () => {
             <span className={lang === 'en' ? 'text-violet-600' : 'text-indigo-950/35'}>EN</span>
           </button>
 
-          {/* Hamburger — mobile only */}
+          {/* Hamburger — mobile only. p-2 -m-2 expands the hit area to ~40px
+              without changing the visual size of the icon. */}
           <button
-            className="lg:hidden text-indigo-950 hover:text-violet-500 transition-colors duration-300"
+            className="lg:hidden p-2 -m-2 text-indigo-950 hover:text-violet-500 transition-colors duration-300"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? t.nav.closeMenu : t.nav.openMenu}
+            aria-expanded={isMenuOpen}
           >
-            <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24" aria-hidden="true">
               <rect x="4" y="7.5" width="16" height="1.5" />
               <rect x="4" y="15" width="16" height="1.5" />
             </svg>

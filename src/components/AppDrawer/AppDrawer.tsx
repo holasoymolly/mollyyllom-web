@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { TransitionLink } from "@/components/TransitionLink";
@@ -24,9 +24,15 @@ interface AppDrawerProps {
 
 const drawerEase: [number, number, number, number] = [0.32, 0.72, 0, 1];
 
+const FOCUSABLE_SELECTOR =
+  'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
 export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose }) => {
   const pathname = usePathname();
   const { lang, t, toggleLang } = useLanguage();
+  const drawerRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const triggerRef = useRef<Element | null>(null);
 
   const navLinks: Array<{ href: string; label: string; num: string; external?: boolean }> = [
     { href: '/conoceme',  label: t.nav.conoceme,  num: '01' },
@@ -36,17 +42,66 @@ export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose }) => {
     { href: 'https://www.mollyverse.art/welcome', label: t.nav.nfts, num: '05', external: true },
   ];
 
+  // Lock body scroll + remember the trigger so focus can return to it on close.
   useEffect(() => {
     if (!isOpen) return;
+    triggerRef.current = document.activeElement;
     const original = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     return () => { document.body.style.overflow = original; };
+  }, [isOpen]);
+
+  // Initial focus + Escape to close + Tab focus trap.
+  useEffect(() => {
+    if (!isOpen) return;
+    closeButtonRef.current?.focus();
+
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        onClose();
+        return;
+      }
+      if (e.key !== 'Tab') return;
+      const container = drawerRef.current;
+      if (!container) return;
+      const focusables = Array.from(
+        container.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR)
+      ).filter((el) => !el.hasAttribute('inert') && el.offsetParent !== null);
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      const active = document.activeElement as HTMLElement | null;
+      if (e.shiftKey && active === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handleKey);
+    return () => document.removeEventListener('keydown', handleKey);
+  }, [isOpen, onClose]);
+
+  // On close, restore focus to whatever opened the drawer (usually hamburger).
+  useEffect(() => {
+    if (isOpen) return;
+    const trigger = triggerRef.current;
+    if (trigger instanceof HTMLElement) {
+      trigger.focus();
+    }
   }, [isOpen]);
 
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
+          ref={drawerRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label={t.nav.openMenu}
           className="fixed inset-0 bg-indigo-950 z-50 flex flex-col px-8 pt-6 pb-10 will-change-transform"
           initial={{ x: '100%' }}
           animate={{ x: 0 }}
@@ -57,7 +112,7 @@ export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose }) => {
           <div className="flex items-center justify-between mb-10">
             <button
               onClick={toggleLang}
-              aria-label="Cambiar idioma"
+              aria-label={t.nav.toggleLang}
               className="text-xs font-bold tracking-widest select-none"
             >
               <span className={lang === 'es' ? 'text-violet-400' : 'text-stone-200/30'}>ES</span>
@@ -66,11 +121,12 @@ export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose }) => {
             </button>
 
             <button
+              ref={closeButtonRef}
               onClick={onClose}
               aria-label={t.nav.closeMenu}
               className="text-slate-400 hover:text-stone-200 transition-colors duration-200"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
               </svg>
             </button>

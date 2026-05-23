@@ -1,7 +1,9 @@
 'use client';
 
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import { translations, Language, Translations } from '@/i18n/translations';
+
+const STORAGE_KEY = 'mollyyllom:lang';
 
 interface LanguageContextType {
   lang: Language;
@@ -17,6 +19,28 @@ const LanguageContext = createContext<LanguageContextType>({
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [lang, setLang] = useState<Language>('es');
+
+  // Restore persisted choice on mount.
+  useEffect(() => {
+    try {
+      const stored = window.localStorage.getItem(STORAGE_KEY);
+      if (stored === 'es' || stored === 'en') {
+        setLang(stored);
+      }
+    } catch {
+      // localStorage may be unavailable (private mode, etc.) — fall back to default.
+    }
+  }, []);
+
+  // Keep <html lang> and storage in sync with current selection.
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    try {
+      window.localStorage.setItem(STORAGE_KEY, lang);
+    } catch {
+      // ignore
+    }
+  }, [lang]);
 
   const toggleLang = () => {
     setLang((prev) => (prev === 'es' ? 'en' : 'es'));

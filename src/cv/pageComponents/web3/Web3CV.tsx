@@ -80,7 +80,7 @@ function SocialLinks({ links }: { links: { label: string; href: string }[] }) {
   return (
     <div className="flex items-center gap-3">
       {links.map((link) => (
-        <a key={link.label} href={link.href} target="_blank" rel="noreferrer" aria-label={link.label}
+        <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.label}
           className="text-slate-400 hover:text-stone-200 transition-colors duration-200">
           {link.label === 'LinkedIn' && <MdiLinkedin className="w-5 h-5" />}
           {link.label === 'X' && <MdiX className="w-4 h-4" />}
@@ -97,7 +97,7 @@ export function Web3CV({ lang = 'en' }: { lang?: Lang }) {
   const role = experience[0]
 
   const aerosolLink = (
-    <a href={URLS.AEROSOL} target="_blank" rel="noreferrer"
+    <a href={URLS.AEROSOL} target="_blank" rel="noopener noreferrer"
       className="text-violet-400 hover:text-violet-300 transition-colors duration-200 underline underline-offset-2">
       Aerosol
     </a>

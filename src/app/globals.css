@@ -62,3 +62,16 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ── Focus rings ──────────────────────────────────────────────────────────── */
+/* Keyboard-only focus (won't appear on mouse clicks). Matches the violet
+   accent of the design system and stays readable on both light and dark bg. */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid #8b5cf6; /* violet-500 */
+  outline-offset: 2px;
+  border-radius: 2px;
+}

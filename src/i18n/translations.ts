@@ -10,6 +10,7 @@ export const translations = {
       nfts: 'NFTs',
       closeMenu: 'Cerrar menú',
       openMenu: 'Abrir menú',
+      toggleLang: 'Cambiar idioma',
     },
     footer: {
       tagline: 'Estudio de diseño gráfico e identidad visual.',
@@ -103,6 +104,7 @@ export const translations = {
       nfts: 'NFTs',
       closeMenu: 'Close menu',
       openMenu: 'Open menu',
+      toggleLang: 'Switch language',
     },
     footer: {
       tagline: 'Graphic design and visual identity studio.',

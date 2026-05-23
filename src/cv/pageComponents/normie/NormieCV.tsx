@@ -74,7 +74,7 @@ function SocialLinks({ links, dark = true }: { links: { label: string; href: str
   return (
     <div className="flex items-center gap-3">
       {links.map((link) => (
-        <a key={link.label} href={link.href} target="_blank" rel="noreferrer" aria-label={link.label}
+        <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.label}
           className={`transition-colors duration-200 ${base}`}>
           {link.label === 'LinkedIn' && <MdiLinkedin className="w-5 h-5" />}
           {link.label === 'X' && <MdiX className="w-4 h-4" />}
