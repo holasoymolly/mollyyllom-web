@@ -2,7 +2,7 @@
 
 import { TransitionLink } from "@/components/TransitionLink"
 import { motion } from "framer-motion"
-import { ProtectedNextImage } from "@/components/ProtectedNextImage"
+import { ProtectedImage } from "@/components/ProtectedImage"
 import { web3Resume } from "@/cv/data/resumeData/web3"
 import { web3ResumeES } from "@/cv/data/resumeData/web3/index.es"
 import { URLS } from "@/cv/data/constants"
@@ -165,8 +165,8 @@ export function Web3CV({ lang = 'en' }: { lang?: Lang }) {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <ProtectedNextImage
-              containerClassName="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-violet-500/50 shadow-[0_0_80px_rgba(139,92,246,0.35)]"
+            <ProtectedImage
+              wrapperClassName="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-violet-500/50 shadow-[0_0_80px_rgba(139,92,246,0.35)]"
               src="/img/molly/molly_pfp_web3.jpg"
               alt="Molly Yllom"
               fill

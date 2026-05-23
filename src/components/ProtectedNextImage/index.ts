@@ -1,1 +1,0 @@
-export { ProtectedNextImage } from './ProtectedNextImage'

@@ -50,7 +50,9 @@ export const ConocemePage: FC = () => {
           <ProtectedImage
             src="/img/molly/molly2.webp"
             alt="Molly Yllom"
-            className="object-cover w-full h-full"
+            fill
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className="object-cover"
             style={{ objectPosition: 'center 40%' }}
           />
         </figure>

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { DeviconPlainLinkedin } from '@/icons/DeviconPlainLinkedin';
 import { IcOutlineTiktok } from '@/icons/IcOutlineTiktok';
 import { IcRoundFacebook } from '@/icons/IcRoundFacebook';
@@ -29,9 +30,12 @@ export const Footer: React.FC = () => {
         {/* Logo + tagline */}
         <div className="flex flex-col gap-5">
           <TransitionLink href="/" className="inline-block w-fit">
-            <img
+            <Image
               src="/img/logo/molly-yllom-stacked.png"
               alt="Molly Yllom"
+              width={2523}
+              height={2925}
+              sizes="55px"
               className="h-16 w-auto object-contain opacity-90"
               draggable={false}
             />

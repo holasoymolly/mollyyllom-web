@@ -2,7 +2,7 @@
 
 import { TransitionLink } from "@/components/TransitionLink"
 import { motion } from "framer-motion"
-import { ProtectedNextImage } from "@/components/ProtectedNextImage"
+import { ProtectedImage } from "@/components/ProtectedImage"
 import { web2Resume } from "@/cv/data/resumeData/web2"
 import { web2ResumeES } from "@/cv/data/resumeData/web2/index.es"
 import { CVVersionToggle } from "@/cv/components/CVVersionToggle"
@@ -151,8 +151,8 @@ export function NormieCV({ lang = 'en' }: { lang?: Lang }) {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
             >
-              <ProtectedNextImage
-                containerClassName="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-violet-500/50 shadow-[0_0_80px_rgba(139,92,246,0.3)]"
+              <ProtectedImage
+                wrapperClassName="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-violet-500/50 shadow-[0_0_80px_rgba(139,92,246,0.3)]"
                 src="/img/molly/molly_pfp.jpg"
                 alt="Molly Yllom"
                 fill

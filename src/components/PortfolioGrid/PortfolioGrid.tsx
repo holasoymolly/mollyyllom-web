@@ -36,11 +36,13 @@ export const PortfolioGrid = ({ showHeader = true }: { showHeader?: boolean }) =
         {activeProjects.map((item, index) => {
           const inner = (
             <>
-              <div className="overflow-hidden aspect-square">
+              <div className="relative overflow-hidden aspect-square">
                 <ProtectedImage
                   src={item.portfolioImage}
                   alt={item.title}
-                  className="object-cover w-full h-full transition-transform duration-700 ease-out group-hover:scale-105"
+                  fill
+                  sizes="(min-width: 768px) 33vw, 50vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
               </div>
               {/* Slide-up title overlay */}

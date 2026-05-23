@@ -79,11 +79,14 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
 
       <main>
         {/* Hero image — full bleed */}
-        <div className="w-full overflow-hidden">
+        <div className="relative w-full h-[50vh] md:h-[70vh] overflow-hidden">
           <ProtectedImage
             src={project.heroImage}
             alt={`${project.title} Hero`}
-            className="w-full h-[50vh] md:h-[70vh] object-cover"
+            fill
+            sizes="100vw"
+            priority
+            className="object-cover"
           />
         </div>
 
@@ -113,7 +116,8 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
               <ProtectedImage
                 src={image}
                 alt={`${project.title} — ${index + 1}`}
-                className="w-full h-auto object-cover"
+                sizes="100vw"
+                className="w-full h-auto"
               />
             </div>
           ))}
@@ -128,8 +132,8 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
               href={`/proyectos/${prevProject.slug}`}
               className="relative flex items-center gap-5 px-6 md:px-16 lg:px-24 py-10 border-b md:border-b-0 md:border-r border-indigo-950/10 group hover:bg-indigo-950/5 transition-colors duration-300 overflow-hidden"
             >
-              <div className="shrink-0 w-16 h-16 rounded overflow-hidden border border-indigo-950/10">
-                <ProtectedImage src={prevProject.portfolioImage} alt={prevProject.title} className="w-full h-full object-cover" />
+              <div className="relative shrink-0 w-16 h-16 rounded overflow-hidden border border-indigo-950/10">
+                <ProtectedImage src={prevProject.portfolioImage} alt={prevProject.title} fill sizes="64px" className="object-cover" />
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-violet-500 text-xs font-bold tracking-[0.25em] uppercase flex items-center gap-2 group-hover:-translate-x-1 transition-transform duration-300">
@@ -155,8 +159,8 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
                   {nextProject.title}
                 </span>
               </div>
-              <div className="shrink-0 w-16 h-16 rounded overflow-hidden border border-indigo-950/10">
-                <ProtectedImage src={nextProject.portfolioImage} alt={nextProject.title} className="w-full h-full object-cover" />
+              <div className="relative shrink-0 w-16 h-16 rounded overflow-hidden border border-indigo-950/10">
+                <ProtectedImage src={nextProject.portfolioImage} alt={nextProject.title} fill sizes="64px" className="object-cover" />
               </div>
             </TransitionLink>
           ) : <div />}
