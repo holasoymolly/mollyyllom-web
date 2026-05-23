@@ -1,5 +1,3 @@
-'use client';
-
 import { Banner } from './Banner';
 import { Marquee } from './Marquee';
 import { MediaSection } from './MediaSection';

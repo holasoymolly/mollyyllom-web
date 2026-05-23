@@ -12,7 +12,12 @@ const fadeUp = (delay: number) => ({
 
 export const Banner = () => {
   const { t } = useLanguage();
+  // Headline copy uses '\n' for line breaks. The third line is highlighted
+  // in violet and may optionally have a trailing tail piece on the same row.
   const lines = t.home.headline.split('\n');
+  const lead = lines.slice(0, 2);
+  const highlight = lines[2] ?? '';
+  const trailing = lines.slice(3).join(' ');
 
   return (
     <section className="bg-indigo-950 text-stone-200 min-h-[75vh] sm:min-h-[88vh] flex flex-col justify-between px-6 sm:px-10 md:px-16 lg:px-24 pt-14 md:pt-20 pb-8 sm:pb-12">
@@ -28,9 +33,14 @@ export const Banner = () => {
           className="text-[3.5rem] sm:text-7xl md:text-8xl lg:text-[8.5rem] xl:text-[10rem] font-black leading-[0.9] tracking-tight"
           {...fadeUp(0.3)}
         >
-          {lines[0]}<br />
-          {lines[1]}<br />
-          <span className="text-violet-400">{lines[2]}</span> {lines[3]}
+          {lead.map((line, i) => (
+            <span key={i}>
+              {line}
+              <br />
+            </span>
+          ))}
+          <span className="text-violet-400">{highlight}</span>
+          {trailing && ` ${trailing}`}
         </motion.h1>
       </div>
 

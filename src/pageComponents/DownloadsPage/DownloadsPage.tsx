@@ -3,6 +3,7 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { QuoteBanner } from "@/components/QuoteBanner";
+import { ProtectedImage } from "@/components/ProtectedImage";
 import { downloadData } from "./downloadData";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
@@ -62,11 +63,13 @@ export const DownloadsPage: React.FC = () => {
             </span>
 
             {/* Thumbnail */}
-            <div className="w-full sm:w-32 md:w-40 aspect-video overflow-hidden shrink-0">
-              <img
+            <div className="relative w-full sm:w-32 md:w-40 aspect-video overflow-hidden shrink-0">
+              <ProtectedImage
                 src={item.image}
                 alt={t.downloads.items[index] ?? item.title}
-                className="object-cover w-full h-full transition-transform duration-700 ease-out group-hover:scale-105"
+                fill
+                sizes="(min-width: 768px) 160px, (min-width: 640px) 128px, 100vw"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
             </div>
 

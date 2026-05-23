@@ -1,5 +1,3 @@
-'use client'
-
 import { Header } from "@/components/Header";
 import { FC } from "react";
 import { Main } from "./components/Main";
