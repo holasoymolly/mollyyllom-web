@@ -25,7 +25,6 @@ No test suite is configured.
 
 ### Data files
 - `src/projects.tsx` — All portfolio projects as static data. Exports `activeProjects` (ordered array) and `projectsBySlug` (lookup map).
-- `src/data/collections.ts` — NFT collections for `/nfts`. Each collection has `name`, `link`, `images`, optional `metadataPath`, and optional `comingSoon` (disables buttons, shows "próximamente"/"coming soon" instead).
 - `src/i18n/translations.ts` — All UI strings for the site-wide ES/EN toggle.
 - `src/context/LanguageContext.tsx` — `useLanguage()` hook providing `lang`, `t` (translations), and `toggleLanguage`.
 - `src/pageComponents/DownloadsPage/downloadData.ts` — Downloads page data.
@@ -40,7 +39,6 @@ No test suite is configured.
 | `/proyectos/[slug]` | `ProjectPage` | Data from `projectsBySlug` |
 | `/contacto` | `ContactPage` | |
 | `/descargas` | `DownloadsPage` | |
-| `/nfts` | `NFTsPage` | |
 | `/cv` | `NormieCV` | Brand CV, English |
 | `/cv/es` | `NormieCV` | Brand CV, Spanish |
 | `/cv/web3` | `Web3CV` | Web3 CV, English |

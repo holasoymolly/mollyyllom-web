@@ -93,15 +93,6 @@ export const translations = {
       prev: '← Anterior',
       next: 'Siguiente →',
     },
-    nfts: {
-      label: 'Arte digital',
-      collection: 'Colección',
-      viewCollection: 'Ver colección →',
-      comingSoon: 'Próximamente',
-      loading: 'Cargando...',
-      attributes: 'Atributos',
-      mint: 'Mint',
-    },
   },
   en: {
     nav: {
@@ -194,15 +185,6 @@ export const translations = {
       viewAll: 'See all projects →',
       prev: '← Previous',
       next: 'Next →',
-    },
-    nfts: {
-      label: 'Digital art',
-      collection: 'Collection',
-      viewCollection: 'View collection →',
-      comingSoon: 'Coming soon',
-      loading: 'Loading...',
-      attributes: 'Attributes',
-      mint: 'Mint',
     },
   },
 };

@@ -13,12 +13,12 @@ import { useLanguage } from '@/context/LanguageContext';
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
 
-  const navLinks = [
+  const navLinks: Array<{ href: string; label: string; external?: boolean }> = [
     { href: '/conoceme', label: t.nav.conoceme },
     { href: '/proyectos', label: t.nav.proyectos },
     { href: '/contacto', label: t.nav.contacto },
     { href: '/descargas', label: t.nav.descargas },
-    { href: '/nfts', label: t.nav.nfts },
+    { href: 'https://www.mollyverse.art/welcome', label: t.nav.nfts, external: true },
   ];
 
   return (
@@ -46,10 +46,12 @@ export const Footer: React.FC = () => {
           <span className="text-violet-400 text-xs font-bold tracking-[0.2em] uppercase mb-1">
             {t.footer.pages}
           </span>
-          {navLinks.map(({ href, label }) => (
+          {navLinks.map(({ href, label, external }) => (
             <TransitionLink
               key={href}
               href={href}
+              target={external ? '_blank' : undefined}
+              rel={external ? 'noopener noreferrer' : undefined}
               className="text-stone-300 text-sm font-medium hover:text-violet-400 transition-colors duration-200 w-fit"
             >
               {label}

@@ -13,12 +13,12 @@ export const Header = () => {
   const pathname = usePathname();
   const { lang, t, toggleLang } = useLanguage();
 
-  const navLinks = [
+  const navLinks: Array<{ href: string; label: string; external?: boolean }> = [
     { href: '/conoceme', label: t.nav.conoceme },
     { href: '/proyectos', label: t.nav.proyectos },
     { href: '/contacto', label: t.nav.contacto },
     { href: '/descargas', label: t.nav.descargas },
-    { href: '/nfts', label: t.nav.nfts },
+    { href: 'https://www.mollyverse.art/welcome', label: t.nav.nfts, external: true },
   ];
 
   useEffect(() => {
@@ -57,12 +57,14 @@ export const Header = () => {
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map(({ href, label }) => {
-              const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
+            {navLinks.map(({ href, label, external }) => {
+              const isActive = !external && (pathname === href || (href !== '/' && pathname.startsWith(href)));
               return (
                 <TransitionLink
                   key={href}
                   href={href}
+                  target={external ? '_blank' : undefined}
+                  rel={external ? 'noopener noreferrer' : undefined}
                   className={`relative text-sm font-semibold transition-colors duration-200 group pb-0.5 ${
                     isActive ? 'text-violet-600' : 'text-indigo-950 hover:text-violet-500'
                   }`}

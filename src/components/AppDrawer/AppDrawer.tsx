@@ -28,12 +28,12 @@ export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose }) => {
   const pathname = usePathname();
   const { lang, t, toggleLang } = useLanguage();
 
-  const navLinks = [
+  const navLinks: Array<{ href: string; label: string; num: string; external?: boolean }> = [
     { href: '/conoceme',  label: t.nav.conoceme,  num: '01' },
     { href: '/proyectos', label: t.nav.proyectos, num: '02' },
     { href: '/contacto',  label: t.nav.contacto,  num: '03' },
     { href: '/descargas', label: t.nav.descargas, num: '04' },
-    { href: '/nfts',      label: t.nav.nfts,      num: '05' },
+    { href: 'https://www.mollyverse.art/welcome', label: t.nav.nfts, num: '05', external: true },
   ];
 
   useEffect(() => {
@@ -78,8 +78,8 @@ export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose }) => {
 
           {/* Nav */}
           <nav className="flex flex-col flex-1">
-            {navLinks.map(({ href, label, num }, i) => {
-              const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
+            {navLinks.map(({ href, label, num, external }, i) => {
+              const isActive = !external && (pathname === href || (href !== '/' && pathname.startsWith(href)));
               return (
                 <motion.div
                   key={href}
@@ -90,6 +90,8 @@ export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose }) => {
                   <TransitionLink
                     href={href}
                     onClick={onClose}
+                    target={external ? '_blank' : undefined}
+                    rel={external ? 'noopener noreferrer' : undefined}
                     className={`flex items-center gap-5 py-5 border-b border-stone-200/10 group ${
                       isActive ? 'text-violet-400' : 'text-stone-200'
                     }`}
