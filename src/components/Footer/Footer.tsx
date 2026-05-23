@@ -14,12 +14,17 @@ import { useLanguage } from '@/context/LanguageContext';
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
 
-  const navLinks: Array<{ href: string; label: string; external?: boolean }> = [
+  const navLinks: Array<{ href: string; label: string; external?: boolean; iconSrc?: string }> = [
     { href: '/conoceme', label: t.nav.conoceme },
     { href: '/proyectos', label: t.nav.proyectos },
     { href: '/contacto', label: t.nav.contacto },
     { href: '/descargas', label: t.nav.descargas },
-    { href: 'https://www.mollyverse.art/welcome', label: t.nav.nfts, external: true },
+    {
+      href: 'https://www.mollyverse.art/welcome',
+      label: 'Mollyverse',
+      external: true,
+      iconSrc: '/img/logo/mollyverse-logo-full-color.png',
+    },
   ];
 
   return (
@@ -50,15 +55,32 @@ export const Footer: React.FC = () => {
           <span className="text-violet-400 text-xs font-bold tracking-[0.2em] uppercase mb-1">
             {t.footer.pages}
           </span>
-          {navLinks.map(({ href, label, external }) => (
+          {navLinks.map(({ href, label, external, iconSrc }) => (
             <TransitionLink
               key={href}
               href={href}
               target={external ? '_blank' : undefined}
               rel={external ? 'noopener noreferrer' : undefined}
-              className="text-stone-300 text-sm font-medium hover:text-violet-400 transition-colors duration-200 w-fit"
+              aria-label={iconSrc ? label : undefined}
+              className={`text-sm font-medium transition-all duration-200 w-fit ${
+                iconSrc
+                  ? 'flex items-center hover:opacity-70'
+                  : 'text-stone-300 hover:text-violet-400'
+              }`}
             >
-              {label}
+              {iconSrc ? (
+                <Image
+                  src={iconSrc}
+                  alt={label}
+                  width={1020}
+                  height={631}
+                  sizes="48px"
+                  className="h-5 w-auto"
+                  draggable={false}
+                />
+              ) : (
+                label
+              )}
             </TransitionLink>
           ))}
         </nav>

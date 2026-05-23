@@ -7,18 +7,30 @@ import { AppDrawer } from "../AppDrawer";
 import { TransitionLink } from "../TransitionLink";
 import { useLanguage } from "@/context/LanguageContext";
 
+type NavLink = {
+  href: string;
+  label: string;
+  external?: boolean;
+  iconSrc?: string;
+};
+
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const { lang, t, toggleLang } = useLanguage();
 
-  const navLinks: Array<{ href: string; label: string; external?: boolean }> = [
+  const navLinks: NavLink[] = [
     { href: '/conoceme', label: t.nav.conoceme },
     { href: '/proyectos', label: t.nav.proyectos },
     { href: '/contacto', label: t.nav.contacto },
     { href: '/descargas', label: t.nav.descargas },
-    { href: 'https://www.mollyverse.art/welcome', label: t.nav.nfts, external: true },
+    {
+      href: 'https://www.mollyverse.art/welcome',
+      label: 'Mollyverse',
+      external: true,
+      iconSrc: '/img/logo/mollyverse-logo-full-color.png',
+    },
   ];
 
   useEffect(() => {
@@ -57,7 +69,7 @@ export const Header = () => {
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map(({ href, label, external }) => {
+            {navLinks.map(({ href, label, external, iconSrc }) => {
               const isActive = !external && (pathname === href || (href !== '/' && pathname.startsWith(href)));
               return (
                 <TransitionLink
@@ -65,14 +77,33 @@ export const Header = () => {
                   href={href}
                   target={external ? '_blank' : undefined}
                   rel={external ? 'noopener noreferrer' : undefined}
+                  aria-label={iconSrc ? label : undefined}
                   className={`relative text-sm font-semibold transition-colors duration-200 group pb-0.5 ${
-                    isActive ? 'text-violet-600' : 'text-indigo-950 hover:text-violet-500'
+                    iconSrc
+                      ? 'flex items-center hover:opacity-70'
+                      : isActive
+                        ? 'text-violet-600'
+                        : 'text-indigo-950 hover:text-violet-500'
                   }`}
                 >
-                  {label}
-                  <span className={`absolute -bottom-0.5 left-0 h-[2px] bg-violet-500 rounded-full transition-all duration-300 ${
-                    isActive ? 'w-full' : 'w-0 group-hover:w-full'
-                  }`} />
+                  {iconSrc ? (
+                    <Image
+                      src={iconSrc}
+                      alt={label}
+                      width={1020}
+                      height={631}
+                      sizes="48px"
+                      className="h-5 w-auto"
+                      draggable={false}
+                    />
+                  ) : (
+                    <>
+                      {label}
+                      <span className={`absolute -bottom-0.5 left-0 h-[2px] bg-violet-500 rounded-full transition-all duration-300 ${
+                        isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                      }`} />
+                    </>
+                  )}
                 </TransitionLink>
               );
             })}

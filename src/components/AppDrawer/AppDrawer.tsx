@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { TransitionLink } from "@/components/TransitionLink";
@@ -34,12 +35,18 @@ export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose }) => {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const triggerRef = useRef<Element | null>(null);
 
-  const navLinks: Array<{ href: string; label: string; num: string; external?: boolean }> = [
+  const navLinks: Array<{ href: string; label: string; num: string; external?: boolean; iconSrc?: string }> = [
     { href: '/conoceme',  label: t.nav.conoceme,  num: '01' },
     { href: '/proyectos', label: t.nav.proyectos, num: '02' },
     { href: '/contacto',  label: t.nav.contacto,  num: '03' },
     { href: '/descargas', label: t.nav.descargas, num: '04' },
-    { href: 'https://www.mollyverse.art/welcome', label: t.nav.nfts, num: '05', external: true },
+    {
+      href: 'https://www.mollyverse.art/welcome',
+      label: 'Mollyverse',
+      num: '05',
+      external: true,
+      iconSrc: '/img/logo/mollyverse-logo-full-color.png',
+    },
   ];
 
   // Lock body scroll + remember the trigger so focus can return to it on close.
@@ -134,7 +141,7 @@ export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose }) => {
 
           {/* Nav */}
           <nav className="flex flex-col flex-1">
-            {navLinks.map(({ href, label, num, external }, i) => {
+            {navLinks.map(({ href, label, num, external, iconSrc }, i) => {
               const isActive = !external && (pathname === href || (href !== '/' && pathname.startsWith(href)));
               return (
                 <motion.div
@@ -148,6 +155,7 @@ export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose }) => {
                     onClick={onClose}
                     target={external ? '_blank' : undefined}
                     rel={external ? 'noopener noreferrer' : undefined}
+                    aria-label={iconSrc ? label : undefined}
                     className={`flex items-center gap-5 py-5 border-b border-stone-200/10 group ${
                       isActive ? 'text-violet-400' : 'text-stone-200'
                     }`}
@@ -155,9 +163,21 @@ export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose }) => {
                     <span className="text-violet-500 text-xs font-bold tracking-widest w-6 shrink-0">
                       {num}
                     </span>
-                    <span className="text-4xl font-black leading-none tracking-tight group-hover:text-violet-400 transition-colors duration-200">
-                      {label}
-                    </span>
+                    {iconSrc ? (
+                      <Image
+                        src={iconSrc}
+                        alt={label}
+                        width={1020}
+                        height={631}
+                        sizes="160px"
+                        className="h-10 w-auto transition-opacity duration-200 group-hover:opacity-80"
+                        draggable={false}
+                      />
+                    ) : (
+                      <span className="text-4xl font-black leading-none tracking-tight group-hover:text-violet-400 transition-colors duration-200">
+                        {label}
+                      </span>
+                    )}
                   </TransitionLink>
                 </motion.div>
               );
