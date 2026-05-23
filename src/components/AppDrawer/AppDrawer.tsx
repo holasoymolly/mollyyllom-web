@@ -45,7 +45,7 @@ export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose }) => {
       label: 'Mollyverse',
       num: '05',
       external: true,
-      iconSrc: '/img/logo/mollyverse-logo-full-color.png',
+      iconSrc: '/img/logo/mollyverse-icon.png',
     },
   ];
 
@@ -167,10 +167,10 @@ export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose }) => {
                       <Image
                         src={iconSrc}
                         alt={label}
-                        width={1020}
-                        height={631}
-                        sizes="160px"
-                        className="h-10 w-auto transition-opacity duration-200 group-hover:opacity-80"
+                        width={1024}
+                        height={1024}
+                        sizes="44px"
+                        className="h-11 w-11 transition-opacity duration-200 group-hover:opacity-80"
                         draggable={false}
                       />
                     ) : (

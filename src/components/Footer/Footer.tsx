@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
       href: 'https://www.mollyverse.art/welcome',
       label: 'Mollyverse',
       external: true,
-      iconSrc: '/img/logo/mollyverse-logo-full-color.png',
+      iconSrc: '/img/logo/mollyverse-icon.png',
     },
   ];
 
@@ -72,10 +72,10 @@ export const Footer: React.FC = () => {
                 <Image
                   src={iconSrc}
                   alt={label}
-                  width={1020}
-                  height={631}
-                  sizes="48px"
-                  className="h-5 w-auto"
+                  width={1024}
+                  height={1024}
+                  sizes="24px"
+                  className="h-6 w-6"
                   draggable={false}
                 />
               ) : (
