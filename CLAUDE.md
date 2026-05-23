@@ -5,12 +5,26 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run dev      # Start development server on localhost:3000
-npm run build    # Build for production
-npm run lint     # Run ESLint
+npm run dev             # Start development server on localhost:3000
+npm run build           # Build for production (runs prebuild → image manifest first)
+npm run lint            # Run ESLint
+npm run image-manifest  # Regen src/lib/image-dimensions.json (needed when new assets are added to public/img/)
 ```
 
 No test suite is configured.
+
+---
+
+## Branch flow
+
+**Always work on `beta` first, then promote to `main`.** The `beta` branch maps to a beta deployment environment used for preview/validation; `main` is production.
+
+1. Start every change on `beta`. If `beta` is behind `main`, fast-forward it first: `git checkout beta && git merge main --ff-only`.
+2. Commit and push to `beta` so the beta deploy picks the changes up.
+3. Once the change is validated (build green + beta deploy looks right), promote: `git checkout main && git merge beta --ff-only && git push origin main`. Keep history linear — no merge commits.
+4. Return to `beta` so the next iteration starts in the right place.
+
+Non-trivial changes ship as a sequence of small commits (one per logical phase), each pushed to `beta` individually. Commit messages include a `Co-Authored-By` trailer in the project's established style.
 
 ---
 
@@ -44,6 +58,17 @@ No test suite is configured.
 | `/cv/web3` | `Web3CV` | Web3 CV, English |
 | `/cv/es/web3` | `Web3CV` | Web3 CV, Spanish |
 
+The Mollyverse nav item is an **external** link (`https://www.mollyverse.art/welcome`) rendered as a small icon in Header / AppDrawer / Footer (`public/img/logo/mollyverse-icon.png`), not as text. The site previously had an internal `/nfts` page; it was removed.
+
+### SEO metadata
+
+Per-route metadata lives on the **server-component `page.tsx`** wrappers in `src/app/...` — not on the client `pageComponents/...` implementations:
+
+- Static routes export a `metadata: Metadata` constant (`/conoceme`, `/proyectos`, `/contacto`, `/descargas`).
+- `/proyectos/[slug]` uses `generateMetadata` to derive title + OG image from the project's `heroImage` and first paragraph, and `generateStaticParams` so each project pre-renders as static HTML at build time.
+- Root-level metadata + OG image live in `src/app/layout.tsx`.
+- `src/app/sitemap.ts` and `src/app/robots.ts` produce `/sitemap.xml` and `/robots.txt` automatically — `sitemap.ts` enumerates static routes plus every entry in `activeProjects`.
+
 ### Navigation & page transitions
 The site uses the native **View Transitions API** for all internal navigation, enabled via `experimental: { viewTransition: true }` in `next.config.ts`. The crossfade keyframes (`cv-fade-out` / `cv-fade-in`, 350ms ease-in-out) live in `src/app/globals.css` and respect `prefers-reduced-motion`.
 
@@ -54,7 +79,7 @@ For programmatic navigation from buttons (e.g. the CV toggles in `CVVersionToggl
 External links (Calendly, social) stay as plain `<a target="_blank">`.
 
 ### Analytics
-`src/app/layout.tsx` includes Google Analytics (`G-Q3TSX67D2J`), Vercel Analytics, Vercel Speed Insights, LaunchMyNFT scripts.
+`src/app/layout.tsx` includes Google Analytics (`G-Q3TSX67D2J`) via `<GoogleAnalytics>` from `@next/third-parties/google`, plus Vercel Analytics and Vercel Speed Insights.
 
 ---
 
@@ -202,7 +227,7 @@ Self-contained namespace. All CV code lives under `src/cv/` with `@/cv/` import 
 ### Structure
 ```
 src/cv/
-  components/          # Shared CV UI (CVVersionToggle, CVLangToggle, CVPageTransition)
+  components/          # Shared CV UI (CVVersionToggle, CVLangToggle)
   data/
     constants.ts       # BASE_URL, URLS (Aerosol, BurnAndClaim, etc.)
     resumeData/
@@ -220,8 +245,8 @@ src/cv/
 ### CV design decisions
 - **No site Header/Footer** on CV pages — CVs are standalone documents. A discreet `← mollyyllom.com` link sits inside the hero section (top-left), aligned with content padding.
 - **Brand CV** (`/cv`, `/cv/es`): alternating dark/light sections matching the main site pattern.
-- **Web3 CV** (`/cv/web3`, `/cv/es/web3`): fully dark (`bg-indigo-950` throughout), violet accents, darker atmosphere aligned with the NFTs page aesthetic.
-- **Page transition:** Uses the same site-wide View Transitions setup (see "Navigation & page transitions" above). The CV's `← mollyyllom.com` back link uses `<TransitionLink>`; `CVVersionToggle` / `CVLangToggle` use `<button>` + `React.startTransition(() => router.push(href))` because they need the active-state styling on a button. No AnimatePresence/CVPageTransition wrapper needed.
+- **Web3 CV** (`/cv/web3`, `/cv/es/web3`): fully dark (`bg-indigo-950` throughout), violet accents, darker atmosphere.
+- **Page transition:** Uses the same site-wide View Transitions setup (see "Navigation & page transitions" above). The CV's `← mollyyllom.com` back link uses `<TransitionLink>`; `CVVersionToggle` / `CVLangToggle` use `<button>` + `React.startTransition(() => router.push(href))` because they need the active-state styling on a button.
 - **Language toggle** (`CVLangToggle`) and **version toggle** (`CVVersionToggle`) are cross-aware: switching language keeps the current mode, switching mode keeps the current language.
 - **Skills stay in English** in both language versions — standard for design/tech CVs.
 - **Profile photos:** `molly_pfp.jpg` (brand), `molly_pfp_web3.jpg` (web3) — both in `public/img/molly/`. Size: `w-64 h-64 md:w-80 md:h-80`, circular with violet glow shadow.
@@ -247,6 +272,9 @@ Each page component receives `lang: 'en' | 'es'` prop. A `copy` object inside th
 
 ## Adding a New Project
 
-1. Define a `Project` object in `src/projects.tsx` with `slug`, `title`, `portfolioImage`, `heroImage`, `paragraphs`, `images`.
-2. Add it to `activeProjects` (order = grid position).
-3. Place images in `public/img/projects/[slug]/`.
+1. Place images in `public/img/projects/[slug]/`.
+2. Define a `Project` object in `src/projects.tsx` with `slug`, `title`, `portfolioImage`, `heroImage`, `paragraphs`, `paragraphsEn`, `images`.
+3. Add it to `activeProjects` (order = grid position).
+4. The `prebuild` hook will pick up the new images on the next `npm run build`. To get the image-dimensions manifest updated immediately (e.g. for `npm run dev`), run `npm run image-manifest`.
+
+`/proyectos/[slug]` uses `generateStaticParams`, so the new project will get its own pre-rendered HTML page automatically. Sitemap entries are also generated automatically from `activeProjects`.
