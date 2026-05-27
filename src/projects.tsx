@@ -11,7 +11,7 @@ export interface Project {
 const allianceProject: Project = {
   slug: "alliance",
   title: "Alliance",
-  portfolioImage: "/img/projects/alliance/alliance-gif-1.gif",
+  portfolioImage: "/img/projects/alliance/alliance-gif-1.mp4",
   heroImage: "/img/projects/alliance/alliance-logo-gold-emboss-mockup.webp",
   paragraphs: [
     "Alliance es una firma de abogados con sede en la Ciudad de Nueva York. Inspirada en la esencia de Alliance y su compromiso con la excelencia legal, creamos un diseño que refleja su enfoque fresco y moderno.",
@@ -69,7 +69,7 @@ const materDesignProject: Project = {
 const neuschoolProject: Project = {
   slug: "neuschool",
   title: "Neuschool",
-  portfolioImage: "/img/projects/neuschool/neuschool-gif-1.gif",
+  portfolioImage: "/img/projects/neuschool/neuschool-gif-1.mp4",
   heroImage: "/img/projects/neuschool/neuschool-notebook-mockup.webp",
   paragraphs: [
     "Acá te presento el re-diseño del logo para Neuschool, una plataforma digital de gestión de estudios que surgió como respuesta a los desafíos que enfrentó la educación en tiempos de distanciamiento social por el Covid-19. Neuschool buscaba dar un nuevo giro a su logo existente y agregar un detalle distintivo que le diera vida propia a la marca.",
@@ -132,7 +132,7 @@ const momProject: Project = {
 const neustackProject: Project = {
   slug: "neustack",
   title: "Neustack",
-  portfolioImage: "/img/projects/neustack/neustack-gif.gif",
+  portfolioImage: "/img/projects/neustack/neustack-gif.mp4",
   heroImage: "/img/projects/neustack/neustack-x-MY-01.webp",
   paragraphs: [
     "El rediseño del logo para Neustack buscaba modernizar su imagen manteniendo la simplicidad. Representé la letra N con una línea gruesa y vibrante, simbolizando la audacia de la empresa en llevar las ideas a la ejecución.",
@@ -184,7 +184,7 @@ const dinerologyProject: Project = {
 const riccieOriachProject: Project = {
   slug: "riccie-oriach",
   title: "Riccie Oriach",
-  portfolioImage: "/img/projects/riccie-oriach/riccie-oriach-gif.gif",
+  portfolioImage: "/img/projects/riccie-oriach/riccie-oriach-gif.mp4",
   heroImage: "/img/projects/riccie-oriach/riccie-oriach-logo-01.webp",
   paragraphs: [
     "Esta es la identidad visual que trabajé para Riccie Oriach, un talentoso cantautor dominicano. Riccie Oriach es un artista que expande los sonidos del rock latino con una ola de fusiones caribeñas. Inspirándose en su eclecticismo y sensibilidades artísticas, Riccie ha fusionado ritmos propios de la República Dominicana como la salve, los palos, el gagá, el merengue y el pripri, con estilos internacionales como el rock, el hip-hop, la salsa e incluso el punk.",
@@ -216,7 +216,7 @@ const riccieOriachProject: Project = {
 const greenSpiritProject: Project = {
   slug: "green-spirit",
   title: "Green Spirit",
-  portfolioImage: "/img/projects/green-spirit/green-spirit-gif.gif",
+  portfolioImage: "/img/projects/green-spirit/green-spirit-gif.mp4",
   heroImage: "/img/projects/green-spirit/green-spirit-logo-05.webp",
   paragraphs: [
     "En esta ocasión trabajé para crear el logo e identidad visual de Green Spirit. Inspirada en la misión de Green Spirit de ayudar a las personas a conectar con las plantas, creé un diseño que refleja la vitalidad y la armonía de la naturaleza.",
@@ -262,7 +262,7 @@ const distopiaProject: Project = {
     "/img/projects/distopia/distopia-tee-design-animation.gif",
     "/img/projects/distopia/distopia-logo-negativo.webp",
     "/img/projects/distopia/distopia-logo-tp-mockup.webp",
-    "/img/projects/distopia/distopia-parties.gif",
+    "/img/projects/distopia/distopia-parties.mp4",
     "/img/projects/distopia/distopia-logo-tee-mockup.webp",
     "/img/projects/distopia/distopia-logo-03.webp",
   ],
@@ -271,7 +271,7 @@ const distopiaProject: Project = {
 const indhauciProject: Project = {
   slug: "indhauci",
   title: "INDHAUCI",
-  portfolioImage: "/img/projects/indhauci/indhauci-gif-1.gif",
+  portfolioImage: "/img/projects/indhauci/indhauci-gif-1.mp4",
   heroImage: "/img/projects/indhauci/indhauci-logo-sticker-mockup.webp",
   paragraphs: [
     "Fue un honor para mí trabajar en el rediseño de la imagen corporativa de Constructora INDHAUCI, la compañía fundada por mis padres hace más de 20 años con esfuerzo y dedicación.",
@@ -316,7 +316,7 @@ const ditoDicoProject: Project = {
   images: [
     "/img/projects/dito-dico/dito-dico-patch-mockup.webp",
     "/img/projects/dito-dico/dito-dico-logo-01.webp",
-    "/img/projects/dito-dico/dito-dico-sets.gif",
+    "/img/projects/dito-dico/dito-dico-sets.mp4",
     "/img/projects/dito-dico/dito-dico-logo-02.webp",
     "/img/projects/dito-dico/dito-dico-bucket-hat-mockup.webp",
     "/img/projects/dito-dico/dito-dico-logo-03.webp",
@@ -334,7 +334,7 @@ const ditoDicoProject: Project = {
 const bhMobiliarioProject: Project = {
   slug: "bh-mobiliario",
   title: "BH Mobiliario",
-  portfolioImage: "/img/projects/bh-mobiliario/bh-mobiliario-web-cover.gif",
+  portfolioImage: "/img/projects/bh-mobiliario/bh-mobiliario-web-cover.mp4",
   heroImage: "/img/projects/bh-mobiliario/bh-mobiliario-office-wall-mockup.webp",
   paragraphs: [
     "En BH Mobiliario, la visión es clara: ofrecer soluciones de mobiliario que transformen espacios de trabajo en entornos productivos y acogedores. Mi trabajo en el desarrollo del branding para esta empresa se centró en crear una identidad visual que refleje su compromiso con la calidad y el servicio excepcional.",
@@ -366,7 +366,7 @@ const bhMobiliarioProject: Project = {
 const mlLogoProject: Project = {
   slug: "maria-lunares",
   title: "Maria Lunares",
-  portfolioImage: "/img/projects/maria-lunares/ml-logo-animado-1x1-1.gif",
+  portfolioImage: "/img/projects/maria-lunares/ml-logo-animado-1x1-1.mp4",
   heroImage: "/img/projects/maria-lunares/ml-logo-x-my-01.webp",
   paragraphs: [
     "Viene del latín y significa Mares Lunares. Los primeros astrónomos les llamaron así a las manchas de la Luna porque parecen grandes concentraciones de agua, pero no lo son. Son planicies extensas, oscuras y basálticas, resultado de impactos de meteoritos.",
@@ -413,7 +413,7 @@ const cdtLogoProject: Project = {
 const advanced: Project = {
   slug: "advanced-therapy",
   title: "Advanced Therapy",
-  portfolioImage: "/img/projects/advanced-therapy/atosf-logo-cover-animation.gif",
+  portfolioImage: "/img/projects/advanced-therapy/atosf-logo-cover-animation.mp4",
   heroImage: "/img/projects/advanced-therapy/atosf-stationary.webp",
   paragraphs: [
     "En el proyecto de creación de logo y branding para Advanced Therapy of South Florida, me propuse capturar la esencia de un centro terapéutico que sirve como refugio para individuos en buscan de servicios psicológicos. Mi objetivo fue diseñar una identidad visual que reflejara profesionalismo, elegancia y modernidad, transmitiendo confianza y dejando una impresión memorable. El concepto se basa en representar a Advanced Therapy como el lugar donde los pacientes pueden desenredar sus mentes y avanzar hacia una mejor salud mental. A través de símbolos que evocan la psicología y la terapia, el logo busca tener un impacto significativo y comunicar la excelencia en el servicio que la clínica brinda a sus pacientes.",
