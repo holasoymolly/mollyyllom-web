@@ -381,7 +381,7 @@ const mlLogoProject: Project = {
     "/img/projects/maria-lunares/maria-lunares-hoodie-mockup.webp",
     "/img/projects/maria-lunares/ml-logo-x-my-03.webp",
     "/img/projects/maria-lunares/maria-lunares-tshirt-mockup.webp",
-    "/img/projects/maria-luanres/ml-logo-x-my-04.webp",
+    "/img/projects/maria-lunares/ml-logo-x-my-04.webp",
     "/img/projects/maria-lunares/maria-lunares-lp-mockup.webp",
     "/img/projects/maria-lunares/maria-lunares-two-mugs-mockup.webp",
     "/img/projects/maria-lunares/maria-lunares-black-sweater-mokcup.webp",
