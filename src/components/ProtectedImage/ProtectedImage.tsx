@@ -9,15 +9,24 @@ interface ProtectedImageProps extends Omit<ImageProps, 'draggable' | 'width' | '
   height?: number;
 }
 
+const VIDEO_EXT = /\.(mp4|webm|mov)$/i;
+
 /**
- * Smart drag/right-click-protected image. Wraps next/image so every call site
- * gets AVIF/WebP, srcset, and lazy-loading for free.
+ * Smart drag/right-click-protected media. Wraps next/image so every image
+ * call site gets AVIF/WebP, srcset, and lazy-loading for free, and falls
+ * back to a muted autoplaying <video> when src points to .mp4/.webm/.mov
+ * (used for animated portfolio thumbnails — much lighter than GIFs while
+ * looking identical).
  *
  * Mode selection (in priority order):
  *   1. explicit `fill` prop  → fill mode (parent must be sized + relative)
  *   2. explicit `width` + `height` props → intrinsic mode
  *   3. src is found in the build-time image manifest → intrinsic mode
  *   4. fallback → fill mode
+ *
+ * For video sources `priority` switches preload from "metadata" → "auto"
+ * so above-the-fold videos start loading immediately, mirroring how
+ * `priority` behaves on next/image.
  *
  * GIFs are automatically passed `unoptimized` so animation is preserved.
  */
@@ -30,6 +39,8 @@ export const ProtectedImage = ({
   alt,
   className,
   sizes,
+  priority,
+  style,
   ...rest
 }: ProtectedImageProps) => {
   const srcStr = typeof src === 'string' ? src : '';
@@ -51,14 +62,38 @@ export const ProtectedImage = ({
     useFill = true;
   }
 
-  const unoptimized = srcStr.toLowerCase().endsWith('.gif');
+  const isVideo = VIDEO_EXT.test(srcStr);
   const wrapperClasses = useFill
     ? `relative w-full h-full ${wrapperClassName}`.trim()
     : `relative ${wrapperClassName}`.trim();
-  const resolvedSizes = sizes ?? (useFill ? '100vw' : undefined);
 
-  return (
-    <div className={wrapperClasses}>
+  let inner: React.ReactNode;
+
+  if (isVideo) {
+    const videoClass = useFill
+      ? `absolute inset-0 w-full h-full ${className ?? ''}`.trim()
+      : (className ?? '');
+    inner = (
+      <video
+        src={srcStr}
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload={priority ? 'auto' : 'metadata'}
+        aria-label={alt}
+        className={videoClass}
+        style={style}
+        draggable={false}
+        onContextMenu={(e) => e.preventDefault()}
+        onDragStart={(e) => e.preventDefault()}
+        {...(useFill ? {} : { width: resolvedWidth, height: resolvedHeight })}
+      />
+    );
+  } else {
+    const unoptimized = srcStr.toLowerCase().endsWith('.gif');
+    const resolvedSizes = sizes ?? (useFill ? '100vw' : undefined);
+    inner = (
       <Image
         src={src}
         alt={alt}
@@ -67,12 +102,20 @@ export const ProtectedImage = ({
           : { width: resolvedWidth!, height: resolvedHeight! })}
         unoptimized={unoptimized}
         sizes={resolvedSizes}
+        priority={priority}
+        style={style}
         className={className}
         draggable={false}
         onContextMenu={(e) => e.preventDefault()}
         onDragStart={(e) => e.preventDefault()}
         {...rest}
       />
+    );
+  }
+
+  return (
+    <div className={wrapperClasses}>
+      {inner}
       <div
         aria-hidden="true"
         className="absolute inset-0 select-none pointer-events-none"
