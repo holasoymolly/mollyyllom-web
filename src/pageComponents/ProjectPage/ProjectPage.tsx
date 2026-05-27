@@ -85,6 +85,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
             alt={`${project.title} Hero`}
             fill
             sizes="100vw"
+            quality={90}
             priority
             className="object-cover"
           />
@@ -117,6 +118,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
                 src={image}
                 alt={`${project.title} — ${index + 1}`}
                 sizes="100vw"
+                quality={90}
                 className="w-full h-auto"
               />
             </div>
