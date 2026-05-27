@@ -88,7 +88,6 @@ const neuschoolProject: Project = {
     "/img/projects/neuschool/neuschool-logo-uso-basico-06.webp",
     "/img/projects/neuschool/neuschool-logo-uso-basico-07.webp",
     "/img/projects/neuschool/neuschool-logo-uso-basico-08.webp",
-    "/img/projects/neuschool/neuschool-notebook-mockup.webp",
     "/img/projects/neuschool/neuschool-logo-uso-basico-09.webp",
     "/img/projects/neuschool/neuschool-ipad-mockup.webp",
     "/img/projects/neuschool/neuschool-headphones-mockup.webp",
@@ -265,7 +264,6 @@ const distopiaProject: Project = {
     "/img/projects/distopia/distopia-logo-tp-mockup.webp",
     "/img/projects/distopia/distopia-parties.gif",
     "/img/projects/distopia/distopia-logo-tee-mockup.webp",
-    "/img/projects/distopia/distopia-posters-mockup.webp",
     "/img/projects/distopia/distopia-logo-03.webp",
   ],
 };
@@ -296,7 +294,6 @@ const indhauciProject: Project = {
     "/img/projects/indhauci/indhauci-logo-pattern-mockup.webp",
     "/img/projects/indhauci/indhauci-logo-11.webp",
     "/img/projects/indhauci/indhauci-logo-concrete-mockup.webp",
-    "/img/projects/indhauci/indhauci-logo-sticker-mockup.webp",
     "/img/projects/indhauci/indhauci-logo-helmet-mockup.webp"
   ],
 };
@@ -329,7 +326,6 @@ const ditoDicoProject: Project = {
     "/img/projects/dito-dico/dito-dico-logo-05.webp",
     "/img/projects/dito-dico/dito-dico-hoodie-mockup-01.webp",
     "/img/projects/dito-dico/dito-dico-logo-06.webp",
-    "/img/projects/dito-dico/dito-dico-camiseta-mockup-02.webp",
     "/img/projects/dito-dico/dito-dico-logo-08.webp",
     "/img/projects/dito-dico/dito-dico-skateboard-mockup.webp"
   ],
@@ -433,7 +429,6 @@ const advanced: Project = {
     "/img/projects/advanced-therapy/atosf-logo-09.webp",
     "/img/projects/advanced-therapy/atosf-logo-05.webp",
     "/img/projects/advanced-therapy/atosf-logo-10.webp",
-    "/img/projects/advanced-therapy/atosf-stationary.webp",
     "/img/projects/advanced-therapy/atosf-logo-06.webp",
     "/img/projects/advanced-therapy/atosf-stamp-mockup.webp",
     "/img/projects/advanced-therapy/atosf-logo-07.webp",
