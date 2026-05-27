@@ -70,7 +70,7 @@ const neuschoolProject: Project = {
   slug: "neuschool",
   title: "Neuschool",
   portfolioImage: "/img/projects/neuschool/neuschool-gif-1.gif",
-  heroImage: "/img/projects/neuschool/neuschool-logo-uso-basico-04.webp",
+  heroImage: "/img/projects/neuschool/neuschool-notebook-mockup.webp",
   paragraphs: [
     "Acá te presento el re-diseño del logo para Neuschool, una plataforma digital de gestión de estudios que surgió como respuesta a los desafíos que enfrentó la educación en tiempos de distanciamiento social por el Covid-19. Neuschool buscaba dar un nuevo giro a su logo existente y agregar un detalle distintivo que le diera vida propia a la marca.",
     "Inspirada en su compromiso con la innovación educativa, creé un diseño fresco y moderno que refleja la vitalidad y la adaptabilidad de la plataforma.",
@@ -248,7 +248,7 @@ const distopiaProject: Project = {
   slug: "distopia",
   title: "Distopia",
   portfolioImage: "/img/projects/distopia/distopia-tee-design-animation.gif",
-  heroImage: "/img/projects/distopia/distopia-logo-positivo.webp",
+  heroImage: "/img/projects/distopia/distopia-posters-mockup.webp",
   paragraphs: [
     "Aquí te comparto el proyecto de diseño de logo e identidad visual para Distopia, una plataforma que en su momento apoyó la escena musical y artística de la cultura de la música electrónica dominicana a nivel local e internacional.",
     "Inspirada en su nombre y su enfoque atípico y distópico, creé un diseño minimalista con influencia del Opt Art, que refleja su carácter único y diferente.",
@@ -274,7 +274,7 @@ const indhauciProject: Project = {
   slug: "indhauci",
   title: "INDHAUCI",
   portfolioImage: "/img/projects/indhauci/indhauci-gif-1.gif",
-  heroImage: "/img/projects/indhauci/indhauci-logo-05.webp",
+  heroImage: "/img/projects/indhauci/indhauci-logo-sticker-mockup.webp",
   paragraphs: [
     "Fue un honor para mí trabajar en el rediseño de la imagen corporativa de Constructora INDHAUCI, la compañía fundada por mis padres hace más de 20 años con esfuerzo y dedicación.",
     "Con orgullo, he tenido la oportunidad de desarrollar una nueva identidad visual que refleje la calidad y el legado de nuestra empresa, la cual llevo muy cerca del corazón.",
@@ -305,7 +305,7 @@ const ditoDicoProject: Project = {
   slug: "dito-dico",
   title: "Dito Dico",
   portfolioImage: "/img/projects/dito-dico/dito-dico-gif-1.gif",
-  heroImage: "/img/projects/dito-dico/dito-dico-logo-07.webp",
+  heroImage: "/img/projects/dito-dico/dito-dico-camiseta-mockup-02.webp",
   paragraphs: [
     "Este es el proyecto de diseño de logo e identidad visual que trabajé para Dito Dico, un talentoso DJ dominicano que fusiona el sonido tropical con el funky y lo electrónico.",
     "Me inspiré en su estilo único y enérgico, creamos un personaje mascota caricaturesco de los años 30's que representa al artista a través de su marca.",
@@ -418,7 +418,7 @@ const advanced: Project = {
   slug: "advanced-therapy",
   title: "Advanced Therapy",
   portfolioImage: "/img/projects/advanced-therapy/atosf-logo-cover-animation.gif",
-  heroImage: "/img/projects/advanced-therapy/atosf-logo-02.webp",
+  heroImage: "/img/projects/advanced-therapy/atosf-stationary.webp",
   paragraphs: [
     "En el proyecto de creación de logo y branding para Advanced Therapy of South Florida, me propuse capturar la esencia de un centro terapéutico que sirve como refugio para individuos en buscan de servicios psicológicos. Mi objetivo fue diseñar una identidad visual que reflejara profesionalismo, elegancia y modernidad, transmitiendo confianza y dejando una impresión memorable. El concepto se basa en representar a Advanced Therapy como el lugar donde los pacientes pueden desenredar sus mentes y avanzar hacia una mejor salud mental. A través de símbolos que evocan la psicología y la terapia, el logo busca tener un impacto significativo y comunicar la excelencia en el servicio que la clínica brinda a sus pacientes.",
   ],
