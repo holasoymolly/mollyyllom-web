@@ -69,6 +69,7 @@ export const DownloadsPage: React.FC = () => {
                 alt={t.downloads.items[index] ?? item.title}
                 fill
                 sizes="(min-width: 768px) 160px, (min-width: 640px) 128px, 100vw"
+                quality={90}
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
             </div>

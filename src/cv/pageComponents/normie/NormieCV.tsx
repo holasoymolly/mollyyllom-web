@@ -157,6 +157,7 @@ export function NormieCV({ lang = 'en' }: { lang?: Lang }) {
                 alt="Molly Yllom"
                 fill
                 sizes="(min-width: 768px) 320px, 256px"
+                quality={90}
                 className="object-cover"
                 priority
               />

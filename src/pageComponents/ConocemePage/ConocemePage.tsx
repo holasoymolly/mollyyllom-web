@@ -52,6 +52,8 @@ export const ConocemePage: FC = () => {
             alt="Molly Yllom"
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
+            quality={90}
+            priority
             className="object-cover"
             style={{ objectPosition: 'center 40%' }}
           />

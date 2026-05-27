@@ -42,6 +42,7 @@ export const PortfolioGrid = ({ showHeader = true }: { showHeader?: boolean }) =
                   alt={item.title}
                   fill
                   sizes="(min-width: 768px) 33vw, 50vw"
+                  quality={90}
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
               </div>
