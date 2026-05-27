@@ -94,7 +94,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
         {/* Body text */}
         {paragraphs && paragraphs.length > 0 && (
           <section className="bg-stone-200 px-6 md:px-16 lg:px-24 py-20">
-            <div className="max-w-3xl flex flex-col gap-6">
+            <div className="max-w-3xl mx-auto flex flex-col gap-6">
               {paragraphs.map((paragraph, index) => (
                 <p
                   key={index}
