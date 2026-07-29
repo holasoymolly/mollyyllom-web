@@ -83,7 +83,8 @@ External links (Calendly, social) stay as plain `<a target="_blank">`.
 
 **Amplitude** (Analytics + Session Replay) follows [Amplitude's official Next.js installation guide](https://amplitude.com/docs/sdks/frameworks/nextjs-installation-guide) — do not hand-roll an alternative setup:
 - `src/amplitude.ts` is the single initialization module (`'use client'`, `@amplitude/unified`, `initAll` guarded by `typeof window !== 'undefined'` so it only ever runs client-side and only once). It exports a no-op `<Amplitude />` component and the `amplitude` instance as default.
-- `<Amplitude />` is rendered in the root layout; the API key comes from `NEXT_PUBLIC_AMPLITUDE_API_KEY` (set in `.env.local` locally and in Vercel env vars per environment).
+- `<Amplitude />` is rendered in the root layout; the API key comes from `NEXT_PUBLIC_AMPLITUDE_API_KEY`.
+- **Production only.** `NEXT_PUBLIC_AMPLITUDE_API_KEY` is set on the Vercel **Production** environment *only* — deliberately absent from Preview, Development, and local `.env.local`, so dev and beta traffic never pollutes the live analytics. The absence of the key is the switch: `src/amplitude.ts` skips `initAll` when it's missing, and `track()` in `src/lib/analytics.ts` becomes a no-op via the exported `isAmplitudeEnabled` flag (so calls don't pile up in the SDK's pre-init queue). Never add the key to another environment to "test in preview" — verify locally instead, per the debugging recipe below.
 - `autocapture: true` covers page views, clicks, form interactions and file downloads, so most tracking needs no code.
 - Session Replay runs at `sampleRate: 1`.
 
@@ -106,7 +107,7 @@ Autocapture records every click as a generic `[Amplitude] Element Clicked` ident
 - Removing a tracked CTA means removing its row from this table too, so the catalogue never drifts from the code.
 - Use Title Case for event names and camelCase for property names, matching the table above.
 
-To verify events locally: temporarily add `logLevel: amplitude.Types.LogLevel.Debug` to the `analytics` config in `src/amplitude.ts`, run `npm run dev`, trigger the interaction, and look for `"name": "track"` in the browser console — it logs the event name, properties, and the exact call site. Revert the `logLevel` line before committing.
+To verify events locally: uncomment `NEXT_PUBLIC_AMPLITUDE_API_KEY` in `.env.local` (tracking is off locally by default), temporarily add `logLevel: amplitude.Types.LogLevel.Debug` to the `analytics` config in `src/amplitude.ts`, restart `npm run dev`, trigger the interaction, and look for `"name": "track"` in the browser console — it logs the event name, properties, and the exact call site. Re-comment the key and revert the `logLevel` line when done; note that events fired this way do land in the live Amplitude project.
 
 ---
 

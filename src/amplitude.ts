@@ -3,8 +3,10 @@
 
 import * as amplitude from "@amplitude/unified";
 
+const apiKey = process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY;
+
 async function initAmplitude() {
-  await amplitude.initAll(process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY!, {
+  await amplitude.initAll(apiKey!, {
     analytics: {
       autocapture: true,
     },
@@ -14,9 +16,15 @@ async function initAmplitude() {
   });
 }
 
-if (typeof window !== "undefined") {
+// Production only. The key is deliberately absent from Preview, Development
+// and local .env.local, so dev and beta traffic never reaches Amplitude —
+// no key means no init, and every `track()` call becomes a silent no-op.
+if (typeof window !== "undefined" && apiKey) {
   initAmplitude();
 }
+
+/** True only where an API key is configured — i.e. production. */
+export const isAmplitudeEnabled = Boolean(apiKey);
 
 export const Amplitude = () => null;
 
