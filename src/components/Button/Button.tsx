@@ -6,9 +6,10 @@ interface ButtonProps {
   size?: 'small' | 'medium' | 'large';
   variant?: 'light' | 'dark';
   className?: string;
+  onClick?: () => void;
 }
 
-export const Button = ({ href, text, size = 'medium', variant = 'light', className }: ButtonProps) => {
+export const Button = ({ href, text, size = 'medium', variant = 'light', className, onClick }: ButtonProps) => {
   const sizeClasses = cn({
     'py-1 px-4 text-sm': size === 'small',
     'py-2 px-4 text-sm md:py-3 md:px-6 md:text-base lg:py-4 lg:px-8 lg:text-lg': size === 'medium',
@@ -23,6 +24,7 @@ export const Button = ({ href, text, size = 'medium', variant = 'light', classNa
   return (
     <a
       href={href}
+      onClick={onClick}
       className={cn(
         'rounded-full font-bold inline-block transition-colors duration-300',
         sizeClasses,

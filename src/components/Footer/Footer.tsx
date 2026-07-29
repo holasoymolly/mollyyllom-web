@@ -10,9 +10,10 @@ import { XIcon } from '@/icons/XIcon';
 import { TransitionLink } from '@/components/TransitionLink';
 import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
+import { trackNewsletterCTAClicked } from '@/lib/analytics';
 
 export const Footer: React.FC = () => {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
 
   const navLinks: Array<{ href: string; label: string; external?: boolean; iconSrc?: string }> = [
     { href: '/conoceme', label: t.nav.conoceme },
@@ -118,6 +119,7 @@ export const Footer: React.FC = () => {
               href="https://forms.gle/dh6ZN4NztWXkp1jE8"
               target="_blank"
               rel="noreferrer noopener"
+              onClick={() => trackNewsletterCTAClicked('footer', lang)}
               className="w-fit bg-stone-200/10 border border-stone-200/15 text-stone-300 font-semibold px-6 py-3 rounded-full text-sm transition-all duration-300 hover:bg-violet-500 hover:border-violet-500 hover:text-stone-200 whitespace-nowrap"
             >
               {t.footer.newsletter}

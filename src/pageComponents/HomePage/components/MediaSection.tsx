@@ -4,9 +4,10 @@ import { motion } from 'framer-motion';
 import { Button } from "@/components/Button";
 import { ProtectedImage } from "@/components/ProtectedImage";
 import { useLanguage } from '@/context/LanguageContext';
+import { trackBookingCTAClicked } from '@/lib/analytics';
 
 export const MediaSection = () => {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
   const readyLines = t.home.readyHeadline.split('\n');
 
   const stats = [
@@ -83,6 +84,7 @@ export const MediaSection = () => {
             href="https://calendly.com/hola-msny/30min"
             text={t.home.bookCta}
             size="large"
+            onClick={() => trackBookingCTAClicked('home', lang)}
           />
         </motion.div>
       </div>

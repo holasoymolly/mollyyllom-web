@@ -1,6 +1,6 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, useEffect, useRef } from 'react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { TransitionLink } from '@/components/TransitionLink';
@@ -9,6 +9,7 @@ import { QuoteBanner } from '@/components/QuoteBanner';
 import { ProtectedImage } from '@/components/ProtectedImage';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
+import { trackProjectViewed } from '@/lib/analytics';
 
 interface ProjectPageProps {
   slug: string;
@@ -22,6 +23,15 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
   const { lang, t } = useLanguage();
 
   const paragraphs = lang === 'en' ? project?.paragraphsEn : project?.paragraphs;
+
+  // Fire once per case study. `lang` is read through a ref so toggling the
+  // language mid-read doesn't count as a second view.
+  const langRef = useRef(lang);
+  langRef.current = lang;
+  useEffect(() => {
+    if (!project) return;
+    trackProjectViewed(project.slug, project.title, langRef.current);
+  }, [project]);
 
   if (!project) {
     return (

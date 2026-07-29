@@ -7,9 +7,10 @@ import { ProtectedImage } from "@/components/ProtectedImage";
 import { downloadData } from "./downloadData";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
+import { trackAssetDownloaded } from "@/lib/analytics";
 
 export const DownloadsPage: React.FC = () => {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
 
   return (
     <div>
@@ -51,6 +52,13 @@ export const DownloadsPage: React.FC = () => {
             href={item.downloadUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() =>
+              trackAssetDownloaded(
+                t.downloads.items[index] ?? item.title,
+                item.downloadUrl,
+                lang,
+              )
+            }
             className="flex flex-col sm:flex-row items-start sm:items-center gap-6 px-6 md:px-16 lg:px-24 py-8 border-b border-indigo-950/10 group cursor-pointer"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

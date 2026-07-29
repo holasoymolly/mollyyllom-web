@@ -7,9 +7,10 @@ import { ProtectedImage } from "@/components/ProtectedImage";
 import { FC } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
+import { trackBookingCTAClicked } from "@/lib/analytics";
 
 export const ConocemePage: FC = () => {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
   const ctaLines = t.about.ctaHeadline.split('\n');
 
   return (
@@ -90,6 +91,7 @@ export const ConocemePage: FC = () => {
               href="https://calendly.com/hola-msny/30min"
               target="_blank"
               rel="noreferrer noopener"
+              onClick={() => trackBookingCTAClicked('conoceme', lang)}
               className="inline-block bg-indigo-950 text-stone-200 font-bold px-8 py-4 rounded-full transition-colors duration-300 hover:bg-violet-500 hover:text-stone-200"
             >
               {t.about.ctaButton}

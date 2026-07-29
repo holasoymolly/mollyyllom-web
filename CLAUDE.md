@@ -84,8 +84,29 @@ External links (Calendly, social) stay as plain `<a target="_blank">`.
 **Amplitude** (Analytics + Session Replay) follows [Amplitude's official Next.js installation guide](https://amplitude.com/docs/sdks/frameworks/nextjs-installation-guide) — do not hand-roll an alternative setup:
 - `src/amplitude.ts` is the single initialization module (`'use client'`, `@amplitude/unified`, `initAll` guarded by `typeof window !== 'undefined'` so it only ever runs client-side and only once). It exports a no-op `<Amplitude />` component and the `amplitude` instance as default.
 - `<Amplitude />` is rendered in the root layout; the API key comes from `NEXT_PUBLIC_AMPLITUDE_API_KEY` (set in `.env.local` locally and in Vercel env vars per environment).
-- `autocapture: true` covers page views, clicks, form interactions and file downloads, so most tracking needs no code. For business-specific events, `import amplitude from '@/amplitude'` in a client component and call `amplitude.track('Event Name', { ... })`.
+- `autocapture: true` covers page views, clicks, form interactions and file downloads, so most tracking needs no code.
 - Session Replay runs at `sampleRate: 1`.
+
+#### Named conversion events
+
+Autocapture records every click as a generic `[Amplitude] Element Clicked` identified by CSS selector — which breaks the moment the markup changes. High-intent actions therefore get a **named** event, defined as a typed helper in `src/lib/analytics.ts` and called from the component's `onClick` (or a mount `useEffect` for views).
+
+| Event | Fires when | Properties | Call sites |
+|-------|-----------|------------|-----------|
+| `Booking CTA Clicked` | Any Calendly button is clicked — the strongest buying signal on the site | `location`, `lang` | `HomePage/components/MediaSection`, `ConocemePage`, `ContactPage` |
+| `Email CTA Clicked` | The `hola@mollyyllom.com` mailto link is clicked | `location`, `lang` | `ContactPage` |
+| `Newsletter CTA Clicked` | The newsletter signup link in the footer is clicked | `location`, `lang` | `Footer` |
+| `Asset Downloaded` | A downloadable asset on `/descargas` is opened | `assetTitle`, `assetUrl`, `lang` | `DownloadsPage` |
+| `Project Viewed` | A case study page mounts (once per slug; the language toggle does not re-fire it) | `projectSlug`, `projectTitle`, `lang` | `ProjectPage` |
+
+**RULE — whenever you add, remove, or change a user-facing conversion point, update Amplitude tracking and this table in the same commit.** Concretely:
+- A new CTA, download, contact route, external booking link, or funnel step gets a named event via a new helper in `src/lib/analytics.ts` — never a bare `amplitude.track('...')` string literal inline in a component.
+- Every event carries `lang` so ES/EN performance stays comparable, and a `location` (or entity id such as `projectSlug`) so the same event fired from different surfaces can be told apart.
+- **Event names are permanent.** Renaming one in code splits its history into two series in Amplitude and silently breaks any saved chart or funnel. If a name is genuinely wrong, rename it in the Amplitude UI, not in code.
+- Removing a tracked CTA means removing its row from this table too, so the catalogue never drifts from the code.
+- Use Title Case for event names and camelCase for property names, matching the table above.
+
+To verify events locally: temporarily add `logLevel: amplitude.Types.LogLevel.Debug` to the `analytics` config in `src/amplitude.ts`, run `npm run dev`, trigger the interaction, and look for `"name": "track"` in the browser console — it logs the event name, properties, and the exact call site. Revert the `logLevel` line before committing.
 
 ---
 

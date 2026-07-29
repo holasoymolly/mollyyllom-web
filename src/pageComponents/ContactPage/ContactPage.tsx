@@ -12,6 +12,7 @@ import { RiBehanceFill } from "@/icons/RiBehanceFill";
 import { RiInstagramLine } from "@/icons/RiInstagramLine";
 import { XIcon } from "@/icons/XIcon";
 import { useLanguage } from "@/context/LanguageContext";
+import { trackBookingCTAClicked, trackEmailCTAClicked } from "@/lib/analytics";
 
 const socials = [
   { href: "https://www.instagram.com/holasoymolly", label: "Instagram", Icon: RiInstagramLine },
@@ -23,7 +24,7 @@ const socials = [
 ];
 
 export const ContactPage: FC = () => {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
 
   return (
     <div>
@@ -66,6 +67,7 @@ export const ContactPage: FC = () => {
             </span>
             <a
               href="mailto:hola@mollyyllom.com"
+              onClick={() => trackEmailCTAClicked('contacto', lang)}
               className="text-3xl md:text-4xl lg:text-5xl font-black text-indigo-950 hover:text-violet-500 transition-colors duration-300 leading-none"
             >
               hola@mollyyllom.com
@@ -91,6 +93,7 @@ export const ContactPage: FC = () => {
                 href="https://calendly.com/hola-msny/30min"
                 target="_blank"
                 rel="noreferrer noopener"
+                onClick={() => trackBookingCTAClicked('contacto', lang)}
                 className="shrink-0 bg-indigo-950 text-stone-200 font-bold px-8 py-4 rounded-full transition-colors duration-300 hover:bg-violet-500 whitespace-nowrap"
               >
                 {t.contact.callButton}
