@@ -13,6 +13,8 @@ npm run image-manifest  # Regen src/lib/image-dimensions.json (needed when new a
 
 No test suite is configured.
 
+> ⚠️ **`ffprobe` must be on PATH before running `npm run build`.** The `prebuild` hook regenerates `src/lib/image-dimensions.json`, and without `ffprobe` it **silently drops every `.mp4` / `.webm` / `.mov` entry** instead of failing. The build still succeeds, so it is easy to commit the stripped manifest by accident and lose the CLS-free sizing on every video. After any build, check `git diff src/lib/image-dimensions.json`; if video entries disappeared, `git checkout --` that file and install ffmpeg before rebuilding.
+
 ---
 
 ## Branch flow
