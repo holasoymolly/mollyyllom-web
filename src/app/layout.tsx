@@ -28,6 +28,11 @@ export const metadata: Metadata = {
   },
 };
 
+// Production only, same rule as Amplitude: NEXT_PUBLIC_GA_ID is set on the
+// Vercel Production environment only, so dev and beta traffic never reaches
+// the live GA property. No id means the tag is never rendered at all.
+const gaId = process.env.NEXT_PUBLIC_GA_ID;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
@@ -40,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <LanguageProvider>{children}</LanguageProvider>
         <SpeedInsights />
         <Analytics />
-        <GoogleAnalytics gaId="G-Q3TSX67D2J" />
+        {gaId && <GoogleAnalytics gaId={gaId} />}
       </body>
     </html>
   );

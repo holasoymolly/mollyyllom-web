@@ -79,12 +79,22 @@ For programmatic navigation from buttons (e.g. the CV toggles in `CVVersionToggl
 External links (Calendly, social) stay as plain `<a target="_blank">`.
 
 ### Analytics
-`src/app/layout.tsx` includes Google Analytics (`G-Q3TSX67D2J`) via `<GoogleAnalytics>` from `@next/third-parties/google`, plus Vercel Analytics and Vercel Speed Insights.
+
+**RULE — analytics only ever run in production.** Every third-party tracker is keyed off an env var that exists on the Vercel **Production** environment *only*, never on Preview, Development, or local `.env.local`. The absence of the id is the switch, so dev and beta traffic can't pollute the live data. When adding any new tracker, follow the same pattern: read its id from a `NEXT_PUBLIC_*` env var, render/init nothing when it's missing, and set the var on Production only.
+
+| Tracker | Env var | Guard |
+|---|---|---|
+| Google Analytics | `NEXT_PUBLIC_GA_ID` (`G-Q3TSX67D2J`) | `{gaId && <GoogleAnalytics gaId={gaId} />}` in `src/app/layout.tsx` |
+| Amplitude | `NEXT_PUBLIC_AMPLITUDE_API_KEY` | `initAll` skipped in `src/amplitude.ts`; `track()` no-ops via `isAmplitudeEnabled` |
+
+Google Analytics uses `<GoogleAnalytics>` from `@next/third-parties/google` — the official Next.js integration. The GA property has a single web stream (`mollyyllom.com`, stream id 8220526592) with Enhanced Measurement on, so page views, scrolls and outbound clicks are captured without extra code.
+
+Vercel Analytics (`<Analytics />`) and Vercel Speed Insights (`<SpeedInsights />`) are **not** gated — they are Vercel-native, report into Vercel's own dashboard rather than GA/Amplitude, and distinguish production from preview there.
 
 **Amplitude** (Analytics + Session Replay) follows [Amplitude's official Next.js installation guide](https://amplitude.com/docs/sdks/frameworks/nextjs-installation-guide) — do not hand-roll an alternative setup:
 - `src/amplitude.ts` is the single initialization module (`'use client'`, `@amplitude/unified`, `initAll` guarded by `typeof window !== 'undefined'` so it only ever runs client-side and only once). It exports a no-op `<Amplitude />` component and the `amplitude` instance as default.
 - `<Amplitude />` is rendered in the root layout; the API key comes from `NEXT_PUBLIC_AMPLITUDE_API_KEY`.
-- **Production only.** `NEXT_PUBLIC_AMPLITUDE_API_KEY` is set on the Vercel **Production** environment *only* — deliberately absent from Preview, Development, and local `.env.local`, so dev and beta traffic never pollutes the live analytics. The absence of the key is the switch: `src/amplitude.ts` skips `initAll` when it's missing, and `track()` in `src/lib/analytics.ts` becomes a no-op via the exported `isAmplitudeEnabled` flag (so calls don't pile up in the SDK's pre-init queue). Never add the key to another environment to "test in preview" — verify locally instead, per the debugging recipe below.
+- **Production only**, per the rule above. `src/amplitude.ts` skips `initAll` when the key is missing, and `track()` in `src/lib/analytics.ts` becomes a no-op via the exported `isAmplitudeEnabled` flag (so calls don't pile up in the SDK's pre-init queue). Never add the key to another environment to "test in preview" — verify locally instead, per the debugging recipe below.
 - `autocapture: true` covers page views, clicks, form interactions and file downloads, so most tracking needs no code.
 - Session Replay runs at `sampleRate: 1`.
 
