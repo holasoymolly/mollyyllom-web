@@ -86,6 +86,9 @@ External links (Calendly, social) stay as plain `<a target="_blank">`.
 |---|---|---|
 | Google Analytics | `NEXT_PUBLIC_GA_ID` (`G-Q3TSX67D2J`) | `{gaId && <GoogleAnalytics gaId={gaId} />}` in `src/app/layout.tsx` |
 | Amplitude | `NEXT_PUBLIC_AMPLITUDE_API_KEY` | `initAll` skipped in `src/amplitude.ts`; `track()` no-ops via `isAmplitudeEnabled` |
+| Apollo website visitor tracker | `NEXT_PUBLIC_APOLLO_APP_ID` | `{apolloAppId && <Script … />}` in `src/app/layout.tsx` |
+
+**Apollo** identifies which *companies* visit the site (B2B visitor de-anonymization), feeding outreach — it is not event analytics. The snippet is embedded with `<Script>` from `next/script` (the standard Next.js mechanism for third-party scripts) using `strategy="beforeInteractive"`, because Apollo requires it to load in the head as early as possible on every page; `next/script` dedupes by `id` so it runs exactly once per page load. Get the snippet from Apollo's MCP `apollo_website_visitor_domain_tracker_install_script` tool rather than hand-assembling it. Note that the script alone does nothing until the domain is registered in Apollo's tracker settings.
 
 Google Analytics uses `<GoogleAnalytics>` from `@next/third-parties/google` — the official Next.js integration. The GA property has a single web stream (`mollyyllom.com`, stream id 8220526592) with Enhanced Measurement on, so page views, scrolls and outbound clicks are captured without extra code.
 
