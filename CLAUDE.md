@@ -81,6 +81,12 @@ External links (Calendly, social) stay as plain `<a target="_blank">`.
 ### Analytics
 `src/app/layout.tsx` includes Google Analytics (`G-Q3TSX67D2J`) via `<GoogleAnalytics>` from `@next/third-parties/google`, plus Vercel Analytics and Vercel Speed Insights.
 
+**Amplitude** (Analytics + Session Replay) follows [Amplitude's official Next.js installation guide](https://amplitude.com/docs/sdks/frameworks/nextjs-installation-guide) — do not hand-roll an alternative setup:
+- `src/amplitude.ts` is the single initialization module (`'use client'`, `@amplitude/unified`, `initAll` guarded by `typeof window !== 'undefined'` so it only ever runs client-side and only once). It exports a no-op `<Amplitude />` component and the `amplitude` instance as default.
+- `<Amplitude />` is rendered in the root layout; the API key comes from `NEXT_PUBLIC_AMPLITUDE_API_KEY` (set in `.env.local` locally and in Vercel env vars per environment).
+- `autocapture: true` covers page views, clicks, form interactions and file downloads, so most tracking needs no code. For business-specific events, `import amplitude from '@/amplitude'` in a client component and call `amplitude.track('Event Name', { ... })`.
+- Session Replay runs at `sampleRate: 1`.
+
 ---
 
 ## Design System

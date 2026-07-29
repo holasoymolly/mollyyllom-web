@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { Amplitude } from "@/amplitude";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="max-image-preview:large" />
       </head>
+      <Amplitude />
       <body className="antialiased" suppressHydrationWarning>
         <LanguageProvider>{children}</LanguageProvider>
         <SpeedInsights />
