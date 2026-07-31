@@ -8,6 +8,14 @@ export interface Project {
   slug: string;
 }
 
+/**
+ * Number of projects shown in the home page grid. The home grid is always this
+ * many tiles: new projects enter at the top of `activeProjects` and push the
+ * oldest ones off the bottom. `/proyectos` shows the full list, so nothing is
+ * ever lost, it just stops appearing on the home page.
+ */
+export const HOME_GRID_LIMIT = 15;
+
 const burnClaimProject: Project = {
   slug: "burn-claim",
   title: "Burn & Claim",

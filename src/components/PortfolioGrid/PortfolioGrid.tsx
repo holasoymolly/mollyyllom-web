@@ -5,8 +5,16 @@ import { TransitionLink } from "@/components/TransitionLink";
 import { ProtectedImage } from "@/components/ProtectedImage";
 import { useLanguage } from "@/context/LanguageContext";
 
-export const PortfolioGrid = ({ showHeader = true }: { showHeader?: boolean }) => {
+export const PortfolioGrid = ({
+  showHeader = true,
+  limit,
+}: {
+  showHeader?: boolean;
+  /** Cap the grid at the N newest projects. Omit to show every project. */
+  limit?: number;
+}) => {
   const { t } = useLanguage();
+  const items = limit ? activeProjects.slice(0, limit) : activeProjects;
 
   return (
     <section className="bg-stone-200">
@@ -33,7 +41,7 @@ export const PortfolioGrid = ({ showHeader = true }: { showHeader?: boolean }) =
 
       {/* Grid */}
       <div className="grid grid-cols-2 md:grid-cols-3">
-        {activeProjects.map((item, index) => {
+        {items.map((item, index) => {
           const inner = (
             <>
               <div className="relative overflow-hidden aspect-square">

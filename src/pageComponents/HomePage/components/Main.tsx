@@ -4,6 +4,7 @@ import { MediaSection } from './MediaSection';
 import { Services } from './Services';
 import { PortfolioGrid } from '../../../components/PortfolioGrid/PortfolioGrid';
 import { QuoteBanner } from '../../../components/QuoteBanner';
+import { HOME_GRID_LIMIT } from '../../../projects';
 
 export const Main = () => {
   return (
@@ -11,7 +12,7 @@ export const Main = () => {
       <Banner />
       <Marquee />
       <MediaSection />
-      <PortfolioGrid />
+      <PortfolioGrid limit={HOME_GRID_LIMIT} />
       <Services />
       <QuoteBanner />
     </main>
