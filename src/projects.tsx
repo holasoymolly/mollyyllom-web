@@ -8,6 +8,40 @@ export interface Project {
   slug: string;
 }
 
+const burnClaimProject: Project = {
+  slug: "burn-claim",
+  title: "Burn & Claim",
+  portfolioImage: "/img/projects/burn-claim/16.mp4",
+  heroImage: "/img/projects/burn-claim/1.webp",
+  paragraphs: [
+    "Burn & Claim es una app de Solana que convierte la basura de tu wallet en SOL de vuelta. Tokens muertos, NFTs olvidados y cuentas vacías que llevan años ocupando espacio se queman en un solo flujo, y el rent regresa a tu bolsillo.",
+    "La marca parte de una llama con forma de gota, un guiño directo a quemar y a recuperar valor al mismo tiempo. De ahí salió un personaje con lentes de sol que le baja la solemnidad a algo que en el fondo es una operación irreversible en cadena. Rojo intenso sobre morado profundo, tipografía condensada y muy gruesa, y un sistema que se sostiene igual en el isotipo suelto, en el logo completo y en blanco y negro.",
+    "El rediseño de la app llevó ese tono al producto: un onboarding que explica el riesgo sin asustar, una vista de wallet que ordena qué se puede reclamar y cuánto vale, y un flujo donde parte de lo recuperado va a los proyectos que construyen en Solana. Cada pantalla está pensada para que quemar se sienta claro, controlado y hasta divertido.",
+  ],
+  paragraphsEn: [
+    "Burn & Claim is a Solana app that turns the junk in your wallet back into SOL. Dead tokens, forgotten NFTs and empty accounts that have been sitting there for years get burned in a single flow, and the rent goes back into your pocket.",
+    "The brand starts from a flame shaped like a drop, a direct nod to burning and reclaiming value at the same time. That grew into a character in sunglasses that takes the solemnity out of what is, underneath, an irreversible on chain operation. Bold red over deep purple, heavy condensed type, and a system that holds up equally well as a lone symbol, as the full lockup, and in black and white.",
+    "The app redesign carried that tone into the product: onboarding that explains the risk without scaring anyone, a wallet view that sorts what can be reclaimed and what it is worth, and a flow where part of what you recover goes to the projects building on Solana. Every screen is built so that burning feels clear, controlled and even fun.",
+  ],
+  images: [
+    "/img/projects/burn-claim/2.webp",
+    "/img/projects/burn-claim/3.webp",
+    "/img/projects/burn-claim/4.webp",
+    "/img/projects/burn-claim/5.webp",
+    "/img/projects/burn-claim/6.webp",
+    "/img/projects/burn-claim/7.webp",
+    "/img/projects/burn-claim/8.webp",
+    "/img/projects/burn-claim/9.webp",
+    "/img/projects/burn-claim/10.webp",
+    "/img/projects/burn-claim/11.webp",
+    "/img/projects/burn-claim/12.webp",
+    "/img/projects/burn-claim/13.webp",
+    "/img/projects/burn-claim/14.webp",
+    "/img/projects/burn-claim/15.webp",
+    "/img/projects/burn-claim/16.mp4",
+  ],
+};
+
 const aerosolProject: Project = {
   slug: "aerosol",
   title: "Aerosol",
@@ -471,6 +505,7 @@ const advanced: Project = {
 
 /** Newest first. New projects go at the top. */
 export const activeProjects = [
+  burnClaimProject,
   aerosolProject,
   neustackProject,
   allianceProject,
