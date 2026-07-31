@@ -49,9 +49,9 @@ Non-trivial changes ship as a sequence of small commits (one per logical phase),
 
 | Route | Page Component | Notes |
 |-------|---------------|-------|
-| `/` | `HomePage` | |
+| `/` | `HomePage` | Grid via `PortfolioGrid`, capped at `HOME_GRID_LIMIT` (15) |
 | `/conoceme` | `ConocemePage` | |
-| `/proyectos` | `ProjectsPage` | Grid via `PortfolioGrid` |
+| `/proyectos` | `ProjectsPage` | Grid via `PortfolioGrid`, uncapped |
 | `/proyectos/[slug]` | `ProjectPage` | Data from `projectsBySlug` |
 | `/contacto` | `ContactPage` | |
 | `/descargas` | `DownloadsPage` | |
@@ -209,6 +209,15 @@ GIFs are auto-passed `unoptimized` so animation is preserved.
 
 **When to convert a GIF to MP4:** any animated thumbnail or in-body GIF over ~500 KB should be converted (`ffmpeg -i in.gif -movflags +faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -c:v libx264 -crf 23 -preset slower -an out.mp4`; bump `-crf` to 28 with `-preset veryslow` if the result isn't meaningfully smaller). The GIF is deleted, `projects.tsx` is repointed at the `.mp4`, and the manifest is regenerated. Smaller GIFs stay as GIFs.
 
+**Incoming MP4s get re-encoded too.** Source videos handed over for a project are usually export-quality (multiple MB at 3+ Mbps) and go straight into a grid thumbnail, so they get the same treatment: `-movflags +faststart -pix_fmt yuv420p -c:v libx264 -preset veryslow -an`, no audio track since playback is always muted.
+
+Pick `-crf` by **content**, not by file size, and verify before replacing the original:
+
+- **Flat vector art / motion graphics** → `-crf 23` or higher. Large areas of solid color compress hard with no visible loss.
+- **Screen recordings of a UI** → `-crf 20`. Small text is the first thing to go, and it turns to mush well before the artifacts are obvious in a moving preview. Burn & Claim's `16.mp4` went 3.4 MB → 616 KB at crf 20 with no visible loss; the same clip at crf 28 was 356 KB but blurred the body copy in the UI cards.
+
+To verify, extract the same frame from both and compare a 1:1 crop of the smallest text, not the scaled-down whole frame: `ffmpeg -ss 4 -i in.mp4 -frames:v 1 -vf "crop=900:200:300:620" out.png`. Scrubbing the video or eyeballing the full frame will not reveal the degradation. Back the original up outside the repo before overwriting.
+
 **Quality convention:** `quality={90}` is opted into per call site for every visible content image (hero/body images on `/proyectos/[slug]`, both Molly portraits, PortfolioGrid thumbs, Downloads thumbs, both CV profile photos). Decorative/UI images use the default 75. `next.config.ts` allows both via `qualities: [75, 90]`; only those two values are valid.
 
 ```tsx
@@ -321,12 +330,26 @@ Each page component receives `lang: 'en' | 'es'` prop. A `copy` object inside th
 
 ## Adding a New Project
 
-1. Place images (and any animated MP4 thumbnails) in `public/img/projects/[slug]/`.
+1. Place images (and any animated MP4 thumbnails) in `public/img/projects/[slug]/`. **Folder names are kebab-case ASCII only.** No `&`, spaces, or accents: those characters survive the filesystem but break in URL paths and in the `next/image` query string, and they make the manifest keys awkward to grep. `Burn & Claim` lives in `public/img/projects/burn-claim/`.
 2. Define a `Project` object in `src/projects.tsx` with `slug`, `title`, `portfolioImage`, `heroImage`, `paragraphs`, `paragraphsEn`, `images`.
    - `portfolioImage` is shown in the PortfolioGrid (square thumb, fill mode, animated MP4 or static image both work).
    - `heroImage` is shown full-bleed at `h-[50vh] md:h-[70vh]` with `object-cover` — pick a high-resolution mockup (≥3840px wide ideal, ≥2400px minimum). Thin "logo usage sheet" images (~625px tall) will pixelate as heroes; use a real product mockup instead.
    - `heroImage` should not also appear in `images[]` (would render the same asset twice on the page).
-3. Add it to `activeProjects` (order = grid position).
+   - **Mind the hero crop.** The hero is cropped to roughly 1.6:1 by `object-cover`, so a very wide image (3:1 key art) loses about half its width and a square one loses its top and bottom. Anything with text near the edges gets guillotined. A near-full-bleed image with a single centered subject crops gracefully at any viewport; prefer that over the "best" image when the best one has typography in it.
+3. Add it to the **top** of `activeProjects` — see ordering below.
 4. The `prebuild` hook will pick up the new media on the next `npm run build`. To get the image-dimensions manifest updated immediately (e.g. for `npm run dev`), run `npm run image-manifest`.
 
 `/proyectos/[slug]` uses `generateStaticParams`, so the new project will get its own pre-rendered HTML page automatically. Sitemap entries are also generated automatically from `activeProjects`.
+
+### Ordering and the 15-project home grid
+
+`activeProjects` is ordered **newest first**. New work goes at index 0, and that single edit drives every surface: both grids, the `NN / NN` counter, the prev/next footer links, and the sitemap.
+
+The two grids differ only in length, and both render from the same `<PortfolioGrid>`:
+
+| Surface | Renders | Behavior |
+|---|---|---|
+| `/` (home) | `<PortfolioGrid limit={HOME_GRID_LIMIT} />` | Always exactly 15 tiles. A new project enters at the top and the oldest one drops off the bottom. |
+| `/proyectos` | `<PortfolioGrid showHeader={false} />` | No limit. Grows forever, nothing is ever displaced. |
+
+`HOME_GRID_LIMIT` is exported from `src/projects.tsx`. A project that scrolls off the home grid is **not** removed: it keeps its `/proyectos` tile, its case study page, and its sitemap entry. Nothing needs deleting when the list grows, so never trim `activeProjects` to keep the home page at 15.
