@@ -8,6 +8,37 @@ export interface Project {
   slug: string;
 }
 
+const aerosolProject: Project = {
+  slug: "aerosol",
+  title: "Aerosol",
+  portfolioImage: "/img/projects/aerosol/14.webp",
+  heroImage: "/img/projects/aerosol/1.webp",
+  paragraphs: [
+    "Aerosol es un estudio de producto construido sobre Solana. La identidad nace de una idea muy simple: dejar tu marca. De ahí sale la gota de pintura que reemplaza la O del logotipo y que terminó convirtiéndose en el personaje central de todo el sistema.",
+    "El sistema visual combina un morado profundo con coral y una paleta amplia de colores saturados, pensada para vivir en pantalla: redes, interfaces de producto, avatares y piezas de comunidad. La gota funciona sola como isotipo y también como personaje que habita escenas ilustradas, de día y de noche, en la ciudad y en la montaña.",
+    "Es un branding digital-first, hecho para una comunidad que se mueve rápido. Cada elemento está pensado para ser reconocible en un feed, escalable a cualquier formato y lo suficientemente flexible para que el equipo siga construyendo sobre él.",
+  ],
+  paragraphsEn: [
+    "Aerosol is a product studio built on Solana. The identity comes from a very simple idea: leaving your mark. That is where the paint drip replacing the O in the wordmark comes from, and it ended up becoming the central character of the whole system.",
+    "The visual system pairs a deep purple with coral and a wide palette of saturated colors, built to live on screen: social, product interfaces, avatars and community pieces. The drip works on its own as a symbol and also as a character living inside illustrated scenes, by day and by night, in the city and in the mountains.",
+    "It is a digital-first brand, made for a community that moves fast. Every element is designed to be recognizable in a feed, scalable to any format and flexible enough for the team to keep building on top of it.",
+  ],
+  images: [
+    "/img/projects/aerosol/2.webp",
+    "/img/projects/aerosol/3.webp",
+    "/img/projects/aerosol/4.webp",
+    "/img/projects/aerosol/5.webp",
+    "/img/projects/aerosol/6.webp",
+    "/img/projects/aerosol/7.webp",
+    "/img/projects/aerosol/8.webp",
+    "/img/projects/aerosol/9.webp",
+    "/img/projects/aerosol/10.webp",
+    "/img/projects/aerosol/11.webp",
+    "/img/projects/aerosol/12.webp",
+    "/img/projects/aerosol/13.webp",
+  ],
+};
+
 const allianceProject: Project = {
   slug: "alliance",
   title: "Alliance",
@@ -438,7 +469,9 @@ const advanced: Project = {
   ],
 };
 
+/** Newest first. New projects go at the top. */
 export const activeProjects = [
+  aerosolProject,
   neustackProject,
   allianceProject,
   materDesignProject,
