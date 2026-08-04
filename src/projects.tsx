@@ -33,13 +33,13 @@ const burnClaimProject: Project = {
   ],
   images: [
     "/img/projects/burn-claim/2.webp",
-    "/img/projects/burn-claim/3.webp",
+    "/img/projects/burn-claim/3.mp4",
     "/img/projects/burn-claim/4.webp",
     "/img/projects/burn-claim/5.webp",
     "/img/projects/burn-claim/6.webp",
     "/img/projects/burn-claim/7.webp",
     "/img/projects/burn-claim/8.webp",
-    "/img/projects/burn-claim/9.webp",
+    "/img/projects/burn-claim/9.mp4",
     "/img/projects/burn-claim/10.webp",
     "/img/projects/burn-claim/11.webp",
     "/img/projects/burn-claim/12.webp",
@@ -53,7 +53,7 @@ const burnClaimProject: Project = {
 const aerosolProject: Project = {
   slug: "aerosol",
   title: "Aerosol",
-  portfolioImage: "/img/projects/aerosol/14.webp",
+  portfolioImage: "/img/projects/aerosol/14.mp4",
   heroImage: "/img/projects/aerosol/1.webp",
   paragraphs: [
     "Aerosol es un estudio de producto construido sobre Solana. La identidad nace de una idea muy simple: dejar tu marca. De ahí sale la gota de pintura que reemplaza la O del logotipo y que terminó convirtiéndose en el personaje central de todo el sistema.",
@@ -67,17 +67,17 @@ const aerosolProject: Project = {
   ],
   images: [
     "/img/projects/aerosol/2.webp",
-    "/img/projects/aerosol/3.webp",
+    "/img/projects/aerosol/3.mp4",
     "/img/projects/aerosol/4.webp",
     "/img/projects/aerosol/5.webp",
     "/img/projects/aerosol/6.webp",
     "/img/projects/aerosol/7.webp",
-    "/img/projects/aerosol/8.webp",
+    "/img/projects/aerosol/8.mp4",
     "/img/projects/aerosol/9.webp",
     "/img/projects/aerosol/10.webp",
     "/img/projects/aerosol/11.webp",
-    "/img/projects/aerosol/12.webp",
-    "/img/projects/aerosol/13.webp",
+    "/img/projects/aerosol/12.mp4",
+    "/img/projects/aerosol/13.mp4",
   ],
 };
 
