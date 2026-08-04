@@ -218,6 +218,23 @@ Pick `-crf` by **content**, not by file size, and verify before replacing the or
 
 To verify, extract the same frame from both and compare a 1:1 crop of the smallest text, not the scaled-down whole frame: `ffmpeg -ss 4 -i in.mp4 -frames:v 1 -vf "crop=900:200:300:620" out.png`. Scrubbing the video or eyeballing the full frame will not reveal the degradation. Back the original up outside the repo before overwriting.
 
+### Optimizing a delivered asset folder (ALWAYS do this on intake)
+
+Handed-over folders arrive at export quality. Ciudad Fiel shipped at 27 MB, Aerosol at 5.9 MB and Burn & Claim at 8.1 MB; all three came down to under 3 MB with no visible loss. Do this **before** the first commit of a project, not as a later cleanup.
+
+**Static images** → downscale to a **3840px long edge** and re-encode **webp at quality 82**. Sources arrive at 7000-11500px, which is pure waste: `deviceSizes` in `next.config.ts` tops out at 5120, and 3840 is already past what any real viewport requests. Use `sharp` (already in `node_modules` as a Next.js dependency, so no install) with `{ quality: 82, effort: 6, smartSubsample: true }`. Keep the re-encode only when it actually wins; flat vector art occasionally comes out *larger*, so compare against the original and skip those. Verify on the highest-entropy asset in the folder, typically a photographic mockup with fine grain, by comparing a 1:1 crop against the source. Quality 82 was indistinguishable on a leather-emboss photo.
+
+**Animated assets** → h264, same crf rules as above.
+
+Two traps, both of which silently destroy work:
+
+- **Some delivered `.webp` files are animated, and nothing warns you.** Seven of them were in Aerosol and Burn & Claim. `sharp` flattens them to frame 1 unless opened with `{ animated: true }`, so a batch re-encode will quietly turn a 90-frame loop into a still. Always check `metadata().pages > 1` first and branch. Note this is not only a size problem: Next.js detects animated sources and serves them **unoptimized**, so the raw file goes over the wire at full weight, up to 4.8 MB for one in-body frame. Converting them to MP4 is the fix, and it is worth doing well below the ~500 KB GIF threshold.
+- **`ffmpeg` cannot decode animated webp at all** (`ffprobe` reports "image data not found", which reads like a corrupt file). Extract the frames with `sharp` first, which decodes an animated webp into one tall strip of `pages` frames to slice with `.extract()`, write them as numbered PNGs, then feed `ffmpeg` an image sequence at `1000 / avg(metadata().delay)` fps.
+
+After converting, delete the source file, repoint `projects.tsx`, regenerate the manifest, and confirm the first frame of each new MP4 has real content, since it doubles as the poster.
+
+**Videos never play in the Claude-in-Chrome tab.** `readyState` stays 0 with no error, on localhost *and* on the live production site, for files known to work in real browsers. Do not debug this; confirm the encode with `ffmpeg` instead and ask Molly to eyeball the beta deploy.
+
 **Quality convention:** `quality={90}` is opted into per call site for every visible content image (hero/body images on `/proyectos/[slug]`, both Molly portraits, PortfolioGrid thumbs, Downloads thumbs, both CV profile photos). Decorative/UI images use the default 75. `next.config.ts` allows both via `qualities: [75, 90]`; only those two values are valid.
 
 ```tsx
@@ -331,13 +348,14 @@ Each page component receives `lang: 'en' | 'es'` prop. A `copy` object inside th
 ## Adding a New Project
 
 1. Place images (and any animated MP4 thumbnails) in `public/img/projects/[slug]/`. **Folder names are kebab-case ASCII only.** No `&`, spaces, or accents: those characters survive the filesystem but break in URL paths and in the `next/image` query string, and they make the manifest keys awkward to grep. `Burn & Claim` lives in `public/img/projects/burn-claim/`.
-2. Define a `Project` object in `src/projects.tsx` with `slug`, `title`, `portfolioImage`, `heroImage`, `paragraphs`, `paragraphsEn`, `images`.
+2. **Optimize the folder before anything else** — see "Optimizing a delivered asset folder" above. Assets arrive at export quality and routinely shrink by 90%. Doing it now avoids committing the heavy versions into git history, where they stay forever.
+3. Define a `Project` object in `src/projects.tsx` with `slug`, `title`, `portfolioImage`, `heroImage`, `paragraphs`, `paragraphsEn`, `images`.
    - `portfolioImage` is shown in the PortfolioGrid (square thumb, fill mode, animated MP4 or static image both work).
    - `heroImage` is shown full-bleed at `h-[50vh] md:h-[70vh]` with `object-cover` — pick a high-resolution mockup (≥3840px wide ideal, ≥2400px minimum). Thin "logo usage sheet" images (~625px tall) will pixelate as heroes; use a real product mockup instead.
    - `heroImage` should not also appear in `images[]` (would render the same asset twice on the page).
    - **Mind the hero crop.** The hero is cropped to roughly 1.6:1 by `object-cover`, so a very wide image (3:1 key art) loses about half its width and a square one loses its top and bottom. Anything with text near the edges gets guillotined. A near-full-bleed image with a single centered subject crops gracefully at any viewport; prefer that over the "best" image when the best one has typography in it.
-3. Add it to the **top** of `activeProjects` — see ordering below.
-4. The `prebuild` hook will pick up the new media on the next `npm run build`. To get the image-dimensions manifest updated immediately (e.g. for `npm run dev`), run `npm run image-manifest`.
+4. Add it to the **top** of `activeProjects` — see ordering below.
+5. The `prebuild` hook will pick up the new media on the next `npm run build`. To get the image-dimensions manifest updated immediately (e.g. for `npm run dev`), run `npm run image-manifest`.
 
 `/proyectos/[slug]` uses `generateStaticParams`, so the new project will get its own pre-rendered HTML page automatically. Sitemap entries are also generated automatically from `activeProjects`.
 
