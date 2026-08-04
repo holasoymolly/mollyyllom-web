@@ -16,6 +16,37 @@ export interface Project {
  */
 export const HOME_GRID_LIMIT = 15;
 
+const ciudadFielProject: Project = {
+  slug: "ciudad-fiel",
+  title: "Ciudad Fiel",
+  portfolioImage: "/img/projects/ciudad-fiel/9.mp4",
+  heroImage: "/img/projects/ciudad-fiel/2.webp",
+  paragraphs: [
+    "Ciudad Fiel es una iniciativa musical con dos caras: sello discográfico y escuela para productores que están empezando. La identidad tenía que funcionar igual firmando un lanzamiento que colgada en la pared de un salón de clase.",
+    "El isotipo es un solo gesto haciendo tres trabajos a la vez. De cerca es una C y una F encajadas, y de lejos es un tornamesa con el brazo apoyado sobre el disco. Un círculo lleno, un corte limpio, nada más. Esa economía es lo que le permite bordarse en una gorra, troquelarse en un pin o repujarse en cuero sin perder nada.",
+    "El sistema se apoya en verde menta y rojo cálido, dos colores que se pelean lo suficiente para leerse desde lejos y se llevan bien en piezas pequeñas. El logotipo separa CF en fino y MUSIC en negrita, para que la marca madre y la línea musical convivan en el mismo bloque. En la merch el isotipo se repite girado en distintas posiciones, como un disco que nunca deja de dar vueltas.",
+  ],
+  paragraphsEn: [
+    "Ciudad Fiel is a music initiative with two sides: a record label and a school for producers who are just starting out. The identity had to work equally well signing a release and hanging on a classroom wall.",
+    "The symbol is a single move doing three jobs at once. Up close it is a C and an F locked together, and from across the room it is a turntable with the arm resting on the record. One filled circle, one clean cut, nothing else. That economy is what lets it be embroidered on a cap, die cut into a pin or embossed into leather without losing anything.",
+    "The system runs on mint green and warm red, two colors that fight just enough to read from a distance and get along in small pieces. The wordmark splits CF in light and MUSIC in bold so the parent brand and the music line share one block. On merch the symbol repeats at different rotations, like a record that never stops spinning.",
+  ],
+  images: [
+    "/img/projects/ciudad-fiel/1.webp",
+    "/img/projects/ciudad-fiel/3.webp",
+    "/img/projects/ciudad-fiel/4.webp",
+    "/img/projects/ciudad-fiel/5.webp",
+    "/img/projects/ciudad-fiel/6.webp",
+    "/img/projects/ciudad-fiel/7.webp",
+    "/img/projects/ciudad-fiel/8.webp",
+    "/img/projects/ciudad-fiel/9.mp4",
+    "/img/projects/ciudad-fiel/10.webp",
+    "/img/projects/ciudad-fiel/11.webp",
+    "/img/projects/ciudad-fiel/12.webp",
+    "/img/projects/ciudad-fiel/13.webp",
+  ],
+};
+
 const burnClaimProject: Project = {
   slug: "burn-claim",
   title: "Burn & Claim",
@@ -513,6 +544,7 @@ const advanced: Project = {
 
 /** Newest first. New projects go at the top. */
 export const activeProjects = [
+  ciudadFielProject,
   burnClaimProject,
   aerosolProject,
   neustackProject,
