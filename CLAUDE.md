@@ -335,13 +335,20 @@ Each page component receives `lang: 'en' | 'es'` prop. A `copy` object inside th
 - Every section h2 uses the two-line violet accent pattern (no exceptions).
 - Kicker labels and badge text ("Current"/"Actual") must match the page language.
 - Hero photo uses `md:items-start` (not `md:items-center`) to avoid floating when text is taller than photo.
+- **The CV here is the same résumé as Molly's LinkedIn, Indeed, and the downloadable PDFs, so keep all of them consistent.** LinkedIn is the source of truth for titles, dates, and the years-of-experience figure. If you change a role, a date, or that number here, update the other surfaces too, and vice versa. Do not add project names, client counts, awards, or launch specifics that go stale, keep it general and verifiable.
+- **Aerosol is two roles (a promotion), not one:** Head of Design (2026 to Present) and Brand Consultant & Art Director (2024 to 2026). Molly has partnered with Aerosol since early 2024 and became Head of Design in Jan 2026. Never collapse these into "Head of Design since 2024", that overstates how long she has held the title. Mollyverse is a separate current role (Designer & Front-end Developer, 2026 to Present).
+- **The years-of-experience figure is "17+", and it lives in more than one place:** in each CV component's `copy` object (`heroBio` and `experienceH2b`) and in the SEO `metadata.description` of every `app/cv/**/page.tsx`. When the number, the headline role, or the summary changes, grep for it across the component copy and all four page-metadata files. The visible page and the meta description drifted apart once already (page said 17+, metadata still said 20+).
 
 ### Adding/editing CV content
-- Job experience: `src/cv/data/resumeData/web2/experience.tsx` (EN) and `experience.es.tsx` (ES)
+- Job experience (Brand CV): `src/cv/data/resumeData/web2/experience.tsx` (EN) and `experience.es.tsx` (ES)
+- Job experience (Web3 CV): `src/cv/data/resumeData/web3/experience.tsx` (EN) and `experience.es.tsx` (ES)
 - Selected projects: `contractWork.tsx` / `contractWork.es.tsx`
 - Skills: `src/cv/data/resumeData/common/skills.ts` (shared EN), `web3/skills.ts` (web3 reordered)
 - Education: `common/education.ts` (EN), `common/education.es.ts` (ES)
 - Social/contact: `web2/contact.tsx` and `web3/contact.tsx`
+- URLs used in links (Aerosol, Burn & Claim, Mollyverse, etc.): `src/cv/data/constants.ts`
+- Hero bio, kicker, section headings, and the years figure: the `copy` object at the top of `pageComponents/normie/NormieCV.tsx` and `pageComponents/web3/Web3CV.tsx`. The Web3 hero bio also names the current Aerosol title, keep it in step with the experience data.
+- Page title and SEO description: the `metadata` export in `app/cv/page.tsx`, `app/cv/es/page.tsx`, `app/cv/web3/page.tsx`, and `app/cv/es/web3/page.tsx`. These duplicate the headline role and years figure, so they must be updated alongside the component copy.
 
 ---
 
