@@ -17,7 +17,7 @@ const copy = {
   en: {
     kicker: 'Web3 & Solana Ecosystem',
     heroBio: (aerosol: React.ReactNode) => (
-      <>Brand Consultant &amp; Art Director in the{' '}{aerosol}{' '}ecosystem. Designing visual identities and digital experiences for crypto-native products on Solana.</>
+      <>Head of Design at{' '}{aerosol}, in the Solana ecosystem. Designing and building visual identities and digital experiences for crypto-native products, front-end included.</>
     ),
     experienceKicker: 'Web3 Experience',
     experienceH2a: 'Building in the',
@@ -40,7 +40,7 @@ const copy = {
   es: {
     kicker: 'Ecosistema Web3 & Solana',
     heroBio: (aerosol: React.ReactNode) => (
-      <>Brand Consultant &amp; Art Director en el ecosistema{' '}{aerosol}. Diseñando identidades visuales y experiencias digitales para productos crypto-native en Solana.</>
+      <>Head of Design en{' '}{aerosol}, en el ecosistema Solana. Diseñando y construyendo identidades visuales y experiencias digitales para productos crypto-native, frontend incluido.</>
     ),
     experienceKicker: 'Experiencia Web3',
     experienceH2a: 'Construyendo en el',

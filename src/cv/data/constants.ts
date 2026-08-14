@@ -5,4 +5,5 @@ export const URLS = {
   BURN_AND_CLAIM: 'https://www.burnandclaim.com',
   MOLLYYLLOM: 'https://mollyyllom.com',
   MARIA_LUNARES: 'https://marialunares.com',
+  MOLLYVERSE: 'https://mollyverse.art',
 } as const

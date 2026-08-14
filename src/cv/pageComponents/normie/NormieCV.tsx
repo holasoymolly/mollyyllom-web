@@ -15,10 +15,10 @@ type Lang = 'en' | 'es'
 const copy = {
   en: {
     kicker: 'Senior Brand & Product Designer',
-    heroBio: 'Brand and Product Designer with 20+ years building scalable visual systems across agencies, freelance work, and Web3 products. Front-end capable with React, Next.js, and Tailwind.',
+    heroBio: 'Brand and Product Designer with 17+ years building scalable visual systems across agencies, freelance work, and Web3 products. I design brands and products end to end, and ship the front-end in React, Next.js, and Tailwind.',
     experienceKicker: 'Professional Experience',
     experienceH2a: 'Building brands',
-    experienceH2b: 'for 20+ years',
+    experienceH2b: 'for 17+ years',
     current: 'Current',
     projectsKicker: 'Selected Projects',
     projectsH2a: 'Featured',
@@ -35,10 +35,10 @@ const copy = {
   },
   es: {
     kicker: 'Diseñadora Sénior de Marca y Producto',
-    heroBio: 'Diseñadora de Marca y Producto con más de 20 años construyendo sistemas visuales escalables en agencias, trabajo independiente y productos Web3. Capacidad frontend con React, Next.js y Tailwind.',
+    heroBio: 'Diseñadora de Marca y Producto con más de 17 años construyendo sistemas visuales escalables en agencias, trabajo independiente y productos Web3. Diseño marca y producto de punta a punta, y programo el frontend en React, Next.js y Tailwind.',
     experienceKicker: 'Experiencia Profesional',
     experienceH2a: 'Construyendo marcas',
-    experienceH2b: 'por más de 20 años',
+    experienceH2b: 'por más de 17 años',
     current: 'Actual',
     projectsKicker: 'Proyectos Seleccionados',
     projectsH2a: 'Trabajo',
