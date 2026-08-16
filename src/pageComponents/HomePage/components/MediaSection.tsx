@@ -11,7 +11,7 @@ export const MediaSection = () => {
   const readyLines = t.home.readyHeadline.split('\n');
 
   const stats = [
-    { value: '20+', label: t.home.stat1 },
+    { value: '17+', label: t.home.stat1 },
     { value: '300+', label: t.home.stat2 },
     { value: '∞', label: t.home.stat3 },
   ];

@@ -56,7 +56,7 @@ export const translations = {
     about: {
       label: 'El estudio',
       title: 'Conóceme',
-      bio: 'Con más de 20 años de experiencia en diseño gráfico y dirección de arte, mi pasión es crear historias visuales que conecten con las audiencias y dejen una impresión duradera. He liderado y colaborado con equipos talentosos, estrechamente con clientes y socios externos para garantizar la ejecución exitosa de estrategias creativas y campañas publicitarias. Mi enfoque es desarrollar soluciones creativas que impactan, con un ojo siempre puesto en los detalles que hacen la diferencia.',
+      bio: 'Con más de 17 años de experiencia en diseño gráfico y dirección de arte, mi pasión es crear historias visuales que conecten con las audiencias y dejen una impresión duradera. He liderado y colaborado con equipos talentosos, estrechamente con clientes y socios externos para garantizar la ejecución exitosa de estrategias creativas y campañas publicitarias. Mi enfoque es desarrollar soluciones creativas que impactan, con un ojo siempre puesto en los detalles que hacen la diferencia.',
       ctaLabel: 'Trabajemos juntxs',
       ctaHeadline: '¿Listx para llevar\ntu proyecto al',
       ctaHighlight: 'siguiente nivel?',
@@ -150,7 +150,7 @@ export const translations = {
     about: {
       label: 'The studio',
       title: 'About me',
-      bio: 'With more than 20 years of experience in graphic design and art direction, my passion is creating visual stories that connect with audiences and leave a lasting impression. I have led and collaborated with talented teams, working closely with clients and external partners to ensure the successful execution of creative strategies and advertising campaigns. My focus is on developing creative solutions that make an impact, with an eye always on the details that make the difference.',
+      bio: 'With more than 17 years of experience in graphic design and art direction, my passion is creating visual stories that connect with audiences and leave a lasting impression. I have led and collaborated with talented teams, working closely with clients and external partners to ensure the successful execution of creative strategies and advertising campaigns. My focus is on developing creative solutions that make an impact, with an eye always on the details that make the difference.',
       ctaLabel: "Let's work together",
       ctaHeadline: 'Ready to take\nyour project to',
       ctaHighlight: 'the next level?',
