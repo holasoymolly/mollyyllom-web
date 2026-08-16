@@ -337,7 +337,17 @@ Each page component receives `lang: 'en' | 'es'` prop. A `copy` object inside th
 - Hero photo uses `md:items-start` (not `md:items-center`) to avoid floating when text is taller than photo.
 - **The CV here is the same résumé as Molly's LinkedIn, Indeed, and the downloadable PDFs, so keep all of them consistent.** LinkedIn is the source of truth for titles, dates, and the years-of-experience figure. If you change a role, a date, or that number here, update the other surfaces too, and vice versa. Do not add project names, client counts, awards, or launch specifics that go stale, keep it general and verifiable.
 - **Aerosol is two roles (a promotion), not one:** Head of Design (2026 to Present) and Brand Consultant & Art Director (2024 to 2026). Molly has partnered with Aerosol since early 2024 and became Head of Design in Jan 2026. Never collapse these into "Head of Design since 2024", that overstates how long she has held the title. Mollyverse is a separate current role (Designer & Front-end Developer, 2026 to Present).
-- **The years-of-experience figure is "17+", and it lives in more than one place:** in each CV component's `copy` object (`heroBio` and `experienceH2b`) and in the SEO `metadata.description` of every `app/cv/**/page.tsx`. When the number, the headline role, or the summary changes, grep for it across the component copy and all four page-metadata files. The visible page and the meta description drifted apart once already (page said 17+, metadata still said 20+).
+- **The years-of-experience figure is "17+", and it is scattered across the CV *and the main site*.** It has drifted twice: once between a CV page and its own meta description, and once between the CV section (updated to 17+) and the whole rest of the site (left at 20+ for a full release, because that change only touched `src/cv/**` and `src/app/cv/**`). When the number, the headline role, or the summary changes, update every row below in the same commit and then `grep -rn "20+\|17+\|20 años\|17 años\|20 years\|17 years" src/` to confirm nothing is left behind:
+
+  | Where | What |
+  |---|---|
+  | `src/cv/pageComponents/{normie/NormieCV,web3/Web3CV}.tsx` | the `copy` object: `heroBio` and `experienceH2b`, EN and ES |
+  | `src/app/cv/page.tsx`, `cv/es`, `cv/web3`, `cv/es/web3` | `metadata.description` on all four |
+  | `src/i18n/translations.ts` | `about.bio`, EN and ES |
+  | `src/pageComponents/HomePage/components/MediaSection.tsx` | the `stats` array — the `stat1` value tile |
+  | `src/app/conoceme/page.tsx` | `metadata.description` *and* `openGraph.description` |
+
+  Two matches are **not** this figure and must stay at 20: the INDHAUCI paragraphs in `src/projects.tsx` say her parents founded the company more than 20 years ago. `contact.summary` in `cv/data/resumeData/web{2,3}/contact.tsx` derives the number from `calculateYearsOfExperience` (currently 18, since the earliest `start` is 2008) but is not rendered anywhere, so it does not need to agree. LinkedIn, not the arithmetic, is the source of truth for the visible figure.
 
 ### Adding/editing CV content
 - Job experience (Brand CV): `src/cv/data/resumeData/web2/experience.tsx` (EN) and `experience.es.tsx` (ES)
