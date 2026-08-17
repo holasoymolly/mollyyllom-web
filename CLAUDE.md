@@ -49,12 +49,12 @@ Non-trivial changes ship as a sequence of small commits (one per logical phase),
 
 | Route | Page Component | Notes |
 |-------|---------------|-------|
-| `/` | `HomePage` | Grid via `PortfolioGrid`, capped at `HOME_GRID_LIMIT` (15) |
-| `/conoceme` | `ConocemePage` | |
-| `/proyectos` | `ProjectsPage` | Grid via `PortfolioGrid`, uncapped |
-| `/proyectos/[slug]` | `ProjectPage` | Data from `projectsBySlug` |
-| `/contacto` | `ContactPage` | |
-| `/descargas` | `DownloadsPage` | |
+| `/` · `/en` | `HomePage` | Grid via `PortfolioGrid`, capped at `HOME_GRID_LIMIT` (15) |
+| `/conoceme` · `/en/conoceme` | `ConocemePage` | |
+| `/proyectos` · `/en/proyectos` | `ProjectsPage` | Grid via `PortfolioGrid`, uncapped |
+| `/proyectos/[slug]` · `/en/proyectos/[slug]` | `ProjectPage` | Data from `projectsBySlug` |
+| `/contacto` · `/en/contacto` | `ContactPage` | |
+| `/descargas` · `/en/descargas` | `DownloadsPage` | |
 | `/cv` | `NormieCV` | Brand CV, English |
 | `/cv/es` | `NormieCV` | Brand CV, Spanish |
 | `/cv/web3` | `Web3CV` | Web3 CV, English |
@@ -62,19 +62,44 @@ Non-trivial changes ship as a sequence of small commits (one per logical phase),
 
 The Mollyverse nav item is an **external** link (`https://www.mollyverse.art/welcome`) rendered as a small icon in Header / AppDrawer / Footer (`public/img/logo/mollyverse-icon.png`), not as text. The site previously had an internal `/nfts` page; it was removed.
 
+### Bilingual routing (`/` = ES, `/en` = EN)
+
+**The URL is the only source of truth for language.** `LanguageProvider` derives `lang` from `usePathname()`; there is no state and no `localStorage`. Metadata is resolved on the server, so a page can only advertise one language, and it must be the one the visitor actually sees. This also means a shared link keeps its language, which a stored preference could never do.
+
+The helpers all live in `src/i18n/routes.ts` and every route change goes through them:
+
+| Helper | Use |
+|---|---|
+| `langFromPathname(path)` | `'en'` if the path is `/en` or under it, else `'es'` |
+| `stripLocale(path)` | Drop the `/en` prefix. Used for active-nav comparison in `Header` / `AppDrawer`, whose `navLinks` hold unprefixed hrefs |
+| `withLocale(href, lang)` | **Only ever adds.** `TransitionLink` calls it so every internal link inherits the language of the page it sits on |
+| `localizePath(path, lang)` | Adds *or* strips. Only the language toggle needs this, so toggling holds the reader on the same page |
+
+Consequences to keep in mind:
+
+- **Adding a page means adding both routes.** A new `src/app/foo/page.tsx` needs an `src/app/en/foo/page.tsx` beside it, plus its root in `LOCALIZED_ROOTS` in `routes.ts`, or the `/en` nav will link to a 404.
+- `/cv/**` is deliberately **not** in `LOCALIZED_ROOTS`. The CVs carry their language in the URL already (`/cv` vs `/cv/es`) and have their own toggle, so prefixing them would point at routes that do not exist. Their back links name the target explicitly (`lang === "es" ? "/" : "/en"`), which `withLocale` leaves alone precisely because it never strips.
+- Route segments stay Spanish under `/en` (`/en/proyectos`, not `/en/projects`). The prefix is then a pure string operation, which is what keeps the helpers this small.
+
 ### SEO metadata
 
 Per-route metadata lives on the **server-component `page.tsx`** wrappers in `src/app/...` — not on the client `pageComponents/...` implementations:
 
-- Static routes export a `metadata: Metadata` constant (`/conoceme`, `/proyectos`, `/contacto`, `/descargas`).
-- `/proyectos/[slug]` uses `generateMetadata` to derive title + OG image from the project's `heroImage` and first paragraph, and `generateStaticParams` so each project pre-renders as static HTML at build time.
+- Static routes export a `metadata: Metadata` constant, in both languages (`/conoceme` and `/en/conoceme`, and so on).
+- Both `/proyectos/[slug]` and `/en/proyectos/[slug]` use `generateMetadata` to derive title + OG image from the project's `heroImage` and first paragraph (`paragraphs[0]` / `paragraphsEn[0]`), and `generateStaticParams` so each project pre-renders as static HTML at build time in both languages.
+- **Every route declares `alternates`**: its own `canonical` plus a `languages` map built by `languageAlternates()` in `src/i18n/metadata.ts`. Google only honours an alternate when both URLs point at each other, so the pair share an identical map and differ only in which one they call canonical. The four CV pages build theirs by hand, since they pair with each other rather than with an `/en` twin.
+- A route with **no** `alternates` inherits `canonical: "/"` from the root layout and reads to Google as a duplicate of the home page. Never leave a new route without one.
+- `metaDescription()` in `src/i18n/metadata.ts` trims a paragraph to a search snippet on a sentence or word boundary. Use it instead of `slice(0, 160)`, which left descriptions ending mid-phrase.
+- Descriptions and OG copy are written per language, not machine-translated from the other side.
 - Root-level metadata + OG image live in `src/app/layout.tsx`.
-- `src/app/sitemap.ts` and `src/app/robots.ts` produce `/sitemap.xml` and `/robots.txt` automatically — `sitemap.ts` enumerates static routes plus every entry in `activeProjects`.
+- `src/app/sitemap.ts` and `src/app/robots.ts` produce `/sitemap.xml` and `/robots.txt` automatically — `sitemap.ts` emits both languages of every static route and every entry in `activeProjects`, each carrying `alternates.languages`, plus the four CV routes.
 
 ### Navigation & page transitions
 The site uses the native **View Transitions API** for all internal navigation, enabled via `experimental: { viewTransition: true }` in `next.config.ts`. The crossfade keyframes (`cv-fade-out` / `cv-fade-in`, 350ms ease-in-out) live in `src/app/globals.css` and respect `prefers-reduced-motion`.
 
 **Always use `<TransitionLink>` from `@/components/TransitionLink` for internal links** — never plain `<a>` or `next/link` `<Link>`. `TransitionLink` wraps `next/link` and intercepts the click to call `React.startTransition(() => router.push(href))`, which Next.js hooks into the View Transitions API. It correctly delegates modifier-key clicks (cmd/ctrl/shift), `target="_blank"`, and `mailto:` / `tel:` / `http(s)://` URLs to the browser.
+
+`TransitionLink` also **localizes every internal href** through `withLocale()`, so components write plain Spanish paths (`/proyectos`) and get `/en/proyectos` automatically when the reader is in English. Write the unprefixed path; never hand-write `/en/...` unless you specifically mean to pin a link to English regardless of context, the way the CV back links do.
 
 For programmatic navigation from buttons (e.g. the CV toggles in `CVVersionToggle` / `CVLangToggle`), call `React.startTransition(() => router.push(href))` directly — same effect.
 
@@ -346,6 +371,7 @@ Each page component receives `lang: 'en' | 'es'` prop. A `copy` object inside th
   | `src/i18n/translations.ts` | `about.bio`, EN and ES |
   | `src/pageComponents/HomePage/components/MediaSection.tsx` | the `stats` array — the `stat1` value tile |
   | `src/app/conoceme/page.tsx` | `metadata.description` *and* `openGraph.description` |
+  | `src/app/en/conoceme/page.tsx` | the same two, in English. Easy to miss: it is a separate file from the Spanish one |
 
   Two matches are **not** this figure and must stay at 20: the INDHAUCI paragraphs in `src/projects.tsx` say her parents founded the company more than 20 years ago. `contact.summary` in `cv/data/resumeData/web{2,3}/contact.tsx` derives the number from `calculateYearsOfExperience` (currently 18, since the earliest `start` is 2008) but is not rendered anywhere, so it does not need to agree. LinkedIn, not the arithmetic, is the source of truth for the visible figure.
 
