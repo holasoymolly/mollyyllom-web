@@ -317,6 +317,7 @@ const materDesignProject: Project = {
   slug: "mater-design",
   title: "Mater Design",
   client: "Mater Design (Estados Unidos)",
+  year: "2023",
   role: "Identidad de marca",
   roleEn: "Brand identity",
   scope: [
@@ -378,6 +379,7 @@ const neuschoolProject: Project = {
   slug: "neuschool",
   title: "Neuschool",
   client: "Neuschool",
+  year: "2020",
   role: "Rediseño de logotipo",
   roleEn: "Logo redesign",
   scope: [
@@ -401,6 +403,12 @@ const neuschoolProject: Project = {
     "A redesigned logo that keeps the recognizable structure",
     "A distinctive detail that gives the brand a life of its own",
     "Applications for the platform",
+  ],
+  outcome: [
+    "La plataforma estuvo en producción y hoy el proyecto está en pausa.",
+  ],
+  outcomeEn: [
+    "The platform ran in production and the project is currently on hold.",
   ],
   credits: [
     "Rediseño de identidad: Molly Yllom",
@@ -438,6 +446,7 @@ const momProject: Project = {
   slug: "mom",
   title: "MOM (Marketing of Minds)",
   client: "Marketing of Minds (MoM)",
+  year: "2022",
   role: "Identidad visual",
   roleEn: "Visual identity",
   scope: [
@@ -463,6 +472,12 @@ const momProject: Project = {
     "A yellow box as the space where any idea fits",
     "A system that transforms into whatever shape is needed",
     "Brand applications",
+  ],
+  outcome: [
+    "La marca sigue en uso por la agencia.",
+  ],
+  outcomeEn: [
+    "The brand is still in use by the agency.",
   ],
   credits: [
     "Identidad visual: Molly Yllom",
@@ -505,6 +520,7 @@ const neustackProject: Project = {
   slug: "neustack",
   title: "Neustack",
   client: "Neustack",
+  year: "2022",
   role: "Rediseño de logotipo",
   roleEn: "Logo redesign",
   scope: [
@@ -526,6 +542,12 @@ const neustackProject: Project = {
     "The letter N resolved in one bold, decided stroke",
     "Blue for trust, gray for balance",
     "A mark built to scale from favicon to trade stand",
+  ],
+  outcome: [
+    "La marca está en pausa, a la espera del relanzamiento de la empresa como estudio de producto.",
+  ],
+  outcomeEn: [
+    "The brand is on hold, waiting on the company's relaunch as a product studio.",
   ],
   credits: [
     "Rediseño de identidad: Molly Yllom",
@@ -564,6 +586,7 @@ const dinerologyProject: Project = {
   slug: "dinerology",
   title: "Dinerology",
   client: "JMMB",
+  year: "2022",
   role: "Logotipo y lineamientos gráficos",
   roleEn: "Logo and graphic guidelines",
   scope: [
@@ -617,6 +640,7 @@ const riccieOriachProject: Project = {
   slug: "riccie-oriach",
   title: "Riccie Oriach",
   client: "Riccie Oriach",
+  year: "2018",
   role: "Identidad visual",
   roleEn: "Visual identity",
   scope: [
@@ -638,6 +662,12 @@ const riccieOriachProject: Project = {
   shippedEn: [
     "A logo that carries the artist's personality before any one genre",
     "A visual system for releases and platforms",
+  ],
+  outcome: [
+    "La identidad sigue viva y en uso por el artista.",
+  ],
+  outcomeEn: [
+    "The identity is still live and in use by the artist.",
   ],
   credits: [
     "Identidad visual: Molly Yllom",
@@ -678,6 +708,7 @@ const greenSpiritProject: Project = {
   slug: "green-spirit",
   title: "Green Spirit",
   client: "Green Spirit",
+  year: "2019",
   role: "Logotipo e identidad visual",
   roleEn: "Logo and visual identity",
   scope: [
@@ -701,6 +732,12 @@ const greenSpiritProject: Project = {
     "Logo and visual identity",
     "An organic palette pulled from the plants themselves",
     "Brand applications",
+  ],
+  outcome: [
+    "La marca sigue viva y en uso.",
+  ],
+  outcomeEn: [
+    "The brand is still live and in use.",
   ],
   credits: [
     "Identidad visual: Molly Yllom",
@@ -739,6 +776,7 @@ const distopiaProject: Project = {
   slug: "distopia",
   title: "Distopia",
   client: "Distopia",
+  year: "2016",
   role: "Logotipo e identidad visual",
   roleEn: "Logo and visual identity",
   scope: [
@@ -807,6 +845,7 @@ const indhauciProject: Project = {
   slug: "indhauci",
   title: "INDHAUCI",
   client: "Constructora INDHAUCI",
+  year: "2020",
   role: "Rediseño de imagen corporativa",
   roleEn: "Corporate image redesign",
   scope: [
@@ -828,6 +867,12 @@ const indhauciProject: Project = {
   shippedEn: [
     "An updated logo that keeps the codes that already identified the company",
     "Implementation across corporate pieces",
+  ],
+  outcome: [
+    "La imagen corporativa sigue en uso por la empresa.",
+  ],
+  outcomeEn: [
+    "The corporate image is still in use by the company.",
   ],
   credits: [
     "Rediseño de identidad corporativa: Molly Yllom",
@@ -866,6 +911,7 @@ const ditoDicoProject: Project = {
   slug: "dito-dico",
   title: "Dito Dico",
   client: "Dito Dico",
+  year: "2018",
   role: "Logotipo, identidad y personaje",
   roleEn: "Logo, identity and character",
   scope: [
@@ -891,6 +937,12 @@ const ditoDicoProject: Project = {
     "An illustrated mascot in a 1930s cartoon style",
     "A record as the central element of the system",
     "Logo and implementation across materials",
+  ],
+  outcome: [
+    "La marca y el personaje siguen vivos y en uso por el artista.",
+  ],
+  outcomeEn: [
+    "The brand and the character are still live and in use by the artist.",
   ],
   credits: [
     "Identidad e ilustración: Molly Yllom",
@@ -932,6 +984,7 @@ const bhMobiliarioProject: Project = {
   slug: "bh-mobiliario",
   title: "BH Mobiliario",
   client: "BH Mobiliario",
+  year: "2023",
   role: "Identidad de marca",
   roleEn: "Brand identity",
   scope: [
@@ -955,6 +1008,12 @@ const bhMobiliarioProject: Project = {
     "A logo where an office shelf forms the letters BH",
     "A visual system for catalogue and communication",
     "Brand applications",
+  ],
+  outcome: [
+    "La marca sigue viva y en uso por la empresa.",
+  ],
+  outcomeEn: [
+    "The brand is still live and in use by the company.",
   ],
   credits: [
     "Identidad de marca: Molly Yllom",
@@ -1058,6 +1117,7 @@ const cdtLogoProject: Project = {
   slug: "canteras-del-tropico",
   title: "Canteras del Trópico",
   client: "Canteras del Trópico",
+  year: "2022",
   role: "Logotipo y branding",
   roleEn: "Logo and branding",
   scope: [
@@ -1081,6 +1141,12 @@ const cdtLogoProject: Project = {
     "A logo integrating stone and excavation machinery",
     "A visual system balancing robustness with a human approach",
     "Brand applications",
+  ],
+  outcome: [
+    "La marca sigue viva y en uso por la empresa.",
+  ],
+  outcomeEn: [
+    "The brand is still live and in use by the company.",
   ],
   credits: [
     "Identidad de marca: Molly Yllom",
@@ -1111,6 +1177,7 @@ const advanced: Project = {
   slug: "advanced-therapy",
   title: "Advanced Therapy",
   client: "Advanced Therapy of South Florida (Estados Unidos)",
+  year: "2024",
   role: "Logotipo y branding",
   roleEn: "Logo and branding",
   scope: [
