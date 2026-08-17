@@ -13,6 +13,12 @@ export interface Project {
    * Only fill these where there is something real to say. Never pad them.
    */
   client?: string;
+  /**
+   * Only needed when the client line carries words beyond the proper noun (a
+   * descriptor or a country). A plain company name reads the same in both
+   * languages and can leave this out.
+   */
+  clientEn?: string;
   year?: string;
   role?: string;
   roleEn?: string;
@@ -41,6 +47,7 @@ const ciudadFielProject: Project = {
   slug: "ciudad-fiel",
   title: "Ciudad Fiel",
   client: "Pedro Kelly, productor musical y compositor",
+  clientEn: "Pedro Kelly, music producer and composer",
   year: "2021",
   role: "Identidad de marca. Proyecto en solitario",
   roleEn: "Brand identity. Solo project",
@@ -257,6 +264,7 @@ const allianceProject: Project = {
   slug: "alliance",
   title: "Alliance",
   client: "Suheidi Rivera, Alliance Legal Group PLLC (Nueva York)",
+  clientEn: "Suheidi Rivera, Alliance Legal Group PLLC (New York)",
   year: "2021",
   role: "Logotipo e identidad de marca",
   roleEn: "Logo and brand identity",
@@ -317,6 +325,7 @@ const materDesignProject: Project = {
   slug: "mater-design",
   title: "Mater Design",
   client: "Mater Design (Estados Unidos)",
+  clientEn: "Mater Design (United States)",
   year: "2023",
   role: "Identidad de marca",
   roleEn: "Brand identity",
@@ -1072,6 +1081,7 @@ const mlLogoProject: Project = {
   slug: "maria-lunares",
   title: "Maria Lunares",
   client: "Maria Lunares, artista musical independiente",
+  clientEn: "Maria Lunares, independent music artist",
   year: "2023 - 2024",
   role: "Dirección creativa, identidad y desarrollo front-end",
   roleEn: "Creative direction, identity and front-end development",
@@ -1195,6 +1205,7 @@ const advanced: Project = {
   slug: "advanced-therapy",
   title: "Advanced Therapy",
   client: "Advanced Therapy of South Florida (Estados Unidos)",
+  clientEn: "Advanced Therapy of South Florida (United States)",
   year: "2024",
   role: "Logotipo y branding",
   roleEn: "Logo and branding",

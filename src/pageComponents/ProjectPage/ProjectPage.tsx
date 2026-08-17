@@ -23,6 +23,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
   const { lang, t } = useLanguage();
 
   const paragraphs = lang === 'en' ? project?.paragraphsEn : project?.paragraphs;
+  const client = lang === 'en' ? project?.clientEn ?? project?.client : project?.client;
   const role = lang === 'en' ? project?.roleEn ?? project?.role : project?.role;
   const scope = lang === 'en' ? project?.scopeEn ?? project?.scope : project?.scope;
   const brief = lang === 'en' ? project?.briefEn ?? project?.brief : project?.brief;
@@ -143,7 +144,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
     imageGroups[deliveryIndex - 1].push(...moved);
   }
   const meta = [
-    project?.client && { label: t.projects.client, value: project.client },
+    client && { label: t.projects.client, value: client },
     project?.year && { label: t.projects.year, value: project.year },
     role && { label: t.projects.role, value: role },
   ].filter(Boolean) as { label: string; value: string }[];
