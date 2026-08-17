@@ -299,11 +299,11 @@ const materDesignProject: Project = {
   heroImage: "/img/projects/mater-design/mtr-dsgn-x-MY-01.webp",
   paragraphs: [
     "Mater Design es un estudio de diseño radicado en Estados Unidos. Inspirado en palabras como: creatividad, diseño, ideas y pasión; el logo se construyó sobre formas simples como cuadrados, círculos y triángulos, volviendo a lo básico para crear algo impactante y con mucho estilo.",
-    "Con una paleta de colores vivos, el logo irradia versatilidad y personalidad, capturando la esencia creativa de la marca. Fue un placer ser parte de este proyecto y ver cómo el diseño cobra vida con amor y pasión.",
+    "Una paleta viva le da versatilidad dentro del trabajo del propio estudio, donde la identidad tiene que convivir con proyectos de clientes sin competir con ellos.",
   ],
   paragraphsEn: [
-    "Mater Design is a design studio based in the United States. Inspired by words like creativity, design, ideas, and passion, the logo was built on simple shapes — squares, circles, and triangles — going back to basics to create something bold and full of style.",
-    "With a vibrant color palette, the logo radiates versatility and personality, capturing the brand's creative essence. It was a pleasure to be part of this project and watch the design come to life with love and passion.",
+    "Mater Design is a design studio based in the United States. Inspired by words like creativity, design, ideas, and passion, the logo was built on simple shapes, squares, circles and triangles, going back to basics to make something bold and full of style.",
+    "A vibrant palette gives it versatility inside the studio's own work, where the identity has to sit next to client projects without competing with them.",
   ],
   images: [
     "/img/projects/mater-design/mtr-dsgn-paper-texture-mockup.webp",
@@ -330,12 +330,12 @@ const neuschoolProject: Project = {
   paragraphs: [
     "Acá te presento el re-diseño del logo para Neuschool, una plataforma digital de gestión de estudios que surgió como respuesta a los desafíos que enfrentó la educación en tiempos de distanciamiento social por el Covid-19. Neuschool buscaba dar un nuevo giro a su logo existente y agregar un detalle distintivo que le diera vida propia a la marca.",
     "Inspirada en su compromiso con la innovación educativa, creé un diseño fresco y moderno que refleja la vitalidad y la adaptabilidad de la plataforma.",
-    "Fue un honor ser parte de este proyecto que busca facilitar el acceso a la educación en un mundo cada vez más digitalizado.",
+    "El rediseño conservó lo que los estudiantes ya reconocían y cambió solo lo que frenaba a la marca, para que la plataforma creciera sin pedirle a sus usuarios que la reaprendieran.",
   ],
   paragraphsEn: [
     "Here is the logo redesign for Neuschool, a digital study management platform that emerged in response to the challenges education faced during the social distancing period of Covid-19. Neuschool wanted to give their existing logo a fresh twist and add a distinctive detail that would give the brand a life of its own.",
     "Inspired by their commitment to educational innovation, I created a fresh and modern design that reflects the platform's vitality and adaptability.",
-    "It was an honor to be part of this project, which seeks to make education more accessible in an increasingly digital world.",
+    "The redesign kept what students already recognized and changed only what was holding the brand back, so the platform could grow without asking its users to relearn it.",
   ],
   images: [
     "/img/projects/neuschool/neuschool-logo-uso-basico-03.webp",
@@ -361,7 +361,7 @@ const momProject: Project = {
     "Con este diseño, buscamos transmitir la esencia de MOM como un lugar donde la creatividad florece y las ideas se convierten en realidad."
   ],
   paragraphsEn: [
-    "Here is the visual identity I had the opportunity to create for MOM (Marketing of Minds), a Dominican advertising agency. The idea behind the logo was to represent a space — in this case the yellow box — where anything can happen in terms of creativity and design. This space is versatile and transforms into whatever shape it needs.",
+    "Here is the visual identity I had the opportunity to create for MOM (Marketing of Minds), a Dominican advertising agency. The idea behind the logo was to represent a space, in this case the yellow box, where anything can happen in terms of creativity and design. This space is versatile and transforms into whatever shape it needs.",
     "With this design, we sought to convey MOM's essence as a place where creativity flourishes and ideas become reality.",
   ],
   images: [
@@ -392,11 +392,11 @@ const neustackProject: Project = {
   heroImage: "/img/projects/neustack/neustack-x-MY-01.webp",
   paragraphs: [
     "El rediseño del logo para Neustack buscaba modernizar su imagen manteniendo la simplicidad. Representé la letra N con una línea gruesa y vibrante, simbolizando la audacia de la empresa en llevar las ideas a la ejecución.",
-    "El uso del azul transmite confianza y profesionalismo, mientras que el gris aporta equilibrio. Fue un placer colaborar en este proyecto para comunicar la dedicación y fiabilidad de Neustack de manera visualmente impactante.",
+    "El azul carga la confianza que el sector espera y el gris evita que grite. La marca se construyó para aguantar reducida a un favicon y ampliada a un stand, sin volver a dibujarla.",
   ],
   paragraphsEn: [
     "The logo redesign for Neustack aimed to modernize its image while maintaining simplicity. I represented the letter N with a bold, vibrant line, symbolizing the company's audacity in turning ideas into execution.",
-    "The use of blue conveys trust and professionalism, while gray adds balance. It was a pleasure to collaborate on this project and communicate Neustack's dedication and reliability in a visually impactful way.",
+    "Blue carries the trust the sector expects and gray keeps it from shouting. The mark was built to survive being shrunk to a favicon and blown up to a trade stand without redrawing.",
   ],
   images: [
     "/img/projects/neustack/neustack-x-MY-02.webp",
@@ -422,11 +422,11 @@ const dinerologyProject: Project = {
   heroImage: "/img/projects/dinerology/dinerology-japan-exterior-advertising-mockup.webp",
   paragraphs: [
     "Recordando cuando trabajé para crear el logo y la línea gráfica del canal de Youtube «Dinerology», un esfuerzo de JMMB. Me inspiré en la esencia y valores de JMMB, creando un diseño que refleja la innovación, la profesionalidad y la pasión por la educación financiera.",
-    "Utilicé la paleta de colores de la marca, siguiendo sus lineamientos gráficos. Logré un diseño único y coherente que atrae la atención y comunica la misión del canal. Fue un honor ser parte de este proyecto que busca empoderar a las personas a través del conocimiento financiero en un formato accesible y entretenido como Youtube."
+    "El encargo tenía un límite claro: trabajar dentro de los lineamientos gráficos de JMMB, usando su paleta, sin inventar una marca nueva. La identidad del canal tenía que sentirse propia y seguir leyéndose como banco."
   ],
   paragraphsEn: [
     "Looking back at when I worked to create the logo and graphic guidelines for the YouTube channel «Dinerology», a JMMB initiative. I drew inspiration from JMMB's essence and values, creating a design that reflects innovation, professionalism, and a passion for financial education.",
-    "I used the brand's color palette, following their graphic guidelines. The result was a unique and cohesive design that captures attention and communicates the channel's mission. It was an honor to be part of this project that seeks to empower people through financial knowledge in an accessible and entertaining format like YouTube.",
+    "The job came with a hard limit: work inside JMMB's existing graphic guidelines, using their palette, without inventing a new brand. The channel had to feel like its own thing and still read as the bank.",
   ],
   images: [
     "/img/projects/dinerology/dinerology-x-my-logo-behance-01.webp",
@@ -447,7 +447,7 @@ const riccieOriachProject: Project = {
     "El objetivo del logo era capturar visualmente la personalidad única de Riccie Oriach como artista. A través de un diseño distintivo y poderoso, busqué transmitir la energía y la pasión que Riccie infunde en su música."
   ],
   paragraphsEn: [
-    "This is the visual identity I created for Riccie Oriach, a talented Dominican singer-songwriter. Riccie Oriach is an artist who expands Latin rock sounds with a wave of Caribbean fusions. Drawing from his eclecticism and artistic sensibilities, Riccie has blended rhythms native to the Dominican Republic — salve, palos, gagá, merengue, and pripri — with international styles like rock, hip-hop, salsa, and even punk.",
+    "This is the visual identity I created for Riccie Oriach, a talented Dominican singer-songwriter. Riccie Oriach is an artist who expands Latin rock sounds with a wave of Caribbean fusions. Drawing from his eclecticism and artistic sensibilities, Riccie has blended rhythms native to the Dominican Republic, salve, palos, gagá, merengue and pripri, with international styles like rock, hip-hop, salsa, and even punk.",
     "The goal of the logo was to visually capture Riccie Oriach's unique personality as an artist. Through a distinctive and powerful design, I sought to convey the energy and passion that Riccie infuses into his music.",
   ],
   images: [
@@ -477,12 +477,12 @@ const greenSpiritProject: Project = {
   paragraphs: [
     "En esta ocasión trabajé para crear el logo e identidad visual de Green Spirit. Inspirada en la misión de Green Spirit de ayudar a las personas a conectar con las plantas, creé un diseño que refleja la vitalidad y la armonía de la naturaleza.",
     "Con una paleta de colores frescos y orgánicos, y un diseño distintivo, Green Spirit ahora tiene una identidad visual que comunica su compromiso con la sostenibilidad y el bienestar.",
-    "¡Fue un honor ser parte de este proyecto que busca inspirar una conexión más profunda con nuestro entorno natural!"
+    "La paleta salió de las plantas mismas y no de una idea genérica de lo verde, para que la marca conviva con el producto sin pelearse con él."
   ],
   paragraphsEn: [
     "This time I worked to create the logo and visual identity for Green Spirit. Inspired by Green Spirit's mission to help people connect with plants, I created a design that reflects the vitality and harmony of nature.",
     "With a palette of fresh, organic colors and a distinctive design, Green Spirit now has a visual identity that communicates their commitment to sustainability and well-being.",
-    "It was an honor to be part of this project that seeks to inspire a deeper connection with our natural environment!",
+    "The palette came out of the plants themselves rather than a generic idea of green, so the brand sits beside the product instead of fighting it.",
   ],
   images: [
     "/img/projects/green-spirit/green-spirit-logo-06.webp",
@@ -530,12 +530,12 @@ const indhauciProject: Project = {
   portfolioImage: "/img/projects/indhauci/indhauci-gif-1.mp4",
   heroImage: "/img/projects/indhauci/indhauci-logo-sticker-mockup.webp",
   paragraphs: [
-    "Fue un honor para mí trabajar en el rediseño de la imagen corporativa de Constructora INDHAUCI, la compañía fundada por mis padres hace más de 20 años con esfuerzo y dedicación.",
+    "Constructora INDHAUCI es la compañía que mis padres fundaron hace más de 20 años. Rediseñar su imagen corporativa significó actualizar una marca con dos décadas de reconocimiento acumulado sin borrar lo que ya la hacía reconocible.",
     "Con orgullo, he tenido la oportunidad de desarrollar una nueva identidad visual que refleje la calidad y el legado de nuestra empresa, la cual llevo muy cerca del corazón.",
     "Desde el logo hasta la implementación en distintas piezas, este proyecto representa un homenaje a nuestra historia y un paso hacia el futuro de INDHAUCI."
   ],
   paragraphsEn: [
-    "It was an honor to work on the corporate image redesign of Constructora INDHAUCI, the company my parents founded more than 20 years ago with effort and dedication.",
+    "Constructora INDHAUCI is the company my parents founded more than 20 years ago. Redesigning its corporate image meant updating a brand with two decades of accumulated recognition without erasing what already made it recognizable.",
     "With pride, I had the opportunity to develop a new visual identity that reflects the quality and legacy of our company, which is very close to my heart.",
     "From the logo to its implementation across different pieces, this project represents a tribute to our history and a step toward the future of INDHAUCI.",
   ],
@@ -659,7 +659,7 @@ const mlLogoProject: Project = {
     "Maria Lunares representa esa vista que desde una perspectiva exterior, un ser humano puede parecer algo que no es lo que realmente es.",
   ],
   paragraphsEn: [
-    "It comes from Latin and means Lunar Seas. Early astronomers named the moon's dark patches this way because they resemble large concentrations of water — but they are not. They are vast, dark, basaltic plains formed by meteorite impacts.",
+    "It comes from Latin and means Lunar Seas. Early astronomers named the moon's dark patches this way because they resemble large concentrations of water, but they are not. They are vast, dark, basaltic plains formed by meteorite impacts.",
     "Maria Lunares represents the view that from an outside perspective, a human being can appear to be something other than what they truly are.",
   ],
   images: [
@@ -705,7 +705,7 @@ const advanced: Project = {
     "En el proyecto de creación de logo y branding para Advanced Therapy of South Florida, me propuse capturar la esencia de un centro terapéutico que sirve como refugio para individuos en buscan de servicios psicológicos. Mi objetivo fue diseñar una identidad visual que reflejara profesionalismo, elegancia y modernidad, transmitiendo confianza y dejando una impresión memorable. El concepto se basa en representar a Advanced Therapy como el lugar donde los pacientes pueden desenredar sus mentes y avanzar hacia una mejor salud mental. A través de símbolos que evocan la psicología y la terapia, el logo busca tener un impacto significativo y comunicar la excelencia en el servicio que la clínica brinda a sus pacientes.",
   ],
   paragraphsEn: [
-    "In the logo and branding project for Advanced Therapy of South Florida, I set out to capture the essence of a therapeutic center that serves as a refuge for individuals seeking psychological services. My goal was to design a visual identity that reflects professionalism, elegance, and modernity — conveying trust and leaving a memorable impression. The concept is based on representing Advanced Therapy as the place where patients can untangle their minds and move toward better mental health. Through symbols that evoke psychology and therapy, the logo seeks to make a meaningful impact and communicate the excellence in service that the clinic provides to its patients.",
+    "In the logo and branding project for Advanced Therapy of South Florida, I set out to capture the essence of a therapeutic center that serves as a refuge for individuals seeking psychological services. My goal was to design a visual identity that reflects professionalism, elegance and modernity, conveying trust and leaving a memorable impression. The concept is based on representing Advanced Therapy as the place where patients can untangle their minds and move toward better mental health. Through symbols that evoke psychology and therapy, the logo seeks to make a meaningful impact and communicate the excellence in service that the clinic provides to its patients.",
   ],
   images: [
     "/img/projects/advanced-therapy/atosf-logo-01.webp",
