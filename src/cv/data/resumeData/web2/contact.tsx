@@ -8,6 +8,7 @@ export const contact: ContactInfo = {
   name: "Molly Yllom",
   title: "Senior Brand & Product Designer",
   location: "Santo Domingo, Dominican Republic",
+  locationES: "Santo Domingo, República Dominicana",
   phone: "+1 809 440 8161",
   email: "hola@mollyyllom.com",
   summary: [

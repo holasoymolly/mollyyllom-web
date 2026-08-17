@@ -135,7 +135,7 @@ export function Web3CV({ lang = 'en' }: { lang?: Lang }) {
               className="text-slate-300 text-lg leading-relaxed max-w-xl mb-3"
               {...fadeUp(0.2)}
             >
-              {contact.location} &nbsp;·&nbsp; {t.langLine}
+              {(lang === 'es' ? contact.locationES ?? contact.location : contact.location)} &nbsp;·&nbsp; {t.langLine}
             </motion.p>
             <motion.div className="mb-6" {...fadeUp(0.22)}>
               <SocialLinks links={contact.links} />

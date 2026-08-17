@@ -11,6 +11,8 @@ export interface ContactInfo {
   name: string
   title: string
   location: string
+  /** Spanish rendering of `location`, used by the ES CV pages. */
+  locationES?: string
   phone: string
   email: string
   summary: string | string[]
