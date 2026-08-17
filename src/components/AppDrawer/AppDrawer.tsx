@@ -6,14 +6,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { TransitionLink } from "@/components/TransitionLink";
 import { RiInstagramLine } from '@/icons/RiInstagramLine';
-import { RiBehanceFill } from '@/icons/RiBehanceFill';
 import { IcOutlineTiktok } from '@/icons/IcOutlineTiktok';
 import { XIcon } from '@/icons/XIcon';
 import { useLanguage } from "@/context/LanguageContext";
 
 const socials = [
   { href: 'https://www.instagram.com/holasoymolly', Icon: RiInstagramLine, label: 'Instagram' },
-  { href: 'https://www.behance.net/holasoymolly',   Icon: RiBehanceFill,   label: 'Behance'   },
   { href: 'https://www.tiktok.com/@soymollyyllom',  Icon: IcOutlineTiktok, label: 'TikTok'    },
   { href: 'https://x.com/holasoymolly',             Icon: XIcon,           label: 'X'         },
 ];

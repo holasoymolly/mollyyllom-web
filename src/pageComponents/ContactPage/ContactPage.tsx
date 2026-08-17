@@ -7,8 +7,6 @@ import { FC } from "react";
 import { motion } from "framer-motion";
 import { DeviconPlainLinkedin } from '@/icons/DeviconPlainLinkedin';
 import { IcOutlineTiktok } from "@/icons/IcOutlineTiktok";
-import { IcRoundFacebook } from "@/icons/IcRoundFacebook";
-import { RiBehanceFill } from "@/icons/RiBehanceFill";
 import { RiInstagramLine } from "@/icons/RiInstagramLine";
 import { XIcon } from "@/icons/XIcon";
 import { useLanguage } from "@/context/LanguageContext";
@@ -16,8 +14,6 @@ import { trackBookingCTAClicked, trackEmailCTAClicked } from "@/lib/analytics";
 
 const socials = [
   { href: "https://www.instagram.com/holasoymolly", label: "Instagram", Icon: RiInstagramLine },
-  { href: "https://www.behance.net/holasoymolly", label: "Behance", Icon: RiBehanceFill },
-  { href: "https://www.facebook.com/holasoymolly", label: "Facebook", Icon: IcRoundFacebook },
   { href: "https://www.tiktok.com/@soymollyyllom", label: "TikTok", Icon: IcOutlineTiktok },
   { href: "https://www.linkedin.com/in/mollyyllom", label: "LinkedIn", Icon: DeviconPlainLinkedin },
   { href: "https://x.com/holasoymolly", label: "X", Icon: XIcon },

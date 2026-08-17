@@ -3,8 +3,6 @@
 import Image from 'next/image';
 import { DeviconPlainLinkedin } from '@/icons/DeviconPlainLinkedin';
 import { IcOutlineTiktok } from '@/icons/IcOutlineTiktok';
-import { IcRoundFacebook } from '@/icons/IcRoundFacebook';
-import { RiBehanceFill } from '@/icons/RiBehanceFill';
 import { RiInstagramLine } from '@/icons/RiInstagramLine';
 import { XIcon } from '@/icons/XIcon';
 import { TransitionLink } from '@/components/TransitionLink';
@@ -95,12 +93,6 @@ export const Footer: React.FC = () => {
             <div className="flex gap-4 items-center">
               <a href="https://www.instagram.com/holasoymolly" aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-violet-400 transition-colors duration-200">
                 <RiInstagramLine className="w-5 h-5" />
-              </a>
-              <a href="https://www.behance.net/holasoymolly" aria-label="Behance" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-violet-400 transition-colors duration-200">
-                <RiBehanceFill className="w-5 h-5" />
-              </a>
-              <a href="https://www.facebook.com/holasoymolly" aria-label="Facebook" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-violet-400 transition-colors duration-200">
-                <IcRoundFacebook className="w-5 h-5" />
               </a>
               <a href="https://www.tiktok.com/@soymollyyllom" aria-label="TikTok" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-violet-400 transition-colors duration-200">
                 <IcOutlineTiktok className="w-5 h-5" />
