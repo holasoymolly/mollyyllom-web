@@ -9,10 +9,10 @@ export const experience: Experience[] = [
     start: "2026",
     end: "Present",
     current: true,
-    featureHighlight: "Leading design across the Aerosol ecosystem on Solana — brand system, product interfaces, and front-end.",
+    featureHighlight: "Leading design across the Aerosol ecosystem on Solana: brand system, product interfaces and front-end.",
     highlights: [
       "Lead all design across the company: brand identity, product UX, marketing, and web.",
-      "Design across product, web, social, and campaigns for ecosystem products including Jobskr and Spotlight.",
+      "Design across product, web, social, and campaigns for ecosystem products including JobSkr and Spotlight.",
       <>Led the full redesign of <a href={URLS.BURN_AND_CLAIM} target="_blank" rel="noreferrer" className="text-accent underline hover:opacity-80">Burn & Claim</a>, and ship the front-end in Next.js, React, and Tailwind.</>,
     ],
     stack: ["Brand Systems", "Product Design", "Figma", "Next.js", "React", "Solana"],

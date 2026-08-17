@@ -9,10 +9,10 @@ export const experienceES: Experience[] = [
     start: "2026",
     end: "Presente",
     current: true,
-    featureHighlight: "Liderando el diseño en una empresa de productos digitales en Solana — marca, producto y frontend.",
+    featureHighlight: "Liderando el diseño en una empresa de productos digitales en Solana: marca, producto y frontend.",
     highlights: [
       "Lidero todo el diseño de la empresa: identidad de marca, UX de producto, piezas de marketing y web.",
-      <>Lideré el rediseño completo de <a href={URLS.BURN_AND_CLAIM} target="_blank" rel="noreferrer" className="text-accent underline hover:opacity-80">Burn & Claim</a> — app, dashboard y sitio de marketing — diseñado y construido en Next.js, React y Tailwind.</>,
+      <>Lideré el rediseño completo de <a href={URLS.BURN_AND_CLAIM} target="_blank" rel="noreferrer" className="text-accent underline hover:opacity-80">Burn &amp; Claim</a>. App, dashboard y sitio de marketing, diseñado y construido en Next.js, React y Tailwind.</>,
       "Construí un sistema de diseño escalable y por niveles, usado en múltiples productos y superficies.",
     ],
     stack: ["Brand Systems", "Product Design", "Next.js", "React", "Tailwind CSS", "Solana"],
@@ -55,7 +55,7 @@ export const experienceES: Experience[] = [
     stack: ["Brand Identity", "Visual Systems", "Campaign Design", "Print & Digital"],
   },
   {
-    company: "Marketing of Minds — MoM",
+    company: "Marketing of Minds (MoM)",
     role: "Art Director",
     start: "2019",
     end: "2023",

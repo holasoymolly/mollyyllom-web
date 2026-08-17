@@ -10,7 +10,7 @@ export const contractWorkES: Experience[] = [
     end: "2024",
     featureHighlight: "Propiedad creativa y técnica total del universo digital de una artista musical independiente.",
     highlights: [
-      <>Diseñé y desarrollé <a href={URLS.MARIA_LUNARES} target="_blank" rel="noreferrer" className="text-accent underline hover:opacity-80">marialunares.com</a> — identidad de marca, dirección de arte y desarrollo frontend en un proyecto cohesivo.</>,
+      <>Diseñé y desarrollé <a href={URLS.MARIA_LUNARES} target="_blank" rel="noreferrer" className="text-accent underline hover:opacity-80">marialunares.com</a>. Identidad de marca, dirección de arte y desarrollo frontend en un proyecto cohesivo.</>,
     ],
     stack: ["Next.js", "React", "Tailwind CSS", "Brand Identity", "Creative Direction"],
   },
@@ -20,7 +20,7 @@ export const contractWorkES: Experience[] = [
     start: "2024",
     end: "Presente",
     highlights: [
-      <>Diseñé y desarrollé <a href={URLS.MOLLYYLLOM} target="_blank" rel="noreferrer" className="text-accent underline hover:opacity-80">mollyyllom.com</a> — identidad de marca personal traducida en un portfolio digital completamente responsivo.</>,
+      <>Diseñé y desarrollé <a href={URLS.MOLLYYLLOM} target="_blank" rel="noreferrer" className="text-accent underline hover:opacity-80">mollyyllom.com</a>. Identidad de marca personal traducida en un portfolio digital completamente responsivo.</>,
     ],
     stack: ["Next.js", "React", "Tailwind CSS", "Brand Identity"],
   },

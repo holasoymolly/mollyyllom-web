@@ -8,13 +8,13 @@ export function DesignApproach() {
         </div>
         <div className="mx-auto max-w-3xl space-y-6">
           <p className="text-lg leading-relaxed text-[var(--muted)]">
-            Over <span className="font-semibold text-[var(--foreground)]">17+ years</span>, I&apos;ve learned that great design is less about decoration and more about <span className="font-semibold text-accent">clarity</span> — making the complex feel simple, and the unfamiliar feel welcoming.
+            Over <span className="font-semibold text-[var(--foreground)]">17+ years</span>, I&apos;ve learned that great design is less about decoration and more about <span className="font-semibold text-accent">clarity</span>. Making the complex feel simple, and the unfamiliar feel welcoming.
           </p>
           <p className="text-lg leading-relaxed text-[var(--muted)]">
-            I approach every project — whether a <span className="font-semibold text-[var(--foreground)]">brand identity</span>, a <span className="font-semibold text-[var(--foreground)]">product interface</span>, or a <span className="font-semibold text-[var(--foreground)]">Web3 experience</span> — with the same question: what does this need to communicate, and how does it need to feel?
+            I approach every project, whether a <span className="font-semibold text-[var(--foreground)]">brand identity</span>, a <span className="font-semibold text-[var(--foreground)]">product interface</span> or a <span className="font-semibold text-[var(--foreground)]">Web3 experience</span>, with the same question: what does this need to communicate, and how does it need to feel?
           </p>
           <p className="text-lg leading-relaxed text-[var(--muted)]">
-            I work in close collaboration with product, marketing, and development teams, believing that design is most powerful when it&apos;s woven into the process from the beginning. <span className="font-semibold text-accent">Front-end capable</span> — I prototype and build in <span className="font-semibold text-accent">React</span>, <span className="font-semibold text-accent">Next.js</span>, and <span className="font-semibold text-accent">Tailwind</span> when needed, bridging the gap between design and implementation.
+            I work in close collaboration with product, marketing, and development teams, believing that design is most powerful when it&apos;s woven into the process from the beginning. <span className="font-semibold text-accent">Front-end capable</span>. I prototype and build in <span className="font-semibold text-accent">React</span>, <span className="font-semibold text-accent">Next.js</span>, and <span className="font-semibold text-accent">Tailwind</span> when needed, bridging the gap between design and implementation.
           </p>
           <div className="mt-8 flex justify-center">
             <a

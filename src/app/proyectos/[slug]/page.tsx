@@ -36,7 +36,7 @@ export async function generateMetadata(props: {
       images: [
         {
           url: project.heroImage,
-          alt: `${project.title} — MOLLY YLLOM`,
+          alt: `${project.title} | MOLLY YLLOM`,
         },
       ],
     },

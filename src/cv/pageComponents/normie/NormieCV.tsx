@@ -197,7 +197,7 @@ export function NormieCV({ lang = 'en' }: { lang?: Lang }) {
                       )}
                     </div>
                     <h3 className="text-indigo-950 text-xl font-black">{role.role}</h3>
-                    <p className="text-indigo-950/50 text-sm mt-1">{role.start} – {role.end}</p>
+                    <p className="text-indigo-950/50 text-sm mt-1">{role.start} - {role.end}</p>
                   </div>
                 </div>
 
@@ -252,7 +252,7 @@ export function NormieCV({ lang = 'en' }: { lang?: Lang }) {
                   <div className="mb-4">
                     <span className="text-violet-400 text-xs font-bold tracking-[0.2em] uppercase">{project.company}</span>
                     <h3 className="text-stone-200 text-xl font-black mt-1">{project.role}</h3>
-                    <p className="text-slate-400 text-sm mt-1">{project.start} – {project.end}</p>
+                    <p className="text-slate-400 text-sm mt-1">{project.start} - {project.end}</p>
                   </div>
                   {project.featureHighlight && (
                     <p className="text-slate-300 text-sm leading-relaxed mb-4">{project.featureHighlight}</p>
@@ -329,7 +329,7 @@ export function NormieCV({ lang = 'en' }: { lang?: Lang }) {
                 className="border border-stone-200/10 rounded-2xl p-6 hover:border-violet-500/30 transition-colors duration-300"
                 {...fadeUpView(i * 0.1)}
               >
-                <p className="text-violet-400 text-xs font-bold tracking-[0.2em] uppercase mb-3">{school.start} – {school.end}</p>
+                <p className="text-violet-400 text-xs font-bold tracking-[0.2em] uppercase mb-3">{school.start} - {school.end}</p>
                 <h3 className="text-stone-200 text-xl font-black mb-1">{school.institution}</h3>
                 <p className="text-slate-400 text-sm">{school.area}</p>
                 <p className="text-slate-500 text-xs mt-1">{school.location}</p>
