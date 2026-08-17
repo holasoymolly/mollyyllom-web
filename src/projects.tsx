@@ -611,6 +611,16 @@ const dinerologyProject: Project = {
     "Graphic guidelines for the content",
     "Assets built for the YouTube format",
   ],
+  outcome: [
+    "Dinerology ganó Bronce en los Effie Awards República Dominicana 2023, para MoM y JMMB.",
+    "El canal sigue en línea con 175 videos publicados y más de 2,000 suscriptores.",
+    "Su episodio más visto supera las 18,000 vistas.",
+  ],
+  outcomeEn: [
+    "Dinerology won Bronze at the Effie Awards Dominican Republic 2023, for MoM and JMMB.",
+    "The channel is still online with 175 videos published and over 2,000 subscribers.",
+    "Its most watched episode is past 18,000 views.",
+  ],
   credits: [
     "Logotipo y lineamientos: Molly Yllom",
   ],
