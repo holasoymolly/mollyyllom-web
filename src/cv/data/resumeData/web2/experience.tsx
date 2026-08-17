@@ -47,7 +47,7 @@ export const experience: Experience[] = [
     start: "2008",
     end: "Present",
     current: true,
-    featureHighlight: "Independent practice since 2008, serving clients across the Dominican Republic and internationally. Selected clients: INTEC, JMMB Bank, FAMA Collective.",
+    featureHighlight: "Independent practice since 2008, serving clients in the United States and the Dominican Republic. US clients include Alliance Legal Group in New York, Advanced Therapy of South Florida and Mater Design. Dominican clients include INTEC, JMMB Bank and FAMA Collective.",
     highlights: [
       "Designed scalable brand identity systems and visual guidelines across industries.",
       "Led creative direction for campaigns, editorial, and digital assets from brief to delivery.",
