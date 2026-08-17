@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, useEffect, useRef } from 'react';
+import { FC, Fragment, ReactNode, useEffect, useRef } from 'react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { TransitionLink } from '@/components/TransitionLink';
@@ -29,6 +29,109 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
   const shipped = lang === 'en' ? project?.shippedEn ?? project?.shipped : project?.shipped;
   const outcome = lang === 'en' ? project?.outcomeEn ?? project?.outcome : project?.outcome;
   const credits = lang === 'en' ? project?.creditsEn ?? project?.credits : project?.credits;
+
+  /**
+   * Text is broken into blocks so images can be dealt out between them: the
+   * brief, the opening line, the rest of the copy, then what shipped and the
+   * outcome. Projects with no case-study data simply produce fewer blocks, and
+   * the images spread across whatever blocks exist.
+   */
+  const textBlocks: { key: string; content: ReactNode }[] = [];
+
+  if (brief) {
+    textBlocks.push({
+      key: 'brief',
+      content: (
+        <div className="flex flex-col gap-3">
+          <span className="text-violet-500 text-[10px] font-bold tracking-[0.25em] uppercase">
+            {t.projects.brief}
+          </span>
+          <p className="text-lg text-indigo-950/70 leading-relaxed border-l-2 border-violet-500 pl-5">
+            {brief}
+          </p>
+        </div>
+      ),
+    });
+  }
+
+  if (paragraphs && paragraphs.length > 0) {
+    textBlocks.push({
+      key: 'lead',
+      content: (
+        <p className="text-2xl md:text-3xl font-black text-indigo-950 leading-snug">{paragraphs[0]}</p>
+      ),
+    });
+
+    if (paragraphs.length > 1) {
+      textBlocks.push({
+        key: 'body',
+        content: (
+          <>
+            {paragraphs.slice(1).map((paragraph) => (
+              <p key={paragraph} className="text-lg text-indigo-950/70 leading-relaxed">
+                {paragraph}
+              </p>
+            ))}
+          </>
+        ),
+      });
+    }
+  }
+
+  if ((shipped && shipped.length > 0) || (outcome && outcome.length > 0)) {
+    textBlocks.push({
+      key: 'delivery',
+      content: (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {shipped && shipped.length > 0 && (
+            <div className="flex flex-col gap-4">
+              <span className="text-violet-500 text-[10px] font-bold tracking-[0.25em] uppercase">
+                {t.projects.shipped}
+              </span>
+              <ul className="flex flex-col gap-2.5">
+                {shipped.map((item) => (
+                  <li key={item} className="text-indigo-950/70 leading-relaxed pl-4 relative">
+                    <span className="absolute left-0 text-violet-500">·</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {outcome && outcome.length > 0 && (
+            <div className="flex flex-col gap-4">
+              <span className="text-violet-500 text-[10px] font-bold tracking-[0.25em] uppercase">
+                {t.projects.outcome}
+              </span>
+              <ul className="flex flex-col gap-3">
+                {outcome.map((item) => (
+                  <li key={item} className="text-indigo-950 font-bold leading-relaxed">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      ),
+    });
+  }
+
+  /**
+   * Deal the images out across the text blocks. Remainders go to the earlier
+   * groups so the page never ends on a lone orphan image.
+   */
+  const allImages = project?.images ?? [];
+  const groupCount = Math.max(textBlocks.length, 1);
+  const baseSize = Math.floor(allImages.length / groupCount);
+  const remainder = allImages.length % groupCount;
+  const imageGroups: string[][] = [];
+  let cursor = 0;
+  for (let i = 0; i < groupCount; i += 1) {
+    const size = baseSize + (i < remainder ? 1 : 0);
+    imageGroups.push(allImages.slice(cursor, cursor + size));
+    cursor += size;
+  }
   const meta = [
     project?.client && { label: t.projects.client, value: project.client },
     project?.year && { label: t.projects.year, value: project.year },
@@ -139,7 +242,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
       </section>
 
       <main>
-        {/* Hero image — full bleed */}
+        {/* Hero image, full bleed */}
         <div className="relative w-full h-[50vh] md:h-[70vh] overflow-hidden">
           <ProtectedImage
             src={project.heroImage}
@@ -152,95 +255,46 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
           />
         </div>
 
-        {/* Body text */}
-        {((paragraphs && paragraphs.length > 0) || brief) && (
-          <section className="bg-stone-200 px-6 md:px-16 lg:px-24 py-20">
-            <div className="max-w-3xl mx-auto flex flex-col gap-6">
-              {brief && (
-                <div className="flex flex-col gap-3 mb-4">
-                  <span className="text-violet-500 text-[10px] font-bold tracking-[0.25em] uppercase">
-                    {t.projects.brief}
-                  </span>
-                  <p className="text-lg text-indigo-950/70 leading-relaxed border-l-2 border-violet-500 pl-5">
-                    {brief}
-                  </p>
-                </div>
-              )}
-              {paragraphs?.map((paragraph, index) => (
-                <p
-                  key={index}
-                  className={index === 0
-                    ? "text-2xl md:text-3xl font-black text-indigo-950 leading-snug"
-                    : "text-lg text-indigo-950/70 leading-relaxed"
-                  }
-                >
-                  {paragraph}
+        {/*
+          Text and images alternate instead of stacking a wall of copy on top of
+          a wall of pictures. Each text block is followed by its share of the
+          project images, split as evenly as the count allows.
+        */}
+        {textBlocks.map((block, blockIndex) => (
+          <Fragment key={block.key}>
+            <section className="bg-stone-200 px-6 md:px-16 lg:px-24 py-20">
+              <div className="max-w-3xl mx-auto flex flex-col gap-6">{block.content}</div>
+            </section>
+
+            {imageGroups[blockIndex]?.map((image) => (
+              <div key={image} className="w-full overflow-hidden">
+                <ProtectedImage
+                  src={image}
+                  alt={`${project.title}, ${project.images.indexOf(image) + 1}`}
+                  sizes="100vw"
+                  quality={90}
+                  className="w-full h-auto"
+                />
+              </div>
+            ))}
+          </Fragment>
+        ))}
+
+        {/* Credits, always last. */}
+        {credits && credits.length > 0 && (
+          <section className="bg-stone-200 px-6 md:px-16 lg:px-24 py-16">
+            <div className="max-w-3xl mx-auto flex flex-col gap-3 border-t border-indigo-950/10 pt-8">
+              <span className="text-violet-500 text-[10px] font-bold tracking-[0.25em] uppercase">
+                {t.projects.credits}
+              </span>
+              {credits.map((line) => (
+                <p key={line} className="text-indigo-950/60 leading-relaxed">
+                  {line}
                 </p>
               ))}
             </div>
           </section>
         )}
-
-        {/* What shipped + Outcome. Only for projects carrying case-study data. */}
-        {((shipped && shipped.length > 0) || (outcome && outcome.length > 0) || (credits && credits.length > 0)) && (
-          <section className="bg-stone-200 px-6 md:px-16 lg:px-24 pb-20">
-            <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-indigo-950/10 pt-12">
-              {shipped && shipped.length > 0 && (
-                <div className="flex flex-col gap-4">
-                  <span className="text-violet-500 text-[10px] font-bold tracking-[0.25em] uppercase">
-                    {t.projects.shipped}
-                  </span>
-                  <ul className="flex flex-col gap-2.5">
-                    {shipped.map((item) => (
-                      <li key={item} className="text-indigo-950/70 leading-relaxed pl-4 relative">
-                        <span className="absolute left-0 text-violet-500">·</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {outcome && outcome.length > 0 && (
-                <div className="flex flex-col gap-4">
-                  <span className="text-violet-500 text-[10px] font-bold tracking-[0.25em] uppercase">
-                    {t.projects.outcome}
-                  </span>
-                  <ul className="flex flex-col gap-3">
-                    {outcome.map((item) => (
-                      <li key={item} className="text-indigo-950 font-bold leading-relaxed">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-            {credits && credits.length > 0 && (
-              <div className="max-w-3xl mx-auto mt-10 pt-6 border-t border-indigo-950/10">
-                {credits.map((line) => (
-                  <p key={line} className="text-sm text-indigo-950/50 leading-relaxed">
-                    {line}
-                  </p>
-                ))}
-              </div>
-            )}
-          </section>
-        )}
-
-        {/* Project images — full bleed */}
-        <section>
-          {project.images.map((image, index) => (
-            <div key={index} className="w-full overflow-hidden">
-              <ProtectedImage
-                src={image}
-                alt={`${project.title} — ${index + 1}`}
-                sizes="100vw"
-                quality={90}
-                className="w-full h-auto"
-              />
-            </div>
-          ))}
-        </section>
       </main>
 
       {/* Prev / Next navigation */}

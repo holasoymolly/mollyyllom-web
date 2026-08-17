@@ -100,6 +100,7 @@ export const translations = {
       brief: 'El encargo',
       shipped: 'Lo que se entregó',
       outcome: 'Resultado',
+      credits: 'Créditos',
     },
   },
   en: {
@@ -201,6 +202,7 @@ export const translations = {
       brief: 'The brief',
       shipped: 'What shipped',
       outcome: 'Outcome',
+      credits: 'Credits',
     },
   },
 };
