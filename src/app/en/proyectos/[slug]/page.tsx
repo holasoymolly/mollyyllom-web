@@ -17,34 +17,34 @@ export async function generateMetadata(props: {
 
   if (!project) {
     return {
-      title: "Proyecto no encontrado | MOLLY YLLOM",
-      description: "El proyecto que buscas no existe.",
+      title: "Project not found | MOLLY YLLOM",
+      description: "The project you are looking for does not exist.",
     };
   }
 
   const description =
-    (project.paragraphs[0] ? metaDescription(project.paragraphs[0]) : undefined) ??
-    "Proyecto de branding e identidad visual.";
+    (project.paragraphsEn[0] ? metaDescription(project.paragraphsEn[0]) : undefined) ??
+    "Branding and visual identity project.";
 
   return {
     title: `${project.title} | MOLLY YLLOM`,
     description,
     alternates: {
-      canonical: `/proyectos/${project.slug}`,
+      canonical: `/en/proyectos/${project.slug}`,
       languages: languageAlternates(`/proyectos/${project.slug}`),
     },
     openGraph: {
       title: `${project.title} | MOLLY YLLOM`,
       description,
-      url: `/proyectos/${project.slug}`,
+      url: `/en/proyectos/${project.slug}`,
       images: [
         {
           url: project.heroImage,
           alt: `${project.title} | MOLLY YLLOM`,
         },
       ],
-      locale: "es_ES",
-      alternateLocale: "en_US",
+      locale: "en_US",
+      alternateLocale: "es_ES",
     },
   };
 }

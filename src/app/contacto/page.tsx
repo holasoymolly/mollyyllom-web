@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
 import { ContactPage } from "@/pageComponents/ContactPage";
+import { languageAlternates } from "@/i18n/metadata";
 
 export const metadata: Metadata = {
   title: "Contacto | MOLLY YLLOM",
   description:
     "Hablemos de tu próximo proyecto. Escríbeme o agenda una llamada de 30 minutos para revisar tu marca.",
-  alternates: { canonical: "/contacto" },
+  alternates: { canonical: "/contacto", languages: languageAlternates("/contacto") },
   openGraph: {
     title: "Contacto | MOLLY YLLOM",
     description:
       "Hablemos de tu próximo proyecto. Escríbeme o agenda una llamada de 30 minutos.",
     url: "/contacto",
+    locale: "es_ES",
+    alternateLocale: "en_US",
   },
 };
 

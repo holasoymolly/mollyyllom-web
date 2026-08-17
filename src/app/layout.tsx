@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { Amplitude } from "@/amplitude";
+import { languageAlternates } from "@/i18n/metadata";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
   title: "MOLLY YLLOM | Estudio de Diseño Gráfico",
   description: "Estudio de Diseño Gráfico especializado en Branding",
   robots: "max-image-preview:large",
+  alternates: { canonical: "/", languages: languageAlternates("/") },
   openGraph: {
     type: "website",
     title: "MOLLY YLLOM | Estudio de Diseño Gráfico",
@@ -26,6 +28,7 @@ export const metadata: Metadata = {
       },
     ],
     locale: "es_ES",
+    alternateLocale: "en_US",
   },
 };
 
