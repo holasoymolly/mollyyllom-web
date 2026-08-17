@@ -131,6 +131,17 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
     imageGroups.push(allImages.slice(cursor, cursor + size));
     cursor += size;
   }
+
+  /**
+   * Let two more images run before the delivery block, so 'what shipped' and
+   * the outcome land after the reader has seen more of the work rather than
+   * arriving on the heels of the body copy.
+   */
+  const deliveryIndex = textBlocks.findIndex((block) => block.key === 'delivery');
+  if (deliveryIndex > 0) {
+    const moved = imageGroups[deliveryIndex].splice(0, 2);
+    imageGroups[deliveryIndex - 1].push(...moved);
+  }
   const meta = [
     project?.client && { label: t.projects.client, value: project.client },
     project?.year && { label: t.projects.year, value: project.year },
