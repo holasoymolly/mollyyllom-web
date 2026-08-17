@@ -88,10 +88,9 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
               <span className="text-violet-500 text-[10px] font-bold tracking-[0.25em] uppercase">
                 {t.projects.shipped}
               </span>
-              <ul className="flex flex-col gap-2.5">
+              <ul className="flex flex-col gap-3">
                 {shipped.map((item) => (
-                  <li key={item} className="text-indigo-950/70 leading-relaxed pl-4 relative">
-                    <span className="absolute left-0 text-violet-500">·</span>
+                  <li key={item} className="text-indigo-950/70 leading-relaxed">
                     {item}
                   </li>
                 ))}
@@ -287,11 +286,17 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
               <span className="text-violet-500 text-[10px] font-bold tracking-[0.25em] uppercase">
                 {t.projects.credits}
               </span>
-              {credits.map((line) => (
-                <p key={line} className="text-indigo-950/60 leading-relaxed">
-                  {line}
-                </p>
-              ))}
+              {credits.map((line) => {
+                const split = line.indexOf(':');
+                const label = split > -1 ? line.slice(0, split) : line;
+                const name = split > -1 ? line.slice(split + 1).trim() : '';
+                return (
+                  <p key={line} className="leading-relaxed">
+                    <span className="text-indigo-950/50">{label}</span>
+                    {name && <span className="text-indigo-950 font-bold">: {name}</span>}
+                  </p>
+                );
+              })}
             </div>
           </section>
         )}

@@ -65,6 +65,8 @@ const ciudadFielProject: Project = {
     "Un solo isotipo cubre el sello y la escuela sin necesidad de dos marcas.",
     "La economía del trazo permitió bordarlo, troquelarlo y repujarlo sin volver a dibujarlo.",
   ],
+  credits: ["Identidad de marca: Molly Yllom"],
+  creditsEn: ["Brand identity: Molly Yllom"],
   outcomeEn: [
     "The brand is live and in use across Ciudad Fiel's channels.",
     "One symbol covers both the label and the school, with no need for two brands.",
@@ -129,8 +131,16 @@ const burnClaimProject: Project = {
     "Alianzas con MEW y MonkeDAO.",
     "El primer trimestre de 2026 fue el mejor del producto hasta ahora, con 206,893 transacciones.",
   ],
-  credits: ["Animación de personajes: Manuel Torres. Animaciones de la app en dispositivos: Molly Yllom."],
-  creditsEn: ["Character animation: Manuel Torres. App-in-device animations: Molly Yllom."],
+  credits: [
+    "Identidad de producto y rediseño de la app: Molly Yllom",
+    "Animación de personajes: Manuel Torres",
+    "Animaciones de la app en dispositivos: Molly Yllom",
+  ],
+  creditsEn: [
+    "Product identity and app redesign: Molly Yllom",
+    "Character animation: Manuel Torres",
+    "App-in-device animations: Molly Yllom",
+  ],
   outcomeEn: [
     "Over 30,500 wallets have used Burn & Claim.",
     "First burn app featured in the Solana dApp Store, listed on Phantom, MetaMask and Solflare Discover.",
@@ -199,8 +209,16 @@ const aerosolProject: Project = {
     "El refinamiento de marca cambió cómo se define la empresa: pasó de llamarse un web3 product studio a un product studio.",
     "El rol creció con el trabajo, de consultora externa a Head of Design.",
   ],
-  credits: ["Animación de personajes: Manuel Torres. Animaciones de producto e interfaz: Molly Yllom."],
-  creditsEn: ["Character animation: Manuel Torres. Product and interface animation: Molly Yllom."],
+  credits: [
+    "Dirección de arte e identidad: Molly Yllom",
+    "Animación de personajes: Manuel Torres",
+    "Animaciones de producto e interfaz: Molly Yllom",
+  ],
+  creditsEn: [
+    "Art direction and identity: Molly Yllom",
+    "Character animation: Manuel Torres",
+    "Product and interface animation: Molly Yllom",
+  ],
   outcomeEn: [
     "The identity shipped on 7 July 2025 and is still the company brand.",
     "With the new brand in place, Burn & Claim became the first burn app featured in the Solana dApp Store, was listed on MetaMask, Phantom and Solflare Discover, and signed partnerships with MEW and MonkeDAO.",
@@ -263,6 +281,8 @@ const allianceProject: Project = {
     "La marca resuelve equilibrio y seriedad sin usar ni un solo recurso gráfico del sector.",
     "El isotipo funciona en relieve seco, en dorado y en sello de madera sin perder legibilidad.",
   ],
+  credits: ["Identidad de marca: Molly Yllom"],
+  creditsEn: ["Brand identity: Molly Yllom"],
   outcomeEn: [
     "A US client, in New York, worked remotely from Santo Domingo.",
     "The brand delivers balance and seriousness without using a single stock cue from the sector.",
@@ -651,8 +671,16 @@ const mlLogoProject: Project = {
     "The site is still live at marialunares.com.",
     "Brand and site came from the same hand, with no handoff between design and build.",
   ],
-  credits: ["Ilustración del video «Raíces»: Lorena La Chill. Animación: Molly Yllom."],
-  creditsEn: ["Illustration for the «Raíces» video: Lorena La Chill. Animation: Molly Yllom."],
+  credits: [
+    "Dirección creativa, identidad y desarrollo: Molly Yllom",
+    "Ilustración del video «Raíces»: Lorena La Chill",
+    "Animación del video «Raíces»: Molly Yllom",
+  ],
+  creditsEn: [
+    "Creative direction, identity and development: Molly Yllom",
+    "Illustration for the «Raíces» video: Lorena La Chill",
+    "Animation for the «Raíces» video: Molly Yllom",
+  ],
   portfolioImage: "/img/projects/maria-lunares/ml-logo-animado-1x1-1.mp4",
   heroImage: "/img/projects/maria-lunares/ml-logo-x-my-01.webp",
   paragraphs: [
