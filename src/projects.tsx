@@ -342,6 +342,14 @@ const materDesignProject: Project = {
     "A vibrant palette built to coexist with other people's work",
     "Brand applications",
   ],
+  outcome: [
+    "Un cliente estadounidense más, trabajado en remoto desde Santo Domingo.",
+    "El cliente es una agencia de comunicación visual, así que quienes aprobaron el trabajo se dedican a esto. La marca se entregó alineada con la visión que ellos mismos tenían del estudio.",
+  ],
+  outcomeEn: [
+    "Another US client, worked remotely from Santo Domingo.",
+    "The client is a visual communication agency, so the people signing off on the work do this for a living. The brand was delivered aligned with the vision they had for their own studio.",
+  ],
   credits: [
     "Identidad de marca: Molly Yllom",
   ],
