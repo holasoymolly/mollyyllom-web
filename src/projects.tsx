@@ -6,6 +6,27 @@ export interface Project {
   paragraphsEn: string[];
   images: string[];
   slug: string;
+
+  /**
+   * Case-study fields. All optional: a project without them renders exactly as
+   * before, so the 15 projects that are fine as a written piece stay untouched.
+   * Only fill these where there is something real to say. Never pad them.
+   */
+  client?: string;
+  year?: string;
+  role?: string;
+  roleEn?: string;
+  scope?: string[];
+  scopeEn?: string[];
+  brief?: string;
+  briefEn?: string;
+  shipped?: string[];
+  shippedEn?: string[];
+  outcome?: string[];
+  outcomeEn?: string[];
+  /** Collaborators, so work by other people is never implicitly claimed. */
+  credits?: string[];
+  creditsEn?: string[];
 }
 
 /**
@@ -19,6 +40,35 @@ export const HOME_GRID_LIMIT = 15;
 const ciudadFielProject: Project = {
   slug: "ciudad-fiel",
   title: "Ciudad Fiel",
+  client: "Pedro Kelly, productor musical y compositor",
+  role: "Identidad de marca. Proyecto en solitario",
+  roleEn: "Brand identity. Solo project",
+  scope: ["Identidad", "Isotipo y logotipo", "Sistema de color", "Aplicaciones y merch"],
+  scopeEn: ["Identity", "Symbol and wordmark", "Color system", "Applications and merch"],
+  brief: "Pedro Kelly pidió un logo para Ciudad Fiel. El problema real era que una sola marca tenía que sostener dos cosas distintas, un sello discográfico y una escuela para productores que empiezan, y funcionar igual firmando un lanzamiento que colgada en la pared de un salón de clase.",
+  briefEn: "Pedro Kelly asked for a logo for Ciudad Fiel. The real problem was that a single mark had to hold two different things, a record label and a school for producers who are just starting, and work equally well signing a release and hanging on a classroom wall.",
+  shipped: [
+    "Isotipo que se lee como C y F encajadas de cerca, y como tornamesa de lejos",
+    "Logotipo que separa CF en fino y MUSIC en negrita para que marca madre y línea musical convivan",
+    "Sistema de dos colores, verde menta y rojo cálido",
+    "Aplicaciones en merch: bordado, troquelado y repujado en cuero",
+  ],
+  shippedEn: [
+    "A symbol that reads as C and F locked together up close, and as a turntable from across the room",
+    "A wordmark splitting CF in light and MUSIC in bold so the parent brand and the music line share one block",
+    "A two-color system, mint green and warm red",
+    "Merch applications: embroidery, die cutting and leather embossing",
+  ],
+  outcome: [
+    "La marca está viva y en uso en los canales de Ciudad Fiel.",
+    "Un solo isotipo cubre el sello y la escuela sin necesidad de dos marcas.",
+    "La economía del trazo permitió bordarlo, troquelarlo y repujarlo sin volver a dibujarlo.",
+  ],
+  outcomeEn: [
+    "The brand is live and in use across Ciudad Fiel's channels.",
+    "One symbol covers both the label and the school, with no need for two brands.",
+    "The economy of the mark let it be embroidered, die cut and embossed without being redrawn.",
+  ],
   portfolioImage: "/img/projects/ciudad-fiel/9.mp4",
   heroImage: "/img/projects/ciudad-fiel/2.webp",
   paragraphs: [
@@ -50,6 +100,42 @@ const ciudadFielProject: Project = {
 const burnClaimProject: Project = {
   slug: "burn-claim",
   title: "Burn & Claim",
+  client: "Aerosol",
+  year: "2024 - 2026",
+  role: "Identidad de producto y rediseño de la app",
+  roleEn: "Product identity and app redesign",
+  scope: ["Identidad de submarca", "Ilustración", "Arquitectura de información", "Diseño de interfaz", "Onboarding", "Handoff a desarrollo"],
+  scopeEn: ["Sub-brand identity", "Illustration", "Information architecture", "Interface design", "Onboarding", "Developer handoff"],
+  brief: "Burn & Claim recupera el rent de cuentas y NFTs que ya no se usan. Es una operación irreversible en cadena, así que la app tenía que verse confiable antes de que alguien conectara su wallet. El reto era doble: que se sintiera segura sin volverse solemne, y que se leyera como parte de Aerosol sin dejar de tener carácter propio.",
+  briefEn: "Burn & Claim reclaims rent from unused accounts and NFTs. It is an irreversible on-chain action, so the app had to look trustworthy before anyone would connect a wallet. The challenge was double: feel safe without turning solemn, and read as part of Aerosol while keeping a character of its own.",
+  shipped: [
+    "Identidad de submarca: llama en forma de gota, personaje y sistema de color",
+    "Rediseño completo de la app, de la arquitectura de información a la entrega visual",
+    "Onboarding que explica el riesgo sin asustar",
+    "Vista de wallet que ordena qué se puede reclamar y cuánto vale",
+    "Flujo de donación a los proyectos que construyen en Solana",
+  ],
+  shippedEn: [
+    "Sub-brand identity: drop-shaped flame, character and color system",
+    "Full app redesign, from information architecture through final visual delivery",
+    "Onboarding that explains the risk without scaring people off",
+    "A wallet view that sorts what can be reclaimed and what it is worth",
+    "A donation flow routing part of what is recovered to projects building on Solana",
+  ],
+  outcome: [
+    "Más de 30,500 wallets han usado Burn & Claim.",
+    "Primera app de burn destacada en la Solana dApp Store, listada en Phantom, MetaMask y Solflare Discover.",
+    "Alianzas con MEW y MonkeDAO.",
+    "El primer trimestre de 2026 fue el mejor del producto hasta ahora, con 206,893 transacciones.",
+  ],
+  credits: ["Animación de personajes: Manuel Torres. Animaciones de la app en dispositivos: Molly Yllom."],
+  creditsEn: ["Character animation: Manuel Torres. App-in-device animations: Molly Yllom."],
+  outcomeEn: [
+    "Over 30,500 wallets have used Burn & Claim.",
+    "First burn app featured in the Solana dApp Store, listed on Phantom, MetaMask and Solflare Discover.",
+    "Partnerships with MEW and MonkeDAO.",
+    "Q1 2026 was the product's strongest quarter so far, at 206,893 transactions.",
+  ],
   portfolioImage: "/img/projects/burn-claim/16.mp4",
   heroImage: "/img/projects/burn-claim/1.webp",
   paragraphs: [
@@ -84,6 +170,42 @@ const burnClaimProject: Project = {
 const aerosolProject: Project = {
   slug: "aerosol",
   title: "Aerosol",
+  client: "Aerosol",
+  year: "2024 - 2026",
+  role: "Consultora de marca y directora de arte, luego Head of Design",
+  roleEn: "Brand consultant and art director, later Head of Design",
+  scope: ["Estrategia de marca", "Identidad", "Arquitectura de submarcas", "Sistema de diseño", "Ilustración", "Web"],
+  scopeEn: ["Brand strategy", "Identity", "Sub-brand architecture", "Design system", "Illustration", "Web"],
+  brief: "Aerosol construye herramientas para el ecosistema Solana. El producto ya funcionaba y tenía usuarios reales, pero la marca lo hacía ver como un proyecto secundario, y los productos se iban acumulando sin un sistema que los relacionara entre sí.",
+  briefEn: "Aerosol builds tools for the Solana ecosystem. The product already worked and had real users, but the brand made it look like a side project, and products were piling up with no system relating them to each other.",
+  shipped: [
+    "Identidad completa: logotipo, isotipo, personaje y sistema de color",
+    "Arquitectura de submarcas para Burn & Claim, Spotlight y Aerosol ID",
+    "Sistema de diseño por niveles para que producto, marketing y comunidad publiquen sin pasar por diseño",
+    "Sitio corporativo y páginas de producto",
+    "Escenas ilustradas, avatares y piezas de comunidad",
+  ],
+  shippedEn: [
+    "Full identity: wordmark, symbol, character and color system",
+    "Sub-brand architecture for Burn & Claim, Spotlight and Aerosol ID",
+    "A tiered design system so product, marketing and community can publish without going through design",
+    "Corporate site and product pages",
+    "Illustrated scenes, avatars and community pieces",
+  ],
+  outcome: [
+    "La identidad salió el 7 de julio de 2025 y sigue siendo la marca de la compañía.",
+    "Con la marca nueva, Burn & Claim fue la primera app de burn destacada en la Solana dApp Store, se listó en MetaMask, Phantom y Solflare Discover, y firmó alianzas con MEW y MonkeDAO.",
+    "El refinamiento de marca cambió cómo se define la empresa: pasó de llamarse un web3 product studio a un product studio.",
+    "El rol creció con el trabajo, de consultora externa a Head of Design.",
+  ],
+  credits: ["Animación de personajes: Manuel Torres. Animaciones de producto e interfaz: Molly Yllom."],
+  creditsEn: ["Character animation: Manuel Torres. Product and interface animation: Molly Yllom."],
+  outcomeEn: [
+    "The identity shipped on 7 July 2025 and is still the company brand.",
+    "With the new brand in place, Burn & Claim became the first burn app featured in the Solana dApp Store, was listed on MetaMask, Phantom and Solflare Discover, and signed partnerships with MEW and MonkeDAO.",
+    "The brand refinement changed how the company defines itself: it went from calling itself a web3 product studio to a product studio.",
+    "The role grew with the work, from outside consultant to Head of Design.",
+  ],
   portfolioImage: "/img/projects/aerosol/14.mp4",
   heroImage: "/img/projects/aerosol/1.webp",
   paragraphs: [
@@ -115,17 +237,47 @@ const aerosolProject: Project = {
 const allianceProject: Project = {
   slug: "alliance",
   title: "Alliance",
+  client: "Suheidi Rivera, Alliance Legal Group PLLC (Nueva York)",
+  year: "2021",
+  role: "Logotipo e identidad de marca",
+  roleEn: "Logo and brand identity",
+  scope: ["Identidad", "Isotipo y logotipo", "Sistema de color", "Papelería y aplicaciones en relieve"],
+  scopeEn: ["Identity", "Symbol and wordmark", "Color system", "Stationery and embossed applications"],
+  brief: "Un bufete de Nueva York que necesitaba no parecerse a los demás bufetes. La categoría entera se ve igual: azul marino, dorado y la balanza de la justicia. El encargo era transmitir equilibrio y confianza sin caer en ninguno de esos lugares comunes.",
+  briefEn: "A New York law firm that needed to not look like every other law firm. The whole category looks the same: navy, gold and the scales of justice. The brief was to convey balance and trust without landing on any of those clichés.",
+  shipped: [
+    "Isotipo: piedras apiladas en equilibrio sobre un fulcro, la idea de balance sin la balanza literal",
+    "Logotipo en serif clásica con «Legal Group PLLC» en sans espaciada debajo",
+    "Paleta cálida de topo y melocotón, en lugar del azul marino y dorado de la categoría",
+    "Aplicaciones en relieve: papel negro, relieve dorado y sello de madera",
+  ],
+  shippedEn: [
+    "Symbol: stones stacked in balance on a fulcrum, the idea of equilibrium without the literal scales",
+    "A classical serif wordmark with «Legal Group PLLC» set in spaced sans beneath it",
+    "A warm taupe and peach palette instead of the category's navy and gold",
+    "Embossed applications: black paper, gold emboss and a wooden stamp",
+  ],
+  outcome: [
+    "Un cliente estadounidense, en Nueva York, trabajado en remoto desde Santo Domingo.",
+    "La marca resuelve equilibrio y seriedad sin usar ni un solo recurso gráfico del sector.",
+    "El isotipo funciona en relieve seco, en dorado y en sello de madera sin perder legibilidad.",
+  ],
+  outcomeEn: [
+    "A US client, in New York, worked remotely from Santo Domingo.",
+    "The brand delivers balance and seriousness without using a single stock cue from the sector.",
+    "The symbol holds up in blind emboss, in gold and as a wooden stamp without losing legibility.",
+  ],
   portfolioImage: "/img/projects/alliance/alliance-gif-1.mp4",
   heroImage: "/img/projects/alliance/alliance-logo-gold-emboss-mockup.webp",
   paragraphs: [
-    "Alliance es una firma de abogados con sede en la Ciudad de Nueva York. Inspirada en la esencia de Alliance y su compromiso con la excelencia legal, creamos un diseño que refleja su enfoque fresco y moderno.",
-    "La idea detrás del concepto es representar el equilibrio ideal que los abogados y el derecho en general deben aportar a la sociedad. Con una combinación de elementos visuales, logramos transmitir la integridad, profesionalismo y confianza que caracterizan a Alliance.",
-    "Fue un honor ser parte de este proyecto que busca destacar en un mercado competitivo y ofrecer servicios legales de alta calidad.",
+    "El equilibrio se resolvió con piedras, no con una balanza. Tres círculos y dos travesaños apoyados sobre un fulcro: un montón que se sostiene solo, atrapado justo en el momento en que encuentra su punto.",
+    "La decisión de fondo fue cambiar la temperatura de la categoría. En vez del azul marino y el dorado con que se viste todo el sector, la marca corre sobre topo y melocotón. Una serif clásica sostiene la seriedad que un bufete necesita, y una sans espaciada debajo baja el tono lo suficiente para que no se lea como un despacho del siglo pasado.",
+    "El isotipo se dibujó pensando en el relieve. Formas macizas, sin línea fina y sin ningún detalle que desaparezca al presionar el papel. Por eso aguanta igual en relieve seco sobre papel negro, en dorado y tallado en un sello de madera.",
   ],
   paragraphsEn: [
-    "Alliance is a law firm based in New York City. Inspired by Alliance's essence and its commitment to legal excellence, we created a design that reflects their fresh and modern approach.",
-    "The concept aims to represent the ideal balance that lawyers and the law in general should bring to society. Through a combination of visual elements, we conveyed the integrity, professionalism, and trust that define Alliance.",
-    "It was an honor to be part of this project, which seeks to stand out in a competitive market and deliver high-quality legal services.",
+    "Balance was solved with stones, not with scales. Three circles and two beams resting on a fulcrum: a stack that holds itself up, caught at the exact moment it finds its point.",
+    "The real decision was to change the temperature of the category. Instead of the navy and gold the whole sector wears, the brand runs on taupe and peach. A classical serif carries the seriousness a law firm needs, and a spaced sans underneath lowers the tone just enough that it does not read like a practice from the last century.",
+    "The symbol was drawn for emboss. Solid shapes, no hairlines, no detail that disappears when the paper is pressed. That is why it holds up in blind emboss on black paper, in gold, and carved into a wooden stamp.",
   ],
   images: [
     "/img/projects/alliance/alliance-logo-behance-01.webp",
@@ -470,6 +622,36 @@ const bhMobiliarioProject: Project = {
 const mlLogoProject: Project = {
   slug: "maria-lunares",
   title: "Maria Lunares",
+  client: "Maria Lunares, artista musical independiente",
+  year: "2023 - 2024",
+  role: "Dirección creativa, identidad y desarrollo front-end",
+  roleEn: "Creative direction, identity and front-end development",
+  scope: ["Concepto", "Identidad", "Dirección de arte", "Diseño web", "Desarrollo front-end"],
+  scopeEn: ["Concept", "Identity", "Art direction", "Web design", "Front-end development"],
+  brief: "Una artista musical independiente necesitaba una identidad digital propia y un lugar donde viviera. La marca se construyó primero, y el sitio salió de ella.",
+  briefEn: "An independent music artist needed a digital identity of her own and a place for it to live. The brand was built first, and the site came out of it.",
+  shipped: [
+    "Concepto e identidad visual a partir del significado del nombre",
+    "Dirección de arte para el universo visual del proyecto",
+    "marialunares.com, diseñado y programado por mí en Next.js",
+    "Animación del video oficial de «Raíces»",
+  ],
+  shippedEn: [
+    "Concept and visual identity built out of the meaning of the name",
+    "Art direction for the visual universe of the project",
+    "marialunares.com, designed and coded by me in Next.js",
+    "Animation for the official «Raíces» music video",
+  ],
+  outcome: [
+    "El sitio sigue en línea en marialunares.com.",
+    "Marca y sitio salieron de la misma mano, sin traspaso entre diseño y desarrollo.",
+  ],
+  outcomeEn: [
+    "The site is still live at marialunares.com.",
+    "Brand and site came from the same hand, with no handoff between design and build.",
+  ],
+  credits: ["Ilustración del video «Raíces»: Lorena La Chill. Animación: Molly Yllom."],
+  creditsEn: ["Illustration for the «Raíces» video: Lorena La Chill. Animation: Molly Yllom."],
   portfolioImage: "/img/projects/maria-lunares/ml-logo-animado-1x1-1.mp4",
   heroImage: "/img/projects/maria-lunares/ml-logo-x-my-01.webp",
   paragraphs: [
