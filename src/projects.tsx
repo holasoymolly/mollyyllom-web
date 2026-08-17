@@ -41,6 +41,7 @@ const ciudadFielProject: Project = {
   slug: "ciudad-fiel",
   title: "Ciudad Fiel",
   client: "Pedro Kelly, productor musical y compositor",
+  year: "2021",
   role: "Identidad de marca. Proyecto en solitario",
   roleEn: "Brand identity. Solo project",
   scope: ["Identidad", "Isotipo y logotipo", "Sistema de color", "Aplicaciones y merch"],
