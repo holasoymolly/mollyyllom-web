@@ -316,6 +316,37 @@ const allianceProject: Project = {
 const materDesignProject: Project = {
   slug: "mater-design",
   title: "Mater Design",
+  client: "Mater Design (Estados Unidos)",
+  role: "Identidad de marca",
+  roleEn: "Brand identity",
+  scope: [
+    "Identidad",
+    "Logotipo",
+    "Sistema de color",
+  ],
+  scopeEn: [
+    "Identity",
+    "Logo",
+    "Color system",
+  ],
+  brief: "Mater Design es un estudio de diseño en Estados Unidos. La identidad de un estudio tiene un problema propio: debe ser distintiva sin competir con el trabajo de clientes que va a rodearla todos los días.",
+  briefEn: "Mater Design is a design studio in the United States. A studio's own identity has a particular problem: it has to be distinctive without competing with the client work that will surround it every day.",
+  shipped: [
+    "Logotipo construido con formas básicas: cuadrado, círculo y triángulo",
+    "Paleta viva pensada para convivir con trabajo ajeno",
+    "Aplicaciones de marca",
+  ],
+  shippedEn: [
+    "A logo built from basic shapes: square, circle and triangle",
+    "A vibrant palette built to coexist with other people's work",
+    "Brand applications",
+  ],
+  credits: [
+    "Identidad de marca: Molly Yllom",
+  ],
+  creditsEn: [
+    "Brand identity: Molly Yllom",
+  ],
   portfolioImage: "/img/projects/mater-design/mater-design-logo-animation.gif",
   heroImage: "/img/projects/mater-design/mtr-dsgn-x-MY-01.webp",
   paragraphs: [
@@ -346,6 +377,37 @@ const materDesignProject: Project = {
 const neuschoolProject: Project = {
   slug: "neuschool",
   title: "Neuschool",
+  client: "Neuschool",
+  role: "Rediseño de logotipo",
+  roleEn: "Logo redesign",
+  scope: [
+    "Rediseño de logotipo",
+    "Identidad",
+    "Aplicaciones digitales",
+  ],
+  scopeEn: [
+    "Logo redesign",
+    "Identity",
+    "Digital applications",
+  ],
+  brief: "Neuschool es una plataforma de gestión de estudios que nació de las clases a distancia durante la pandemia. No pedían una marca nueva: querían refrescar la que ya tenían y sumarle un detalle propio, sin perder lo que sus estudiantes ya reconocían.",
+  briefEn: "Neuschool is a study management platform born out of remote classes during the pandemic. They were not asking for a new brand: they wanted to refresh the one they had and add a detail of its own, without losing what their students already recognized.",
+  shipped: [
+    "Logotipo rediseñado conservando la estructura reconocible",
+    "Detalle distintivo que le da vida propia a la marca",
+    "Aplicaciones para la plataforma",
+  ],
+  shippedEn: [
+    "A redesigned logo that keeps the recognizable structure",
+    "A distinctive detail that gives the brand a life of its own",
+    "Applications for the platform",
+  ],
+  credits: [
+    "Rediseño de identidad: Molly Yllom",
+  ],
+  creditsEn: [
+    "Identity redesign: Molly Yllom",
+  ],
   portfolioImage: "/img/projects/neuschool/neuschool-gif-1.mp4",
   heroImage: "/img/projects/neuschool/neuschool-notebook-mockup.webp",
   paragraphs: [
@@ -375,6 +437,39 @@ const neuschoolProject: Project = {
 const momProject: Project = {
   slug: "mom",
   title: "MOM (Marketing of Minds)",
+  client: "Marketing of Minds (MoM)",
+  role: "Identidad visual",
+  roleEn: "Visual identity",
+  scope: [
+    "Identidad",
+    "Logotipo",
+    "Sistema flexible",
+    "Aplicaciones",
+  ],
+  scopeEn: [
+    "Identity",
+    "Logo",
+    "Flexible system",
+    "Applications",
+  ],
+  brief: "MoM es una agencia publicitaria dominicana. Una agencia no puede encerrarse en una sola forma: la marca tenía que ser un contenedor capaz de cambiar de contenido sin dejar de ser reconocible.",
+  briefEn: "MoM is a Dominican advertising agency. An agency cannot lock itself into a single shape: the brand had to be a container able to change its contents without stopping being recognizable.",
+  shipped: [
+    "Caja amarilla como espacio donde cabe cualquier idea",
+    "Sistema que se transforma en la forma que haga falta",
+    "Aplicaciones de marca",
+  ],
+  shippedEn: [
+    "A yellow box as the space where any idea fits",
+    "A system that transforms into whatever shape is needed",
+    "Brand applications",
+  ],
+  credits: [
+    "Identidad visual: Molly Yllom",
+  ],
+  creditsEn: [
+    "Visual identity: Molly Yllom",
+  ],
   portfolioImage: "/img/projects/mom/mom-logo-gif.gif",
   heroImage: "/img/projects/mom/mom-x-my-01.webp",
   paragraphs: [
@@ -409,6 +504,35 @@ const momProject: Project = {
 const neustackProject: Project = {
   slug: "neustack",
   title: "Neustack",
+  client: "Neustack",
+  role: "Rediseño de logotipo",
+  roleEn: "Logo redesign",
+  scope: [
+    "Rediseño de logotipo",
+    "Sistema de color",
+  ],
+  scopeEn: [
+    "Logo redesign",
+    "Color system",
+  ],
+  brief: "Neustack necesitaba modernizar su imagen sin volverse otra empresa. El encargo era actualizar, no reinventar: mantener la simplicidad que ya tenía y darle una lectura más segura de sí misma.",
+  briefEn: "Neustack needed to modernize its image without becoming another company. The brief was to update, not reinvent: keep the simplicity it already had and give it a more confident read.",
+  shipped: [
+    "Letra N resuelta en un trazo grueso y decidido",
+    "Azul para confianza, gris para equilibrio",
+    "Marca construida para escalar de favicon a stand",
+  ],
+  shippedEn: [
+    "The letter N resolved in one bold, decided stroke",
+    "Blue for trust, gray for balance",
+    "A mark built to scale from favicon to trade stand",
+  ],
+  credits: [
+    "Rediseño de identidad: Molly Yllom",
+  ],
+  creditsEn: [
+    "Identity redesign: Molly Yllom",
+  ],
   portfolioImage: "/img/projects/neustack/neustack-gif.mp4",
   heroImage: "/img/projects/neustack/neustack-x-MY-01.webp",
   paragraphs: [
@@ -439,6 +563,37 @@ const neustackProject: Project = {
 const dinerologyProject: Project = {
   slug: "dinerology",
   title: "Dinerology",
+  client: "JMMB",
+  role: "Logotipo y lineamientos gráficos",
+  roleEn: "Logo and graphic guidelines",
+  scope: [
+    "Logotipo",
+    "Lineamientos gráficos",
+    "Piezas para YouTube",
+  ],
+  scopeEn: [
+    "Logo",
+    "Graphic guidelines",
+    "YouTube assets",
+  ],
+  brief: "Dinerology es el canal de YouTube de educación financiera de JMMB. El encargo venía con un límite claro: trabajar dentro de los lineamientos gráficos del banco y con su paleta, sin inventar una marca aparte.",
+  briefEn: "Dinerology is JMMB's financial education YouTube channel. The brief came with a hard limit: work inside the bank's existing graphic guidelines and palette, without inventing a separate brand.",
+  shipped: [
+    "Logotipo del canal dentro del sistema JMMB",
+    "Lineamientos gráficos para el contenido",
+    "Piezas para el formato de YouTube",
+  ],
+  shippedEn: [
+    "A channel logo inside the JMMB system",
+    "Graphic guidelines for the content",
+    "Assets built for the YouTube format",
+  ],
+  credits: [
+    "Logotipo y lineamientos: Molly Yllom",
+  ],
+  creditsEn: [
+    "Logo and guidelines: Molly Yllom",
+  ],
   portfolioImage: "/img/projects/dinerology/logo-6-remix.gif",
   heroImage: "/img/projects/dinerology/dinerology-japan-exterior-advertising-mockup.webp",
   paragraphs: [
@@ -461,6 +616,35 @@ const dinerologyProject: Project = {
 const riccieOriachProject: Project = {
   slug: "riccie-oriach",
   title: "Riccie Oriach",
+  client: "Riccie Oriach",
+  role: "Identidad visual",
+  roleEn: "Visual identity",
+  scope: [
+    "Identidad",
+    "Logotipo",
+    "Aplicaciones musicales",
+  ],
+  scopeEn: [
+    "Identity",
+    "Logo",
+    "Music applications",
+  ],
+  brief: "Riccie Oriach mezcla ritmos dominicanos como salve, palos, gagá, merengue y pripri con rock, hip-hop, salsa y punk. Una marca que representa esa mezcla no puede apoyarse en un solo género sin traicionar al resto.",
+  briefEn: "Riccie Oriach mixes Dominican rhythms like salve, palos, gagá, merengue and pripri with rock, hip-hop, salsa and punk. A brand representing that mix cannot lean on a single genre without betraying the rest.",
+  shipped: [
+    "Logotipo que carga la personalidad del artista antes que un género",
+    "Sistema visual para lanzamientos y plataformas",
+  ],
+  shippedEn: [
+    "A logo that carries the artist's personality before any one genre",
+    "A visual system for releases and platforms",
+  ],
+  credits: [
+    "Identidad visual: Molly Yllom",
+  ],
+  creditsEn: [
+    "Visual identity: Molly Yllom",
+  ],
   portfolioImage: "/img/projects/riccie-oriach/riccie-oriach-gif.mp4",
   heroImage: "/img/projects/riccie-oriach/riccie-oriach-logo-01.webp",
   paragraphs: [
@@ -493,6 +677,37 @@ const riccieOriachProject: Project = {
 const greenSpiritProject: Project = {
   slug: "green-spirit",
   title: "Green Spirit",
+  client: "Green Spirit",
+  role: "Logotipo e identidad visual",
+  roleEn: "Logo and visual identity",
+  scope: [
+    "Identidad",
+    "Logotipo",
+    "Sistema de color",
+  ],
+  scopeEn: [
+    "Identity",
+    "Logo",
+    "Color system",
+  ],
+  brief: "Green Spirit ayuda a la gente a conectar con las plantas. El riesgo de la categoría es obvio: todo lo verde termina pareciéndose. La marca tenía que salir del producto y no de una idea genérica de naturaleza.",
+  briefEn: "Green Spirit helps people connect with plants. The category risk is obvious: everything green ends up looking alike. The brand had to come out of the product rather than a generic idea of nature.",
+  shipped: [
+    "Logotipo e identidad visual",
+    "Paleta orgánica tomada de las plantas mismas",
+    "Aplicaciones de marca",
+  ],
+  shippedEn: [
+    "Logo and visual identity",
+    "An organic palette pulled from the plants themselves",
+    "Brand applications",
+  ],
+  credits: [
+    "Identidad visual: Molly Yllom",
+  ],
+  creditsEn: [
+    "Visual identity: Molly Yllom",
+  ],
   portfolioImage: "/img/projects/green-spirit/green-spirit-gif.mp4",
   heroImage: "/img/projects/green-spirit/green-spirit-logo-05.webp",
   paragraphs: [
@@ -523,6 +738,49 @@ const greenSpiritProject: Project = {
 const distopiaProject: Project = {
   slug: "distopia",
   title: "Distopia",
+  client: "Distopia",
+  role: "Logotipo e identidad visual",
+  roleEn: "Logo and visual identity",
+  scope: [
+    "Identidad",
+    "Logotipo",
+    "Piezas digitales",
+    "Impresos",
+    "Murales",
+  ],
+  scopeEn: [
+    "Identity",
+    "Logo",
+    "Digital assets",
+    "Print",
+    "Murals",
+  ],
+  brief: "Distopia sostuvo la escena de música electrónica dominicana dentro y fuera del país. El nombre pedía un enfoque atípico, y la marca tenía que aguantar tanto una pantalla como la pared de un espacio de fiesta.",
+  briefEn: "Distopia supported the Dominican electronic music scene at home and abroad. The name asked for an atypical approach, and the brand had to hold up on a screen and on the wall of a party space alike.",
+  shipped: [
+    "Logotipo minimalista con influencia de Op Art",
+    "Piezas gráficas digitales y físicas",
+    "Murales",
+    "Materiales impresos",
+  ],
+  shippedEn: [
+    "A minimalist logo with an Op Art influence",
+    "Digital and physical graphic pieces",
+    "Murals",
+    "Print materials",
+  ],
+  outcome: [
+    "La identidad se desplegó en digital, impreso y a escala de mural.",
+  ],
+  outcomeEn: [
+    "The identity rolled out across digital, print and at mural scale.",
+  ],
+  credits: [
+    "Identidad visual: Molly Yllom",
+  ],
+  creditsEn: [
+    "Visual identity: Molly Yllom",
+  ],
   portfolioImage: "/img/projects/distopia/distopia-tee-design-animation.gif",
   heroImage: "/img/projects/distopia/distopia-posters-mockup.webp",
   paragraphs: [
@@ -548,6 +806,35 @@ const distopiaProject: Project = {
 const indhauciProject: Project = {
   slug: "indhauci",
   title: "INDHAUCI",
+  client: "Constructora INDHAUCI",
+  role: "Rediseño de imagen corporativa",
+  roleEn: "Corporate image redesign",
+  scope: [
+    "Identidad corporativa",
+    "Logotipo",
+    "Aplicaciones",
+  ],
+  scopeEn: [
+    "Corporate identity",
+    "Logo",
+    "Applications",
+  ],
+  brief: "Constructora INDHAUCI lleva más de 20 años operando. Rediseñar una marca con dos décadas de reconocimiento acumulado tiene un riesgo claro: modernizarla hasta volverla irreconocible para quienes ya la conocían.",
+  briefEn: "Constructora INDHAUCI has been operating for more than 20 years. Redesigning a brand with two decades of accumulated recognition carries an obvious risk: modernizing it until it stops being recognizable to the people who already knew it.",
+  shipped: [
+    "Logotipo actualizado conservando los códigos que ya identificaban a la empresa",
+    "Implementación en distintas piezas corporativas",
+  ],
+  shippedEn: [
+    "An updated logo that keeps the codes that already identified the company",
+    "Implementation across corporate pieces",
+  ],
+  credits: [
+    "Rediseño de identidad corporativa: Molly Yllom",
+  ],
+  creditsEn: [
+    "Corporate identity redesign: Molly Yllom",
+  ],
   portfolioImage: "/img/projects/indhauci/indhauci-gif-1.mp4",
   heroImage: "/img/projects/indhauci/indhauci-logo-sticker-mockup.webp",
   paragraphs: [
@@ -578,6 +865,39 @@ const indhauciProject: Project = {
 const ditoDicoProject: Project = {
   slug: "dito-dico",
   title: "Dito Dico",
+  client: "Dito Dico",
+  role: "Logotipo, identidad y personaje",
+  roleEn: "Logo, identity and character",
+  scope: [
+    "Identidad",
+    "Logotipo",
+    "Ilustración de personaje",
+    "Aplicaciones",
+  ],
+  scopeEn: [
+    "Identity",
+    "Logo",
+    "Character illustration",
+    "Applications",
+  ],
+  brief: "Dito Dico es un DJ dominicano que fusiona sonido tropical con funk y electrónica. Un logotipo solo no alcanzaba para cargar esa energía, así que la marca necesitaba una cara.",
+  briefEn: "Dito Dico is a Dominican DJ fusing tropical sound with funk and electronic music. A logo on its own could not carry that energy, so the brand needed a face.",
+  shipped: [
+    "Mascota ilustrada en estilo cartoon de los años 30",
+    "Disco como elemento central del sistema",
+    "Logotipo e implementación en distintos materiales",
+  ],
+  shippedEn: [
+    "An illustrated mascot in a 1930s cartoon style",
+    "A record as the central element of the system",
+    "Logo and implementation across materials",
+  ],
+  credits: [
+    "Identidad e ilustración: Molly Yllom",
+  ],
+  creditsEn: [
+    "Identity and illustration: Molly Yllom",
+  ],
   portfolioImage: "/img/projects/dito-dico/dito-dico-gif-1.gif",
   heroImage: "/img/projects/dito-dico/dito-dico-camiseta-mockup-02.webp",
   paragraphs: [
@@ -611,6 +931,37 @@ const ditoDicoProject: Project = {
 const bhMobiliarioProject: Project = {
   slug: "bh-mobiliario",
   title: "BH Mobiliario",
+  client: "BH Mobiliario",
+  role: "Identidad de marca",
+  roleEn: "Brand identity",
+  scope: [
+    "Identidad",
+    "Logotipo",
+    "Aplicaciones",
+  ],
+  scopeEn: [
+    "Identity",
+    "Logo",
+    "Applications",
+  ],
+  brief: "BH Mobiliario vende mobiliario de oficina. En una categoría que suele venderse por catálogo y precio, la marca tenía que hablar de producto y de trato al mismo tiempo.",
+  briefEn: "BH Mobiliario sells office furniture. In a category usually sold on catalogue and price, the brand had to speak about the product and about how they treat people at the same time.",
+  shipped: [
+    "Logotipo donde un estante de oficina forma las letras BH",
+    "Sistema visual para catálogo y comunicación",
+    "Aplicaciones de marca",
+  ],
+  shippedEn: [
+    "A logo where an office shelf forms the letters BH",
+    "A visual system for catalogue and communication",
+    "Brand applications",
+  ],
+  credits: [
+    "Identidad de marca: Molly Yllom",
+  ],
+  creditsEn: [
+    "Brand identity: Molly Yllom",
+  ],
   portfolioImage: "/img/projects/bh-mobiliario/bh-mobiliario-web-cover.mp4",
   heroImage: "/img/projects/bh-mobiliario/bh-mobiliario-office-wall-mockup.webp",
   paragraphs: [
@@ -706,6 +1057,37 @@ const mlLogoProject: Project = {
 const cdtLogoProject: Project = {
   slug: "canteras-del-tropico",
   title: "Canteras del Trópico",
+  client: "Canteras del Trópico",
+  role: "Logotipo y branding",
+  roleEn: "Logo and branding",
+  scope: [
+    "Identidad",
+    "Logotipo",
+    "Aplicaciones industriales",
+  ],
+  scopeEn: [
+    "Identity",
+    "Logo",
+    "Industrial applications",
+  ],
+  brief: "Canteras del Trópico extrae roca y materiales de alta calidad. La minería se comunica casi siempre desde la fuerza bruta, y aquí hacía falta que también se viera el lado humano y de servicio que diferencia a la empresa.",
+  briefEn: "Canteras del Trópico extracts high quality rock and materials. Mining almost always communicates through brute force, and here the human, service-driven side that sets the company apart had to show as well.",
+  shipped: [
+    "Logotipo que integra piedra y maquinaria de excavación",
+    "Sistema visual que equilibra robustez y trato humano",
+    "Aplicaciones de marca",
+  ],
+  shippedEn: [
+    "A logo integrating stone and excavation machinery",
+    "A visual system balancing robustness with a human approach",
+    "Brand applications",
+  ],
+  credits: [
+    "Identidad de marca: Molly Yllom",
+  ],
+  creditsEn: [
+    "Brand identity: Molly Yllom",
+  ],
   portfolioImage: "/img/projects/canteras-del-tropico/cdt-logo-2022-animation.gif",
   heroImage: "/img/projects/canteras-del-tropico/canteras-del-tropico-logo-01.webp",
   paragraphs: [
@@ -728,6 +1110,45 @@ const cdtLogoProject: Project = {
 const advanced: Project = {
   slug: "advanced-therapy",
   title: "Advanced Therapy",
+  client: "Advanced Therapy of South Florida (Estados Unidos)",
+  role: "Logotipo y branding",
+  roleEn: "Logo and branding",
+  scope: [
+    "Identidad",
+    "Logotipo",
+    "Sistema de color",
+    "Aplicaciones",
+  ],
+  scopeEn: [
+    "Identity",
+    "Logo",
+    "Color system",
+    "Applications",
+  ],
+  brief: "Advanced Therapy of South Florida es un centro de servicios psicológicos. Como en cualquier marca que trata con la confianza de la gente, el diseño tenía que transmitir seriedad sin volverse frío, porque alguien que busca terapia no necesita que lo intimiden.",
+  briefEn: "Advanced Therapy of South Florida is a psychological services center. As with any brand dealing in people's trust, the design had to convey seriousness without turning cold, because someone looking for therapy does not need to be intimidated.",
+  shipped: [
+    "Logotipo construido sobre la idea de desenredar la mente",
+    "Sistema visual de tono profesional y cercano",
+    "Aplicaciones de marca",
+  ],
+  shippedEn: [
+    "A logo built on the idea of untangling the mind",
+    "A visual system that is professional and approachable",
+    "Brand applications",
+  ],
+  outcome: [
+    "Un cliente estadounidense, en Florida, trabajado en remoto desde Santo Domingo.",
+  ],
+  outcomeEn: [
+    "A US client, in Florida, worked remotely from Santo Domingo.",
+  ],
+  credits: [
+    "Identidad de marca: Molly Yllom",
+  ],
+  creditsEn: [
+    "Brand identity: Molly Yllom",
+  ],
   portfolioImage: "/img/projects/advanced-therapy/atosf-logo-cover-animation.mp4",
   heroImage: "/img/projects/advanced-therapy/atosf-stationary.webp",
   paragraphs: [
