@@ -98,7 +98,7 @@ export function NormieCV({ lang = 'en' }: { lang?: Lang }) {
 
           {/* Back link */}
           <div className="mb-12">
-            <TransitionLink href="/" className="text-slate-500 hover:text-slate-300 text-xs font-medium tracking-widest uppercase transition-colors duration-200">
+            <TransitionLink href={lang === "es" ? "/" : "/en"} className="text-slate-500 hover:text-slate-300 text-xs font-medium tracking-widest uppercase transition-colors duration-200">
               ← mollyyllom.com
             </TransitionLink>
           </div>

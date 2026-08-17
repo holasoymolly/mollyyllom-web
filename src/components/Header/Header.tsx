@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { AppDrawer } from "../AppDrawer";
 import { TransitionLink } from "../TransitionLink";
 import { useLanguage } from "@/context/LanguageContext";
+import { stripLocale } from "@/i18n/routes";
 
 type NavLink = {
   href: string;
@@ -17,7 +18,9 @@ type NavLink = {
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const pathname = usePathname();
+  // Compared against unprefixed hrefs, so the /en pages light up the same nav
+  // item as their Spanish counterparts.
+  const pathname = stripLocale(usePathname() ?? '/');
   const { lang, t, toggleLang } = useLanguage();
 
   const navLinks: NavLink[] = [

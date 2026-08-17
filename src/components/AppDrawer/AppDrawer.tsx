@@ -9,6 +9,7 @@ import { RiInstagramLine } from '@/icons/RiInstagramLine';
 import { IcOutlineTiktok } from '@/icons/IcOutlineTiktok';
 import { XIcon } from '@/icons/XIcon';
 import { useLanguage } from "@/context/LanguageContext";
+import { stripLocale } from "@/i18n/routes";
 
 const socials = [
   { href: 'https://www.instagram.com/holasoymolly', Icon: RiInstagramLine, label: 'Instagram' },
@@ -27,7 +28,9 @@ const FOCUSABLE_SELECTOR =
   'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose }) => {
-  const pathname = usePathname();
+  // Compared against unprefixed hrefs, so the /en pages light up the same nav
+  // item as their Spanish counterparts.
+  const pathname = stripLocale(usePathname() ?? '/');
   const { lang, t, toggleLang } = useLanguage();
   const drawerRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);

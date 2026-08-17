@@ -112,7 +112,7 @@ export function Web3CV({ lang = 'en' }: { lang?: Lang }) {
 
           {/* Back link */}
           <div className="mb-12">
-            <TransitionLink href="/" className="text-slate-600 hover:text-slate-400 text-xs font-medium tracking-widest uppercase transition-colors duration-200">
+            <TransitionLink href={lang === "es" ? "/" : "/en"} className="text-slate-600 hover:text-slate-400 text-xs font-medium tracking-widest uppercase transition-colors duration-200">
               ← mollyyllom.com
             </TransitionLink>
           </div>
