@@ -1287,11 +1287,20 @@ const advanced: Project = {
   ],
 };
 
-/** Newest first. New projects go at the top. */
+/**
+ * Newest first. New projects go at the top.
+ *
+ * One deliberate exception to that order: the projects carrying interface,
+ * design-system and front-end work sit in the opening tiles. The resume says
+ * she designs in the browser and ships the front end, and a reader who clicks
+ * through has to see that on the first screen rather than eleven tiles down,
+ * under a run of identity work that reads as a single block.
+ */
 export const activeProjects = [
   ciudadFielProject,
   burnClaimProject,
   aerosolProject,
+  mlLogoProject,
   neustackProject,
   allianceProject,
   materDesignProject,
@@ -1299,7 +1308,6 @@ export const activeProjects = [
   momProject,
   dinerologyProject,
   riccieOriachProject,
-  mlLogoProject,
   greenSpiritProject,
   distopiaProject,
   indhauciProject,
