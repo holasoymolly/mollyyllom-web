@@ -19,12 +19,14 @@ export interface DownloadItem {
 
 export const downloadData: DownloadItem[] = [
   {
-    image: "/img/molly/molly_pfp.jpg",
+    // The thumbnails preview the document itself, the way the template covers
+    // below do. A portrait of Molly told a reader nothing about what the file is.
+    image: "/img/downloads/cv-pdf-preview.webp",
     downloadUrl: RESUME_PDF_URL,
     external: true,
   },
   {
-    image: "/img/molly/molly_pfp.jpg",
+    image: "/img/downloads/cv-online-preview.webp",
     downloadUrl: { es: "/cv/es", en: "/cv" },
     external: false,
     action: "view",
