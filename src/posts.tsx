@@ -50,7 +50,7 @@ export interface Post {
  * shipped.
  */
 const disenarNoEsCrearDesdeCero: Post = {
-  slug: 'disenar-no-siempre-es-crear-desde-cero',
+  slug: 'a-veces-disenar-es-escuchar',
   date: '2025-07-14',
   topic: 'Oficio',
   topicEn: 'Craft',
@@ -85,7 +85,7 @@ const disenarNoEsCrearDesdeCero: Post = {
 };
 
 const loQueNoSeVeEnUnaFoto: Post = {
-  slug: 'lo-que-no-se-ve-en-una-foto',
+  slug: 'la-parte-invisible-del-trabajo',
   date: '2025-08-08',
   topic: 'Proceso',
   topicEn: 'Process',
@@ -122,7 +122,7 @@ const loQueNoSeVeEnUnaFoto: Post = {
 };
 
 const cuandoDigoQueHagoNfts: Post = {
-  slug: 'cuando-digo-que-hago-nfts',
+  slug: 'la-conversacion-sobre-nfts',
   date: '2026-07-08',
   topic: 'Arte digital',
   topicEn: 'Digital art',
@@ -249,7 +249,7 @@ const desdeElCaribeParaElMundo: Post = {
 };
 
 const laConsistenciaNoEsSexy: Post = {
-  slug: 'la-consistencia-no-es-sexy',
+  slug: 'la-disciplina-invisible',
   date: '2026-07-02',
   topic: 'Oficio',
   topicEn: 'Craft',
