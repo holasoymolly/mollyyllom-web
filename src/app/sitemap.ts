@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { activeProjects } from "@/projects";
+import { activePosts } from "@/posts";
 import { EN_PREFIX } from "@/i18n/routes";
 
 const SITE_URL = "https://www.mollyyllom.com";
@@ -31,6 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...bilingualEntry("/",          { changeFrequency: "monthly", priority: 1.0, lastModified: now }),
     ...bilingualEntry("/conoceme",  { changeFrequency: "yearly",  priority: 0.7, lastModified: now }),
     ...bilingualEntry("/proyectos", { changeFrequency: "monthly", priority: 0.9, lastModified: now }),
+    ...bilingualEntry("/blog",      { changeFrequency: "monthly", priority: 0.8, lastModified: now }),
     ...bilingualEntry("/contacto",  { changeFrequency: "yearly",  priority: 0.6, lastModified: now }),
     ...bilingualEntry("/descargas", { changeFrequency: "yearly",  priority: 0.5, lastModified: now }),
   ];
@@ -54,5 +56,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       })
     );
 
-  return [...bilingualRoutes, ...cvRoutes, ...projectRoutes];
+  // An entry's own date is its lastModified: a blog listing that claims every
+  // post changed today is the one thing a crawler learns to distrust.
+  const postRoutes: MetadataRoute.Sitemap = activePosts.flatMap((post) =>
+    bilingualEntry(`/blog/${post.slug}`, {
+      changeFrequency: "yearly",
+      priority: 0.6,
+      lastModified: new Date(`${post.date}T00:00:00Z`),
+    })
+  );
+
+  return [...bilingualRoutes, ...cvRoutes, ...projectRoutes, ...postRoutes];
 }

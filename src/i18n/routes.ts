@@ -15,7 +15,7 @@ export const EN_PREFIX = '/en';
  * the URL (`/cv` vs `/cv/es`) and have their own toggle, so prefixing them would
  * point at routes that do not exist.
  */
-const LOCALIZED_ROOTS = ['/conoceme', '/proyectos', '/contacto', '/descargas'];
+const LOCALIZED_ROOTS = ['/conoceme', '/proyectos', '/blog', '/contacto', '/descargas'];
 
 /** Split an href into its path and whatever query string or hash follows it. */
 function splitPath(href: string): [string, string] {
