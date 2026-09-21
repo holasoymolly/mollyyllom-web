@@ -118,7 +118,9 @@ export const PostPage: FC<PostPageProps> = ({ slug }) => {
               <p className="text-2xl md:text-3xl font-black text-indigo-950 leading-snug">{lead}</p>
             )}
             {body.map((paragraph) => (
-              <p key={paragraph} className="text-lg text-indigo-950/70 leading-relaxed">
+              // `whitespace-pre-line` so a paragraph holding a list keeps its
+              // line breaks, which is how her posts are actually written.
+              <p key={paragraph} className="text-lg text-indigo-950/70 leading-relaxed whitespace-pre-line">
                 {paragraph}
               </p>
             ))}
