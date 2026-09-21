@@ -53,6 +53,8 @@ Non-trivial changes ship as a sequence of small commits (one per logical phase),
 | `/conoceme` · `/en/conoceme` | `ConocemePage` | |
 | `/proyectos` · `/en/proyectos` | `ProjectsPage` | Grid via `PortfolioGrid`, uncapped |
 | `/proyectos/[slug]` · `/en/proyectos/[slug]` | `ProjectPage` | Data from `projectsBySlug` |
+| `/blog` · `/en/blog` | `BlogPage` | Listing from `activePosts`, newest first |
+| `/blog/[slug]` · `/en/blog/[slug]` | `PostPage` | Data from `postsBySlug` |
 | `/contacto` · `/en/contacto` | `ContactPage` | |
 | `/descargas` · `/en/descargas` | `DownloadsPage` | |
 | `/cv` | `NormieCV` | Brand CV, English |
@@ -158,6 +160,7 @@ Autocapture records every click as a generic `[Amplitude] Element Clicked` ident
 | `Newsletter CTA Clicked` | The newsletter signup link in the footer is clicked | `location`, `lang` | `Footer` |
 | `Asset Downloaded` | A downloadable asset is opened, on `/descargas` or from the home availability block | `assetTitle`, `assetUrl`, `lang` | `DownloadsPage`, `HomePage/components/Availability` |
 | `Project Viewed` | A case study page mounts (once per slug; the language toggle does not re-fire it) | `projectSlug`, `projectTitle`, `lang` | `ProjectPage` |
+| `Article Viewed` | A blog entry mounts (once per slug; the language toggle does not re-fire it) | `articleSlug`, `articleTitle`, `lang` | `PostPage` |
 
 **RULE — whenever you add, remove, or change a user-facing conversion point, update Amplitude tracking and this table in the same commit.** Concretely:
 - A new CTA, download, contact route, external booking link, or funnel step gets a named event via a new helper in `src/lib/analytics.ts` — never a bare `amplitude.track('...')` string literal inline in a component.
@@ -475,3 +478,60 @@ The two grids differ only in length, and both render from the same `<PortfolioGr
 Each tile's kicker comes from the project's optional `gridLabel` / `gridLabelEn`, falling back to `portfolio.brandingLabel` ("Branding · Identidad"). Those labels are **derived from that project's own `scope` / `scopeEn`**, taking the two most representative entries written exactly as they appear there. Never invent a label, and leave the field out when the scope really is only branding. Two projects deliberately keep the default despite a broader scope: Dito Dico, because an illustration label positions Molly as an illustrator, and Dinerology, because it won a Bronze Effie (Dominican Republic, 2023) and a "YouTube assets" label sells it as loose social pieces.
 
 `HOME_GRID_LIMIT` is exported from `src/projects.tsx`. A project that scrolls off the home grid is **not** removed: it keeps its `/proyectos` tile, its case study page, and its sitemap entry. Nothing needs deleting when the list grows, so never trim `activeProjects` to keep the home page at 15.
+
+---
+
+## The blog (`/blog`)
+
+The blog is a **channel, not a decoration.** 45 application forms produced 13 rejections, 0
+interviews and not one sentence about her work; every human reply in the search came from a person
+with a name. Those people go cold because she has nothing to send them that is not a request. **A
+follow-up asks, an article gives**, and an article renews that reason every month.
+
+**Her site is the original and LinkedIn is the megaphone.** She writes the long version here, posts
+a short version on LinkedIn by hand, and links back. Never the other way round:
+
+- 🚨 **Never open, fetch, or drive a browser on linkedin.com.** She does every LinkedIn action
+  herself. Automated access risks her account, which would cost her the profile, her network and her
+  best hiring channel at once. This rule predates the blog and the blog does not soften it.
+- Syncing posts in is not possible anyway: `r_member_social` is restricted to approved users,
+  LinkedIn killed RSS years ago, and every third-party widget works by scraping.
+- Google indexes her site. LinkedIn posts are invisible to Google and die in the feed in 48 hours.
+
+### The data
+
+`src/posts.tsx` mirrors `src/projects.tsx`: a `Post[]`, plus `activePosts` and `postsBySlug`.
+
+- **Both languages are required fields, not optional ones.** `tsc` fails on an entry that exists
+  only in Spanish, which is the same lockstep rule `Translations` enforces on the UI strings.
+- **Each version is written, never machine translated.** Her voice in Spanish is not her voice in
+  English, and a reflective piece run through a translator loses exactly the human note the blog was
+  added for. This is the one place where "just translate it" is the wrong move.
+- **Ordering is automatic.** `activePosts` sorts by `date` descending, so a new entry can be appended
+  anywhere in the array. That one field drives the listing, the prev/next links and the sitemap.
+- `formatPostDate` parses and formats in UTC so the server and the browser agree, and
+  `readingMinutes` derives the reading time at 200 wpm. Neither is stored on the entry.
+
+### Adding an entry
+
+1. Append a `Post` to `posts` in `src/posts.tsx`. `slug`, `date`, `title`/`titleEn`,
+   `excerpt`/`excerptEn` and `paragraphs`/`paragraphsEn` are required; `topic`/`topicEn`,
+   `linkedinUrl` and `coverImage` are optional.
+2. `excerpt` feeds both the listing card and the meta description, so write it as a standalone
+   sentence or two. It goes through `metaDescription()`, never a raw slice.
+3. Nothing else needs touching. Both routes pre-render it via `generateStaticParams`, and
+   `sitemap.ts` emits both languages with the entry's own `date` as `lastModified`.
+
+### The rules she set, and they are what keep it from reading as spam
+
+1. 🚨 **An article never travels with a request attached.** Not even "by the way, I'm still looking".
+   If there is something to ask, it goes in another message, in another month.
+2. **One entry a month minimum, two maximum.** ⚠️ An abandoned blog is worse than no blog: three
+   September entries still sitting there in December tell a recruiter she starts things and drops
+   them.
+3. **One person per article, not a blast.** The same article sent to four people on the same day is
+   a mailing list, and it reads like one.
+4. **She posts to LinkedIn by hand, always.**
+
+⚠️ **Do not promote an empty blog to `main`.** The section ships to production with entries in it.
+If `activePosts` is empty, the work stays on `beta`.

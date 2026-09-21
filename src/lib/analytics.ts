@@ -31,6 +31,7 @@ type Surface =
   | 'contacto'
   | 'descargas'
   | 'proyecto'
+  | 'blog'
   | 'footer';
 
 /** Clicked through to Calendly to book a 30-min call — the strongest buying signal on the site. */
@@ -62,3 +63,15 @@ export const trackProjectViewed = (
   projectTitle: string,
   lang: Language,
 ) => track('Project Viewed', { projectSlug, projectTitle, lang });
+
+/**
+ * Read a blog entry. The blog exists to give her a reason to reappear to people
+ * who already know her work, so which entry travels well is the whole signal.
+ * `articleTitle` is always the Spanish title, so one entry stays one series
+ * whichever language it was read in.
+ */
+export const trackArticleViewed = (
+  articleSlug: string,
+  articleTitle: string,
+  lang: Language,
+) => track('Article Viewed', { articleSlug, articleTitle, lang });

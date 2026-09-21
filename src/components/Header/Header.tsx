@@ -26,6 +26,7 @@ export const Header = () => {
   const navLinks: NavLink[] = [
     { href: '/conoceme', label: t.nav.conoceme },
     { href: '/proyectos', label: t.nav.proyectos },
+    { href: '/blog', label: t.nav.blog },
     { href: '/contacto', label: t.nav.contacto },
     { href: '/descargas', label: t.nav.descargas },
     {

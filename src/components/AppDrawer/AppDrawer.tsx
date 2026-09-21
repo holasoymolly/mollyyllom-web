@@ -39,12 +39,13 @@ export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose }) => {
   const navLinks: Array<{ href: string; label: string; num: string; external?: boolean; iconSrc?: string }> = [
     { href: '/conoceme',  label: t.nav.conoceme,  num: '01' },
     { href: '/proyectos', label: t.nav.proyectos, num: '02' },
-    { href: '/contacto',  label: t.nav.contacto,  num: '03' },
-    { href: '/descargas', label: t.nav.descargas, num: '04' },
+    { href: '/blog',      label: t.nav.blog,      num: '03' },
+    { href: '/contacto',  label: t.nav.contacto,  num: '04' },
+    { href: '/descargas', label: t.nav.descargas, num: '05' },
     {
       href: 'https://www.mollyverse.art/welcome',
       label: 'Mollyverse',
-      num: '05',
+      num: '06',
       external: true,
       iconSrc: '/img/logo/mollyverse-icon.png',
     },
