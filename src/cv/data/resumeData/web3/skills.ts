@@ -44,11 +44,11 @@ export const web3Skills: SkillCategory[] = [
   {
     title: "Design Tools",
     items: [
-      "Figma",
       "Adobe Illustrator",
       "Adobe Photoshop",
       "Adobe InDesign",
       "After Effects",
+      "Figma",
     ],
   },
   {

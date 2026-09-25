@@ -34,11 +34,11 @@ export const skills: SkillCategory[] = [
   {
     title: "Design Tools",
     items: [
-      "Figma",
       "Adobe Illustrator",
       "Adobe Photoshop",
       "Adobe InDesign",
       "After Effects",
+      "Figma",
     ],
   },
   {
