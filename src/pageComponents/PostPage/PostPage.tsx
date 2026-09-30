@@ -62,53 +62,57 @@ export const PostPage: FC<PostPageProps> = ({ slug }) => {
 
       {/* Hero title */}
       <section className="bg-indigo-950 text-stone-200 px-6 md:px-16 lg:px-24 pt-20 pb-24">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-          className="mb-6"
-        >
-          <TransitionLink
-            href="/blog"
-            className="inline-flex items-center gap-2 text-slate-400 hover:text-violet-400 transition-colors duration-200 text-xs font-bold tracking-[0.2em] uppercase group"
-          >
-            <span className="inline-block transition-transform duration-200 group-hover:-translate-x-1">←</span>
-            {t.blog.backLink}
-          </TransitionLink>
-        </motion.div>
-
-        {topic && (
-          <motion.p
-            className="text-violet-400 text-xs font-bold tracking-[0.3em] uppercase mb-6"
+        {/* Same column as the article body below, so the title and the text
+            share one left edge instead of the title hugging the page padding. */}
+        <div className="max-w-3xl mx-auto">
+          <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.05, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            className="mb-6"
           >
-            {topic}
-          </motion.p>
-        )}
+            <TransitionLink
+              href="/blog"
+              className="inline-flex items-center gap-2 text-slate-400 hover:text-violet-400 transition-colors duration-200 text-xs font-bold tracking-[0.2em] uppercase group"
+            >
+              <span className="inline-block transition-transform duration-200 group-hover:-translate-x-1">←</span>
+              {t.blog.backLink}
+            </TransitionLink>
+          </motion.div>
 
-        <motion.h1
-          className="text-4xl sm:text-5xl md:text-6xl font-black leading-[1] tracking-tight max-w-4xl"
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-        >
-          {title}
-        </motion.h1>
+          {topic && (
+            <motion.p
+              className="text-violet-400 text-xs font-bold tracking-[0.3em] uppercase mb-6"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.05, ease: [0.25, 0.1, 0.25, 1] }}
+            >
+              {topic}
+            </motion.p>
+          )}
 
-        <motion.div
-          className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] font-bold tracking-[0.25em] uppercase text-slate-400"
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-        >
-          <time dateTime={post.date}>{formatPostDate(post.date, lang)}</time>
-          <span className="text-stone-200/20">·</span>
-          <span>
-            {readingMinutes(paragraphs)} {t.blog.readingTime}
-          </span>
-        </motion.div>
+          <motion.h1
+            className="text-4xl sm:text-5xl md:text-6xl font-black leading-[1] tracking-tight"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+          >
+            {title}
+          </motion.h1>
+
+          <motion.div
+            className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] font-bold tracking-[0.25em] uppercase text-slate-400"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+          >
+            <time dateTime={post.date}>{formatPostDate(post.date, lang)}</time>
+            <span className="text-stone-200/20">·</span>
+            <span>
+              {readingMinutes(paragraphs)} {t.blog.readingTime}
+            </span>
+          </motion.div>
+        </div>
       </section>
 
       <main>
