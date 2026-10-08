@@ -5,13 +5,13 @@ import { languageAlternates } from "@/i18n/metadata";
 export const metadata: Metadata = {
   title: "Molly Yllom | Art Director and Brand Designer",
   description:
-    "Art director and brand designer with seventeen years of experience. Working with US companies since 2019. Available for remote roles on US Eastern hours.",
+    "Art director and brand designer with seventeen years of experience. Working with US companies since 2016. Available for remote roles on US Eastern hours.",
   alternates: { canonical: "/en", languages: languageAlternates("/") },
   openGraph: {
     type: "website",
     title: "Molly Yllom | Art Director and Brand Designer",
     description:
-      "Art director and brand designer with seventeen years of experience. Working with US companies since 2019. Available for remote roles on US Eastern hours.",
+      "Art director and brand designer with seventeen years of experience. Working with US companies since 2016. Available for remote roles on US Eastern hours.",
     url: "/en",
     images: [
       {

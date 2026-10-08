@@ -5,13 +5,13 @@ import { languageAlternates } from "@/i18n/metadata";
 export const metadata: Metadata = {
   title: "Molly Yllom | Directora de Arte y Diseñadora de Marca",
   description:
-    "Directora de arte y diseñadora de marca con diecisiete años de experiencia. Trabajo con empresas de Estados Unidos desde 2019. Disponible para trabajo remoto en horario del Este de EE.UU.",
+    "Directora de arte y diseñadora de marca con diecisiete años de experiencia. Trabajo con empresas de Estados Unidos desde 2016. Disponible para trabajo remoto en horario del Este de EE.UU.",
   alternates: { canonical: "/", languages: languageAlternates("/") },
   openGraph: {
     type: "website",
     title: "Molly Yllom | Directora de Arte y Diseñadora de Marca",
     description:
-      "Directora de arte y diseñadora de marca con diecisiete años de experiencia. Trabajo con empresas de Estados Unidos desde 2019. Disponible para trabajo remoto en horario del Este de EE.UU.",
+      "Directora de arte y diseñadora de marca con diecisiete años de experiencia. Trabajo con empresas de Estados Unidos desde 2016. Disponible para trabajo remoto en horario del Este de EE.UU.",
     url: "/",
     images: [
       {

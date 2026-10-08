@@ -30,6 +30,7 @@ type Surface =
   | 'conoceme'
   | 'contacto'
   | 'descargas'
+  | 'empresas'
   | 'proyecto'
   | 'blog'
   | 'footer';

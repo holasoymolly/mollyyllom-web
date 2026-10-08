@@ -57,6 +57,7 @@ Non-trivial changes ship as a sequence of small commits (one per logical phase),
 | `/blog/[slug]` · `/en/blog/[slug]` | `PostPage` | Data from `postsBySlug` |
 | `/contacto` · `/en/contacto` | `ContactPage` | |
 | `/descargas` · `/en/descargas` | `DownloadsPage` | |
+| `/empresas` · `/en/empresas` | `BusinessPage` | The page for companies commissioning brand + website work. Cold outreach and the email signature point here. No availability block, no resume. Not in the nav |
 | `/cv` | `NormieCV` | Brand CV, English |
 | `/cv/es` | `NormieCV` | Brand CV, Spanish |
 | `/cv/web3` | `Web3CV` | Web3 CV, English |
@@ -109,6 +110,8 @@ The site serves two readers at once: US recruiters hiring a person, and Dominica
 | Availability block, "Download resume" | `public/downloads/brand/…` |
 | Contact page, "Book a call" | Calendly |
 | Contact page, "Request a quote" (`contact.quoteUrl`) | The Google quote form |
+| `/empresas` hero and closing "Escribir un correo" (`business.emailCta`) | `mailto:` with a prefilled subject |
+| `/empresas` "Reservar una llamada" | Calendly |
 
 Until September 2026 the hero and closing CTAs went straight to the Google quote form. Once their labels became "Get in touch" / "Hablemos", that destination contradicted them: a recruiter clicking a neutral CTA landed on a form asking for a project budget. They now point at `/contacto`, which is why **the contact page carries the quote block: it is the quote form's only entry point on the whole site.** Never remove it, and never point a general CTA back at the form directly.
 
@@ -154,8 +157,8 @@ Autocapture records every click as a generic `[Amplitude] Element Clicked` ident
 
 | Event | Fires when | Properties | Call sites |
 |-------|-----------|------------|-----------|
-| `Booking CTA Clicked` | Any Calendly button is clicked — the strongest buying signal on the site | `location`, `lang` | `HomePage/components/MediaSection`, `ConocemePage`, `ContactPage` |
-| `Email CTA Clicked` | The `hola@mollyyllom.com` mailto link is clicked | `location`, `lang` | `ContactPage` |
+| `Booking CTA Clicked` | Any Calendly button is clicked — the strongest buying signal on the site | `location`, `lang` | `HomePage/components/MediaSection`, `ConocemePage`, `ContactPage`, `BusinessPage` |
+| `Email CTA Clicked` | The `hola@mollyyllom.com` mailto link is clicked | `location`, `lang` | `ContactPage`, `BusinessPage` |
 | `Quote CTA Clicked` | The project quote form is opened, the design-client counterpart to a booking | `location`, `lang` | `ContactPage` |
 | `Newsletter CTA Clicked` | The newsletter signup link in the footer is clicked | `location`, `lang` | `Footer` |
 | `Asset Downloaded` | A downloadable asset is opened, on `/descargas` or from the home availability block | `assetTitle`, `assetUrl`, `lang` | `DownloadsPage`, `HomePage/components/Availability` |
