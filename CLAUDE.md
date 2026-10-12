@@ -28,6 +28,8 @@ No test suite is configured.
 
 Non-trivial changes ship as a sequence of small commits (one per logical phase), each pushed to `beta` individually. Commit messages include a `Co-Authored-By` trailer in the project's established style.
 
+**The Node version lives in `package.json` (`"engines": {"node": "24.x"}`), not in the Vercel dashboard.** On 8 Oct 2026 the beta preview failed before building anything with *"Node.js Version 20.x is discontinued"*, even though the dashboard already said 24.x. The `engines` field overrides the dashboard, so a failed deploy email is the first thing to read when a page 404s on beta: check the Vercel notification in Gmail before debugging the code. When Vercel retires a version again, bump `engines` on `beta` and confirm `next build` passes locally on that Node first.
+
 ---
 
 ## Architecture
