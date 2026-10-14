@@ -462,7 +462,7 @@ const loraLaCapaEncima: Post = {
     `Y no solo en el diseño. Hasta me ayudó a empezar a entender los impuestos y a llevar mis cuentas yo misma, con la IA como asistente. En el proceso me di cuenta de que la persona a quien le pagaba para eso no lo estaba haciendo de la mejor manera. Ahora lo puedo hacer yo, con menos margen de error y un gasto menos cada mes.`,
     `Y otra cosa que casi nunca sale en esa conversación. Hay equipos que no pueden pagar una gran producción, con fotógrafo, colorista, estudio, talentos y todo lo que eso conlleva. Para muchos de ellos, la opción real no es entre esa producción y la IA, es entre la IA y no hacer la campaña. Ahí es donde entramos personas como yo, que sabemos manejar estas herramientas, para ayudarles a lograr sus metas con lo que tienen.`,
     `Y lo que yo veo, por lo menos por ahora, es que la IA necesita justamente lo que hacemos nosotros para no salir genérica. Por eso, para mí, esto da más curiosidad que miedo.`,
-    `¿Dura? Todavía no. Pero ya entiendo dónde va la capa y qué lleva adentro. Lo demás es práctica. 😉`,
+    `¿Dura? Todavía no. Pero ya entiendo dónde va la capa y qué lleva adentro. Lo demás es práctica.`,
   ],
   paragraphsEn: [
     `A friend sent me an IBM article about LoRA and told me I was "a beast" at it. It made me laugh, because my first thought was "What even is that? I don't even know what it is, a beast... I can't call myself a beast at that"... But I read the whole thing and, to my surprise, I got it faster than I expected. And I think that's because it's something I'm living right now with a campaign.`,
@@ -485,7 +485,7 @@ const loraLaCapaEncima: Post = {
     `And not just in design. It even helped me start understanding taxes and doing my own books, with AI as my assistant. Along the way I realized the person I was paying to do it wasn't doing it the best way. Now I can do it myself, with less room for error and one less monthly expense.`,
     `And one more thing that almost never comes up in that conversation. There are teams that can't pay for a big production, with a photographer, a colorist, a studio, talent and everything that comes with it. For a lot of them, the real choice isn't between that production and AI, it's between AI and not doing the campaign at all. That's where people like me come in, people who know how to handle these tools, to help them reach their goals with what they have.`,
     `And what I see, at least for now, is that AI needs exactly what we do so it doesn't come out generic. That's why, for me, this brings more curiosity than fear.`,
-    `A beast? Not yet. But I already understand where the layer goes and what goes inside it. The rest is practice. 😉`,
+    `A beast? Not yet. But I already understand where the layer goes and what goes inside it. The rest is practice.`,
   ],
 };
 
