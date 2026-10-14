@@ -25,7 +25,10 @@ export interface Post {
   /** One or two sentences. Feeds the listing card and the meta description. */
   excerpt: string;
   excerptEn: string;
-  /** The body, one string per paragraph. The first one renders as the lead. */
+  /**
+   * The body, one string per paragraph. The first one renders as the lead.
+   * A link inside a paragraph is written `[text](https://…)` and opens in a new tab.
+   */
   paragraphs: string[];
   paragraphsEn: string[];
   /** Optional kicker above the title, e.g. "Marca" / "Brand". */
@@ -463,6 +466,7 @@ const WORDS_PER_MINUTE = 200;
 
 /** Rounded reading time in minutes, never less than one. */
 export function readingMinutes(paragraphs: string[]): number {
-  const words = paragraphs.join(' ').trim().split(/\s+/).filter(Boolean).length;
+  // Count a link's text, not its URL.
+  const words = paragraphs.join(' ').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').trim().split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.round(words / WORDS_PER_MINUTE));
 }

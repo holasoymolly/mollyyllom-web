@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, useEffect, useRef } from 'react';
+import { FC, ReactNode, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -9,6 +9,36 @@ import { TransitionLink } from '@/components/TransitionLink';
 import { useLanguage } from '@/context/LanguageContext';
 import { activePosts, formatPostDate, postsBySlug, readingMinutes } from '@/posts';
 import { trackArticleViewed } from '@/lib/analytics';
+
+/**
+ * Links inside a paragraph, written the Markdown way: `[the IBM article](https://…)`.
+ * Only external links, so a plain anchor that opens in a new tab, never
+ * TransitionLink. Everything else in the paragraph stays plain text.
+ */
+const INLINE_LINK = /\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g;
+
+function renderInline(text: string): ReactNode[] {
+  const parts: ReactNode[] = [];
+  let last = 0;
+  for (const match of text.matchAll(INLINE_LINK)) {
+    const start = match.index ?? 0;
+    if (start > last) parts.push(text.slice(last, start));
+    parts.push(
+      <a
+        key={start}
+        href={match[2]}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-violet-500 underline underline-offset-4 decoration-violet-500/40 hover:text-violet-600 hover:decoration-violet-600 transition-colors duration-200"
+      >
+        {match[1]}
+      </a>
+    );
+    last = start + match[0].length;
+  }
+  if (last < text.length) parts.push(text.slice(last));
+  return parts;
+}
 
 interface PostPageProps {
   slug: string;
@@ -119,13 +149,13 @@ export const PostPage: FC<PostPageProps> = ({ slug }) => {
         <article className="bg-stone-200 px-6 md:px-16 lg:px-24 py-20">
           <div className="max-w-3xl mx-auto flex flex-col gap-6">
             {lead && (
-              <p className="text-2xl md:text-3xl font-black text-indigo-950 leading-snug">{lead}</p>
+              <p className="text-2xl md:text-3xl font-black text-indigo-950 leading-snug">{renderInline(lead)}</p>
             )}
             {body.map((paragraph) => (
               // `whitespace-pre-line` so a paragraph holding a list keeps its
               // line breaks, which is how her posts are actually written.
               <p key={paragraph} className="text-lg text-indigo-950/70 leading-relaxed whitespace-pre-line">
-                {paragraph}
+                {renderInline(paragraph)}
               </p>
             ))}
 
