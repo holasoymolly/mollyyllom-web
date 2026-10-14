@@ -54,6 +54,7 @@ export interface Post {
  */
 const disenarNoEsCrearDesdeCero: Post = {
   slug: 'a-veces-disenar-es-escuchar',
+  coverImage: '/img/blog/a-veces-disenar-es-escuchar-hero.webp',
   date: '2025-07-14',
   topic: 'Oficio',
   topicEn: 'Craft',
@@ -89,6 +90,7 @@ const disenarNoEsCrearDesdeCero: Post = {
 
 const loQueNoSeVeEnUnaFoto: Post = {
   slug: 'la-parte-invisible-del-trabajo',
+  coverImage: '/img/blog/la-parte-invisible-del-trabajo-hero.webp',
   date: '2025-08-08',
   topic: 'Proceso',
   topicEn: 'Process',
@@ -122,6 +124,7 @@ const loQueNoSeVeEnUnaFoto: Post = {
 
 const cuandoDigoQueHagoNfts: Post = {
   slug: 'la-conversacion-sobre-nfts',
+  coverImage: '/img/blog/la-conversacion-sobre-nfts-hero.webp',
   date: '2026-07-08',
   topic: 'Arte digital',
   topicEn: 'Digital art',
@@ -168,6 +171,7 @@ const cuandoDigoQueHagoNfts: Post = {
 
 const elTiempoYLaEnergia: Post = {
   slug: 'el-tiempo-no-es-la-variable-es-la-energia',
+  coverImage: '/img/blog/el-tiempo-no-es-la-variable-es-la-energia-hero.webp',
   date: '2026-07-22',
   topic: 'Trabajo',
   topicEn: 'Work',
@@ -218,6 +222,7 @@ const elTiempoYLaEnergia: Post = {
 
 const desdeElCaribeParaElMundo: Post = {
   slug: 'desde-el-caribe-para-el-mundo',
+  coverImage: '/img/blog/desde-el-caribe-para-el-mundo-hero.webp',
   date: '2026-09-07',
   topic: 'Remoto',
   topicEn: 'Remote',
@@ -246,6 +251,7 @@ const desdeElCaribeParaElMundo: Post = {
 
 const laConsistenciaNoEsSexy: Post = {
   slug: 'la-disciplina-invisible',
+  coverImage: '/img/blog/la-disciplina-invisible-hero.webp',
   date: '2026-07-02',
   topic: 'Oficio',
   topicEn: 'Craft',
@@ -292,6 +298,7 @@ const laConsistenciaNoEsSexy: Post = {
 
 const iaParaHacernosMasCapaces: Post = {
   slug: 'ia-para-hacernos-mas-capaces',
+  coverImage: '/img/blog/ia-para-hacernos-mas-capaces-hero.webp',
   date: '2026-06-26',
   topic: 'IA',
   topicEn: 'AI',
