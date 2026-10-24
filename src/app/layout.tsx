@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Roboto, IBM_Plex_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
@@ -7,6 +8,12 @@ import { LanguageProvider } from "@/context/LanguageContext";
 import { Amplitude } from "@/amplitude";
 import { languageAlternates } from "@/i18n/metadata";
 import "./globals.css";
+
+// Brand typography (see "Typography" in CLAUDE.md): Roboto is the primary face and
+// IBM Plex Mono the secondary one (labels, micro-copy, Tailwind's font-mono).
+// Exposed as CSS variables; globals.css and tailwind.config.ts read them.
+const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500", "700", "900"], variable: "--font-roboto", display: "swap" });
+const plexMono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500", "700"], variable: "--font-plex-mono", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.mollyyllom.com"),
@@ -61,7 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         )}
       </head>
       <Amplitude />
-      <body className="antialiased" suppressHydrationWarning>
+      <body className={`${roboto.variable} ${plexMono.variable} antialiased`} suppressHydrationWarning>
         <LanguageProvider>{children}</LanguageProvider>
         <SpeedInsights />
         <Analytics />

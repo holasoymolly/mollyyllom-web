@@ -17,6 +17,10 @@ No test suite is configured.
 
 ---
 
+## Typography
+
+**Roboto is the brand's primary face and IBM Plex Mono the secondary** (labels, micro-copy, `font-mono`). Both load through `next/font` in `src/app/layout.tsx` as the CSS variables `--font-roboto` and `--font-plex-mono`; `globals.css` (body) and `tailwind.config.ts` (`font-sans`, `font-mono`) read those variables. Molly chose Roboto in Oct 2024. On 23 May 2026 a cleanup removed the `next/font` import on the belief that `body { font-family: Arial, Helvetica }` already won. It didn't: the next/font class on `<body>` outranks the element selector, so from that day the site rendered in Arial, and later design work copied "Helvetica" from this CSS. Never remove or swap these fonts without asking Molly. The brand's typography guide lives in her Claude workspace (`01-marca/tipografia.md`).
+
 ## Branch flow
 
 **Always work on `beta` first, then promote to `main`.** The `beta` branch maps to a beta deployment environment used for preview/validation; `main` is production.
