@@ -313,7 +313,6 @@ const posProject: Project = {
     "Then came the part that barely shows: softening corners, building the lockups, choosing color and type, and taking it onto signs, doors, business cards, the truck and T-shirts to check that it holds up off the screen.",
   ],
   images: [
-    "/img/projects/pos/pos-x-MY-02.webp",
     "/img/projects/pos/pos-x-MY-03.webp",
     "/img/projects/pos/pos-x-MY-08.webp",
     "/img/projects/pos/pos-x-MY-09.webp",
