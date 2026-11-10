@@ -33,6 +33,7 @@ type Surface =
   | 'empresas'
   | 'proyecto'
   | 'blog'
+  | 'talleres'
   | 'footer';
 
 /** Clicked through to Calendly to book a 30-min call — the strongest buying signal on the site. */
@@ -47,9 +48,13 @@ export const trackQuoteCTAClicked = (location: Surface, lang: Language) =>
 export const trackEmailCTAClicked = (location: Surface, lang: Language) =>
   track('Email CTA Clicked', { location, lang });
 
-/** Clicked through to the newsletter signup form. */
-export const trackNewsletterCTAClicked = (location: Surface, lang: Language) =>
-  track('Newsletter CTA Clicked', { location, lang });
+/** Submitted the newsletter email form (sent to Kit). */
+export const trackNewsletterSignupSubmitted = (location: Surface, lang: Language) =>
+  track('Newsletter Signup Submitted', { location, lang });
+
+/** Submitted the email form of the workshops waitlist on /talleres (sent to Kit). */
+export const trackWaitlistSignupSubmitted = (location: Surface, lang: Language) =>
+  track('Waitlist Signup Submitted', { location, lang });
 
 /** Opened a downloadable asset from /descargas. */
 export const trackAssetDownloaded = (

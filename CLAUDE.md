@@ -64,6 +64,7 @@ Non-trivial changes ship as a sequence of small commits (one per logical phase),
 | `/contacto` · `/en/contacto` | `ContactPage` | |
 | `/descargas` · `/en/descargas` | `DownloadsPage` | |
 | `/empresas` · `/en/empresas` | `BusinessPage` | The page for companies commissioning brand + website work. Cold outreach and the email signature point here. No availability block, no resume. Not in the nav |
+| `/talleres` · `/en/talleres` | `WaitlistPage` | Workshops waitlist (Kit form `10170146`). Until the January 2027 reveal it must not mention AI. Kit redirects back with `?lista=ok` (signed up) and `?lista=confirmada` (confirmed by email), which switch the page to its thank-you states. Not in the nav |
 | `/cv` | `NormieCV` | Brand CV, English |
 | `/cv/es` | `NormieCV` | Brand CV, Spanish |
 | `/cv/web3` | `Web3CV` | Web3 CV, English |
@@ -123,6 +124,15 @@ Until September 2026 the hero and closing CTAs went straight to the Google quote
 
 `contact.quoteUrl` is a different form per language and lives in `contact` rather than `quoteBanner` for exactly this reason. There is no second copy of either URL.
 
+### Email capture (Kit)
+
+Email signups go to Kit (kit.com, account hola@mollyyllom.com, free plan). Form ids live in `src/lib/kit.ts`; they are public (Kit prints them in its own embed), so they are not env vars. Each form is a plain HTML `<form>` that posts `email_address` to `https://app.kit.com/forms/<id>/subscriptions`, styled with the site's own classes; there is no Kit script on the site.
+
+- The waitlist form lets Kit redirect back to `/talleres?lista=…`.
+- The footer newsletter posts into a hidden iframe (`kit-newsletter-frame`) and shows its thank-you text in place, so the reader never leaves the page.
+- Both forms use double opt-in; the confirmation emails were written in Spanish in Kit.
+- The free plan has no automated sequences: launch emails are sent as broadcasts.
+
 ### Navigation & page transitions
 The site uses the native **View Transitions API** for all internal navigation, enabled via `experimental: { viewTransition: true }` in `next.config.ts`. The crossfade keyframes (`cv-fade-out` / `cv-fade-in`, 350ms ease-in-out) live in `src/app/globals.css` and respect `prefers-reduced-motion`.
 
@@ -166,7 +176,8 @@ Autocapture records every click as a generic `[Amplitude] Element Clicked` ident
 | `Booking CTA Clicked` | Any Calendly button is clicked — the strongest buying signal on the site | `location`, `lang` | `HomePage/components/MediaSection`, `ConocemePage`, `ContactPage`, `BusinessPage` |
 | `Email CTA Clicked` | The `hola@mollyyllom.com` mailto link is clicked | `location`, `lang` | `ContactPage`, `BusinessPage` |
 | `Quote CTA Clicked` | The project quote form is opened, the design-client counterpart to a booking | `location`, `lang` | `ContactPage` |
-| `Newsletter CTA Clicked` | The newsletter signup link in the footer is clicked | `location`, `lang` | `Footer` |
+| `Newsletter Signup Submitted` | The footer newsletter form is submitted to Kit (form `10170155`). Replaced `Newsletter CTA Clicked` in Nov 2026, when the footer stopped linking to a Google Form | `location`, `lang` | `Footer` |
+| `Waitlist Signup Submitted` | The /talleres waitlist form is submitted to Kit | `location`, `lang` | `WaitlistPage` |
 | `Asset Downloaded` | A downloadable asset is opened, on `/descargas` or from the home availability block | `assetTitle`, `assetUrl`, `lang` | `DownloadsPage`, `HomePage/components/Availability` |
 | `Project Viewed` | A case study page mounts (once per slug; the language toggle does not re-fire it) | `projectSlug`, `projectTitle`, `lang` | `ProjectPage` |
 | `Article Viewed` | A blog entry mounts (once per slug; the language toggle does not re-fire it) | `articleSlug`, `articleTitle`, `lang` | `PostPage` |

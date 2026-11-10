@@ -6,12 +6,14 @@ import { IcOutlineTiktok } from '@/icons/IcOutlineTiktok';
 import { RiInstagramLine } from '@/icons/RiInstagramLine';
 import { XIcon } from '@/icons/XIcon';
 import { TransitionLink } from '@/components/TransitionLink';
-import React from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
-import { trackNewsletterCTAClicked } from '@/lib/analytics';
+import { trackNewsletterSignupSubmitted } from '@/lib/analytics';
+import { KIT_NEWSLETTER_FORM_ID, kitFormAction } from '@/lib/kit';
 
 export const Footer: React.FC = () => {
   const { lang, t } = useLanguage();
+  const [subscribed, setSubscribed] = useState(false);
 
   const navLinks: Array<{ href: string; label: string; external?: boolean; iconSrc?: string }> = [
     { href: '/conoceme', label: t.nav.conoceme },
@@ -108,15 +110,42 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="flex flex-col gap-3">
-            <a
-              href="https://forms.gle/dh6ZN4NztWXkp1jE8"
-              target="_blank"
-              rel="noreferrer noopener"
-              onClick={() => trackNewsletterCTAClicked('footer', lang)}
-              className="w-fit bg-stone-200/10 border border-stone-200/15 text-stone-300 font-semibold px-6 py-3 rounded-full text-sm transition-all duration-300 hover:bg-violet-500 hover:border-violet-500 hover:text-stone-200 whitespace-nowrap"
-            >
+            <span className="text-violet-400 text-xs font-bold tracking-[0.2em] uppercase block">
               {t.footer.newsletter}
-            </a>
+            </span>
+            {subscribed ? (
+              <p className="text-stone-300 text-sm max-w-xs">{t.footer.newsletterThanks}</p>
+            ) : (
+              <form
+                action={kitFormAction(KIT_NEWSLETTER_FORM_ID)}
+                method="post"
+                target="kit-newsletter-frame"
+                onSubmit={() => {
+                  trackNewsletterSignupSubmitted('footer', lang);
+                  setSubscribed(true);
+                }}
+                className="flex flex-col sm:flex-row gap-2 max-w-sm"
+              >
+                <label htmlFor="footer-newsletter-email" className="sr-only">{t.footer.newsletter}</label>
+                <input
+                  id="footer-newsletter-email"
+                  type="email"
+                  name="email_address"
+                  required
+                  autoComplete="email"
+                  placeholder={t.footer.newsletterPlaceholder}
+                  className="flex-1 min-w-0 bg-stone-200/10 border border-stone-200/15 rounded-full px-5 py-3 text-sm text-stone-200 placeholder:text-stone-400 focus:outline-none focus:border-violet-400"
+                />
+                <button
+                  type="submit"
+                  className="bg-violet-500 text-stone-200 font-semibold px-6 py-3 rounded-full text-sm transition-all duration-300 hover:bg-violet-400 whitespace-nowrap"
+                >
+                  {t.footer.newsletterButton}
+                </button>
+              </form>
+            )}
+            {/* Kit answers the post with its own page; it lands here, out of sight. */}
+            <iframe name="kit-newsletter-frame" title="" aria-hidden="true" tabIndex={-1} className="hidden" />
           </div>
         </div>
       </div>
