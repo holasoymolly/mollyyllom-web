@@ -65,6 +65,7 @@ Non-trivial changes ship as a sequence of small commits (one per logical phase),
 | `/descargas` · `/en/descargas` | `DownloadsPage` | |
 | `/empresas` · `/en/empresas` | `BusinessPage` | The page for companies commissioning brand + website work. Cold outreach and the email signature point here. No availability block, no resume. Not in the nav |
 | `/talleres` · `/en/talleres` | `WaitlistPage` | Workshops waitlist (Kit form `10170146`). Until the January 2027 reveal it must not mention AI. Kit redirects back with `?lista=ok` (signed up) and `?lista=confirmada` (confirmed by email), which switch the page to its thank-you states. Not in the nav |
+| `/privacidad` · `/en/privacidad` | `PrivacyPage` | Privacy notice, written by hand in each language inside the component. Linked from the footer's bottom bar. **Whenever a tool that touches visitor data is added or removed (forms, analytics, payments, booking), update both versions and the date in the same commit** |
 | `/cv` | `NormieCV` | Brand CV, English |
 | `/cv/es` | `NormieCV` | Brand CV, Spanish |
 | `/cv/web3` | `Web3CV` | Web3 CV, English |

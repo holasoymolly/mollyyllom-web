@@ -22,6 +22,7 @@ export const translations = {
       newsletterButton: 'Suscribirme',
       newsletterThanks: '¡Listo! Revisa tu correo para confirmar tu suscripción.',
       rights: 'Todos los derechos reservados.',
+      privacy: 'Privacidad',
       madeWith: 'Diseñado con amor ♥',
     },
     quoteBanner: {
@@ -199,6 +200,7 @@ export const translations = {
       newsletterButton: 'Subscribe',
       newsletterThanks: 'Done! Check your inbox to confirm your subscription.',
       rights: 'All rights reserved.',
+      privacy: 'Privacy',
       madeWith: 'Designed with love ♥',
     },
     quoteBanner: {

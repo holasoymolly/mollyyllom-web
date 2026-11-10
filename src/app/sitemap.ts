@@ -37,6 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...bilingualEntry("/descargas", { changeFrequency: "yearly",  priority: 0.5, lastModified: now }),
     ...bilingualEntry("/empresas",  { changeFrequency: "yearly",  priority: 0.8, lastModified: now }),
     ...bilingualEntry("/talleres",  { changeFrequency: "monthly", priority: 0.8, lastModified: now }),
+    ...bilingualEntry("/privacidad", { changeFrequency: "yearly", priority: 0.2, lastModified: now }),
   ];
 
   // The CVs already carry their language in the URL, so they pair with each

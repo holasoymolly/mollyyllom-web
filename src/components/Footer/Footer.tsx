@@ -153,7 +153,10 @@ export const Footer: React.FC = () => {
       {/* Bottom bar */}
       <div className="border-t border-stone-200/10 px-6 md:px-16 lg:px-24 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
         <span className="text-slate-500 text-xs">
-          © {new Date().getFullYear()} Molly Yllom. {t.footer.rights}
+          © {new Date().getFullYear()} Molly Yllom. {t.footer.rights}{' '}
+          <TransitionLink href="/privacidad" className="underline underline-offset-2 hover:text-violet-400 transition-colors duration-200">
+            {t.footer.privacy}
+          </TransitionLink>
         </span>
         <span className="text-slate-500 text-xs">
           {t.footer.madeWith}
