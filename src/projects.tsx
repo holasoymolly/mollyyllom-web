@@ -302,7 +302,7 @@ const posProject: Project = {
   ],
   credits: ["Rediseño de logotipo e identidad: Molly Yllom"],
   creditsEn: ["Logo redesign and identity: Molly Yllom"],
-  portfolioImage: "/img/projects/pos/pos-fachada-mockup.webp",
+  portfolioImage: "/img/projects/pos/pos-logo-animado.mp4",
   heroImage: "/img/projects/pos/pos-x-MY-01.webp",
   paragraphs: [
     "POS construye los espacios donde las marcas venden, así que la O del nombre se volvió un edificio. La idea salió en la hoja de bocetos, entre muchas otras, y de las tres rutas que pasaron a vector fue la que se quedó.",
