@@ -10,7 +10,8 @@ import { IcOutlineTiktok } from "@/icons/IcOutlineTiktok";
 import { RiInstagramLine } from "@/icons/RiInstagramLine";
 import { XIcon } from "@/icons/XIcon";
 import { useLanguage } from "@/context/LanguageContext";
-import { trackBookingCTAClicked, trackEmailCTAClicked, trackQuoteCTAClicked } from "@/lib/analytics";
+import { trackBookingCTAClicked, trackEmailCTAClicked, trackMentorshipCTAClicked, trackQuoteCTAClicked } from "@/lib/analytics";
+import { BOOKING_CALL_URL, MENTORSHIP_URL } from "@/lib/booking";
 
 const socials = [
   { href: "https://www.instagram.com/holasoymolly", label: "Instagram", Icon: RiInstagramLine },
@@ -86,13 +87,40 @@ export const ContactPage: FC = () => {
                 {t.contact.callDescription}
               </p>
               <a
-                href="https://calendly.com/hola-msny/30min"
+                href={BOOKING_CALL_URL}
                 target="_blank"
                 rel="noreferrer noopener"
                 onClick={() => trackBookingCTAClicked('contacto', lang)}
                 className="shrink-0 bg-indigo-950 text-stone-200 font-bold px-8 py-4 rounded-full transition-colors duration-300 hover:bg-violet-500 whitespace-nowrap"
               >
                 {t.contact.callButton}
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Paid mentorship: Payhip checkout first, the booking link comes with the purchase. */}
+          <motion.div
+            className="flex flex-col gap-2 border-b border-indigo-950/10 pb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.065, ease: [0.25, 0.1, 0.25, 1] }}
+          >
+            <span className="text-violet-500 text-xs font-bold tracking-[0.25em] uppercase">
+              {t.contact.mentorshipLabel}
+            </span>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+              <p className="text-indigo-950/60 text-lg leading-snug max-w-sm">
+                {t.contact.mentorshipDescription}
+              </p>
+              <a
+                href={MENTORSHIP_URL}
+                target="_blank"
+                rel="noreferrer noopener"
+                onClick={() => trackMentorshipCTAClicked('contacto', lang)}
+                className="shrink-0 bg-indigo-950 text-stone-200 font-bold px-8 py-4 rounded-full transition-colors duration-300 hover:bg-violet-500 whitespace-nowrap"
+              >
+                {t.contact.mentorshipButton}
               </a>
             </div>
           </motion.div>

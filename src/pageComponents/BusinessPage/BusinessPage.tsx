@@ -9,6 +9,7 @@ import { ProtectedImage } from "@/components/ProtectedImage";
 import { useLanguage } from "@/context/LanguageContext";
 import { projectsBySlug } from "@/projects";
 import { trackBookingCTAClicked, trackEmailCTAClicked } from "@/lib/analytics";
+import { BOOKING_CALL_URL } from "@/lib/booking";
 
 /**
  * The page cold outreach and the email signature point at. The home page
@@ -167,7 +168,7 @@ export const BusinessPage: FC = () => {
               {b.emailCta}
             </a>
             <a
-              href="https://calendly.com/hola-msny/30min"
+              href={BOOKING_CALL_URL}
               target="_blank"
               rel="noreferrer noopener"
               onClick={() => trackBookingCTAClicked("empresas", lang)}

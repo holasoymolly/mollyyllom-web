@@ -115,10 +115,11 @@ The site serves two readers at once: US recruiters hiring a person, and Dominica
 | Hero button (`home.cta`), closing banner (`quoteBanner.cta`), mobile drawer button | `/contacto` |
 | Availability block, "Get in touch" (`home.availabilityContactCta`) | `/contacto` |
 | Availability block, "Download resume" | `public/downloads/brand/…` |
-| Contact page, "Book a call" | Calendly |
+| Contact page, "Book a call" | Google Calendar booking page, free 30-min call (`BOOKING_CALL_URL` in `src/lib/booking.ts`; Calendly until Nov 2026) |
+| Contact page, "Reservar mentoría" | Payhip checkout for the paid 1-h mentorship (`MENTORSHIP_URL`); the private booking link only comes with the purchase, never link it from the site |
 | Contact page, "Request a quote" (`contact.quoteUrl`) | The Google quote form |
 | `/empresas` hero and closing "Escribir un correo" (`business.emailCta`) | `mailto:` with a prefilled subject |
-| `/empresas` "Reservar una llamada" | Calendly |
+| `/empresas` "Reservar una llamada" | Google Calendar booking page (`BOOKING_CALL_URL`) |
 
 Until September 2026 the hero and closing CTAs went straight to the Google quote form. Once their labels became "Get in touch" / "Hablemos", that destination contradicted them: a recruiter clicking a neutral CTA landed on a form asking for a project budget. They now point at `/contacto`, which is why **the contact page carries the quote block: it is the quote form's only entry point on the whole site.** Never remove it, and never point a general CTA back at the form directly.
 
@@ -142,7 +143,7 @@ The site uses the native **View Transitions API** for all internal navigation, e
 
 For programmatic navigation from buttons (e.g. the CV toggles in `CVVersionToggle` / `CVLangToggle`), call `React.startTransition(() => router.push(href))` directly — same effect.
 
-External links (Calendly, social) stay as plain `<a target="_blank">`.
+External links (booking pages, Payhip, social) stay as plain `<a target="_blank">`.
 
 ### Analytics
 
@@ -173,7 +174,8 @@ Autocapture records every click as a generic `[Amplitude] Element Clicked` ident
 
 | Event | Fires when | Properties | Call sites |
 |-------|-----------|------------|-----------|
-| `Booking CTA Clicked` | Any Calendly button is clicked — the strongest buying signal on the site | `location`, `lang` | `HomePage/components/MediaSection`, `ConocemePage`, `ContactPage`, `BusinessPage` |
+| `Booking CTA Clicked` | Any free-call booking button is clicked (Google Calendar since Nov 2026, Calendly before; name kept so history stays comparable) | `location`, `lang` | `HomePage/components/MediaSection`, `ConocemePage`, `ContactPage`, `BusinessPage` |
+| `Mentorship CTA Clicked` | The paid mentorship button opens the Payhip checkout (added Nov 2026) | `location`, `lang` | `ContactPage` |
 | `Email CTA Clicked` | The `hola@mollyyllom.com` mailto link is clicked | `location`, `lang` | `ContactPage`, `BusinessPage` |
 | `Quote CTA Clicked` | The project quote form is opened, the design-client counterpart to a booking | `location`, `lang` | `ContactPage` |
 | `Newsletter Signup Submitted` | The footer newsletter form is submitted to Kit (form `10170155`). Replaced `Newsletter CTA Clicked` in Nov 2026, when the footer stopped linking to a Google Form | `location`, `lang` | `Footer` |

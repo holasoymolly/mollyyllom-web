@@ -5,6 +5,7 @@ import { Button } from "@/components/Button";
 import { ProtectedImage } from "@/components/ProtectedImage";
 import { useLanguage } from '@/context/LanguageContext';
 import { trackBookingCTAClicked } from '@/lib/analytics';
+import { BOOKING_CALL_URL } from '@/lib/booking';
 
 export const MediaSection = () => {
   const { lang, t } = useLanguage();
@@ -85,7 +86,7 @@ export const MediaSection = () => {
           transition={{ duration: 0.6, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <Button
-            href="https://calendly.com/hola-msny/30min"
+            href={BOOKING_CALL_URL}
             text={t.home.bookCta}
             size="large"
             onClick={() => trackBookingCTAClicked('home', lang)}

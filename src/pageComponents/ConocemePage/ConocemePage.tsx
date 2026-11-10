@@ -8,6 +8,7 @@ import { FC } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import { trackBookingCTAClicked } from "@/lib/analytics";
+import { BOOKING_CALL_URL } from "@/lib/booking";
 
 export const ConocemePage: FC = () => {
   const { lang, t } = useLanguage();
@@ -83,7 +84,7 @@ export const ConocemePage: FC = () => {
             transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <a
-              href="https://calendly.com/hola-msny/30min"
+              href={BOOKING_CALL_URL}
               target="_blank"
               rel="noreferrer noopener"
               onClick={() => trackBookingCTAClicked('conoceme', lang)}

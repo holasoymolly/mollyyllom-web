@@ -36,9 +36,13 @@ type Surface =
   | 'talleres'
   | 'footer';
 
-/** Clicked through to Calendly to book a 30-min call — the strongest buying signal on the site. */
+/** Clicked through to the Google Calendar booking page for the free 30-min call (Calendly until Nov 2026). */
 export const trackBookingCTAClicked = (location: Surface, lang: Language) =>
   track('Booking CTA Clicked', { location, lang });
+
+/** Clicked through to the Payhip checkout for the paid 1-h mentorship: a purchase intent, not just a lead. */
+export const trackMentorshipCTAClicked = (location: Surface, lang: Language) =>
+  track('Mentorship CTA Clicked', { location, lang });
 
 /** Clicked through to the project quote form, the design-client counterpart to a booking. */
 export const trackQuoteCTAClicked = (location: Surface, lang: Language) =>
