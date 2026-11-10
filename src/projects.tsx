@@ -273,6 +273,61 @@ const aerosolProject: Project = {
   ],
 };
 
+const posProject: Project = {
+  slug: "pos",
+  title: "POS",
+  client: "POS Soluciones al punto",
+  year: "2026",
+  role: "Rediseño de logotipo e identidad",
+  roleEn: "Logo redesign and identity",
+  scope: ["Bocetos a mano", "Rediseño de logotipo", "Sistema de versiones", "Color y tipografía", "Aplicaciones"],
+  scopeEn: ["Hand sketches", "Logo redesign", "Lockup system", "Color and type", "Applications"],
+  gridLabel: "Rediseño de logotipo · Aplicaciones",
+  gridLabelEn: "Logo redesign · Applications",
+  brief: "POS hace arquitectura y mobiliario comercial: arma los espacios donde las marcas venden. El encargo era rediseñar su logotipo.",
+  briefEn: "POS does commercial architecture and fixtures: it builds the spaces where brands sell. The brief was to redesign its logo.",
+  shipped: [
+    "Una hoja de bocetos a mano, de donde salieron tres rutas",
+    "Un isotipo en el que la O se vuelve un edificio",
+    "Cinco versiones del logotipo: horizontal, vertical, solo el ícono, con el lema y con el ícono a la izquierda, cada una en color, blanco y negativo",
+    "Paleta de carbón y naranja, con Manrope como tipografía",
+    "Aplicaciones: fachada, letrero de oficina, puertas, tarjetas, camión y camisetas",
+  ],
+  shippedEn: [
+    "A sheet of hand sketches, which produced three routes",
+    "A symbol in which the O becomes a building",
+    "Five logo lockups: horizontal, vertical, icon only, with the tagline and with the icon on the left, each in color, white and negative",
+    "A charcoal and orange palette, set in Manrope",
+    "Applications: facade, office sign, doors, business cards, truck and T-shirts",
+  ],
+  credits: ["Rediseño de logotipo e identidad: Molly Yllom"],
+  creditsEn: ["Logo redesign and identity: Molly Yllom"],
+  portfolioImage: "/img/projects/pos/pos-fachada.webp",
+  heroImage: "/img/projects/pos/pos-fachada.webp",
+  paragraphs: [
+    "POS construye los espacios donde las marcas venden, así que la O del nombre se volvió un edificio. La idea salió en la hoja de bocetos, entre muchas otras, y de las tres rutas que pasaron a vector fue la que se quedó.",
+    "Después vino la parte que casi no se ve: suavizar esquinas, armar las versiones, escoger el color y la letra, y llevarlo a letreros, puertas, tarjetas, el camión y las camisetas para comprobar que aguanta fuera de la pantalla.",
+  ],
+  paragraphsEn: [
+    "POS builds the spaces where brands sell, so the O in the name became a building. The idea came out of the sketch sheet, among many others, and of the three routes that made it to vector it was the one that stayed.",
+    "Then came the part that barely shows: softening corners, building the lockups, choosing color and type, and taking it onto signs, doors, business cards, the truck and T-shirts to check that it holds up off the screen.",
+  ],
+  images: [
+    "/img/projects/pos/pos-antes.webp",
+    "/img/projects/pos/pos-bocetos.webp",
+    "/img/projects/pos/pos-rutas.webp",
+    "/img/projects/pos/pos-icono.webp",
+    "/img/projects/pos/pos-logotipo.webp",
+    "/img/projects/pos/pos-brand-sheet.webp",
+    "/img/projects/pos/pos-letrero-oficina.webp",
+    "/img/projects/pos/pos-puerta-cristal.webp",
+    "/img/projects/pos/pos-puerta-interior.webp",
+    "/img/projects/pos/pos-tarjetas.webp",
+    "/img/projects/pos/pos-camion.webp",
+    "/img/projects/pos/pos-camisetas.webp",
+  ],
+};
+
 const allianceProject: Project = {
   slug: "alliance",
   title: "Alliance",
@@ -1297,6 +1352,7 @@ const advanced: Project = {
  * under a run of identity work that reads as a single block.
  */
 export const activeProjects = [
+  posProject,
   ciudadFielProject,
   burnClaimProject,
   aerosolProject,
