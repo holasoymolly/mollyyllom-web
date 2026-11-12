@@ -109,9 +109,9 @@ export const translations = {
       soon: 'Muy pronto',
       fineprint: 'Un correo de vez en cuando. Te sales cuando quieras.',
       thanksTitle: 'Listo, estás en la lista.',
-      thanksBody: 'Revisa tu correo y confirma tu suscripción para que no se te pierda nada. Nos vemos en enero 🤍',
+      thanksBody: 'Revisa tu correo y confirma tu suscripción para que no se te pierda nada. Nos vemos en enero 💜',
       confirmedTitle: 'Confirmado. Ya estás dentro.',
-      confirmedBody: 'En enero te escribo primero a ti. Mientras, sígueme en Instagram para no perderte lo que sigue saliendo 🤍',
+      confirmedBody: 'En enero te escribo primero a ti. Mientras, sígueme en Instagram para no perderte lo que sigue saliendo 💜',
     },
     contact: {
       label: 'Hablemos',
@@ -287,9 +287,9 @@ export const translations = {
       soon: 'Coming soon',
       fineprint: 'An email every now and then. Leave whenever you want.',
       thanksTitle: "Done, you're on the list.",
-      thanksBody: "Check your inbox and confirm your subscription so you don't miss a thing. See you in January 🤍",
+      thanksBody: "Check your inbox and confirm your subscription so you don't miss a thing. See you in January 💜",
       confirmedTitle: "Confirmed. You're in.",
-      confirmedBody: "In January you'll hear it from me first. Meanwhile, follow me on Instagram so you don't miss what's coming out 🤍",
+      confirmedBody: "In January you'll hear it from me first. Meanwhile, follow me on Instagram so you don't miss what's coming out 💜",
     },
     contact: {
       label: "Let's talk",
