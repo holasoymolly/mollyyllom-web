@@ -217,7 +217,7 @@ To verify events locally: uncomment `NEXT_PUBLIC_AMPLITUDE_API_KEY` in `.env.loc
 - **Kicker (above h2):** `text-xs font-bold tracking-[0.3em] uppercase` in violet
 - **Body:** `text-lg leading-relaxed`
 - **Tags/pills:** `text-xs px-3 py-1 rounded-full`
-- Font family: Arial / Helvetica (system sans-serif)
+- Font family: Roboto (`font-sans`) + IBM Plex Mono (`font-mono`), see Typography above. Never Arial / Helvetica
 
 ### Section pattern
 Every section follows: **violet kicker → big two-line h2 → content**. The h2 always has a plain first line and a colored second line:
