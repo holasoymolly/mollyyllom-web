@@ -50,7 +50,7 @@ export interface Project {
  * oldest ones off the bottom. `/proyectos` shows the full list, so nothing is
  * ever lost, it just stops appearing on the home page.
  */
-export const HOME_GRID_LIMIT = 15;
+export const HOME_GRID_LIMIT = 12;
 
 const ciudadFielProject: Project = {
   slug: "ciudad-fiel",
@@ -270,6 +270,64 @@ const aerosolProject: Project = {
     "/img/projects/aerosol/11.webp",
     "/img/projects/aerosol/12.mp4",
     "/img/projects/aerosol/13.mp4",
+  ],
+};
+
+const inetxusProject: Project = {
+  slug: "inetxus",
+  title: "INETXUS",
+  client: "INETXUS, tecnología, redes y comunicación",
+  clientEn: "INETXUS, technology, networks and communication",
+  year: "2026",
+  role: "Rediseño de identidad. Proyecto en solitario",
+  roleEn: "Identity redesign. Solo project",
+  scope: ["Perfil Estético", "Cinco rutas de logo", "Rediseño de logotipo", "Color y tipografía", "Aplicaciones"],
+  scopeEn: ["Aesthetic Profile", "Five logo routes", "Logo redesign", "Color and type", "Applications"],
+  gridLabel: "Rediseño de logotipo · Aplicaciones",
+  gridLabelEn: "Logo redesign · Applications",
+  brief: "INETXUS trabaja donde se cruzan la tecnología, las redes y la comunicación. Ya tenía un logo, y el pedido era modernizarlo sin perder su esencia: una identidad a la altura de lo que la empresa es hoy, en un mercado lleno de marcas técnicas y frías. El cliente resumió su forma de trabajar en una frase: «Ponemos el cliente en el centro, somos un aliado».",
+  briefEn: "INETXUS works where technology, networks and communication meet. It already had a logo, and the ask was to modernize it without losing its essence: an identity that matched who the company is today, in a market full of cold, technical brands. The client summed up how they work in one line: \u201cWe put the client at the center. We are an ally.\u201d",
+  shipped: [
+    "El Perfil Estético del cliente y una brújula de diez palabras para medir cada propuesta",
+    "Cinco rutas de logo, cada una desde un territorio distinto de esa brújula",
+    "Un ícono que moderniza el anterior: se queda con su cruce y suelta lo que sobraba, una X que es cruce y enlace a la vez",
+    "Paleta de navy, azul y naranja, con BR Sonoma como tipografía",
+    "Aplicaciones: web, carnet y lanyard, etiqueta de equipos, camioneta, fachada, puerta y papelería",
+  ],
+  shippedEn: [
+    "The client's Aesthetic Profile and a ten-word compass to measure every proposal against",
+    "Five logo routes, each from a different part of that compass",
+    "A symbol that modernizes the old one: it keeps its crossing and drops everything else, an X that is both a crossing and a link",
+    "A navy, blue and orange palette, set in BR Sonoma",
+    "Applications: website, ID badge and lanyard, equipment label, van, facade, door and stationery",
+  ],
+  credits: ["Rediseño de identidad: Molly Yllom"],
+  creditsEn: ["Identity redesign: Molly Yllom"],
+  portfolioImage: "/img/projects/inetxus/inetxus-mockups-animado.mp4",
+  heroImage: "/img/projects/inetxus/inetxus-x-MY-01.webp",
+  paragraphs: [
+    "La frase del cliente fue el punto de partida: el cliente en el centro. Por eso la ruta que se quedó fue la X, un cruce que también es enlace, el punto donde se encuentran la tecnología, las redes y la gente que las usa. Y ahí estaba la esencia que había que cuidar: el símbolo de antes ya tenía ese cruce. Lo dejé, quité todo lo demás y lo llevé a una línea más limpia, que se sostiene igual en una pantalla que en una fachada.",
+    "Después la X dejó de ser solo un ícono y se volvió sistema. Crece y se sale del borde en la camioneta y en la web, enmarca la foto en el carnet y marca cada equipo en el rack. La idea es que la marca se reconozca aunque el nombre quede muy lejos para leerse.",
+  ],
+  paragraphsEn: [
+    "The client's own line was the starting point: the client at the center. That's why the route that stayed was the X, a crossing that is also a link, the point where technology, networks and the people who use them meet. And that was the essence worth protecting: the old symbol already had that crossing. I kept it, took everything else away and brought it to a cleaner line that holds up the same on a screen as on a facade.",
+    "Then the X stopped being just an icon and became a system. It grows and bleeds off the edge on the van and the website, frames the photo on the ID badge and tags every piece of equipment in the rack. The idea is that you know the brand even when the name is too far away to read.",
+  ],
+  images: [
+    "/img/projects/inetxus/inetxus-x-MY-02.webp",
+    "/img/projects/inetxus/inetxus-camioneta-mockup.webp",
+    "/img/projects/inetxus/inetxus-x-MY-07.webp",
+    "/img/projects/inetxus/inetxus-laptop-mockup.webp",
+    "/img/projects/inetxus/inetxus-x-MY-08.webp",
+    "/img/projects/inetxus/inetxus-carnet-mockup.webp",
+    "/img/projects/inetxus/inetxus-x-MY-03.webp",
+    "/img/projects/inetxus/inetxus-fachada-mockup.webp",
+    "/img/projects/inetxus/inetxus-x-MY-04.webp",
+    "/img/projects/inetxus/inetxus-router-mockup.webp",
+    "/img/projects/inetxus/inetxus-x-MY-05.webp",
+    "/img/projects/inetxus/inetxus-puerta-cristal-mockup.webp",
+    "/img/projects/inetxus/inetxus-x-MY-06.webp",
+    "/img/projects/inetxus/inetxus-papeleria-mockup.webp",
   ],
 };
 
@@ -1358,6 +1416,7 @@ const advanced: Project = {
  * under a run of identity work that reads as a single block.
  */
 export const activeProjects = [
+  inetxusProject,
   posProject,
   ciudadFielProject,
   burnClaimProject,
