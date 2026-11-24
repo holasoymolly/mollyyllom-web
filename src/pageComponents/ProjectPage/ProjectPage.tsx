@@ -83,7 +83,11 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
     textBlocks.push({
       key: 'delivery',
       content: (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div
+          className={`grid grid-cols-1 gap-12 ${
+            shipped && shipped.length > 0 && outcome && outcome.length > 0 ? 'md:grid-cols-2' : ''
+          }`}
+        >
           {shipped && shipped.length > 0 && (
             <div className="flex flex-col gap-4">
               <span className="text-violet-500 text-[10px] font-bold tracking-[0.25em] uppercase">
@@ -91,8 +95,9 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
               </span>
               <ul className="flex flex-col gap-3">
                 {shipped.map((item) => (
-                  <li key={item} className="text-indigo-950/70 leading-relaxed">
-                    {item}
+                  <li key={item} className="flex gap-3 text-indigo-950/70 leading-relaxed">
+                    <span aria-hidden className="mt-[0.65em] h-1.5 w-1.5 shrink-0 rounded-full bg-violet-500" />
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -105,8 +110,9 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
               </span>
               <ul className="flex flex-col gap-3">
                 {outcome.map((item) => (
-                  <li key={item} className="text-indigo-950 font-bold leading-relaxed">
-                    {item}
+                  <li key={item} className="flex gap-3 text-indigo-950 font-bold leading-relaxed">
+                    <span aria-hidden className="mt-[0.65em] h-1.5 w-1.5 shrink-0 rounded-full bg-violet-500" />
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
