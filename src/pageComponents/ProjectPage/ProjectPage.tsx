@@ -121,7 +121,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
    * Deal the images out across the text blocks. Remainders go to the earlier
    * groups so the page never ends on a lone orphan image.
    */
-  const allImages = project?.images ?? [];
+  const allImages = (lang === 'en' ? project?.imagesEn ?? project?.images : project?.images) ?? [];
   const groupCount = Math.max(textBlocks.length, 1);
   const baseSize = Math.floor(allImages.length / groupCount);
   const remainder = allImages.length % groupCount;
@@ -281,7 +281,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
               <div key={image} className="w-full overflow-hidden">
                 <ProtectedImage
                   src={image}
-                  alt={`${project.title}, ${project.images.indexOf(image) + 1}`}
+                  alt={`${project.title}, ${allImages.indexOf(image) + 1}`}
                   sizes="100vw"
                   quality={90}
                   className="w-full h-auto"

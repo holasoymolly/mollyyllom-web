@@ -5,6 +5,12 @@ export interface Project {
   paragraphs: string[];
   paragraphsEn: string[];
   images: string[];
+  /**
+   * The same list for the English page, only when some images carry words
+   * (a panel with labels). Each entry lines up with `images`; a project with
+   * no words in its images leaves this out and both languages share `images`.
+   */
+  imagesEn?: string[];
   slug: string;
 
   /**
@@ -273,6 +279,72 @@ const aerosolProject: Project = {
   ],
 };
 
+const synqProject: Project = {
+  slug: "synq",
+  title: "Synq",
+  client: "Synq, de Aerosol",
+  clientEn: "Synq, by Aerosol",
+  year: "2026",
+  role: "Logo e identidad de marca",
+  roleEn: "Logo and brand identity",
+  scope: ["Logotipo a medida", "Ícono", "Color", "Íconos de app", "Aplicaciones"],
+  scopeEn: ["Custom wordmark", "Symbol", "Color", "App icons", "Applications"],
+  gridLabel: "Logotipo a medida · Íconos de app",
+  gridLabelEn: "Custom wordmark · App icons",
+  brief: "Synq es el inicio de sesión de Aerosol: el que cada app conecta para que su gente entre con la marca de esa app. Se le vende a developers, así que tenía que sentirse seria y al día, sin dejar de ser parte de la familia de Aerosol.",
+  briefEn: "Synq is Aerosol's sign-in: the one every app plugs in so its people get in under that app's own brand. It sells to developers, so it had to feel serious and current while still belonging to the Aerosol family.",
+  shipped: [
+    "Un wordmark dibujado a mano, sin fuente: las letras se unen con una sola línea",
+    "El ícono de la telaraña con su araña al centro, en claro y en oscuro",
+    "Paleta de noche, morado y turquesa",
+    "Íconos de app en claro, oscuro y tintado, favicon, banners e imagen para compartir",
+    "La telaraña como sistema gráfico para las aplicaciones",
+  ],
+  shippedEn: [
+    "A hand-drawn wordmark, no font: the letters join in one single line",
+    "The web symbol with its spider at the center, in light and dark",
+    "A night, purple and turquoise palette",
+    "App icons in light, dark and tinted, favicon, banners and a share image",
+    "The web as a graphic system for the applications",
+  ],
+  credits: ["Logo e identidad: Molly Yllom", "Producto: equipo de Aerosol"],
+  creditsEn: ["Logo and identity: Molly Yllom", "Product: the Aerosol team"],
+  portfolioImage: "/img/projects/synq/synq-logo-animado.mp4",
+  heroImage: "/img/projects/synq/synq-x-MY-01.webp",
+  paragraphs: [
+    "Synq conecta: cada app, cada marca y cada persona pasan por el mismo punto. Por eso el símbolo es una telaraña, una red donde cada hilo vuelve al centro, con la araña que la teje en el medio. Y el nombre lo dibujé letra por letra, unidas por una sola línea, como si la palabra se estuviera cableando.",
+    "Después la telaraña se volvió sistema. Sus anillos siguen creciendo hacia afuera con el mismo trazo, en la espalda de una sudadera o en un sticker, y el ícono sigue siendo el centro de todo.",
+  ],
+  paragraphsEn: [
+    "Synq connects: every app, every brand and every person goes through the same point. That's why the symbol is a spider web, a network where every thread leads back to the center, with the spider that weaves it in the middle. And I drew the name letter by letter, joined by one single line, as if the word were being wired together.",
+    "Then the web became a system. Its rings keep growing outward with the same stroke, on the back of a hoodie or on a sticker, and the symbol stays at the center of it all.",
+  ],
+  images: [
+    "/img/projects/synq/synq-x-MY-02.webp",
+    "/img/projects/synq/synq-laptop-mockup.webp",
+    "/img/projects/synq/synq-x-MY-03.webp",
+    "/img/projects/synq/synq-celular-mockup.webp",
+    "/img/projects/synq/synq-x-MY-04.webp",
+    "/img/projects/synq/synq-sudadera-mockup.webp",
+    "/img/projects/synq/synq-x-MY-05.webp",
+    "/img/projects/synq/synq-stickers-mockup.webp",
+    "/img/projects/synq/synq-x-MY-06.webp",
+    "/img/projects/synq/synq-x-MY-07.webp",
+  ],
+  imagesEn: [
+    "/img/projects/synq/synq-x-MY-02.webp",
+    "/img/projects/synq/synq-laptop-mockup.webp",
+    "/img/projects/synq/synq-x-MY-03-en.webp",
+    "/img/projects/synq/synq-celular-mockup.webp",
+    "/img/projects/synq/synq-x-MY-04.webp",
+    "/img/projects/synq/synq-sudadera-mockup.webp",
+    "/img/projects/synq/synq-x-MY-05.webp",
+    "/img/projects/synq/synq-stickers-mockup.webp",
+    "/img/projects/synq/synq-x-MY-06.webp",
+    "/img/projects/synq/synq-x-MY-07-en.webp",
+  ],
+};
+
 const inetxusProject: Project = {
   slug: "inetxus",
   title: "INETXUS",
@@ -317,6 +389,22 @@ const inetxusProject: Project = {
     "/img/projects/inetxus/inetxus-x-MY-02.webp",
     "/img/projects/inetxus/inetxus-camioneta-mockup.webp",
     "/img/projects/inetxus/inetxus-x-MY-07.webp",
+    "/img/projects/inetxus/inetxus-laptop-mockup.webp",
+    "/img/projects/inetxus/inetxus-x-MY-08.webp",
+    "/img/projects/inetxus/inetxus-carnet-mockup.webp",
+    "/img/projects/inetxus/inetxus-x-MY-03.webp",
+    "/img/projects/inetxus/inetxus-fachada-mockup.webp",
+    "/img/projects/inetxus/inetxus-x-MY-04.webp",
+    "/img/projects/inetxus/inetxus-router-mockup.webp",
+    "/img/projects/inetxus/inetxus-x-MY-05.webp",
+    "/img/projects/inetxus/inetxus-puerta-cristal-mockup.webp",
+    "/img/projects/inetxus/inetxus-x-MY-06.webp",
+    "/img/projects/inetxus/inetxus-papeleria-mockup.webp",
+  ],
+  imagesEn: [
+    "/img/projects/inetxus/inetxus-x-MY-02.webp",
+    "/img/projects/inetxus/inetxus-camioneta-mockup.webp",
+    "/img/projects/inetxus/inetxus-x-MY-07-en.webp",
     "/img/projects/inetxus/inetxus-laptop-mockup.webp",
     "/img/projects/inetxus/inetxus-x-MY-08.webp",
     "/img/projects/inetxus/inetxus-carnet-mockup.webp",
@@ -1417,6 +1505,7 @@ const advanced: Project = {
  */
 export const activeProjects = [
   inetxusProject,
+  synqProject,
   posProject,
   ciudadFielProject,
   burnClaimProject,
