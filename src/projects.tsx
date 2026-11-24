@@ -279,6 +279,60 @@ const aerosolProject: Project = {
   ],
 };
 
+const sveltiProject: Project = {
+  slug: "svelti",
+  title: "Svelti",
+  client: "Svelti, medicina estética y antiaging",
+  clientEn: "Svelti, aesthetic medicine and antiaging",
+  year: "2024",
+  role: "Logo e identidad de marca. Proyecto en solitario",
+  roleEn: "Logo and brand identity. Solo project",
+  scope: ["Concepto", "Logotipo", "Ícono", "Paleta y tipografía", "Guía visual"],
+  scopeEn: ["Concept", "Wordmark", "Symbol", "Palette and type", "Visual guide"],
+  brief: "Svelti es una clínica de medicina estética y antiaging. La idea era hablar de la medicina que hay detrás de la estética, pero sin tanto tecnicismo, para que se notara también el lado humano de la clínica.",
+  briefEn: "Svelti is an aesthetic medicine and antiaging clinic. The idea was to talk about the medicine behind aesthetics without too much technical language, so the human side of the clinic would come through too.",
+  shipped: [
+    "El concepto y las palabras clave, a partir de lo que pidió la clínica",
+    "Un logotipo en el que el punto de la i es una célula",
+    "El ícono, en color, blanco, negro y escala de grises",
+    "Paleta de cinco colores, con Barlow como tipografía",
+    "Guía visual y pruebas en papelería, tarjetas, uniforme, vidrio y empaques",
+  ],
+  shippedEn: [
+    "The concept and keywords, built from what the clinic asked for",
+    "A wordmark in which the dot of the i is a cell",
+    "The symbol, in color, white, black and grayscale",
+    "A five-color palette, set in Barlow",
+    "A visual guide and tests on stationery, business cards, uniform, glass and packaging",
+  ],
+  credits: ["Logo e identidad: Molly Yllom"],
+  creditsEn: ["Logo and identity: Molly Yllom"],
+  portfolioImage: "/img/projects/svelti/svelti-mockups-animado.mp4",
+  heroImage: "/img/projects/svelti/svelti-x-MY-01.webp",
+  paragraphs: [
+    "El detalle está en el punto de la i: es una célula en su forma más simple. La piel está hecha de células, capa sobre capa, y ahí es donde trabaja la clínica. Ese punto se volvió también el ícono de la marca.",
+    "Lo demás acompaña sin hacer ruido: una letra fina y abierta, y una paleta de dorado, oliva, gris cálido y arena que se siente cálida y cercana sin dejar de ser elegante.",
+  ],
+  paragraphsEn: [
+    "The detail is in the dot of the i: it's a cell in its simplest form. Skin is made of cells, layer upon layer, and that's where the clinic works. That dot also became the brand's symbol.",
+    "Everything else stays quiet: a light, open letterform and a palette of gold, olive, warm gray and sand that feels warm and close while staying elegant.",
+  ],
+  images: [
+    "/img/projects/svelti/svelti-x-MY-02.webp",
+    "/img/projects/svelti/svelti-papeleria-mockup.webp",
+    "/img/projects/svelti/svelti-x-MY-03.webp",
+    "/img/projects/svelti/svelti-tarjetas-mockup.webp",
+    "/img/projects/svelti/svelti-x-MY-04.webp",
+    "/img/projects/svelti/svelti-uniforme-mockup.webp",
+    "/img/projects/svelti/svelti-x-MY-05.webp",
+    "/img/projects/svelti/svelti-vidrio-mockup.webp",
+    "/img/projects/svelti/svelti-x-MY-06.webp",
+    "/img/projects/svelti/svelti-empaques-mockup.webp",
+    "/img/projects/svelti/svelti-x-MY-07.webp",
+    "/img/projects/svelti/svelti-x-MY-08.webp",
+  ],
+};
+
 const synqProject: Project = {
   slug: "synq",
   title: "Synq",
@@ -1506,6 +1560,7 @@ const advanced: Project = {
 export const activeProjects = [
   inetxusProject,
   synqProject,
+  sveltiProject,
   posProject,
   ciudadFielProject,
   burnClaimProject,
