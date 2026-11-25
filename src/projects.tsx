@@ -465,6 +465,86 @@ const mollyverseProject: Project = {
   ],
 };
 
+const rodaiProject: Project = {
+  slug: "rodai",
+  title: "RODAI",
+  client: "RODAI, de Aerosol",
+  clientEn: "RODAI, by Aerosol",
+  year: "2025 - 2026",
+  role: "Logo, personaje y dirección de arte",
+  roleEn: "Logo, character and art direction",
+  scope: ["Logo", "Personaje", "Hoja de personaje", "Sistema de tarjetas", "Banners", "Redes sociales", "Web (en desarrollo)"],
+  scopeEn: ["Logo", "Character", "Character sheet", "Card system", "Banners", "Social media", "Website (in development)"],
+  gridLabel: "Logo · Personaje",
+  gridLabelEn: "Logo · Character",
+  brief: "RODAI es la memecoin de la familia Aerosol en Solana, y su marca es el ROD: un personaje con greña, gafas oscuras y media sonrisa. Le hice el logo en 2025. Para 2026 el ROD salía todos los días en X, y cada dibujo lo traía un poco distinto: otro pelo, otra boca, otra proporción. Tocaba que fuera siempre el mismo personaje y que la cuenta entera se viera como una sola marca.",
+  briefEn: "RODAI is the Aerosol family's memecoin on Solana, and its mark is the ROD: a character with a messy mop of hair, dark shades and a half smile. I made his logo in 2025. By 2026 the ROD was on X every day, and every drawing brought him back a little different: other hair, another mouth, other proportions. He had to be the same character every single time, and the whole account had to look like one brand.",
+  shipped: [
+    "El logo: el ROD con el nombre, en horizontal y apilado, en claro y en oscuro.",
+    "El ROD en su placa coral, como ícono y como avatar.",
+    "La hoja del personaje: cinco vistas, ocho expresiones y sus reglas (las gafas no se las quita, no tiene piernas, el pelo del ícono en cada vista).",
+    "Las reglas de las tarjetas de X: un fondo por serie, fondos y letras en los colores de Aerosol, y el cian solo en el ROD.",
+    "Los banners en Rubik con su frase nueva, «Bullish on Solana since 2024».",
+    "El diseño de la web nueva de RODAI, que todavía está en desarrollo.",
+  ],
+  shippedEn: [
+    "The logo: the ROD with the name, horizontal and stacked, in light and dark.",
+    "The ROD on his coral plate, as icon and avatar.",
+    "The character sheet: five views, eight expressions and the rules that go with them (the shades stay on, no legs, the icon's hair in every view).",
+    "The rules for the X cards: one ground per series, grounds and words in Aerosol's colors, and the cyan only on the ROD.",
+    "The banners in Rubik with his new line, “Bullish on Solana since 2024”.",
+    "The design for RODAI's new website, which is still in development.",
+  ],
+  outcome: [
+    "El header nuevo está en @rodaimeme desde el 28 de octubre de 2026, y la bio abre con la misma frase.",
+    "Desde noviembre, el ROD de las tarjetas de @rodaimeme se dibuja siguiendo su hoja.",
+  ],
+  outcomeEn: [
+    "The new header has been up on @rodaimeme since 28 October 2026, and the bio opens with the same line.",
+    "Since November, the ROD on @rodaimeme's cards is drawn from his sheet.",
+  ],
+  credits: [
+    "Logo, personaje y dirección de arte: Molly Yllom",
+    "Producto y desarrollo de la web, comunidad y textos de @rodaimeme: equipo de Aerosol",
+  ],
+  creditsEn: [
+    "Logo, character and art direction: Molly Yllom",
+    "Product and web development, community and copy for @rodaimeme: the Aerosol team",
+  ],
+  portfolioImage: "/img/projects/rodai/rodai-cortes.mp4",
+  heroImage: "/img/projects/rodai/rodai-x-MY-01.webp",
+  paragraphs: [
+    "Al ROD le sobraba personalidad. Lo que le faltaba era salir igualito cada vez. Por eso le armé una hoja como la de un personaje de animación: de frente, de lado y de espalda, y ocho caras para cualquier noticia que toque contar. Las gafas no se las quita nunca, así que todo lo dice con la boca y con la inclinación de los lentes. Y no tiene piernas: brinca, se desliza o se recuesta.",
+    "Con la hoja lista, las tarjetas se ordenaron casi solas. Cada serie tiene su fondo, las letras van en Rubik y en los colores de Aerosol, y el cian se queda en el ROD, que es de él. A los banners les quité lo de «token oficial de Aerosol» y le di una frase suya, «Bullish on Solana since 2024». Ahora RODAI se presenta solito. Y todo eso se está volviendo web: la nueva de RODAI está en desarrollo, con el ROD de la hoja haciendo de anfitrión en cada pantalla.",
+  ],
+  paragraphsEn: [
+    "The ROD had personality to spare. What he was missing was looking like himself every time. So I put together a sheet for him the way you would for an animated character: front, side and back, plus eight faces for whatever the news of the day is. He never takes the shades off, so everything he says comes from his mouth and the tilt of his glasses. And he has no legs. He hops, slides or leans.",
+    "Once the sheet was done, the cards pretty much sorted themselves out. Each series gets its own ground, the words go in Rubik and in Aerosol's colors, and the cyan stays on the ROD, because it's his. I took “official meme token of Aerosol” off the banners and gave him a line of his own, “Bullish on Solana since 2024”. RODAI introduces itself now. And all of it is turning into a website: RODAI's new one is still in development, with the ROD from his sheet hosting every screen.",
+  ],
+  images: [
+    "/img/projects/rodai/rodai-x-MY-02a.webp",
+    "/img/projects/rodai/rodai-celular-mockup.webp",
+    "/img/projects/rodai/rodai-x-MY-02b.webp",
+    "/img/projects/rodai/rodai-x-MY-03.webp",
+    "/img/projects/rodai/rodai-laptop-mockup.webp",
+    "/img/projects/rodai/rodai-x-MY-04.webp",
+    "/img/projects/rodai/rodai-seeker-mockup.webp",
+    "/img/projects/rodai/rodai-x-MY-05.webp",
+    "/img/projects/rodai/rodai-celular-web-mockup.webp",
+  ],
+  imagesEn: [
+    "/img/projects/rodai/rodai-x-MY-02a.webp",
+    "/img/projects/rodai/rodai-celular-mockup.webp",
+    "/img/projects/rodai/rodai-x-MY-02b.webp",
+    "/img/projects/rodai/rodai-x-MY-03.webp",
+    "/img/projects/rodai/rodai-laptop-mockup.webp",
+    "/img/projects/rodai/rodai-x-MY-04-en.webp",
+    "/img/projects/rodai/rodai-seeker-mockup.webp",
+    "/img/projects/rodai/rodai-x-MY-05-en.webp",
+    "/img/projects/rodai/rodai-celular-web-mockup.webp",
+  ],
+};
+
 const sveltiProject: Project = {
   slug: "svelti",
   title: "Svelti",
@@ -1745,6 +1825,7 @@ const advanced: Project = {
  */
 export const activeProjects = [
   aerosolRefinamientoProject,
+  rodaiProject,
   mollyverseProject,
   inetxusProject,
   synqProject,
