@@ -206,7 +206,7 @@ const aerosolProject: Project = {
   slug: "aerosol",
   title: "Aerosol",
   client: "Aerosol",
-  year: "2024 - 2026",
+  year: "2024 - 2025",
   role: "Consultora de marca y directora de arte, luego Head of Design",
   roleEn: "Brand consultant and art director, later Head of Design",
   scope: ["Estrategia de marca", "Identidad", "Arquitectura de submarcas", "Sistema de diseño", "Ilustración", "Web"],
@@ -230,7 +230,7 @@ const aerosolProject: Project = {
     "Illustrated scenes, avatars and community pieces.",
   ],
   outcome: [
-    "La identidad salió el 7 de julio de 2025 y sigue siendo la marca de la compañía.",
+    "La identidad salió el 7 de julio de 2025 y es la base que se refinó en 2026.",
     "Con la marca nueva, Burn & Claim fue la primera app de burn destacada en la Solana dApp Store, se listó en MetaMask, Phantom y Solflare Discover, y firmó alianzas con MEW y MonkeDAO.",
     "El refinamiento de marca cambió cómo se define la empresa: pasó de llamarse un web3 product studio a un product studio.",
     "El rol creció con el trabajo, de consultora externa a Head of Design.",
@@ -246,7 +246,7 @@ const aerosolProject: Project = {
     "Product and interface animation: Molly Yllom",
   ],
   outcomeEn: [
-    "The identity shipped on 7 July 2025 and is still the company brand.",
+    "The identity shipped on 7 July 2025 and is the base that was refined in 2026.",
     "With the new brand in place, Burn & Claim became the first burn app featured in the Solana dApp Store, was listed on MetaMask, Phantom and Solflare Discover, and signed partnerships with MEW and MonkeDAO.",
     "The brand refinement changed how the company defines itself: it went from calling itself a web3 product studio to a product studio.",
     "The role grew with the work, from outside consultant to Head of Design.",
@@ -276,6 +276,89 @@ const aerosolProject: Project = {
     "/img/projects/aerosol/11.webp",
     "/img/projects/aerosol/12.mp4",
     "/img/projects/aerosol/13.mp4",
+  ],
+};
+
+const aerosolRefinamientoProject: Project = {
+  slug: "aerosol-rebrand-2026",
+  title: "Aerosol · Refinamiento 2026",
+  client: "Aerosol",
+  year: "2026",
+  role: "Directora de arte. Refinamiento del logo y campaña",
+  roleEn: "Art director. Logo refinement and campaign",
+  scope: ["Refinamiento de logo", "Sistema de logo", "Tipografía", "Color", "Campaña de lanzamiento", "Motion"],
+  scopeEn: ["Logo refinement", "Logo system", "Typography", "Color", "Launch campaign", "Motion"],
+  gridLabel: "Refinamiento de logo · Campaña",
+  gridLabelEn: "Logo refinement · Campaign",
+  brief: "Aerosol ya no era un solo producto: se había vuelto un estudio con varios, y el logo seguía hablando como el de un proyecto. La gota tenía lentes y sonrisa, mucha personalidad para una marca que ahora tenía que firmar al lado de socios, caber en un favicon y abrir una presentación. El pedido fue refinar, no empezar de cero: que se siguiera viendo Aerosol, solo que más limpio, y presentarlo sin que pareciera que la empresa se estaba reinventando.",
+  briefEn: "Aerosol wasn't one product anymore. It had become a studio with several, and the logo still spoke like a single project's. The drip wore sunglasses and a smile, a lot of personality for a mark that now had to sign next to partners, fit in a favicon and open a deck. The ask was to refine, not start over: still clearly Aerosol, just cleaner, and to launch it without making it look like the company was reinventing itself.",
+  shipped: [
+    "El logo refinado: la misma gota en la O, sin lentes ni sonrisa, con la forma y las gotitas de siempre.",
+    "Un sistema de logo: horizontal, apilado y la gota sola, en claro y en oscuro.",
+    "Rubik como tipografía display, con cuatro roles fijos para titulares, encabezados, subtítulos y etiquetas.",
+    "La paleta: morado, coral y los secundarios.",
+    "La campaña «New look. Same Aerosol.»: dos teasers, el reveal, el manifiesto del estudio, la familia de productos y las piezas de las semanas siguientes, en X y en Instagram.",
+    "Banner, avatar y bio nuevos para @aerosolbuild.",
+  ],
+  shippedEn: [
+    "The refined logo: the same drip in the O, with no sunglasses and no smile, keeping its shape and its spray drops.",
+    "A logo system: horizontal, stacked and the drip on its own, in light and dark.",
+    "Rubik as the display face, with four fixed roles for display, headings, subheads and labels.",
+    "The palette: purple, coral and the secondaries.",
+    "The “New look. Same Aerosol.” campaign: two teasers, the reveal, the studio manifesto, the product family and the pieces for the weeks after, on X and Instagram.",
+    "A new banner, avatar and bio for @aerosolbuild.",
+  ],
+  outcome: [
+    "El logo refinado salió el 4 de noviembre de 2026, y el post del reveal quedó fijado en @aerosolbuild. Ese mismo día cambió el perfil: avatar, banner y bio.",
+    "La campaña corrió en X del 2 al 20 de noviembre, y en Instagram desde el 9.",
+    "Rubik es hoy la tipografía de los titulares de aerosol.build y de synq.build.",
+  ],
+  outcomeEn: [
+    "The refined logo shipped on 4 November 2026, and the reveal post was pinned on @aerosolbuild. The profile changed the same day: avatar, banner and bio.",
+    "The campaign ran on X from 2 to 20 November, and on Instagram from the 9th.",
+    "Rubik now sets the headlines on aerosol.build and synq.build.",
+  ],
+  credits: [
+    "Refinamiento del logo, dirección de arte y campaña: Molly Yllom",
+    "Desarrollo web: equipo de Aerosol",
+  ],
+  creditsEn: [
+    "Logo refinement, art direction and campaign: Molly Yllom",
+    "Web development: the Aerosol team",
+  ],
+  portfolioImage: "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-gota-animada.mp4",
+  heroImage: "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-x-MY-01.webp",
+  paragraphs: [
+    "La regla fue no reinventar nada. Le quité a la gota los lentes y la sonrisa, que eran lo que la hacía personaje y no marca, y dejé todo lo que la hacía Aerosol: la forma, el chorrito y las gotitas alrededor. Así el logo funciona igual de favicon que en un banner, y Splat, con sus lentes, se queda donde mejor vive: en el contenido.",
+    "La campaña tenía que contar lo mismo: que es la misma Aerosol, solo más afilada. Por eso no explica el logo trazo por trazo, lo enseña. Primero un acercamiento a la gota, después la gota cayendo, y el día del reveal el antes convirtiéndose en el después. De ahí salió el resto: un manifiesto, la familia de productos y una tipografía, Rubik, que pone la voz del estudio en cada titular.",
+  ],
+  paragraphsEn: [
+    "The rule was to reinvent nothing. I took the sunglasses and the smile off the drip, since they were what made it a character instead of a mark, and kept everything that made it Aerosol: the shape, the drip and the spray drops around it. Now the logo works the same as a favicon as it does on a banner, and Splat, sunglasses and all, stays where he lives best: in the content.",
+    "The campaign had to say the same thing: same Aerosol, only sharper. So it doesn't explain the logo stroke by stroke. It shows it. First a close-up of the drip, then the drip falling, and on reveal day the before turning into the after. Everything else grew from there: a manifesto, the product family and one typeface, Rubik, that gives the studio the same voice in every headline.",
+  ],
+  images: [
+    "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-antes-despues.mp4",
+    "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-x-MY-02.webp",
+    "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-x-MY-03.webp",
+    "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-celular-mockup.webp",
+    "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-x-MY-04.webp",
+    "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-paleta.webp",
+    "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-x-MY-05.webp",
+    "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-manifiesto.mp4",
+    "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-laptop-mockup.webp",
+    "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-familia.mp4",
+  ],
+  imagesEn: [
+    "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-antes-despues.mp4",
+    "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-x-MY-02-en.webp",
+    "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-x-MY-03.webp",
+    "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-celular-mockup.webp",
+    "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-x-MY-04-en.webp",
+    "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-paleta.webp",
+    "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-x-MY-05.webp",
+    "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-manifiesto.mp4",
+    "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-laptop-mockup.webp",
+    "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-familia.mp4",
   ],
 };
 
@@ -1558,6 +1641,7 @@ const advanced: Project = {
  * under a run of identity work that reads as a single block.
  */
 export const activeProjects = [
+  aerosolRefinamientoProject,
   inetxusProject,
   synqProject,
   sveltiProject,
