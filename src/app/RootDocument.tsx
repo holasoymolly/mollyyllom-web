@@ -1,20 +1,14 @@
 import type { Metadata } from "next";
 import type { Language } from "@/i18n/translations";
 import Script from "next/script";
-import { Roboto, IBM_Plex_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { Amplitude } from "@/amplitude";
 import { languageAlternates } from "@/i18n/metadata";
+import { roboto, plexMono } from "./fonts";
 import "./globals.css";
-
-// Brand typography (see "Typography" in CLAUDE.md): Roboto is the primary face and
-// IBM Plex Mono the secondary one (labels, micro-copy, Tailwind's font-mono).
-// Exposed as CSS variables; globals.css and tailwind.config.ts read them.
-const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500", "700", "900"], variable: "--font-roboto", display: "swap" });
-const plexMono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500", "700"], variable: "--font-plex-mono", display: "swap" });
 
 /**
  * The site has two root layouts, `app/(es)/layout.tsx` and `app/en/layout.tsx`,
