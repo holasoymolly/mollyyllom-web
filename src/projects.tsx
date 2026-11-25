@@ -396,7 +396,7 @@ const mollyverseProject: Project = {
     "La paleta: noche, violeta, lila y el azul del marco.",
     "El diseño de la app: bienvenida, colecciones, detalle de cada pieza, mint y el espacio de cada holder.",
     "La ficha de la dApp Store de Solana: ícono, banner, gráfico destacado, capturas y el video demo.",
-    "El perfil de @elmollyverso en X (banner y avatar) y las piezas de lanzamiento.",
+    "El perfil de @elmollyverso en X (banner y avatar) y sus posts en X e Instagram.",
     "La web, mollyverse.art.",
     "Mollyverse Verify: su logo y la página donde cada holder conecta su wallet para recibir su rol en Discord.",
   ],
@@ -407,7 +407,7 @@ const mollyverseProject: Project = {
     "The palette: night, violet, lilac and the frame blue.",
     "The app design: welcome flow, collections, a page for every piece, mint and a space for each holder.",
     "The Solana dApp Store listing: icon, banner, feature graphic, screenshots and the demo video.",
-    "The @elmollyverso profile on X (banner and avatar) and the launch posts.",
+    "The @elmollyverso profile on X (banner and avatar) and its posts on X and Instagram.",
     "The website, mollyverse.art.",
     "Mollyverse Verify: its logo and the page where holders connect their wallet to get their Discord role.",
   ],
@@ -449,7 +449,8 @@ const mollyverseProject: Project = {
     "/img/projects/mollyverse/mollyverse-x-MY-04.webp",
     "/img/projects/mollyverse/mollyverse-demo-tienda.mp4",
     "/img/projects/mollyverse/mollyverse-x-MY-05.webp",
-    "/img/projects/mollyverse/mollyverse-x-MY-06.webp",
+    "/img/projects/mollyverse/mollyverse-x-celular-mockup.webp",
+    "/img/projects/mollyverse/mollyverse-posts-telefonos.webp",
   ],
   imagesEn: [
     "/img/projects/mollyverse/mollyverse-x-MY-02a.webp",
@@ -461,7 +462,8 @@ const mollyverseProject: Project = {
     "/img/projects/mollyverse/mollyverse-x-MY-04.webp",
     "/img/projects/mollyverse/mollyverse-demo-tienda.mp4",
     "/img/projects/mollyverse/mollyverse-x-MY-05.webp",
-    "/img/projects/mollyverse/mollyverse-x-MY-06.webp",
+    "/img/projects/mollyverse/mollyverse-x-celular-mockup.webp",
+    "/img/projects/mollyverse/mollyverse-posts-telefonos.webp",
   ],
 };
 
