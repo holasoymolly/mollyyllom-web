@@ -376,6 +376,95 @@ const aerosolRefinamientoProject: Project = {
   ],
 };
 
+const mollyverseProject: Project = {
+  slug: "mollyverse",
+  title: "Mollyverse",
+  client: "Mollyverse",
+  year: "2026",
+  role: "Fundadora. Marca, producto y dirección de arte",
+  roleEn: "Founder. Brand, product and art direction",
+  scope: ["Logo", "Sistema de marca", "Diseño de app", "dApp Store", "Web", "Mollyverse Verify"],
+  scopeEn: ["Logo", "Brand system", "App design", "dApp Store", "Website", "Mollyverse Verify"],
+  gridLabel: "Logo · Diseño de app",
+  gridLabelEn: "Logo · App design",
+  brief: "El Mollyverse es mi plataforma para lanzar colecciones de arte hechas a mano en Solana. Necesitaba una marca con carácter propio que a la vez le dejara espacio a cada colección para tener su cara. Tenía que verse bien de favicon, de ícono en la tienda del Seeker y de banner en X, y sin caer en la estética cripto de siempre, con sus degradados de neón.",
+  briefEn: "The Mollyverse is my platform for launching hand-drawn art collections on Solana. It needed a brand with its own character that still left room for every collection to have its own face. It had to hold up as a favicon, as an icon on the Seeker store and as a banner on X, and stay away from the usual crypto look with its neon gradients.",
+  shipped: [
+    "El logo: el lockup con su marco y el símbolo, a color, en negativo y en claro y oscuro.",
+    "Los íconos de la app para el Seeker y la web, y el favicon.",
+    "Un sistema tipográfico: Early GameBoy para los titulares e Inter para leer.",
+    "La paleta: noche, violeta, lila y el azul del marco.",
+    "El diseño de la app: bienvenida, colecciones, detalle de cada pieza, mint y el espacio de cada holder.",
+    "La ficha de la dApp Store de Solana: ícono, banner, gráfico destacado, capturas y el video demo.",
+    "El perfil de @elmollyverso en X (banner y avatar) y las piezas de lanzamiento.",
+    "La web, mollyverse.art.",
+    "Mollyverse Verify: su logo y la página donde cada holder conecta su wallet para recibir su rol en Discord.",
+  ],
+  shippedEn: [
+    "The logo: the framed lockup and the symbol, in full color, in negative and in light and dark.",
+    "The app icons for the Seeker and the web, and the favicon.",
+    "A type system: Early GameBoy for headlines and Inter for reading.",
+    "The palette: night, violet, lilac and the frame blue.",
+    "The app design: welcome flow, collections, a page for every piece, mint and a space for each holder.",
+    "The Solana dApp Store listing: icon, banner, feature graphic, screenshots and the demo video.",
+    "The @elmollyverso profile on X (banner and avatar) and the launch posts.",
+    "The website, mollyverse.art.",
+    "Mollyverse Verify: its logo and the page where holders connect their wallet to get their Discord role.",
+  ],
+  outcome: [
+    "La app está en la dApp Store de Solana para el Seeker y en la web. La versión 2.0.0 salió el 26 de mayo de 2026.",
+    "Desde julio de 2026 todas las colecciones viven en mollyverse.art, bajo la misma marca.",
+    "Mollyverse Verify está en vivo: verifica la wallet de cada holder y le da su rol en el Discord del Mollyverse.",
+  ],
+  outcomeEn: [
+    "The app is live on the Solana dApp Store for the Seeker and on the web. Version 2.0.0 shipped on 26 May 2026.",
+    "Since July 2026 every collection lives on mollyverse.art, under one brand.",
+    "Mollyverse Verify is live: it checks each holder's wallet and gives them their role in the Mollyverse Discord.",
+  ],
+  credits: [
+    "Marca, diseño de producto, dirección de arte y colecciones: Molly Yllom",
+    "Apoyo técnico: equipo de Aerosol",
+  ],
+  creditsEn: [
+    "Brand, product design, art direction and collections: Molly Yllom",
+    "Technical support: the Aerosol team",
+  ],
+  portfolioImage: "/img/projects/mollyverse/mollyverse-cortes.mp4",
+  heroImage: "/img/projects/mollyverse/mollyverse-x-MY-01.webp",
+  paragraphs: [
+    "El Mollyverse nació porque quería una casa propia para mis colecciones, en vez de un launchpad que se ve igual para todo el mundo. Lo pensé como un sello de música: el sello tiene su cara y su criterio, y cada disco trae su propia portada. Por eso el logo se lee casi como un sello. Un marco, la palabra partida en dos líneas y el símbolo metido dentro de la o de molly.",
+    "La marca está hecha de píxeles, igual que las piezas, y los titulares van en una letra de Game Boy para que se note que esto se hizo a mano, cuadrito por cuadrito. El texto va por el otro lado, en Inter, limpio, para que leer no cueste. Con ese sistema diseñé la app que salió en la dApp Store de Solana para el Seeker, la web y Mollyverse Verify, que es por donde cada holder entra a su espacio en Discord.",
+  ],
+  paragraphsEn: [
+    "I started the Mollyverse because I wanted a home of my own for my collections, instead of a launchpad that looks the same for everybody. I thought about it like a record label: the label has a face and a point of view, and every record gets its own cover. That's why the logo reads almost like a stamp. A frame, the word split over two lines, and the symbol tucked inside the o in molly.",
+    "The brand is made of pixels, just like the pieces, and the headlines are set in a Game Boy typeface so you can tell it was made by hand, square by square. The body copy goes the other way, in clean Inter, so reading never gets in the way. With that system I designed the app that shipped on the Solana dApp Store for the Seeker, the website, and Mollyverse Verify, which is how every holder gets into their corner of the Discord.",
+  ],
+  images: [
+    "/img/projects/mollyverse/mollyverse-x-MY-02a.webp",
+    "/img/projects/mollyverse/mollyverse-celular-mockup.webp",
+    "/img/projects/mollyverse/mollyverse-x-MY-02b.webp",
+    "/img/projects/mollyverse/mollyverse-laptop-mockup.webp",
+    "/img/projects/mollyverse/mollyverse-x-MY-03.webp",
+    "/img/projects/mollyverse/mollyverse-mesa-mockup.webp",
+    "/img/projects/mollyverse/mollyverse-x-MY-04.webp",
+    "/img/projects/mollyverse/mollyverse-demo-tienda.mp4",
+    "/img/projects/mollyverse/mollyverse-x-MY-05.webp",
+    "/img/projects/mollyverse/mollyverse-x-MY-06.webp",
+  ],
+  imagesEn: [
+    "/img/projects/mollyverse/mollyverse-x-MY-02a.webp",
+    "/img/projects/mollyverse/mollyverse-celular-mockup.webp",
+    "/img/projects/mollyverse/mollyverse-x-MY-02b.webp",
+    "/img/projects/mollyverse/mollyverse-laptop-mockup.webp",
+    "/img/projects/mollyverse/mollyverse-x-MY-03-en.webp",
+    "/img/projects/mollyverse/mollyverse-mesa-mockup.webp",
+    "/img/projects/mollyverse/mollyverse-x-MY-04.webp",
+    "/img/projects/mollyverse/mollyverse-demo-tienda.mp4",
+    "/img/projects/mollyverse/mollyverse-x-MY-05.webp",
+    "/img/projects/mollyverse/mollyverse-x-MY-06.webp",
+  ],
+};
+
 const sveltiProject: Project = {
   slug: "svelti",
   title: "Svelti",
@@ -1656,6 +1745,7 @@ const advanced: Project = {
  */
 export const activeProjects = [
   aerosolRefinamientoProject,
+  mollyverseProject,
   inetxusProject,
   synqProject,
   sveltiProject,
