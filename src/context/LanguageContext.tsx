@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, ReactNode } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { translations, Language, Translations } from '@/i18n/translations';
 import { langFromPathname, localizePath } from '@/i18n/routes';
@@ -24,17 +24,16 @@ const LanguageContext = createContext<LanguageContextType>({
  * tags can describe what the reader actually sees is for the language to be
  * part of the address. That also makes a shared link keep its language, which
  * a stored preference could never do.
+ *
+ * `<html lang>` is not set here: /en and the Spanish routes have separate root
+ * layouts (see RootDocument), so the server already sends the right one. A
+ * consequence is that the toggle, which crosses root layouts, loads the other
+ * page in full instead of a client-side transition.
  */
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const pathname = usePathname() ?? '/';
   const router = useRouter();
   const lang = langFromPathname(pathname);
-
-  // The root layout cannot read the pathname, so the server always ships
-  // <html lang="es">. Correct it here for screen readers and translation tools.
-  useEffect(() => {
-    document.documentElement.lang = lang;
-  }, [lang]);
 
   const toggleLang = () => {
     const target = localizePath(pathname, lang === 'es' ? 'en' : 'es');

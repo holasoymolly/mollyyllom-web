@@ -19,7 +19,7 @@ No test suite is configured.
 
 ## Typography
 
-**Roboto is the brand's primary face and IBM Plex Mono the secondary** (labels, micro-copy, `font-mono`). Both load through `next/font` in `src/app/layout.tsx` as the CSS variables `--font-roboto` and `--font-plex-mono`; `globals.css` (body) and `tailwind.config.ts` (`font-sans`, `font-mono`) read those variables. Molly chose Roboto in Oct 2024. On 23 May 2026 a cleanup removed the `next/font` import on the belief that `body { font-family: Arial, Helvetica }` already won. It didn't: the next/font class on `<body>` outranks the element selector, so from that day the site rendered in Arial, and later design work copied "Helvetica" from this CSS. Never remove or swap these fonts without asking Molly. The brand's typography guide lives in her Claude workspace (`01-marca/tipografia.md`).
+**Roboto is the brand's primary face and IBM Plex Mono the secondary** (labels, micro-copy, `font-mono`). Both load through `next/font` in `src/app/RootDocument.tsx` as the CSS variables `--font-roboto` and `--font-plex-mono`; `globals.css` (body) and `tailwind.config.ts` (`font-sans`, `font-mono`) read those variables. Molly chose Roboto in Oct 2024. On 23 May 2026 a cleanup removed the `next/font` import on the belief that `body { font-family: Arial, Helvetica }` already won. It didn't: the next/font class on `<body>` outranks the element selector, so from that day the site rendered in Arial, and later design work copied "Helvetica" from this CSS. Never remove or swap these fonts without asking Molly. The brand's typography guide lives in her Claude workspace (`01-marca/tipografia.md`).
 
 ## Branch flow
 
@@ -77,6 +77,8 @@ The Mollyverse nav item is an **external** link (`https://www.mollyverse.art/wel
 
 **The URL is the only source of truth for language.** `LanguageProvider` derives `lang` from `usePathname()`; there is no state and no `localStorage`. Metadata is resolved on the server, so a page can only advertise one language, and it must be the one the visitor actually sees. This also means a shared link keeps its language, which a stored preference could never do.
 
+**`<html lang>` comes from the server, through two root layouts** (since 25 Nov 2026). Every Spanish route lives in the route group `src/app/(es)/` (the group adds nothing to the URL) and has `(es)/layout.tsx` as its root layout; `src/app/en/layout.tsx` is the root layout of `/en`. Both render `src/app/RootDocument.tsx` with their `lang` and share its `rootMetadata`. Before this the single root layout shipped `lang="es"` everywhere and a client effect patched it, because a root layout cannot read the pathname without making every page dynamic. Consequences: a **new Spanish route goes under `src/app/(es)/`**, not in `src/app/` directly; the language toggle and the CV back links cross root layouts, so they load the other page in full instead of a view transition; and each root layout carries a `[...missing]` catch-all plus a `not-found.tsx` (Next's own 404) so an unknown URL still renders inside a layout with its fonts and `lang`. `/cv/**` sits in `(es)` and so ships `lang="es"`, as before.
+
 **The two languages address two different readers, but the copy is kept in lockstep.** Spanish is read by Dominican clients who buy design projects; English is read by US recruiters arriving from her CV. In September 2026 both sides moved off "graphic design studio / cotiza tu proyecto" and onto the art director and brand designer positioning, with an availability block under the hero, because the studio framing read as "runs her own business, not open to being hired". Any copy change to one language now ships with its counterpart in the same commit: `Translations` is `typeof translations.es`, so a key added to only one branch fails `tsc`.
 
 The helpers all live in `src/i18n/routes.ts` and every route change goes through them:
@@ -90,7 +92,7 @@ The helpers all live in `src/i18n/routes.ts` and every route change goes through
 
 Consequences to keep in mind:
 
-- **Adding a page means adding both routes.** A new `src/app/foo/page.tsx` needs an `src/app/en/foo/page.tsx` beside it, plus its root in `LOCALIZED_ROOTS` in `routes.ts`, or the `/en` nav will link to a 404.
+- **Adding a page means adding both routes.** A new `src/app/(es)/foo/page.tsx` needs an `src/app/en/foo/page.tsx` beside it, plus its root in `LOCALIZED_ROOTS` in `routes.ts`, or the `/en` nav will link to a 404.
 - `/cv/**` is deliberately **not** in `LOCALIZED_ROOTS`. The CVs carry their language in the URL already (`/cv` vs `/cv/es`) and have their own toggle, so prefixing them would point at routes that do not exist. Their back links name the target explicitly (`lang === "es" ? "/" : "/en"`), which `withLocale` leaves alone precisely because it never strips.
 - Route segments stay Spanish under `/en` (`/en/proyectos`, not `/en/projects`). The prefix is then a pure string operation, which is what keeps the helpers this small.
 
@@ -104,7 +106,7 @@ Per-route metadata lives on the **server-component `page.tsx`** wrappers in `src
 - A route with **no** `alternates` inherits `canonical: "/"` from the root layout and reads to Google as a duplicate of the home page. Never leave a new route without one.
 - `metaDescription()` in `src/i18n/metadata.ts` trims a paragraph to a search snippet on a sentence or word boundary. Use it instead of `slice(0, 160)`, which left descriptions ending mid-phrase.
 - Descriptions and OG copy are written per language, not machine-translated from the other side.
-- Root-level metadata + OG image live in `src/app/layout.tsx`.
+- Root-level metadata + OG image live in `rootMetadata` in `src/app/RootDocument.tsx`, which both root layouts export.
 - `src/app/sitemap.ts` and `src/app/robots.ts` produce `/sitemap.xml` and `/robots.txt` automatically — `sitemap.ts` emits both languages of every static route and every entry in `activeProjects`, each carrying `alternates.languages`, plus the four CV routes.
 
 ### Where the CTAs point
@@ -152,9 +154,9 @@ External links (booking pages, Payhip, social) stay as plain `<a target="_blank"
 
 | Tracker | Env var | Guard |
 |---|---|---|
-| Google Analytics | `NEXT_PUBLIC_GA_ID` (`G-Q3TSX67D2J`) | `{gaId && <GoogleAnalytics gaId={gaId} />}` in `src/app/layout.tsx` |
+| Google Analytics | `NEXT_PUBLIC_GA_ID` (`G-Q3TSX67D2J`) | `{gaId && <GoogleAnalytics gaId={gaId} />}` in `src/app/RootDocument.tsx` |
 | Amplitude | `NEXT_PUBLIC_AMPLITUDE_API_KEY` | `initAll` skipped in `src/amplitude.ts`; `track()` no-ops via `isAmplitudeEnabled` |
-| Apollo website visitor tracker | `NEXT_PUBLIC_APOLLO_APP_ID` | `{apolloAppId && <Script … />}` in `src/app/layout.tsx` |
+| Apollo website visitor tracker | `NEXT_PUBLIC_APOLLO_APP_ID` | `{apolloAppId && <Script … />}` in `src/app/RootDocument.tsx` |
 
 **Apollo** identifies which *companies* visit the site (B2B visitor de-anonymization), feeding outreach — it is not event analytics. The snippet is embedded with `<Script>` from `next/script` (the standard Next.js mechanism for third-party scripts) using `strategy="beforeInteractive"`, because Apollo requires it to load in the head as early as possible on every page; `next/script` dedupes by `id` so it runs exactly once per page load. Get the snippet from Apollo's MCP `apollo_website_visitor_domain_tracker_install_script` tool rather than hand-assembling it. Note that the script alone does nothing until the domain is registered in Apollo's tracker settings.
 
@@ -277,6 +279,8 @@ GIFs are auto-passed `unoptimized` so animation is preserved.
 
 **Video sources (.mp4 / .webm / .mov)** — when `src` matches one of these extensions, ProtectedImage renders a `<video autoplay loop muted playsInline>` instead of `<Image>`, inside the same protected wrapper. The `priority` prop switches the video's `preload` from `"metadata"` → `"auto"` so above-the-fold videos start loading immediately. Image-only props (`quality`, `sizes`, `unoptimized`) are silently dropped for the video branch — they don't apply. Video dimensions are populated by `ffprobe` in the manifest script, so the same intrinsic vs fill logic and CLS-free sizing applies to videos.
 
+**Posters.** A video's first frame is what shows until it plays (and on phones in Low Power Mode, where autoplay is off). When that frame is nearly empty (a fade-in, a drop still falling), put a still named `<name>-poster.webp` beside `<name>.mp4`: `ProtectedImage` finds it in the manifest and sets it as `poster`, with no change at the call site. Use a representative frame (the logo assembled, the end of the animation), extracted with `ffmpeg -ss <t> -frames:v 1` and encoded with `sharp` to webp at quality 80, at the video's own size; they come out around 12-15 KB. Videos without one keep their first frame. Since 25 Nov 2026 the Aerosol 2026 case has three: `gota-animada`, `antes-despues` and `familia`.
+
 **When to convert a GIF to MP4:** any animated thumbnail or in-body GIF over ~500 KB should be converted (`ffmpeg -i in.gif -movflags +faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -c:v libx264 -crf 23 -preset slower -an out.mp4`; bump `-crf` to 28 with `-preset veryslow` if the result isn't meaningfully smaller). The GIF is deleted, `projects.tsx` is repointed at the `.mp4`, and the manifest is regenerated. Smaller GIFs stay as GIFs.
 
 **Incoming MP4s get re-encoded too.** Source videos handed over for a project are usually export-quality (multiple MB at 3+ Mbps) and go straight into a grid thumbnail, so they get the same treatment: `-movflags +faststart -pix_fmt yuv420p -c:v libx264 -preset veryslow -an`, no audio track since playback is always muted.
@@ -301,7 +305,7 @@ Two traps, both of which silently destroy work:
 - **Some delivered `.webp` files are animated, and nothing warns you.** Seven of them were in Aerosol and Burn & Claim. `sharp` flattens them to frame 1 unless opened with `{ animated: true }`, so a batch re-encode will quietly turn a 90-frame loop into a still. Always check `metadata().pages > 1` first and branch. Note this is not only a size problem: Next.js detects animated sources and serves them **unoptimized**, so the raw file goes over the wire at full weight, up to 4.8 MB for one in-body frame. Converting them to MP4 is the fix, and it is worth doing well below the ~500 KB GIF threshold.
 - **`ffmpeg` cannot decode animated webp at all** (`ffprobe` reports "image data not found", which reads like a corrupt file). Extract the frames with `sharp` first, which decodes an animated webp into one tall strip of `pages` frames to slice with `.extract()`, write them as numbered PNGs, then feed `ffmpeg` an image sequence at `1000 / avg(metadata().delay)` fps.
 
-After converting, delete the source file, repoint `projects.tsx`, regenerate the manifest, and confirm the first frame of each new MP4 has real content, since it doubles as the poster.
+After converting, delete the source file, repoint `projects.tsx`, regenerate the manifest, and confirm the first frame of each new MP4 has real content, since it doubles as the poster; if it doesn't, add a `-poster.webp` (see "Posters" above).
 
 **Videos never play in the Claude-in-Chrome tab.** `readyState` stays 0 with no error, on localhost *and* on the live production site, for files known to work in real browsers. Do not debug this; confirm the encode with `ffmpeg` instead and ask Molly to eyeball the beta deploy.
 
@@ -446,16 +450,16 @@ Each page component receives `lang: 'en' | 'es'` prop. A `copy` object inside th
   - This mirrors the PDF résumé, which merged the two stages in August 2026. Mollyverse is a separate current role (Designer & Front-end Developer, 2026 to Present).
 - **Do not describe the Aerosol design system as "tiered" or "por niveles".** No such tiered system exists; the claim was audited out of both the CV and `/proyectos/aerosol` in September 2026. The approved wording is a brand system with sub-brand architecture and an organized asset library, so product, marketing and partner teams find what they need without design becoming a bottleneck.
 - **Molly is not an illustrator.** Her words: "no soy ilustradora, soy entusiasta de la ilustración." Illustration can appear inside a project's `scope`, but never as a headline label that positions her as one, which is why Dito Dico keeps the default grid label instead of "Ilustración de personaje".
-- **The years-of-experience figure is "17+", and it is scattered across the CV *and the main site*.** It has drifted twice: once between a CV page and its own meta description, and once between the CV section (updated to 17+) and the whole rest of the site (left at 20+ for a full release, because that change only touched `src/cv/**` and `src/app/cv/**`). When the number, the headline role, or the summary changes, update every row below in the same commit and then `grep -rni "20+\|17+\|20 años\|17 años\|20 years\|17 years\|diecisiete\|seventeen\|veinte\|twenty" src/` to confirm nothing is left behind. The spelled-out forms matter: the home hero and both home meta descriptions write the number as a word:
+- **The years-of-experience figure is "17+", and it is scattered across the CV *and the main site*.** It has drifted twice: once between a CV page and its own meta description, and once between the CV section (updated to 17+) and the whole rest of the site (left at 20+ for a full release, because that change only touched `src/cv/**` and `src/app/(es)/cv/**`). When the number, the headline role, or the summary changes, update every row below in the same commit and then `grep -rni "20+\|17+\|20 años\|17 años\|20 years\|17 years\|diecisiete\|seventeen\|veinte\|twenty" src/` to confirm nothing is left behind. The spelled-out forms matter: the home hero and both home meta descriptions write the number as a word:
 
   | Where | What |
   |---|---|
   | `src/cv/pageComponents/{normie/NormieCV,web3/Web3CV}.tsx` | the `copy` object: `heroBio` and `experienceH2b`, EN and ES |
-  | `src/app/cv/page.tsx`, `cv/es`, `cv/web3`, `cv/es/web3` | `metadata.description` on all four |
+  | `src/app/(es)/cv/page.tsx`, `cv/es`, `cv/web3`, `cv/es/web3` | `metadata.description` on all four |
   | `src/i18n/translations.ts` | `about.bio` *and* `home.subheadline`, EN and ES. The subheadline spells the figure out ("Seventeen years" / "Diecisiete años"), so the numeric grep below will not catch it |
-  | `src/app/page.tsx`, `src/app/en/page.tsx` | `metadata.description` *and* `openGraph.description` on both homes, also spelled out |
+  | `src/app/(es)/page.tsx`, `src/app/en/page.tsx` | `metadata.description` *and* `openGraph.description` on both homes, also spelled out |
   | `src/pageComponents/HomePage/components/MediaSection.tsx` | the `stats` array — the `stat1` value tile |
-  | `src/app/conoceme/page.tsx` | `metadata.description` *and* `openGraph.description` |
+  | `src/app/(es)/conoceme/page.tsx` | `metadata.description` *and* `openGraph.description` |
   | `src/app/en/conoceme/page.tsx` | the same two, in English. Easy to miss: it is a separate file from the Spanish one |
 
   Two matches are **not** this figure and must stay at 20: the INDHAUCI paragraphs in `src/projects.tsx` say her parents founded the company more than 20 years ago. `contact.summary` in `cv/data/resumeData/web{2,3}/contact.tsx` derives the number from `calculateYearsOfExperience` (currently 18, since the earliest `start` is 2008) but is not rendered anywhere, so it does not need to agree. LinkedIn, not the arithmetic, is the source of truth for the visible figure.

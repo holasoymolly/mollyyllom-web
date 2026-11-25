@@ -11,6 +11,12 @@ interface ProtectedImageProps extends Omit<ImageProps, 'draggable' | 'width' | '
 
 const VIDEO_EXT = /\.(mp4|webm|mov)$/i;
 
+/** `/a/b.mp4` → `/a/b-poster.webp`, only when that file is in the manifest. */
+const posterFor = (videoSrc: string): string | undefined => {
+  const candidate = videoSrc.replace(VIDEO_EXT, '-poster.webp');
+  return getImageDimensions(candidate) ? candidate : undefined;
+};
+
 /**
  * Smart drag/right-click-protected media. Wraps next/image so every image
  * call site gets AVIF/WebP, srcset, and lazy-loading for free, and falls
@@ -27,6 +33,11 @@ const VIDEO_EXT = /\.(mp4|webm|mov)$/i;
  * For video sources `priority` switches preload from "metadata" → "auto"
  * so above-the-fold videos start loading immediately, mirroring how
  * `priority` behaves on next/image.
+ *
+ * A video whose first frame is nearly empty (a fade-in, a drop still falling)
+ * gets a still: put `<name>-poster.webp` beside `<name>.mp4` and it becomes
+ * the video's `poster`, found through the same manifest. Videos without one
+ * keep showing their first frame, as before.
  *
  * GIFs are automatically passed `unoptimized` so animation is preserved.
  */
@@ -76,6 +87,7 @@ export const ProtectedImage = ({
     inner = (
       <video
         src={srcStr}
+        poster={posterFor(srcStr)}
         autoPlay
         loop
         muted

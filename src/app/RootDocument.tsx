@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { Language } from "@/i18n/translations";
 import Script from "next/script";
 import { Roboto, IBM_Plex_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
@@ -15,7 +16,14 @@ import "./globals.css";
 const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500", "700", "900"], variable: "--font-roboto", display: "swap" });
 const plexMono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500", "700"], variable: "--font-plex-mono", display: "swap" });
 
-export const metadata: Metadata = {
+/**
+ * The site has two root layouts, `app/(es)/layout.tsx` and `app/en/layout.tsx`,
+ * so the server can send the right `<html lang>` with static HTML: a single
+ * root layout cannot read the pathname without turning every page dynamic.
+ * Both render this document and share this metadata; each page still declares
+ * its own title, description and alternates.
+ */
+export const rootMetadata: Metadata = {
   metadataBase: new URL("https://www.mollyyllom.com"),
   title: "MOLLY YLLOM | Estudio de Diseño Gráfico",
   description: "Estudio de Diseño Gráfico especializado en Branding",
@@ -45,9 +53,9 @@ export const metadata: Metadata = {
 const gaId = process.env.NEXT_PUBLIC_GA_ID;
 const apolloAppId = process.env.NEXT_PUBLIC_APOLLO_APP_ID;
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export function RootDocument({ lang, children }: { lang: Language; children: React.ReactNode }) {
   return (
-    <html lang="es">
+    <html lang={lang}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="max-image-preview:large" />
