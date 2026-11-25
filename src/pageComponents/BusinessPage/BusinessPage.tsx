@@ -7,7 +7,7 @@ import { Footer } from "@/components/Footer";
 import { TransitionLink } from "@/components/TransitionLink";
 import { ProtectedImage } from "@/components/ProtectedImage";
 import { useLanguage } from "@/context/LanguageContext";
-import { projectsBySlug } from "@/projects";
+import { projectTitle, projectsBySlug } from "@/projects";
 import { trackBookingCTAClicked, trackEmailCTAClicked } from "@/lib/analytics";
 import { BOOKING_CALL_URL } from "@/lib/booking";
 
@@ -117,7 +117,7 @@ export const BusinessPage: FC = () => {
               <div className="relative overflow-hidden aspect-square">
                 <ProtectedImage
                   src={item.portfolioImage}
-                  alt={item.title}
+                  alt={projectTitle(item, lang)}
                   fill
                   sizes="(min-width: 768px) 25vw, 50vw"
                   quality={90}
@@ -128,7 +128,7 @@ export const BusinessPage: FC = () => {
                 <p className="text-violet-400 text-[10px] font-bold tracking-[0.2em] uppercase mb-1">
                   {(lang === "en" ? item.gridLabelEn : item.gridLabel) ?? t.portfolio.brandingLabel}
                 </p>
-                <span className="text-stone-200 font-bold text-sm md:text-base leading-tight">{item.title}</span>
+                <span className="text-stone-200 font-bold text-sm md:text-base leading-tight">{projectTitle(item, lang)}</span>
               </div>
             </TransitionLink>
           ))}

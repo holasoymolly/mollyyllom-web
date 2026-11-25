@@ -1,6 +1,6 @@
 'use client';
 
-import { activeProjects } from "@/projects";
+import { activeProjects, projectTitle } from "@/projects";
 import { TransitionLink } from "@/components/TransitionLink";
 import { ProtectedImage } from "@/components/ProtectedImage";
 import { useLanguage } from "@/context/LanguageContext";
@@ -47,7 +47,7 @@ export const PortfolioGrid = ({
               <div className="relative overflow-hidden aspect-square">
                 <ProtectedImage
                   src={item.portfolioImage}
-                  alt={item.title}
+                  alt={projectTitle(item, lang)}
                   fill
                   sizes="(min-width: 768px) 33vw, 50vw"
                   quality={90}
@@ -61,7 +61,7 @@ export const PortfolioGrid = ({
                   {(lang === 'en' ? item.gridLabelEn : item.gridLabel) ?? t.portfolio.brandingLabel}
                 </p>
                 <span className="text-stone-200 font-bold text-sm md:text-base lg:text-lg leading-tight">
-                  {item.title}
+                  {projectTitle(item, lang)}
                 </span>
               </div>
             </>

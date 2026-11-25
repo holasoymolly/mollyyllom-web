@@ -4,7 +4,7 @@ import { FC, Fragment, ReactNode, useEffect, useRef } from 'react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { TransitionLink } from '@/components/TransitionLink';
-import { projectsBySlug, activeProjects } from '../../projects';
+import { projectsBySlug, activeProjects, projectTitle } from '../../projects';
 import { QuoteBanner } from '@/components/QuoteBanner';
 import { ProtectedImage } from '@/components/ProtectedImage';
 import { motion } from 'framer-motion';
@@ -22,6 +22,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
   const nextProject = projectIndex < activeProjects.length - 1 ? activeProjects[projectIndex + 1] : null;
   const { lang, t } = useLanguage();
 
+  const title = project ? projectTitle(project, lang) : '';
   const paragraphs = lang === 'en' ? project?.paragraphsEn : project?.paragraphs;
   const client = lang === 'en' ? project?.clientEn ?? project?.client : project?.client;
   const role = lang === 'en' ? project?.roleEn ?? project?.role : project?.role;
@@ -214,7 +215,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          {project.title}
+          {title}
         </motion.h1>
 
         {/* Case-study metadata. Only renders for projects that have it. */}
@@ -263,7 +264,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
         <div className="relative w-full h-[50vh] md:h-[70vh] overflow-hidden">
           <ProtectedImage
             src={project.heroImage}
-            alt={`${project.title} Hero`}
+            alt={`${title}, ${lang === 'en' ? 'cover' : 'portada'}`}
             fill
             sizes="100vw"
             quality={90}
@@ -287,7 +288,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
               <div key={image} className="w-full overflow-hidden">
                 <ProtectedImage
                   src={image}
-                  alt={`${project.title}, ${allImages.indexOf(image) + 1}`}
+                  alt={`${title}, ${allImages.indexOf(image) + 1}`}
                   sizes="100vw"
                   quality={90}
                   className="w-full h-auto"
@@ -329,14 +330,14 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
               className="relative flex items-center gap-5 px-6 md:px-16 lg:px-24 py-10 border-b md:border-b-0 md:border-r border-indigo-950/10 group hover:bg-indigo-950/5 transition-colors duration-300 overflow-hidden"
             >
               <div className="relative shrink-0 w-16 h-16 rounded overflow-hidden border border-indigo-950/10">
-                <ProtectedImage src={prevProject.portfolioImage} alt={prevProject.title} fill sizes="64px" className="object-cover" />
+                <ProtectedImage src={prevProject.portfolioImage} alt={projectTitle(prevProject, lang)} fill sizes="64px" className="object-cover" />
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-violet-500 text-xs font-bold tracking-[0.25em] uppercase flex items-center gap-2 group-hover:-translate-x-1 transition-transform duration-300">
                   {t.projects.prev}
                 </span>
                 <span className="text-xl md:text-2xl font-black text-indigo-950 leading-tight group-hover:text-violet-900 transition-colors duration-300">
-                  {prevProject.title}
+                  {projectTitle(prevProject, lang)}
                 </span>
               </div>
             </TransitionLink>
@@ -352,11 +353,11 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
                   {t.projects.next}
                 </span>
                 <span className="text-xl md:text-2xl font-black text-indigo-950 leading-tight group-hover:text-violet-900 transition-colors duration-300">
-                  {nextProject.title}
+                  {projectTitle(nextProject, lang)}
                 </span>
               </div>
               <div className="relative shrink-0 w-16 h-16 rounded overflow-hidden border border-indigo-950/10">
-                <ProtectedImage src={nextProject.portfolioImage} alt={nextProject.title} fill sizes="64px" className="object-cover" />
+                <ProtectedImage src={nextProject.portfolioImage} alt={projectTitle(nextProject, lang)} fill sizes="64px" className="object-cover" />
               </div>
             </TransitionLink>
           ) : <div />}

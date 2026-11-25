@@ -46,7 +46,7 @@ Non-trivial changes ship as a sequence of small commits (one per logical phase),
 - `src/components/` — Shared UI components (`Header`, `Footer`, `AppDrawer`, `PortfolioGrid`, etc.).
 
 ### Data files
-- `src/projects.tsx` — All portfolio projects as static data. Exports `activeProjects` (ordered array) and `projectsBySlug` (lookup map).
+- `src/projects.tsx` — All portfolio projects as static data. Exports `activeProjects` (ordered array) and `projectsBySlug` (lookup map). A title with descriptive words carries a hand-written `titleEn` (brand names stay as they are); every surface reads it through `projectTitle(project, lang)`, and analytics keep the Spanish `title` so the series stays one.
 - `src/i18n/translations.ts` — All UI strings for the site-wide ES/EN toggle.
 - `src/context/LanguageContext.tsx` — `useLanguage()` hook providing `lang`, `t` (translations), and `toggleLanguage`.
 - `src/pageComponents/DownloadsPage/downloadData.ts` — Downloads page data.

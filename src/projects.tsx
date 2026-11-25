@@ -1,5 +1,11 @@
 export interface Project {
   title: string;
+  /**
+   * Only when the title carries words beyond the brand name ("Refinamiento",
+   * "Identidad"). A plain proper noun reads the same in both languages and
+   * leaves this out. Read it through `projectTitle()`, never directly.
+   */
+  titleEn?: string;
   portfolioImage: string;
   heroImage: string;
   paragraphs: string[];
@@ -56,6 +62,10 @@ export interface Project {
  * oldest ones off the bottom. `/proyectos` shows the full list, so nothing is
  * ever lost, it just stops appearing on the home page.
  */
+/** The project's title in the reader's language. */
+export const projectTitle = (project: Project, lang: "es" | "en"): string =>
+  lang === "en" ? project.titleEn ?? project.title : project.title;
+
 export const HOME_GRID_LIMIT = 12;
 
 const ciudadFielProject: Project = {
@@ -204,7 +214,8 @@ const burnClaimProject: Project = {
 
 const aerosolProject: Project = {
   slug: "aerosol",
-  title: "Aerosol",
+  title: "Aerosol · Identidad 2025",
+  titleEn: "Aerosol · Identity 2025",
   client: "Aerosol",
   year: "2024 - 2025",
   role: "Consultora de marca y directora de arte, luego Head of Design",
@@ -282,6 +293,7 @@ const aerosolProject: Project = {
 const aerosolRefinamientoProject: Project = {
   slug: "aerosol-rebrand-2026",
   title: "Aerosol · Refinamiento 2026",
+  titleEn: "Aerosol · Refinement 2026",
   client: "Aerosol",
   year: "2026",
   role: "Directora de arte. Refinamiento del logo y campaña",
