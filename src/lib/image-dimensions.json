@@ -477,51 +477,51 @@
   },
   "/img/projects/aerosolification/aero-proceso-cuerpo-en.webp": {
     "width": 2800,
-    "height": 1440
+    "height": 1462
   },
   "/img/projects/aerosolification/aero-proceso-cuerpo.webp": {
     "width": 2800,
-    "height": 1440
+    "height": 1513
   },
   "/img/projects/aerosolification/aero-proceso-encuadre-en.webp": {
     "width": 2800,
-    "height": 1440
+    "height": 1582
   },
   "/img/projects/aerosolification/aero-proceso-encuadre.webp": {
     "width": 2800,
-    "height": 1440
+    "height": 1582
   },
   "/img/projects/aerosolification/aero-proceso-origen-en.webp": {
     "width": 2800,
-    "height": 1440
+    "height": 1462
   },
   "/img/projects/aerosolification/aero-proceso-origen.webp": {
     "width": 2800,
-    "height": 1440
+    "height": 1462
   },
   "/img/projects/aerosolification/aero-proceso-reglas-en.webp": {
     "width": 2800,
-    "height": 1440
+    "height": 1585
   },
   "/img/projects/aerosolification/aero-proceso-reglas.webp": {
     "width": 2800,
-    "height": 1440
+    "height": 1657
   },
   "/img/projects/aerosolification/aero-proceso-rondas-en.webp": {
     "width": 2800,
-    "height": 1440
+    "height": 1438
   },
   "/img/projects/aerosolification/aero-proceso-rondas.webp": {
     "width": 2800,
-    "height": 1440
+    "height": 1437
   },
   "/img/projects/aerosolification/aero-proceso-skill-en.webp": {
     "width": 2800,
-    "height": 1440
+    "height": 1268
   },
   "/img/projects/aerosolification/aero-proceso-skill.webp": {
     "width": 2800,
-    "height": 1440
+    "height": 1268
   },
   "/img/projects/aerosolification/aero-stickers-mockup.webp": {
     "width": 2880,
@@ -2047,6 +2047,22 @@
     "width": 2800,
     "height": 1440
   },
+  "/img/projects/synq/synq-bienvenida-mockup-poster.webp": {
+    "width": 1920,
+    "height": 1542
+  },
+  "/img/projects/synq/synq-bienvenida-mockup.mp4": {
+    "width": 1920,
+    "height": 1542
+  },
+  "/img/projects/synq/synq-cambio-de-marca-mockup-poster.webp": {
+    "width": 1920,
+    "height": 1546
+  },
+  "/img/projects/synq/synq-cambio-de-marca-mockup.mp4": {
+    "width": 1920,
+    "height": 1546
+  },
   "/img/projects/synq/synq-celular-mockup.webp": {
     "width": 2304,
     "height": 1856
@@ -2059,6 +2075,10 @@
     "width": 1080,
     "height": 1080
   },
+  "/img/projects/synq/synq-marcas-mockup.webp": {
+    "width": 2880,
+    "height": 2320
+  },
   "/img/projects/synq/synq-stickers-mockup.webp": {
     "width": 2304,
     "height": 1856
@@ -2066,6 +2086,10 @@
   "/img/projects/synq/synq-sudadera-mockup.webp": {
     "width": 2304,
     "height": 1856
+  },
+  "/img/projects/synq/synq-tienda.webp": {
+    "width": 2800,
+    "height": 1440
   },
   "/img/projects/synq/synq-x-MY-01.webp": {
     "width": 2800,
@@ -2100,34 +2124,6 @@
     "height": 1440
   },
   "/img/projects/synq/synq-x-MY-07.webp": {
-    "width": 2800,
-    "height": 1440
-  },
-  "/img/technologies/anchor.png": {
-    "width": 500,
-    "height": 500
-  },
-  "/img/projects/synq/synq-bienvenida-mockup-poster.webp": {
-    "width": 1920,
-    "height": 1542
-  },
-  "/img/projects/synq/synq-bienvenida-mockup.mp4": {
-    "width": 1920,
-    "height": 1542
-  },
-  "/img/projects/synq/synq-cambio-de-marca-mockup-poster.webp": {
-    "width": 1920,
-    "height": 1546
-  },
-  "/img/projects/synq/synq-cambio-de-marca-mockup.mp4": {
-    "width": 1920,
-    "height": 1546
-  },
-  "/img/projects/synq/synq-marcas-mockup.webp": {
-    "width": 2880,
-    "height": 2320
-  },
-  "/img/projects/synq/synq-tienda.webp": {
     "width": 2800,
     "height": 1440
   },
@@ -2202,5 +2198,9 @@
   "/img/projects/the-unhinged/unh-x-MY-08.webp": {
     "width": 2800,
     "height": 1440
+  },
+  "/img/technologies/anchor.png": {
+    "width": 500,
+    "height": 500
   }
 }

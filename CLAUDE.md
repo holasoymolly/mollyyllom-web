@@ -9,7 +9,10 @@ npm run dev             # Start development server on localhost:3000
 npm run build           # Build for production (runs prebuild → image manifest first)
 npm run lint            # Run ESLint
 npm run image-manifest  # Regen src/lib/image-dimensions.json (needed when new assets are added to public/img/, including .mp4/.webm — those require ffprobe / ffmpeg installed)
+npm run image-variants  # Pre-render public/img/ rasters as WebP sizes in public/img-r/ (commit them with the new image)
 ```
+
+> **Images never go through Vercel's optimizer.** On 26 Nov 2026 the Hobby plan's image-optimization quota ran out and every `/_next/image` request not already cached answered `402 OPTIMIZED_IMAGE_REQUEST_PAYMENT_REQUIRED`: desktop looked fine (its widths were cached), phones got broken images. Since then `next.config.ts` uses a custom loader (`src/lib/imageLoader.ts`) that points next/image at static WebP variants in `public/img-r/` (widths and quality in `src/lib/image-variants.json`), made by `scripts/generate-image-variants.js`. `prebuild` runs it too, so a forgotten variant still gets made on Vercel, but **commit the variants with every new image** so builds stay fast. Never switch back to the default loader.
 
 No test suite is configured.
 

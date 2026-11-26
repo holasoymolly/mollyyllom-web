@@ -7,11 +7,12 @@
   },
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/generate-image-manifest.js",
+    "prebuild": "node scripts/generate-image-manifest.js && node scripts/generate-image-variants.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "image-manifest": "node scripts/generate-image-manifest.js"
+    "image-manifest": "node scripts/generate-image-manifest.js",
+    "image-variants": "node scripts/generate-image-variants.js"
   },
   "dependencies": {
     "@amplitude/unified": "^1.1.28",
