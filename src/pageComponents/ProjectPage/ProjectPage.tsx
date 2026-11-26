@@ -81,27 +81,30 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
   }
 
   if ((shipped && shipped.length > 0) || (outcome && outcome.length > 0)) {
+    /**
+     * What shipped runs as a numbered two-column grid, so a long list stays
+     * short; the outcome closes the block as one large statement across the
+     * full width instead of a lone bullet beside a long column.
+     */
     textBlocks.push({
       key: 'delivery',
       content: (
-        <div
-          className={`grid grid-cols-1 gap-12 ${
-            shipped && shipped.length > 0 && outcome && outcome.length > 0 ? 'md:grid-cols-2' : ''
-          }`}
-        >
+        <div className="flex flex-col gap-12">
           {shipped && shipped.length > 0 && (
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-6">
               <span className="text-violet-500 text-[10px] font-bold tracking-[0.25em] uppercase">
                 {t.projects.shipped}
               </span>
-              <ul className="flex flex-col gap-3">
-                {shipped.map((item) => (
-                  <li key={item} className="flex gap-3 text-indigo-950/70 leading-relaxed">
-                    <span aria-hidden className="mt-[0.65em] h-1.5 w-1.5 shrink-0 rounded-full bg-violet-500" />
+              <ol className="grid grid-cols-1 gap-x-12 gap-y-6 md:grid-cols-2">
+                {shipped.map((item, i) => (
+                  <li key={item} className="flex gap-4 border-t border-indigo-950/10 pt-4 text-indigo-950/70 leading-relaxed">
+                    <span aria-hidden className="font-mono text-xs text-violet-500 pt-[0.35em] tabular-nums">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
                     <span>{item}</span>
                   </li>
                 ))}
-              </ul>
+              </ol>
             </div>
           )}
           {outcome && outcome.length > 0 && (
@@ -109,14 +112,13 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
               <span className="text-violet-500 text-[10px] font-bold tracking-[0.25em] uppercase">
                 {t.projects.outcome}
               </span>
-              <ul className="flex flex-col gap-3">
+              <div className="flex flex-col gap-3 border-l-2 border-violet-500 pl-5">
                 {outcome.map((item) => (
-                  <li key={item} className="flex gap-3 text-indigo-950 font-bold leading-relaxed">
-                    <span aria-hidden className="mt-[0.65em] h-1.5 w-1.5 shrink-0 rounded-full bg-violet-500" />
-                    <span>{item}</span>
-                  </li>
+                  <p key={item} className="text-xl md:text-2xl font-black text-indigo-950 leading-snug">
+                    {item}
+                  </p>
                 ))}
-              </ul>
+              </div>
             </div>
           )}
         </div>
