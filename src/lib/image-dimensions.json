@@ -727,10 +727,6 @@
     "width": 2880,
     "height": 2320
   },
-  "/img/projects/daydream/daydream-icono-mockup.webp": {
-    "width": 2880,
-    "height": 2320
-  },
   "/img/projects/daydream/daydream-laptop-video-mockup-poster.webp": {
     "width": 2880,
     "height": 2320
@@ -750,6 +746,10 @@
   "/img/projects/daydream/daydream-tres-celulares-mockup.webp": {
     "width": 2880,
     "height": 2320
+  },
+  "/img/projects/daydream/daydream-ventana-loop-poster.webp": {
+    "width": 1080,
+    "height": 1080
   },
   "/img/projects/daydream/daydream-ventana-loop.mp4": {
     "width": 1080,
@@ -803,7 +803,11 @@
     "width": 2800,
     "height": 1440
   },
-  "/img/projects/daydream/daydream-x-MY-03.webp": {
+  "/img/projects/daydream/daydream-x-MY-02c.webp": {
+    "width": 2800,
+    "height": 1440
+  },
+  "/img/projects/daydream/daydream-x-MY-02d.webp": {
     "width": 2800,
     "height": 1440
   },
