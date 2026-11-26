@@ -1,6 +1,6 @@
 'use client';
 
-import { activeProjects, projectTitle } from "@/projects";
+import { activeProjects, homeProjects, projectTitle } from "@/projects";
 import { TransitionLink } from "@/components/TransitionLink";
 import { ProtectedImage } from "@/components/ProtectedImage";
 import { useLanguage } from "@/context/LanguageContext";
@@ -10,11 +10,11 @@ export const PortfolioGrid = ({
   limit,
 }: {
   showHeader?: boolean;
-  /** Cap the grid at the N newest projects. Omit to show every project. */
+  /** Home grid: the first N of `homeProjects` (mixed order). Omit to show every project, newest first. */
   limit?: number;
 }) => {
   const { lang, t } = useLanguage();
-  const items = limit ? activeProjects.slice(0, limit) : activeProjects;
+  const items = limit ? homeProjects.slice(0, limit) : activeProjects;
 
   return (
     <section className="bg-stone-200">

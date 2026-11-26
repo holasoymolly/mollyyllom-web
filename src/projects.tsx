@@ -2244,6 +2244,27 @@ export const activeProjects = [
   advanced,
 ];
 
+/**
+ * The home grid's own order (Molly, 26 nov 2026): Aerosol work and client
+ * work alternate, each side newest first, so the first screen doesn't read
+ * as the portfolio of a single company. /proyectos keeps the date order
+ * above. Anything not listed here is left off the home grid.
+ */
+export const homeProjects = [
+  burnThatShtProject,
+  inetxusProject,
+  aerosolRefinamientoProject,
+  posProject,
+  rodaiProject,
+  sveltiProject,
+  daydreamProject,
+  ciudadFielProject,
+  synqProject,
+  mlLogoProject,
+  seedMyWalletProject,
+  neustackProject,
+];
+
 export const projectsBySlug: Record<string, Project> = activeProjects.reduce((acc, project) => {
   acc[project.slug] = project;
   return acc;
