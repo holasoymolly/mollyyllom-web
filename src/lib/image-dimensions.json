@@ -2106,5 +2106,29 @@
   "/img/technologies/anchor.png": {
     "width": 500,
     "height": 500
+  },
+  "/img/projects/synq/synq-bienvenida-mockup-poster.webp": {
+    "width": 1920,
+    "height": 1542
+  },
+  "/img/projects/synq/synq-bienvenida-mockup.mp4": {
+    "width": 1920,
+    "height": 1542
+  },
+  "/img/projects/synq/synq-cambio-de-marca-mockup-poster.webp": {
+    "width": 1920,
+    "height": 1546
+  },
+  "/img/projects/synq/synq-cambio-de-marca-mockup.mp4": {
+    "width": 1920,
+    "height": 1546
+  },
+  "/img/projects/synq/synq-marcas-mockup.webp": {
+    "width": 2880,
+    "height": 2320
+  },
+  "/img/projects/synq/synq-tienda.webp": {
+    "width": 2800,
+    "height": 1440
   }
 }
