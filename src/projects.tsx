@@ -559,7 +559,7 @@ const mollyverseProject: Project = {
     "/img/projects/mollyverse/mollyverse-demo-tienda.mp4",
     "/img/projects/mollyverse/mollyverse-x-MY-05.webp",
     "/img/projects/mollyverse/mollyverse-x-celular-mockup.webp",
-    "/img/projects/mollyverse/mollyverse-posts-telefonos.webp",
+    "/img/projects/mollyverse/mollyverse-x-MY-07.webp",
   ],
   imagesEn: [
     "/img/projects/mollyverse/mollyverse-x-MY-02a.webp",
@@ -572,7 +572,7 @@ const mollyverseProject: Project = {
     "/img/projects/mollyverse/mollyverse-demo-tienda.mp4",
     "/img/projects/mollyverse/mollyverse-x-MY-05.webp",
     "/img/projects/mollyverse/mollyverse-x-celular-mockup.webp",
-    "/img/projects/mollyverse/mollyverse-posts-telefonos.webp",
+    "/img/projects/mollyverse/mollyverse-x-MY-07.webp",
   ],
 };
 
