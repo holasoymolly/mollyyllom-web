@@ -132,6 +132,82 @@ const ciudadFielProject: Project = {
   ],
 };
 
+const burnThatShtProject: Project = {
+  slug: "burn-that-sht",
+  title: "Burn That Sh*t",
+  client: "Burn & Claim, de Aerosol",
+  clientEn: "Burn & Claim, by Aerosol",
+  year: "2026",
+  role: "Dirección, diseño y campaña, con herramientas de IA",
+  roleEn: "Direction, design and campaign, with AI tools",
+  scope: ["Concepto visual", "Sistema de campaña", "Dirección de imagen con IA", "Piezas para X e Instagram", "Teasers", "Plantillas editables"],
+  scopeEn: ["Visual concept", "Campaign system", "AI image direction", "X and Instagram assets", "Teasers", "Editable templates"],
+  gridLabel: "Campaña · Sistema visual",
+  gridLabelEn: "Campaign · Visual system",
+  brief: "Burn & Claim estrenaba su app nueva y su look nuevo en noviembre de 2026, y había que contarlo en X sin que pareciera otro producto. Era la misma herramienta para limpiar la wallet y recuperar SOL, solo que más rápida y mucho más linda. La campaña tenía que sonar como siempre ha sonado Burn & Claim, irreverente y directa, y verse más grande que nunca. Y la hice yo sola, con herramientas de IA, así que también tocaba demostrar que una campaña con fotos generadas puede verse de verdad.",
+  briefEn: "Burn & Claim was launching its new app and its new look in November 2026, and it had to land on X without looking like a different product. Same tool for cleaning your wallet and getting your SOL back, just faster and a lot better looking. The campaign had to sound the way Burn & Claim always has, cheeky and straight to the point, and look bigger than it ever had. I made it on my own with AI tools, so it also had to prove that a campaign built on generated photos can look real.",
+  shipped: [
+    "El concepto, con la línea de siempre al frente: «Burn that sh*t!».",
+    "Seis escenas con gente usando la app nueva en un Seeker, cada una en 4:5, 1:1 y 16:9 (18 piezas). Las fotos son generadas con IA y dirigidas por mí; la pantalla de la app y el logo son los reales, montados encima.",
+    "El sistema: titulares en Rubik 820, negro, rojo y blanco, sellos, tags y un cierre fijo con el CTA.",
+    "Dos posts de expectativa: la llama apagada, y al día siguiente encendida.",
+    "Las piezas en PSD editables, con la pantalla de la app como objeto inteligente para cambiarla cuando la app cambie.",
+  ],
+  shippedEn: [
+    "The concept, with the line Burn & Claim has always had up front: “Burn that sh*t!”.",
+    "Six scenes of people using the new app on a Seeker, each in 4:5, 1:1 and 16:9 (18 pieces). The photos are AI generated under my direction; the app screen and the logo are the real ones, placed on top.",
+    "The system: headlines in Rubik 820, black, red and white, stamps, tags and a fixed closing with the CTA.",
+    "Two teaser posts: the flame unlit, and lit the next day.",
+    "Editable PSDs for every piece, with the app screen as a smart object so it can be swapped when the app changes.",
+  ],
+  outcome: [
+    "Los posts de expectativa salieron en @burnandclaim el 24 y el 25 de noviembre de 2026.",
+  ],
+  outcomeEn: [
+    "The teaser posts went out on @burnandclaim on 24 and 25 November 2026.",
+  ],
+  credits: [
+    "Dirección, diseño y campaña: Molly Yllom, con herramientas de IA bajo su dirección",
+  ],
+  creditsEn: [
+    "Direction, design and campaign: Molly Yllom, with AI tools under her direction",
+  ],
+  portfolioImage: "/img/projects/burn-that-sht/bts-cortes.mp4",
+  heroImage: "/img/projects/burn-that-sht/bts-x-MY-01.webp",
+  paragraphs: [
+    "La app nueva era lo que vendíamos, así que tenía que salir en todas las piezas. Las armé alrededor de un Seeker en la mano de alguien: uno agachado que te lo pone en la cara, otra que se tira hacia ti, una mano con un anillo dorado que lo levanta como si fuera un trofeo. Siempre con la pantalla real de la app, justificada arriba para que el logo se vea completo, y montos de ejemplo marcados como ejemplo.",
+    "Las fotos las hice con IA, y lo primero que aprendí es que una foto generada no se arregla, se escoge. Al principio retocaba una toma ronda tras ronda (un dedo, una uña, un anillo) y cada arreglo dañaba otra cosa. Así que cambié el método: pedir muchas tomas con el teléfono ya en la mano, quedarme con la mejor, darle una sola pasada de realismo y no tocarla más. La app y el logo nunca los genera la IA: van encima, reales, como se haría con una foto de estudio.",
+    "Después vino el orden. Titular grande en Rubik, blanco y rojo sobre casi negro, porque Burn & Claim siempre ha sido eso. El sello y los tags se fueron al cierre, al lado del CTA y lejos del teléfono, porque al principio competían con la app y la app gana. Antes del día del lanzamiento salieron dos posts chiquitos: la llama apagada, «Something's coming», y al otro día la llama prendida, «Same burn. New look.». Ese era todo el mensaje.",
+  ],
+  paragraphsEn: [
+    "The new app was the thing we were selling, so it had to be in every single piece. I built them around a Seeker in someone's hand: a guy crouching and pushing it right at you, a woman lunging toward the camera, a hand with a chunky gold ring holding it up like a trophy. Always with the real app screen, top-aligned so the logo shows in full, and example amounts marked as examples.",
+    "I made the photos with AI, and the first thing I learned is that you don't fix a generated photo, you pick one. At first I kept retouching the same shot round after round (a finger, a nail, a ring) and every fix broke something else. So I changed the method: ask for lots of takes with the phone already in the hand, keep the best one, give it a single realism pass and leave it alone. The app and the logo are never generated: they go on top, real, the way you would do it with a studio photo.",
+    "Then came the order. Big headlines in Rubik, white and red on almost black, because that's what Burn & Claim has always been. The stamp and the tags moved down to the closing, next to the CTA and away from the phone, because at first they were fighting with the app, and the app wins. Before launch day we put out two tiny posts: the flame unlit, “Something's coming”, and the next day the flame lit, “Same burn. New look.”. That was the whole message.",
+  ],
+  images: [
+    "/img/projects/burn-that-sht/bts-x-MY-02a.webp",
+    "/img/projects/burn-that-sht/bts-celular-mockup.webp",
+    "/img/projects/burn-that-sht/bts-x-MY-02b.webp",
+    "/img/projects/burn-that-sht/bts-x-MY-03.webp",
+    "/img/projects/burn-that-sht/bts-laptop-mockup.webp",
+    "/img/projects/burn-that-sht/bts-x-MY-04.webp",
+    "/img/projects/burn-that-sht/bts-sticker-mockup.webp",
+    "/img/projects/burn-that-sht/bts-x-MY-05.webp",
+    "/img/projects/burn-that-sht/bts-seeker-mockup.webp",
+  ],
+  imagesEn: [
+    "/img/projects/burn-that-sht/bts-x-MY-02a.webp",
+    "/img/projects/burn-that-sht/bts-celular-mockup.webp",
+    "/img/projects/burn-that-sht/bts-x-MY-02b.webp",
+    "/img/projects/burn-that-sht/bts-x-MY-03.webp",
+    "/img/projects/burn-that-sht/bts-laptop-mockup.webp",
+    "/img/projects/burn-that-sht/bts-x-MY-04.webp",
+    "/img/projects/burn-that-sht/bts-sticker-mockup.webp",
+    "/img/projects/burn-that-sht/bts-x-MY-05-en.webp",
+    "/img/projects/burn-that-sht/bts-seeker-mockup.webp",
+  ],
+};
+
 const burnClaimProject: Project = {
   slug: "burn-claim",
   title: "Burn & Claim",
@@ -2106,6 +2182,7 @@ const advanced: Project = {
  * under a run of identity work that reads as a single block.
  */
 export const activeProjects = [
+  burnThatShtProject,
   aerosolRefinamientoProject,
   rodaiProject,
   daydreamProject,
