@@ -148,14 +148,14 @@ const burnThatShtProject: Project = {
   briefEn: "Burn & Claim was launching its new app and its new look in November 2026, and it had to land on X without looking like a different product. Same tool for cleaning your wallet and getting your SOL back, just faster and a lot better looking. The campaign had to sound the way Burn & Claim always has, cheeky and straight to the point, and look bigger than it ever had. I made it on my own with AI tools, so it also had to prove that a campaign built on generated photos can look real.",
   shipped: [
     "El concepto, con la línea de siempre al frente: «Burn that sh*t!».",
-    "Seis escenas con gente usando la app nueva en un Seeker, cada una en 4:5, 1:1 y 16:9 (18 piezas). Las fotos son generadas con IA y dirigidas por mí; la pantalla de la app y el logo son los reales, montados encima.",
+    "Seis escenas con gente usando la app nueva en un Seeker, cada una en 4:5, 1:1 y 16:9 (18 piezas). Las fotos son generadas con IA y dirigidas por mí: tandas de tomas para escoger, una sola pasada de realismo, y la pantalla de la app y el logo reales montados encima.",
     "El sistema: titulares en Rubik 820, negro, rojo y blanco, sellos, tags y un cierre fijo con el CTA.",
     "Dos posts de expectativa: la llama apagada, y al día siguiente encendida.",
     "Las piezas en PSD editables, con la pantalla de la app como objeto inteligente para cambiarla cuando la app cambie.",
   ],
   shippedEn: [
     "The concept, with the line Burn & Claim has always had up front: “Burn that sh*t!”.",
-    "Six scenes of people using the new app on a Seeker, each in 4:5, 1:1 and 16:9 (18 pieces). The photos are AI generated under my direction; the app screen and the logo are the real ones, placed on top.",
+    "Six scenes of people using the new app on a Seeker, each in 4:5, 1:1 and 16:9 (18 pieces). The photos are AI generated under my direction: batches of takes to pick from, a single realism pass, and the real app screen and logo placed on top.",
     "The system: headlines in Rubik 820, black, red and white, stamps, tags and a fixed closing with the CTA.",
     "Two teaser posts: the flame unlit, and lit the next day.",
     "Editable PSDs for every piece, with the app screen as a smart object so it can be swapped when the app changes.",
@@ -176,12 +176,12 @@ const burnThatShtProject: Project = {
   heroImage: "/img/projects/burn-that-sht/bts-x-MY-01.webp",
   paragraphs: [
     "La app nueva era lo que vendíamos, así que tenía que salir en todas las piezas. Las armé alrededor de un Seeker en la mano de alguien: uno agachado que te lo pone en la cara, otra que se tira hacia ti, una mano con un anillo dorado que lo levanta como si fuera un trofeo. Siempre con la pantalla real de la app, justificada arriba para que el logo se vea completo, y montos de ejemplo marcados como ejemplo.",
-    "Las fotos las hice con IA, y lo primero que aprendí es que una foto generada no se arregla, se escoge. Al principio retocaba una toma ronda tras ronda (un dedo, una uña, un anillo) y cada arreglo dañaba otra cosa. Así que cambié el método: pedir muchas tomas con el teléfono ya en la mano, quedarme con la mejor, darle una sola pasada de realismo y no tocarla más. La app y el logo nunca los genera la IA: van encima, reales, como se haría con una foto de estudio.",
+    "Las fotos las hice con IA, y la primera lección fue que una foto generada no se arregla, se escoge. Pasé varias rondas retocando la misma toma, un dedo por aquí, una uña por allá, y cada arreglo rompía otra cosa. Así que cambié el método. Armé cada escena con un bloque gris donde iba el teléfono y pedí tandas de tomas con el Seeker ya en la mano, usando fotos reales de cómo se agarra un teléfono como referencia. De cada tanda me quedé con una y no la volví a pedir. Después, una sola pasada de realismo: probé una versión más creativa que se veía más pulida, pero me cambiaba la uña, el marco y la zapatilla, y me quedé con la fiel. Lo que vende nunca lo generó la IA: la pantalla es la app real, puesta en perspectiva, y el logo, los titulares y el sello van encima, en capas que se actualizan solas cuando cambia la app.",
     "Después vino el orden. Titular grande en Rubik, blanco y rojo sobre casi negro, porque Burn & Claim siempre ha sido eso. El sello y los tags se fueron al cierre, al lado del CTA y lejos del teléfono, porque al principio competían con la app y la app gana. Antes del día del lanzamiento salieron dos posts chiquitos: la llama apagada, «Something's coming», y al otro día la llama prendida, «Same burn. New look.». Ese era todo el mensaje.",
   ],
   paragraphsEn: [
     "The new app was the thing we were selling, so it had to be in every single piece. I built them around a Seeker in someone's hand: a guy crouching and pushing it right at you, a woman lunging toward the camera, a hand with a chunky gold ring holding it up like a trophy. Always with the real app screen, top-aligned so the logo shows in full, and example amounts marked as examples.",
-    "I made the photos with AI, and the first thing I learned is that you don't fix a generated photo, you pick one. At first I kept retouching the same shot round after round (a finger, a nail, a ring) and every fix broke something else. So I changed the method: ask for lots of takes with the phone already in the hand, keep the best one, give it a single realism pass and leave it alone. The app and the logo are never generated: they go on top, real, the way you would do it with a studio photo.",
+    "I made the photos with AI, and the first lesson was that you don't fix a generated photo, you pick one. I spent several rounds retouching the same shot, a finger here, a nail there, and every fix broke something else. So I changed the method. I set up each scene with a grey block where the phone would go and asked for batches of takes with the Seeker already in hand, using real photos of how people hold a phone as reference. From each batch I kept one and stopped there. Then a single realism pass: I tried a more creative version that looked more polished, but it changed the nail, the frame and the sneaker, so I kept the faithful one. The part that sells was never generated: the screen is the real app, set in perspective, and the logo, the headlines and the stamp sit on top, in layers that update on their own when the app changes.",
     "Then came the order. Big headlines in Rubik, white and red on almost black, because that's what Burn & Claim has always been. The stamp and the tags moved down to the closing, next to the CTA and away from the phone, because at first they were fighting with the app, and the app wins. Before launch day we put out two tiny posts: the flame unlit, “Something's coming”, and the next day the flame lit, “Same burn. New look.”. That was the whole message.",
   ],
   images: [
@@ -190,10 +190,13 @@ const burnThatShtProject: Project = {
     "/img/projects/burn-that-sht/bts-x-MY-02b.webp",
     "/img/projects/burn-that-sht/bts-x-MY-03.webp",
     "/img/projects/burn-that-sht/bts-laptop-mockup.webp",
-    "/img/projects/burn-that-sht/bts-x-MY-04.webp",
+    "/img/projects/burn-that-sht/bts-proceso-tomas.webp",
+    "/img/projects/burn-that-sht/bts-proceso-realismo.webp",
     "/img/projects/burn-that-sht/bts-sticker-mockup.webp",
-    "/img/projects/burn-that-sht/bts-x-MY-05.webp",
+    "/img/projects/burn-that-sht/bts-proceso-capas.webp",
+    "/img/projects/burn-that-sht/bts-x-MY-04.webp",
     "/img/projects/burn-that-sht/bts-seeker-mockup.webp",
+    "/img/projects/burn-that-sht/bts-x-MY-05.webp",
   ],
   imagesEn: [
     "/img/projects/burn-that-sht/bts-x-MY-02a.webp",
@@ -201,10 +204,13 @@ const burnThatShtProject: Project = {
     "/img/projects/burn-that-sht/bts-x-MY-02b.webp",
     "/img/projects/burn-that-sht/bts-x-MY-03.webp",
     "/img/projects/burn-that-sht/bts-laptop-mockup.webp",
-    "/img/projects/burn-that-sht/bts-x-MY-04.webp",
+    "/img/projects/burn-that-sht/bts-proceso-tomas-en.webp",
+    "/img/projects/burn-that-sht/bts-proceso-realismo-en.webp",
     "/img/projects/burn-that-sht/bts-sticker-mockup.webp",
-    "/img/projects/burn-that-sht/bts-x-MY-05-en.webp",
+    "/img/projects/burn-that-sht/bts-proceso-capas-en.webp",
+    "/img/projects/burn-that-sht/bts-x-MY-04.webp",
     "/img/projects/burn-that-sht/bts-seeker-mockup.webp",
+    "/img/projects/burn-that-sht/bts-x-MY-05-en.webp",
   ],
 };
 
