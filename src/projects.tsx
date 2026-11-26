@@ -655,6 +655,82 @@ const daydreamProject: Project = {
   ],
 };
 
+const spotlightProject: Project = {
+  slug: "spotlight",
+  title: "Spotlight",
+  client: "Spotlight, de Aerosol",
+  clientEn: "Spotlight, by Aerosol",
+  year: "2026",
+  role: "Logo, marca y diseño de producto",
+  roleEn: "Logo, brand and product design",
+  scope: ["Logo", "Refinamiento de marca", "Íconos de app", "Banners", "Web (en desarrollo)", "Dashboard (en desarrollo)"],
+  scopeEn: ["Logo", "Brand refinement", "App icons", "Banners", "Website (in development)", "Dashboard (in development)"],
+  gridLabel: "Logo · Refinamiento",
+  gridLabelEn: "Logo · Refinement",
+  brief: "Spotlight es la red de anuncios de Aerosol para Solana: los proyectos ponen sus anuncios dentro de las apps que la gente ya usa, y esas apps cobran por mostrarlos. Su primer logo era un faro con gafas oscuras y una sonrisa, muy simpático. Pero Spotlight le vende a equipos que van a meter dinero en campañas, y ahí la carita pesaba. Había que dejarle la luz y quitarle el chiste, sin que dejara de verse como de la familia.",
+  briefEn: "Spotlight is Aerosol's ad network for Solana: projects run their ads inside the apps people already use, and those apps get paid to show them. Its first logo was a headlight wearing dark shades and a grin. Cute, honestly. But Spotlight sells to teams who are about to put money into campaigns, and the little face got in the way. It needed to keep the light, lose the joke, and still look like part of the family.",
+  shipped: [
+    "El logo: el faro dentro de la O de SPOTLIGHT, en horizontal y apilado, en claro y en oscuro.",
+    "El refinamiento del faro: sin gafas ni sonrisa, con sus tres anillos de oro.",
+    "Los íconos de app (iOS claro, oscuro y tintado, y Android) y la foto de perfil.",
+    "Los banners de X, YouTube y DexScreener y la vista previa de enlaces, rehechos en Rubik en octubre.",
+    "El diseño de la web y del dashboard del anunciante, que el equipo está construyendo.",
+  ],
+  shippedEn: [
+    "The logo: the headlight inside the O of SPOTLIGHT, horizontal and stacked, in light and dark.",
+    "The refined headlight: no shades, no grin, just its three rings of gold.",
+    "The app icons (iOS light, dark and tinted, plus Android) and the profile picture.",
+    "The banners for X, YouTube and DexScreener and the link preview, redone in Rubik in October.",
+    "The design for the website and the advertiser dashboard, which the team is building now.",
+  ],
+  outcome: [
+    "El faro nuevo es la foto de perfil de @spotlightadsapp desde el 18 de junio de 2026, y el banner de junio está en su perfil desde ese mismo día.",
+  ],
+  outcomeEn: [
+    "The new headlight has been @spotlightadsapp's profile picture since 18 June 2026, and the June banner has been on the profile since the same day.",
+  ],
+  credits: [
+    "Logo, marca y diseño de la web y el dashboard: Molly Yllom",
+    "Producto, desarrollo y comunidad de @spotlightadsapp: equipo de Aerosol",
+  ],
+  creditsEn: [
+    "Logo, brand, and website and dashboard design: Molly Yllom",
+    "Product, development and community for @spotlightadsapp: the Aerosol team",
+  ],
+  portfolioImage: "/img/projects/spotlight/spotlight-cortes.mp4",
+  heroImage: "/img/projects/spotlight/spotlight-x-MY-01.webp",
+  paragraphs: [
+    "Me gustaba el faro con gafas, no te voy a mentir. Pero en Aerosol ya teníamos claro que la personalidad vive en los personajes, y que cada producto lleva una marca que aguante una reunión seria. Spotlight es justo el que más lo necesitaba, porque es el que le cobra a otros. Así que le quité las gafas y la sonrisa, y me quedé con lo que de verdad decía algo: un círculo de luz, tres anillos de oro, el foco puesto encima de alguien.",
+    "El wordmark se quedó igual, porque funcionaba. Lo que cambió fue todo lo de alrededor: el faro se lee a 16 px como favicon y también llena un ícono de app, y el punto amarillo pasó a ser la firma de la marca. En octubre rehice los banners en Rubik, con una sola idea: el faro grande, cortado por el borde, y «Ads for Solana projects.» al lado. Ese mismo idioma de un solo oro sobre negro, con el punto amarillo al final de cada título, es el que diseñé para la web y para el dashboard donde los anunciantes van a ver sus campañas.",
+  ],
+  paragraphsEn: [
+    "I liked the headlight with shades, I'll admit it. But at Aerosol we'd already agreed that personality lives in the characters, and every product gets a mark that can sit through a serious meeting. Spotlight needed that more than any of them, because it's the one asking other people for money. So the shades and the grin came off, and I kept what was actually saying something: a circle of light, three rings of gold, the spot on someone.",
+    "The wordmark stayed as it was, because it worked. Everything around it changed. The headlight reads at 16 px as a favicon and still fills an app icon, and the yellow dot became the brand's signature. In October I redid the banners in Rubik around one idea: the headlight big and cropped by the edge, with “Ads for Solana projects.” next to it. That same language, one gold on black with the yellow dot closing every title, is what I designed the website and the dashboard in, where advertisers will watch their campaigns.",
+  ],
+  images: [
+    "/img/projects/spotlight/spotlight-x-MY-02a.webp",
+    "/img/projects/spotlight/spotlight-web-mockup.webp",
+    "/img/projects/spotlight/spotlight-x-MY-02b.webp",
+    "/img/projects/spotlight/spotlight-formatos-mockup.webp",
+    "/img/projects/spotlight/spotlight-x-MY-03.webp",
+    "/img/projects/spotlight/spotlight-dashboard-celular-mockup.webp",
+    "/img/projects/spotlight/spotlight-x-MY-04.webp",
+    "/img/projects/spotlight/spotlight-dashboard-mockup.webp",
+    "/img/projects/spotlight/spotlight-x-MY-05.webp",
+  ],
+  imagesEn: [
+    "/img/projects/spotlight/spotlight-x-MY-02a.webp",
+    "/img/projects/spotlight/spotlight-web-mockup.webp",
+    "/img/projects/spotlight/spotlight-x-MY-02b-en.webp",
+    "/img/projects/spotlight/spotlight-formatos-mockup.webp",
+    "/img/projects/spotlight/spotlight-x-MY-03.webp",
+    "/img/projects/spotlight/spotlight-dashboard-celular-mockup.webp",
+    "/img/projects/spotlight/spotlight-x-MY-04-en.webp",
+    "/img/projects/spotlight/spotlight-dashboard-mockup.webp",
+    "/img/projects/spotlight/spotlight-x-MY-05.webp",
+  ],
+};
+
 const seedMyWalletProject: Project = {
   slug: "seed-my-wallet",
   title: "Seed My Wallet",
@@ -2033,6 +2109,7 @@ export const activeProjects = [
   daydreamProject,
   seedMyWalletProject,
   mollyverseProject,
+  spotlightProject,
   inetxusProject,
   synqProject,
   sveltiProject,
