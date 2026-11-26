@@ -654,6 +654,90 @@ const rodaiProject: Project = {
   ],
 };
 
+const aerosolificationProject: Project = {
+  slug: "aerosolification",
+  title: "Aerosolification",
+  client: "Aerosol",
+  clientEn: "Aerosol",
+  year: "2026",
+  role: "Dirección de arte, ilustración y diseño del skill, con herramientas de IA",
+  roleEn: "Art direction, illustration and skill design, with AI tools",
+  scope: ["Estilo de ilustración", "Retratos del equipo", "Dirección de imagen con IA", "Reglas de estilo", "Skill para Claude Code"],
+  scopeEn: ["Illustration style", "Team portraits", "AI image direction", "Style rules", "Claude Code skill"],
+  gridLabel: "Ilustración · Skill de IA",
+  gridLabelEn: "Illustration · AI skill",
+  brief: "Para el post del merge de Mollyverse con Aerosol me hice un retrato: yo, en busto, con mis lentes, mi camisa de fantasmas y la ciudad de noche detrás. Cuando lo vio, Kelvin preguntó si él y Sofía podían tener uno también, y si se podía hacer un skill para eso. Yo no quería tres dibujos sueltos. Quería que cualquiera del equipo pudiera entrar a ese mundito y que se viera dibujado por mí, sin que me tocara redibujar cada retrato a mano.",
+  briefEn: "For the Mollyverse x Aerosol merge post I made myself a portrait: me, from the chest up, with my glasses, my ghost shirt and the city at night behind me. When Kelvin saw it he asked if he and Sofía could get one too, and whether there could be a skill for that. I didn't want three separate drawings. I wanted anyone on the team to be able to step into that little world and look like I drew them, without me redrawing every portrait by hand.",
+  shipped: [
+    "Las reglas del estilo, escritas a partir de mi retrato: sin nariz, ojos ovalados, nada de contorno negro, colores planos y la única textura en puntos.",
+    "Un solo cuerpo para todos, sacado de mi archivo de Illustrator. Solo cambian la talla y la ropa.",
+    "Un encuadre fijo: la cabeza de cada persona se mide y se lleva al tamaño y a la altura de la mía.",
+    "Los retratos de Kelvin y de Sofía, cada uno con la ciudad de Aerosol y con fondo liso, en 3000 y 4096 px.",
+    "aerosolify, el skill para Claude Code que hace todo eso a partir de una a tres fotos, con mi aprobación antes de que salga cualquier retrato.",
+    "Un tablero que cuenta cómo se hizo y sirve de manual para el equipo.",
+  ],
+  shippedEn: [
+    "The style rules, written from my own portrait: no nose, oval eyes, no black outline, flat colour and dots as the only texture.",
+    "One body for everyone, taken from my Illustrator file. Only the size and the clothes change.",
+    "A fixed frame: each person's head is measured and brought to the size and height of mine.",
+    "Kelvin's and Sofía's portraits, each on Aerosol's city and on a plain background, at 3000 and 4096 px.",
+    "aerosolify, the Claude Code skill that does all of that from one to three photos, with my approval before any portrait goes out.",
+    "A board that tells how it was made and works as a manual for the team.",
+  ],
+  outcome: [
+    "Los retratos del equipo se entregaron el 11 y el 12 de octubre de 2026.",
+    "El skill entró al repo de skills de Aerosol el 2 de noviembre de 2026. Cada retrato nuevo sale sin gastar créditos.",
+  ],
+  outcomeEn: [
+    "The team portraits were delivered on 11 and 12 October 2026.",
+    "The skill went into Aerosol's skills repo on 2 November 2026. Every new portrait comes out without spending credits.",
+  ],
+  credits: [
+    "Dirección de arte, ilustración y skill: Molly Yllom, con herramientas de IA bajo su dirección",
+  ],
+  creditsEn: [
+    "Art direction, illustration and skill: Molly Yllom, with AI tools under her direction",
+  ],
+  portfolioImage: "/img/projects/aerosolification/aero-cortes.mp4",
+  heroImage: "/img/projects/aerosolification/aero-x-MY-01.webp",
+  paragraphs: [
+    "Todo empezó con mi propio retrato. Partí de una foto y de un borrador de IA que me devolvió naranja y de cuerpo entero, y lo redibujé a mano en Illustrator hasta que se pareció a mí y a lo que yo dibujo. Ese redibujo terminó siendo la regla para todos. Antes de pedirle nada a un modelo escribí qué hace que un retrato sea mío: sin nariz, ojos ovalados y altos, nada de contorno negro, colores planos y puntos como única textura, como mi lado rapado.",
+    "Enseñarle eso a un modelo tomó cuatro rondas. La primera se parecía a Kelvin, pero no a mi dibujo. La segunda le puso mi camisa, mi collar y mis lentes, y de ahí salió una regla que me encanta: mi personaje se usa para el estilo, nunca para la ropa. En la tercera llegó el estilo y se perdieron la barba y los tatuajes, y a la cuarta ronda el estilo ya era mío, con barba y tatuajes. Sofía salió a la primera.",
+    "Después vino lo que hace que se vean como un grupo. Cada render dibujaba su propio cuerpo, así que ahora todos llevan el mío, sacado de mi archivo, y solo cambian la talla y la ropa. Al principio pegaba la cabeza en el cuerpo y arreglaba las uniones con scripts, y cada arreglo rompía otra cosa. Así que cambié el método: el modelo redibuja el montaje entero, de una vez, y queda limpio. Lo mismo con el encuadre: la cabeza de cada quien se mide y se lleva al tamaño y a la altura de la mía.",
+    "Todo eso quedó en aerosolify, un skill para Claude Code. Le das de una a tres fotos y él hace el resto, con dos reglas mías que no se negocian: un cambio por ronda, con su antes y después, y ningún retrato sale sin que yo lo apruebe. Al final, el estilo es mío.",
+  ],
+  paragraphsEn: [
+    "It all started with my own portrait. I began with a photo and an AI draft that came back orange and full body, and I redrew it by hand in Illustrator until it looked like me and like the way I draw. That redraw ended up being the rule for everyone. Before asking a model for anything, I wrote down what makes a portrait mine: no nose, tall oval eyes, no black outline, flat colour and dots as the only texture, like my shaved side.",
+    "Teaching that to a model took four rounds. The first one looked like Kelvin, but not like my drawing. The second put my shirt, my necklace and my glasses on him, and that gave me a rule I love: my character is there for the style, never for the outfit. The third got the style and lost the beard and the tattoos, and by the fourth round the style was mine, beard and tattoos included. Sofía came out right on the first take.",
+    "Then came the part that makes them look like a group. Every render drew its own body, so now everyone wears mine, taken from my file, and only the size and the clothes change. At first I was pasting the head onto the body and fixing the joins with scripts, and every fix broke something else. So I changed the method: the model redraws the whole montage in one go, and it comes out clean. Same with the framing: each person's head is measured and brought to the size and height of mine.",
+    "All of that went into aerosolify, a Claude Code skill. You give it one to three photos and it does the rest, with two rules of mine that aren't up for debate: one change per round, shown before and after, and no portrait goes out until I approve it. In the end, the style is mine.",
+  ],
+  images: [
+    "/img/projects/aerosolification/aero-proceso-origen.webp",
+    "/img/projects/aerosolification/aero-laptop-mockup.webp",
+    "/img/projects/aerosolification/aero-proceso-reglas.webp",
+    "/img/projects/aerosolification/aero-proceso-rondas.webp",
+    "/img/projects/aerosolification/aero-cuadros-mockup.webp",
+    "/img/projects/aerosolification/aero-proceso-cuerpo.webp",
+    "/img/projects/aerosolification/aero-proceso-encuadre.webp",
+    "/img/projects/aerosolification/aero-stickers-mockup.webp",
+    "/img/projects/aerosolification/aero-proceso-skill.webp",
+    "/img/projects/aerosolification/aero-x-MY-02.webp",
+  ],
+  imagesEn: [
+    "/img/projects/aerosolification/aero-proceso-origen-en.webp",
+    "/img/projects/aerosolification/aero-laptop-mockup.webp",
+    "/img/projects/aerosolification/aero-proceso-reglas-en.webp",
+    "/img/projects/aerosolification/aero-proceso-rondas-en.webp",
+    "/img/projects/aerosolification/aero-cuadros-mockup.webp",
+    "/img/projects/aerosolification/aero-proceso-cuerpo-en.webp",
+    "/img/projects/aerosolification/aero-proceso-encuadre-en.webp",
+    "/img/projects/aerosolification/aero-stickers-mockup.webp",
+    "/img/projects/aerosolification/aero-proceso-skill-en.webp",
+    "/img/projects/aerosolification/aero-x-MY-02.webp",
+  ],
+};
+
 const daydreamProject: Project = {
   slug: "daydream",
   title: "Daydream",
@@ -2215,6 +2299,7 @@ const advanced: Project = {
 export const activeProjects = [
   burnThatShtProject,
   aerosolRefinamientoProject,
+  aerosolificationProject,
   rodaiProject,
   daydreamProject,
   seedMyWalletProject,
