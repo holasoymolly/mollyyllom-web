@@ -2342,12 +2342,12 @@ export const homeProjects = [
   posProject,
   rodaiProject,
   sveltiProject,
+  aerosolificationProject,
   daydreamProject,
   ciudadFielProject,
   synqProject,
   mlLogoProject,
   seedMyWalletProject,
-  neustackProject,
 ];
 
 export const projectsBySlug: Record<string, Project> = activeProjects.reduce((acc, project) => {
