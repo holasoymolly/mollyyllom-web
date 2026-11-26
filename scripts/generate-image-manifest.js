@@ -35,17 +35,17 @@ function probeVideo(file) {
   } catch (err) {
     if (err.code === 'ENOENT') {
       ffprobeAvailable = false;
-      console.warn('[image-manifest] ffprobe not found; video files will be skipped');
+      console.warn('[image-manifest] ffprobe not found; keeping the committed dimensions for videos');
     }
     return null;
   }
 }
 
-function walk(dir, out) {
+function walk(dir, out, previous, missingVideos) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) {
-      walk(full, out);
+      walk(full, out, previous, missingVideos);
       continue;
     }
     const ext = path.extname(entry.name).toLowerCase();
@@ -56,8 +56,9 @@ function walk(dir, out) {
         const { width, height } = imageSize(buf);
         out[rel] = { width, height };
       } else if (VIDEO_EXTS.has(ext)) {
-        const dims = probeVideo(full);
+        const dims = probeVideo(full) ?? (ffprobeAvailable === false ? previous[rel] : null);
         if (dims) out[rel] = dims;
+        else missingVideos.push(rel);
       }
     } catch (err) {
       console.warn(`[image-manifest] skip ${full}: ${err.message}`);
@@ -65,8 +66,28 @@ function walk(dir, out) {
   }
 }
 
+// Vercel's build image has no ffprobe, and `prebuild` runs there too. Without
+// this, every video silently lost its entry on each deploy, ProtectedImage
+// fell back to fill mode for them, and case-page videos rendered 0px tall.
+// When ffprobe is missing, carry the committed dimensions over instead.
+let previous = {};
+try {
+  previous = JSON.parse(fs.readFileSync(OUT, 'utf8'));
+} catch {
+  previous = {};
+}
+
 const manifest = {};
-walk(ROOT, manifest);
+const missingVideos = [];
+walk(ROOT, manifest, previous, missingVideos);
+
+if (missingVideos.length) {
+  console.warn(
+    `[image-manifest] WARNING: no dimensions for ${missingVideos.length} video(s); ` +
+      'install ffmpeg and run `npm run image-manifest`, then commit the manifest:\n  ' +
+      missingVideos.join('\n  '),
+  );
+}
 
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
 fs.writeFileSync(OUT, JSON.stringify(manifest, null, 2) + '\n');

@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
 import Image, { type ImageProps } from 'next/image';
 import { getImageDimensions } from '@/lib/imageDimensions';
 
@@ -18,6 +19,39 @@ const posterFor = (videoSrc: string): string | undefined => {
 };
 
 /**
+ * Muted, looping, inline video that plays while it is on screen.
+ *
+ * `autoPlay` stays as the first try. On top of it, `muted` is set on the
+ * element itself (React has a long history of leaving the property unset on
+ * client-rendered videos, and browsers only autoplay muted ones), `play()` is
+ * called when the video comes near the viewport and it pauses once it leaves,
+ * so a long case page does not decode every video at once. When the browser
+ * still refuses (Low Power Mode), the poster or first frame stays.
+ */
+const LoopingVideo = (props: React.ComponentProps<'video'>) => {
+  const ref = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    el.muted = true;
+    const play = () => el.play().catch(() => {});
+    if (typeof IntersectionObserver === 'undefined') {
+      play();
+      return;
+    }
+    const io = new IntersectionObserver(
+      ([entry]) => (entry.isIntersecting ? play() : el.pause()),
+      { rootMargin: '200px 0px' },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [props.src]);
+
+  return <video ref={ref} {...props} />;
+};
+
+/**
  * Smart drag/right-click-protected media. Wraps next/image so every image
  * call site gets AVIF/WebP, srcset, and lazy-loading for free, and falls
  * back to a muted autoplaying <video> when src points to .mp4/.webm/.mov
@@ -28,7 +62,9 @@ const posterFor = (videoSrc: string): string | undefined => {
  *   1. explicit `fill` prop  → fill mode (parent must be sized + relative)
  *   2. explicit `width` + `height` props → intrinsic mode
  *   3. src is found in the build-time image manifest → intrinsic mode
- *   4. fallback → fill mode
+ *   4. fallback → fill mode (images only; a video without known dimensions
+ *      keeps its own aspect ratio instead, since fill would collapse it to
+ *      0px inside an unsized parent)
  *
  * For video sources `priority` switches preload from "metadata" → "auto"
  * so above-the-fold videos start loading immediately, mirroring how
@@ -56,6 +92,7 @@ export const ProtectedImage = ({
 }: ProtectedImageProps) => {
   const srcStr = typeof src === 'string' ? src : '';
   const manifestDims = srcStr ? getImageDimensions(srcStr) : null;
+  const isVideo = VIDEO_EXT.test(srcStr);
 
   let useFill = false;
   let resolvedWidth: number | undefined;
@@ -69,11 +106,9 @@ export const ProtectedImage = ({
   } else if (manifestDims) {
     resolvedWidth = manifestDims.width;
     resolvedHeight = manifestDims.height;
-  } else {
+  } else if (!isVideo) {
     useFill = true;
   }
-
-  const isVideo = VIDEO_EXT.test(srcStr);
   const wrapperClasses = useFill
     ? `relative w-full h-full ${wrapperClassName}`.trim()
     : `relative ${wrapperClassName}`.trim();
@@ -85,7 +120,7 @@ export const ProtectedImage = ({
       ? `absolute inset-0 w-full h-full ${className ?? ''}`.trim()
       : (className ?? '');
     inner = (
-      <video
+      <LoopingVideo
         src={srcStr}
         poster={posterFor(srcStr)}
         autoPlay
