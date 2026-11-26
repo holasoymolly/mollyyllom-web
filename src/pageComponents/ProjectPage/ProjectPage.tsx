@@ -10,6 +10,7 @@ import { ProtectedImage } from '@/components/ProtectedImage';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
 import { trackProjectViewed } from '@/lib/analytics';
+import { ProjectHero } from './ProjectHero';
 
 interface ProjectPageProps {
   slug: string;
@@ -263,17 +264,12 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
 
       <main>
         {/* Hero image, full bleed */}
-        <div className="relative w-full h-[50vh] md:h-[70vh] overflow-hidden">
-          <ProtectedImage
-            src={project.heroImage}
-            alt={`${title}, ${lang === 'en' ? 'cover' : 'portada'}`}
-            fill
-            sizes="100vw"
-            quality={90}
-            priority
-            className="object-cover"
-          />
-        </div>
+        <ProjectHero
+          src={project.heroImage}
+          alt={`${title}, ${lang === 'en' ? 'cover' : 'portada'}`}
+          swipe={project.heroSwipe}
+          dotLabel={(i, n) => (lang === 'en' ? `Show part ${i} of ${n}` : `Ver parte ${i} de ${n}`)}
+        />
 
         {/*
           Text and images alternate instead of stacking a wall of copy on top of

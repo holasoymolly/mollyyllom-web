@@ -8,6 +8,14 @@ export interface Project {
   titleEn?: string;
   portfolioImage: string;
   heroImage: string;
+  /**
+   * On phones the hero (50vh, cover) only shows the middle of a wide image.
+   * Set this to the number of subjects in it (3 for a group portrait) and the
+   * phone hero shows the whole image at full height instead, swipeable left
+   * and right, opening on the middle one, with that many dots under it.
+   * Desktop is unchanged. Leave it out for heroes that read fine cropped.
+   */
+  heroSwipe?: number;
   paragraphs: string[];
   paragraphsEn: string[];
   images: string[];
@@ -673,6 +681,7 @@ const aerosolificationProject: Project = {
   ],
   portfolioImage: "/img/projects/aerosolification/aero-cortes.mp4",
   heroImage: "/img/projects/aerosolification/aero-x-MY-01.webp",
+  heroSwipe: 3,
   paragraphs: [
     "Todo empezó con mi propio retrato. Partí de una foto y de un borrador de IA que me devolvió naranja y de cuerpo entero, y lo redibujé a mano en Illustrator hasta que se pareció a mí y a lo que yo dibujo. Ese redibujo terminó siendo la regla para todos. Antes de pedirle nada a un modelo escribí qué hace que un retrato sea mío: sin nariz, ojos ovalados y altos, nada de contorno negro, colores planos y puntos como única textura, como mi lado rapado.",
     "Enseñarle eso a un modelo tomó cuatro rondas. La primera se parecía a Kelvin, pero no a mi dibujo. La segunda le puso mi camisa, mi collar y mis lentes, y de ahí salió una regla que me encanta: mi personaje se usa para el estilo, nunca para la ropa. En la tercera llegó el estilo y se perdieron la barba y los tatuajes, y a la cuarta ronda el estilo ya era mío, con barba y tatuajes. Sofía salió a la primera.",
