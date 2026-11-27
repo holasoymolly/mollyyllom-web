@@ -6186,7 +6186,7 @@ const riccieOriachProject: Project = {
   slug: "riccie-oriach",
   title: "Riccie Oriach",
   client: "Riccie Oriach",
-  year: "2018",
+  year: "2021",
   role: "Identidad visual",
   roleEn: "Visual identity",
   scope: [
@@ -6218,7 +6218,7 @@ const riccieOriachProject: Project = {
     "Visual identity: Molly Yllom",
   ],
   portfolioImage: "/img/projects/riccie-oriach/riccie-oriach-gif.mp4",
-  heroImage: "/img/projects/riccie-oriach/riccie-oriach-logo-01.webp",
+  heroImage: "/img/projects/riccie-oriach/piezas/portada.webp",
   paragraphs: [
     "Esta es la identidad visual que trabajé para Riccie Oriach, un talentoso cantautor dominicano. Riccie Oriach es un artista que expande los sonidos del rock latino con una ola de fusiones caribeñas. Inspirándose en su eclecticismo y sensibilidades artísticas, Riccie ha fusionado ritmos propios de la República Dominicana como la salve, los palos, el gagá, el merengue y el pripri, con estilos internacionales como el rock, el hip-hop, la salsa e incluso el punk.",
     "El objetivo del logo era capturar visualmente la personalidad única de Riccie Oriach como artista. A través de un diseño distintivo y poderoso, busqué transmitir la energía y la pasión que Riccie infunde en su música."
