@@ -8,6 +8,12 @@ interface ProtectedImageProps extends Omit<ImageProps, 'draggable' | 'width' | '
   wrapperClassName?: string;
   width?: number;
   height?: number;
+  /**
+   * For a wall of videos (the portfolio grid): a video with a poster downloads
+   * nothing until it is on screen, and plays only while it is there. Without a
+   * poster it behaves as before, since `preload="none"` would leave it blank.
+   */
+  lazyVideo?: boolean;
 }
 
 const VIDEO_EXT = /\.(mp4|webm|mov)$/i;
@@ -28,7 +34,7 @@ const posterFor = (videoSrc: string): string | undefined => {
  * so a long case page does not decode every video at once. When the browser
  * still refuses (Low Power Mode), the poster or first frame stays.
  */
-const LoopingVideo = (props: React.ComponentProps<'video'>) => {
+const LoopingVideo = ({ onScreenOnly, ...props }: React.ComponentProps<'video'> & { onScreenOnly?: boolean }) => {
   const ref = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -42,11 +48,11 @@ const LoopingVideo = (props: React.ComponentProps<'video'>) => {
     }
     const io = new IntersectionObserver(
       ([entry]) => (entry.isIntersecting ? play() : el.pause()),
-      { rootMargin: '200px 0px' },
+      onScreenOnly ? { threshold: 0.15 } : { rootMargin: '200px 0px' },
     );
     io.observe(el);
     return () => io.disconnect();
-  }, [props.src]);
+  }, [props.src, onScreenOnly]);
 
   return <video ref={ref} {...props} />;
 };
@@ -88,6 +94,7 @@ export const ProtectedImage = ({
   sizes,
   priority,
   style,
+  lazyVideo,
   ...rest
 }: ProtectedImageProps) => {
   const srcStr = typeof src === 'string' ? src : '';
@@ -116,18 +123,21 @@ export const ProtectedImage = ({
   let inner: React.ReactNode;
 
   if (isVideo) {
+    const poster = posterFor(srcStr);
+    const onScreenOnly = Boolean(lazyVideo && poster && !priority);
     const videoClass = useFill
       ? `absolute inset-0 w-full h-full ${className ?? ''}`.trim()
       : (className ?? '');
     inner = (
       <LoopingVideo
         src={srcStr}
-        poster={posterFor(srcStr)}
-        autoPlay
+        poster={poster}
+        autoPlay={!onScreenOnly}
+        onScreenOnly={onScreenOnly}
         loop
         muted
         playsInline
-        preload={priority ? 'auto' : 'metadata'}
+        preload={priority ? 'auto' : onScreenOnly ? 'none' : 'metadata'}
         aria-label={alt}
         className={videoClass}
         style={style}

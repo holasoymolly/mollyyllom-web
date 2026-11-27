@@ -654,7 +654,7 @@ const theUnhingedProject: Project = {
   creditsEn: [
     "Art, generator, app and mint: Molly Yllom, with help from Kelvin and AI tools",
   ],
-  portfolioImage: "/img/projects/the-unhinged/unh-cortes.mp4",
+  portfolioImage: "/img/projects/the-unhinged/unh-personajes.mp4",
   heroImage: "/img/projects/the-unhinged/unh-x-MY-01.webp",
   paragraphs: [
     "Todo empezó con un solo personaje en papel cuadriculado: un tipo azul con el pelo como brócoli, unos lentes que no le caben en la cara y un mono en el hombro. De ese muñeco saqué las 11 capas y dibujé cada variante a mano, rasgo por rasgo. Nada del arte sale de un prompt. El código solo decide qué dibujos se encuentran.",
@@ -725,7 +725,7 @@ const mdpProject: Project = {
   creditsEn: [
     "Art, generator, app and mint: Molly Yllom, with help from Kelvin and AI tools",
   ],
-  portfolioImage: "/img/projects/mdp/mdp-cortes.mp4",
+  portfolioImage: "/img/projects/mdp/mdp-personajes.mp4",
   heroImage: "/img/projects/mdp/mdp-x-MY-01.webp",
   paragraphs: [
     "Todo empezó con un autorretrato en píxel: el pelo largo con un lado rapado, los lentes redondos y una camisa negra. De ahí saqué 111 versiones mías. Cada rasgo es algo real, un diente de oro, una corona, una banana, una chaqueta como la de Lady Gaga, y en el fondo están mis raíces dominicanas, la cultura degen y lo punk. Por eso digo que es el mundo más personal del Mollyverse.",
@@ -792,7 +792,7 @@ const pixeledFlexiesVol1Project: Project = {
   creditsEn: [
     "Art, generator, app and mint: Molly Yllom, with help from Kelvin and AI tools",
   ],
-  portfolioImage: "/img/projects/pixeled-flexies-vol-1/pfv1-cortes.mp4",
+  portfolioImage: "/img/projects/pixeled-flexies-vol-1/pfv1-personajes.mp4",
   heroImage: "/img/projects/pixeled-flexies-vol-1/pfv1-x-MY-01.webp",
   paragraphs: [
     "Los Flexies son mis personajes de siempre: cuellos larguísimos, cuerpos como tubos y brazos que se enroscan. Con esta colección quise ver si sobrevivían al píxel. Los diez saludan igual, con el brazo en espiral y la mano haciendo la paz, y lo demás cambia: el pelo, la ropa, los tenis y hasta uno que es un alien.",
@@ -857,7 +857,7 @@ const pixeledFlexiesVol2Project: Project = {
   creditsEn: [
     "Art, generator, app and mint: Molly Yllom, with help from Kelvin and AI tools",
   ],
-  portfolioImage: "/img/projects/pixeled-flexies-vol-2/pfv2-cortes.mp4",
+  portfolioImage: "/img/projects/pixeled-flexies-vol-2/pfv2-personajes.mp4",
   heroImage: "/img/projects/pixeled-flexies-vol-2/pfv2-x-MY-01.webp",
   paragraphs: [
     "Después de Vol. 1 quise que los Flexies se movieran más. Aquí el cuello se dobla en S, la cabeza queda de lado y la mano se abre como saludando. Cada fondo lleva un rombo de líneas finas que lo encierra, como si fuera un marco.",
@@ -990,7 +990,7 @@ const thingiesProject: Project = {
   creditsEn: [
     "Art, generator, app and mint: Molly Yllom, with help from Kelvin and AI tools",
   ],
-  portfolioImage: "/img/projects/thingies/th-cortes.mp4",
+  portfolioImage: "/img/projects/thingies/th-personajes.mp4",
   heroImage: "/img/projects/thingies/th-x-MY-01.webp",
   paragraphs: [
     "Los Thingies nacieron como un respiro de los Flexies. Todos tienen el mismo cuerpo, un trapecio con patas que parecen ir corriendo, y una boca que ocupa media cara. Lo que cambia es todo lo demás: los ojos, el pelo, la lengua, la nariz y unos lentes que a veces son estrellas y a veces corazones.",
@@ -1131,7 +1131,7 @@ const rodaiProject: Project = {
     "Logo, character and art direction: Molly Yllom",
     "Product and web development, community and copy for @rodaimeme: the Aerosol team",
   ],
-  portfolioImage: "/img/projects/rodai/rodai-cortes.mp4",
+  portfolioImage: "/img/projects/rodai/rodai-logo-animado.mp4",
   heroImage: "/img/projects/rodai/rodai-x-MY-01.webp",
   paragraphs: [
     "Al ROD le sobraba personalidad. Lo que le faltaba era salir igualito cada vez. Por eso le armé una hoja como la de un personaje de animación: de frente, de lado y de espalda, y ocho caras para cualquier noticia que toque contar. Las gafas no se las quita nunca, así que todo lo dice con la boca y con la inclinación de los lentes. Y no tiene piernas: brinca, se desliza o se recuesta.",
@@ -1370,7 +1370,7 @@ const spotlightProject: Project = {
     "Logo, brand, and website and dashboard design: Molly Yllom",
     "Product, development and community for @spotlightadsapp: the Aerosol team",
   ],
-  portfolioImage: "/img/projects/spotlight/spotlight-cortes.mp4",
+  portfolioImage: "/img/projects/spotlight/spotlight-logo-animado.mp4",
   heroImage: "/img/projects/spotlight/spotlight-x-MY-01.webp",
   paragraphs: [
     "Me gustaba el faro con gafas, no te voy a mentir. Pero en Aerosol ya teníamos claro que la personalidad vive en los personajes, y que cada producto lleva una marca que aguante una reunión seria. Spotlight es justo el que más lo necesitaba, porque es el que le cobra a otros. Así que le quité las gafas y la sonrisa, y me quedé con lo que de verdad decía algo: un círculo de luz, tres anillos de oro, el foco puesto encima de alguien.",
@@ -1512,7 +1512,7 @@ const sveltiProject: Project = {
   ],
   credits: ["Logo e identidad: Molly Yllom"],
   creditsEn: ["Logo and identity: Molly Yllom"],
-  portfolioImage: "/img/projects/svelti/svelti-mockups-animado.mp4",
+  portfolioImage: "/img/projects/svelti/svelti-logo-animado.mp4",
   heroImage: "/img/projects/svelti/svelti-x-MY-01.webp",
   paragraphs: [
     "El detalle está en el punto de la i: es una célula en su forma más simple. La piel está hecha de células, capa sobre capa, y ahí es donde trabaja la clínica. Ese punto se volvió también el ícono de la marca.",
@@ -1652,7 +1652,7 @@ const inetxusProject: Project = {
   ],
   credits: ["Rediseño de identidad: Molly Yllom"],
   creditsEn: ["Identity redesign: Molly Yllom"],
-  portfolioImage: "/img/projects/inetxus/inetxus-mockups-animado.mp4",
+  portfolioImage: "/img/projects/inetxus/inetxus-logo-animado.mp4",
   heroImage: "/img/projects/inetxus/inetxus-x-MY-01.webp",
   paragraphs: [
     "La frase del cliente fue el punto de partida: el cliente en el centro. Por eso la ruta que se quedó fue la X, un cruce que también es enlace, el punto donde se encuentran la tecnología, las redes y la gente que las usa. Y ahí estaba la esencia que había que cuidar: el símbolo de antes ya tenía ese cruce. Lo dejé, quité todo lo demás y lo llevé a una línea más limpia, que se sostiene igual en una pantalla que en una fachada.",
@@ -2903,26 +2903,30 @@ const bSafeVistasProject: Project = {
 };
 
 /**
- * Newest first. New projects go at the top.
+ * Newest first, give or take a place or two. New projects go at the top.
  *
- * One deliberate exception to that order: the projects carrying interface,
- * design-system and front-end work sit in the opening tiles. The resume says
- * she designs in the browser and ships the front end, and a reader who clicks
- * through has to see that on the first screen rather than eleven tiles down,
- * under a run of identity work that reads as a single block.
+ * Two deliberate exceptions to that order:
+ * - the projects carrying interface, design-system and front-end work sit in
+ *   the opening tiles. The resume says she designs in the browser and ships the
+ *   front end, and a reader who clicks through has to see that on the first
+ *   screen rather than eleven tiles down, under a run of identity work;
+ * - no two covers of the same kind touch in the grid's rows (2 large, 3, 3):
+ *   a logo on a flat ground, a scene, characters, an interface, a photo. The
+ *   NFT collections never touch each other or Mollyverse (Molly, 27 nov 2026).
+ *   When a project is added, check its neighbours and swap one place if needed.
  */
 export const activeProjects = [
   burnThatShtProject,
   aerosolRefinamientoProject,
-  aerosolificationProject,
   rodaiProject,
+  aerosolificationProject,
   daydreamProject,
-  seedMyWalletProject,
   mollyverseProject,
+  seedMyWalletProject,
   bSafeVistasProject,
   theUnhingedProject,
-  laColmenaProject,
   spotlightProject,
+  laColmenaProject,
   mdpProject,
   inetxusProject,
   synqProject,
@@ -2932,8 +2936,8 @@ export const activeProjects = [
   ciudadFielProject,
   thingiesProject,
   famaProject,
-  burnClaimProject,
   aerosolProject,
+  burnClaimProject,
   mlLogoProject,
   neustackProject,
   pixeledFlexiesVol1Project,
@@ -2941,36 +2945,37 @@ export const activeProjects = [
   materDesignProject,
   neuschoolProject,
   momProject,
-  dinerologyProject,
   riccieOriachProject,
+  dinerologyProject,
   greenSpiritProject,
-  distopiaProject,
   indhauciProject,
+  distopiaProject,
   ditoDicoProject,
   bhMobiliarioProject,
-  cdtLogoProject,
   advanced,
+  cdtLogoProject,
 ];
 
 /**
- * The home grid's own order (Molly, 26 nov 2026): Aerosol work and client
- * work alternate, each side newest first, so the first screen doesn't read
- * as the portfolio of a single company. /proyectos keeps the date order
- * above. Anything not listed here is left off the home grid.
+ * The home grid's own order (Molly, 26 and 27 nov 2026): Aerosol work and
+ * client work mixed, so the first screen doesn't read as the portfolio of a
+ * single company, and no two covers of the same kind side by side in its rows
+ * (2 large, 3, 2, 3, 2). La Colmena is here for the editorial work; Seed My
+ * Wallet lives in /proyectos only. Anything not listed is left off the home.
  */
 export const homeProjects = [
   burnThatShtProject,
   inetxusProject,
-  aerosolRefinamientoProject,
-  posProject,
   rodaiProject,
-  sveltiProject,
   aerosolificationProject,
+  posProject,
+  aerosolRefinamientoProject,
+  sveltiProject,
   daydreamProject,
   ciudadFielProject,
   synqProject,
+  laColmenaProject,
   mlLogoProject,
-  seedMyWalletProject,
 ];
 
 export const projectsBySlug: Record<string, Project> = activeProjects.reduce((acc, project) => {

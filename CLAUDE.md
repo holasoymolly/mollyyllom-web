@@ -512,7 +512,7 @@ Since 27 Nov 2026 a project can carry a `story` (types `CaseStory`, `StoryChapte
 
 ### Ordering and the 15-project home grid
 
-`activeProjects` is ordered **newest first**. New work goes at index 0, and that single edit drives every surface: both grids, the `NN / NN` counter, the prev/next footer links, and the sitemap.
+`activeProjects` is ordered **newest first**, give or take a place for the mixing rule below. New work goes at index 0, and that single edit drives every surface: `/proyectos`, the `NN / NN` counter, the prev/next footer links, and the sitemap. The home grid has its own list, `homeProjects`.
 
 The two grids differ only in length, and both render from the same `<PortfolioGrid>`:
 
@@ -522,6 +522,15 @@ The two grids differ only in length, and both render from the same `<PortfolioGr
 | `/proyectos` | `<PortfolioGrid showHeader={false} />` | No limit. Grows forever, nothing is ever displaced. |
 
 Each tile's kicker comes from the project's optional `gridLabel` / `gridLabelEn`, falling back to `portfolio.brandingLabel` ("Branding · Identidad"). Those labels are **derived from that project's own `scope` / `scopeEn`**, taking the two most representative entries written exactly as they appear there. Never invent a label, and leave the field out when the scope really is only branding. Two projects deliberately keep the default despite a broader scope: Dito Dico, because an illustration label positions Molly as an illustrator, and Dinerology, because it won a Bronze Effie (Dominican Republic, 2023) and a "YouTube assets" label sells it as loose social pieces.
+
+#### How the grid looks and moves (since 27 Nov 2026)
+
+`PortfolioGrid` lays the tiles out as **rows of two large tiles and rows of three** (home: 2 · 3 · 2 · 3 · 2; `/proyectos`: 2 · 3 · 3, repeating), with gutters, and the **label, title and year under each cover**, never over it. On phones the home is one column; `/proyectos` keeps the large tiles full width and the small ones two across. Its styles are the `pg-*` classes in `globals.css`.
+
+- **Only what is on screen loads and plays.** The grid passes `lazyVideo` to `ProtectedImage`: a video cover with a poster gets `preload="none"`, starts when it is on screen and pauses when it leaves. Opening `/proyectos` used to download every cover (28.5 MB); now it downloads the two in view. **So every video `portfolioImage` needs its `<name>-poster.webp`** (see "Posters"): without one the tile falls back to the old behaviour and downloads on load.
+- **Focus mode is hover only.** While the mouse is on a tile, the others take an indigo tint (`#3a3399`, multiply, so each logo keeps its contrast) and their titles step back. Nothing is tinted at rest, and touch screens never get it. Molly asked for exactly this; do not add a scroll-driven focus on phones.
+- **Kinds of cover, and the mixing rule.** A logo animated on a flat ground (INETXUS, Svelti, Spotlight, RODAI: 2160 px, 60 fps, a loop that opens and closes on the finished logo), a scene or mockup cuts, characters (the NFT collections show only their characters; the mockups stay inside the case), an interface, a photo. **No two covers of the same kind touch** in the rows, and the collections never touch each other or Mollyverse. The orders of `activeProjects` and `homeProjects` already follow this; when a project goes in, look at its neighbours and move it one place if needed.
+- The logo animations are HyperFrames projects kept outside the repo, in Molly's workspace (`04-portafolio/grilla-portadas/animaciones/`, built by `scripts/anim.py` from the real logo SVGs: paths are only masked or moved, never redrawn). Molly approved the four on 27 Nov 2026 and her bar is "as if a motion designer made them": a new one follows the same method and is reviewed frame by frame before it goes in.
 
 `HOME_GRID_LIMIT` is exported from `src/projects.tsx`. A project that scrolls off the home grid is **not** removed: it keeps its `/proyectos` tile, its case study page, and its sitemap entry. Nothing needs deleting when the list grows, so never trim `activeProjects` to keep the home page at 15.
 

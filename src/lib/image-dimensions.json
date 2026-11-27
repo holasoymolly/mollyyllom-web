@@ -315,6 +315,10 @@
     "width": 2919,
     "height": 625
   },
+  "/img/projects/advanced-therapy/atosf-logo-cover-animation-poster.webp": {
+    "width": 1920,
+    "height": 1920
+  },
   "/img/projects/advanced-therapy/atosf-logo-cover-animation.mp4": {
     "width": 1920,
     "height": 1920
@@ -348,6 +352,10 @@
     "height": 1080
   },
   "/img/projects/aerosol/13.mp4": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/img/projects/aerosol/14-poster.webp": {
     "width": 1080,
     "height": 1080
   },
@@ -534,6 +542,10 @@
   "/img/projects/aerosolification/aero-x-MY-02.webp": {
     "width": 2800,
     "height": 1440
+  },
+  "/img/projects/alliance/alliance-gif-1-poster.webp": {
+    "width": 1080,
+    "height": 1080
   },
   "/img/projects/alliance/alliance-gif-1.mp4": {
     "width": 1080,
@@ -795,6 +807,10 @@
     "width": 4000,
     "height": 3000
   },
+  "/img/projects/bh-mobiliario/bh-mobiliario-web-cover-poster.webp": {
+    "width": 1024,
+    "height": 1024
+  },
   "/img/projects/bh-mobiliario/bh-mobiliario-web-cover.mp4": {
     "width": 1024,
     "height": 1024
@@ -826,6 +842,10 @@
   "/img/projects/burn-claim/1.webp": {
     "width": 2917,
     "height": 1501
+  },
+  "/img/projects/burn-claim/16-poster.webp": {
+    "width": 1400,
+    "height": 1272
   },
   "/img/projects/burn-claim/16.mp4": {
     "width": 1400,
@@ -1046,6 +1066,10 @@
   "/img/projects/ciudad-fiel/8.webp": {
     "width": 3840,
     "height": 2560
+  },
+  "/img/projects/ciudad-fiel/9-poster.webp": {
+    "width": 1920,
+    "height": 1080
   },
   "/img/projects/ciudad-fiel/9.mp4": {
     "width": 1920,
@@ -1399,6 +1423,10 @@
     "width": 4046,
     "height": 4046
   },
+  "/img/projects/green-spirit/green-spirit-gif-poster.webp": {
+    "width": 1080,
+    "height": 1080
+  },
   "/img/projects/green-spirit/green-spirit-gif.mp4": {
     "width": 1080,
     "height": 1080
@@ -1446,6 +1474,10 @@
   "/img/projects/green-spirit/green-spirit-tag-mockup.webp": {
     "width": 6240,
     "height": 4160
+  },
+  "/img/projects/indhauci/indhauci-gif-1-poster.webp": {
+    "width": 1080,
+    "height": 1080
   },
   "/img/projects/indhauci/indhauci-gif-1.mp4": {
     "width": 1080,
@@ -1518,6 +1550,14 @@
   "/img/projects/inetxus/inetxus-laptop-mockup.webp": {
     "width": 2304,
     "height": 1856
+  },
+  "/img/projects/inetxus/inetxus-logo-animado-poster.webp": {
+    "width": 2160,
+    "height": 2160
+  },
+  "/img/projects/inetxus/inetxus-logo-animado.mp4": {
+    "width": 2160,
+    "height": 2160
   },
   "/img/projects/inetxus/inetxus-mockups-animado.mp4": {
     "width": 1080,
@@ -1679,6 +1719,10 @@
     "width": 3560,
     "height": 2160
   },
+  "/img/projects/maria-lunares/ml-logo-animado-1x1-1-poster.webp": {
+    "width": 1080,
+    "height": 1080
+  },
   "/img/projects/maria-lunares/ml-logo-animado-1x1-1.mp4": {
     "width": 1080,
     "height": 1080
@@ -1783,6 +1827,14 @@
     "width": 3456,
     "height": 2784
   },
+  "/img/projects/mdp/mdp-personajes-poster.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/img/projects/mdp/mdp-personajes.mp4": {
+    "width": 1080,
+    "height": 1080
+  },
   "/img/projects/mdp/mdp-x-MY-01.webp": {
     "width": 2800,
     "height": 1440
@@ -1826,6 +1878,10 @@
   "/img/projects/mollyverse/mollyverse-celular-mockup.webp": {
     "width": 3456,
     "height": 2784
+  },
+  "/img/projects/mollyverse/mollyverse-cortes-poster.webp": {
+    "width": 1080,
+    "height": 1080
   },
   "/img/projects/mollyverse/mollyverse-cortes.mp4": {
     "width": 1080,
@@ -1963,6 +2019,10 @@
     "width": 4000,
     "height": 2667
   },
+  "/img/projects/neuschool/neuschool-gif-1-poster.webp": {
+    "width": 1080,
+    "height": 1080
+  },
   "/img/projects/neuschool/neuschool-gif-1.mp4": {
     "width": 1080,
     "height": 1080
@@ -2022,6 +2082,10 @@
   "/img/projects/neustack/neustack-exterior-street-screen-sign-mockup.webp": {
     "width": 4618,
     "height": 3078
+  },
+  "/img/projects/neustack/neustack-gif-poster.webp": {
+    "width": 1080,
+    "height": 1080
   },
   "/img/projects/neustack/neustack-gif.mp4": {
     "width": 1080,
@@ -2103,6 +2167,14 @@
     "width": 3456,
     "height": 2784
   },
+  "/img/projects/pixeled-flexies-vol-1/pfv1-personajes-poster.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/img/projects/pixeled-flexies-vol-1/pfv1-personajes.mp4": {
+    "width": 1080,
+    "height": 1080
+  },
   "/img/projects/pixeled-flexies-vol-1/pfv1-x-MY-01.webp": {
     "width": 2800,
     "height": 1440
@@ -2154,6 +2226,14 @@
   "/img/projects/pixeled-flexies-vol-2/pfv2-laptop-mockup.webp": {
     "width": 3456,
     "height": 2784
+  },
+  "/img/projects/pixeled-flexies-vol-2/pfv2-personajes-poster.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/img/projects/pixeled-flexies-vol-2/pfv2-personajes.mp4": {
+    "width": 1080,
+    "height": 1080
   },
   "/img/projects/pixeled-flexies-vol-2/pfv2-x-MY-01.webp": {
     "width": 2800,
@@ -2210,6 +2290,10 @@
   "/img/projects/pos/pos-letrero-oficina-mockup.webp": {
     "width": 3000,
     "height": 1714
+  },
+  "/img/projects/pos/pos-logo-animado-poster.webp": {
+    "width": 1440,
+    "height": 1440
   },
   "/img/projects/pos/pos-logo-animado.mp4": {
     "width": 1440,
@@ -2299,6 +2383,10 @@
     "width": 4000,
     "height": 2791
   },
+  "/img/projects/riccie-oriach/riccie-oriach-gif-poster.webp": {
+    "width": 1080,
+    "height": 1080
+  },
   "/img/projects/riccie-oriach/riccie-oriach-gif.mp4": {
     "width": 1080,
     "height": 1080
@@ -2359,6 +2447,14 @@
     "width": 2880,
     "height": 2320
   },
+  "/img/projects/rodai/rodai-logo-animado-poster.webp": {
+    "width": 2160,
+    "height": 2160
+  },
+  "/img/projects/rodai/rodai-logo-animado.mp4": {
+    "width": 2160,
+    "height": 2160
+  },
   "/img/projects/rodai/rodai-seeker-mockup.webp": {
     "width": 2880,
     "height": 2320
@@ -2414,6 +2510,10 @@
   "/img/projects/seed-my-wallet/seed-my-wallet-laptop-x-perfil-mockup.webp": {
     "width": 2880,
     "height": 2320
+  },
+  "/img/projects/seed-my-wallet/seed-my-wallet-portada-cursor-poster.webp": {
+    "width": 1080,
+    "height": 1080
   },
   "/img/projects/seed-my-wallet/seed-my-wallet-portada-cursor.mp4": {
     "width": 1080,
@@ -2491,6 +2591,14 @@
     "width": 2880,
     "height": 2320
   },
+  "/img/projects/spotlight/spotlight-logo-animado-poster.webp": {
+    "width": 2160,
+    "height": 2160
+  },
+  "/img/projects/spotlight/spotlight-logo-animado.mp4": {
+    "width": 2160,
+    "height": 2160
+  },
   "/img/projects/spotlight/spotlight-web-mockup.webp": {
     "width": 2880,
     "height": 2320
@@ -2530,6 +2638,14 @@
   "/img/projects/svelti/svelti-empaques-mockup.webp": {
     "width": 3000,
     "height": 2000
+  },
+  "/img/projects/svelti/svelti-logo-animado-poster.webp": {
+    "width": 2160,
+    "height": 2160
+  },
+  "/img/projects/svelti/svelti-logo-animado.mp4": {
+    "width": 2160,
+    "height": 2160
   },
   "/img/projects/svelti/svelti-mockups-animado.mp4": {
     "width": 1080,
@@ -2607,6 +2723,10 @@
     "width": 2304,
     "height": 1856
   },
+  "/img/projects/synq/synq-logo-animado-poster.webp": {
+    "width": 1080,
+    "height": 1080
+  },
   "/img/projects/synq/synq-logo-animado.mp4": {
     "width": 1080,
     "height": 1080
@@ -2683,6 +2803,14 @@
     "width": 3456,
     "height": 2784
   },
+  "/img/projects/the-unhinged/unh-personajes-poster.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/img/projects/the-unhinged/unh-personajes.mp4": {
+    "width": 1080,
+    "height": 1080
+  },
   "/img/projects/the-unhinged/unh-proceso-poster.webp": {
     "width": 1200,
     "height": 1200
@@ -2754,6 +2882,14 @@
   "/img/projects/thingies/th-laptop-mockup.webp": {
     "width": 3456,
     "height": 2784
+  },
+  "/img/projects/thingies/th-personajes-poster.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/img/projects/thingies/th-personajes.mp4": {
+    "width": 1080,
+    "height": 1080
   },
   "/img/projects/thingies/th-x-MY-01.webp": {
     "width": 2800,
