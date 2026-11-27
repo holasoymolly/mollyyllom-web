@@ -502,6 +502,73 @@ const theUnhingedProject: Project = {
   ],
 };
 
+const mdpProject: Project = {
+  slug: "mdp",
+  title: "Molly Degen Punks",
+  client: "Mollyverse",
+  year: "2026",
+  role: "Pixel art, sistema generativo y dirección de arte",
+  roleEn: "Pixel art, generative system and art direction",
+  scope: ["Pixel art", "Título", "Sistema de rasgos", "Arte generativo", "Mint"],
+  scopeEn: ["Pixel art", "Title", "Trait system", "Generative art", "Mint"],
+  gridLabel: "Colección NFT · Pixel art",
+  gridLabelEn: "NFT collection · Pixel art",
+  brief: "Molly Degen Punks es el World 04 del Mollyverse y la primera colección que nació dentro de la plataforma. Salió de un autorretrato mío en píxel, y de ahí hice 111 versiones de la misma persona. El reto era que cada punk se sintiera distinto de verdad y que, aun así, se notara que todos vienen de mí.",
+  briefEn: "Molly Degen Punks is World 04 of the Mollyverse and the first collection born inside the platform. It came from a pixel self-portrait, and from that one portrait I made 111 versions of the same person. The challenge was making every punk feel truly different while you could still tell they all come from me.",
+  shipped: [
+    "El personaje base, un autorretrato en píxel, y el título de la colección tal como lo lleva la app.",
+    "215 variantes dibujadas a mano, píxel por píxel, en 9 capas, con reglas sobre qué puede ir junto y qué no.",
+    "111 piezas en cuatro rarezas: 11 Legendary, 22 Epic, 34 Rare y 44 Common.",
+    "La página de la colección, una ficha por pieza y el mint en la app del Mollyverse.",
+  ],
+  shippedEn: [
+    "The base character, a pixel self-portrait, and the collection's title as the app carries it.",
+    "215 variations drawn by hand, pixel by pixel, across 9 layers, with rules on what can go together and what can't.",
+    "111 pieces in four rarities: 11 Legendary, 22 Epic, 34 Rare and 44 Common.",
+    "The collection page, a page for every piece and the mint in the Mollyverse app.",
+  ],
+  outcome: ["El mint abrió el 5 de abril de 2026, al azar y a 0,11 SOL, y se agotó en mayo."],
+  outcomeEn: ["The mint opened on 5 April 2026, as a random reveal at 0.11 SOL, and sold out in May."],
+  credits: [
+    "Arte, generador, app y mint: Molly Yllom, con ayuda de Kelvin y herramientas de IA",
+  ],
+  creditsEn: [
+    "Art, generator, app and mint: Molly Yllom, with help from Kelvin and AI tools",
+  ],
+  portfolioImage: "/img/projects/mdp/mdp-cortes.mp4",
+  heroImage: "/img/projects/mdp/mdp-x-MY-01.webp",
+  paragraphs: [
+    "Todo empezó con un autorretrato en píxel: el pelo largo con un lado rapado, los lentes redondos y una camisa negra. De ahí saqué 111 versiones mías. Cada rasgo es algo real, un diente de oro, una corona, una banana, una chaqueta como la de Lady Gaga, y en el fondo están mis raíces dominicanas, la cultura degen y lo punk. Por eso digo que es el mundo más personal del Mollyverse.",
+    "Lo que más me importaba era el contraste. Cada pieza sale de 9 capas dibujadas a mano, pero no todo puede ir con todo: hay rasgos que no conviven y la rareza decide qué puede llevar cada punk. El mint fue al azar, así que no elegías tu punk: te tocaba uno, como pasa con la identidad.",
+  ],
+  paragraphsEn: [
+    "It all started with a pixel self-portrait: long hair with one side shaved, round glasses and a black shirt. From there I made 111 versions of myself. Every trait is something real, a gold tooth, a crown, a banana, a jacket like Lady Gaga's, and underneath it all are my Dominican roots, degen culture and punk. That's why I call it the most personal world in the Mollyverse.",
+    "What mattered most to me was contrast. Every piece comes from 9 hand-drawn layers, but not everything goes with everything: some traits can't live together, and the rarity decides what each punk is allowed to wear. The mint was random, so you didn't pick your punk. You got one, the way it works with identity.",
+  ],
+  images: [
+    "/img/projects/mdp/mdp-x-MY-02.webp",
+    "/img/projects/mdp/mdp-x-MY-03.webp",
+    "/img/projects/mdp/mdp-celular-mockup.webp",
+    "/img/projects/mdp/mdp-x-MY-04.webp",
+    "/img/projects/mdp/mdp-x-MY-05.webp",
+    "/img/projects/mdp/mdp-laptop-mockup.webp",
+    "/img/projects/mdp/mdp-x-MY-06b.webp",
+    "/img/projects/mdp/mdp-escena-mockup.webp",
+    "/img/projects/mdp/mdp-x-MY-08.webp",
+  ],
+  imagesEn: [
+    "/img/projects/mdp/mdp-x-MY-02.webp",
+    "/img/projects/mdp/mdp-x-MY-03-en.webp",
+    "/img/projects/mdp/mdp-celular-mockup.webp",
+    "/img/projects/mdp/mdp-x-MY-04.webp",
+    "/img/projects/mdp/mdp-x-MY-05-en.webp",
+    "/img/projects/mdp/mdp-laptop-mockup.webp",
+    "/img/projects/mdp/mdp-x-MY-06b-en.webp",
+    "/img/projects/mdp/mdp-escena-mockup.webp",
+    "/img/projects/mdp/mdp-x-MY-08.webp",
+  ],
+};
+
 const mollyverseProject: Project = {
   slug: "mollyverse",
   title: "Mollyverse",
@@ -2171,6 +2238,7 @@ export const activeProjects = [
   seedMyWalletProject,
   mollyverseProject,
   theUnhingedProject,
+  mdpProject,
   spotlightProject,
   inetxusProject,
   synqProject,
