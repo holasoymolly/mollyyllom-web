@@ -2350,6 +2350,60 @@ const advanced: Project = {
   ],
 };
 
+const bSafeVistasProject: Project = {
+  slug: "b-safe-vistas",
+  title: "B-SAFE · Vistas de estudio",
+  client: "B-SAFE, calzado de seguridad de DEINSA",
+  clientEn: "B-SAFE, DEINSA's safety footwear",
+  year: "2026",
+  role: "Fotos, dirección y vistas con IA. Proyecto en solitario",
+  roleEn: "Photos, art direction and AI views. Solo project",
+  scope: ["Fotos de producto", "Vistas con IA", "Retoque de logos", "Manual de marca"],
+  scopeEn: ["Product photos", "AI studio views", "Logo retouching", "Brand manual"],
+  gridLabel: "Vistas de estudio · IA",
+  gridLabelEn: "Studio views · AI",
+  brief: "DEINSA necesitaba fotos de estudio de sus cinco modelos de B-SAFE para el manual de marca, todas con la misma luz y los mismos ángulos. No había sesión de fotos ni botas en un estudio. Lo que había era una mañana en su oficina, un celular y las botas reales.",
+  briefEn: "DEINSA needed studio shots of its five B-SAFE models for the brand manual, all with the same light and the same angles. There was no photo shoot and no studio. What there was: one morning at their office, a phone, and the actual boots.",
+  shipped: [
+    "Una visita a DEINSA para fotografiar cada modelo por todos sus lados: 57 fotos que fueron la referencia de todo.",
+    "Veinte vistas de estudio, cuatro por modelo (perfil, tres cuartos, cenital y contrapicado), hechas con IA a partir de esas fotos.",
+    "Cada detalle de marca revisado contra la bota real: el logo lateral, la insignia de la lengüeta y la cinta «EH 18kV» de los cordones.",
+    "Un documento de 27 páginas con las veinte vistas, listo para el manual.",
+  ],
+  shippedEn: [
+    "A visit to DEINSA to photograph every model from every side: 57 photos that became the reference for everything else.",
+    "Twenty studio views, four per model (profile, three-quarter, top and low angle), made with AI from those photos.",
+    "Every brand detail checked against the real boot: the side logo, the tongue badge and the \u201cEH 18kV\u201d tab on the laces.",
+    "A 27-page document with all twenty views, ready for the manual.",
+  ],
+  outcome: ["Las veinte vistas se entregaron a DEINSA el 19 de noviembre de 2026 para su manual de marca."],
+  outcomeEn: ["The twenty views were delivered to DEINSA on 19 November 2026 for their brand manual."],
+  credits: ["Fotos, dirección y vistas: Molly Yllom, con IA (Magnific, Nano Banana 2)"],
+  creditsEn: ["Photos, direction and views: Molly Yllom, with AI (Magnific, Nano Banana 2)"],
+  portfolioImage: "/img/projects/b-safe-vistas/b-safe-vistas-cortes.mp4",
+  heroImage: "/img/projects/b-safe-vistas/b-safe-vistas-hero.webp",
+  paragraphs: [
+    "La IA hace botas bonitas con mucha facilidad. Lo difícil es que sean estas botas. Cada vista tenía que poder ponerse al lado de la foto real sin que nada cambiara: las costuras, los colores de los cordones, dónde va cada logo. Por eso empecé por las fotos y no por el prompt.",
+    "El logo fue lo que más vueltas dio. Pegado encima se veía como una calcomanía, y a mano no quedaba creíble. Lo que funcionó fue dejar que la IA lo renderizara en el material de cada bota, con el logo oficial como guía. Después vinieron los detalles chiquitos, como la insignia de la lengüeta y la cinta de los cordones, que se rehicieron hasta que se parecieron a los reales, igual en todas las vistas.",
+  ],
+  paragraphsEn: [
+    "AI makes good-looking boots very easily. The hard part is making them these boots. Every view had to sit next to the real photo without anything changing: the stitching, the lace colors, where each logo goes. That's why I started with the photos, not with a prompt.",
+    "The logo took the most rounds. Pasted on top it looked like a sticker, and fixing it by hand never felt real. What worked was letting the AI render it in each boot's own material, with the official logo as the guide. Then came the tiny details, like the tongue badge and the lace tab, redone until they matched the real ones, the same in every view.",
+  ],
+  images: [
+    "/img/projects/b-safe-vistas/b-safe-vistas-01-visita.webp",
+    "/img/projects/b-safe-vistas/b-safe-vistas-02-foto-a-vista.webp",
+    "/img/projects/b-safe-vistas/b-safe-vistas-03-logo-antes-despues.webp",
+    "/img/projects/b-safe-vistas/b-safe-vistas-04-insignia.webp",
+    "/img/projects/b-safe-vistas/b-safe-vistas-05-cinta.webp",
+    "/img/projects/b-safe-vistas/b-safe-vistas-06-bota-lima.webp",
+    "/img/projects/b-safe-vistas/b-safe-vistas-07-tenis.webp",
+    "/img/projects/b-safe-vistas/b-safe-vistas-08-botin-gn.webp",
+    "/img/projects/b-safe-vistas/b-safe-vistas-09-botin-marron.webp",
+    "/img/projects/b-safe-vistas/b-safe-vistas-10-bota-clasica.webp",
+  ],
+};
+
 /**
  * Newest first. New projects go at the top.
  *
@@ -2371,6 +2425,7 @@ export const activeProjects = [
   mdpProject,
   pixeledFlexiesVol2Project,
   pixeledFlexiesVol1Project,
+  bSafeVistasProject,
   spotlightProject,
   inetxusProject,
   synqProject,
