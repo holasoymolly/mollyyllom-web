@@ -76,6 +76,89 @@ export const projectTitle = (project: Project, lang: "es" | "en"): string =>
 
 export const HOME_GRID_LIMIT = 12;
 
+const laColmenaProject: Project = {
+  slug: "la-colmena",
+  title: "La Colmena",
+  client: "INTEC",
+  year: "2025 - 2026",
+  role: "Diseño editorial y dirección de arte",
+  roleEn: "Editorial design and art direction",
+  scope: ["Rediseño editorial", "Portadas", "Diagramación", "Lettering e ilustración", "Sistema gráfico"],
+  scopeEn: ["Editorial redesign", "Covers", "Layout", "Lettering and illustration", "Graphic system"],
+  gridLabel: "Editorial · Rediseño",
+  gridLabelEn: "Editorial · Redesign",
+  brief: "La Colmena es la revista del INTEC y sale cada trimestre. Cuando me la pasaron en el número 43, llevaba años con la misma cara: una foto de estudio, los titulares chiquitos en una esquina y, por dentro, columnas apretadas con fotos en rectángulo. Yo quería que se sintiera como el campus, con gente real contando lo que hace, y que cada número tuviera su personalidad sin dejar de ser La Colmena.",
+  briefEn: "La Colmena is INTEC's university magazine, out every quarter. When it landed on my desk at issue 43, it had worn the same face for years: a studio photo, tiny headlines tucked in a corner and, inside, tight columns with boxed photos. I wanted it to feel like the campus, real people talking about what they do, and I wanted every issue to have its own personality while still being La Colmena.",
+  shipped: [
+    "El rediseño desde el número 43: portada, maqueta interior y sistema gráfico.",
+    "Cinco números de 28 páginas, del 43 al 47, cada uno con su portada y su interior.",
+    "Lettering, flechas, garabatos e íconos dibujados para cada número.",
+    "Los archivos finales para imprenta y la versión digital de cada número.",
+  ],
+  shippedEn: [
+    "The redesign from issue 43 on: cover, inside layout and graphic system.",
+    "Five 28-page issues, 43 to 47, each with its own cover and inside pages.",
+    "Lettering, arrows, doodles and icons drawn for every issue.",
+    "Print-ready files and a digital edition for every issue.",
+  ],
+  outcome: [
+    "Los números 43 al 46 ya circulan en papel y en Issuu, y la 47 se entregó en noviembre de 2026.",
+  ],
+  outcomeEn: [
+    "Issues 43 to 46 are out in print and on Issuu, and 47 was delivered in November 2026.",
+  ],
+  credits: [
+    "Diseño, diagramación y lettering: Molly Yllom",
+    "Dirección de la revista: Carmen Matos (INTEC)",
+    "Edición: Cynthia Abreu (INTEC)",
+    "Fotografía de la revista: INTEC",
+  ],
+  creditsEn: [
+    "Design, layout and lettering: Molly Yllom",
+    "Magazine director: Carmen Matos (INTEC)",
+    "Editor: Cynthia Abreu (INTEC)",
+    "Magazine photography: INTEC",
+  ],
+  portfolioImage: "/img/projects/la-colmena/colmena-cortes.mp4",
+  heroImage: "/img/projects/la-colmena/colmena-x-MY-01.webp",
+  paragraphs: [
+    "El logo del hexágono funcionaba y se quedó. Todo lo demás lo volví a pensar. La portada ahora se arma alrededor de una persona: su nombre va enorme detrás, o escrito a mano, y unas flechas te llevan a las páginas donde está su historia. Con eso la revista dejó de verse como un boletín y empezó a verse como algo que uno quiere agarrar de la mesa.",
+    "Por dentro armé un sistema con espacio para jugar. Todo el texto va en Akzidenz Grotesk, cada sección tiene su color y los garabatos e íconos se dibujan con el mismo trazo redondo, así que hasta una página de datos tiene algo de mano. El hexágono del logo también se volvió recurso: un panal para ordenar fotos, cifras o bases de datos.",
+    "Cada número arranca con un moodboard y las fotos que manda INTEC. Para la 47 llevé tres caminos con las fotos de Ana Veras, en blanco y negro, a color y a página completa, y escogieron el primero. El lettering pasó de «Preguntar» a «Cuestionar» para abrir el lema del número.",
+    "Del 43 al 47 van cinco números de 28 páginas. El sistema aguanta temas muy distintos, de medicina a inteligencia artificial, y cada número se reconoce de lejos. Cada uno pasa por varias rondas con las editoras hasta que todo cuadra, y la 47 llegó a ocho versiones del interior antes de irse a imprenta.",
+  ],
+  paragraphsEn: [
+    "The hexagon logo worked, so it stayed. Everything else I rethought. The cover is now built around one person: their name runs huge behind them, or written by hand, and a few arrows point you to the pages where their story is. That alone took the magazine from newsletter to something you actually want to pick up off the table.",
+    "Inside, I built a system with room to play. All the text is set in Akzidenz Grotesk, each section has its own colour, and the doodles and icons share the same round stroke, so even a page full of data feels hand-made. The hexagon from the logo turned into a tool too: a honeycomb to hold photos, numbers or databases.",
+    "Every issue starts with a moodboard and the photos INTEC sends over. For 47 I brought three directions with Ana Veras's photos, black and white, full colour and full bleed, and they picked the first. The lettering went from “Preguntar” to “Cuestionar” to open the issue's motto.",
+    "From 43 to 47 that's five 28-page issues. The system holds up across very different topics, from medicine to artificial intelligence, and you can still spot each issue from across the room. Every one goes through a few rounds with the editors until it all fits, and 47 went through eight versions of the inside pages before it went to print.",
+  ],
+  images: [
+    "/img/projects/la-colmena/colmena-proceso-antes.webp",
+    "/img/projects/la-colmena/colmena-fotos-1.webp",
+    "/img/projects/la-colmena/colmena-proceso-sistema.webp",
+    "/img/projects/la-colmena/colmena-pliego-44.webp",
+    "/img/projects/la-colmena/colmena-fotos-2.webp",
+    "/img/projects/la-colmena/colmena-pliego-45.webp",
+    "/img/projects/la-colmena/colmena-pliego-46.webp",
+    "/img/projects/la-colmena/colmena-pared-mockup.webp",
+    "/img/projects/la-colmena/colmena-proceso-portada.webp",
+    "/img/projects/la-colmena/colmena-lino-mockup.webp",
+  ],
+  imagesEn: [
+    "/img/projects/la-colmena/colmena-proceso-antes-en.webp",
+    "/img/projects/la-colmena/colmena-fotos-1.webp",
+    "/img/projects/la-colmena/colmena-proceso-sistema-en.webp",
+    "/img/projects/la-colmena/colmena-pliego-44.webp",
+    "/img/projects/la-colmena/colmena-fotos-2.webp",
+    "/img/projects/la-colmena/colmena-pliego-45.webp",
+    "/img/projects/la-colmena/colmena-pliego-46.webp",
+    "/img/projects/la-colmena/colmena-pared-mockup.webp",
+    "/img/projects/la-colmena/colmena-proceso-portada-en.webp",
+    "/img/projects/la-colmena/colmena-lino-mockup.webp",
+  ],
+};
+
 const ciudadFielProject: Project = {
   slug: "ciudad-fiel",
   title: "Ciudad Fiel",
@@ -2427,6 +2510,7 @@ export const activeProjects = [
   pixeledFlexiesVol2Project,
   pixeledFlexiesVol1Project,
   bSafeVistasProject,
+  laColmenaProject,
   spotlightProject,
   inetxusProject,
   synqProject,
