@@ -891,6 +891,205 @@ const pixeledFlexiesVol2Project: Project = {
   ],
 };
 
+/** FAMA Collective, told in chapters. Con los bloques y el ritmo de F1.2 (guia-migracion-story.md, sección 4). */
+const FM = "/img/projects/fama-collective";
+const FMP = `${FM}/piezas`;
+const fmMolly: Bilingual = { es: "Montaje de Molly", en: "Mockup by Molly" };
+const fmWeb: Bilingual = { es: "famacollective.com", en: "famacollective.com" };
+const famaStory: CaseStory = {
+  cover: {
+    variant: "top",
+    promise: {
+      es: "La cara de una disquera dominicana, hecha para que brillen los artistas y no la marca.",
+      en: "The face of a Dominican record label, built so the artists shine, not the brand.",
+    },
+  },
+  chapters: [
+    {
+      id: "encargo",
+      label: { es: "El encargo", en: "The brief" },
+      heading: { es: "Tenían nombre. Les faltaba todo lo demás.", en: "They had a name. Everything else was missing." },
+      text: {
+        es: "FAMA Collective es un sello boutique y una editorial musical dominicana que acompaña a sus artistas desde abajo. En 2022 tenían el nombre y el wordmark FAMA, que venía del estudio, pero la disquera no tenía nada propio alrededor: ni colores, ni letra, ni una web donde se viera la música. Me tocaba armarle todo eso sin robarle el protagonismo a los artistas, que son los que tienen que brillar.",
+        en: "FAMA Collective is a Dominican boutique record label and publishing company that grows its artists from the ground up. In 2022 they had the name and the FAMA wordmark, which came from the studio, but the label had nothing of its own around it: no colors, no type, no website where the music could actually live. My job was to build all of that without stealing the spotlight from the artists, because they're the ones who have to shine.",
+      },
+      blocks: [
+        { kind: "image", size: "bleed", image: { src: `${FMP}/concreto-mockup.webp`, title: { es: "Logo grabado", en: "Engraved logo" }, detail: fmMolly } },
+      ],
+    },
+    {
+      id: "logo",
+      label: { es: "El logo", en: "The logo" },
+      heading: { es: "Una F que cambia de color.", en: "An F that changes color." },
+      text: {
+        es: "Primero le hice a la disquera su propio logo, partiendo del wordmark FAMA del estudio y sumándole «collective» debajo, espaciado y finito, y una F partida que funciona sola como ícono y cambia de color según la ocasión.",
+        en: "First I gave the label a logo of its own, starting from the studio's FAMA wordmark and setting “collective” underneath, thin and widely spaced, plus a split F that works on its own as an icon and changes color depending on the occasion.",
+      },
+      blocks: [
+        { kind: "image", size: "solo", image: { src: `${FMP}/logo-negro.webp`, title: { es: "FAMA collective", en: "FAMA collective" }, detail: { es: "El logo de la disquera", en: "The label's logo" } } },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 4, phone: 2 },
+          ratio: "1/1",
+          fit: "contain",
+          ground: "#F3F1EC",
+          items: [
+            { src: `${FMP}/icono-amarillo.webp`, title: { es: "Ícono", en: "Icon" }, detail: { es: "Amarillo", en: "Yellow" } },
+            { src: `${FMP}/icono-morado.webp`, title: { es: "Ícono", en: "Icon" }, detail: { es: "Violeta", en: "Violet" } },
+            { src: `${FMP}/icono-naranja.webp`, title: { es: "Ícono", en: "Icon" }, detail: { es: "Naranja", en: "Orange" } },
+            { src: `${FMP}/icono-verde.webp`, title: { es: "Ícono", en: "Icon" }, detail: { es: "Verde menta", en: "Mint green" } },
+          ],
+        },
+      ],
+    },
+    {
+      id: "sistema",
+      label: { es: "La línea gráfica", en: "The visual identity" },
+      heading: { es: "Negro, blanco y que el color lo ponga la música.", en: "Black, white, and let the music bring the color." },
+      text: {
+        es: "Después, la idea fue limpiar. Negro y blanco casi siempre, mucho aire, y que el color lo pusiera la música: cada artista, cada portada, cada foto. Para que la marca no se quedara fría le metí textura, unos mármoles líquidos que se mueven como se mueve un sonido, y una letra monoespaciada, de las de código, que acompaña al logo sin pelearse con él.",
+        en: "After that, the idea was to clean things up. Black and white almost always, lots of room, and let the music bring the color: each artist, each cover, each photo. So the brand wouldn't go cold, I gave it texture, liquid marbles that move the way sound moves, and a monospaced, code-style face that sits next to the logo without fighting it.",
+      },
+      blocks: [
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 2, phone: 1 },
+          items: [
+            { src: `${FMP}/letra-butler.webp`, title: { es: "Butler Stencil Light", en: "Butler Stencil Light" }, detail: { es: "La letra del logo", en: "The logo's typeface" } },
+            { src: `${FMP}/letra-source-code.webp`, title: { es: "Source Code", en: "Source Code" }, detail: { es: "La letra de apoyo", en: "The supporting typeface" } },
+          ],
+        },
+        {
+          kind: "palette",
+          colors: [
+            { name: { es: "Negro", en: "Black" }, hex: "#000000" },
+            { name: { es: "Blanco", en: "White" }, hex: "#FFFFFF" },
+            { name: { es: "Gris", en: "Grey" }, hex: "#9E9E9E" },
+            { name: { es: "Violeta", en: "Violet" }, hex: "#7500FF" },
+            { name: { es: "Amarillo", en: "Yellow" }, hex: "#FFBB1C" },
+            { name: { es: "Naranja", en: "Orange" }, hex: "#FF5C30" },
+            { name: { es: "Verde menta", en: "Mint green" }, hex: "#00E0AB" },
+          ],
+        },
+        { kind: "image", size: "bleed", image: { src: `${FMP}/textura-marmol.webp`, title: { es: "Textura", en: "Texture" }, detail: { es: "Mármol líquido", en: "Liquid marble" } } },
+      ],
+    },
+    {
+      id: "aplicaciones",
+      label: { es: "En el mundo", en: "Out in the world" },
+      heading: { es: "Del concreto a la camiseta.", en: "From concrete to a T-shirt." },
+      text: {
+        es: "La marca tenía que aguantar en concreto, en vidrio y en una camiseta. Casi siempre va sola, sin adornos, y el mármol aparece cuando hay espacio para él.",
+        en: "The brand had to hold up on concrete, on glass and on a T-shirt. Most of the time it goes alone, no extras, and the marble shows up when there's room for it.",
+      },
+      blocks: [
+        {
+          kind: "carousel",
+          large: true,
+          width: "wide",
+          label: { es: "Aplicaciones", en: "Applications" },
+          items: [
+            { src: `${FMP}/papeleria-mockup.webp`, title: { es: "Papelería", en: "Stationery" }, detail: fmMolly },
+            { src: `${FMP}/puerta-mockup.webp`, title: { es: "Puerta de vidrio", en: "Glass door" }, detail: fmMolly },
+            { src: `${FMP}/camiseta-tote-mockup.webp`, title: { es: "Camiseta y tote", en: "Tee and tote" }, detail: fmMolly },
+            { src: `${FMP}/pared-mockup.webp`, title: { es: "Recepción", en: "Front desk" }, detail: fmMolly },
+            { src: `${FMP}/camiseta-modelo-mockup.webp`, title: { es: "Camiseta", en: "T-shirt" }, detail: fmMolly },
+            { src: `${FMP}/gorra-mockup.webp`, title: { es: "Gorra", en: "Cap" }, detail: fmMolly },
+            { src: `${FMP}/mochila-mockup.webp`, title: { es: "Mochila", en: "Backpack" }, detail: fmMolly },
+          ],
+        },
+      ],
+    },
+    {
+      id: "web",
+      label: { es: "La web", en: "The website" },
+      heading: { es: "Fondo negro y los artistas a todo lo que da.", en: "Black background, artists as large as they'd go." },
+      text: {
+        es: "La web salió de ahí mismo: fondo negro, titulares grandes calados y las fotos de los artistas a todo lo que da. Tiene artistas, cultura, merch y un formulario para mandar proyectos, y sigue en línea.",
+        en: "The website came straight out of that: black background, big outlined headlines and the artists' photos as large as they'd go. It has artists, culture, merch and a form for sending in projects, and it's still live.",
+      },
+      blocks: [
+        { kind: "image", size: "wide", image: { src: `${FMP}/web-artistas-completa.webp`, title: { es: "Artistas", en: "Artists" }, detail: { es: "La página completa, tal como está en línea", en: "The full page, as it is live" } } },
+        {
+          kind: "carousel",
+          large: true,
+          width: "wide",
+          label: { es: "En pantalla", en: "On screen" },
+          items: [
+            { src: `${FM}/fama-laptop-concreto-mockup.webp`, title: { es: "Laptop", en: "Laptop" }, detail: { es: "Montaje", en: "Mockup" } },
+            { src: `${FM}/fama-celular-estudio-mockup.webp`, title: { es: "Celular", en: "Phone" }, detail: { es: "Montaje", en: "Mockup" } },
+            { src: `${FM}/fama-laptop-estudio-mockup.webp`, title: { es: "Laptop", en: "Laptop" }, detail: { es: "Montaje", en: "Mockup" } },
+          ],
+        },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 3, phone: 1 },
+          ratio: "16/10",
+          items: [
+            { src: `${FMP}/web-cultura.webp`, title: { es: "Cultura", en: "Culture" }, detail: fmWeb },
+            { src: `${FMP}/web-proyecto.webp`, title: { es: "Manda tu proyecto", en: "Submit your project" }, detail: fmWeb },
+            { src: `${FMP}/web-inicio.webp`, title: { es: "Inicio", en: "Home" }, detail: fmWeb },
+          ],
+        },
+      ],
+    },
+    {
+      id: "lanzamiento",
+      label: { es: "El lanzamiento", en: "The launch" },
+      heading: { es: "Si da buena música, da FAMA.", en: "Si da buena música, da FAMA." },
+      text: {
+        es: "Después vino el lanzamiento, con videos cortos de una sola frase: el color de los acentos corriendo por dentro de las letras, o un vinilo girando.",
+        en: "Then came the launch, with short one-line videos: the accent colors running through the inside of the letters, or a record spinning.",
+      },
+      blocks: [
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 2, phone: 1 },
+          ratio: "16/9",
+          items: [
+            { src: `${FM}/fama-kv-si-da-buena-musica.mp4`, title: { es: "Si da buena música, da FAMA", en: "Si da buena música, da FAMA" }, detail: { es: "Video", en: "Video" } },
+            { src: `${FM}/fama-kv-for-the-record.mp4`, title: { es: "For the record", en: "For the record" }, detail: { es: "Video", en: "Video" } },
+          ],
+        },
+        { kind: "image", size: "solo", image: { src: `${FM}/fama-kv-enmarcado-mockup.webp`, title: { es: "El KV, enmarcado", en: "The key visual, framed" }, detail: { es: "Montaje", en: "Mockup" } } },
+      ],
+    },
+    {
+      id: "studio-a",
+      label: { es: "Live From Studio A", en: "Live From Studio A" },
+      heading: { es: "Una portada por canción.", en: "One cover per song." },
+      text: {
+        es: "En 2023 entré al equipo como directora de arte, y una de las primeras cosas fue Live From Studio A, de Tango Whisky Man: una portada para el EP y una por canción, cada una con su color y su ícono.",
+        en: "In 2023 I joined the team as art director, and one of the first things I did was Live From Studio A for Tango Whisky Man: one cover for the EP and one per song, each with its own color and icon.",
+      },
+      blocks: [
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 6, phone: 2 },
+          ratio: "1/1",
+          items: [
+            { src: `${FMP}/twm-ep.webp`, title: { es: "Live From Studio A", en: "Live From Studio A" }, detail: { es: "EP", en: "EP" } },
+            { src: `${FMP}/twm-element.webp`, title: { es: "Element", en: "Element" }, detail: { es: "Sencillo", en: "Single" } },
+            { src: `${FMP}/twm-no-regret.webp`, title: { es: "No Regret", en: "No Regret" }, detail: { es: "Sencillo", en: "Single" } },
+            { src: `${FMP}/twm-saturday.webp`, title: { es: "Saturday", en: "Saturday" }, detail: { es: "Sencillo", en: "Single" } },
+            { src: `${FMP}/twm-the-wait.webp`, title: { es: "The Wait", en: "The Wait" }, detail: { es: "Sencillo", en: "Single" } },
+            { src: `${FMP}/twm-busy-living.webp`, title: { es: "Busy Living", en: "Busy Living" }, detail: { es: "Sencillo", en: "Single" } },
+          ],
+        },
+        { kind: "image", size: "solo", image: { src: `${FM}/fama-twm-reproductor-mockup.webp`, title: { es: "Reproductor", en: "Player" }, detail: fmMolly } },
+      ],
+    },
+  ],
+  closing: {
+    image: { src: `${FM}/fama-twm-vinilo-mockup.webp` },
+  },
+};
+
 const famaProject: Project = {
   slug: "fama-collective",
   title: "FAMA Collective",
@@ -935,6 +1134,7 @@ const famaProject: Project = {
     "First I gave the label a logo of its own, starting from the studio's FAMA wordmark and setting “collective” underneath, thin and widely spaced, plus a split F that works on its own as an icon and changes color depending on the occasion. After that, the idea was to clean things up. Black and white almost always, lots of room, and let the music bring the color: each artist, each cover, each photo. So the brand wouldn't go cold, I gave it texture, liquid marbles that move the way sound moves, and a monospaced, code-style face that sits next to the logo without fighting it.",
     "The website came straight out of that: black background, big outlined headlines and the artists' photos as large as they'd go. Then came the launch, with short videos like “Si da buena música, da FAMA”. In 2023 I joined the team as art director, and one of the first things I did was Live From Studio A for Tango Whisky Man: one cover for the EP and one per song, each with its own color and icon.",
   ],
+  story: famaStory,
   images: [
     "/img/projects/fama-collective/fama-logo.webp",
     "/img/projects/fama-collective/fama-icono.webp",
@@ -954,6 +1154,200 @@ const famaProject: Project = {
     "/img/projects/fama-collective/fama-twm-vinilo-mockup.webp",
     "/img/projects/fama-collective/fama-kv-enmarcado-mockup.webp",
     "/img/projects/fama-collective/fama-kv-for-the-record.mp4",
+  ],
+};
+
+/** Jubel, told in chapters. Con los bloques y el ritmo de F1.2 (guia-migracion-story.md, sección 4). Las páginas del manual son confidenciales: ESTA es la variante sin ellas (la que sube). */
+const JB = "/img/projects/jubel/piezas";
+const jbPost: Bilingual = { es: "Post", en: "Post" };
+const jbStory: Bilingual = { es: "Story", en: "Story" };
+const jubelStory: CaseStory = {
+  cover: {
+    variant: "top",
+    promise: {
+      es: "Una marca para que comprar por internet en RD se sintiera como recibir un regalo.",
+      en: "A brand to make buying online in the DR feel like getting a gift.",
+    },
+  },
+  chapters: [
+    {
+      id: "encargo",
+      label: { es: "El encargo", en: "The brief" },
+      heading: { es: "Que dé confianza y que dé alegría.", en: "Trustworthy, and happy about it." },
+      text: {
+        es: "Jubel nació en 2020 como un marketplace dominicano: las tiendas se afilian y venden desde un solo lugar, y el pedido te llega a la puerta. En plena pandemia, comprar por internet en RD todavía daba desconfianza. La marca tenía que sentirse cercana y alegre, pero también seria, de esas a las que uno le da la tarjeta sin pensarlo mucho.",
+        en: "Jubel started in 2020 as a Dominican marketplace: stores sign up and sell from one place, and your order shows up at your door. In the middle of the pandemic, buying online in the DR still made people nervous. The brand had to feel close and cheerful, but also serious, the kind you hand your card to without thinking twice.",
+      },
+      blocks: [
+        { kind: "image", size: "solo", image: { src: `${JB}/logo-sonrisa.webp`, title: { es: "La sonrisa", en: "The smile" }, detail: { es: "La jota y sus dos puntos", en: "The j and its two dots" } } },
+      ],
+    },
+    {
+      id: "logo",
+      label: { es: "El logo", en: "The logo" },
+      heading: { es: "Una jota que sonríe.", en: "A j that smiles." },
+      text: {
+        es: "El logo vino primero, en 2020. La jota forma dentro de sí una sonrisa, la de quien abre la puerta y le llegó su paquete, y el amarillo y el naranja están ahí por lo mismo: son alegría. Jubel no te vende cosas, te las trae, y eso tenía que notarse desde la primera letra.",
+        en: "The logo came first, in 2020. The j holds a smile inside it, the one you make when you open the door and your package is there, and the yellow and the orange are there for the same reason: they're joy. Jubel doesn't sell you things, it brings them to you, and that had to show from the very first letter.",
+      },
+      blocks: [
+        { kind: "image", size: "wide", image: { src: `${JB}/logo-color.webp`, title: { es: "Jubel Market", en: "Jubel Market" }, detail: { es: "A todo color", en: "Full color" } } },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 4, phone: 2 },
+          ratio: "4/3",
+          fit: "contain",
+          ground: "#FAF6F0",
+          items: [
+            { src: `${JB}/logo-naranja.webp`, title: { es: "A una tinta", en: "One ink" }, detail: { es: "Pantone 151 C", en: "Pantone 151 C" } },
+            { src: `${JB}/logo-amarillo.webp`, title: { es: "A una tinta", en: "One ink" }, detail: { es: "Pantone 7409 C", en: "Pantone 7409 C" } },
+            { src: `${JB}/logo-negro.webp`, title: { es: "Negro", en: "Black" }, detail: { es: "Para una sola tinta oscura", en: "For a single dark ink" } },
+            { src: `${JB}/logo-grises.webp`, title: { es: "Escala de grises", en: "Greyscale" }, detail: { es: "Para impresión sin color", en: "For printing without color" } },
+          ],
+        },
+      ],
+    },
+    {
+      id: "manual",
+      label: { es: "El manual", en: "The guidelines" },
+      heading: { es: "Las reglas, para que la sonrisa no se tuerza.", en: "The rules, so the smile stays straight." },
+      text: {
+        es: "En 2021 hicimos el workshop estratégico con el equipo de Jubel, porque antes de armar el manual quería saber bien a quién le estábamos hablando. De ahí salieron 44 páginas: quién es Jubel y cómo habla, y después el logo con su área de seguridad, los colores, la tipografía y cómo se ve en redes.",
+        en: "In 2021 we ran a strategy workshop with the Jubel team, because before putting the guidelines together I wanted to know exactly who we were talking to. Forty-four pages came out of it: who Jubel is and how it talks, then the logo with its clear space, the colors, the typeface and how it all looks on social.",
+      },
+      blocks: [
+        {
+          kind: "palette",
+          colors: [
+            { name: { es: "Naranja Jubel", en: "Jubel orange" }, hex: "#FF8300", codes: ["Pantone 151 C", "C0 M60 Y100 K0", "R255 G131 B0"] },
+            { name: { es: "Amarillo Jubel", en: "Jubel yellow" }, hex: "#F4B223", codes: ["Pantone 7409 C", "C3 M32 Y98 K0", "R244 G178 B35"] },
+            { name: { es: "Amarillo claro", en: "Light yellow" }, hex: "#FFDFAC", codes: ["Pantone 7409 C al 40 %", "C0 M13 Y36 K0", "R255 G223 B172"] },
+            { hex: "#E0592A", codes: ["Pantone 7579 C"] },
+            { hex: "#D50057", codes: ["Pantone Rubine Red C"] },
+            { hex: "#FF40B4", codes: ["Pantone 806 C"] },
+            { hex: "#7E57C5", codes: ["Pantone 2665 C"] },
+            { hex: "#602651", codes: ["Pantone 7652 C"] },
+            { hex: "#2A7DE1", codes: ["Pantone 2727 C"] },
+            { hex: "#00ABC8", codes: ["Pantone 3125 C"] },
+            { hex: "#006E63", codes: ["Pantone 562 C"] },
+            { hex: "#002B49", codes: ["Pantone 7463 C"] },
+          ],
+        },
+      ],
+    },
+    {
+      id: "cajas",
+      label: { es: "Las cajas", en: "The boxes" },
+      heading: { es: "La caja es lo primero que tocas.", en: "The box is the first thing you touch." },
+      text: {
+        es: "Una caja de envío es lo primero que uno toca de una tienda en línea, así que la traté como si fuera el producto. La llevamos por tres rondas hasta llegar a esta: kraft, con la línea de la jota corriendo por los lados y una cinta naranja que se ve desde la acera.",
+        en: "A shipping box is the first thing you actually touch from an online store, so I treated it like the product. We took it through three rounds to get here: kraft, with the line of the j running down the sides and an orange tape you can spot from the sidewalk.",
+      },
+      blocks: [
+        { kind: "image", size: "bleed", image: { src: `${JB}/cajas-naranja.webp`, title: { es: "Cajas de envío", en: "Shipping boxes" }, detail: { es: "Versión final, en naranja", en: "Final version, in orange" } } },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 2, phone: 1 },
+          ratio: "3/2",
+          items: [
+            { src: `${JB}/cinta.webp`, title: { es: "Cinta de embalaje", en: "Packing tape" }, detail: { es: "La línea de la jota, en continuo", en: "The line of the j, on repeat" } },
+            { src: `${JB}/cajas-azul-oscuro.webp`, title: { es: "Cajas de envío", en: "Shipping boxes" }, detail: { es: "La misma línea en azul oscuro", en: "The same line in dark blue" } },
+          ],
+        },
+      ],
+    },
+    {
+      id: "linea",
+      label: { es: "La línea gráfica", en: "The visual line" },
+      heading: { es: "La misma línea, ahora alrededor de la gente.", en: "The same line, now around people." },
+      text: {
+        es: "Para redes, la línea de la jota se suelta del logo y se curva alrededor de las fotos, sobre degradados y círculos, con frases cortas como «Llegó» o «Llévate». El territorio de la marca es «Encajamos cada detalle de tu vida», y cada pieza lo dice a su manera.",
+        en: "On social, the line of the j breaks free from the logo and curves around the photos, over gradients and circles, with short phrases like «Llegó» (“It's here”) or «Llévate» (“Take it with you”). The brand's territory is «Encajamos cada detalle de tu vida» (“We fit every detail of your life”), and each piece says it in its own way.",
+      },
+      blocks: [
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 4, phone: 2 },
+          ratio: "1/1",
+          items: [
+            { src: `${JB}/kv-llego.webp`, title: { es: "Llegó", en: "Llegó" }, detail: jbPost },
+            { src: `${JB}/kv-tour.webp`, title: { es: "Tour de Jubel", en: "Tour de Jubel" }, detail: jbPost },
+            { src: `${JB}/kv-caja.webp`, title: { es: "La entrega", en: "The delivery" }, detail: jbPost },
+            { src: `${JB}/kv-llevate.webp`, title: { es: "Llévate", en: "Llévate" }, detail: jbPost },
+          ],
+        },
+        {
+          kind: "carousel",
+          large: true,
+          width: "wide",
+          label: { es: "Stories", en: "Stories" },
+          items: [
+            { src: `${JB}/story-playa.webp`, title: { es: "Si tus planes incluyen playa", en: "Si tus planes incluyen playa" }, detail: jbStory },
+            { src: `${JB}/story-celebramos.webp`, title: { es: "Hoy celebramos", en: "Hoy celebramos" }, detail: jbStory },
+            { src: `${JB}/story-comprueba.webp`, title: { es: "Comprueba", en: "Comprueba" }, detail: jbStory },
+            { src: `${JB}/story-pregunta.webp`, title: { es: "Pregunta a la comunidad", en: "A question for the community" }, detail: jbStory },
+          ],
+        },
+      ],
+    },
+  ],
+  closing: {
+    image: { src: `${JB}/afiches-mockup.webp` },
+  },
+};
+
+const jubelProject: Project = {
+  slug: "jubel",
+  title: "Jubel",
+  client: "Jubel Market",
+  year: "2020 - 2021",
+  role: "Dirección de arte y diseño",
+  roleEn: "Art direction and design",
+  scope: ["Workshop estratégico", "Logo", "Manual de marca", "Empaques", "Línea gráfica", "Redes sociales"],
+  scopeEn: ["Strategy workshop", "Logo", "Brand guidelines", "Packaging", "Visual line", "Social media"],
+  gridLabel: "Logo · Empaques",
+  gridLabelEn: "Logo · Packaging",
+  brief: "Jubel nació en 2020 como un marketplace dominicano: las tiendas se afilian y venden desde un solo lugar, y el pedido te llega a la puerta. En plena pandemia, comprar por internet en RD todavía daba desconfianza. La marca tenía que sentirse cercana y alegre, pero también seria, de esas a las que uno le da la tarjeta sin pensarlo mucho.",
+  briefEn: "Jubel started in 2020 as a Dominican marketplace: stores sign up and sell from one place, and your order shows up at your door. In the middle of the pandemic, buying online in the DR still made people nervous. The brand had to feel close and cheerful, but also serious, the kind you hand your card to without thinking twice.",
+  shipped: [
+    "El logo, una jota que forma una sonrisa, con su versión Jubel Market y sus colores Pantone.",
+    "El workshop estratégico y el manual de marca de 44 páginas, entregado en abril de 2021.",
+    "Las cajas de envío y su cinta, en tres rondas hasta la versión final.",
+    "La línea gráfica para redes: degradados, círculos y una línea que se curva como el trazo de la jota.",
+  ],
+  shippedEn: [
+    "The logo, a j that holds a smile, plus its Jubel Market version and Pantone colors.",
+    "The strategy workshop and the 44-page brand guidelines, delivered in April 2021.",
+    "The shipping boxes and their tape, over three rounds to the final version.",
+    "The visual line for social: gradients, circles and a line that curves like the stroke of the j.",
+  ],
+  credits: ["Dirección de arte y diseño: Molly Yllom", "Estrategia: Jessica Molina", "Creatividad: Carlos Núñez"],
+  outcome: ["Jubel salió al mercado y las cajas se produjeron con este diseño."],
+  creditsEn: ["Art direction and design: Molly Yllom", "Strategy: Jessica Molina", "Creative: Carlos Núñez"],
+  outcomeEn: ["Jubel launched, and the boxes went into production with this design."],
+  portfolioImage: "/img/projects/jubel/jubel-logo-animado.mp4",
+  heroImage: "/img/projects/jubel/jubel-x-MY-01.webp",
+  paragraphs: [
+    "El logo vino primero, en 2020: una jota minúscula que forma dentro de sí una sonrisa, la de quien abre la puerta y le llegó su paquete. Jubel no te vende cosas, te las trae, y eso tenía que notarse. Al año siguiente hicimos el workshop estratégico con el equipo de Jubel, porque antes de armar el manual quería saber bien a quién le estábamos hablando, y de ahí salió todo lo demás.",
+    "Lo que más disfruté fueron las cajas. Una caja de envío es lo primero que uno toca de una tienda en línea, así que la traté como si fuera el producto. La llevamos por tres rondas: ilustrada, en degradados y, al final, kraft con la línea de la jota corriendo por los lados y una cinta naranja que se ve desde la acera. En redes la misma línea se curva alrededor de las fotos, con frases cortas como «Llegó» o «Encajamos en tu vida».",
+  ],
+  paragraphsEn: [
+    "The logo came first, in 2020: a lowercase j that holds a smile inside it, the one you make when you open the door and your package is there. Jubel doesn't sell you things, it brings them to you, and that had to show. The next year we ran a strategy workshop with the Jubel team, because before putting the guidelines together I wanted to know exactly who we were talking to, and everything else came out of that.",
+    "The boxes were my favorite part. A shipping box is the first thing you actually touch from an online store, so I treated it like the product. We took it through three rounds: illustrated, then gradients, and finally kraft with the line of the j running down the sides and an orange tape you can spot from the sidewalk. On social the same line curves around the photos, with short phrases like «Llegó» or «Encajamos en tu vida».",
+  ],
+  story: jubelStory,
+  images: [
+    "/img/projects/jubel/piezas/logo-color.webp",
+    "/img/projects/jubel/piezas/cajas-azul-oscuro.webp",
+    "/img/projects/jubel/piezas/cinta.webp",
+    "/img/projects/jubel/piezas/kv-llego.webp",
+    "/img/projects/jubel/piezas/kv-tour.webp",
+    "/img/projects/jubel/piezas/kv-caja.webp",
+    "/img/projects/jubel/piezas/kv-llevate.webp",
+    "/img/projects/jubel/piezas/afiches-mockup.webp",
   ],
 };
 
@@ -2940,6 +3334,7 @@ export const activeProjects = [
   burnClaimProject,
   mlLogoProject,
   neustackProject,
+  jubelProject,
   pixeledFlexiesVol1Project,
   allianceProject,
   materDesignProject,
