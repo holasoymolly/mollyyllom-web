@@ -569,6 +569,71 @@ const mdpProject: Project = {
   ],
 };
 
+const pixeledFlexiesVol1Project: Project = {
+  slug: "pixeled-flexies-vol-1",
+  title: "Pixeled Flexies Vol. 1",
+  client: "Mollyverse",
+  year: "2023",
+  role: "Pixel art, personajes y dirección de arte",
+  roleEn: "Pixel art, characters and art direction",
+  scope: ["Pixel art", "Título", "Personajes 1/1", "Mint"],
+  scopeEn: ["Pixel art", "Title", "1/1 characters", "Mint"],
+  gridLabel: "Colección NFT · Pixel art",
+  gridLabelEn: "NFT collection · Pixel art",
+  brief: "Pixeled Flexies Vol. 1 fue mi primer drop en Solana, en 2023, y es el World 01 del Mollyverse. Agarré mis personajes flexibles, los de cuello largo y brazos que se enroscan, y los pasé a píxel. Eran diez piezas, todas 1/1. El reto era que cada una se sintiera como una persona distinta con muy pocos píxeles.",
+  briefEn: "Pixeled Flexies Vol. 1 was my first drop on Solana, back in 2023, and it's World 01 of the Mollyverse. I took my flexible characters, the ones with long necks and arms that curl, and turned them into pixels. Ten pieces, every one a 1/1. The challenge was making each one feel like a different person with very few pixels.",
+  shipped: [
+    "El Flexy en píxel, con su cuello largo y el brazo en espiral, y el título de la colección tal como lo lleva la app.",
+    "Diez personajes 1/1 dibujados a mano, píxel por píxel, con 73 variantes en 10 categorías.",
+    "Las diez piezas, todas Legendary, cada una con su propio color de fondo.",
+    "La página de la colección, una ficha por pieza y el mint en la app del Mollyverse.",
+  ],
+  shippedEn: [
+    "The pixel Flexy, with its long neck and spiral arm, and the collection's title as the app carries it.",
+    "Ten 1/1 characters drawn by hand, pixel by pixel, with 73 variations across 10 categories.",
+    "All ten pieces, every one Legendary, each with its own background colour.",
+    "The collection page, a page for every piece and the mint in the Mollyverse app.",
+  ],
+  outcome: ["Salió en 2023 y volvió en mayo de 2026 en la app, a 0,05 SOL y una por wallet. Se agotó."],
+  outcomeEn: ["It came out in 2023 and came back to the app in May 2026, at 0.05 SOL and one per wallet. It sold out."],
+  credits: [
+    "Arte, app y mint: Molly Yllom, con ayuda de Kelvin y herramientas de IA",
+  ],
+  creditsEn: [
+    "Art, app and mint: Molly Yllom, with help from Kelvin and AI tools",
+  ],
+  portfolioImage: "/img/projects/pixeled-flexies-vol-1/pfv1-cortes.mp4",
+  heroImage: "/img/projects/pixeled-flexies-vol-1/pfv1-x-MY-01.webp",
+  paragraphs: [
+    "Los Flexies son mis personajes de siempre: cuellos larguísimos, cuerpos como tubos y brazos que se enroscan. Con esta colección quise ver si sobrevivían al píxel. Los diez saludan igual, con el brazo en espiral y la mano haciendo la paz, y lo demás cambia: el pelo, la ropa, los tenis y hasta uno que es un alien.",
+    "No hubo generador. Cada pieza la hice a mano, de principio a fin, y por eso las diez son 1/1. El mint fue al azar y de una por wallet, así que cada Flexy terminó con una persona distinta. Ahí empezó el Mollyverse, y lo que aprendí aquí es lo que después se volvió el sistema de rasgos de Vol. 2.",
+  ],
+  paragraphsEn: [
+    "The Flexies are my characters from way back: super long necks, tube bodies and arms that curl. With this collection I wanted to see if they'd survive being pixels. All ten wave the same way, spiral arm up and fingers making a peace sign, and everything else changes: the hair, the clothes, the sneakers, and one of them is even an alien.",
+    "There was no generator. I made every piece by hand, start to finish, which is why all ten are 1/1s. The mint was random and one per wallet, so every Flexy ended up with a different person. That's where the Mollyverse started, and what I learned here is what later became the trait system in Vol. 2.",
+  ],
+  images: [
+    "/img/projects/pixeled-flexies-vol-1/pfv1-x-MY-02.webp",
+    "/img/projects/pixeled-flexies-vol-1/pfv1-x-MY-03.webp",
+    "/img/projects/pixeled-flexies-vol-1/pfv1-celular-mockup.webp",
+    "/img/projects/pixeled-flexies-vol-1/pfv1-x-MY-04.webp",
+    "/img/projects/pixeled-flexies-vol-1/pfv1-x-MY-05.webp",
+    "/img/projects/pixeled-flexies-vol-1/pfv1-laptop-mockup.webp",
+    "/img/projects/pixeled-flexies-vol-1/pfv1-x-MY-08.webp",
+    "/img/projects/pixeled-flexies-vol-1/pfv1-escena-mockup.webp",
+  ],
+  imagesEn: [
+    "/img/projects/pixeled-flexies-vol-1/pfv1-x-MY-02.webp",
+    "/img/projects/pixeled-flexies-vol-1/pfv1-x-MY-03-en.webp",
+    "/img/projects/pixeled-flexies-vol-1/pfv1-celular-mockup.webp",
+    "/img/projects/pixeled-flexies-vol-1/pfv1-x-MY-04.webp",
+    "/img/projects/pixeled-flexies-vol-1/pfv1-x-MY-05-en.webp",
+    "/img/projects/pixeled-flexies-vol-1/pfv1-laptop-mockup.webp",
+    "/img/projects/pixeled-flexies-vol-1/pfv1-x-MY-08.webp",
+    "/img/projects/pixeled-flexies-vol-1/pfv1-escena-mockup.webp",
+  ],
+};
+
 const mollyverseProject: Project = {
   slug: "mollyverse",
   title: "Mollyverse",
@@ -2239,6 +2304,7 @@ export const activeProjects = [
   mollyverseProject,
   theUnhingedProject,
   mdpProject,
+  pixeledFlexiesVol1Project,
   spotlightProject,
   inetxusProject,
   synqProject,
