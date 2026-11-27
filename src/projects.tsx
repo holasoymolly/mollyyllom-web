@@ -17,8 +17,10 @@ export interface Project {
    */
   heroSwipe?: number;
   /**
-   * The case opens on the same frame as its grid tile: the logo animation
-   * (a square video) centred on its flat ground, full bleed. Used by the
+   * The case opens on the same frame as its grid tile: the logo animation on
+   * its flat ground, full bleed. `src` is a wide (3840 × 1680) version of the
+   * grid video with its ground extended inside the video itself, so no seam
+   * shows (browsers colour-manage video and CSS colours differently). Used by the
    * logo-cover cases (INETXUS, Svelti, Spotlight, RODAI). `heroImage` stays
    * for the share preview (OG) and anywhere a still is needed.
    */
@@ -4488,7 +4490,7 @@ const rodaiProject: Project = {
   ],
   portfolioImage: "/img/projects/rodai/rodai-logo-animado.mp4",
   heroImage: "/img/projects/rodai/rodai-x-MY-01.webp",
-  heroMedia: { src: "/img/projects/rodai/rodai-logo-animado.mp4", ground: "#fb7b57" },
+  heroMedia: { src: "/img/projects/rodai/rodai-logo-animado-hero.mp4", ground: "#fb7b57" },
   paragraphs: [
     "Al ROD le sobraba personalidad. Lo que le faltaba era salir igualito cada vez. Por eso le armé una hoja como la de un personaje de animación: de frente, de lado y de espalda, y ocho caras para cualquier noticia que toque contar. Las gafas no se las quita nunca, así que todo lo dice con la boca y con la inclinación de los lentes. Y no tiene piernas: brinca, se desliza o se recuesta.",
     "Con la hoja lista, las tarjetas se ordenaron casi solas. Cada serie tiene su fondo, las letras van en Rubik y en los colores de Aerosol, y el cian se queda en el ROD, que es de él. A los banners les quité lo de «token oficial de Aerosol» y le di una frase suya, «Bullish on Solana since 2024». Ahora RODAI se presenta solito. Y todo eso se está volviendo web: la nueva de RODAI está en desarrollo, con el ROD de la hoja haciendo de anfitrión en cada pantalla.",
@@ -4728,7 +4730,7 @@ const spotlightProject: Project = {
   ],
   portfolioImage: "/img/projects/spotlight/spotlight-logo-animado.mp4",
   heroImage: "/img/projects/spotlight/spotlight-x-MY-01.webp",
-  heroMedia: { src: "/img/projects/spotlight/spotlight-logo-animado.mp4", ground: "#ffffff" },
+  heroMedia: { src: "/img/projects/spotlight/spotlight-logo-animado-hero.mp4", ground: "#ffffff" },
   paragraphs: [
     "Me gustaba el faro con gafas, no te voy a mentir. Pero en Aerosol ya teníamos claro que la personalidad vive en los personajes, y que cada producto lleva una marca que aguante una reunión seria. Spotlight es justo el que más lo necesitaba, porque es el que le cobra a otros. Así que le quité las gafas y la sonrisa, y me quedé con lo que de verdad decía algo: un círculo de luz, tres anillos de oro, el foco puesto encima de alguien.",
     "El wordmark se quedó igual, porque funcionaba. Lo que cambió fue todo lo de alrededor: el faro se lee a 16 px como favicon y también llena un ícono de app, y el punto amarillo pasó a ser la firma de la marca. En octubre rehice los banners en Rubik, con una sola idea: el faro grande, cortado por el borde, y «Ads for Solana projects.» al lado. Ese mismo idioma de un solo oro sobre negro, con el punto amarillo al final de cada título, es el que diseñé para la web y para el dashboard donde los anunciantes van a ver sus campañas.",
@@ -4871,7 +4873,7 @@ const sveltiProject: Project = {
   creditsEn: ["Logo and identity: Molly Yllom"],
   portfolioImage: "/img/projects/svelti/svelti-logo-animado.mp4",
   heroImage: "/img/projects/svelti/svelti-x-MY-01.webp",
-  heroMedia: { src: "/img/projects/svelti/svelti-logo-animado.mp4", ground: "#f8f2ed" },
+  heroMedia: { src: "/img/projects/svelti/svelti-logo-animado-hero.mp4", ground: "#f8f2ed" },
   paragraphs: [
     "El detalle está en el punto de la i: es una célula en su forma más simple. La piel está hecha de células, capa sobre capa, y ahí es donde trabaja la clínica. Ese punto se volvió también el ícono de la marca.",
     "Lo demás acompaña sin hacer ruido: una letra fina y abierta, y una paleta de dorado, oliva, gris cálido y arena que se siente cálida y cercana sin dejar de ser elegante.",
@@ -5012,7 +5014,7 @@ const inetxusProject: Project = {
   creditsEn: ["Identity redesign: Molly Yllom"],
   portfolioImage: "/img/projects/inetxus/inetxus-logo-animado.mp4",
   heroImage: "/img/projects/inetxus/inetxus-x-MY-01.webp",
-  heroMedia: { src: "/img/projects/inetxus/inetxus-logo-animado.mp4", ground: "#ffffff" },
+  heroMedia: { src: "/img/projects/inetxus/inetxus-logo-animado-hero.mp4", ground: "#ffffff" },
   paragraphs: [
     "La frase del cliente fue el punto de partida: el cliente en el centro. Por eso la ruta que se quedó fue la X, un cruce que también es enlace, el punto donde se encuentran la tecnología, las redes y la gente que las usa. Y ahí estaba la esencia que había que cuidar: el símbolo de antes ya tenía ese cruce. Lo dejé, quité todo lo demás y lo llevé a una línea más limpia, que se sostiene igual en una pantalla que en una fachada.",
     "Después la X dejó de ser solo un ícono y se volvió sistema. Crece y se sale del borde en la camioneta y en la web, enmarca la foto en el carnet y marca cada equipo en el rack. La idea es que la marca se reconozca aunque el nombre quede muy lejos para leerse.",
