@@ -591,6 +591,130 @@
     "width": 3000,
     "height": 2000
   },
+  "/img/projects/b-safe/b-safe-almacen-mockup.webp": {
+    "width": 2304,
+    "height": 1856
+  },
+  "/img/projects/b-safe/b-safe-caja-abierta-mockup.webp": {
+    "width": 2304,
+    "height": 1856
+  },
+  "/img/projects/b-safe/b-safe-concreto-mockup.webp": {
+    "width": 2304,
+    "height": 1856
+  },
+  "/img/projects/b-safe/b-safe-cortes-poster.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/img/projects/b-safe/b-safe-cortes.mp4": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/img/projects/b-safe/b-safe-estudio-mockup.webp": {
+    "width": 2304,
+    "height": 1856
+  },
+  "/img/projects/b-safe/b-safe-etiquetas-mockup.webp": {
+    "width": 2304,
+    "height": 1856
+  },
+  "/img/projects/b-safe/b-safe-modelos-mockup.webp": {
+    "width": 2304,
+    "height": 1856
+  },
+  "/img/projects/b-safe/b-safe-x-MY-01.webp": {
+    "width": 2800,
+    "height": 1440
+  },
+  "/img/projects/b-safe/b-safe-x-MY-02.webp": {
+    "width": 2800,
+    "height": 1760
+  },
+  "/img/projects/b-safe/b-safe-x-MY-03.webp": {
+    "width": 2800,
+    "height": 1440
+  },
+  "/img/projects/b-safe/b-safe-x-MY-04.webp": {
+    "width": 2800,
+    "height": 1440
+  },
+  "/img/projects/b-safe/b-safe-x-MY-05.webp": {
+    "width": 2800,
+    "height": 1440
+  },
+  "/img/projects/b-safe/b-safe-x-MY-06.webp": {
+    "width": 2800,
+    "height": 1800
+  },
+  "/img/projects/b-safe/b-safe-x-MY-07.webp": {
+    "width": 2800,
+    "height": 2160
+  },
+  "/img/projects/b-safe/b-safe-x-MY-08.webp": {
+    "width": 2800,
+    "height": 1124
+  },
+  "/img/projects/b-safe/piezas/anchas/area-ancho.webp": {
+    "width": 2800,
+    "height": 1833
+  },
+  "/img/projects/b-safe/piezas/anchas/cajas-plano-ancho.webp": {
+    "width": 2800,
+    "height": 2000
+  },
+  "/img/projects/b-safe/piezas/anchas/logo-oscuro-ancho.webp": {
+    "width": 2800,
+    "height": 1200
+  },
+  "/img/projects/b-safe/piezas/caja-abierta.webp": {
+    "width": 2304,
+    "height": 1856
+  },
+  "/img/projects/b-safe/piezas/concreto.webp": {
+    "width": 2304,
+    "height": 1856
+  },
+  "/img/projects/b-safe/piezas/cuadradas/icono.webp": {
+    "width": 1400,
+    "height": 1400
+  },
+  "/img/projects/b-safe/piezas/cuadradas/iniciales.webp": {
+    "width": 1400,
+    "height": 1400
+  },
+  "/img/projects/b-safe/piezas/cuadradas/logo-claro.webp": {
+    "width": 1400,
+    "height": 1400
+  },
+  "/img/projects/b-safe/piezas/estudio.webp": {
+    "width": 2304,
+    "height": 1856
+  },
+  "/img/projects/b-safe/piezas/etiqueta-caja.webp": {
+    "width": 1800,
+    "height": 900
+  },
+  "/img/projects/b-safe/piezas/etiqueta-lateral.webp": {
+    "width": 1400,
+    "height": 840
+  },
+  "/img/projects/b-safe/piezas/etiqueta-lengueta.webp": {
+    "width": 1200,
+    "height": 1543
+  },
+  "/img/projects/b-safe/piezas/macro.webp": {
+    "width": 2304,
+    "height": 1856
+  },
+  "/img/projects/b-safe/piezas/modelos.webp": {
+    "width": 2304,
+    "height": 1856
+  },
+  "/img/projects/b-safe/piezas/plantilla.webp": {
+    "width": 2000,
+    "height": 731
+  },
   "/img/projects/b-safe-vistas/b-safe-vistas-01-visita.webp": {
     "width": 2800,
     "height": 1040
@@ -1186,6 +1310,98 @@
   "/img/projects/daydream/daydream-x-MY-06.webp": {
     "width": 2800,
     "height": 1440
+  },
+  "/img/projects/dexa/dexa-bota-mockup.webp": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/img/projects/dexa/dexa-caja-mockup.webp": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/img/projects/dexa/dexa-cortes-poster.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/img/projects/dexa/dexa-cortes.mp4": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/img/projects/dexa/dexa-hangtag-mockup.webp": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/img/projects/dexa/dexa-suela-mockup.webp": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/img/projects/dexa/dexa-talon-mockup.webp": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/img/projects/dexa/dexa-x-MY-02.webp": {
+    "width": 2800,
+    "height": 1760
+  },
+  "/img/projects/dexa/dexa-x-MY-03.webp": {
+    "width": 2800,
+    "height": 1440
+  },
+  "/img/projects/dexa/dexa-x-MY-04.webp": {
+    "width": 2800,
+    "height": 1440
+  },
+  "/img/projects/dexa/dexa-x-MY-05.webp": {
+    "width": 2800,
+    "height": 1440
+  },
+  "/img/projects/dexa/dexa-x-MY-06.webp": {
+    "width": 2800,
+    "height": 1440
+  },
+  "/img/projects/dexa/piezas/anchas/area-ancho.webp": {
+    "width": 2800,
+    "height": 1161
+  },
+  "/img/projects/dexa/piezas/anchas/logo-claro-ancho.webp": {
+    "width": 2800,
+    "height": 1100
+  },
+  "/img/projects/dexa/piezas/anchas/una-tinta-negro.webp": {
+    "width": 1400,
+    "height": 1400
+  },
+  "/img/projects/dexa/piezas/caja.webp": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/img/projects/dexa/piezas/cuadradas/logo-oscuro.webp": {
+    "width": 1400,
+    "height": 1400
+  },
+  "/img/projects/dexa/piezas/cuadradas/pequena-claro.webp": {
+    "width": 1400,
+    "height": 1400
+  },
+  "/img/projects/dexa/piezas/cuadradas/pequena-oscuro.webp": {
+    "width": 1400,
+    "height": 1400
+  },
+  "/img/projects/dexa/piezas/cuadradas/suela-detalle.webp": {
+    "width": 1400,
+    "height": 1400
+  },
+  "/img/projects/dexa/piezas/hangtag.webp": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/img/projects/dexa/piezas/suela.webp": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/img/projects/dexa/piezas/talon.webp": {
+    "width": 2752,
+    "height": 1536
   },
   "/img/projects/dinerology/dinerology-black-stand-kiosk-mockup.webp": {
     "width": 4000,

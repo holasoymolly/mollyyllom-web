@@ -3296,6 +3296,370 @@ const bSafeVistasProject: Project = {
   story: bSafeVistasStory,
 };
 
+/** B-SAFE, told in chapters (F1.2 rhythm). Pieces cut from Molly's final art and the scenes she approved. */
+const BS = "/img/projects/b-safe/piezas";
+const bsScene: Bilingual = { es: "Montaje", en: "Mockup" };
+const bsArt: Bilingual = { es: "Arte final", en: "Final art" };
+const bsModels: { key: string; title: Bilingual }[] = [
+  { key: "lima", title: { es: "Bota lima", en: "Lime boot" } },
+  { key: "tenis", title: { es: "Tenis gris", en: "Grey trainer" } },
+  { key: "gn", title: { es: "Botín gris y naranja", en: "Grey and orange ankle boot" } },
+  { key: "marron", title: { es: "Botín marrón", en: "Brown ankle boot" } },
+  { key: "clasica", title: { es: "Bota clásica", en: "Classic boot" } },
+];
+
+const bSafeStory: CaseStory = {
+  cover: {
+    variant: "top",
+    promise: {
+      es: "Una bota de seguridad dentro de la B. Del logo a la caja, a la etiqueta y a la suela.",
+      en: "A safety boot inside the B. From the logo to the box, the label and the sole.",
+    },
+  },
+  chapters: [
+    {
+      id: "encargo",
+      label: { es: "El encargo", en: "The brief" },
+      heading: { es: "Que aguante y que se sienta bien.", en: "Tough, and comfortable." },
+      text: {
+        es: "B-SAFE es la marca de botas de seguridad de DEINSA. Una bota así se vende por lo que aguanta, pero se compra por cómo se siente después de diez horas de pie, y el logo tenía que decir las dos cosas. Además tenía que funcionar en todas partes: moldeado en una suela de goma, impreso en una caja de cartón o cosido en la lengüeta.",
+        en: "B-SAFE is DEINSA's line of safety boots. A boot like that sells on how much it can take, but people buy it for how it feels after ten hours on their feet, and the logo had to say both. It also had to work everywhere: molded into a rubber sole, printed on a cardboard box, stitched onto a tongue.",
+      },
+      blocks: [
+        {
+          kind: "stats",
+          items: [
+            { value: "9", label: { es: "piezas de empaque y etiquetas", en: "packaging pieces and labels" } },
+            { value: "5", label: { es: "modelos con el logo", en: "models carrying the logo" } },
+          ],
+        },
+        {
+          kind: "carousel",
+          large: true,
+          width: "wide",
+          label: { es: "La caja", en: "The box" },
+          items: [
+            { src: `${BS}/concreto.webp`, title: { es: "Caja par", en: "Shoe box" }, detail: bsScene },
+            { src: `${BS}/estudio.webp`, title: { es: "Caja par", en: "Shoe box" }, detail: bsScene },
+            { src: `${BS}/caja-abierta.webp`, title: { es: "Caja par y papel interior", en: "Shoe box and tissue paper" }, detail: bsScene },
+          ],
+        },
+      ],
+    },
+    {
+      id: "logo",
+      label: { es: "El logo", en: "The logo" },
+      heading: { es: "Una bota dentro de la B.", en: "A boot inside the B." },
+      text: {
+        es: "El símbolo es una bota de seguridad que envuelve el pie: las formas rectas dan la parte industrial y las curvas, la comodidad de alguien que pasa el día entero con ella puesta. Las letras salen de Cold Warm, pero las retoqué hasta que el nombre se sostuviera solo, con esquinas suaves y mucho peso.",
+        en: "The symbol is a safety boot wrapping the foot: the straight, solid shapes carry the industrial side, and the curves carry the comfort of someone who wears it all day. The letters come from Cold Warm, but I reworked them until the name could stand on its own, heavy, with soft corners.",
+      },
+      blocks: [
+        { kind: "image", size: "bleed", image: { src: `${BS}/anchas/logo-oscuro-ancho.webp`, title: { es: "Logo", en: "Logo" }, detail: { es: "En negativo", en: "Reversed" } } },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 3, phone: 1 },
+          ratio: "1/1",
+          items: [
+            { src: `${BS}/cuadradas/logo-claro.webp`, title: { es: "Logo", en: "Logo" }, detail: { es: "A todo color", en: "Full color" } },
+            { src: `${BS}/cuadradas/icono.webp`, title: { es: "Ícono", en: "Icon" }, detail: { es: "La bota en la B", en: "The boot in the B" } },
+            { src: `${BS}/cuadradas/iniciales.webp`, title: { es: "Iniciales", en: "Initials" }, detail: { es: "B·S", en: "B·S" } },
+          ],
+        },
+      ],
+    },
+    {
+      id: "sistema",
+      label: { es: "El sistema", en: "The system" },
+      heading: { es: "Negro, amarillo y una hoja para la fábrica.", en: "Black, yellow and one sheet for the factory." },
+      text: {
+        es: "El color es negro y amarillo Pantone 109 C. Una hoja de marca de una página le dice a cada fábrica e imprenta cómo usarlo, con el área de seguridad marcada con la propia bota.",
+        en: "The color is black and Pantone 109 C yellow. A one-page brand sheet tells every factory and printer how to use it, with the clear space measured by the boot itself.",
+      },
+      blocks: [
+        {
+          kind: "palette",
+          colors: [
+            { name: { es: "Negro", en: "Black" }, hex: "#000000", codes: ["RGB 0 0 0", "CMYK 100 100 100 100"] },
+            { name: { es: "Amarillo", en: "Yellow" }, hex: "#FFD100", codes: ["RGB 255 209 0", "CMYK 1.62 15.59 100 0", "Pantone 109 C"] },
+          ],
+        },
+        { kind: "image", size: "solo", image: { src: `${BS}/anchas/area-ancho.webp`, title: { es: "Área de seguridad", en: "Clear space" }, detail: { es: "De la hoja de marca", en: "From the brand sheet" } } },
+      ],
+    },
+    {
+      id: "empaque",
+      label: { es: "Empaque y etiquetas", en: "Packaging and labels" },
+      heading: { es: "En un estante de cajas marrones, es lo primero que ves.", en: "On a shelf of brown boxes, it's the first thing you see." },
+      text: {
+        es: "Una marca de botas vive en la caja, en una etiqueta cosida y en una suela que pisa cemento, así que cada pieza se pensó para su material: unas van cosidas, otras pegadas y otras moldeadas. El amarillo hace el trabajo pesado.",
+        en: "A boot brand lives on the box, on a stitched label, on a sole that hits concrete, so every piece was designed for its own material: some are stitched, some stuck on, some molded. The yellow does the heavy lifting.",
+      },
+      blocks: [
+        { kind: "image", size: "bleed", image: { src: `${BS}/anchas/cajas-plano-ancho.webp`, title: { es: "Caja par", en: "Shoe box" }, detail: { es: "Arte final, en blanco y en negro", en: "Final art, white and black" } } },
+        { kind: "image", size: "solo", image: { src: `${BS}/macro.webp`, title: { es: "Lengüeta y plantilla", en: "Tongue and insole" }, detail: bsScene } },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 2, phone: 1 },
+          fit: "contain",
+          ground: "#f3f1ec",
+          ratio: "4/3",
+          items: [
+            { src: `${BS}/etiqueta-lengueta.webp`, title: { es: "Etiqueta de lengüeta", en: "Tongue label" }, detail: bsArt },
+            { src: `${BS}/etiqueta-caja.webp`, title: { es: "Etiqueta de caja", en: "Box label" }, detail: bsArt },
+            { src: `${BS}/etiqueta-lateral.webp`, title: { es: "Etiqueta lateral", en: "Side label" }, detail: bsArt },
+            { src: `${BS}/plantilla.webp`, title: { es: "Plantilla", en: "Insole" }, detail: bsArt },
+          ],
+        },
+      ],
+    },
+    {
+      id: "linea",
+      label: { es: "La línea", en: "The line" },
+      heading: { es: "Cinco modelos, el mismo logo.", en: "Five models, one logo." },
+      text: {
+        es: "La bota lima, el tenis gris, los dos botines y la bota clásica llevan el mismo logo en la lengüeta y el costado. Sus vistas de estudio tienen su propio caso.",
+        en: "The lime boot, the grey trainer, both ankle boots and the classic boot carry the same logo on the tongue and the side. Their studio views have a case of their own.",
+      },
+      blocks: [
+        {
+          kind: "carousel",
+          large: true,
+          width: "wide",
+          label: { es: "Modelos", en: "Models" },
+          items: [
+            { src: `${BS}/modelos.webp`, title: { es: "Tres de los cinco modelos", en: "Three of the five models" }, detail: bsScene },
+            ...bsModels.map((m) => ({ src: `/img/projects/b-safe-vistas/piezas/vista-${m.key}-2.webp`, title: m.title, detail: { es: "Vista de estudio", en: "Studio view" } })),
+          ],
+        },
+      ],
+    },
+  ],
+  closing: {
+    image: { src: `/img/projects/b-safe-vistas/piezas/vista-clasica-2.webp`, title: { es: "Bota clásica", en: "Classic boot" }, detail: { es: "Vista de estudio", en: "Studio view" } },
+  },
+};
+
+const bSafeProject: Project = {
+  slug: "b-safe",
+  title: "B-SAFE",
+  client: "B-SAFE, calzado de seguridad de DEINSA",
+  clientEn: "B-SAFE, DEINSA's safety footwear",
+  year: "2026",
+  role: "Logo, identidad y empaque",
+  roleEn: "Logo, identity and packaging",
+  scope: ["Logo", "Iniciales e ícono", "Color y tipografía", "Empaque y etiquetas", "Hoja de marca"],
+  scopeEn: ["Logo", "Initials and icon", "Color and type", "Packaging and labels", "Brand sheet"],
+  gridLabel: "Logo · Empaque",
+  gridLabelEn: "Logo · Packaging",
+  brief: "B-SAFE es la marca de botas de seguridad de DEINSA. Una bota así se vende por lo que aguanta, pero se compra por cómo se siente después de diez horas de pie, y el logo tenía que decir las dos cosas. Además tenía que funcionar en todas partes: moldeado en una suela de goma, impreso en una caja de cartón o cosido en la lengüeta.",
+  briefEn: "B-SAFE is DEINSA's line of safety boots. A boot like that sells on how much it can take, but people buy it for how it feels after ten hours on their feet, and the logo had to say both. It also had to work everywhere: molded into a rubber sole, printed on a cardboard box, stitched onto a tongue.",
+  shipped: [
+    "El logo: una bota de seguridad dentro de la B, y letras hechas a medida a partir de Cold Warm.",
+    "Las iniciales B·S y el ícono, para los lugares donde el nombre no cabe.",
+    "Negro y amarillo Pantone 109 C, y una hoja de marca de una página para fábricas e imprentas.",
+    "El arte final del empaque: caja master, caja par, sticker y etiqueta de caja, papel interior, y las etiquetas de lengüeta, plantilla y costado.",
+  ],
+  shippedEn: [
+    "The logo: a safety boot tucked inside the B, with custom letters built from Cold Warm.",
+    "The B·S initials and the icon, for the places where the full name won't fit.",
+    "Black and Pantone 109 C yellow, plus a one-page brand sheet for factories and printers.",
+    "Final art for the packaging: master carton, shoe box, box sticker and label, tissue paper, and the tongue, insole and side labels.",
+  ],
+  outcome: ["Los cinco modelos ya llevan el logo en la lengüeta, el costado y la plantilla."],
+  outcomeEn: ["All five models now carry the logo on the tongue, the side and the insole."],
+  credits: ["Logo, identidad y empaque: Molly Yllom"],
+  creditsEn: ["Logo, identity and packaging: Molly Yllom"],
+  portfolioImage: "/img/projects/b-safe/b-safe-cortes.mp4",
+  heroImage: "/img/projects/b-safe/b-safe-almacen-mockup.webp",
+  paragraphs: [
+    "Empecé por la bota. El símbolo es una bota de seguridad que envuelve el pie, metida dentro de la B: las formas rectas dan la parte industrial y las curvas, la comodidad de alguien que pasa el día entero con ella puesta. Las letras salen de Cold Warm, pero las retoqué hasta que el nombre se sostuviera solo, con esquinas suaves y mucho peso.",
+    "Después vino todo lo demás. Una marca de botas vive en la caja, en una etiqueta cosida y en una suela que pisa cemento, así que cada pieza se pensó para su material. El amarillo hace el trabajo pesado: en un estante lleno de cajas marrones, es lo primero que ves.",
+  ],
+  paragraphsEn: [
+    "I started with the boot. The symbol is a safety boot wrapping the foot, set inside the B: the straight, solid shapes carry the industrial side, and the curves carry the comfort of someone who wears it all day. The letters come from Cold Warm, but I reworked them until the name could stand on its own, heavy, with soft corners.",
+    "Then came everything else. A boot brand lives on the box, on a stitched label, on a sole that hits concrete, so every piece was designed for its own material. The yellow does the heavy lifting: on a shelf full of brown boxes, it's the first thing you see.",
+  ],
+  images: [
+    "/img/projects/b-safe/b-safe-x-MY-01.webp",
+    "/img/projects/b-safe/b-safe-concreto-mockup.webp",
+    "/img/projects/b-safe/b-safe-x-MY-02.webp",
+    "/img/projects/b-safe/b-safe-estudio-mockup.webp",
+    "/img/projects/b-safe/b-safe-x-MY-03.webp",
+    "/img/projects/b-safe/b-safe-etiquetas-mockup.webp",
+    "/img/projects/b-safe/b-safe-x-MY-04.webp",
+    "/img/projects/b-safe/b-safe-caja-abierta-mockup.webp",
+    "/img/projects/b-safe/b-safe-x-MY-06.webp",
+    "/img/projects/b-safe/b-safe-modelos-mockup.webp",
+    "/img/projects/b-safe/b-safe-x-MY-07.webp",
+    "/img/projects/b-safe/b-safe-x-MY-08.webp",
+    "/img/projects/b-safe/b-safe-x-MY-05.webp",
+  ],
+  story: bSafeStory,
+};
+
+/** DEXA, told in chapters (F1.2 rhythm). Logos from the official SVGs; mockups v3 approved by Molly. */
+const DX = "/img/projects/dexa/piezas";
+const dxScene: Bilingual = { es: "Montaje", en: "Mockup" };
+
+const dexaStory: CaseStory = {
+  cover: {
+    variant: "top",
+    promise: {
+      es: "Letras que pisan como una bota. Sin dibujar ninguna.",
+      en: "Letters that stand like a boot. Without drawing one.",
+    },
+  },
+  chapters: [
+    {
+      id: "encargo",
+      label: { es: "El encargo", en: "The brief" },
+      heading: { es: "Calzado de seguridad, sin dibujar una bota.", en: "Safety footwear, without drawing a boot." },
+      text: {
+        es: "DEXA es la marca con la que DEINSA lleva su calzado de seguridad a Centroamérica y el Caribe, incluidos Jamaica y Trinidad y Tobago. Gerencia la quería profesional, normada e internacional, pero no premium, y prefería una solución tipográfica. La condición más difícil: que se entendiera rápido que es calzado de seguridad, sin dibujar una bota.",
+        en: "DEXA is the brand DEINSA uses to take its safety footwear to Central America and the Caribbean, Jamaica and Trinidad and Tobago included. Management wanted it professional, standards-driven and international, but not premium, and they leaned toward a type-only solution. The hard part: it had to read as safety footwear right away, without drawing a boot.",
+      },
+      blocks: [
+        {
+          kind: "stats",
+          items: [
+            { value: "3", label: { es: "rutas de logo", en: "logo routes" } },
+            { value: "5", label: { es: "rondas de bocetos", en: "rounds of sketches" } },
+            { value: "52", label: { es: "láminas en la presentación", en: "slides in the presentation" } },
+          ],
+        },
+        { kind: "image", size: "bleed", image: { src: `${DX}/caja.webp`, title: { es: "Caja", en: "Box" }, detail: dxScene } },
+      ],
+    },
+    {
+      id: "agarre",
+      label: { es: "Agarre", en: "Agarre" },
+      heading: { es: "Arriba ligera, abajo una suela.", en: "Light on top, a sole below." },
+      text: {
+        es: "La idea de Agarre es simple: la parte de arriba de las letras es ligera y la de abajo es una suela, más ancha y con tacos. Se lee DEXA de un vistazo y, sin que nadie lo explique, uno piensa en una bota bien plantada. Una línea lima marca la costura, donde las dos partes se unen.",
+        en: "The idea behind Agarre is simple: the top of each letter is light, and the bottom is a sole, wider and lugged. You read DEXA at a glance and, without anyone explaining it, you think of a boot planted firmly on the floor. A lime line marks the seam where the two parts meet.",
+      },
+      blocks: [
+        { kind: "image", size: "bleed", image: { src: `${DX}/anchas/logo-claro-ancho.webp`, title: { es: "Logotipo", en: "Wordmark" }, detail: { es: "A todo color", en: "Full color" } } },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 2, phone: 1 },
+          ratio: "1/1",
+          items: [
+            { src: `${DX}/cuadradas/suela-detalle.webp`, title: { es: "La D, de cerca", en: "The D, up close" }, detail: { es: "Tacos y costura lima", en: "Lugs and lime seam" } },
+            { src: `${DX}/cuadradas/logo-oscuro.webp`, title: { es: "Logotipo", en: "Wordmark" }, detail: { es: "En negativo", en: "Reversed" } },
+          ],
+        },
+      ],
+    },
+    {
+      id: "versiones",
+      label: { es: "Las versiones", en: "The versions" },
+      heading: { es: "Moldeado, bordado y en relieve.", en: "Molded, stitched and embossed." },
+      text: {
+        es: "Como el logo va a ir moldeado en una suela, bordado en una lengüeta y en relieve en un talón, cada versión se probó en su material. Por debajo de 24 px los tacos se tapan, así que hice una versión pequeña sin ellos. El color sale de DEINSA: el lima como acento sobre negro.",
+        en: "The logo is going to be molded into soles, stitched onto tongues and embossed on heels, so every version was tested in its material. Below 24 px the lugs fill in, so I made a small version without them. The color comes from DEINSA: lime as the accent, on black.",
+      },
+      blocks: [
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 3, phone: 1 },
+          ratio: "1/1",
+          items: [
+            { src: `${DX}/cuadradas/pequena-claro.webp`, title: { es: "Versión pequeña", en: "Small version" }, detail: { es: "Sin tacos, por debajo de 24 px", en: "No lugs, below 24 px" } },
+            { src: `${DX}/cuadradas/pequena-oscuro.webp`, title: { es: "Versión pequeña", en: "Small version" }, detail: { es: "En negativo", en: "Reversed" } },
+            { src: `${DX}/anchas/una-tinta-negro.webp`, title: { es: "A una tinta", en: "One color" }, detail: { es: "Negro", en: "Black" } },
+          ],
+        },
+        {
+          kind: "palette",
+          colors: [
+            { name: { es: "Negro", en: "Black" }, hex: "#161616", codes: ["RGB 22 22 22", "CMYK 0 0 0 100", "Pantone Neutral Black C"] },
+            { name: { es: "Lima", en: "Lime" }, hex: "#94D500", codes: ["RGB 148 213 0", "CMYK 50 0 100 0", "Pantone 375 C"] },
+          ],
+        },
+        { kind: "image", size: "solo", image: { src: `${DX}/anchas/area-ancho.webp`, title: { es: "Área de protección", en: "Clear space" }, detail: { es: "X = la altura de la suela", en: "X = the height of the sole" } } },
+      ],
+    },
+    {
+      id: "producto",
+      label: { es: "En el producto", en: "On the product" },
+      heading: { es: "En la etiqueta, la suela y el talón.", en: "On the tag, the sole and the heel." },
+      blocks: [
+        {
+          kind: "carousel",
+          large: true,
+          width: "wide",
+          label: { es: "Montajes", en: "Mockups" },
+          items: [
+            { src: `${DX}/hangtag.webp`, title: { es: "Hangtag", en: "Hangtag" }, detail: dxScene },
+            { src: `${DX}/suela.webp`, title: { es: "Suela", en: "Sole" }, detail: dxScene },
+            { src: `${DX}/talon.webp`, title: { es: "Talón", en: "Heel" }, detail: dxScene },
+          ],
+        },
+      ],
+    },
+  ],
+};
+
+const dexaProject: Project = {
+  slug: "dexa",
+  title: "DEXA",
+  client: "DEXA, calzado de seguridad de exportación de DEINSA",
+  clientEn: "DEXA, DEINSA's export safety footwear",
+  year: "2026",
+  role: "Logo. Proyecto en solitario",
+  roleEn: "Logo. Solo project",
+  scope: ["Brief y Perfil Estético", "Rutas de logo", "Logotipo", "Versiones y mínimos", "Hoja de marca"],
+  scopeEn: ["Brief and Aesthetic Profile", "Logo routes", "Wordmark", "Versions and minimum sizes", "Brand sheet"],
+  gridLabel: "Logo · Calzado de seguridad",
+  gridLabelEn: "Logo · Safety footwear",
+  brief: "DEXA es la marca con la que DEINSA lleva su calzado de seguridad a Centroamérica y el Caribe, incluidos Jamaica y Trinidad y Tobago. Gerencia la quería profesional, normada e internacional, pero no premium, y prefería una solución tipográfica. La condición más difícil: que se entendiera rápido que es calzado de seguridad, sin dibujar una bota.",
+  briefEn: "DEXA is the brand DEINSA uses to take its safety footwear to Central America and the Caribbean, Jamaica and Trinidad and Tobago included. Management wanted it professional, standards-driven and international, but not premium, and they leaned toward a type-only solution. The hard part: it had to read as safety footwear right away, without drawing a boot.",
+  shipped: [
+    "El brief, el Perfil Estético y una brújula de diez palabras para medir cada propuesta.",
+    "Tres rutas de logo en cinco rondas de bocetos, presentadas con la bota, la caja y el hangtag.",
+    "Agarre: las letras se apoyan sobre una suela con tacos, como una bota sobre el piso.",
+    "La versión pequeña, los mínimos y el área de protección, con el arte final en Pantone y una hoja de marca para fábricas.",
+  ],
+  shippedEn: [
+    "The brief, the Aesthetic Profile and a ten-word compass to measure every proposal against.",
+    "Three logo routes over five rounds of sketches, presented on the boot, the box and the hangtag.",
+    "Agarre: the letters stand on a lugged sole, the way a boot stands on the ground.",
+    "The small version, minimum sizes and clear space, with Pantone final art and a brand sheet for factories.",
+  ],
+  outcome: ["DEINSA eligió Agarre y anunció que lo llevará a registro."],
+  outcomeEn: ["DEINSA chose Agarre and announced it will register it as a trademark."],
+  credits: ["Logo: Molly Yllom"],
+  creditsEn: ["Logo: Molly Yllom"],
+  portfolioImage: "/img/projects/dexa/dexa-cortes.mp4",
+  heroImage: "/img/projects/dexa/dexa-bota-mockup.webp",
+  paragraphs: [
+    "La idea de Agarre es simple: la parte de arriba de las letras es ligera y la de abajo es una suela, más ancha y con tacos. Se lee DEXA de un vistazo y, sin que nadie lo explique, uno piensa en una bota bien plantada. Es un rasgo del calzado dentro de las letras, que era justo lo que pedía el brief: nada de una bota dibujada.",
+    "Como el logo va a ir moldeado en una suela, bordado en una lengüeta y en relieve en un talón, cada versión se probó en su material. Por debajo de 24 px los tacos se tapan, así que hice una versión pequeña sin ellos. El color sale de DEINSA: el lima como acento sobre negro.",
+  ],
+  paragraphsEn: [
+    "The idea behind Agarre is simple: the top of each letter is light, and the bottom is a sole, wider and lugged. You read DEXA at a glance and, without anyone explaining it, you think of a boot planted firmly on the floor. It puts a trait of the footwear inside the letters, which is exactly what the brief asked for: no drawn boot.",
+    "The logo is going to be molded into soles, stitched onto tongues and embossed on heels, so every version was tested in its material. Below 24 px the lugs fill in, so I made a small version without them. The color comes from DEINSA: lime as the accent, on black.",
+  ],
+  images: [
+    "/img/projects/dexa/dexa-x-MY-02.webp",
+    "/img/projects/dexa/dexa-caja-mockup.webp",
+    "/img/projects/dexa/dexa-x-MY-03.webp",
+    "/img/projects/dexa/dexa-hangtag-mockup.webp",
+    "/img/projects/dexa/dexa-x-MY-04.webp",
+    "/img/projects/dexa/dexa-suela-mockup.webp",
+    "/img/projects/dexa/dexa-x-MY-05.webp",
+    "/img/projects/dexa/dexa-talon-mockup.webp",
+    "/img/projects/dexa/dexa-x-MY-06.webp",
+  ],
+  story: dexaStory,
+};
+
 /**
  * Newest first, give or take a place or two. New projects go at the top.
  *
@@ -3318,6 +3682,8 @@ export const activeProjects = [
   mollyverseProject,
   seedMyWalletProject,
   bSafeVistasProject,
+  bSafeProject,
+  dexaProject,
   theUnhingedProject,
   spotlightProject,
   laColmenaProject,
