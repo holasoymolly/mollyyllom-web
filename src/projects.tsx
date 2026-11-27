@@ -597,20 +597,20 @@ const pixeledFlexiesVol1Project: Project = {
   outcome: ["Salió en 2023 y volvió en mayo de 2026 en la app, a 0,05 SOL y una por wallet. Se agotó."],
   outcomeEn: ["It came out in 2023 and came back to the app in May 2026, at 0.05 SOL and one per wallet. It sold out."],
   credits: [
-    "Arte, app y mint: Molly Yllom, con ayuda de Kelvin y herramientas de IA",
+    "Arte, generador, app y mint: Molly Yllom, con ayuda de Kelvin y herramientas de IA",
   ],
   creditsEn: [
-    "Art, app and mint: Molly Yllom, with help from Kelvin and AI tools",
+    "Art, generator, app and mint: Molly Yllom, with help from Kelvin and AI tools",
   ],
   portfolioImage: "/img/projects/pixeled-flexies-vol-1/pfv1-cortes.mp4",
   heroImage: "/img/projects/pixeled-flexies-vol-1/pfv1-x-MY-01.webp",
   paragraphs: [
     "Los Flexies son mis personajes de siempre: cuellos larguísimos, cuerpos como tubos y brazos que se enroscan. Con esta colección quise ver si sobrevivían al píxel. Los diez saludan igual, con el brazo en espiral y la mano haciendo la paz, y lo demás cambia: el pelo, la ropa, los tenis y hasta uno que es un alien.",
-    "No hubo generador. Cada pieza la hice a mano, de principio a fin, y por eso las diez son 1/1. El mint fue al azar y de una por wallet, así que cada Flexy terminó con una persona distinta. Ahí empezó el Mollyverse, y lo que aprendí aquí es lo que después se volvió el sistema de rasgos de Vol. 2.",
+    "Cada rasgo lo dibujé a mano, píxel por píxel, y cada una de las diez combinaciones es única: por eso las diez son 1/1. El mint fue al azar y de una por wallet, así que cada Flexy terminó con una persona distinta. Ahí empezó el Mollyverse, y lo que aprendí aquí es lo que después se volvió el sistema de rasgos de Vol. 2.",
   ],
   paragraphsEn: [
     "The Flexies are my characters from way back: super long necks, tube bodies and arms that curl. With this collection I wanted to see if they'd survive being pixels. All ten wave the same way, spiral arm up and fingers making a peace sign, and everything else changes: the hair, the clothes, the sneakers, and one of them is even an alien.",
-    "There was no generator. I made every piece by hand, start to finish, which is why all ten are 1/1s. The mint was random and one per wallet, so every Flexy ended up with a different person. That's where the Mollyverse started, and what I learned here is what later became the trait system in Vol. 2.",
+    "I drew every trait by hand, pixel by pixel, and each of the ten combinations is unique, which is why all ten are 1/1s. The mint was random and one per wallet, so every Flexy ended up with a different person. That's where the Mollyverse started, and what I learned here is what later became the trait system in Vol. 2.",
   ],
   images: [
     "/img/projects/pixeled-flexies-vol-1/pfv1-x-MY-02.webp",
