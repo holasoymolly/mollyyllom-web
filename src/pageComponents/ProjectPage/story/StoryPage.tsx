@@ -199,9 +199,11 @@ export const StoryPage: FC<{ project: Project }> = ({ project }) => {
     scope?.length && { k: t.projects.scope, v: scope.join(' · ') },
   ].filter(Boolean) as { k: string; v: string }[];
 
+  const coverSrc = story.cover.media ?? project.heroImage;
+  const ground = story.cover.ground ? { background: story.cover.ground } : undefined;
   const coverImage = (
     <ProtectedImage
-      src={project.heroImage}
+      src={coverSrc}
       alt={`${title}, ${lang === 'en' ? 'cover' : 'portada'}`}
       fill
       priority
@@ -223,7 +225,7 @@ export const StoryPage: FC<{ project: Project }> = ({ project }) => {
 
       {/* Cover */}
       {story.cover.variant === 'over' ? (
-        <section className={s.coverOver}>
+        <section className={s.coverOver} style={ground}>
           <div className={s.coverImg}>{coverImage}</div>
           <div className={s.coverText}>
             {back}
@@ -240,8 +242,8 @@ export const StoryPage: FC<{ project: Project }> = ({ project }) => {
             </div>
             <p className={s.promise}>{L(story.cover.promise)}</p>
           </section>
-          <div className={s.coverTopImg}>
-            <ProtectedImage src={project.heroImage} alt={`${title}, ${lang === 'en' ? 'cover' : 'portada'}`} priority sizes="100vw" className="w-full h-auto" />
+          <div className={s.coverTopImg} style={ground}>
+            <ProtectedImage src={coverSrc} alt={`${title}, ${lang === 'en' ? 'cover' : 'portada'}`} priority sizes="100vw" className="w-full h-auto" />
           </div>
         </>
       )}

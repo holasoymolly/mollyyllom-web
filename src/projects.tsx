@@ -113,7 +113,19 @@ export interface CaseStory {
    * `over`: title on the image, only when it has clean room on the left.
    * `top`: title above on the page colour, image below. The safe default.
    */
-  cover: { variant: 'over' | 'top'; promise: Bilingual; focus?: string };
+  cover: {
+    variant: 'over' | 'top';
+    promise: Bilingual;
+    focus?: string;
+    /**
+     * What the cover shows, when it is not `heroImage`: another image or a
+     * video (.mp4), e.g. the logo animating on a flat ground, so the case can
+     * open on the same frame as its grid tile. Optional; no case uses it yet.
+     */
+    media?: string;
+    /** Flat colour behind the cover media (a logo on its brand ground). */
+    ground?: string;
+  };
   /** The "before" the work came from, right under the cover. Only if it exists. */
   origin?: { image: StoryImage; label: Bilingual; heading: Bilingual; note?: Bilingual };
   chapters: StoryChapter[];
