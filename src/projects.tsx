@@ -258,6 +258,15 @@ const laColmenaStory: CaseStory = {
             { src: `${COLP}/colmena-portada-47.webp`, title: colIssue(47), detail: { es: "Ana Veras", en: "Ana Veras" } },
           ],
         },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 2, phone: 1 },
+          items: [
+            { src: `${COL}/colmena-serie-mockup.webp`, title: { es: "No. 44, 45 y 46", en: "No. 44, 45 and 46" }, detail: { es: "La serie, lado a lado", en: "The series, side by side" } },
+            { src: `${COL}/colmena-pared-mockup.webp`, title: colIssue(47), detail: { es: "El lettering a mano en portada", en: "Hand lettering on the cover" } },
+          ],
+        },
       ],
     },
     {
@@ -356,7 +365,6 @@ const laColmenaStory: CaseStory = {
   ],
   closing: {
     image: { src: `${COL}/colmena-lino-mockup.webp`, title: colIssue(47), detail: colPages("4–5") },
-    more: [`${COL}/colmena-serie-mockup.webp`, `${COL}/colmena-pared-mockup.webp`, `${COL}/colmena-marmol-mockup.webp`],
   },
 };
 
