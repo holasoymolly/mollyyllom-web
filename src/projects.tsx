@@ -804,6 +804,673 @@ const aerosolRefinamientoProject: Project = {
   ],
 };
 
+/** the-unhinged, told in chapters (Nov 2026 refresh, collections template). */
+const theUnhingedStory: CaseStory = {
+  cover: {
+    variant: "top",
+    promise: {
+      es: "222 personajes locos, hechos a mano rasgo por rasgo.",
+      en: "222 unhinged characters, made by hand trait by trait."
+    }
+  },
+  chapters: [
+    {
+      id: "coleccion",
+      label: {
+        es: "La colección",
+        en: "The collection"
+      },
+      heading: {
+        es: "Locos, pero hechos con cuidado.",
+        en: "Unhinged, but carefully made."
+      },
+      text: {
+        es: "The Unhinged es el World 05 del Mollyverse, la quinta colección y la segunda que nace dentro de la plataforma. Después de Molly Degen Punks, que es puro píxel y puras reglas, quería soltar la mano: línea suelta, brazos de fideo, lentes gigantes y una mascota que se te sube al hombro sin pedir permiso. El reto era que 222 personajes se vieran locos y, a la vez, hechos con cuidado.",
+        en: "The Unhinged is World 05 of the Mollyverse, the fifth collection and the second one born inside the platform. After Molly Degen Punks, which is all pixels and all rules, I wanted to loosen my hand: loose lines, noodle arms, giant glasses and a pet that climbs onto your shoulder without asking. The challenge was making 222 characters look unhinged and still carefully made."
+      },
+      blocks: [
+        {
+          kind: "stats",
+          items: [
+            {
+              value: "222",
+              label: {
+                es: "piezas: 218 del generador y 4 únicas a mano",
+                en: "pieces: 218 from the generator and 4 drawn by hand"
+              }
+            },
+            {
+              value: "247",
+              label: {
+                es: "rasgos dibujados a mano, en 11 capas",
+                en: "hand-drawn traits, across 11 layers"
+              }
+            },
+            {
+              value: "1,11 SOL",
+              label: {
+                es: "la 1/1, en un mint de galería",
+                en: "for a 1/1, in a gallery mint"
+              }
+            }
+          ]
+        },
+        {
+          kind: "image",
+          size: "bleed",
+          image: {
+            src: "/img/projects/the-unhinged/piezas/unh-celular.webp",
+            title: {
+              es: "La ficha de una pieza en la app",
+              en: "A piece's page in the app"
+            },
+            detail: {
+              es: "The Unhinged #33",
+              en: "The Unhinged #33"
+            }
+          }
+        }
+      ]
+    },
+    {
+      id: "personaje",
+      label: {
+        es: "El personaje",
+        en: "The character"
+      },
+      heading: {
+        es: "Un tipo azul en papel cuadriculado.",
+        en: "A blue guy on graph paper."
+      },
+      text: {
+        es: "Todo empezó con un solo personaje en papel cuadriculado: un tipo azul con el pelo como brócoli, unos lentes que no le caben en la cara y un mono en el hombro. De ese muñeco saqué las 11 capas y dibujé cada variante a mano, rasgo por rasgo. Nada del arte sale de un prompt. El código solo decide qué dibujos se encuentran.",
+        en: "It all started with one character on graph paper: a blue guy with broccoli hair, glasses too big for his face and a monkey on his shoulder. From that guy I pulled out the 11 layers and drew every variant by hand, trait by trait. None of the art comes from a prompt. The code only decides which drawings get to meet."
+      },
+      blocks: [
+        {
+          kind: "wall",
+          width: "wide",
+          columns: {
+            desktop: 2,
+            phone: 1
+          },
+          ratio: "8/5",
+          items: [
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-logo-color-fondo.webp",
+              title: {
+                es: "Logo a todo color",
+                en: "Full-colour logo"
+              },
+              detail: {
+                es: "Sobre la noche de la marca",
+                en: "On the brand's night"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-logo-una-tinta-fondo.webp",
+              title: {
+                es: "Logo a una tinta",
+                en: "One-colour logo"
+              },
+              detail: {
+                es: "En el morado de la marca",
+                en: "In the brand purple"
+              }
+            }
+          ]
+        },
+        {
+          kind: "carousel",
+          large: true,
+          width: "wide",
+          label: {
+            es: "Las 1/1, a mano",
+            en: "The 1/1s, by hand"
+          },
+          items: [
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-especial-219-invisible-day.webp",
+              title: {
+                es: "Invisible Day",
+                en: "Invisible Day"
+              },
+              detail: {
+                es: "1/1 a mano",
+                en: "Hand-drawn 1/1"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-especial-220-mert.webp",
+              title: {
+                es: "Mert",
+                en: "Mert"
+              },
+              detail: {
+                es: "1/1 a mano",
+                en: "Hand-drawn 1/1"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-especial-221-toly.webp",
+              title: {
+                es: "Toly",
+                en: "Toly"
+              },
+              detail: {
+                es: "1/1 a mano",
+                en: "Hand-drawn 1/1"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-especial-222-invisible-night.webp",
+              title: {
+                es: "Invisible Night",
+                en: "Invisible Night"
+              },
+              detail: {
+                es: "1/1 a mano",
+                en: "Hand-drawn 1/1"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: "sistema",
+      label: {
+        es: "El sistema",
+        en: "The system"
+      },
+      heading: {
+        es: "El caos también tiene reglas.",
+        en: "Chaos has rules too."
+      },
+      text: {
+        es: "Lo que más disfruté fueron las reglas, porque el caos sin reglas se ve feo. Las cejas siempre siguen el color del pelo, hay pares de colores que no pueden mandar juntos, y la rareza decide qué puede llevar cada pieza. Diez monocromáticos son la rareza especial, y como todo sistema necesita a alguien que lo rompa, hay seis chaos donde cada capa va de un color distinto a propósito. Fuera del sistema quedaron cuatro piezas únicas, dibujadas enteras a mano.",
+        en: "What I enjoyed most was the rules, because chaos without rules just looks messy. Brows always follow the hair color, some color pairs are never allowed to lead together, and each rarity decides what a piece can carry. Ten monochrome pieces are the special rarity, and since every system needs someone to break it, there are six chaos pieces where every layer is a different color on purpose. Outside the system there are four one-of-ones, drawn entirely by hand."
+      },
+      blocks: [
+        {
+          kind: "wall",
+          width: "wide",
+          columns: {
+            desktop: 4,
+            phone: 2
+          },
+          ratio: "1/1",
+          fit: "contain",
+          items: [
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-capa-01-background.webp",
+              title: {
+                es: "Fondo",
+                en: "Background"
+              },
+              detail: {
+                es: "16 variantes",
+                en: "16 variations"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-capa-02-body.webp",
+              title: {
+                es: "Cuerpo",
+                en: "Body"
+              },
+              detail: {
+                es: "24 variantes",
+                en: "24 variations"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-capa-03-outfit.webp",
+              title: {
+                es: "Ropa",
+                en: "Outfit"
+              },
+              detail: {
+                es: "33 variantes",
+                en: "33 variations"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-capa-04-mouth.webp",
+              title: {
+                es: "Boca",
+                en: "Mouth"
+              },
+              detail: {
+                es: "32 variantes",
+                en: "32 variations"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-capa-05-eyes.webp",
+              title: {
+                es: "Ojos",
+                en: "Eyes"
+              },
+              detail: {
+                es: "16 variantes",
+                en: "16 variations"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-capa-06-accessory.webp",
+              title: {
+                es: "Accesorio",
+                en: "Accessory"
+              },
+              detail: {
+                es: "10 variantes",
+                en: "10 variations"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-capa-07-glasses.webp",
+              title: {
+                es: "Lentes",
+                en: "Glasses"
+              },
+              detail: {
+                es: "17 variantes",
+                en: "17 variations"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-capa-08-headwear.webp",
+              title: {
+                es: "Sombrero",
+                en: "Headwear"
+              },
+              detail: {
+                es: "17 variantes",
+                en: "17 variations"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-capa-09-hair.webp",
+              title: {
+                es: "Pelo",
+                en: "Hair"
+              },
+              detail: {
+                es: "32 variantes",
+                en: "32 variations"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-capa-10-brows.webp",
+              title: {
+                es: "Cejas",
+                en: "Brows"
+              },
+              detail: {
+                es: "17 variantes",
+                en: "17 variations"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-capa-11-pet.webp",
+              title: {
+                es: "Mascota",
+                en: "Pet"
+              },
+              detail: {
+                es: "33 variantes",
+                en: "33 variations"
+              }
+            }
+          ]
+        },
+        {
+          kind: "image",
+          size: "bleed",
+          image: {
+            src: "/img/projects/the-unhinged/piezas/unh-laptop.webp",
+            title: {
+              es: "La colección en la app",
+              en: "The collection in the app"
+            },
+            detail: {
+              es: "Galería",
+              en: "Gallery"
+            }
+          }
+        }
+      ]
+    },
+    {
+      id: "piezas",
+      label: {
+        es: "Las piezas",
+        en: "The pieces"
+      },
+      heading: {
+        es: "222 personajes, cuatro hechos enteros a mano.",
+        en: "222 characters, four drawn entirely by hand."
+      },
+      blocks: [
+        {
+          kind: "carousel",
+          large: true,
+          width: "wide",
+          label: {
+            es: "Especiales",
+            en: "Specials"
+          },
+          items: [
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-especial-55.webp",
+              title: {
+                es: "Monocromático",
+                en: "Monochrome"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-especial-79.webp",
+              title: {
+                es: "Monocromático",
+                en: "Monochrome"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-especial-114.webp",
+              title: {
+                es: "Monocromático",
+                en: "Monochrome"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-especial-160.webp",
+              title: {
+                es: "Monocromático",
+                en: "Monochrome"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-especial-202.webp",
+              title: {
+                es: "Monocromático",
+                en: "Monochrome"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-especial-34.webp",
+              title: {
+                es: "Chaos",
+                en: "Chaos"
+              },
+              detail: {
+                es: "Epic",
+                en: "Epic"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-especial-74.webp",
+              title: {
+                es: "Chaos",
+                en: "Chaos"
+              },
+              detail: {
+                es: "Epic",
+                en: "Epic"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-especial-99.webp",
+              title: {
+                es: "Chaos",
+                en: "Chaos"
+              },
+              detail: {
+                es: "Epic",
+                en: "Epic"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-especial-128.webp",
+              title: {
+                es: "Chaos",
+                en: "Chaos"
+              },
+              detail: {
+                es: "Epic",
+                en: "Epic"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-especial-152.webp",
+              title: {
+                es: "Chaos",
+                en: "Chaos"
+              },
+              detail: {
+                es: "Epic",
+                en: "Epic"
+              }
+            }
+          ]
+        },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: {
+            desktop: 6,
+            phone: 3
+          },
+          ratio: "1/1",
+          items: [
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-pieza-12.webp",
+              title: {
+                es: "#12",
+                en: "#12"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-pieza-47.webp",
+              title: {
+                es: "#47",
+                en: "#47"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-pieza-59.webp",
+              title: {
+                es: "#59",
+                en: "#59"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-pieza-71.webp",
+              title: {
+                es: "#71",
+                en: "#71"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-pieza-80.webp",
+              title: {
+                es: "#80",
+                en: "#80"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-pieza-88.webp",
+              title: {
+                es: "#88",
+                en: "#88"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-pieza-97.webp",
+              title: {
+                es: "#97",
+                en: "#97"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-pieza-123.webp",
+              title: {
+                es: "#123",
+                en: "#123"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-pieza-1.webp",
+              title: {
+                es: "#1",
+                en: "#1"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-pieza-9.webp",
+              title: {
+                es: "#9",
+                en: "#9"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-pieza-10.webp",
+              title: {
+                es: "#10",
+                en: "#10"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-pieza-15.webp",
+              title: {
+                es: "#15",
+                en: "#15"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-pieza-17.webp",
+              title: {
+                es: "#17",
+                en: "#17"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-pieza-23.webp",
+              title: {
+                es: "#23",
+                en: "#23"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-pieza-25.webp",
+              title: {
+                es: "#25",
+                en: "#25"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-pieza-28.webp",
+              title: {
+                es: "#28",
+                en: "#28"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-pieza-30.webp",
+              title: {
+                es: "#30",
+                en: "#30"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-pieza-104.webp",
+              title: {
+                es: "#104",
+                en: "#104"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-pieza-2.webp",
+              title: {
+                es: "#2",
+                en: "#2"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-pieza-5.webp",
+              title: {
+                es: "#5",
+                en: "#5"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-pieza-6.webp",
+              title: {
+                es: "#6",
+                en: "#6"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-pieza-7.webp",
+              title: {
+                es: "#7",
+                en: "#7"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-pieza-11.webp",
+              title: {
+                es: "#11",
+                en: "#11"
+              }
+            },
+            {
+              src: "/img/projects/the-unhinged/piezas/unh-pieza-14.webp",
+              title: {
+                es: "#14",
+                en: "#14"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  closing: {
+    image: {
+      src: "/img/projects/the-unhinged/piezas/unh-escena.webp",
+      title: {
+        es: "Las piezas, impresas",
+        en: "The pieces, printed"
+      },
+      detail: {
+        es: "Invisible Day e Invisible Night, enmarcadas",
+        en: "Invisible Day and Invisible Night, framed"
+      }
+    }
+  }
+};
+
 const theUnhingedProject: Project = {
   slug: "the-unhinged",
   title: "The Unhinged",
@@ -838,7 +1505,7 @@ const theUnhingedProject: Project = {
     "Art, generator, app and mint: Molly Yllom, with help from Kelvin and AI tools",
   ],
   portfolioImage: "/img/projects/the-unhinged/unh-personajes.mp4",
-  heroImage: "/img/projects/the-unhinged/unh-x-MY-01.webp",
+  heroImage: "/img/projects/the-unhinged/piezas/unh-portada.webp",
   paragraphs: [
     "Todo empezó con un solo personaje en papel cuadriculado: un tipo azul con el pelo como brócoli, unos lentes que no le caben en la cara y un mono en el hombro. De ese muñeco saqué las 11 capas y dibujé cada variante a mano, rasgo por rasgo. Nada del arte sale de un prompt. El código solo decide qué dibujos se encuentran.",
     "Lo que más disfruté fueron las reglas, porque el caos sin reglas se ve feo. Las cejas siempre siguen el color del pelo, hay pares de colores que no pueden mandar juntos, y la rareza decide qué puede llevar cada pieza. Diez monocromáticos son la rareza especial, y como todo sistema necesita a alguien que lo rompa, hay seis chaos donde cada capa va de un color distinto a propósito. Fuera del sistema quedaron cuatro piezas únicas, dibujadas enteras a mano.",
@@ -873,6 +1540,607 @@ const theUnhingedProject: Project = {
     "/img/projects/the-unhinged/unh-escena-mockup.webp",
     "/img/projects/the-unhinged/unh-x-MY-08.webp",
   ],
+  story: theUnhingedStory,
+};
+
+/** mdp, told in chapters (Nov 2026 refresh, collections template). */
+const mdpStory: CaseStory = {
+  cover: {
+    variant: "top",
+    promise: {
+      es: "Un autorretrato en píxel convertido en 111 punks.",
+      en: "One pixel self-portrait turned into 111 punks."
+    }
+  },
+  origin: {
+    label: {
+      es: "Así empezó",
+      en: "Where it began"
+    },
+    heading: {
+      es: "El autorretrato del que salieron todos.",
+      en: "The self-portrait they all came from."
+    },
+    before: {
+      src: "/img/projects/mdp/piezas/mdp-origen-antes.webp",
+      title: {
+        es: "Autorretrato",
+        en: "Self-portrait"
+      },
+      detail: {
+        es: "La base",
+        en: "The base"
+      }
+    },
+    after: {
+      src: "/img/projects/mdp/piezas/mdp-origen-despues.webp",
+      title: {
+        es: "Molly Degen Punk #27",
+        en: "Molly Degen Punk #27"
+      },
+      detail: {
+        es: "Una de las 111",
+        en: "One of the 111"
+      }
+    }
+  },
+  chapters: [
+    {
+      id: "coleccion",
+      label: {
+        es: "La colección",
+        en: "The collection"
+      },
+      heading: {
+        es: "111 versiones de la misma persona.",
+        en: "111 versions of the same person."
+      },
+      text: {
+        es: "Molly Degen Punks es el World 04 del Mollyverse y la primera colección que nació dentro de la plataforma. Salió de un autorretrato mío en píxel, y de ahí hice 111 versiones de la misma persona. El reto era que cada punk se sintiera distinto de verdad y que, aun así, se notara que todos vienen de mí.",
+        en: "Molly Degen Punks is World 04 of the Mollyverse and the first collection born inside the platform. It came from a pixel self-portrait, and from that one portrait I made 111 versions of the same person. The challenge was making every punk feel truly different while you could still tell they all come from me."
+      },
+      blocks: [
+        {
+          kind: "stats",
+          items: [
+            {
+              value: "111",
+              label: {
+                es: "punks, todos salidos de mí",
+                en: "punks, all of them me"
+              }
+            },
+            {
+              value: "215",
+              label: {
+                es: "variantes dibujadas a mano, en 9 capas",
+                en: "hand-drawn variations, across 9 layers"
+              }
+            },
+            {
+              value: "0,11 SOL",
+              label: {
+                es: "mint al azar, agotado en mayo de 2026",
+                en: "random mint, sold out in May 2026"
+              }
+            }
+          ]
+        },
+        {
+          kind: "image",
+          size: "bleed",
+          image: {
+            src: "/img/projects/mdp/piezas/mdp-celular.webp",
+            title: {
+              es: "La ficha de una pieza en la app",
+              en: "A piece's page in the app"
+            },
+            detail: {
+              es: "Molly Degen Punk #104",
+              en: "Molly Degen Punk #104"
+            }
+          }
+        }
+      ]
+    },
+    {
+      id: "personaje",
+      label: {
+        es: "El personaje",
+        en: "The character"
+      },
+      heading: {
+        es: "Cada rasgo es algo real.",
+        en: "Every trait is something real."
+      },
+      text: {
+        es: "Todo empezó con un autorretrato en píxel: el pelo largo con un lado rapado, los lentes redondos y una camisa negra. De ahí saqué 111 versiones mías. Cada rasgo es algo real, un diente de oro, una corona, una banana, una chaqueta como la de Lady Gaga, y en el fondo están mis raíces dominicanas, la cultura degen y lo punk. Por eso digo que es el mundo más personal del Mollyverse.",
+        en: "It all started with a pixel self-portrait: long hair with one side shaved, round glasses and a black shirt. From there I made 111 versions of myself. Every trait is something real, a gold tooth, a crown, a banana, a jacket like Lady Gaga's, and underneath it all are my Dominican roots, degen culture and punk. That's why I call it the most personal world in the Mollyverse."
+      },
+      blocks: [
+        {
+          kind: "carousel",
+          large: true,
+          width: "wide",
+          label: {
+            es: "Rasgos con historia",
+            en: "Traits with a story"
+          },
+          items: [
+            {
+              src: "/img/projects/mdp/piezas/mdp-especial-33.webp",
+              title: {
+                es: "Una corona",
+                en: "A crown"
+              },
+              detail: {
+                es: "#33",
+                en: "#33"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-especial-22.webp",
+              title: {
+                es: "Una banana y un diente de oro",
+                en: "A banana and a gold tooth"
+              },
+              detail: {
+                es: "#22",
+                en: "#22"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-especial-74.webp",
+              title: {
+                es: "Un diente de oro",
+                en: "A gold tooth"
+              },
+              detail: {
+                es: "#74",
+                en: "#74"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-especial-104.webp",
+              title: {
+                es: "Una chaqueta como la de Lady Gaga",
+                en: "A jacket like Lady Gaga's"
+              },
+              detail: {
+                es: "#104",
+                en: "#104"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-especial-75.webp",
+              title: {
+                es: "Una chaqueta como la de Lady Gaga",
+                en: "A jacket like Lady Gaga's"
+              },
+              detail: {
+                es: "#75",
+                en: "#75"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: "sistema",
+      label: {
+        es: "El sistema",
+        en: "The system"
+      },
+      heading: {
+        es: "No todo puede ir con todo.",
+        en: "Not everything goes with everything."
+      },
+      text: {
+        es: "Lo que más me importaba era el contraste. Cada pieza sale de 9 capas dibujadas a mano, pero no todo puede ir con todo: hay rasgos que no conviven y la rareza decide qué puede llevar cada punk. El mint fue al azar, así que no elegías tu punk: te tocaba uno, como pasa con la identidad.",
+        en: "What mattered most to me was contrast. Every piece comes from 9 hand-drawn layers, but not everything goes with everything: some traits can't live together, and the rarity decides what each punk is allowed to wear. The mint was random, so you didn't pick your punk. You got one, the way it works with identity."
+      },
+      blocks: [
+        {
+          kind: "wall",
+          width: "wide",
+          columns: {
+            desktop: 3,
+            phone: 2
+          },
+          ratio: "1/1",
+          fit: "contain",
+          items: [
+            {
+              src: "/img/projects/mdp/piezas/mdp-capa-01-background.webp",
+              title: {
+                es: "Fondo",
+                en: "Background"
+              },
+              detail: {
+                es: "16 variantes",
+                en: "16 variations"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-capa-02-body.webp",
+              title: {
+                es: "Cuerpo",
+                en: "Body"
+              },
+              detail: {
+                es: "31 variantes",
+                en: "31 variations"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-capa-03-outfit.webp",
+              title: {
+                es: "Ropa",
+                en: "Outfit"
+              },
+              detail: {
+                es: "26 variantes",
+                en: "26 variations"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-capa-04-face.webp",
+              title: {
+                es: "Cara",
+                en: "Face"
+              },
+              detail: {
+                es: "28 variantes",
+                en: "28 variations"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-capa-05-hair.webp",
+              title: {
+                es: "Pelo",
+                en: "Hair"
+              },
+              detail: {
+                es: "29 variantes",
+                en: "29 variations"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-capa-06-eyeglasses.webp",
+              title: {
+                es: "Lentes",
+                en: "Eyeglasses"
+              },
+              detail: {
+                es: "28 variantes",
+                en: "28 variations"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-capa-07-earrings.webp",
+              title: {
+                es: "Aretes",
+                en: "Earrings"
+              },
+              detail: {
+                es: "25 variantes",
+                en: "25 variations"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-capa-08-headwear.webp",
+              title: {
+                es: "Sombrero",
+                en: "Headwear"
+              },
+              detail: {
+                es: "16 variantes",
+                en: "16 variations"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-capa-09-accessory.webp",
+              title: {
+                es: "Accesorio",
+                en: "Accessory"
+              },
+              detail: {
+                es: "16 variantes",
+                en: "16 variations"
+              }
+            }
+          ]
+        },
+        {
+          kind: "image",
+          size: "bleed",
+          image: {
+            src: "/img/projects/mdp/piezas/mdp-laptop.webp",
+            title: {
+              es: "La colección en la app",
+              en: "The collection in the app"
+            },
+            detail: {
+              es: "Galería",
+              en: "Gallery"
+            }
+          }
+        }
+      ]
+    },
+    {
+      id: "piezas",
+      label: {
+        es: "Las piezas",
+        en: "The pieces"
+      },
+      heading: {
+        es: "Once Legendary y cien más.",
+        en: "Eleven Legendary and a hundred more."
+      },
+      blocks: [
+        {
+          kind: "carousel",
+          large: true,
+          width: "wide",
+          label: {
+            es: "Legendary",
+            en: "Legendary"
+          },
+          items: [
+            {
+              src: "/img/projects/mdp/piezas/mdp-especial-19.webp",
+              title: {
+                es: "#19",
+                en: "#19"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-especial-45.webp",
+              title: {
+                es: "#45",
+                en: "#45"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-especial-63.webp",
+              title: {
+                es: "#63",
+                en: "#63"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-especial-68.webp",
+              title: {
+                es: "#68",
+                en: "#68"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-especial-95.webp",
+              title: {
+                es: "#95",
+                en: "#95"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            }
+          ]
+        },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: {
+            desktop: 6,
+            phone: 3
+          },
+          ratio: "1/1",
+          items: [
+            {
+              src: "/img/projects/mdp/piezas/mdp-pieza-0.webp",
+              title: {
+                es: "#0",
+                en: "#0"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-pieza-2.webp",
+              title: {
+                es: "#2",
+                en: "#2"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-pieza-5.webp",
+              title: {
+                es: "#5",
+                en: "#5"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-pieza-8.webp",
+              title: {
+                es: "#8",
+                en: "#8"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-pieza-9.webp",
+              title: {
+                es: "#9",
+                en: "#9"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-pieza-12.webp",
+              title: {
+                es: "#12",
+                en: "#12"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-pieza-14.webp",
+              title: {
+                es: "#14",
+                en: "#14"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-pieza-16.webp",
+              title: {
+                es: "#16",
+                en: "#16"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-pieza-21.webp",
+              title: {
+                es: "#21",
+                en: "#21"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-pieza-24.webp",
+              title: {
+                es: "#24",
+                en: "#24"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-pieza-30.webp",
+              title: {
+                es: "#30",
+                en: "#30"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-pieza-35.webp",
+              title: {
+                es: "#35",
+                en: "#35"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-pieza-38.webp",
+              title: {
+                es: "#38",
+                en: "#38"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-pieza-43.webp",
+              title: {
+                es: "#43",
+                en: "#43"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-pieza-50.webp",
+              title: {
+                es: "#50",
+                en: "#50"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-pieza-57.webp",
+              title: {
+                es: "#57",
+                en: "#57"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-pieza-70.webp",
+              title: {
+                es: "#70",
+                en: "#70"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-pieza-90.webp",
+              title: {
+                es: "#90",
+                en: "#90"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-pieza-1.webp",
+              title: {
+                es: "#1",
+                en: "#1"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-pieza-3.webp",
+              title: {
+                es: "#3",
+                en: "#3"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-pieza-4.webp",
+              title: {
+                es: "#4",
+                en: "#4"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-pieza-6.webp",
+              title: {
+                es: "#6",
+                en: "#6"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-pieza-7.webp",
+              title: {
+                es: "#7",
+                en: "#7"
+              }
+            },
+            {
+              src: "/img/projects/mdp/piezas/mdp-pieza-10.webp",
+              title: {
+                es: "#10",
+                en: "#10"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  closing: {
+    image: {
+      src: "/img/projects/mdp/piezas/mdp-escena.webp",
+      title: {
+        es: "Las piezas, impresas",
+        en: "The pieces, printed"
+      },
+      detail: {
+        es: "Tres rasgos con historia: #33, #22 y #75",
+        en: "Three traits with a story: #33, #22 and #75"
+      }
+    }
+  }
 };
 
 const mdpProject: Project = {
@@ -909,7 +2177,7 @@ const mdpProject: Project = {
     "Art, generator, app and mint: Molly Yllom, with help from Kelvin and AI tools",
   ],
   portfolioImage: "/img/projects/mdp/mdp-personajes.mp4",
-  heroImage: "/img/projects/mdp/mdp-x-MY-01.webp",
+  heroImage: "/img/projects/mdp/piezas/mdp-portada.webp",
   paragraphs: [
     "Todo empezó con un autorretrato en píxel: el pelo largo con un lado rapado, los lentes redondos y una camisa negra. De ahí saqué 111 versiones mías. Cada rasgo es algo real, un diente de oro, una corona, una banana, una chaqueta como la de Lady Gaga, y en el fondo están mis raíces dominicanas, la cultura degen y lo punk. Por eso digo que es el mundo más personal del Mollyverse.",
     "Lo que más me importaba era el contraste. Cada pieza sale de 9 capas dibujadas a mano, pero no todo puede ir con todo: hay rasgos que no conviven y la rareza decide qué puede llevar cada punk. El mint fue al azar, así que no elegías tu punk: te tocaba uno, como pasa con la identidad.",
@@ -940,6 +2208,316 @@ const mdpProject: Project = {
     "/img/projects/mdp/mdp-escena-mockup.webp",
     "/img/projects/mdp/mdp-x-MY-08.webp",
   ],
+  story: mdpStory,
+};
+
+/** pixeled-flexies-vol-1, told in chapters (Nov 2026 refresh, collections template). */
+const pixeledFlexiesVol1Story: CaseStory = {
+  cover: {
+    variant: "top",
+    promise: {
+      es: "Mis personajes flexibles, en diez piezas de píxel.",
+      en: "My flexible characters, in ten pixel pieces."
+    }
+  },
+  chapters: [
+    {
+      id: "coleccion",
+      label: {
+        es: "La colección",
+        en: "The collection"
+      },
+      heading: {
+        es: "Mi primer drop en Solana.",
+        en: "My first drop on Solana."
+      },
+      text: {
+        es: "Pixeled Flexies Vol. 1 fue mi primer drop en Solana, en 2023, y es el World 01 del Mollyverse. Agarré mis personajes flexibles, los de cuello largo y brazos que se enroscan, y los pasé a píxel. Eran diez piezas, todas 1/1. El reto era que cada una se sintiera como una persona distinta con muy pocos píxeles.",
+        en: "Pixeled Flexies Vol. 1 was my first drop on Solana, back in 2023, and it's World 01 of the Mollyverse. I took my flexible characters, the ones with long necks and arms that curl, and turned them into pixels. Ten pieces, every one a 1/1. The challenge was making each one feel like a different person with very few pixels."
+      },
+      blocks: [
+        {
+          kind: "stats",
+          items: [
+            {
+              value: "10",
+              label: {
+                es: "piezas, todas 1/1 y Legendary",
+                en: "pieces, every one a 1/1 and Legendary"
+              }
+            },
+            {
+              value: "73",
+              label: {
+                es: "variantes dibujadas a mano, en 10 categorías",
+                en: "hand-drawn variations, across 10 categories"
+              }
+            },
+            {
+              value: "0,05 SOL",
+              label: {
+                es: "una por wallet, agotada",
+                en: "one per wallet, sold out"
+              }
+            }
+          ]
+        },
+        {
+          kind: "image",
+          size: "bleed",
+          image: {
+            src: "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-celular.webp",
+            title: {
+              es: "La ficha de una pieza en la app",
+              en: "A piece's page in the app"
+            },
+            detail: {
+              es: "Pixeled Flexy #10",
+              en: "Pixeled Flexy #10"
+            }
+          }
+        }
+      ]
+    },
+    {
+      id: "personaje",
+      label: {
+        es: "El personaje",
+        en: "The character"
+      },
+      heading: {
+        es: "Los Flexies, en píxel.",
+        en: "The Flexies, in pixels."
+      },
+      text: {
+        es: "Los Flexies son mis personajes de siempre: cuellos larguísimos, cuerpos como tubos y brazos que se enroscan. Con esta colección quise ver si sobrevivían al píxel. Los diez saludan igual, con el brazo en espiral y la mano haciendo la paz, y lo demás cambia: el pelo, la ropa, los tenis y hasta uno que es un alien.",
+        en: "The Flexies are my characters from way back: super long necks, tube bodies and arms that curl. With this collection I wanted to see if they'd survive being pixels. All ten wave the same way, spiral arm up and fingers making a peace sign, and everything else changes: the hair, the clothes, the sneakers, and one of them is even an alien."
+      },
+      blocks: [
+        {
+          kind: "carousel",
+          large: true,
+          width: "wide",
+          label: {
+            es: "Las diez",
+            en: "All ten"
+          },
+          items: [
+            {
+              src: "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-especial-1.webp",
+              title: {
+                es: "Pixeled Flexy #1",
+                en: "Pixeled Flexy #1"
+              },
+              detail: {
+                es: "1/1 · Legendary",
+                en: "1/1 · Legendary"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-especial-2.webp",
+              title: {
+                es: "Pixeled Flexy #2",
+                en: "Pixeled Flexy #2"
+              },
+              detail: {
+                es: "1/1 · Legendary",
+                en: "1/1 · Legendary"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-especial-3.webp",
+              title: {
+                es: "Pixeled Flexy #3",
+                en: "Pixeled Flexy #3"
+              },
+              detail: {
+                es: "1/1 · Legendary",
+                en: "1/1 · Legendary"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-especial-4.webp",
+              title: {
+                es: "Pixeled Flexy #4",
+                en: "Pixeled Flexy #4"
+              },
+              detail: {
+                es: "1/1 · Legendary",
+                en: "1/1 · Legendary"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-especial-5.webp",
+              title: {
+                es: "Pixeled Flexy #5",
+                en: "Pixeled Flexy #5"
+              },
+              detail: {
+                es: "1/1 · Legendary",
+                en: "1/1 · Legendary"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-especial-6.webp",
+              title: {
+                es: "Pixeled Flexy #6",
+                en: "Pixeled Flexy #6"
+              },
+              detail: {
+                es: "1/1 · Legendary",
+                en: "1/1 · Legendary"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-especial-7.webp",
+              title: {
+                es: "Pixeled Flexy #7",
+                en: "Pixeled Flexy #7"
+              },
+              detail: {
+                es: "1/1 · Legendary",
+                en: "1/1 · Legendary"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-especial-8.webp",
+              title: {
+                es: "Pixeled Flexy #8",
+                en: "Pixeled Flexy #8"
+              },
+              detail: {
+                es: "1/1 · Legendary",
+                en: "1/1 · Legendary"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-especial-9.webp",
+              title: {
+                es: "Pixeled Flexy #9",
+                en: "Pixeled Flexy #9"
+              },
+              detail: {
+                es: "1/1 · Legendary",
+                en: "1/1 · Legendary"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-especial-10.webp",
+              title: {
+                es: "Pixeled Flexy #10",
+                en: "Pixeled Flexy #10"
+              },
+              detail: {
+                es: "1/1 · Legendary",
+                en: "1/1 · Legendary"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: "detalles",
+      label: {
+        es: "Los detalles",
+        en: "The details"
+      },
+      heading: {
+        es: "Diez combinaciones, diez 1/1.",
+        en: "Ten combinations, ten 1/1s."
+      },
+      text: {
+        es: "Cada rasgo lo dibujé a mano, píxel por píxel, y cada una de las diez combinaciones es única: por eso las diez son 1/1. El mint fue al azar y de una por wallet, así que cada Flexy terminó con una persona distinta. Ahí empezó el Mollyverse, y lo que aprendí aquí es lo que después se volvió el sistema de rasgos de Vol. 2.",
+        en: "I drew every trait by hand, pixel by pixel, and each of the ten combinations is unique, which is why all ten are 1/1s. The mint was random and one per wallet, so every Flexy ended up with a different person. That's where the Mollyverse started, and what I learned here is what later became the trait system in Vol. 2."
+      },
+      blocks: [
+        {
+          kind: "wall",
+          width: "wide",
+          columns: {
+            desktop: 4,
+            phone: 2
+          },
+          ratio: "1/1",
+          items: [
+            {
+              src: "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-detalle-1.webp",
+              title: {
+                es: "Pixeled Flexy #1",
+                en: "Pixeled Flexy #1"
+              },
+              detail: {
+                es: "El brazo en espiral",
+                en: "The spiral arm"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-detalle-3.webp",
+              title: {
+                es: "Pixeled Flexy #3",
+                en: "Pixeled Flexy #3"
+              },
+              detail: {
+                es: "El sombrero",
+                en: "The hat"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-detalle-4.webp",
+              title: {
+                es: "Pixeled Flexy #4",
+                en: "Pixeled Flexy #4"
+              },
+              detail: {
+                es: "El alien",
+                en: "The alien"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-detalle-6.webp",
+              title: {
+                es: "Pixeled Flexy #6",
+                en: "Pixeled Flexy #6"
+              },
+              detail: {
+                es: "El pelo",
+                en: "The hair"
+              }
+            }
+          ]
+        },
+        {
+          kind: "image",
+          size: "bleed",
+          image: {
+            src: "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-laptop.webp",
+            title: {
+              es: "La colección en la app",
+              en: "The collection in the app"
+            },
+            detail: {
+              es: "Galería",
+              en: "Gallery"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  closing: {
+    image: {
+      src: "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-escena.webp",
+      title: {
+        es: "Las piezas, impresas",
+        en: "The pieces, printed"
+      },
+      detail: {
+        es: "Las diez, en papel de algodón",
+        en: "All ten, on cotton paper"
+      }
+    }
+  }
 };
 
 const pixeledFlexiesVol1Project: Project = {
@@ -976,7 +2554,7 @@ const pixeledFlexiesVol1Project: Project = {
     "Art, generator, app and mint: Molly Yllom, with help from Kelvin and AI tools",
   ],
   portfolioImage: "/img/projects/pixeled-flexies-vol-1/pfv1-personajes.mp4",
-  heroImage: "/img/projects/pixeled-flexies-vol-1/pfv1-x-MY-01.webp",
+  heroImage: "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-portada.webp",
   paragraphs: [
     "Los Flexies son mis personajes de siempre: cuellos larguísimos, cuerpos como tubos y brazos que se enroscan. Con esta colección quise ver si sobrevivían al píxel. Los diez saludan igual, con el brazo en espiral y la mano haciendo la paz, y lo demás cambia: el pelo, la ropa, los tenis y hasta uno que es un alien.",
     "Cada rasgo lo dibujé a mano, píxel por píxel, y cada una de las diez combinaciones es única: por eso las diez son 1/1. El mint fue al azar y de una por wallet, así que cada Flexy terminó con una persona distinta. Ahí empezó el Mollyverse, y lo que aprendí aquí es lo que después se volvió el sistema de rasgos de Vol. 2.",
@@ -1005,6 +2583,596 @@ const pixeledFlexiesVol1Project: Project = {
     "/img/projects/pixeled-flexies-vol-1/pfv1-x-MY-08.webp",
     "/img/projects/pixeled-flexies-vol-1/pfv1-escena-mockup.webp",
   ],
+  story: pixeledFlexiesVol1Story,
+};
+
+/** pixeled-flexies-vol-2, told in chapters (Nov 2026 refresh, collections template). */
+const pixeledFlexiesVol2Story: CaseStory = {
+  cover: {
+    variant: "top",
+    promise: {
+      es: "Cien Flexies y mi primer sistema de rasgos.",
+      en: "A hundred Flexies and my first trait system."
+    }
+  },
+  origin: {
+    label: {
+      es: "Así empezó",
+      en: "Where it began"
+    },
+    heading: {
+      es: "Del cuerpo a la pieza.",
+      en: "From the body to the piece."
+    },
+    before: {
+      src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-origen-antes.webp",
+      title: {
+        es: "Fondo y cuerpo",
+        en: "Background and body"
+      },
+      detail: {
+        es: "Las dos primeras capas",
+        en: "The first two layers"
+      }
+    },
+    after: {
+      src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-origen-despues.webp",
+      title: {
+        es: "Pixeled Flexy #17",
+        en: "Pixeled Flexy #17"
+      },
+      detail: {
+        es: "Legendary",
+        en: "Legendary"
+      }
+    }
+  },
+  chapters: [
+    {
+      id: "coleccion",
+      label: {
+        es: "La colección",
+        en: "The collection"
+      },
+      heading: {
+        es: "Mi primer sistema de rasgos.",
+        en: "My first trait system."
+      },
+      text: {
+        es: "Pixeled Flexies Vol. 2 es el World 02 del Mollyverse y salió en 2023, justo después de Vol. 1. Ahí armé mi primer sistema de rasgos completo, desde cero: 100 Flexies que salen de combinar rasgos dibujados a mano. El reto era que el sistema no les quitara la gracia y que cada Flexy tuviera su propia personalidad.",
+        en: "Pixeled Flexies Vol. 2 is World 02 of the Mollyverse and came out in 2023, right after Vol. 1. It's where I built my first full trait system, from scratch: 100 Flexies made by combining hand-drawn traits. The challenge was keeping the system from taking the charm away, so every Flexy had its own personality."
+      },
+      blocks: [
+        {
+          kind: "stats",
+          items: [
+            {
+              value: "100",
+              label: {
+                es: "piezas en cuatro rarezas",
+                en: "pieces in four rarities"
+              }
+            },
+            {
+              value: "139",
+              label: {
+                es: "variantes dibujadas a mano, en 8 categorías",
+                en: "hand-drawn variations, across 8 categories"
+              }
+            },
+            {
+              value: "0,03 SOL",
+              label: {
+                es: "mint al azar, hasta tres por wallet",
+                en: "random mint, up to three per wallet"
+              }
+            }
+          ]
+        },
+        {
+          kind: "image",
+          size: "bleed",
+          image: {
+            src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-celular.webp",
+            title: {
+              es: "La ficha de una pieza en la app",
+              en: "A piece's page in the app"
+            },
+            detail: {
+              es: "Pixeled Flexy #17",
+              en: "Pixeled Flexy #17"
+            }
+          }
+        }
+      ]
+    },
+    {
+      id: "personaje",
+      label: {
+        es: "El personaje",
+        en: "The character"
+      },
+      heading: {
+        es: "El cuello en S.",
+        en: "The S-shaped neck."
+      },
+      text: {
+        es: "Después de Vol. 1 quise que los Flexies se movieran más. Aquí el cuello se dobla en S, la cabeza queda de lado y la mano se abre como saludando. Cada fondo lleva un rombo de líneas finas que lo encierra, como si fuera un marco.",
+        en: "After Vol. 1 I wanted the Flexies to move more. Here the neck bends into an S, the head turns sideways and the hand opens like it's waving. Every background has a diamond of fine lines around it, like a frame."
+      },
+      blocks: [
+        {
+          kind: "carousel",
+          large: true,
+          width: "wide",
+          label: {
+            es: "Legendary",
+            en: "Legendary"
+          },
+          items: [
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-especial-1.webp",
+              title: {
+                es: "#1",
+                en: "#1"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-especial-6.webp",
+              title: {
+                es: "#6",
+                en: "#6"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-especial-17.webp",
+              title: {
+                es: "#17",
+                en: "#17"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-especial-52.webp",
+              title: {
+                es: "#52",
+                en: "#52"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-especial-63.webp",
+              title: {
+                es: "#63",
+                en: "#63"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: "sistema",
+      label: {
+        es: "El sistema",
+        en: "The system"
+      },
+      heading: {
+        es: "139 rasgos, todos a mano.",
+        en: "139 traits, all by hand."
+      },
+      text: {
+        es: "Fue mi primera vez armando un sistema de rasgos completo. Dibujé cada rasgo a mano, cuerpos, ojos, bocas, pelos, ropa y accesorios, y el generador los combinó en 100 piezas. Lo difícil fue decidir qué rasgos podían ir juntos para que ninguno se viera como un error. Lo que aprendí aquí lo usé después en MDP y The Unhinged.",
+        en: "It was my first time building a full trait system. I drew every trait by hand, bodies, eyes, mouths, hair, clothes and accessories, and the generator combined them into 100 pieces. The hard part was deciding which traits could go together so none of them looked like a mistake. What I learned here is what I used later on MDP and The Unhinged."
+      },
+      blocks: [
+        {
+          kind: "wall",
+          width: "wide",
+          columns: {
+            desktop: 4,
+            phone: 2
+          },
+          ratio: "1/1",
+          fit: "contain",
+          items: [
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-capa-01-background.webp",
+              title: {
+                es: "Fondo",
+                en: "Background"
+              },
+              detail: {
+                es: "17 variantes",
+                en: "17 variations"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-capa-02-body.webp",
+              title: {
+                es: "Cuerpo",
+                en: "Body"
+              },
+              detail: {
+                es: "19 variantes",
+                en: "19 variations"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-capa-03-hair.webp",
+              title: {
+                es: "Pelo",
+                en: "Hair"
+              },
+              detail: {
+                es: "20 variantes",
+                en: "20 variations"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-capa-04-accessory.webp",
+              title: {
+                es: "Accesorio",
+                en: "Accessory"
+              },
+              detail: {
+                es: "20 variantes",
+                en: "20 variations"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-capa-05-eyes.webp",
+              title: {
+                es: "Ojos",
+                en: "Eyes"
+              },
+              detail: {
+                es: "20 variantes",
+                en: "20 variations"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-capa-06-mouth.webp",
+              title: {
+                es: "Boca",
+                en: "Mouth"
+              },
+              detail: {
+                es: "16 variantes",
+                en: "16 variations"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-capa-07-face.webp",
+              title: {
+                es: "Cara",
+                en: "Face"
+              },
+              detail: {
+                es: "13 variantes",
+                en: "13 variations"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-capa-08-outfit.webp",
+              title: {
+                es: "Ropa",
+                en: "Outfit"
+              },
+              detail: {
+                es: "14 variantes",
+                en: "14 variations"
+              }
+            }
+          ]
+        },
+        {
+          kind: "image",
+          size: "bleed",
+          image: {
+            src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-laptop.webp",
+            title: {
+              es: "La colección en la app",
+              en: "The collection in the app"
+            },
+            detail: {
+              es: "Galería",
+              en: "Gallery"
+            }
+          }
+        }
+      ]
+    },
+    {
+      id: "piezas",
+      label: {
+        es: "Las piezas",
+        en: "The pieces"
+      },
+      heading: {
+        es: "Diez Legendary entre cien.",
+        en: "Ten Legendary out of a hundred."
+      },
+      blocks: [
+        {
+          kind: "carousel",
+          large: true,
+          width: "wide",
+          label: {
+            es: "Las otras cinco Legendary",
+            en: "The other five Legendary"
+          },
+          items: [
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-especial-67.webp",
+              title: {
+                es: "#67",
+                en: "#67"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-especial-71.webp",
+              title: {
+                es: "#71",
+                en: "#71"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-especial-73.webp",
+              title: {
+                es: "#73",
+                en: "#73"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-especial-77.webp",
+              title: {
+                es: "#77",
+                en: "#77"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-especial-88.webp",
+              title: {
+                es: "#88",
+                en: "#88"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            }
+          ]
+        },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: {
+            desktop: 6,
+            phone: 3
+          },
+          ratio: "1/1",
+          items: [
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-0.webp",
+              title: {
+                es: "#0",
+                en: "#0"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-2.webp",
+              title: {
+                es: "#2",
+                en: "#2"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-3.webp",
+              title: {
+                es: "#3",
+                en: "#3"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-4.webp",
+              title: {
+                es: "#4",
+                en: "#4"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-5.webp",
+              title: {
+                es: "#5",
+                en: "#5"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-7.webp",
+              title: {
+                es: "#7",
+                en: "#7"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-8.webp",
+              title: {
+                es: "#8",
+                en: "#8"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-9.webp",
+              title: {
+                es: "#9",
+                en: "#9"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-10.webp",
+              title: {
+                es: "#10",
+                en: "#10"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-11.webp",
+              title: {
+                es: "#11",
+                en: "#11"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-12.webp",
+              title: {
+                es: "#12",
+                en: "#12"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-13.webp",
+              title: {
+                es: "#13",
+                en: "#13"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-14.webp",
+              title: {
+                es: "#14",
+                en: "#14"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-15.webp",
+              title: {
+                es: "#15",
+                en: "#15"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-16.webp",
+              title: {
+                es: "#16",
+                en: "#16"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-19.webp",
+              title: {
+                es: "#19",
+                en: "#19"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-20.webp",
+              title: {
+                es: "#20",
+                en: "#20"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-21.webp",
+              title: {
+                es: "#21",
+                en: "#21"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-22.webp",
+              title: {
+                es: "#22",
+                en: "#22"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-23.webp",
+              title: {
+                es: "#23",
+                en: "#23"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-24.webp",
+              title: {
+                es: "#24",
+                en: "#24"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-26.webp",
+              title: {
+                es: "#26",
+                en: "#26"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-27.webp",
+              title: {
+                es: "#27",
+                en: "#27"
+              }
+            },
+            {
+              src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-28.webp",
+              title: {
+                es: "#28",
+                en: "#28"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  closing: {
+    image: {
+      src: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-escena.webp",
+      title: {
+        es: "Las piezas, impresas",
+        en: "The pieces, printed"
+      },
+      detail: {
+        es: "Tres Legendary en la caja de archivo",
+        en: "Three Legendary in the archive box"
+      }
+    }
+  }
 };
 
 const pixeledFlexiesVol2Project: Project = {
@@ -1041,7 +3209,7 @@ const pixeledFlexiesVol2Project: Project = {
     "Art, generator, app and mint: Molly Yllom, with help from Kelvin and AI tools",
   ],
   portfolioImage: "/img/projects/pixeled-flexies-vol-2/pfv2-personajes.mp4",
-  heroImage: "/img/projects/pixeled-flexies-vol-2/pfv2-x-MY-01.webp",
+  heroImage: "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-portada.webp",
   paragraphs: [
     "Después de Vol. 1 quise que los Flexies se movieran más. Aquí el cuello se dobla en S, la cabeza queda de lado y la mano se abre como saludando. Cada fondo lleva un rombo de líneas finas que lo encierra, como si fuera un marco.",
     "Fue mi primera vez armando un sistema de rasgos completo. Dibujé cada rasgo a mano, cuerpos, ojos, bocas, pelos, ropa y accesorios, y el generador los combinó en 100 piezas. Lo difícil fue decidir qué rasgos podían ir juntos para que ninguno se viera como un error. Lo que aprendí aquí lo usé después en MDP y The Unhinged.",
@@ -1072,6 +3240,7 @@ const pixeledFlexiesVol2Project: Project = {
     "/img/projects/pixeled-flexies-vol-2/pfv2-escena-mockup.webp",
     "/img/projects/pixeled-flexies-vol-2/pfv2-x-MY-08.webp",
   ],
+  story: pixeledFlexiesVol2Story,
 };
 
 /** FAMA Collective, told in chapters. Con los bloques y el ritmo de F1.2 (guia-migracion-story.md, sección 4). */
@@ -1534,6 +3703,595 @@ const jubelProject: Project = {
   ],
 };
 
+/** thingies, told in chapters (Nov 2026 refresh, collections template). */
+const thingiesStory: CaseStory = {
+  cover: {
+    variant: "top",
+    promise: {
+      es: "Doscientos monstruos con la boca abierta.",
+      en: "Two hundred monsters with their mouths wide open."
+    }
+  },
+  origin: {
+    label: {
+      es: "Así empezó",
+      en: "Where it began"
+    },
+    heading: {
+      es: "Un cuerpo, doscientas caras.",
+      en: "One body, two hundred faces."
+    },
+    before: {
+      src: "/img/projects/thingies/piezas/th-origen-antes.webp",
+      title: {
+        es: "Fondo y cuerpo",
+        en: "Background and body"
+      },
+      detail: {
+        es: "Las dos primeras capas",
+        en: "The first two layers"
+      }
+    },
+    after: {
+      src: "/img/projects/thingies/piezas/th-origen-despues.webp",
+      title: {
+        es: "Monster #22",
+        en: "Monster #22"
+      },
+      detail: {
+        es: "Legendary",
+        en: "Legendary"
+      }
+    }
+  },
+  chapters: [
+    {
+      id: "coleccion",
+      label: {
+        es: "La colección",
+        en: "The collection"
+      },
+      heading: {
+        es: "Un respiro de los Flexies.",
+        en: "A break from the Flexies."
+      },
+      text: {
+        es: "Thingies Monsters es el World 03 del Mollyverse y salió en 2024. Después de dos volúmenes de Flexies, que son más serios, quería algo que se riera: 200 monstruos con la boca abierta, exagerados y con mucha personalidad. El reto era salir del píxel sin perder la mano.",
+        en: "Thingies Monsters is World 03 of the Mollyverse and came out in 2024. After two volumes of Flexies, which are more serious, I wanted something that laughs: 200 monsters with their mouths wide open, exaggerated and full of personality. The challenge was leaving pixels behind without losing my hand."
+      },
+      blocks: [
+        {
+          kind: "stats",
+          items: [
+            {
+              value: "200",
+              label: {
+                es: "monstruos en cuatro rarezas",
+                en: "monsters in four rarities"
+              }
+            },
+            {
+              value: "163",
+              label: {
+                es: "variantes dibujadas a mano, en 8 categorías",
+                en: "hand-drawn variations, across 8 categories"
+              }
+            },
+            {
+              value: "0,02 SOL",
+              label: {
+                es: "hasta cinco por wallet, agotada",
+                en: "up to five per wallet, sold out"
+              }
+            }
+          ]
+        },
+        {
+          kind: "image",
+          size: "bleed",
+          image: {
+            src: "/img/projects/thingies/piezas/th-celular.webp",
+            title: {
+              es: "La ficha de una pieza en la app",
+              en: "A piece's page in the app"
+            },
+            detail: {
+              es: "Monster #22",
+              en: "Monster #22"
+            }
+          }
+        }
+      ]
+    },
+    {
+      id: "personaje",
+      label: {
+        es: "El personaje",
+        en: "The character"
+      },
+      heading: {
+        es: "Todo cambia menos el cuerpo.",
+        en: "Everything changes but the body."
+      },
+      text: {
+        es: "Los Thingies nacieron como un respiro de los Flexies. Todos tienen el mismo cuerpo, un trapecio con patas que parecen ir corriendo, y una boca que ocupa media cara. Lo que cambia es todo lo demás: los ojos, el pelo, la lengua, la nariz y unos lentes que a veces son estrellas y a veces corazones.",
+        en: "The Thingies were born as a break from the Flexies. They all share the same body, a trapezoid with legs that look like they're running, and a mouth that takes up half the face. Everything else changes: the eyes, the hair, the tongue, the nose, and glasses that are sometimes stars and sometimes hearts."
+      },
+      blocks: [
+        {
+          kind: "carousel",
+          large: true,
+          width: "wide",
+          label: {
+            es: "Legendary",
+            en: "Legendary"
+          },
+          items: [
+            {
+              src: "/img/projects/thingies/piezas/th-especial-115.webp",
+              title: {
+                es: "#115",
+                en: "#115"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-especial-139.webp",
+              title: {
+                es: "#139",
+                en: "#139"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-especial-144.webp",
+              title: {
+                es: "#144",
+                en: "#144"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-especial-154.webp",
+              title: {
+                es: "#154",
+                en: "#154"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-especial-160.webp",
+              title: {
+                es: "#160",
+                en: "#160"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: "sistema",
+      label: {
+        es: "El sistema",
+        en: "The system"
+      },
+      heading: {
+        es: "Dejé el píxel y dibujé con línea.",
+        en: "I left pixels behind and drew with line."
+      },
+      text: {
+        es: "Esta vez dejé el píxel y dibujé con línea. Hice cada rasgo a mano, 163 en total, y el generador solo decidió cómo se combinaban. Los ojos son la categoría más grande, con 50 variantes, porque en un monstruo así la mirada lo cambia todo.",
+        en: "This time I left pixels behind and drew with line. I made every trait by hand, 163 in all, and the generator only decided how they came together. The eyes are the biggest category, with 50 variations, because on a monster like this the look changes everything."
+      },
+      blocks: [
+        {
+          kind: "wall",
+          width: "wide",
+          columns: {
+            desktop: 4,
+            phone: 2
+          },
+          ratio: "1/1",
+          fit: "contain",
+          items: [
+            {
+              src: "/img/projects/thingies/piezas/th-capa-01-background.webp",
+              title: {
+                es: "Fondo",
+                en: "Background"
+              },
+              detail: {
+                es: "10 variantes",
+                en: "10 variations"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-capa-02-body.webp",
+              title: {
+                es: "Cuerpo",
+                en: "Body"
+              },
+              detail: {
+                es: "10 variantes",
+                en: "10 variations"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-capa-03-nose.webp",
+              title: {
+                es: "Nariz",
+                en: "Nose"
+              },
+              detail: {
+                es: "10 variantes",
+                en: "10 variations"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-capa-04-eyes.webp",
+              title: {
+                es: "Ojos",
+                en: "Eyes"
+              },
+              detail: {
+                es: "50 variantes",
+                en: "50 variations"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-capa-05-accessory.webp",
+              title: {
+                es: "Accesorio",
+                en: "Accessory"
+              },
+              detail: {
+                es: "25 variantes",
+                en: "25 variations"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-capa-06-mouth.webp",
+              title: {
+                es: "Boca",
+                en: "Mouth"
+              },
+              detail: {
+                es: "9 variantes",
+                en: "9 variations"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-capa-07-tongue.webp",
+              title: {
+                es: "Lengua",
+                en: "Tongue"
+              },
+              detail: {
+                es: "9 variantes",
+                en: "9 variations"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-capa-08-hair.webp",
+              title: {
+                es: "Pelo",
+                en: "Hair"
+              },
+              detail: {
+                es: "40 variantes",
+                en: "40 variations"
+              }
+            }
+          ]
+        },
+        {
+          kind: "image",
+          size: "bleed",
+          image: {
+            src: "/img/projects/thingies/piezas/th-laptop.webp",
+            title: {
+              es: "La colección en la app",
+              en: "The collection in the app"
+            },
+            detail: {
+              es: "Galería",
+              en: "Gallery"
+            }
+          }
+        }
+      ]
+    },
+    {
+      id: "piezas",
+      label: {
+        es: "Las piezas",
+        en: "The pieces"
+      },
+      heading: {
+        es: "Veinte Legendary.",
+        en: "Twenty Legendary."
+      },
+      blocks: [
+        {
+          kind: "carousel",
+          large: true,
+          width: "wide",
+          label: {
+            es: "Más Legendary",
+            en: "More Legendary"
+          },
+          items: [
+            {
+              src: "/img/projects/thingies/piezas/th-especial-162.webp",
+              title: {
+                es: "#162",
+                en: "#162"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-especial-167.webp",
+              title: {
+                es: "#167",
+                en: "#167"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-especial-178.webp",
+              title: {
+                es: "#178",
+                en: "#178"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-especial-193.webp",
+              title: {
+                es: "#193",
+                en: "#193"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-especial-9.webp",
+              title: {
+                es: "#9",
+                en: "#9"
+              },
+              detail: {
+                es: "Legendary",
+                en: "Legendary"
+              }
+            }
+          ]
+        },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: {
+            desktop: 6,
+            phone: 3
+          },
+          ratio: "1/1",
+          items: [
+            {
+              src: "/img/projects/thingies/piezas/th-pieza-0.webp",
+              title: {
+                es: "#0",
+                en: "#0"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-pieza-1.webp",
+              title: {
+                es: "#1",
+                en: "#1"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-pieza-2.webp",
+              title: {
+                es: "#2",
+                en: "#2"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-pieza-3.webp",
+              title: {
+                es: "#3",
+                en: "#3"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-pieza-4.webp",
+              title: {
+                es: "#4",
+                en: "#4"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-pieza-5.webp",
+              title: {
+                es: "#5",
+                en: "#5"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-pieza-6.webp",
+              title: {
+                es: "#6",
+                en: "#6"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-pieza-7.webp",
+              title: {
+                es: "#7",
+                en: "#7"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-pieza-8.webp",
+              title: {
+                es: "#8",
+                en: "#8"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-pieza-10.webp",
+              title: {
+                es: "#10",
+                en: "#10"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-pieza-11.webp",
+              title: {
+                es: "#11",
+                en: "#11"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-pieza-13.webp",
+              title: {
+                es: "#13",
+                en: "#13"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-pieza-14.webp",
+              title: {
+                es: "#14",
+                en: "#14"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-pieza-15.webp",
+              title: {
+                es: "#15",
+                en: "#15"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-pieza-16.webp",
+              title: {
+                es: "#16",
+                en: "#16"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-pieza-17.webp",
+              title: {
+                es: "#17",
+                en: "#17"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-pieza-18.webp",
+              title: {
+                es: "#18",
+                en: "#18"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-pieza-19.webp",
+              title: {
+                es: "#19",
+                en: "#19"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-pieza-41.webp",
+              title: {
+                es: "#41",
+                en: "#41"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-pieza-42.webp",
+              title: {
+                es: "#42",
+                en: "#42"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-pieza-43.webp",
+              title: {
+                es: "#43",
+                en: "#43"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-pieza-44.webp",
+              title: {
+                es: "#44",
+                en: "#44"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-pieza-46.webp",
+              title: {
+                es: "#46",
+                en: "#46"
+              }
+            },
+            {
+              src: "/img/projects/thingies/piezas/th-pieza-47.webp",
+              title: {
+                es: "#47",
+                en: "#47"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  closing: {
+    image: {
+      src: "/img/projects/thingies/piezas/th-escena.webp",
+      title: {
+        es: "Las piezas, impresas",
+        en: "The pieces, printed"
+      },
+      detail: {
+        es: "Dos Legendary, #22 y #9",
+        en: "Two Legendary, #22 and #9"
+      }
+    }
+  }
+};
+
 const thingiesProject: Project = {
   slug: "thingies",
   title: "Thingies Monsters",
@@ -1568,7 +4326,7 @@ const thingiesProject: Project = {
     "Art, generator, app and mint: Molly Yllom, with help from Kelvin and AI tools",
   ],
   portfolioImage: "/img/projects/thingies/th-personajes.mp4",
-  heroImage: "/img/projects/thingies/th-x-MY-01.webp",
+  heroImage: "/img/projects/thingies/piezas/th-portada.webp",
   paragraphs: [
     "Los Thingies nacieron como un respiro de los Flexies. Todos tienen el mismo cuerpo, un trapecio con patas que parecen ir corriendo, y una boca que ocupa media cara. Lo que cambia es todo lo demás: los ojos, el pelo, la lengua, la nariz y unos lentes que a veces son estrellas y a veces corazones.",
     "Esta vez dejé el píxel y dibujé con línea. Hice cada rasgo a mano, 163 en total, y el generador solo decidió cómo se combinaban. Los ojos son la categoría más grande, con 50 variantes, porque en un monstruo así la mirada lo cambia todo.",
@@ -1599,6 +4357,7 @@ const thingiesProject: Project = {
     "/img/projects/thingies/th-escena-mockup.webp",
     "/img/projects/thingies/th-x-MY-08.webp",
   ],
+  story: thingiesStory,
 };
 
 const mollyverseProject: Project = {

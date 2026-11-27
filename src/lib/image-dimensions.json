@@ -3530,5 +3530,877 @@
   "/img/technologies/anchor.png": {
     "width": 500,
     "height": 500
+  },
+  "/img/projects/mdp/piezas/mdp-capa-01-background.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-capa-02-body.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-capa-03-outfit.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-capa-04-face.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-capa-05-hair.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-capa-06-eyeglasses.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-capa-07-earrings.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-capa-08-headwear.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-capa-09-accessory.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-celular.webp": {
+    "width": 3456,
+    "height": 2784
+  },
+  "/img/projects/mdp/piezas/mdp-escena.webp": {
+    "width": 3456,
+    "height": 2784
+  },
+  "/img/projects/mdp/piezas/mdp-especial-104.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/mdp/piezas/mdp-especial-19.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/mdp/piezas/mdp-especial-22.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/mdp/piezas/mdp-especial-33.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/mdp/piezas/mdp-especial-45.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/mdp/piezas/mdp-especial-63.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/mdp/piezas/mdp-especial-68.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/mdp/piezas/mdp-especial-74.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/mdp/piezas/mdp-especial-75.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/mdp/piezas/mdp-especial-95.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/mdp/piezas/mdp-laptop.webp": {
+    "width": 3456,
+    "height": 2784
+  },
+  "/img/projects/mdp/piezas/mdp-origen-antes.webp": {
+    "width": 1500,
+    "height": 1500
+  },
+  "/img/projects/mdp/piezas/mdp-origen-despues.webp": {
+    "width": 1500,
+    "height": 1500
+  },
+  "/img/projects/mdp/piezas/mdp-pieza-0.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-pieza-1.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-pieza-10.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-pieza-12.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-pieza-14.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-pieza-16.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-pieza-2.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-pieza-21.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-pieza-24.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-pieza-3.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-pieza-30.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-pieza-35.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-pieza-38.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-pieza-4.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-pieza-43.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-pieza-5.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-pieza-50.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-pieza-57.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-pieza-6.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-pieza-7.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-pieza-70.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-pieza-8.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-pieza-9.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-pieza-90.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/mdp/piezas/mdp-portada.webp": {
+    "width": 2880,
+    "height": 1440
+  },
+  "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-celular.webp": {
+    "width": 3456,
+    "height": 2784
+  },
+  "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-detalle-1.webp": {
+    "width": 820,
+    "height": 820
+  },
+  "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-detalle-3.webp": {
+    "width": 1100,
+    "height": 1100
+  },
+  "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-detalle-4.webp": {
+    "width": 1100,
+    "height": 1100
+  },
+  "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-detalle-6.webp": {
+    "width": 1100,
+    "height": 1100
+  },
+  "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-escena.webp": {
+    "width": 3456,
+    "height": 2784
+  },
+  "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-especial-1.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-especial-10.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-especial-2.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-especial-3.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-especial-4.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-especial-5.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-especial-6.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-especial-7.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-especial-8.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-especial-9.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-laptop.webp": {
+    "width": 3456,
+    "height": 2784
+  },
+  "/img/projects/pixeled-flexies-vol-1/piezas/pfv1-portada.webp": {
+    "width": 2880,
+    "height": 1440
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-capa-01-background.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-capa-02-body.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-capa-03-hair.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-capa-04-accessory.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-capa-05-eyes.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-capa-06-mouth.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-capa-07-face.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-capa-08-outfit.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-celular.webp": {
+    "width": 3456,
+    "height": 2784
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-escena.webp": {
+    "width": 3456,
+    "height": 2784
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-especial-1.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-especial-17.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-especial-52.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-especial-6.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-especial-63.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-especial-67.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-especial-71.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-especial-73.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-especial-77.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-especial-88.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-laptop.webp": {
+    "width": 3456,
+    "height": 2784
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-origen-antes.webp": {
+    "width": 1125,
+    "height": 1125
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-origen-despues.webp": {
+    "width": 1125,
+    "height": 1125
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-0.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-10.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-11.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-12.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-13.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-14.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-15.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-16.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-19.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-2.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-20.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-21.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-22.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-23.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-24.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-26.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-27.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-28.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-3.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-4.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-5.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-7.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-8.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-pieza-9.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/pixeled-flexies-vol-2/piezas/pfv2-portada.webp": {
+    "width": 2880,
+    "height": 1440
+  },
+  "/img/projects/the-unhinged/piezas/unh-capa-01-background.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-capa-02-body.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-capa-03-outfit.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-capa-04-mouth.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-capa-05-eyes.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-capa-06-accessory.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-capa-07-glasses.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-capa-08-headwear.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-capa-09-hair.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-capa-10-brows.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-capa-11-pet.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-celular.webp": {
+    "width": 3456,
+    "height": 2784
+  },
+  "/img/projects/the-unhinged/piezas/unh-escena.webp": {
+    "width": 3456,
+    "height": 2784
+  },
+  "/img/projects/the-unhinged/piezas/unh-especial-114.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/the-unhinged/piezas/unh-especial-128.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/the-unhinged/piezas/unh-especial-152.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/the-unhinged/piezas/unh-especial-160.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/the-unhinged/piezas/unh-especial-202.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/the-unhinged/piezas/unh-especial-219-invisible-day.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/the-unhinged/piezas/unh-especial-220-mert.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/the-unhinged/piezas/unh-especial-221-toly.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/the-unhinged/piezas/unh-especial-222-invisible-night.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/the-unhinged/piezas/unh-especial-34.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/the-unhinged/piezas/unh-especial-55.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/the-unhinged/piezas/unh-especial-74.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/the-unhinged/piezas/unh-especial-79.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/the-unhinged/piezas/unh-especial-99.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/the-unhinged/piezas/unh-laptop.webp": {
+    "width": 3456,
+    "height": 2784
+  },
+  "/img/projects/the-unhinged/piezas/unh-logo-color-fondo.webp": {
+    "width": 1600,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-logo-una-tinta-fondo.webp": {
+    "width": 1600,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-pieza-1.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-pieza-10.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-pieza-104.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-pieza-11.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-pieza-12.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-pieza-123.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-pieza-14.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-pieza-15.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-pieza-17.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-pieza-2.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-pieza-23.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-pieza-25.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-pieza-28.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-pieza-30.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-pieza-47.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-pieza-5.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-pieza-59.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-pieza-6.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-pieza-7.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-pieza-71.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-pieza-80.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-pieza-88.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-pieza-9.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-pieza-97.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/the-unhinged/piezas/unh-portada.webp": {
+    "width": 2880,
+    "height": 1440
+  },
+  "/img/projects/thingies/piezas/th-capa-01-background.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-capa-02-body.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-capa-03-nose.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-capa-04-eyes.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-capa-05-accessory.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-capa-06-mouth.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-capa-07-tongue.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-capa-08-hair.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-celular.webp": {
+    "width": 3456,
+    "height": 2784
+  },
+  "/img/projects/thingies/piezas/th-escena.webp": {
+    "width": 3456,
+    "height": 2784
+  },
+  "/img/projects/thingies/piezas/th-especial-115.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/thingies/piezas/th-especial-139.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/thingies/piezas/th-especial-144.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/thingies/piezas/th-especial-154.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/thingies/piezas/th-especial-160.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/thingies/piezas/th-especial-162.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/thingies/piezas/th-especial-167.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/thingies/piezas/th-especial-178.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/thingies/piezas/th-especial-193.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/thingies/piezas/th-especial-9.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/img/projects/thingies/piezas/th-laptop.webp": {
+    "width": 3456,
+    "height": 2784
+  },
+  "/img/projects/thingies/piezas/th-origen-antes.webp": {
+    "width": 1400,
+    "height": 1400
+  },
+  "/img/projects/thingies/piezas/th-origen-despues.webp": {
+    "width": 1400,
+    "height": 1400
+  },
+  "/img/projects/thingies/piezas/th-pieza-0.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-pieza-1.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-pieza-10.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-pieza-11.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-pieza-13.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-pieza-14.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-pieza-15.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-pieza-16.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-pieza-17.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-pieza-18.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-pieza-19.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-pieza-2.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-pieza-3.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-pieza-4.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-pieza-41.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-pieza-42.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-pieza-43.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-pieza-44.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-pieza-46.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-pieza-47.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-pieza-5.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-pieza-6.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-pieza-7.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-pieza-8.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/img/projects/thingies/piezas/th-portada.webp": {
+    "width": 2880,
+    "height": 1440
   }
 }
