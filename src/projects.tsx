@@ -3322,11 +3322,16 @@ const famaStory: CaseStory = {
           ],
         },
         {
-          kind: "palette",
+          kind: "palette",   // la base: casi todo vive aquí
           colors: [
             { name: { es: "Negro", en: "Black" }, hex: "#000000" },
             { name: { es: "Blanco", en: "White" }, hex: "#FFFFFF" },
             { name: { es: "Gris", en: "Grey" }, hex: "#9E9E9E" },
+          ],
+        },
+        {
+          kind: "palette",   // los acentos: los que usa el ícono F
+          colors: [
             { name: { es: "Violeta", en: "Violet" }, hex: "#7500FF" },
             { name: { es: "Amarillo", en: "Yellow" }, hex: "#FFBB1C" },
             { name: { es: "Naranja", en: "Orange" }, hex: "#FF5C30" },
@@ -3605,15 +3610,15 @@ const jubelStory: CaseStory = {
         en: "A shipping box is the first thing you actually touch from an online store, so I treated it like the product. We took it through three rounds to get here: kraft, with the line of the j running down the sides and an orange tape you can spot from the sidewalk.",
       },
       blocks: [
-        { kind: "image", size: "bleed", image: { src: `${JB}/cajas-naranja.webp`, title: { es: "Cajas de envío", en: "Shipping boxes" }, detail: { es: "Versión final, en naranja", en: "Final version, in orange" } } },
+        { kind: "image", size: "bleed", image: { src: `${JB}/cinta.webp`, title: { es: "Cinta de embalaje", en: "Packing tape" }, detail: { es: "La línea de la jota, en continuo", en: "The line of the j, on repeat" } } },
         {
           kind: "wall",
           width: "wide",
           columns: { desktop: 2, phone: 1 },
           ratio: "3/2",
           items: [
-            { src: `${JB}/cinta.webp`, title: { es: "Cinta de embalaje", en: "Packing tape" }, detail: { es: "La línea de la jota, en continuo", en: "The line of the j, on repeat" } },
             { src: `${JB}/cajas-azul-oscuro.webp`, title: { es: "Cajas de envío", en: "Shipping boxes" }, detail: { es: "La misma línea en azul oscuro", en: "The same line in dark blue" } },
+            { src: `${JB}/cajas-amarillo.webp`, title: { es: "Cajas de envío", en: "Shipping boxes" }, detail: { es: "Y en amarillo", en: "And in yellow" } },
           ],
         },
       ],
@@ -3648,7 +3653,6 @@ const jubelStory: CaseStory = {
             { src: `${JB}/story-playa.webp`, title: { es: "Si tus planes incluyen playa", en: "Si tus planes incluyen playa" }, detail: jbStory },
             { src: `${JB}/story-celebramos.webp`, title: { es: "Hoy celebramos", en: "Hoy celebramos" }, detail: jbStory },
             { src: `${JB}/story-comprueba.webp`, title: { es: "Comprueba", en: "Comprueba" }, detail: jbStory },
-            { src: `${JB}/story-pregunta.webp`, title: { es: "Pregunta a la comunidad", en: "A question for the community" }, detail: jbStory },
           ],
         },
       ],
