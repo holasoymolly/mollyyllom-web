@@ -675,18 +675,6 @@
     "width": 2800,
     "height": 1200
   },
-  "/img/projects/b-safe/piezas/cuadradas/caja-abierta.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "/img/projects/b-safe/piezas/cuadradas/concreto.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "/img/projects/b-safe/piezas/cuadradas/estudio.webp": {
-    "width": 1600,
-    "height": 1600
-  },
   "/img/projects/b-safe/piezas/cuadradas/icono.webp": {
     "width": 1400,
     "height": 1400
@@ -698,30 +686,6 @@
   "/img/projects/b-safe/piezas/cuadradas/logo-claro.webp": {
     "width": 1400,
     "height": 1400
-  },
-  "/img/projects/b-safe/piezas/cuadradas/modelos.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "/img/projects/b-safe/piezas/cuadradas/vista-clasica.webp": {
-    "width": 1536,
-    "height": 1536
-  },
-  "/img/projects/b-safe/piezas/cuadradas/vista-gn.webp": {
-    "width": 1536,
-    "height": 1536
-  },
-  "/img/projects/b-safe/piezas/cuadradas/vista-lima.webp": {
-    "width": 1536,
-    "height": 1536
-  },
-  "/img/projects/b-safe/piezas/cuadradas/vista-marron.webp": {
-    "width": 1536,
-    "height": 1536
-  },
-  "/img/projects/b-safe/piezas/cuadradas/vista-tenis.webp": {
-    "width": 1536,
-    "height": 1536
   },
   "/img/projects/b-safe/piezas/etiqueta-caja.webp": {
     "width": 1800,
@@ -739,9 +703,25 @@
     "width": 2304,
     "height": 1856
   },
+  "/img/projects/b-safe/piezas/modelos.webp": {
+    "width": 2304,
+    "height": 1856
+  },
   "/img/projects/b-safe/piezas/plantilla.webp": {
     "width": 2000,
     "height": 731
+  },
+  "/img/projects/b-safe/piezas/retratos/caja-abierta.webp": {
+    "width": 1200,
+    "height": 1600
+  },
+  "/img/projects/b-safe/piezas/retratos/concreto.webp": {
+    "width": 1200,
+    "height": 1600
+  },
+  "/img/projects/b-safe/piezas/retratos/estudio.webp": {
+    "width": 1200,
+    "height": 1600
   },
   "/img/projects/b-safe-vistas/b-safe-vistas-01-visita.webp": {
     "width": 2800,
@@ -1411,10 +1391,6 @@
     "width": 2752,
     "height": 1536
   },
-  "/img/projects/dexa/piezas/cuadradas/hangtag.webp": {
-    "width": 1536,
-    "height": 1536
-  },
   "/img/projects/dexa/piezas/cuadradas/logo-oscuro.webp": {
     "width": 1400,
     "height": 1400
@@ -1431,12 +1407,16 @@
     "width": 1400,
     "height": 1400
   },
-  "/img/projects/dexa/piezas/cuadradas/suela.webp": {
-    "width": 1536,
+  "/img/projects/dexa/piezas/retratos/hangtag.webp": {
+    "width": 1152,
     "height": 1536
   },
-  "/img/projects/dexa/piezas/cuadradas/talon.webp": {
-    "width": 1536,
+  "/img/projects/dexa/piezas/retratos/suela.webp": {
+    "width": 1188,
+    "height": 1584
+  },
+  "/img/projects/dexa/piezas/retratos/talon.webp": {
+    "width": 1152,
     "height": 1536
   },
   "/img/projects/dinerology/dinerology-black-stand-kiosk-mockup.webp": {

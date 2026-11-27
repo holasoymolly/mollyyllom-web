@@ -6293,9 +6293,9 @@ const bSafeStory: CaseStory = {
           width: "wide",
           label: { es: "La caja", en: "The box" },
           items: [
-            { src: `${BS}/cuadradas/concreto.webp`, title: { es: "Caja par", en: "Shoe box" }, detail: bsScene },
-            { src: `${BS}/cuadradas/estudio.webp`, title: { es: "Caja par", en: "Shoe box" }, detail: bsScene },
-            { src: `${BS}/cuadradas/caja-abierta.webp`, title: { es: "Caja par y papel interior", en: "Shoe box and tissue paper" }, detail: bsScene },
+            { src: `${BS}/retratos/concreto.webp`, title: { es: "Caja par", en: "Shoe box" }, detail: bsScene },
+            { src: `${BS}/retratos/estudio.webp`, title: { es: "Caja par", en: "Shoe box" }, detail: bsScene },
+            { src: `${BS}/retratos/caja-abierta.webp`, title: { es: "Caja par y papel interior", en: "Shoe box and tissue paper" }, detail: bsScene },
           ],
         },
       ],
@@ -6378,21 +6378,19 @@ const bSafeStory: CaseStory = {
         en: "The lime boot, the grey trainer, both ankle boots and the classic boot carry the same logo on the tongue and the side. Their studio views have a case of their own.",
       },
       blocks: [
+        { kind: "image", size: "solo", image: { src: `${BS}/modelos.webp`, title: { es: "Tres de los cinco modelos", en: "Three of the five models" }, detail: bsScene } },
         {
-          kind: "carousel",
-          large: true,
+          kind: "wall",
           width: "wide",
-          label: { es: "Modelos", en: "Models" },
-          items: [
-            { src: `${BS}/cuadradas/modelos.webp`, title: { es: "Tres de los cinco modelos", en: "Three of the five models" }, detail: bsScene },
-            ...bsModels.map((m) => ({ src: `${BS}/cuadradas/vista-${m.key}.webp`, title: m.title, detail: { es: "Vista de estudio", en: "Studio view" } })),
-          ],
+          columns: { desktop: 2, phone: 1 },
+          ratio: "16/9",
+          items: bsModels.filter((m) => m.key !== "lima").map((m) => ({ src: `/img/projects/b-safe-vistas/piezas/vista-${m.key}-2.webp`, title: m.title, detail: { es: "Vista de estudio", en: "Studio view" } })),
         },
       ],
     },
   ],
   closing: {
-    image: { src: `/img/projects/b-safe-vistas/piezas/vista-clasica-2.webp`, title: { es: "Bota clásica", en: "Classic boot" }, detail: { es: "Vista de estudio", en: "Studio view" } },
+    image: { src: `/img/projects/b-safe-vistas/piezas/vista-lima-2.webp`, title: { es: "Bota lima", en: "Lime boot" }, detail: { es: "Vista de estudio", en: "Studio view" } },
   },
 };
 
@@ -6550,9 +6548,9 @@ const dexaStory: CaseStory = {
           width: "wide",
           label: { es: "Montajes", en: "Mockups" },
           items: [
-            { src: `${DX}/cuadradas/hangtag.webp`, title: { es: "Hangtag", en: "Hangtag" }, detail: dxScene },
-            { src: `${DX}/cuadradas/suela.webp`, title: { es: "Suela", en: "Sole" }, detail: dxScene },
-            { src: `${DX}/cuadradas/talon.webp`, title: { es: "Talón", en: "Heel" }, detail: dxScene },
+            { src: `${DX}/retratos/hangtag.webp`, title: { es: "Hangtag", en: "Hangtag" }, detail: dxScene },
+            { src: `${DX}/retratos/suela.webp`, title: { es: "Suela", en: "Sole" }, detail: dxScene },
+            { src: `${DX}/retratos/talon.webp`, title: { es: "Talón", en: "Heel" }, detail: dxScene },
           ],
         },
       ],
