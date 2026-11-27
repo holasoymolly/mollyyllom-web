@@ -5223,6 +5223,106 @@ const seedMyWalletProject: Project = {
   ],
 };
 
+/**
+ * Svelti told in chapters (F3). The brand panels carry no words and keep
+ * their ground (logo on its own colour); the palette is drawn by the page
+ * with the guide's values. The symbol is the circle with the dot, never the
+ * arcs from the visual guide.
+ */
+const SV = "/img/projects/svelti";
+const svScene: Bilingual = { es: "Montaje", en: "Mockup" };
+const sveltiStory: CaseStory = {
+  cover: {
+    variant: "top",
+    // Borrador para Molly
+    promise: {
+      es: "Una clínica de piel, y un logo que parte de una célula.",
+      en: "A skin clinic, and a logo that starts from a single cell.",
+    },
+    media: `${SV}/svelti-logo-animado-hero.mp4`,
+    ground: "#f8f2ed",
+  },
+  chapters: [
+    {
+      id: "encargo",
+      label: { es: "El encargo", en: "The brief" },
+      // Títulos de capítulo: borrador para Molly
+      heading: { es: "La medicina detrás de la estética.", en: "The medicine behind the aesthetics." },
+      text: {
+        es: "Svelti es una clínica de medicina estética y antiaging. La idea era hablar de la medicina que hay detrás de la estética, pero sin tanto tecnicismo, para que se notara también el lado humano de la clínica.",
+        en: "Svelti is an aesthetic medicine and antiaging clinic. The idea was to talk about the medicine behind aesthetics without too much technical language, so the human side of the clinic would come through too.",
+      },
+      blocks: [
+        { kind: "image", size: "bleed", image: { src: `${SV}/svelti-vidrio-mockup.webp`, title: { es: "Vidrio de la entrada", en: "Entrance glass" }, detail: svScene } },
+      ],
+    },
+    {
+      id: "logo",
+      label: { es: "El logo", en: "The logo" },
+      heading: { es: "Una célula en el punto de la i.", en: "A cell in the dot of the i." },
+      text: {
+        es: "El detalle está en el punto de la i: es una célula en su forma más simple. La piel está hecha de células, capa sobre capa, y ahí es donde trabaja la clínica. Ese punto se volvió también el ícono de la marca.",
+        en: "The detail is in the dot of the i: it's a cell in its simplest form. Skin is made of cells, layer upon layer, and that's where the clinic works. That dot also became the brand's symbol.",
+      },
+      blocks: [
+        { kind: "image", size: "wide", image: { src: `${SV}/svelti-x-MY-02.webp`, title: { es: "Logo", en: "Logo" }, detail: { es: "A todo color, sobre crema", en: "Full color, on cream" } } },
+        { kind: "image", size: "solo", image: { src: `${SV}/piezas/area-de-proteccion.webp`, title: { es: "Área de protección", en: "Clear space" }, detail: { es: "De la guía visual", en: "From the visual guide" } } },
+        { kind: "image", size: "bleed", image: { src: `${SV}/svelti-x-MY-05.webp`, title: { es: "Logo", en: "Logo" }, detail: { es: "En blanco sobre el dorado", en: "White on the gold" } } },
+      ],
+    },
+    {
+      id: "color",
+      label: { es: "Color y letra", en: "Color and type" },
+      heading: { es: "Dorado, oliva, gris cálido y arena.", en: "Gold, olive, warm gray and sand." },
+      text: {
+        es: "Lo demás acompaña sin hacer ruido: una letra fina y abierta, y una paleta de dorado, oliva, gris cálido y arena que se siente cálida y cercana sin dejar de ser elegante.",
+        en: "Everything else stays quiet: a light, open letterform and a palette of gold, olive, warm gray and sand that feels warm and close while staying elegant.",
+      },
+      blocks: [
+        {
+          kind: "palette",
+          colors: [
+            { name: { es: "Dorado", en: "Gold" }, hex: "#AC9651", codes: ["RGB 172 150 81", "CMYK 33 35 81 5", "Pantone 10126 C"] },
+            { name: { es: "Dorado claro", en: "Light gold" }, hex: "#CEBE94", codes: ["Pantone 10126 C 60 %"] },
+            { name: { es: "Oliva", en: "Olive" }, hex: "#4E524A", codes: ["RGB 78 82 74", "CMYK 65 54 63 36", "Pantone 418 C"] },
+            { name: { es: "Gris cálido", en: "Warm gray" }, hex: "#81776F", codes: ["RGB 129 119 111", "CMYK 49 47 51 12", "Pantone Warm Gray 9 C"] },
+            { name: { es: "Arena", en: "Sand" }, hex: "#E5CDB5", codes: ["RGB 229 205 181", "CMYK 9 18 27 0", "Pantone 2309 C"] },
+          ],
+        },
+        { kind: "image", size: "bleed", image: { src: `${SV}/svelti-x-MY-08.webp`, title: { es: "Ícono", en: "Symbol" }, detail: { es: "En los colores de la marca", en: "In the brand colors" } } },
+        { kind: "image", size: "solo", image: { src: `${SV}/svelti-x-MY-07.webp`, title: { es: "Barlow", en: "Barlow" }, detail: { es: "ExtraLight y Medium", en: "ExtraLight and Medium" } } },
+      ],
+    },
+    {
+      id: "aplicaciones",
+      label: { es: "Aplicaciones", en: "Applications" },
+      heading: { es: "Del papel a la bata.", en: "From paper to the white coat." },
+      // Borrador para Molly
+      text: {
+        es: "La marca la probé donde la clínica la iba a usar de verdad: en la papelería, en las tarjetas, en la bata, en el vidrio de la entrada y en los empaques.",
+        en: "I tested the brand where the clinic would actually use it: on stationery, business cards, the white coat, the entrance glass and the packaging.",
+      },
+      blocks: [
+        {
+          kind: "carousel",
+          large: true,
+          width: "wide",
+          label: { es: "Pruebas de marca", en: "Brand tests" },
+          items: [
+            { src: `${SV}/svelti-papeleria-mockup.webp`, title: { es: "Papelería", en: "Stationery" }, detail: svScene },
+            { src: `${SV}/svelti-tarjetas-mockup.webp`, title: { es: "Tarjetas", en: "Business cards" }, detail: svScene },
+            { src: `${SV}/svelti-uniforme-mockup.webp`, title: { es: "Uniforme", en: "Uniform" }, detail: svScene },
+          ],
+        },
+        { kind: "image", size: "bleed", image: { src: `${SV}/svelti-empaques-mockup.webp`, title: { es: "Empaques", en: "Packaging" }, detail: svScene } },
+      ],
+    },
+  ],
+  closing: {
+    image: { src: `${SV}/svelti-x-MY-01.webp`, title: { es: "Ícono", en: "Symbol" }, detail: { es: "Sobre el dorado", en: "On the gold" } },
+  },
+};
+
 const sveltiProject: Project = {
   slug: "svelti",
   title: "Svelti",
@@ -5274,6 +5374,7 @@ const sveltiProject: Project = {
     "/img/projects/svelti/svelti-x-MY-07.webp",
     "/img/projects/svelti/svelti-x-MY-08.webp",
   ],
+  story: sveltiStory,
 };
 
 const synqProject: Project = {
