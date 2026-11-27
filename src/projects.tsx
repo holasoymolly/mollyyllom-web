@@ -4648,6 +4648,184 @@ const mollyverseProject: Project = {
   ],
 };
 
+const RD = "/img/projects/rodai";
+const RDP = `${RD}/piezas`;
+const rdCara = (i: number, es: string, en: string): StoryImage => ({ src: `${RDP}/cara-${i}.webp`, title: { es, en } });
+
+/**
+ * RODAI told in chapters (F3, 27 Nov 2026). Pieces are loose re-exports of the
+ * approved panels with no words baked in (`04-portafolio/rodai/piezas-story.py`):
+ * the logo halves and the icon on their brand grounds, the turnaround on white,
+ * the eight faces cut from the sheet, and the live X header. Chapter headings,
+ * the promise and captions are new copy (draft for Molly); chapter texts reuse
+ * the approved brief and paragraphs.
+ */
+const rodaiStory: CaseStory = {
+  cover: {
+    variant: "top",
+    promise: {
+      es: "Una hoja de personaje para que el ROD salga igualito cada vez, en X y en su web nueva.",
+      en: "A character sheet so the ROD shows up as himself every single time, on X and on his new website.",
+    },
+    media: `${RD}/rodai-logo-animado-hero.mp4`,
+    ground: "#fb7b57",
+  },
+  chapters: [
+    {
+      id: "encargo",
+      label: { es: "El encargo", en: "The brief" },
+      heading: { es: "Un ROD distinto en cada dibujo.", en: "A different ROD in every drawing." },
+      text: {
+        es: "RODAI es la memecoin de la familia Aerosol en Solana, y su marca es el ROD: un personaje con greña, gafas oscuras y media sonrisa. Le hice el logo en 2025. Para 2026 el ROD salía todos los días en X, y cada dibujo lo traía un poco distinto: otro pelo, otra boca, otra proporción. Tocaba que fuera siempre el mismo personaje y que la cuenta entera se viera como una sola marca.",
+        en: "RODAI is the Aerosol family's memecoin on Solana, and its mark is the ROD: a character with a messy mop of hair, dark shades and a half smile. I made his logo in 2025. By 2026 the ROD was on X every day, and every drawing brought him back a little different: other hair, another mouth, other proportions. He had to be the same character every single time, and the whole account had to look like one brand.",
+      },
+      blocks: [
+        {
+          kind: "image",
+          size: "bleed",
+          image: {
+            src: `${RD}/rodai-celular-mockup.webp`,
+            title: { es: "La web nueva", en: "The new website" },
+            detail: { es: "El ROD de anfitrión, en el termómetro del ATH", en: "The ROD as host, on the ATH thermometer" },
+          },
+        },
+      ],
+    },
+    {
+      id: "logo",
+      label: { es: "El logo", en: "The logo" },
+      heading: { es: "El ROD con su nombre.", en: "The ROD and his name." },
+      text: {
+        es: "El logo va en horizontal y apilado, y el «RODAI» mide lo mismo en los dos. Sobre oscuro el ROD va siempre en su placa coral, porque su pelo morado se pierde en el fondo. Esa placa es también su ícono y su avatar, y se sigue leyendo a 16 px.",
+        en: "The logo comes horizontal and stacked, with “RODAI” the same size in both. On dark, the ROD always sits on his coral plate, because his purple hair gets lost in the background. That plate is also his icon and his avatar, and it still reads at 16 px.",
+      },
+      blocks: [
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 2, phone: 1 },
+          items: [
+            { src: `${RDP}/logo-claro.webp`, title: { es: "Sobre claro", en: "On light" }, detail: { es: "Horizontal y apilado", en: "Horizontal and stacked" } },
+            { src: `${RDP}/logo-oscuro.webp`, title: { es: "Sobre oscuro", en: "On dark" }, detail: { es: "El ROD en su placa coral", en: "The ROD on his coral plate" } },
+          ],
+        },
+        {
+          kind: "image",
+          size: "wide",
+          image: {
+            src: `${RDP}/icono.webp`,
+            title: { es: "El ícono", en: "The icon" },
+            detail: { es: "Solo y en su placa, grande y a 64, 32 y 16 px", en: "On his own and on his plate, large and at 64, 32 and 16 px" },
+          },
+        },
+      ],
+    },
+    {
+      id: "hoja",
+      label: { es: "La hoja", en: "The sheet" },
+      heading: { es: "Una hoja como de animación.", en: "A sheet like an animated character's." },
+      text: {
+        es: "Al ROD le sobraba personalidad. Lo que le faltaba era salir igualito cada vez. Por eso le armé una hoja como la de un personaje de animación: de frente, de lado y de espalda, y ocho caras para cualquier noticia que toque contar. Las gafas no se las quita nunca, así que todo lo dice con la boca y con la inclinación de los lentes. Y no tiene piernas: brinca, se desliza o se recuesta.",
+        en: "The ROD had personality to spare. What he was missing was looking like himself every time. So I put together a sheet for him the way you would for an animated character: front, side and back, plus eight faces for whatever the news of the day is. He never takes the shades off, so everything he says comes from his mouth and the tilt of his glasses. And he has no legs. He hops, slides or leans.",
+      },
+      blocks: [
+        {
+          kind: "stats",
+          items: [
+            { value: "5", label: { es: "vistas del cuerpo", en: "body views" } },
+            { value: "8", label: { es: "expresiones", en: "expressions" } },
+          ],
+        },
+        {
+          kind: "image",
+          size: "bleed",
+          image: {
+            src: `${RDP}/hoja-vistas.webp`,
+            title: { es: "El ROD de cuerpo entero", en: "The ROD, full body" },
+            detail: { es: "De frente, de lado y de espalda", en: "Front, side and back" },
+          },
+        },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 4, phone: 2 },
+          ratio: "1/1",
+          fit: "contain",
+          ground: "#ffffff",
+          items: [
+            rdCara(0, "Contento", "Happy"),
+            rdCara(1, "Riéndose", "Laughing"),
+            rdCara(2, "Gritando", "Shouting"),
+            rdCara(3, "Sorprendido", "Surprised"),
+            rdCara(4, "Presumido", "Smug"),
+            rdCara(5, "Triste", "Sad"),
+            rdCara(6, "Enojado", "Angry"),
+            rdCara(7, "Pensando", "Thinking"),
+          ],
+        },
+      ],
+    },
+    {
+      id: "color",
+      label: { es: "Color y letra", en: "Color and type" },
+      heading: { es: "El cian es del ROD.", en: "The cyan belongs to the ROD." },
+      text: {
+        es: "Con la hoja lista, las tarjetas se ordenaron casi solas. Cada serie tiene su fondo, las letras van en Rubik y en los colores de Aerosol, y el cian se queda en el ROD, que es de él. A los banners les quité lo de «token oficial de Aerosol» y le di una frase suya, «Bullish on Solana since 2024». Ahora RODAI se presenta solito.",
+        en: "Once the sheet was done, the cards pretty much sorted themselves out. Each series gets its own ground, the words go in Rubik and in Aerosol's colors, and the cyan stays on the ROD, because it's his. I took “official meme token of Aerosol” off the banners and gave him a line of his own, “Bullish on Solana since 2024”. RODAI introduces itself now.",
+      },
+      blocks: [
+        {
+          kind: "image",
+          size: "wide",
+          image: {
+            src: `${RDP}/banner-x.webp`,
+            title: { es: "El header de @rodaimeme", en: "The @rodaimeme header" },
+            detail: { es: "En Rubik, con su frase", en: "In Rubik, with his own line" },
+          },
+        },
+        {
+          kind: "palette",
+          colors: [
+            { name: { es: "Coral", en: "Coral" }, hex: "#FB7B56", codes: ["R251 G123 B86"] },
+            { name: { es: "Cian", en: "Cyan" }, hex: "#24CAD4", codes: ["R36 G202 B212"] },
+            { name: { es: "Cian claro", en: "Light cyan" }, hex: "#5FEDEC", codes: ["R95 G237 B236"] },
+            { name: { es: "Morado", en: "Purple" }, hex: "#3C1253", codes: ["R60 G18 B83"] },
+          ],
+        },
+      ],
+    },
+    {
+      id: "web",
+      label: { es: "La web", en: "The website" },
+      heading: { es: "El ROD de anfitrión.", en: "The ROD as host." },
+      text: {
+        es: "Todo eso se está volviendo web. La nueva de RODAI está en desarrollo, con el ROD de la hoja haciendo de anfitrión en cada pantalla.",
+        en: "All of it is turning into a website. RODAI's new one is still in development, with the ROD from his sheet hosting every screen.",
+      },
+      blocks: [
+        {
+          kind: "image",
+          size: "bleed",
+          image: {
+            src: `${RD}/rodai-laptop-mockup.webp`,
+            title: { es: "Pump the ROD", en: "Pump the ROD" },
+            detail: { es: "La web nueva, en escritorio", en: "The new website, on desktop" },
+          },
+        },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 2, phone: 1 },
+          items: [
+            { src: `${RD}/rodai-seeker-mockup.webp`, title: { es: "En el Seeker", en: "On the Seeker" }, detail: { es: "El teléfono de Solana Mobile", en: "Solana Mobile's phone" } },
+            { src: `${RD}/rodai-celular-web-mockup.webp`, title: { es: "De noche", en: "At night" }, detail: { es: "La misma pantalla, en la mano", en: "The same screen, in hand" } },
+          ],
+        },
+      ],
+    },
+  ],
+};
+
 const rodaiProject: Project = {
   slug: "rodai",
   title: "RODAI",
@@ -4717,6 +4895,7 @@ const rodaiProject: Project = {
     "/img/projects/rodai/rodai-x-MY-05-en.webp",
     "/img/projects/rodai/rodai-celular-web-mockup.webp",
   ],
+  story: rodaiStory,
 };
 
 const aerosolificationProject: Project = {
