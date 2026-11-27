@@ -413,6 +413,15 @@
 .mosaicRow .num {
   color: var(--accent);
 }
+.mosaicPhone {
+  display: none;
+}
+.mosaicSlide {
+  width: 80vw;
+}
+.mosaicPhoneRow + .mosaicPhoneRow {
+  margin-top: 36px;
+}
 .mosaicCell {
   overflow: hidden;
 }
@@ -848,7 +857,10 @@
     font-size: 12px;
   }
   .mosaic {
-    grid-template-columns: 1fr 1fr;
+    display: none;
+  }
+  .mosaicPhone {
+    display: block;
   }
   .mosaicHead {
     display: none;

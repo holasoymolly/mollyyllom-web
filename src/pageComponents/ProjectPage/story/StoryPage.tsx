@@ -197,12 +197,33 @@ export const StoryPage: FC<{ project: Project }> = ({ project }) => {
                       <ProtectedImage
                         src={src}
                         alt={`${L(row.title)}, ${L(block.columns[i])}`}
-                        sizes="(max-width: 767px) 50vw, 25vw"
+                        sizes="25vw"
                         className="w-full h-auto"
                       />
                     </div>
                   ))}
                 </Rows>
+              ))}
+            </div>
+            {/* Phones: one carousel per subject instead of a long 2-column grid. */}
+            <div className={s.mosaicPhone}>
+              {block.rows.map((row, r) => (
+                <div key={row.title.es} className={s.mosaicPhoneRow}>
+                  <p className={s.mosaicRow}>
+                    <span className={s.num}>{pad(r + 1)}</span>
+                    {L(row.title)}
+                  </p>
+                  <Carousel label={t.projects.views} prevLabel={t.projects.prevItem} nextLabel={t.projects.nextItem}>
+                    {row.images.map((src, i) => (
+                      <figure key={src} className={s.mosaicSlide}>
+                        <ProtectedImage src={src} alt={`${L(row.title)}, ${L(block.columns[i])}`} sizes="80vw" className="w-full h-auto" />
+                        <figcaption className={s.cap}>
+                          <span className={s.capDetail}>{L(block.columns[i])}</span>
+                        </figcaption>
+                      </figure>
+                    ))}
+                  </Carousel>
+                </div>
               ))}
             </div>
           </motion.div>

@@ -165,6 +165,7 @@ export const translations = {
       chapters: 'Capítulos',
       prevItem: 'Anterior',
       nextItem: 'Siguiente',
+      views: 'Vistas',
     },
     blog: {
       label: 'Escritos',
@@ -346,6 +347,7 @@ export const translations = {
       chapters: 'Chapters',
       prevItem: 'Previous',
       nextItem: 'Next',
+      views: 'Views',
     },
     blog: {
       label: 'Writing',
