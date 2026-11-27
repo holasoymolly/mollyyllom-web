@@ -6,7 +6,7 @@ import { TransitionLink } from '@/components/TransitionLink';
 import { ProtectedImage } from '@/components/ProtectedImage';
 import { useLanguage } from '@/context/LanguageContext';
 import { getImageDimensions } from '@/lib/imageDimensions';
-import type { Bilingual, Project, StoryBlock, StoryImage } from '../../../projects';
+import type { Bilingual, Project, StoryBlock, StoryImage, StoryWidth } from '../../../projects';
 import { projectTitle } from '../../../projects';
 import { Carousel } from './Carousel';
 import { Compare } from './Compare';
@@ -21,6 +21,17 @@ const reveal = {
 } as const;
 
 const pad = (n: number) => String(n).padStart(2, '0');
+
+/**
+ * Videos in a story must start on a still, never on a black frame: each one
+ * needs `<name>-poster.webp` beside it. Warn in development when it is missing.
+ */
+const warnPosters = (srcs: string[]) => {
+  if (process.env.NODE_ENV === 'production') return;
+  srcs
+    .filter((src) => /\.(mp4|webm|mov)$/i.test(src) && !getImageDimensions(src.replace(/\.(mp4|webm|mov)$/i, '-poster.webp')))
+    .forEach((src) => console.warn(`[story] ${src} has no -poster.webp: it will start on a black frame.`));
+};
 
 /** Width ÷ height of a piece, from the build-time manifest. */
 const ratioOf = (src: string) => {
@@ -74,7 +85,11 @@ export const StoryPage: FC<{ project: Project }> = ({ project }) => {
   const root = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const header = document.querySelector('header');
-    const set = () => root.current?.style.setProperty('--head', `${header?.offsetHeight ?? 103}px`);
+    const set = () => {
+      root.current?.style.setProperty('--head', `${header?.offsetHeight ?? 103}px`);
+      // Page width without the scrollbar, for blocks that run edge to edge.
+      root.current?.style.setProperty('--vw', `${document.documentElement.clientWidth}px`);
+    };
     set();
     window.addEventListener('resize', set);
     return () => window.removeEventListener('resize', set);
@@ -129,6 +144,14 @@ export const StoryPage: FC<{ project: Project }> = ({ project }) => {
 
   const alt = (img: StoryImage) => [L(img.title), L(img.detail)].filter(Boolean).join(', ') || title;
 
+  /** Wrapper class and marker for a block's width (wide and bleed push the index aside). */
+  const span = (w: StoryWidth | 'solo' | undefined) =>
+    w === 'bleed'
+      ? { className: s.bleed, 'data-wide': true }
+      : w === 'wide' || w === 'solo'
+        ? { className: s.wide, 'data-wide': true }
+        : { className: '' };
+
   const renderBlock = (block: StoryBlock, key: string): ReactNode => {
     switch (block.kind) {
       case 'stats':
@@ -142,6 +165,22 @@ export const StoryPage: FC<{ project: Project }> = ({ project }) => {
             ))}
           </motion.div>
         );
+      case 'image': {
+        const w = span(block.size);
+        const img = block.image;
+        return (
+          <motion.figure key={key} className={`${w.className} ${s.block}`} data-wide={w['data-wide']} {...reveal}>
+            <div className={block.size === 'solo' ? s.solo : undefined}>
+              <Img
+                src={img.src}
+                alt={alt(img)}
+                sizes={block.size === 'bleed' ? '100vw' : block.size === 'column' ? '(max-width: 767px) 100vw, 900px' : '(max-width: 767px) 100vw, 75vw'}
+              />
+            </div>
+            {caption(img, block.size === 'bleed' ? s.bleedCap : '')}
+          </motion.figure>
+        );
+      }
       case 'mosaic':
         return (
           <motion.div key={key} className={`${s.wide} ${s.block}`} data-wide {...reveal}>
@@ -168,57 +207,81 @@ export const StoryPage: FC<{ project: Project }> = ({ project }) => {
             </div>
           </motion.div>
         );
-      case 'carousel':
+      case 'carousel': {
+        const w = span(block.width);
+        warnPosters(block.items.map((it) => it.src));
         return (
-          <motion.div key={key} className={s.block} {...reveal}>
+          <motion.div key={key} className={`${w.className} ${s.block}`} data-wide={w['data-wide']} {...reveal}>
             <Carousel label={L(block.label)} prevLabel={t.projects.prevItem} nextLabel={t.projects.nextItem}>
-              {block.items.map((img) => (
-                <figure key={img.src} className={s.slide}>
-                  <ProtectedImage src={img.src} alt={alt(img)} sizes="(max-width: 767px) 66vw, 330px" className="w-full h-auto" />
-                  {caption(img)}
-                </figure>
-              ))}
-            </Carousel>
-          </motion.div>
-        );
-      case 'pairs':
-        return (
-          <motion.div key={key} className={s.block} {...reveal}>
-            <Carousel label={L(block.label)} prevLabel={t.projects.prevItem} nextLabel={t.projects.nextItem}>
-              {block.items.map((p) => {
-                // Columns in proportion to each piece's ratio, so both share one height.
-                const cols = `${ratioOf(p.a.src).toFixed(3)}fr ${ratioOf(p.b.src).toFixed(3)}fr`;
-                return (
-                  <div key={p.b.src} className={s.pair}>
-                    <p className={s.pairTitle}>{L(p.title)}</p>
-                    <div className={s.pairGrid} style={{ '--cols': cols } as CSSProperties}>
-                      {[p.a, p.b].map((img) => (
-                        <figure key={img.src}>
-                          <ProtectedImage src={img.src} alt={`${L(p.title)}, ${L(img.detail)}`} sizes="(max-width: 767px) 100vw, 50vw" className="w-full h-auto" />
-                          {caption({ src: img.src, title: img.title, detail: img.detail })}
-                        </figure>
-                      ))}
+              {block.items.map((img) =>
+                block.large ? (
+                  <figure key={img.src} className={s.slideLarge}>
+                    <div className={s.slideLargeImg} style={{ aspectRatio: ratioOf(img.src).toFixed(4) }}>
+                      <ProtectedImage src={img.src} alt={alt(img)} fill sizes={`${Math.ceil(ratioOf(img.src) * 62)}vh`} className="object-cover" />
                     </div>
-                  </div>
-                );
-              })}
+                    {caption(img)}
+                  </figure>
+                ) : (
+                  <figure key={img.src} className={s.slide}>
+                    <ProtectedImage src={img.src} alt={alt(img)} sizes="(max-width: 767px) 66vw, 330px" className="w-full h-auto" />
+                    {caption(img)}
+                  </figure>
+                ),
+              )}
             </Carousel>
           </motion.div>
         );
-      case 'compare':
+      }
+      case 'pairs': {
+        const w = span(block.width);
+        const pairs = block.items.map((p) => {
+          // Columns in proportion to each piece's ratio, so both share one height.
+          const cols = `${ratioOf(p.a.src).toFixed(3)}fr ${ratioOf(p.b.src).toFixed(3)}fr`;
+          return (
+            <div key={p.b.src} className={s.pair}>
+              <p className={s.pairTitle}>{L(p.title)}</p>
+              <div className={s.pairGrid} style={{ '--cols': cols } as CSSProperties}>
+                {[p.a, p.b].map((img) => (
+                  <figure key={img.src}>
+                    <ProtectedImage src={img.src} alt={`${L(p.title)}, ${L(img.detail)}`} sizes="(max-width: 767px) 100vw, 60vw" className="w-full h-auto" />
+                    {caption({ src: img.src, title: img.title, detail: img.detail })}
+                  </figure>
+                ))}
+              </div>
+            </div>
+          );
+        });
         return (
-          <motion.div key={key} className={s.block} {...reveal}>
-            <Compare
-              label={`${L(block.before.title)} / ${L(block.after.title)}`}
-              before={{ src: block.before.src, title: L(block.before.title), detail: L(block.before.detail) }}
-              after={{ src: block.after.src, title: L(block.after.title), detail: L(block.after.detail) }}
-              hint={L(block.hint)}
-            />
+          <motion.div key={key} className={`${w.className} ${s.block}`} data-wide={w['data-wide']} {...reveal}>
+            {block.static ? (
+              <div className={s.pairsStack}>{pairs}</div>
+            ) : (
+              <Carousel label={L(block.label)} prevLabel={t.projects.prevItem} nextLabel={t.projects.nextItem}>
+                {pairs}
+              </Carousel>
+            )}
           </motion.div>
         );
-      case 'details':
+      }
+      case 'compare': {
+        const w = span(block.width);
         return (
-          <div key={key} className={`${s.details} ${s.block}`}>
+          <motion.div key={key} className={`${w.className} ${s.block}`} data-wide={w['data-wide']} {...reveal}>
+            <div className={block.width && block.width !== 'column' ? s.centred : undefined}>
+              <Compare
+                label={`${L(block.before.title)} / ${L(block.after.title)}`}
+                before={{ src: block.before.src, title: L(block.before.title), detail: L(block.before.detail) }}
+                after={{ src: block.after.src, title: L(block.after.title), detail: L(block.after.detail) }}
+                hint={L(block.hint)}
+              />
+            </div>
+          </motion.div>
+        );
+      }
+      case 'details': {
+        const w = span(block.width);
+        return (
+          <div key={key} className={`${w.className} ${s.details} ${s.block}`} data-wide={w['data-wide']}>
             {block.groups.map((g) => (
               <motion.div key={g.title.es + g.real.src} className={s.detailGroup} {...reveal}>
                 <p className={s.detailTitle}>{L(g.title)}</p>
@@ -236,33 +299,23 @@ export const StoryPage: FC<{ project: Project }> = ({ project }) => {
             ))}
           </div>
         );
-      case 'wall':
+      }
+      case 'wall': {
+        const w = span(block.width);
+        warnPosters(block.items.map((it) => it.src));
+        const sizes = `(max-width: 767px) ${Math.round(100 / block.columns.phone)}vw, ${Math.round(100 / block.columns.desktop)}vw`;
         return (
-          <motion.div
-            key={key}
-            className={`${block.wide ? s.wide : ''} ${s.block}`}
-            data-wide={block.wide ? true : undefined}
-            {...reveal}
-          >
-            <div
-              className={s.wall}
-              style={{ '--cd': block.columns.desktop, '--cp': block.columns.phone } as CSSProperties}
-            >
+          <motion.div key={key} className={`${w.className} ${s.block}`} data-wide={w['data-wide']} {...reveal}>
+            <div className={s.wall} style={{ '--cd': block.columns.desktop, '--cp': block.columns.phone } as CSSProperties}>
               {block.items.map((img) => (
                 <figure key={img.src}>
                   {block.ratio ? (
                     <div className={s.wallTile} style={{ aspectRatio: block.ratio, background: block.ground }}>
-                      <ProtectedImage
-                        src={img.src}
-                        alt={alt(img)}
-                        fill
-                        sizes={`(max-width: 767px) ${Math.round(100 / block.columns.phone)}vw, ${Math.round(100 / block.columns.desktop)}vw`}
-                        className={block.fit === 'contain' ? 'object-contain' : 'object-cover'}
-                      />
+                      <ProtectedImage src={img.src} alt={alt(img)} fill sizes={sizes} className={block.fit === 'contain' ? 'object-contain' : 'object-cover'} />
                     </div>
                   ) : (
                     <div style={{ background: block.ground }}>
-                      <Img src={img.src} alt={alt(img)} sizes={`(max-width: 767px) ${Math.round(100 / block.columns.phone)}vw, ${Math.round(100 / block.columns.desktop)}vw`} />
+                      <Img src={img.src} alt={alt(img)} sizes={sizes} />
                     </div>
                   )}
                   {caption(img)}
@@ -271,6 +324,7 @@ export const StoryPage: FC<{ project: Project }> = ({ project }) => {
             </div>
           </motion.div>
         );
+      }
       case 'palette':
         return (
           <motion.div key={key} className={`${s.palette} ${s.block}`} {...reveal}>

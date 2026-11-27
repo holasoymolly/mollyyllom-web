@@ -82,27 +82,40 @@ export interface StoryImage {
   detail?: Bilingual;
 }
 
+/**
+ * Width of a block. `column`: the reading column (default). `wide`: the full
+ * content width, running under the chapter index (which steps aside).
+ * `bleed`: edge to edge of the page, minus the cover's thin border.
+ */
+export type StoryWidth = 'column' | 'wide' | 'bleed';
+
 export type StoryBlock =
   /** Up to three real figures. Never invented: each must come from the case. */
   | { kind: 'stats'; items: { value: string; label: Bilingual }[] }
-  /** A grid at full page width: one row per subject, one column per angle or version. */
+  /** One piece. `solo` is a single piece centred with air around it. */
+  | { kind: 'image'; image: StoryImage; size: StoryWidth | 'solo' }
+  /** A grid at full content width: one row per subject, one column per angle or version. */
   | { kind: 'mosaic'; columns: Bilingual[]; rows: { title: Bilingual; images: string[] }[] }
-  /** Slides that move with arrows, mouse or trackpad drag, swipe and keys. */
-  | { kind: 'carousel'; label: Bilingual; items: StoryImage[] }
   /**
-   * A carousel of side-by-side pairs. Any two proportions work: the columns
-   * are sized from each piece's own ratio so both share one height.
+   * Slides that move with arrows, mouse or trackpad drag, swipe and keys.
+   * `large` shows each piece big (about 62% of the screen height) instead of
+   * a strip of thumbnails.
    */
-  | { kind: 'pairs'; label: Bilingual; items: { title: Bilingual; a: StoryImage; b: StoryImage }[] }
-  /** Before and after of the same frame, large, with a draggable line. */
-  | { kind: 'compare'; before: StoryImage; after: StoryImage; hint: Bilingual }
-  /** Close-ups in real/final pairs of the same size, on one clear grid. */
-  | { kind: 'details'; groups: { title: Bilingual; real: StoryImage; final: StoryImage }[] }
+  | { kind: 'carousel'; label: Bilingual; items: StoryImage[]; large?: boolean; width?: StoryWidth }
   /**
-   * A wall of many pieces (a collection, logo versions, a type specimen as an
-   * image). `ratio` crops every tile to one shape (e.g. "1/1"); `fit:
-   * 'contain'` shows each piece whole on `ground` (a flat colour), as logos
-   * need. `wide` lets it run across the full page width.
+   * Side-by-side pairs; any two proportions work (columns follow each piece's
+   * ratio). A carousel by default; `static` stacks them instead.
+   */
+  | { kind: 'pairs'; label: Bilingual; items: { title: Bilingual; a: StoryImage; b: StoryImage }[]; static?: boolean; width?: StoryWidth }
+  /** Before and after of the same frame, large, with a draggable line. */
+  | { kind: 'compare'; before: StoryImage; after: StoryImage; hint: Bilingual; width?: StoryWidth }
+  /** Close-ups in real/final pairs of the same size, on one clear grid. */
+  | { kind: 'details'; groups: { title: Bilingual; real: StoryImage; final: StoryImage }[]; width?: StoryWidth }
+  /**
+   * Several pieces in columns: a 2-up or 3-up, a collection wall, logo
+   * versions, a type specimen as an image. `ratio` crops every tile to one
+   * shape (e.g. "1/1"); `fit: 'contain'` shows each piece whole on `ground`
+   * (a flat colour), as logos need.
    */
   | {
       kind: 'wall';
@@ -111,7 +124,7 @@ export type StoryBlock =
       ratio?: string;
       fit?: 'cover' | 'contain';
       ground?: string;
-      wide?: boolean;
+      width?: StoryWidth;
     }
   /** Colour swatches drawn by the page, with their codes (HEX, RGB, CMYK, Pantone). */
   | { kind: 'palette'; colors: { name?: Bilingual; hex: string; codes?: string[] }[] };
@@ -2713,6 +2726,11 @@ const bSafeVistasStory: CaseStory = {
             { value: "27", label: { es: "páginas del documento entregado", en: "pages in the delivered document" } },
           ],
         },
+        {
+          kind: "image",
+          size: "bleed",
+          image: { src: `${BSV}/vista-lima-1.webp`, title: bsvModel("lima"), detail: { es: "Perfil, vista final", en: "Profile, final view" } },
+        },
       ],
     },
     {
@@ -2746,6 +2764,8 @@ const bSafeVistasStory: CaseStory = {
       blocks: [
         {
           kind: "carousel",
+          large: true,
+          width: "wide",
           label: { es: "Fotos de la visita", en: "Photos from the visit" },
           items: bsvModels.map((m) => ({ src: `${BSV}/visita-${m.key}.webp`, title: m.title, detail: bsvPhoto })),
         },
@@ -2758,12 +2778,19 @@ const bSafeVistasStory: CaseStory = {
       blocks: [
         {
           kind: "pairs",
+          static: true,
+          width: "wide",
           label: { es: "Modelos", en: "Models" },
-          items: ["tenis", "gn", "clasica", "lima", "marron"].map((k) => ({
+          items: ["tenis"].map((k) => ({
             title: bsvModel(k),
             a: { src: `${BSV}/visita-${k}.webp`, detail: bsvPhoto },
             b: { src: `${BSV}/vista-${k}-2.webp`, detail: bsvFinal },
           })),
+        },
+        {
+          kind: "image",
+          size: "bleed",
+          image: { src: `${BSV}/vista-gn-2.webp`, title: bsvModel("gn"), detail: { es: "Tres cuartos, vista final", en: "Three-quarter, final view" } },
         },
       ],
     },
@@ -2781,6 +2808,7 @@ const bSafeVistasStory: CaseStory = {
           before: { src: `${BSV}/logo-antes-xl.webp`, title: { es: "Primera prueba", en: "First try" }, detail: { es: "El logo pegado encima", en: "The logo pasted on top" } },
           after: { src: `${BSV}/logo-despues-xl.webp`, title: { es: "Final", en: "Final" }, detail: { es: "Renderizado en el material de la bota", en: "Rendered in the boot's own material" } },
           hint: { es: "Arrastra la línea o usa las flechas.", en: "Drag the line or use the arrows." },
+          width: "wide",
         },
       ],
     },
@@ -2795,6 +2823,7 @@ const bSafeVistasStory: CaseStory = {
       blocks: [
         {
           kind: "details",
+          width: "wide",
           groups: [
             {
               title: { es: "Insignia de la lengüeta", en: "Tongue badge" },
