@@ -60,13 +60,13 @@ export const StoryPage: FC<{ project: Project }> = ({ project }) => {
     return () => window.removeEventListener('resize', set);
   }, []);
 
-  // Which chapter is being read.
-  const [active, setActive] = useState(0);
+  // Which chapter is being read (-1 before the first one starts).
+  const [active, setActive] = useState(-1);
   useEffect(() => {
     const els = chapters.map((c) => document.getElementById(c.id)).filter(Boolean) as HTMLElement[];
     const onScroll = () => {
       const y = window.innerHeight * 0.35;
-      let k = 0;
+      let k = -1;
       els.forEach((el, i) => {
         if (el.getBoundingClientRect().top < y) k = i;
       });
@@ -289,9 +289,10 @@ export const StoryPage: FC<{ project: Project }> = ({ project }) => {
         </nav>
 
         <div className={s.main}>
-          <div className={s.current} aria-hidden>
-            <span className={s.num}>{pad(active + 1)}</span>
-            <span>{chapters[active]?.label}</span>
+          {/* Phone chapter bar: shows up once the first chapter starts. */}
+          <div className={`${s.current} ${active < 0 ? s.currentIdle : ''}`} aria-hidden>
+            <span className={s.num}>{pad(Math.max(active, 0) + 1)}</span>
+            <span>{chapters[Math.max(active, 0)]?.label}</span>
           </div>
 
           {story.chapters.map((c, i) => (

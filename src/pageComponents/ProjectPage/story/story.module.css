@@ -273,6 +273,9 @@
 .current {
   display: none;
 }
+.currentIdle {
+  visibility: hidden;
+}
 .main {
   min-width: 0;
 }
