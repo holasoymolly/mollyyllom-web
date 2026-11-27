@@ -2474,8 +2474,8 @@ const pixeledFlexiesVol1Story: CaseStory = {
                 en: "Pixeled Flexy #3"
               },
               detail: {
-                es: "El sombrero",
-                en: "The hat"
+                es: "El sombrero de copa",
+                en: "The top hat"
               }
             },
             {
@@ -2496,8 +2496,8 @@ const pixeledFlexiesVol1Story: CaseStory = {
                 en: "Pixeled Flexy #6"
               },
               detail: {
-                es: "El pelo",
-                en: "The hair"
+                es: "El flattop y la cinta",
+                en: "The flattop and the headband"
               }
             }
           ]
