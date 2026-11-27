@@ -766,7 +766,7 @@ const aerosolRefinamientoProject: Project = {
     "Logo refinement, art direction and campaign: Molly Yllom",
     "Web development: the Aerosol team",
   ],
-  portfolioImage: "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-gota-animada.mp4",
+  portfolioImage: "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-gota-animada-portada.mp4",
   heroImage: "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-x-MY-01.webp",
   paragraphs: [
     "La regla fue no reinventar nada. Le quité a la gota los lentes y la sonrisa, que eran lo que la hacía personaje y no marca, y dejé todo lo que la hacía Aerosol: la forma, el chorrito y las gotitas alrededor. Así el logo funciona igual de favicon que en un banner, y Splat, con sus lentes, se queda donde mejor vive: en el contenido.",
@@ -2155,7 +2155,7 @@ const synqProject: Project = {
     "Store listing: Molly Yllom",
     "Product: the Aerosol team",
   ],
-  portfolioImage: "/img/projects/synq/synq-logo-animado.mp4",
+  portfolioImage: "/img/projects/synq/synq-logo-animado-portada.mp4",
   heroImage: "/img/projects/synq/synq-x-MY-01.webp",
   paragraphs: [
     "Synq conecta: cada app, cada marca y cada persona pasan por el mismo punto. Por eso el símbolo es una telaraña, una red donde cada hilo vuelve al centro, con la araña que la teje en el medio. Y el nombre lo dibujé letra por letra, unidas por una sola línea, como si la palabra se estuviera cableando.",
@@ -2300,7 +2300,7 @@ const posProject: Project = {
   ],
   credits: ["Rediseño de logotipo e identidad: Molly Yllom"],
   creditsEn: ["Logo redesign and identity: Molly Yllom"],
-  portfolioImage: "/img/projects/pos/pos-logo-animado.mp4",
+  portfolioImage: "/img/projects/pos/pos-logo-animado-portada.mp4",
   heroImage: "/img/projects/pos/pos-x-MY-01.webp",
   paragraphs: [
     "POS construye los espacios donde las marcas venden, así que la O del nombre se volvió un edificio. La idea salió en la hoja de bocetos, entre muchas otras, y de las tres rutas que pasaron a vector fue la que se quedó.",
@@ -2421,7 +2421,7 @@ const materDesignProject: Project = {
   creditsEn: [
     "Brand identity: Molly Yllom",
   ],
-  portfolioImage: "/img/projects/mater-design/mater-design-logo-animation.gif",
+  portfolioImage: "/img/projects/mater-design/mater-design-logo-animation-portada.mp4",
   heroImage: "/img/projects/mater-design/mtr-dsgn-x-MY-01.webp",
   paragraphs: [
     "Mater Design es un estudio de diseño radicado en Estados Unidos. Inspirado en palabras como: creatividad, diseño, ideas y pasión; el logo se construyó sobre formas simples como cuadrados, círculos y triángulos, volviendo a lo básico para crear algo impactante y con mucho estilo.",
@@ -2672,7 +2672,7 @@ const dinerologyProject: Project = {
   creditsEn: [
     "Logo and guidelines: Molly Yllom",
   ],
-  portfolioImage: "/img/projects/dinerology/logo-6-remix.gif",
+  portfolioImage: "/img/projects/dinerology/logo-6-remix-portada.mp4",
   heroImage: "/img/projects/dinerology/dinerology-japan-exterior-advertising-mockup.webp",
   paragraphs: [
     "Recordando cuando trabajé para crear el logo y la línea gráfica del canal de Youtube «Dinerology», un esfuerzo de JMMB. Me inspiré en la esencia y valores de JMMB, creando un diseño que refleja la innovación, la profesionalidad y la pasión por la educación financiera.",
@@ -2858,7 +2858,7 @@ const distopiaProject: Project = {
   creditsEn: [
     "Visual identity: Molly Yllom",
   ],
-  portfolioImage: "/img/projects/distopia/distopia-tee-design-animation.gif",
+  portfolioImage: "/img/projects/distopia/distopia-tee-design-animation-portada.mp4",
   heroImage: "/img/projects/distopia/distopia-posters-mockup.webp",
   paragraphs: [
     "Aquí te comparto el proyecto de diseño de logo e identidad visual para Distopia, una plataforma que en su momento apoyó la escena musical y artística de la cultura de la música electrónica dominicana a nivel local e internacional.",
@@ -3111,7 +3111,7 @@ const mlLogoProject: Project = {
     "Illustration for the «Raíces» video: Lorena La Chill",
     "Animation for the «Raíces» video: Molly Yllom",
   ],
-  portfolioImage: "/img/projects/maria-lunares/ml-logo-animado-1x1-1.mp4",
+  portfolioImage: "/img/projects/maria-lunares/ml-logo-animado-1x1-1-portada.mp4",
   heroImage: "/img/projects/maria-lunares/ml-logo-x-my-01.webp",
   paragraphs: [
     "Viene del latín y significa Mares Lunares. Los primeros astrónomos les llamaron así a las manchas de la Luna porque parecen grandes concentraciones de agua, pero no lo son. Son planicies extensas, oscuras y basálticas, resultado de impactos de meteoritos.",
@@ -3168,7 +3168,7 @@ const cdtLogoProject: Project = {
   creditsEn: [
     "Brand identity: Molly Yllom",
   ],
-  portfolioImage: "/img/projects/canteras-del-tropico/cdt-logo-2022-animation.gif",
+  portfolioImage: "/img/projects/canteras-del-tropico/cdt-logo-2022-animation-portada.mp4",
   heroImage: "/img/projects/canteras-del-tropico/canteras-del-tropico-logo-01.webp",
   paragraphs: [
     "En el proyecto de creación de logo y branding para Canteras del Trópico, me propuse capturar la esencia de una empresa dedicada a la minería y extracción de rocas y materiales de alta calidad. El diseño integra elementos que evocan piedras y excavadoras, simbolizando la fuerza y precisión en sus operaciones. Además, quise resaltar el aspecto de humanidad y servicio que distingue a la empresa, reflejando su compromiso con las comunidades y el medio ambiente. El resultado es una identidad visual que equilibra la robustez de la industria minera con un enfoque humano y orientado al servicio.",

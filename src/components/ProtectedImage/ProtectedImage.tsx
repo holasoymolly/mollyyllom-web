@@ -9,9 +9,10 @@ interface ProtectedImageProps extends Omit<ImageProps, 'draggable' | 'width' | '
   width?: number;
   height?: number;
   /**
-   * For a wall of videos (the portfolio grid): a video with a poster downloads
-   * nothing until it is on screen, and plays only while it is there. Without a
-   * poster it behaves as before, since `preload="none"` would leave it blank.
+   * For a wall of videos (the portfolio grid, with `fill`): a video with a
+   * poster downloads nothing until it is on screen, and plays only while it is
+   * there; until then its poster shows as a lazy, sized image. Without a poster
+   * it behaves as before, since `preload="none"` would leave it blank.
    */
   lazyVideo?: boolean;
 }
@@ -124,14 +125,31 @@ export const ProtectedImage = ({
 
   if (isVideo) {
     const poster = posterFor(srcStr);
-    const onScreenOnly = Boolean(lazyVideo && poster && !priority);
+    const onScreenOnly = Boolean(lazyVideo && poster && !priority && useFill);
     const videoClass = useFill
       ? `absolute inset-0 w-full h-full ${className ?? ''}`.trim()
       : (className ?? '');
     inner = (
+      <>
+      {/* The poster as a real image under the video: it gets the sized WebP
+          variants and lazy loading that a `poster` attribute can't, so on a slow
+          phone the still is there long before the video. An unloaded video is
+          transparent and lets it show through. */}
+      {onScreenOnly && poster && (
+        <Image
+          src={poster}
+          alt=""
+          aria-hidden="true"
+          fill
+          sizes={sizes ?? '100vw'}
+          quality={90}
+          className={className}
+          draggable={false}
+        />
+      )}
       <LoopingVideo
         src={srcStr}
-        poster={poster}
+        poster={onScreenOnly ? undefined : poster}
         autoPlay={!onScreenOnly}
         onScreenOnly={onScreenOnly}
         loop
@@ -146,6 +164,7 @@ export const ProtectedImage = ({
         onDragStart={(e) => e.preventDefault()}
         {...(useFill ? {} : { width: resolvedWidth, height: resolvedHeight })}
       />
+      </>
     );
   } else {
     const unoptimized = srcStr.toLowerCase().endsWith('.gif');
