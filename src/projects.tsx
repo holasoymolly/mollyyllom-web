@@ -3738,6 +3738,8 @@ const jubelStory: CaseStory = {
       es: "Una marca para que comprar por internet en RD se sintiera como recibir un regalo.",
       en: "A brand to make buying online in the DR feel like getting a gift.",
     },
+    media: "/img/projects/jubel/jubel-logo-animado-hero.mp4",
+    ground: "#FAF6F0",
   },
   chapters: [
     {
@@ -3899,6 +3901,7 @@ const jubelProject: Project = {
   outcomeEn: ["Jubel launched, and the boxes went into production with this design."],
   portfolioImage: "/img/projects/jubel/jubel-logo-animado.mp4",
   heroImage: "/img/projects/jubel/jubel-x-MY-01.webp",
+  heroMedia: { src: "/img/projects/jubel/jubel-logo-animado-hero.mp4", ground: "#FAF6F0" },
   paragraphs: [
     "El logo vino primero, en 2020: una jota minúscula que forma dentro de sí una sonrisa, la de quien abre la puerta y le llegó su paquete. Jubel no te vende cosas, te las trae, y eso tenía que notarse. Al año siguiente hicimos el workshop estratégico con el equipo de Jubel, porque antes de armar el manual quería saber bien a quién le estábamos hablando, y de ahí salió todo lo demás.",
     "Lo que más disfruté fueron las cajas. Una caja de envío es lo primero que uno toca de una tienda en línea, así que la traté como si fuera el producto. La llevamos por tres rondas: ilustrada, en degradados y, al final, kraft con la línea de la jota corriendo por los lados y una cinta naranja que se ve desde la acera. En redes la misma línea se curva alrededor de las fotos, con frases cortas como «Llegó» o «Encajamos en tu vida».",
