@@ -11,6 +11,7 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
 import { trackProjectViewed } from '@/lib/analytics';
 import { ProjectHero } from './ProjectHero';
+import { StoryPage } from './story/StoryPage';
 
 interface ProjectPageProps {
   slug: string;
@@ -188,6 +189,17 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
     <div>
       <Header />
 
+      {/*
+        Cases told in chapters (Nov 2026 refresh) render StoryPage; every
+        other project keeps the classic layout below, built from its
+        paragraphs and images. Both end with the same prev/next bar.
+      */}
+      {project.story ? (
+        <main>
+          <StoryPage project={project} />
+        </main>
+      ) : (
+      <>
       {/* Hero title */}
       <section className="bg-indigo-950 text-stone-200 px-6 md:px-16 lg:px-24 pt-20 pb-24">
         <motion.div
@@ -318,6 +330,8 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
           </section>
         )}
       </main>
+      </>
+      )}
 
       {/* Prev / Next navigation */}
       {(prevProject || nextProject) && (

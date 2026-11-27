@@ -162,6 +162,9 @@ export const translations = {
       shipped: 'Lo que se entregó',
       outcome: 'Resultado',
       credits: 'Créditos',
+      chapters: 'Capítulos',
+      prevItem: 'Anterior',
+      nextItem: 'Siguiente',
     },
     blog: {
       label: 'Escritos',
@@ -340,6 +343,9 @@ export const translations = {
       shipped: 'What shipped',
       outcome: 'Outcome',
       credits: 'Credits',
+      chapters: 'Chapters',
+      prevItem: 'Previous',
+      nextItem: 'Next',
     },
     blog: {
       label: 'Writing',

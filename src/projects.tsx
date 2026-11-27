@@ -62,6 +62,63 @@ export interface Project {
   /** Collaborators, so work by other people is never implicitly claimed. */
   credits?: string[];
   creditsEn?: string[];
+  /**
+   * The case told in chapters (the November 2026 case-page refresh). A project
+   * with a `story` renders the new layout: cover, chapter index, chapters made
+   * of typed blocks, then what shipped, the outcome and the credits. A project
+   * without one keeps the classic page built from `paragraphs` and `images`,
+   * untouched. See `CaseStory` below.
+   */
+  story?: CaseStory;
+}
+
+/** A piece of copy written by hand in each language. */
+export type Bilingual = { es: string; en: string };
+
+/** One image with an optional two-part caption: what it is, then a detail. */
+export interface StoryImage {
+  src: string;
+  title?: Bilingual;
+  detail?: Bilingual;
+}
+
+export type StoryBlock =
+  /** Up to three real figures. Never invented: each must come from the case. */
+  | { kind: 'stats'; items: { value: string; label: Bilingual }[] }
+  /** A grid: one row per subject, one column per angle or version. */
+  | { kind: 'mosaic'; columns: Bilingual[]; rows: { title: Bilingual; images: string[] }[] }
+  /** Slides that move with arrows, mouse or trackpad drag, swipe and keys. */
+  | { kind: 'carousel'; label: Bilingual; items: StoryImage[] }
+  /** A carousel of side-by-side pairs (a narrow piece and a wide one). */
+  | { kind: 'pairs'; label: Bilingual; items: { title: Bilingual; a: StoryImage; b: StoryImage }[] }
+  /** Before and after of the same frame, with a draggable line. */
+  | { kind: 'compare'; before: StoryImage; after: StoryImage; hint: Bilingual }
+  /**
+   * Close-ups. `native` shows a piece at half its pixel width (sharp on 2×
+   * screens); the other spans are columns of the content grid.
+   */
+  | { kind: 'details'; items: (StoryImage & { span: 'third' | 'half' | 'wide' | 'native' })[]; note?: Bilingual };
+
+export interface StoryChapter {
+  /** Anchor for the chapter index, e.g. "encargo". */
+  id: string;
+  label: Bilingual;
+  heading: Bilingual;
+  text?: Bilingual;
+  blocks?: StoryBlock[];
+}
+
+export interface CaseStory {
+  /**
+   * `over`: title on the image, only when it has clean room on the left.
+   * `top`: title above on the page colour, image below. The safe default.
+   */
+  cover: { variant: 'over' | 'top'; promise: Bilingual; focus?: string };
+  /** The "before" the work came from, right under the cover. Only if it exists. */
+  origin?: { image: StoryImage; label: Bilingual; heading: Bilingual; note?: Bilingual };
+  chapters: StoryChapter[];
+  /** A near full-bleed closing image after the chapters, plus up to three more below it. */
+  closing?: { image: StoryImage; more?: string[] };
 }
 
 /**
@@ -2571,6 +2628,153 @@ const advanced: Project = {
   ],
 };
 
+/** B-SAFE · Vistas de estudio, told in chapters (Nov 2026 refresh pilot). */
+const BSV = "/img/projects/b-safe-vistas/piezas";
+const bsvModels: { key: string; title: Bilingual }[] = [
+  { key: "lima", title: { es: "Bota lima", en: "Lime boot" } },
+  { key: "tenis", title: { es: "Tenis gris", en: "Grey trainer" } },
+  { key: "gn", title: { es: "Botín gris y naranja", en: "Grey and orange ankle boot" } },
+  { key: "marron", title: { es: "Botín marrón", en: "Brown ankle boot" } },
+  { key: "clasica", title: { es: "Bota clásica", en: "Classic boot" } },
+];
+const bsvModel = (key: string) => bsvModels.find((m) => m.key === key)!.title;
+const bsvPhoto: Bilingual = { es: "Foto con celular", en: "Phone photo" };
+const bsvFinal: Bilingual = { es: "Vista final, con IA", en: "Final view, made with AI" };
+
+const bSafeVistasStory: CaseStory = {
+  cover: {
+    variant: "over",
+    focus: "62% 50%",
+    promise: {
+      es: "De una foto de celular a una vista de estudio. Veinte veces, sin cambiar una costura.",
+      en: "From a phone photo to a studio view. Twenty times, without changing a single stitch.",
+    },
+  },
+  origin: {
+    image: { src: `${BSV}/visita-lima.webp`, title: bsvModel("lima"), detail: bsvPhoto },
+    label: { es: "Así empezó", en: "Where it began" },
+    heading: {
+      es: "La bota de la portada, en una de las fotos de celular de la visita.",
+      en: "The boot on the cover, in one of the phone photos from the visit.",
+    },
+    note: { es: "Oficina de DEINSA, 3 de noviembre de 2026.", en: "DEINSA's office, 3 November 2026." },
+  },
+  chapters: [
+    {
+      id: "encargo",
+      label: { es: "El encargo", en: "The brief" },
+      heading: { es: "Fotos de estudio sin estudio.", en: "Studio shots, without a studio." },
+      text: {
+        es: "DEINSA necesitaba fotos de estudio de sus cinco modelos de B-SAFE para el manual de marca, todas con la misma luz y los mismos ángulos. No había sesión de fotos ni botas en un estudio. Lo que había era una mañana en su oficina, un celular y las botas reales.",
+        en: "DEINSA needed studio shots of its five B-SAFE models for the brand manual, all with the same light and the same angles. There was no photo shoot and no studio. What there was: one morning at their office, a phone, and the actual boots.",
+      },
+      blocks: [
+        {
+          kind: "stats",
+          items: [
+            { value: "57", label: { es: "fotos con el celular, en una mañana", en: "phone photos, in one morning" } },
+            { value: "20", label: { es: "vistas de estudio, hechas con IA", en: "studio views, made with AI" } },
+            { value: "27", label: { es: "páginas del documento entregado", en: "pages in the delivered document" } },
+          ],
+        },
+      ],
+    },
+    {
+      id: "vistas",
+      label: { es: "Las veinte vistas", en: "The twenty views" },
+      heading: { es: "Cinco modelos, cuatro ángulos, la misma luz.", en: "Five models, four angles, the same light." },
+      blocks: [
+        {
+          kind: "mosaic",
+          columns: [
+            { es: "Perfil", en: "Profile" },
+            { es: "Tres cuartos", en: "Three-quarter" },
+            { es: "Cenital", en: "Top" },
+            { es: "Contrapicado", en: "Low angle" },
+          ],
+          rows: bsvModels.map((m) => ({
+            title: m.title,
+            images: [1, 2, 3, 4].map((v) => `${BSV}/vista-${m.key}-${v}.webp`),
+          })),
+        },
+      ],
+    },
+    {
+      id: "partida",
+      label: { es: "El punto de partida", en: "Where it started" },
+      heading: { es: "Primero las fotos, después el prompt.", en: "Photos first, prompt second." },
+      text: {
+        es: "La IA hace botas bonitas con mucha facilidad. Lo difícil es que sean estas botas. Cada vista tenía que poder ponerse al lado de la foto real sin que nada cambiara: las costuras, los colores de los cordones, dónde va cada logo. Por eso empecé por las fotos y no por el prompt.",
+        en: "AI makes good-looking boots very easily. The hard part is making them these boots. Every view had to sit next to the real photo without anything changing: the stitching, the lace colors, where each logo goes. That's why I started with the photos, not with a prompt.",
+      },
+      blocks: [
+        {
+          kind: "carousel",
+          label: { es: "Fotos de la visita", en: "Photos from the visit" },
+          items: bsvModels.map((m) => ({ src: `${BSV}/visita-${m.key}.webp`, title: m.title, detail: bsvPhoto })),
+        },
+      ],
+    },
+    {
+      id: "foto-a-vista",
+      label: { es: "De la foto a la vista", en: "From photo to view" },
+      heading: { es: "La foto manda. La vista la sigue.", en: "The photo leads. The view follows." },
+      blocks: [
+        {
+          kind: "pairs",
+          label: { es: "Modelos", en: "Models" },
+          items: ["marron", "tenis", "gn", "clasica", "lima"].map((k) => ({
+            title: bsvModel(k),
+            a: { src: `${BSV}/visita-${k}.webp`, detail: bsvPhoto },
+            b: { src: `${BSV}/vista-${k}-2.webp`, detail: bsvFinal },
+          })),
+        },
+      ],
+    },
+    {
+      id: "logo",
+      label: { es: "El logo", en: "The logo" },
+      heading: { es: "Pegado encima, parecía una calcomanía.", en: "Pasted on top, it looked like a sticker." },
+      text: {
+        es: "A mano tampoco quedaba creíble. Lo que funcionó fue dejar que la IA lo renderizara en el material de cada bota, con el logo oficial como guía.",
+        en: "Fixing it by hand never felt real either. What worked was letting the AI render it in each boot's own material, with the official logo as the guide.",
+      },
+      blocks: [
+        {
+          kind: "compare",
+          before: { src: `${BSV}/logo-antes.webp`, title: { es: "Primera prueba", en: "First try" }, detail: { es: "El logo pegado encima", en: "The logo pasted on top" } },
+          after: { src: `${BSV}/logo-despues.webp`, title: { es: "Final", en: "Final" }, detail: { es: "Renderizado en el material de la bota", en: "Rendered in the boot's own material" } },
+          hint: { es: "Arrastra la línea o usa las flechas.", en: "Drag the line or use the arrows." },
+        },
+      ],
+    },
+    {
+      id: "detalles",
+      label: { es: "Los detalles", en: "The details" },
+      heading: { es: "La insignia y la cinta, igual que en la bota real.", en: "The badge and the lace tab, just like the real boot." },
+      text: {
+        es: "Los detalles chiquitos se rehicieron hasta que se parecieron a los reales, iguales en las veinte vistas.",
+        en: "The tiny details were redone until they matched the real ones, the same across all twenty views.",
+      },
+      blocks: [
+        {
+          kind: "details",
+          items: [
+            { src: `${BSV}/insignia-real.webp`, span: "third", title: { es: "Insignia de la lengüeta", en: "Tongue badge" }, detail: { es: "Bota real", en: "Real boot" } },
+            { src: `${BSV}/insignia-vista.webp`, span: "third", title: { es: "Insignia de la lengüeta", en: "Tongue badge" }, detail: { es: "Vista final", en: "Final view" } },
+            { src: `${BSV}/cinta-real.webp`, span: "wide", title: { es: "Cinta «EH 18kV»", en: "“EH 18kV” lace tab" }, detail: { es: "Tres cintas reales", en: "Three real tabs" } },
+            { src: `${BSV}/cinta-vista.webp`, span: "native", title: { es: "Cinta «EH 18kV»", en: "“EH 18kV” lace tab" }, detail: { es: "Vista final, sin agrandar", en: "Final view, not enlarged" } },
+          ],
+        },
+      ],
+    },
+  ],
+  closing: {
+    image: { src: `${BSV}/vista-clasica-2.webp`, title: bsvModel("clasica"), detail: { es: "Tres cuartos", en: "Three-quarter" } },
+    more: [1, 3, 4].map((v) => `${BSV}/vista-clasica-${v}.webp`),
+  },
+};
+
 const bSafeVistasProject: Project = {
   slug: "b-safe-vistas",
   title: "B-SAFE · Vistas de estudio",
@@ -2624,6 +2828,7 @@ const bSafeVistasProject: Project = {
     "/img/projects/b-safe-vistas/b-safe-vistas-09-botin-marron.webp",
     "/img/projects/b-safe-vistas/b-safe-vistas-10-bota-clasica.webp",
   ],
+  story: bSafeVistasStory,
 };
 
 /**

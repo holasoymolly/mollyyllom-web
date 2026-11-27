@@ -75,3 +75,10 @@ body {
   outline-offset: 2px;
   border-radius: 2px;
 }
+
+/* The before/after line in case pages (story/Compare.tsx) animates this. */
+@property --x {
+  syntax: '<percentage>';
+  inherits: true;
+  initial-value: 50%;
+}

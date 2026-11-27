@@ -480,6 +480,18 @@ Each page component receives `lang: 'en' | 'es'` prop. A `copy` object inside th
 
 ---
 
+## Case pages told in chapters (`story`)
+
+Since 27 Nov 2026 a project can carry a `story` (types `CaseStory`, `StoryChapter`, `StoryBlock` in `src/projects.tsx`). `ProjectPage` then renders `src/pageComponents/ProjectPage/story/StoryPage.tsx` instead of the classic layout; a project without `story` keeps the classic page built from `paragraphs` and `images`, untouched. Both end with the same prev/next bar, quote banner and footer. The pilot is B-SAFE · Vistas de estudio; the plan to move the other cases over, case by case, lives in Molly's workspace (`04-portafolio/refresh-paginas-proyecto/03-plan-por-fases.md`).
+
+- **Cover:** `variant: 'over'` puts the title on the image and is only for images with clean room on the left; `'top'` puts title and promise on the page colour with the image below, and is the safe default.
+- **Origin:** an optional "Así empezó" block under the cover, only when the work has a real "before".
+- **Blocks:** `stats` (up to three real figures, never invented), `mosaic`, `carousel` and `pairs` (arrows, mouse drag, swipe, trackpad and arrow keys, in `story/Carousel.tsx`), `compare` (draggable before/after in `story/Compare.tsx`; both images must be the same frame, aligned, or the line "jumps"), `details` (`native` shows a piece at half its pixel width so it is never enlarged on 2× screens).
+- **The last chapter is built automatically** from `shipped`, `outcome` and `credits`.
+- **Pieces, not panels.** Story pages use loose pieces (`public/img/projects/<slug>/piezas/`) with no background, margins or text baked in: the page supplies the colour (#e7e5e4) and the air. Commit their `img-r` variants with them.
+- Colours are the site's only (stone-200, indigo-950, violet-500). Roboto for reading; IBM Plex Mono only for small labels, never for captions or body.
+- Copy is written by hand in each language; every `Bilingual` needs both.
+
 ## Adding a New Project
 
 1. Place images (and any animated MP4 thumbnails) in `public/img/projects/[slug]/`. **Folder names are kebab-case ASCII only.** No `&`, spaces, or accents: those characters survive the filesystem but break in URL paths and in the `next/image` query string, and they make the manifest keys awkward to grep. `Burn & Claim` lives in `public/img/projects/burn-claim/`.
