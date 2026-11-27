@@ -85,19 +85,36 @@ export interface StoryImage {
 export type StoryBlock =
   /** Up to three real figures. Never invented: each must come from the case. */
   | { kind: 'stats'; items: { value: string; label: Bilingual }[] }
-  /** A grid: one row per subject, one column per angle or version. */
+  /** A grid at full page width: one row per subject, one column per angle or version. */
   | { kind: 'mosaic'; columns: Bilingual[]; rows: { title: Bilingual; images: string[] }[] }
   /** Slides that move with arrows, mouse or trackpad drag, swipe and keys. */
   | { kind: 'carousel'; label: Bilingual; items: StoryImage[] }
-  /** A carousel of side-by-side pairs (a narrow piece and a wide one). */
-  | { kind: 'pairs'; label: Bilingual; items: { title: Bilingual; a: StoryImage; b: StoryImage }[] }
-  /** Before and after of the same frame, with a draggable line. */
-  | { kind: 'compare'; before: StoryImage; after: StoryImage; hint: Bilingual }
   /**
-   * Close-ups. `native` shows a piece at half its pixel width (sharp on 2×
-   * screens); the other spans are columns of the content grid.
+   * A carousel of side-by-side pairs. Any two proportions work: the columns
+   * are sized from each piece's own ratio so both share one height.
    */
-  | { kind: 'details'; items: (StoryImage & { span: 'third' | 'half' | 'wide' | 'native' })[]; note?: Bilingual };
+  | { kind: 'pairs'; label: Bilingual; items: { title: Bilingual; a: StoryImage; b: StoryImage }[] }
+  /** Before and after of the same frame, large, with a draggable line. */
+  | { kind: 'compare'; before: StoryImage; after: StoryImage; hint: Bilingual }
+  /** Close-ups in real/final pairs of the same size, on one clear grid. */
+  | { kind: 'details'; groups: { title: Bilingual; real: StoryImage; final: StoryImage }[] }
+  /**
+   * A wall of many pieces (a collection, logo versions, a type specimen as an
+   * image). `ratio` crops every tile to one shape (e.g. "1/1"); `fit:
+   * 'contain'` shows each piece whole on `ground` (a flat colour), as logos
+   * need. `wide` lets it run across the full page width.
+   */
+  | {
+      kind: 'wall';
+      items: StoryImage[];
+      columns: { desktop: number; phone: number };
+      ratio?: string;
+      fit?: 'cover' | 'contain';
+      ground?: string;
+      wide?: boolean;
+    }
+  /** Colour swatches drawn by the page, with their codes (HEX, RGB, CMYK, Pantone). */
+  | { kind: 'palette'; colors: { name?: Bilingual; hex: string; codes?: string[] }[] };
 
 export interface StoryChapter {
   /** Anchor for the chapter index, e.g. "encargo". */
@@ -126,8 +143,11 @@ export interface CaseStory {
     /** Flat colour behind the cover media (a logo on its brand ground). */
     ground?: string;
   };
-  /** The "before" the work came from, right under the cover. Only if it exists. */
-  origin?: { image: StoryImage; label: Bilingual; heading: Bilingual; note?: Bilingual };
+  /**
+   * The "before" the work came from, right under the cover, only if it
+   * exists: the same subject before and after, same size and framing.
+   */
+  origin?: { label: Bilingual; heading: Bilingual; note?: Bilingual; before: StoryImage; after: StoryImage };
   chapters: StoryChapter[];
   /** A near full-bleed closing image after the chapters, plus up to three more below it. */
   closing?: { image: StoryImage; more?: string[] };
@@ -2663,13 +2683,17 @@ const bSafeVistasStory: CaseStory = {
     },
   },
   origin: {
-    image: { src: `${BSV}/visita-lima.webp`, title: bsvModel("lima"), detail: bsvPhoto },
     label: { es: "Así empezó", en: "Where it began" },
     heading: {
-      es: "La bota de la portada, en una de las fotos de celular de la visita.",
-      en: "The boot on the cover, in one of the phone photos from the visit.",
+      es: "La misma bota, en una foto de celular y en la vista final.",
+      en: "The same boot, in a phone photo and in the final view.",
     },
-    note: { es: "Oficina de DEINSA, 3 de noviembre de 2026.", en: "DEINSA's office, 3 November 2026." },
+    note: {
+      es: "Botín marrón. La foto es de la visita a la oficina de DEINSA, el 3 de noviembre de 2026.",
+      en: "Brown ankle boot. The photo is from the visit to DEINSA's office on 3 November 2026.",
+    },
+    before: { src: `${BSV}/origen-foto.webp`, title: bsvPhoto, detail: { es: "En la oficina de DEINSA", en: "At DEINSA's office" } },
+    after: { src: `${BSV}/origen-vista.webp`, title: { es: "Vista final", en: "Final view" }, detail: { es: "Hecha con IA a partir de las fotos", en: "Made with AI from the photos" } },
   },
   chapters: [
     {
@@ -2714,7 +2738,7 @@ const bSafeVistasStory: CaseStory = {
     {
       id: "partida",
       label: { es: "El punto de partida", en: "Where it started" },
-      heading: { es: "Primero las fotos, después el prompt.", en: "Photos first, prompt second." },
+      heading: { es: "Primero, la bota real.", en: "First, the real boot." },
       text: {
         es: "La IA hace botas bonitas con mucha facilidad. Lo difícil es que sean estas botas. Cada vista tenía que poder ponerse al lado de la foto real sin que nada cambiara: las costuras, los colores de los cordones, dónde va cada logo. Por eso empecé por las fotos y no por el prompt.",
         en: "AI makes good-looking boots very easily. The hard part is making them these boots. Every view had to sit next to the real photo without anything changing: the stitching, the lace colors, where each logo goes. That's why I started with the photos, not with a prompt.",
@@ -2735,7 +2759,7 @@ const bSafeVistasStory: CaseStory = {
         {
           kind: "pairs",
           label: { es: "Modelos", en: "Models" },
-          items: ["marron", "tenis", "gn", "clasica", "lima"].map((k) => ({
+          items: ["tenis", "gn", "clasica", "lima", "marron"].map((k) => ({
             title: bsvModel(k),
             a: { src: `${BSV}/visita-${k}.webp`, detail: bsvPhoto },
             b: { src: `${BSV}/vista-${k}-2.webp`, detail: bsvFinal },
@@ -2754,8 +2778,8 @@ const bSafeVistasStory: CaseStory = {
       blocks: [
         {
           kind: "compare",
-          before: { src: `${BSV}/logo-antes.webp`, title: { es: "Primera prueba", en: "First try" }, detail: { es: "El logo pegado encima", en: "The logo pasted on top" } },
-          after: { src: `${BSV}/logo-despues.webp`, title: { es: "Final", en: "Final" }, detail: { es: "Renderizado en el material de la bota", en: "Rendered in the boot's own material" } },
+          before: { src: `${BSV}/logo-antes-xl.webp`, title: { es: "Primera prueba", en: "First try" }, detail: { es: "El logo pegado encima", en: "The logo pasted on top" } },
+          after: { src: `${BSV}/logo-despues-xl.webp`, title: { es: "Final", en: "Final" }, detail: { es: "Renderizado en el material de la bota", en: "Rendered in the boot's own material" } },
           hint: { es: "Arrastra la línea o usa las flechas.", en: "Drag the line or use the arrows." },
         },
       ],
@@ -2771,11 +2795,17 @@ const bSafeVistasStory: CaseStory = {
       blocks: [
         {
           kind: "details",
-          items: [
-            { src: `${BSV}/insignia-real.webp`, span: "third", title: { es: "Insignia de la lengüeta", en: "Tongue badge" }, detail: { es: "Bota real", en: "Real boot" } },
-            { src: `${BSV}/insignia-vista.webp`, span: "third", title: { es: "Insignia de la lengüeta", en: "Tongue badge" }, detail: { es: "Vista final", en: "Final view" } },
-            { src: `${BSV}/cinta-real.webp`, span: "wide", title: { es: "Cinta «EH 18kV»", en: "“EH 18kV” lace tab" }, detail: { es: "Tres cintas reales", en: "Three real tabs" } },
-            { src: `${BSV}/cinta-vista.webp`, span: "native", title: { es: "Cinta «EH 18kV»", en: "“EH 18kV” lace tab" }, detail: { es: "Vista final, sin agrandar", en: "Final view, not enlarged" } },
+          groups: [
+            {
+              title: { es: "Insignia de la lengüeta", en: "Tongue badge" },
+              real: { src: `${BSV}/insignia-real.webp`, detail: { es: "Bota real", en: "Real boot" } },
+              final: { src: `${BSV}/insignia-vista.webp`, detail: { es: "Vista final", en: "Final view" } },
+            },
+            {
+              title: { es: "Cinta «EH 18kV»", en: "“EH 18kV” lace tab" },
+              real: { src: `${BSV}/cinta-real-cuadrada.webp`, detail: { es: "Bota real", en: "Real boot" } },
+              final: { src: `${BSV}/cinta-vista.webp`, detail: { es: "Vista final", en: "Final view" } },
+            },
           ],
         },
       ],

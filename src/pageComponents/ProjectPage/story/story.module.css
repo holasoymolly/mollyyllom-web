@@ -178,49 +178,50 @@
   max-width: 26ch;
 }
 
-/* ---------- origin: where the work came from ---------- */
+/* ---------- origin: the same subject before and after ---------- */
 .origin {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: var(--gap);
-  align-items: center;
   max-width: 1600px;
   margin: clamp(110px, 10vw, 160px) auto 0;
   padding: 0 var(--m);
 }
-.originImg {
-  grid-column: 2 / span 4;
-}
 .originText {
-  grid-column: 7 / span 5;
+  max-width: 760px;
 }
 .originHeading {
   font-weight: 900;
-  font-size: clamp(30px, 3.4vw, 52px);
-  line-height: 1.02;
-  letter-spacing: -0.028em;
-  margin-top: 20px;
-  max-width: 17ch;
+  font-size: clamp(32px, 3.8vw, 58px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-top: 18px;
+  max-width: 18ch;
 }
 .originNote {
-  margin-top: 22px;
-  padding-top: 16px;
-  border-top: 1px solid var(--line);
-  font-size: 15px;
+  margin-top: 18px;
+  font-size: 16px;
+  line-height: 1.5;
   color: var(--ink3);
-  max-width: 34ch;
+  max-width: 46ch;
+}
+.originPair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+  margin-top: clamp(36px, 4vw, 56px);
 }
 
 /* ---------- body with chapter index ---------- */
 .body {
+  --idx: 200px;
+  --gapB: clamp(32px, 3vw, 56px);
   display: grid;
-  grid-template-columns: minmax(190px, 3fr) 9fr;
-  gap: clamp(24px, 3vw, 48px);
+  grid-template-columns: var(--idx) minmax(0, 1fr);
+  gap: var(--gapB);
   padding: 0 var(--m);
   max-width: 1600px;
   margin: 0 auto;
 }
 .index {
+  transition: opacity 0.35s var(--ease);
   position: sticky;
   top: calc(var(--head) + 40px);
   align-self: start;
@@ -269,6 +270,17 @@
 }
 .index .on .num {
   color: var(--accent);
+}
+/* Full-width blocks run under the index column; the index steps aside meanwhile. */
+.wide {
+  margin-left: calc(-1 * (var(--idx) + var(--gapB)));
+}
+.indexAside .index {
+  opacity: 0;
+  pointer-events: none;
+}
+.currentWrap {
+  display: none;
 }
 .current {
   display: none;
@@ -428,7 +440,7 @@
 }
 .pairGrid {
   display: grid;
-  grid-template-columns: 4fr 7fr;
+  grid-template-columns: var(--cols, 4fr 7fr);
   gap: var(--gap);
   align-items: end;
 }
@@ -473,12 +485,12 @@
   outline-offset: 3px;
 }
 
-/* before and after */
+/* before and after: large, with its legend below */
 .compareWrap {
-  display: grid;
-  grid-template-columns: minmax(0, 600px) 1fr;
-  gap: clamp(24px, 3vw, 48px);
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 900px;
 }
 .compare {
   position: relative;
@@ -488,7 +500,7 @@
   user-select: none;
   touch-action: pan-y;
   --x: 50%;
-  transition: --x 0.7s var(--ease);
+  transition: --x 1.1s var(--ease);
 }
 .compare.dragging {
   transition: none;
@@ -533,8 +545,9 @@
 }
 .compareSide {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 32px;
 }
 .compareBtn {
   display: flex;
@@ -568,29 +581,64 @@
 .hint {
   font-size: 13px;
   color: var(--ink3);
-  margin-top: 6px;
+  margin-left: auto;
 }
 
-/* details */
+/* details: real/final pairs of the same size on one grid */
 .details {
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: clamp(40px, 4vw, 56px) var(--gap);
-  align-items: end;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 4vw, 56px) clamp(24px, 3vw, 48px);
 }
-.spanThird {
-  grid-column: span 4;
+.detailTitle {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 14px;
 }
-.spanHalf {
-  grid-column: span 6;
+.detailPair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
-.spanWide {
-  grid-column: span 7;
+.detailTile {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
 }
-.spanNative {
-  grid-column: span 5;
-  justify-self: start;
-  padding-left: clamp(0px, 3vw, 48px);
+
+/* wall: many pieces, columns set per case */
+.wall {
+  display: grid;
+  grid-template-columns: repeat(var(--cd, 4), minmax(0, 1fr));
+  gap: var(--gap);
+}
+.wallTile {
+  position: relative;
+  overflow: hidden;
+}
+
+/* palette: swatches drawn by the page, with their codes */
+.palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 28px var(--gap);
+}
+.swatch {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+}
+.chip {
+  display: block;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 10px;
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.code {
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 12px;
+  color: var(--ink2);
 }
 
 /* closing */
@@ -599,10 +647,7 @@
   margin: clamp(110px, 10vw, 160px) var(--m2) 0;
 }
 .closingCap {
-  position: absolute;
-  left: clamp(20px, 3vw, 44px);
-  bottom: clamp(18px, 2.6vw, 36px);
-  margin: 0;
+  padding: 0 calc(var(--m) - var(--m2));
 }
 .closingMore {
   display: grid;
@@ -675,7 +720,7 @@
   }
   .coverOver .coverImg {
     position: relative;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: var(--ar, 16 / 9); /* the whole picture: nothing of the product cut */
   }
   .coverOver .coverText {
     position: static;
@@ -694,14 +739,11 @@
     padding: 24px var(--m) 0;
   }
   .origin {
-    margin-top: 88px;
+    margin-top: 72px;
   }
-  .originImg {
-    grid-column: 1 / span 9;
-  }
-  .originText {
-    grid-column: 1 / -1;
-    margin-top: 8px;
+  .originPair {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
   .body {
     grid-template-columns: 1fr;
@@ -709,18 +751,25 @@
   .index {
     display: none;
   }
+  .wide {
+    margin-left: 0;
+  }
+  .currentWrap {
+    display: block;
+    position: sticky;
+    top: var(--head);
+    height: 0;
+    z-index: 5;
+    margin: 0 calc(-1 * var(--m));
+  }
   .current {
     display: flex;
     gap: 10px;
     align-items: center;
-    position: sticky;
-    top: var(--head);
-    z-index: 5;
     background: rgba(231, 229, 228, 0.94);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     padding: 12px var(--m);
-    margin: 0 calc(-1 * var(--m));
     font-size: 14px;
     font-weight: 600;
     border-bottom: 1px solid var(--line);
@@ -730,7 +779,7 @@
     font-weight: 400;
   }
   .chapter {
-    padding-top: 88px;
+    padding-top: 80px;
     scroll-margin-top: calc(var(--head) + 56px);
   }
   .lead {
@@ -758,7 +807,7 @@
     width: 66vw;
   }
   .pairGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
   .pairGrid > :first-child {
     width: 56%;
@@ -767,32 +816,27 @@
     width: 42px;
     height: 42px;
   }
-  .compareWrap {
-    grid-template-columns: 1fr;
-  }
   .compareSide {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 16px 22px;
+    gap: 14px 22px;
   }
   .hint {
     width: 100%;
+    margin-left: 0;
   }
-  .spanThird,
-  .spanHalf {
-    grid-column: span 6;
+  .details {
+    grid-template-columns: 1fr;
   }
-  .spanWide,
-  .spanNative {
-    grid-column: 1 / -1;
-    padding-left: 0;
+  .wall {
+    grid-template-columns: repeat(var(--cp, 2), minmax(0, 1fr));
+  }
+  .palette {
+    grid-template-columns: repeat(2, 1fr);
   }
   .closing {
     margin-left: 0;
     margin-right: 0;
   }
   .closingCap {
-    position: static;
     padding: 0 var(--m);
   }
   .closingMore {

@@ -342,7 +342,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
               className="relative flex items-center gap-5 px-6 md:px-16 lg:px-24 py-10 border-b md:border-b-0 md:border-r border-indigo-950/10 group hover:bg-indigo-950/5 transition-colors duration-300 overflow-hidden"
             >
               <div className="relative shrink-0 w-16 h-16 rounded overflow-hidden border border-indigo-950/10">
-                <ProtectedImage src={prevProject.portfolioImage} alt={projectTitle(prevProject, lang)} fill sizes="64px" className="object-cover" />
+                <ProtectedImage src={prevProject.heroImage} alt={projectTitle(prevProject, lang)} fill sizes="64px" className="object-cover" />
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-violet-500 text-xs font-bold tracking-[0.25em] uppercase flex items-center gap-2 group-hover:-translate-x-1 transition-transform duration-300">
@@ -369,7 +369,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
                 </span>
               </div>
               <div className="relative shrink-0 w-16 h-16 rounded overflow-hidden border border-indigo-950/10">
-                <ProtectedImage src={nextProject.portfolioImage} alt={projectTitle(nextProject, lang)} fill sizes="64px" className="object-cover" />
+                <ProtectedImage src={nextProject.heroImage} alt={projectTitle(nextProject, lang)} fill sizes="64px" className="object-cover" />
               </div>
             </TransitionLink>
           ) : <div />}

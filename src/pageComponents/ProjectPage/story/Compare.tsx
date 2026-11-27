@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import { ProtectedImage } from '@/components/ProtectedImage';
 import s from './story.module.css';
 
@@ -24,15 +24,41 @@ interface CompareProps {
  */
 export const Compare: FC<CompareProps> = ({ before, after, hint, label }) => {
   const box = useRef<HTMLDivElement>(null);
-  const [x, setX] = useState(50);
+  // Opens on the "before" whole, then sweeps once to show the "after" whole.
+  const [x, setX] = useState(85);
   const [dragging, setDragging] = useState(false);
+  const touched = useRef(false);
+
+  useEffect(() => {
+    const el = box.current;
+    if (!el || typeof IntersectionObserver === 'undefined') return;
+    let timer = 0;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        io.disconnect();
+        timer = window.setTimeout(() => {
+          if (!touched.current) setX(30);
+        }, 700);
+      },
+      { threshold: 0.6 },
+    );
+    io.observe(el);
+    return () => {
+      io.disconnect();
+      window.clearTimeout(timer);
+    };
+  }, []);
 
   const at = (clientX: number) => {
     const r = box.current?.getBoundingClientRect();
     if (!r) return x;
     return ((clientX - r.left) / r.width) * 100;
   };
-  const set = (v: number) => setX(Math.max(0, Math.min(100, v)));
+  const set = (v: number) => {
+    touched.current = true;
+    setX(Math.max(0, Math.min(100, v)));
+  };
 
   return (
     <div className={s.compareWrap}>
@@ -65,10 +91,10 @@ export const Compare: FC<CompareProps> = ({ before, after, hint, label }) => {
         }}
       >
         <div className={s.compareLayer}>
-          <ProtectedImage src={before.src} alt={`${before.title}, ${before.detail}`} fill sizes="(max-width: 767px) 100vw, 600px" className="object-cover" />
+          <ProtectedImage src={before.src} alt={`${before.title}, ${before.detail}`} fill sizes="(max-width: 767px) 100vw, 900px" className="object-cover" />
         </div>
         <div className={`${s.compareLayer} ${s.compareTop}`}>
-          <ProtectedImage src={after.src} alt={`${after.title}, ${after.detail}`} fill sizes="(max-width: 767px) 100vw, 600px" className="object-cover" />
+          <ProtectedImage src={after.src} alt={`${after.title}, ${after.detail}`} fill sizes="(max-width: 767px) 100vw, 900px" className="object-cover" />
         </div>
         <span className={s.handle} aria-hidden />
       </div>

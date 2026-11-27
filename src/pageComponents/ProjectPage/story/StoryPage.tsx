@@ -1,15 +1,15 @@
 'use client';
 
-import { FC, ReactNode, useEffect, useRef, useState } from 'react';
+import { CSSProperties, FC, ReactNode, useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { TransitionLink } from '@/components/TransitionLink';
 import { ProtectedImage } from '@/components/ProtectedImage';
 import { useLanguage } from '@/context/LanguageContext';
+import { getImageDimensions } from '@/lib/imageDimensions';
 import type { Bilingual, Project, StoryBlock, StoryImage } from '../../../projects';
 import { projectTitle } from '../../../projects';
 import { Carousel } from './Carousel';
 import { Compare } from './Compare';
-import { getImageDimensions } from '@/lib/imageDimensions';
 import s from './story.module.css';
 
 /** Subtle entrance for each block as it comes into view. */
@@ -21,6 +21,26 @@ const reveal = {
 } as const;
 
 const pad = (n: number) => String(n).padStart(2, '0');
+
+/** Width ÷ height of a piece, from the build-time manifest. */
+const ratioOf = (src: string) => {
+  const d = getImageDimensions(src);
+  return d ? d.width / d.height : 1;
+};
+
+/**
+ * A story image that is never shown larger than its file holds on a 2×
+ * screen: it fills its column up to half its pixel width, then stops (and
+ * centres) instead of stretching.
+ */
+const Img: FC<{ src: string; alt: string; sizes: string; priority?: boolean }> = ({ src, alt, sizes, priority }) => {
+  const d = getImageDimensions(src);
+  return (
+    <div style={{ maxWidth: d ? Math.round(d.width / 2) : undefined, marginInline: 'auto' }}>
+      <ProtectedImage src={src} alt={alt} sizes={sizes} priority={priority} className="w-full h-auto" />
+    </div>
+  );
+};
 
 /**
  * The case page told in chapters (Nov 2026 refresh, direction B). Rendered by
@@ -79,6 +99,23 @@ export const StoryPage: FC<{ project: Project }> = ({ project }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [project.slug]);
 
+  // Full-width blocks run under the index column, so the index steps aside.
+  const [wideInView, setWideInView] = useState(false);
+  useEffect(() => {
+    const els = root.current?.querySelectorAll('[data-wide]');
+    if (!els?.length || typeof IntersectionObserver === 'undefined') return;
+    const seen = new Set<Element>();
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => (e.isIntersecting ? seen.add(e.target) : seen.delete(e.target)));
+        setWideInView(seen.size > 0);
+      },
+      { rootMargin: '-15% 0px -15% 0px' },
+    );
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, [project.slug, lang]);
+
   const { scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, { stiffness: 200, damping: 30, restDelta: 0.001 });
 
@@ -107,26 +144,28 @@ export const StoryPage: FC<{ project: Project }> = ({ project }) => {
         );
       case 'mosaic':
         return (
-          <motion.div key={key} className={`${s.mosaic} ${s.block}`} {...reveal}>
-            {block.columns.map((c) => (
-              <span key={c.es} className={s.mosaicHead}>
-                {L(c)}
-              </span>
-            ))}
-            {block.rows.map((row, r) => (
-              <Rows key={row.title.es} num={pad(r + 1)} title={L(row.title)}>
-                {row.images.map((src, i) => (
-                  <div key={src} className={s.mosaicCell}>
-                    <ProtectedImage
-                      src={src}
-                      alt={`${L(row.title)}, ${L(block.columns[i])}`}
-                      sizes="(max-width: 767px) 50vw, 25vw"
-                      className="w-full h-auto"
-                    />
-                  </div>
-                ))}
-              </Rows>
-            ))}
+          <motion.div key={key} className={`${s.wide} ${s.block}`} data-wide {...reveal}>
+            <div className={s.mosaic}>
+              {block.columns.map((c) => (
+                <span key={c.es} className={s.mosaicHead}>
+                  {L(c)}
+                </span>
+              ))}
+              {block.rows.map((row, r) => (
+                <Rows key={row.title.es} num={pad(r + 1)} title={L(row.title)}>
+                  {row.images.map((src, i) => (
+                    <div key={src} className={s.mosaicCell}>
+                      <ProtectedImage
+                        src={src}
+                        alt={`${L(row.title)}, ${L(block.columns[i])}`}
+                        sizes="(max-width: 767px) 50vw, 25vw"
+                        className="w-full h-auto"
+                      />
+                    </div>
+                  ))}
+                </Rows>
+              ))}
+            </div>
           </motion.div>
         );
       case 'carousel':
@@ -146,21 +185,23 @@ export const StoryPage: FC<{ project: Project }> = ({ project }) => {
         return (
           <motion.div key={key} className={s.block} {...reveal}>
             <Carousel label={L(block.label)} prevLabel={t.projects.prevItem} nextLabel={t.projects.nextItem}>
-              {block.items.map((p) => (
-                <div key={p.b.src} className={s.pair}>
-                  <p className={s.pairTitle}>{L(p.title)}</p>
-                  <div className={s.pairGrid}>
-                    <figure>
-                      <ProtectedImage src={p.a.src} alt={`${L(p.title)}, ${L(p.a.detail)}`} sizes="(max-width: 767px) 56vw, 30vw" className="w-full h-auto" />
-                      {caption({ src: p.a.src, detail: p.a.detail })}
-                    </figure>
-                    <figure>
-                      <ProtectedImage src={p.b.src} alt={`${L(p.title)}, ${L(p.b.detail)}`} sizes="(max-width: 767px) 100vw, 50vw" className="w-full h-auto" />
-                      {caption({ src: p.b.src, detail: p.b.detail })}
-                    </figure>
+              {block.items.map((p) => {
+                // Columns in proportion to each piece's ratio, so both share one height.
+                const cols = `${ratioOf(p.a.src).toFixed(3)}fr ${ratioOf(p.b.src).toFixed(3)}fr`;
+                return (
+                  <div key={p.b.src} className={s.pair}>
+                    <p className={s.pairTitle}>{L(p.title)}</p>
+                    <div className={s.pairGrid} style={{ '--cols': cols } as CSSProperties}>
+                      {[p.a, p.b].map((img) => (
+                        <figure key={img.src}>
+                          <ProtectedImage src={img.src} alt={`${L(p.title)}, ${L(img.detail)}`} sizes="(max-width: 767px) 100vw, 50vw" className="w-full h-auto" />
+                          {caption({ src: img.src, title: img.title, detail: img.detail })}
+                        </figure>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </Carousel>
           </motion.div>
         );
@@ -178,16 +219,74 @@ export const StoryPage: FC<{ project: Project }> = ({ project }) => {
       case 'details':
         return (
           <div key={key} className={`${s.details} ${s.block}`}>
-            {block.items.map((img) => {
-              const span = { third: s.spanThird, half: s.spanHalf, wide: s.spanWide, native: s.spanNative }[img.span];
-              return (
-                <motion.figure key={img.src} className={span} {...reveal}>
-                  <NativeOrFull img={img} native={img.span === 'native'} alt={alt(img)} />
-                  {caption(img)}
-                </motion.figure>
-              );
-            })}
+            {block.groups.map((g) => (
+              <motion.div key={g.title.es + g.real.src} className={s.detailGroup} {...reveal}>
+                <p className={s.detailTitle}>{L(g.title)}</p>
+                <div className={s.detailPair}>
+                  {[g.real, g.final].map((img) => (
+                    <figure key={img.src}>
+                      <div className={s.detailTile}>
+                        <ProtectedImage src={img.src} alt={`${L(g.title)}, ${L(img.detail)}`} fill sizes="(max-width: 767px) 45vw, 22vw" className="object-cover" />
+                      </div>
+                      {caption({ src: img.src, title: img.title, detail: img.detail })}
+                    </figure>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
           </div>
+        );
+      case 'wall':
+        return (
+          <motion.div
+            key={key}
+            className={`${block.wide ? s.wide : ''} ${s.block}`}
+            data-wide={block.wide ? true : undefined}
+            {...reveal}
+          >
+            <div
+              className={s.wall}
+              style={{ '--cd': block.columns.desktop, '--cp': block.columns.phone } as CSSProperties}
+            >
+              {block.items.map((img) => (
+                <figure key={img.src}>
+                  {block.ratio ? (
+                    <div className={s.wallTile} style={{ aspectRatio: block.ratio, background: block.ground }}>
+                      <ProtectedImage
+                        src={img.src}
+                        alt={alt(img)}
+                        fill
+                        sizes={`(max-width: 767px) ${Math.round(100 / block.columns.phone)}vw, ${Math.round(100 / block.columns.desktop)}vw`}
+                        className={block.fit === 'contain' ? 'object-contain' : 'object-cover'}
+                      />
+                    </div>
+                  ) : (
+                    <div style={{ background: block.ground }}>
+                      <Img src={img.src} alt={alt(img)} sizes={`(max-width: 767px) ${Math.round(100 / block.columns.phone)}vw, ${Math.round(100 / block.columns.desktop)}vw`} />
+                    </div>
+                  )}
+                  {caption(img)}
+                </figure>
+              ))}
+            </div>
+          </motion.div>
+        );
+      case 'palette':
+        return (
+          <motion.div key={key} className={`${s.palette} ${s.block}`} {...reveal}>
+            {block.colors.map((c) => (
+              <div key={c.hex} className={s.swatch}>
+                <span className={s.chip} style={{ background: c.hex }} />
+                {c.name && <span className={s.capTitle}>{L(c.name)}</span>}
+                <span className={s.code}>{c.hex.toUpperCase()}</span>
+                {c.codes?.map((code) => (
+                  <span key={code} className={s.code}>
+                    {code}
+                  </span>
+                ))}
+              </div>
+            ))}
+          </motion.div>
         );
     }
   };
@@ -200,18 +299,10 @@ export const StoryPage: FC<{ project: Project }> = ({ project }) => {
   ].filter(Boolean) as { k: string; v: string }[];
 
   const coverSrc = story.cover.media ?? project.heroImage;
-  const ground = story.cover.ground ? { background: story.cover.ground } : undefined;
-  const coverImage = (
-    <ProtectedImage
-      src={coverSrc}
-      alt={`${title}, ${lang === 'en' ? 'cover' : 'portada'}`}
-      fill
-      priority
-      sizes="100vw"
-      className="object-cover"
-      style={{ objectPosition: story.cover.focus ?? '50% 50%' }}
-    />
-  );
+  const coverStyle = {
+    ...(story.cover.ground ? { background: story.cover.ground } : {}),
+    '--ar': ratioOf(coverSrc).toFixed(4),
+  } as CSSProperties;
   const back = (
     <TransitionLink href="/proyectos" className={s.back}>
       <span aria-hidden>←</span>
@@ -220,13 +311,23 @@ export const StoryPage: FC<{ project: Project }> = ({ project }) => {
   );
 
   return (
-    <div ref={root} className={s.root}>
+    <div ref={root} className={`${s.root} ${wideInView ? s.indexAside : ''}`}>
       <motion.div className={s.progress} style={{ scaleX: progress }} aria-hidden />
 
       {/* Cover */}
       {story.cover.variant === 'over' ? (
-        <section className={s.coverOver} style={ground}>
-          <div className={s.coverImg}>{coverImage}</div>
+        <section className={s.coverOver} style={coverStyle}>
+          <div className={s.coverImg}>
+            <ProtectedImage
+              src={coverSrc}
+              alt={`${title}, ${lang === 'en' ? 'cover' : 'portada'}`}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+              style={{ objectPosition: story.cover.focus ?? '50% 50%' }}
+            />
+          </div>
           <div className={s.coverText}>
             {back}
             <h1 className={s.title}>{title}</h1>
@@ -242,7 +343,7 @@ export const StoryPage: FC<{ project: Project }> = ({ project }) => {
             </div>
             <p className={s.promise}>{L(story.cover.promise)}</p>
           </section>
-          <div className={s.coverTopImg} style={ground}>
+          <div className={s.coverTopImg} style={coverStyle}>
             <ProtectedImage src={coverSrc} alt={`${title}, ${lang === 'en' ? 'cover' : 'portada'}`} priority sizes="100vw" className="w-full h-auto" />
           </div>
         </>
@@ -259,18 +360,22 @@ export const StoryPage: FC<{ project: Project }> = ({ project }) => {
         </dl>
       )}
 
-      {/* Where it came from */}
+      {/* Where it came from: the same subject before and after */}
       {story.origin && (
         <section className={s.origin}>
-          <motion.figure className={s.originImg} {...reveal}>
-            <ProtectedImage src={story.origin.image.src} alt={alt(story.origin.image)} sizes="(max-width: 767px) 75vw, 30vw" className="w-full h-auto" />
-            {caption(story.origin.image)}
-          </motion.figure>
           <motion.div className={s.originText} {...reveal}>
             <p className={s.kicker}>{L(story.origin.label)}</p>
             <h2 className={s.originHeading}>{L(story.origin.heading)}</h2>
             {story.origin.note && <p className={s.originNote}>{L(story.origin.note)}</p>}
           </motion.div>
+          <div className={s.originPair}>
+            {[story.origin.before, story.origin.after].map((img, i) => (
+              <motion.figure key={img.src} {...reveal} transition={{ ...reveal.transition, delay: i * 0.12 }}>
+                <ProtectedImage src={img.src} alt={alt(img)} sizes="(max-width: 767px) 100vw, 45vw" className="w-full h-auto" />
+                {caption(img)}
+              </motion.figure>
+            ))}
+          </div>
         </section>
       )}
 
@@ -289,10 +394,12 @@ export const StoryPage: FC<{ project: Project }> = ({ project }) => {
         </nav>
 
         <div className={s.main}>
-          {/* Phone chapter bar: shows up once the first chapter starts. */}
-          <div className={`${s.current} ${active < 0 ? s.currentIdle : ''}`} aria-hidden>
-            <span className={s.num}>{pad(Math.max(active, 0) + 1)}</span>
-            <span>{chapters[Math.max(active, 0)]?.label}</span>
+          {/* Phone chapter bar: takes no room, shows up once the first chapter starts. */}
+          <div className={s.currentWrap} aria-hidden>
+            <div className={`${s.current} ${active < 0 ? s.currentIdle : ''}`}>
+              <span className={s.num}>{pad(Math.max(active, 0) + 1)}</span>
+              <span>{chapters[Math.max(active, 0)]?.label}</span>
+            </div>
           </div>
 
           {story.chapters.map((c, i) => (
@@ -315,7 +422,7 @@ export const StoryPage: FC<{ project: Project }> = ({ project }) => {
         </div>
       </div>
 
-      {/* Closing image, near full bleed */}
+      {/* Closing image, near full bleed, caption below it (never on the image) */}
       {story.closing && (
         <>
           <motion.figure className={s.closing} {...reveal}>
@@ -396,22 +503,3 @@ const Rows: FC<{ num: string; title: string; children: ReactNode }> = ({ num, ti
     {children}
   </>
 );
-
-/**
- * A close-up either fills its column, or (native) shows at half its pixel
- * width so it is never enlarged past what the file holds on a 2× screen.
- */
-const NativeOrFull: FC<{ img: StoryImage; native: boolean; alt: string }> = ({ img, native, alt }) => {
-  if (!native) return <ProtectedImage src={img.src} alt={alt} sizes="(max-width: 767px) 100vw, 45vw" className="w-full h-auto" />;
-  return <NativeImage src={img.src} alt={alt} />;
-};
-
-const NativeImage: FC<{ src: string; alt: string }> = ({ src, alt }) => {
-  const dims = getImageDimensions(src);
-  const w = dims ? Math.round(dims.width / 2) : 240;
-  return (
-    <div style={{ width: w, maxWidth: '100%' }}>
-      <ProtectedImage src={src} alt={alt} sizes={`${w}px`} className="w-full h-auto" />
-    </div>
-  );
-};

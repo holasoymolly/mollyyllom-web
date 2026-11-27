@@ -631,9 +631,9 @@
     "width": 2752,
     "height": 1536
   },
-  "/img/projects/b-safe-vistas/piezas/cinta-real.webp": {
-    "width": 1766,
-    "height": 660
+  "/img/projects/b-safe-vistas/piezas/cinta-real-cuadrada.webp": {
+    "width": 580,
+    "height": 580
   },
   "/img/projects/b-safe-vistas/piezas/cinta-vista.webp": {
     "width": 580,
@@ -647,13 +647,21 @@
     "width": 660,
     "height": 660
   },
-  "/img/projects/b-safe-vistas/piezas/logo-antes.webp": {
-    "width": 1200,
-    "height": 600
+  "/img/projects/b-safe-vistas/piezas/logo-antes-xl.webp": {
+    "width": 1800,
+    "height": 900
   },
-  "/img/projects/b-safe-vistas/piezas/logo-despues.webp": {
-    "width": 1200,
-    "height": 600
+  "/img/projects/b-safe-vistas/piezas/logo-despues-xl.webp": {
+    "width": 1800,
+    "height": 900
+  },
+  "/img/projects/b-safe-vistas/piezas/origen-foto.webp": {
+    "width": 1400,
+    "height": 1400
+  },
+  "/img/projects/b-safe-vistas/piezas/origen-vista.webp": {
+    "width": 1400,
+    "height": 1400
   },
   "/img/projects/b-safe-vistas/piezas/visita-clasica.webp": {
     "width": 1600,
