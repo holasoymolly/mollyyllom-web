@@ -2353,6 +2353,7 @@ const advanced: Project = {
 const bSafeVistasProject: Project = {
   slug: "b-safe-vistas",
   title: "B-SAFE · Vistas de estudio",
+  titleEn: "B-SAFE · Studio views",
   client: "B-SAFE, calzado de seguridad de DEINSA",
   clientEn: "B-SAFE, DEINSA's safety footwear",
   year: "2026",
