@@ -11,7 +11,33 @@ interface ProjectHeroProps {
   swipe?: number;
   /** Labels for the dots, e.g. "Ver imagen 2 de 3". */
   dotLabel: (index: number, total: number) => string;
+  /** Project.heroMedia: the grid's logo animation on its flat ground. */
+  media?: { src: string; ground: string };
 }
+
+/**
+ * The logo animation centred on its flat ground, full bleed, so the case
+ * opens on the same frame as its grid tile. The square video is shown whole
+ * (contain), and its edges fade into the ground so no seam shows where the
+ * video's colour and the CSS colour differ by a level.
+ */
+const LogoHero: FC<{ src: string; ground: string; alt: string }> = ({ src, ground, alt }) => (
+  <div className="relative w-full h-[50vh] md:h-[70vh] overflow-hidden" style={{ background: ground }}>
+    <div
+      className="absolute inset-0 m-auto aspect-square h-full max-w-full"
+      style={{
+        maskImage:
+          'linear-gradient(to right, transparent, #000 7%, #000 93%, transparent), linear-gradient(to bottom, transparent, #000 7%, #000 93%, transparent)',
+        WebkitMaskImage:
+          'linear-gradient(to right, transparent, #000 7%, #000 93%, transparent), linear-gradient(to bottom, transparent, #000 7%, #000 93%, transparent)',
+        maskComposite: 'intersect',
+        WebkitMaskComposite: 'source-in',
+      }}
+    >
+      <ProtectedImage src={src} alt={alt} fill priority className="object-contain" />
+    </div>
+  </div>
+);
 
 /**
  * Full-bleed case hero. By default the image covers a 50vh (phone) / 70vh
@@ -23,7 +49,7 @@ interface ProjectHeroProps {
  * where you are and jump on tap. From `md` up it is the same cropped band as
  * before: one element, one image request, so nothing loads twice.
  */
-export const ProjectHero: FC<ProjectHeroProps> = ({ src, alt, swipe, dotLabel }) => {
+export const ProjectHero: FC<ProjectHeroProps> = ({ src, alt, swipe, dotLabel, media }) => {
   const dims = getImageDimensions(src);
   const swipes = Boolean(swipe && swipe > 1 && dims);
   const ratio = dims ? dims.width / dims.height : 1;
@@ -63,6 +89,8 @@ export const ProjectHero: FC<ProjectHeroProps> = ({ src, alt, swipe, dotLabel })
     if (!el) return;
     el.scrollTo({ left: (maxScroll(el) * i) / (count - 1), behavior: 'smooth' });
   };
+
+  if (media) return <LogoHero src={media.src} ground={media.ground} alt={alt} />;
 
   if (!swipes) {
     return (

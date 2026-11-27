@@ -291,6 +291,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
         {/* Hero image, full bleed */}
         <ProjectHero
           src={project.heroImage}
+          media={project.heroMedia}
           alt={`${title}, ${lang === 'en' ? 'cover' : 'portada'}`}
           swipe={project.heroSwipe}
           dotLabel={(i, n) => (lang === 'en' ? `Show part ${i} of ${n}` : `Ver parte ${i} de ${n}`)}
