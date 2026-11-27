@@ -4984,6 +4984,141 @@ const synqProject: Project = {
   ],
 };
 
+/**
+ * INETXUS told in chapters (F3). Loose pieces in `piezas/`: the compare pair
+ * and the five routes are rendered from the final SVGs/PNGs with no numbers or
+ * labels (`04-portafolio/inetxus/piezas-story.py`); facade, glass door and
+ * plastic come full size from Molly's own mockups. The brand panels (logo on
+ * its own colour) carry their ground, as brand panels may.
+ */
+const IX = "/img/projects/inetxus";
+const IXP = `${IX}/piezas`;
+const ixScene: Bilingual = { es: "Montaje", en: "Mockup" };
+const ixRoutes: { key: string; name: Bilingual }[] = [
+  { key: "01", name: { es: "Intersección", en: "Intersection" } },
+  { key: "02", name: { es: "Nodos", en: "Nodes" } },
+  { key: "03", name: { es: "Integrado", en: "Integrated" } },
+  { key: "04", name: { es: "Evolución", en: "Evolution" } },
+  { key: "05", name: { es: "ADN", en: "DNA" } },
+];
+const inetxusStory: CaseStory = {
+  cover: {
+    variant: "top",
+    // Borrador para Molly
+    promise: {
+      es: "El cruce que ya tenía su logo, más limpio y hecho sistema.",
+      en: "The crossing its old logo already had, cleaner, and grown into a system.",
+    },
+    media: `${IX}/inetxus-logo-animado-hero.mp4`,
+    ground: "#ffffff",
+  },
+  chapters: [
+    {
+      id: "encargo",
+      label: { es: "El encargo", en: "The brief" },
+      // Títulos de capítulo: borrador para Molly
+      heading: { es: "Modernizarlo sin perder su esencia.", en: "Modern, without losing what it was." },
+      text: {
+        es: "INETXUS trabaja donde se cruzan la tecnología, las redes y la comunicación. Ya tenía un logo, y el pedido era modernizarlo sin perder su esencia: una identidad a la altura de lo que la empresa es hoy, en un mercado lleno de marcas técnicas y frías. El cliente resumió su forma de trabajar en una frase: «Ponemos el cliente en el centro, somos un aliado».",
+        en: "INETXUS works where technology, networks and communication meet. It already had a logo, and the ask was to modernize it without losing its essence: an identity that matched who the company is today, in a market full of cold, technical brands. The client summed up how they work in one line: “We put the client at the center. We are an ally.”",
+      },
+      blocks: [
+        { kind: "image", size: "bleed", image: { src: `${IXP}/fachada.webp`, title: { es: "Fachada", en: "Facade" }, detail: ixScene } },
+      ],
+    },
+    {
+      id: "logo",
+      label: { es: "El logo", en: "The logo" },
+      heading: { es: "Una X que es cruce y enlace.", en: "An X that is both a crossing and a link." },
+      text: {
+        es: "La frase del cliente fue el punto de partida: el cliente en el centro. Por eso la ruta que se quedó fue la X, un cruce que también es enlace, el punto donde se encuentran la tecnología, las redes y la gente que las usa. Y ahí estaba la esencia que había que cuidar: el símbolo de antes ya tenía ese cruce. Lo dejé, quité todo lo demás y lo llevé a una línea más limpia, que se sostiene igual en una pantalla que en una fachada.",
+        en: "The client's own line was the starting point: the client at the center. That's why the route that stayed was the X, a crossing that is also a link, the point where technology, networks and the people who use them meet. And that was the essence worth protecting: the old symbol already had that crossing. I kept it, took everything else away and brought it to a cleaner line that holds up the same on a screen as on a facade.",
+      },
+      blocks: [
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 5, phone: 2 },
+          ratio: "4/3",
+          items: ixRoutes.map((r) => ({
+            src: `${IXP}/ruta-${r.key}.webp`,
+            title: r.name,
+            detail: r.key === "01" ? { es: "Ruta 01, la que se quedó", en: "Route 01, the one that stayed" } : { es: `Ruta ${r.key}`, en: `Route ${r.key}` },
+          })),
+        },
+        {
+          kind: "compare",
+          width: "wide",
+          before: { src: `${IXP}/compare-antes.webp`, title: { es: "Antes", en: "Before" }, detail: { es: "El símbolo anterior", en: "The old symbol" } },
+          after: { src: `${IXP}/compare-despues.webp`, title: { es: "Después", en: "After" }, detail: { es: "La X nueva", en: "The new X" } },
+          hint: { es: "Arrastra la línea o usa las flechas.", en: "Drag the line or use the arrows." },
+        },
+        { kind: "image", size: "bleed", image: { src: `${IX}/inetxus-x-MY-05.webp`, title: { es: "Logo", en: "Logo" }, detail: { es: "En blanco sobre el azul", en: "White on the blue" } } },
+      ],
+    },
+    {
+      id: "color",
+      label: { es: "Color y letra", en: "Color and type" },
+      heading: { es: "Navy, azul y un poco de naranja.", en: "Navy, blue and a little orange." },
+      // Borrador para Molly
+      text: {
+        es: "El navy y el azul cargan la parte técnica, y el naranja aparece poco, justo donde algo tiene que verse. La letra es BR Sonoma, clara de cerca y de lejos, igual en una pantalla que en el costado de una camioneta.",
+        en: "Navy and blue carry the technical side, and the orange shows up rarely, right where something needs to be seen. The type is BR Sonoma, clear up close and from a distance, on a screen or on the side of a van.",
+      },
+      blocks: [
+        {
+          kind: "palette",
+          colors: [
+            { name: { es: "Navy", en: "Navy" }, hex: "#0A2240", codes: ["RGB 10 34 64", "CMYK 98.54 84.03 45.37 51.17", "Pantone 289 C"] },
+            { name: { es: "Azul", en: "Blue" }, hex: "#243BB2", codes: ["RGB 36 59 178", "CMYK 92.2 84.41 0 0", "Pantone 2126 C"] },
+            { name: { es: "Naranja", en: "Orange" }, hex: "#FF9D1B", codes: ["RGB 255 157 27", "CMYK 0 45.63 95.93 0", "Pantone 1375 C"] },
+            { name: { es: "Gris claro", en: "Light grey" }, hex: "#E2E3E5", codes: ["RGB 226 227 229", "CMYK 10.94 6.93 6.82 0", "Pantone Black 6 C 10 %"] },
+            { name: { es: "Negro", en: "Black" }, hex: "#000000", codes: ["RGB 0 0 0", "CMYK 100 100 100 100"] },
+          ],
+        },
+        { kind: "image", size: "wide", image: { src: `${IX}/inetxus-x-MY-06.webp`, title: { es: "Logo vertical", en: "Stacked logo" }, detail: { es: "En negativo sobre el navy", en: "Reversed on the navy" } } },
+      ],
+    },
+    {
+      id: "sistema",
+      label: { es: "El sistema", en: "The system" },
+      heading: { es: "De la web a la camioneta.", en: "From the website to the van." },
+      text: {
+        es: "Después la X dejó de ser solo un ícono y se volvió sistema. Crece y se sale del borde en la camioneta y en la web, enmarca la foto en el carnet y marca cada equipo en el rack. La idea es que la marca se reconozca aunque el nombre quede muy lejos para leerse.",
+        en: "Then the X stopped being just an icon and became a system. It grows and bleeds off the edge on the van and the website, frames the photo on the ID badge and tags every piece of equipment in the rack. The idea is that you know the brand even when the name is too far away to read.",
+      },
+      blocks: [
+        {
+          kind: "carousel",
+          large: true,
+          width: "wide",
+          label: { es: "La X en uso", en: "The X at work" },
+          items: [
+            { src: `${IX}/inetxus-camioneta-mockup.webp`, title: { es: "Camioneta", en: "Van" }, detail: ixScene },
+            { src: `${IX}/inetxus-laptop-mockup.webp`, title: { es: "Web", en: "Website" }, detail: ixScene },
+            { src: `${IX}/inetxus-carnet-mockup.webp`, title: { es: "Carnet y lanyard", en: "ID badge and lanyard" }, detail: ixScene },
+            { src: `${IX}/inetxus-router-mockup.webp`, title: { es: "Etiqueta de equipo", en: "Equipment label" }, detail: ixScene },
+          ],
+        },
+        { kind: "image", size: "bleed", image: { src: `${IX}/inetxus-papeleria-mockup.webp`, title: { es: "Papelería", en: "Stationery" }, detail: ixScene } },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 2, phone: 1 },
+          ratio: "3/2",
+          items: [
+            { src: `${IXP}/puerta-cristal.webp`, title: { es: "Puerta de cristal", en: "Glass door" }, detail: ixScene },
+            { src: `${IXP}/plastico.webp`, title: { es: "Sobre plástico", en: "On plastic" }, detail: ixScene },
+          ],
+        },
+      ],
+    },
+  ],
+  closing: {
+    image: { src: `${IX}/inetxus-x-MY-01.webp`, title: { es: "Ícono", en: "Icon" }, detail: { es: "Sobre el navy", en: "On the navy" } },
+  },
+};
+
 const inetxusProject: Project = {
   slug: "inetxus",
   title: "INETXUS",
@@ -5055,6 +5190,7 @@ const inetxusProject: Project = {
     "/img/projects/inetxus/inetxus-x-MY-06.webp",
     "/img/projects/inetxus/inetxus-papeleria-mockup.webp",
   ],
+  story: inetxusStory,
 };
 
 const posProject: Project = {
