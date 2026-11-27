@@ -121,6 +121,7 @@ const laColmenaProject: Project = {
   ],
   portfolioImage: "/img/projects/la-colmena/colmena-cortes.mp4",
   heroImage: "/img/projects/la-colmena/colmena-x-MY-01.webp",
+  heroSwipe: 5,
   paragraphs: [
     "El logo del hexágono funcionaba y se quedó. Todo lo demás lo volví a pensar. La portada ahora se arma alrededor de una persona: su nombre va enorme detrás, o escrito a mano, y unas flechas te llevan a las páginas donde está su historia. Con eso la revista dejó de verse como un boletín y empezó a verse como algo que uno quiere agarrar de la mesa.",
     "Por dentro armé un sistema con espacio para jugar. Todo el texto va en Akzidenz Grotesk, cada sección tiene su color y los garabatos e íconos se dibujan con el mismo trazo redondo, así que hasta una página de datos tiene algo de mano. El hexágono del logo también se volvió recurso: un panal para ordenar fotos, cifras o bases de datos.",
