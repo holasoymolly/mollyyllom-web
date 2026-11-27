@@ -522,8 +522,204 @@ const ciudadFielProject: Project = {
   ],
 };
 
+const BTS = "/img/projects/burn-that-sht";
+const BTSP = `${BTS}/piezas`;
+const btsScene = (es: string, en: string, src: string): StoryImage => ({
+  src,
+  title: { es, en },
+  detail: { es: "Escena de la campaña, 4:5", en: "Campaign scene, 4:5" },
+});
+const btsSystem = (src: string, es: string, en: string): StoryImage => ({ src: `${BTSP}/sistema-${src}.webp`, title: { es, en } });
+
+/**
+ * Burn That Sh*t told in chapters (F3, 27 Nov 2026). The approved paragraphs
+ * are reused word for word, split where a chapter needs only part of them.
+ * BORRADOR para Molly: the promise, chapter labels and headings, captions.
+ * Lunge uses the copy with the screen refitted (27 Nov), never the original.
+ * Figures: 6 scenes × 3 formats = 18 pieces, counted in assets/kv.
+ */
+const burnThatShtStory: CaseStory = {
+  cover: {
+    variant: "top",
+    media: `${BTSP}/portada-crouch-16x9.webp`,
+    promise: {
+      es: "El relanzamiento de Burn & Claim: irreverente como siempre, y más grande que nunca.",
+      en: "Burn & Claim's relaunch: as cheeky as ever, and bigger than it's ever looked.",
+    },
+  },
+  chapters: [
+    {
+      id: "encargo",
+      label: { es: "El encargo", en: "The brief" },
+      heading: { es: "La misma herramienta, con otra cara.", en: "Same tool, new face." },
+      text: {
+        es: "Burn & Claim estrenaba su app nueva y su look nuevo en noviembre de 2026, y había que contarlo en X sin que pareciera otro producto. Era la misma herramienta para limpiar la wallet y recuperar SOL, solo que más rápida y mucho más linda. La campaña tenía que sonar como siempre ha sonado Burn & Claim, irreverente y directa, y verse más grande que nunca. Y la hice yo sola, con herramientas de IA, así que también tocaba demostrar que una campaña con fotos generadas puede verse de verdad.",
+        en: "Burn & Claim was launching its new app and its new look in November 2026, and it had to land on X without looking like a different product. Same tool for cleaning your wallet and getting your SOL back, just faster and a lot better looking. The campaign had to sound the way Burn & Claim always has, cheeky and straight to the point, and look bigger than it ever had. I made it on my own with AI tools, so it also had to prove that a campaign built on generated photos can look real.",
+      },
+      blocks: [
+        {
+          kind: "stats",
+          items: [
+            { value: "6", label: { es: "escenas", en: "scenes" } },
+            { value: "3", label: { es: "formatos por escena", en: "formats per scene" } },
+            { value: "18", label: { es: "piezas", en: "pieces" } },
+          ],
+        },
+        { kind: "image", size: "bleed", image: { src: `${BTS}/bts-laptop-mockup.webp`, title: { es: "burnandclaim.com", en: "burnandclaim.com" }, detail: { es: "La web nueva, en una escena hecha para la campaña", en: "The new site, in a scene made for the campaign" } } },
+      ],
+    },
+    {
+      id: "escenas",
+      label: { es: "Las escenas", en: "The scenes" },
+      heading: { es: "La app, siempre en la mano de alguien.", en: "The app, always in someone's hand." },
+      text: {
+        es: "La app nueva era lo que vendíamos, así que tenía que salir en todas las piezas. Las armé alrededor de un Seeker en la mano de alguien: uno agachado que te lo pone en la cara, otra que se tira hacia ti, una mano con un anillo dorado que lo levanta como si fuera un trofeo. Siempre con la pantalla real de la app, justificada arriba para que el logo se vea completo, y montos de ejemplo marcados como ejemplo.",
+        en: "The new app was the thing we were selling, so it had to be in every single piece. I built them around a Seeker in someone's hand: a guy crouching and pushing it right at you, a woman lunging toward the camera, a hand with a chunky gold ring holding it up like a trophy. Always with the real app screen, top-aligned so the logo shows in full, and example amounts marked as examples.",
+      },
+      blocks: [
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 3, phone: 2 },
+          items: [
+            btsScene("Crouch", "Crouch", `${BTSP}/escena-crouch-4x5.webp`),
+            btsScene("Lunge", "Lunge", `${BTSP}/escena-lunge-4x5.webp`),
+            btsScene("Ring", "Ring", `${BTSP}/escena-ring-4x5.webp`),
+            btsScene("Hands", "Hands", `${BTSP}/escena-hands-4x5.webp`),
+            btsScene("Seated", "Seated", `${BTSP}/escena-seated-4x5.webp`),
+            btsScene("Phone", "Phone", `${BTSP}/escena-phone-4x5.webp`),
+          ],
+        },
+        { kind: "image", size: "wide", image: { src: `${BTS}/bts-celular-mockup.webp`, title: { es: "burnandclaim.com en el celular", en: "burnandclaim.com on a phone" }, detail: { es: "La sección «What you get», en vivo", en: "The “What you get” section, live" } } },
+      ],
+    },
+    {
+      id: "tomas",
+      label: { es: "Escoger, no reparar", en: "Pick, don't fix" },
+      heading: { es: "Una foto generada no se arregla. Se escoge.", en: "You don't fix a generated photo. You pick one." },
+      text: {
+        es: "Las fotos las hice con IA, y la primera lección fue que una foto generada no se arregla, se escoge. Pasé varias rondas retocando la misma toma, un dedo por aquí, una uña por allá, y cada arreglo rompía otra cosa. Así que cambié el método. Armé cada escena con un bloque gris donde iba el teléfono y pedí tandas de tomas con el Seeker ya en la mano, usando fotos reales de cómo se agarra un teléfono como referencia. De cada tanda me quedé con una y no la volví a pedir.",
+        en: "I made the photos with AI, and the first lesson was that you don't fix a generated photo, you pick one. I spent several rounds retouching the same shot, a finger here, a nail there, and every fix broke something else. So I changed the method. I set up each scene with a grey block where the phone would go and asked for batches of takes with the Seeker already in hand, using real photos of how people hold a phone as reference. From each batch I kept one and stopped there.",
+      },
+      blocks: [
+        {
+          kind: "carousel",
+          large: true,
+          width: "wide",
+          label: { es: "Tomas de Lunge", en: "Lunge takes" },
+          items: [
+            { src: `${BTSP}/toma-referencia.webp`, title: { es: "La escena", en: "The scene" }, detail: { es: "Con el bloque gris donde va el teléfono", en: "With a grey block where the phone goes" } },
+            { src: `${BTSP}/toma-a.webp`, title: { es: "Toma A", en: "Take A" }, detail: { es: "La elegida", en: "The one I kept" } },
+            { src: `${BTSP}/toma-b.webp`, title: { es: "Toma B", en: "Take B" } },
+            { src: `${BTSP}/toma-c.webp`, title: { es: "Toma C", en: "Take C" } },
+            { src: `${BTSP}/toma-d.webp`, title: { es: "Toma D", en: "Take D" } },
+            { src: `${BTSP}/toma-e.webp`, title: { es: "Toma E", en: "Take E" } },
+          ],
+        },
+      ],
+    },
+    {
+      id: "capas",
+      label: { es: "Lo que vende es real", en: "What sells is real" },
+      heading: { es: "La foto se genera. La app, no.", en: "The photo is generated. The app isn't." },
+      text: {
+        es: "Después, una sola pasada de realismo: probé una versión más creativa que se veía más pulida, pero me cambiaba la uña, el marco y la zapatilla, y me quedé con la fiel. Lo que vende nunca lo generó la IA: la pantalla es la app real, puesta en perspectiva, y el logo, los titulares y el sello van encima, en capas que se actualizan solas cuando cambia la app.",
+        en: "Then a single realism pass: I tried a more creative version that looked more polished, but it changed the nail, the frame and the sneaker, so I kept the faithful one. The part that sells was never generated: the screen is the real app, set in perspective, and the logo, the headlines and the stamp sit on top, in layers that update on their own when the app changes.",
+      },
+      blocks: [
+        {
+          kind: "details",
+          groups: [
+            {
+              title: { es: "La cara", en: "The face" },
+              real: { src: `${BTSP}/realismo-cara-toma.webp`, detail: { es: "La toma, tal cual", en: "The take, as is" } },
+              final: { src: `${BTSP}/realismo-cara-pasada.webp`, detail: { es: "Con la pasada de realismo", en: "After the realism pass" } },
+            },
+            {
+              title: { es: "Los dedos", en: "The fingers" },
+              real: { src: `${BTSP}/realismo-dedos-toma.webp`, detail: { es: "La toma, tal cual", en: "The take, as is" } },
+              final: { src: `${BTSP}/realismo-dedos-pasada.webp`, detail: { es: "Con la pasada de realismo", en: "After the realism pass" } },
+            },
+          ],
+        },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 2, phone: 2 },
+          ratio: "4/5",
+          fit: "contain",
+          items: [
+            { src: `${BTSP}/capa-foto-hueco.webp`, title: { es: "La foto", en: "The photo" }, detail: { es: "Con el hueco donde va la pantalla", en: "With a hole where the screen goes" } },
+            { src: `${BTSP}/escena-lunge-4x5.webp`, title: { es: "La pieza", en: "The piece" }, detail: { es: "La app real en perspectiva, con titular, tag y cierre encima", en: "The real app in perspective, with headline, tag and closing on top" } },
+          ],
+        },
+        { kind: "image", size: "bleed", image: { src: `${BTS}/bts-seeker-mockup.webp`, title: { es: "La app v3 en un Seeker", en: "The v3 app on a Seeker" }, detail: { es: "La primera pantalla del onboarding, en vivo", en: "The first onboarding screen, live" } } },
+      ],
+    },
+    {
+      id: "sistema",
+      label: { es: "El sistema", en: "The system" },
+      heading: { es: "Titular grande, y la app siempre gana.", en: "Big headline, and the app always wins." },
+      text: {
+        es: "Después vino el orden. Titular grande en Rubik, blanco y rojo sobre casi negro, porque Burn & Claim siempre ha sido eso. El sello y los tags se fueron al cierre, al lado del CTA y lejos del teléfono, porque al principio competían con la app y la app gana.",
+        en: "Then came the order. Big headlines in Rubik, white and red on almost black, because that's what Burn & Claim has always been. The stamp and the tags moved down to the closing, next to the CTA and away from the phone, because at first they were fighting with the app, and the app wins.",
+      },
+      blocks: [
+        { kind: "image", size: "wide", image: { src: `${BTSP}/ring-16x9.webp`, title: { es: "Ring", en: "Ring" }, detail: { es: "Escena de la campaña, 16:9", en: "Campaign scene, 16:9" } } },
+        {
+          kind: "palette",
+          colors: [
+            { name: { es: "Casi negro", en: "Almost black" }, hex: "#0A0412" },
+            { name: { es: "Rojo", en: "Red" }, hex: "#F23A30" },
+            { name: { es: "Blanco", en: "White" }, hex: "#FFFFFF" },
+          ],
+        },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 3, phone: 2 },
+          ratio: "1/1",
+          items: [
+            btsSystem("sello-rojo-456", "Sello rojo", "Red stamp"),
+            btsSystem("sello-hands", "Sello blanco", "White stamp"),
+            btsSystem("sello-ring", "Sello con la llama", "Stamp with the flame"),
+            btsSystem("tag-clean-it", "Tag «Clean it. Claim it.»", "“Clean it. Claim it.” tag"),
+            btsSystem("tag-way-faster", "Tag «Way faster.»", "“Way faster.” tag"),
+            btsSystem("cta", "Cierre con el CTA", "Closing CTA"),
+          ],
+        },
+      ],
+    },
+    {
+      id: "expectativa",
+      label: { es: "La expectativa", en: "The teasers" },
+      heading: { es: "Dos posts chiquitos antes del día.", en: "Two tiny posts before the day." },
+      text: {
+        es: "Antes del día del lanzamiento salieron dos posts chiquitos: la llama apagada, «Something's coming», y al otro día la llama prendida, «Same burn. New look.». Ese era todo el mensaje.",
+        en: "Before launch day we put out two tiny posts: the flame unlit, “Something's coming”, and the next day the flame lit, “Same burn. New look.”. That was the whole message.",
+      },
+      blocks: [
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 2, phone: 1 },
+          items: [
+            { src: `${BTSP}/expectativa-1.webp`, title: { es: "Something's coming", en: "Something's coming" }, detail: { es: "24 de noviembre", en: "24 November" } },
+            { src: `${BTSP}/expectativa-2.webp`, title: { es: "Same burn. New look.", en: "Same burn. New look." }, detail: { es: "25 de noviembre", en: "25 November" } },
+          ],
+        },
+      ],
+    },
+  ],
+  closing: {
+    image: { src: `${BTS}/bts-sticker-mockup.webp`, title: { es: "El sello, de calcomanía", en: "The stamp, as a sticker" }, detail: { es: "Montaje", en: "Mockup" } },
+    more: [`${BTSP}/cuadrado-seated-1x1.webp`, `${BTSP}/cuadrado-hands-1x1.webp`, `${BTSP}/cuadrado-phone-1x1.webp`],
+  },
+};
+
 const burnThatShtProject: Project = {
   slug: "burn-that-sht",
+  story: burnThatShtStory,
   title: "Burn That Sh*t",
   client: "Burn & Claim, de Aerosol",
   clientEn: "Burn & Claim, by Aerosol",
