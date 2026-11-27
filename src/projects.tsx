@@ -5027,8 +5027,177 @@ const rodaiProject: Project = {
   story: rodaiStory,
 };
 
+const AF = "/img/projects/aerosolification";
+const AFP = `${AF}/piezas`;
+
+/**
+ * Aerosolification told in chapters (F3, 27 Nov 2026). The four approved
+ * paragraphs are reused word for word, split where a chapter needs only part.
+ * The process pieces are the loose images behind the approved panels (the ones
+ * without chroma green, on #24222F), never enlarged: the rounds are 600 px and
+ * stay small. Kelvin and Sofía only appear illustrated (consent, 26 Nov).
+ * BORRADOR para Molly: the promise, chapter labels and headings, captions.
+ * The cover stays `top` until the sliding cover variant exists.
+ */
+const aerosolificationStory: CaseStory = {
+  cover: {
+    variant: "top",
+    promise: {
+      es: "Un estilo de retrato mío, convertido en un skill para que cualquiera del equipo entre a mi mundo.",
+      en: "A portrait style of mine, turned into a skill so anyone on the team can step into my world.",
+    },
+  },
+  chapters: [
+    {
+      id: "origen",
+      label: { es: "Así empezó", en: "Where it began" },
+      heading: { es: "Primero, mi retrato.", en: "First, my own portrait." },
+      text: {
+        es: "Todo empezó con mi propio retrato. Partí de una foto y de un borrador de IA que me devolvió naranja y de cuerpo entero, y lo redibujé a mano en Illustrator hasta que se pareció a mí y a lo que yo dibujo. Ese redibujo terminó siendo la regla para todos.",
+        en: "It all started with my own portrait. I began with a photo and an AI draft that came back orange and full body, and I redrew it by hand in Illustrator until it looked like me and like the way I draw. That redraw ended up being the rule for everyone.",
+      },
+      blocks: [
+        {
+          kind: "wall",
+          columns: { desktop: 2, phone: 2 },
+          items: [
+            { src: `${AFP}/origen-foto.webp`, title: { es: "La foto", en: "The photo" } },
+            { src: `${AFP}/origen-borrador-ia.webp`, title: { es: "Borrador de IA", en: "AI draft" }, detail: { es: "Descartado", en: "Dropped" } },
+          ],
+        },
+        { kind: "image", size: "solo", image: { src: `${AFP}/origen-redibujo.webp`, title: { es: "Mi redibujo", en: "My redraw" }, detail: { es: "El post del merge de Mollyverse con Aerosol", en: "The Mollyverse x Aerosol merge post" } } },
+      ],
+    },
+    {
+      id: "reglas",
+      label: { es: "Las reglas", en: "The rules" },
+      heading: { es: "Lo que hace que un retrato sea mío.", en: "What makes a portrait mine." },
+      text: {
+        es: "Antes de pedirle nada a un modelo escribí qué hace que un retrato sea mío: sin nariz, ojos ovalados y altos, nada de contorno negro, colores planos y puntos como única textura, como mi lado rapado.",
+        en: "Before asking a model for anything, I wrote down what makes a portrait mine: no nose, tall oval eyes, no black outline, flat colour and dots as the only texture, like my shaved side.",
+      },
+      blocks: [
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 4, phone: 2 },
+          items: [
+            { src: `${AFP}/regla-cara.webp`, title: { es: "Sin nariz", en: "No nose" }, detail: { es: "Ojos ovalados y altos, una sonrisa chiquita", en: "Tall oval eyes, one small smile" } },
+            { src: `${AFP}/regla-puntos.webp`, title: { es: "Puntos", en: "Dots" }, detail: { es: "La única textura, como mi lado rapado", en: "The only texture, like my shaved side" } },
+            { src: `${AFP}/regla-pelo.webp`, title: { es: "Sin contorno negro", en: "No black outline" }, detail: { es: "Solo el pelo lleva una línea, un tono más oscuro", en: "Only the hair gets a line, one shade darker" } },
+            { src: `${AFP}/regla-color.webp`, title: { es: "Color plano", en: "Flat colour" }, detail: { es: "Colores planos en todo el retrato", en: "Flat colour across the whole portrait" } },
+          ],
+        },
+        {
+          kind: "palette",
+          colors: [
+            { name: { es: "Noche", en: "Night" }, hex: "#1A1A23" },
+            { name: { es: "Ciudad", en: "City" }, hex: "#482190" },
+            { name: { es: "Tinta", en: "Ink" }, hex: "#151128" },
+            { name: { es: "Crema", en: "Cream" }, hex: "#FCE9D0" },
+            { name: { es: "Oro", en: "Gold" }, hex: "#D4A971" },
+          ],
+        },
+      ],
+    },
+    {
+      id: "rondas",
+      label: { es: "Las rondas", en: "The rounds" },
+      heading: { es: "Cuatro rondas para enseñarle mi mano.", en: "Four rounds to teach it my hand." },
+      text: {
+        es: "Enseñarle eso a un modelo tomó cuatro rondas. La primera se parecía a Kelvin, pero no a mi dibujo. La segunda le puso mi camisa, mi collar y mis lentes, y de ahí salió una regla que me encanta: mi personaje se usa para el estilo, nunca para la ropa. En la tercera llegó el estilo y se perdieron la barba y los tatuajes, y a la cuarta ronda el estilo ya era mío, con barba y tatuajes. Sofía salió a la primera.",
+        en: "Teaching that to a model took four rounds. The first one looked like Kelvin, but not like my drawing. The second put my shirt, my necklace and my glasses on him, and that gave me a rule I love: my character is there for the style, never for the outfit. The third got the style and lost the beard and the tattoos, and by the fourth round the style was mine, beard and tattoos included. Sofía came out right on the first take.",
+      },
+      blocks: [
+        {
+          kind: "wall",
+          columns: { desktop: 4, phone: 2 },
+          items: [
+            { src: `${AFP}/ronda-r1.webp`, title: { es: "Ronda 1", en: "Round 1" }, detail: { es: "Contorno y nariz", en: "Outline and nose" } },
+            { src: `${AFP}/ronda-r3.webp`, title: { es: "Ronda 3", en: "Round 3" }, detail: { es: "Sin barba ni tatuajes", en: "No beard, no tattoos" } },
+            { src: `${AFP}/ronda-r4.webp`, title: { es: "Ronda 4", en: "Round 4" }, detail: { es: "Se queda", en: "Kept" } },
+            { src: `${AFP}/ronda-sofia-raw.webp`, title: { es: "Sofía", en: "Sofía" }, detail: { es: "A la primera", en: "First take" } },
+          ],
+        },
+        { kind: "image", size: "bleed", image: { src: `${AF}/aero-cuadros-mockup.webp`, title: { es: "Kelvin, Molly y Sofía", en: "Kelvin, Molly and Sofía" }, detail: { es: "Montaje", en: "Mockup" } } },
+      ],
+    },
+    {
+      id: "cuerpo",
+      label: { es: "Un solo cuerpo", en: "One body" },
+      heading: { es: "Un solo cuerpo, dibujado de una vez.", en: "One body, drawn in one go." },
+      text: {
+        es: "Después vino lo que hace que se vean como un grupo. Cada render dibujaba su propio cuerpo, así que ahora todos llevan el mío, sacado de mi archivo, y solo cambian la talla y la ropa. Al principio pegaba la cabeza en el cuerpo y arreglaba las uniones con scripts, y cada arreglo rompía otra cosa. Así que cambié el método: el modelo redibuja el montaje entero, de una vez, y queda limpio.",
+        en: "Then came the part that makes them look like a group. Every render drew its own body, so now everyone wears mine, taken from my file, and only the size and the clothes change. At first I was pasting the head onto the body and fixing the joins with scripts, and every fix broke something else. So I changed the method: the model redraws the whole montage in one go, and it comes out clean.",
+      },
+      blocks: [
+        {
+          kind: "carousel",
+          large: true,
+          width: "wide",
+          label: { es: "Kelvin, paso a paso", en: "Kelvin, step by step" },
+          items: [
+            { src: `${AFP}/kelvin-1-render.webp`, title: { es: "La cabeza del render", en: "The head from the render" } },
+            { src: `${AFP}/kelvin-2-montaje.webp`, title: { es: "Montaje en mi cuerpo", en: "Montage on my body" } },
+            { src: `${AFP}/kelvin-3-redibujo.webp`, title: { es: "Redibujo entero", en: "Whole redraw" }, detail: { es: "Se queda", en: "Kept" } },
+          ],
+        },
+      ],
+    },
+    {
+      id: "encuadre",
+      label: { es: "El encuadre", en: "The framing" },
+      heading: { es: "La misma cabeza para todos.", en: "The same head for everyone." },
+      text: {
+        es: "Lo mismo con el encuadre: la cabeza de cada quien se mide y se lleva al tamaño y a la altura de la mía.",
+        en: "Same with the framing: each person's head is measured and brought to the size and height of mine.",
+      },
+      blocks: [
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 3, phone: 1 },
+          items: [
+            { src: `${AFP}/encuadre-molly.webp`, title: { es: "Molly", en: "Molly" }, detail: { es: "Coronilla al 19 %, barbilla al 69 %", en: "Crown at 19%, chin at 69%" } },
+            { src: `${AFP}/encuadre-kelvin.webp`, title: { es: "Kelvin", en: "Kelvin" } },
+            { src: `${AFP}/encuadre-sofia.webp`, title: { es: "Sofía", en: "Sofía" } },
+          ],
+        },
+        { kind: "image", size: "bleed", image: { src: `${AF}/aero-stickers-mockup.webp`, title: { es: "Los tres, de calcomanía", en: "All three, as stickers" }, detail: { es: "Montaje", en: "Mockup" } } },
+      ],
+    },
+    {
+      id: "skill",
+      label: { es: "El skill", en: "The skill" },
+      heading: { es: "Del método a un skill.", en: "From method to skill." },
+      text: {
+        es: "Todo eso quedó en aerosolify, un skill para Claude Code. Le das de una a tres fotos y él hace el resto, con dos reglas mías que no se negocian: un cambio por ronda, con su antes y después, y ningún retrato sale sin que yo lo apruebe. Al final, el estilo es mío.",
+        en: "All of that went into aerosolify, a Claude Code skill. You give it one to three photos and it does the rest, with two rules of mine that aren't up for debate: one change per round, shown before and after, and no portrait goes out until I approve it. In the end, the style is mine.",
+      },
+      blocks: [
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 4, phone: 2 },
+          items: [
+            { src: `${AFP}/sofia-1-render.webp`, title: { es: "1 · La cabeza", en: "1 · The head" } },
+            { src: `${AFP}/sofia-2-montaje.webp`, title: { es: "2 · El montaje", en: "2 · The montage" } },
+            { src: `${AFP}/sofia-3-redibujo.webp`, title: { es: "3 · El redibujo", en: "3 · The redraw" } },
+            { src: `${AFP}/sofia-4-final.webp`, title: { es: "4 · Aprobado", en: "4 · Approved" } },
+          ],
+        },
+        { kind: "image", size: "wide", image: { src: `${AF}/aero-laptop-mockup.webp`, title: { es: "El tablero «Aerosolified»", en: "The “Aerosolified” board" }, detail: { es: "El manual del skill", en: "The skill's manual" } } },
+      ],
+    },
+  ],
+  closing: {
+    image: { src: `${AF}/aero-x-MY-02.webp`, title: { es: "Los tres, en la ciudad de Aerosol", en: "All three, in Aerosol's city" } },
+  },
+};
+
 const aerosolificationProject: Project = {
   slug: "aerosolification",
+  story: aerosolificationStory,
   title: "Aerosolification",
   client: "Aerosol",
   clientEn: "Aerosol",
