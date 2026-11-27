@@ -3522,9 +3522,9 @@ const bSafeStory: CaseStory = {
           width: "wide",
           label: { es: "La caja", en: "The box" },
           items: [
-            { src: `${BS}/concreto.webp`, title: { es: "Caja par", en: "Shoe box" }, detail: bsScene },
-            { src: `${BS}/estudio.webp`, title: { es: "Caja par", en: "Shoe box" }, detail: bsScene },
-            { src: `${BS}/caja-abierta.webp`, title: { es: "Caja par y papel interior", en: "Shoe box and tissue paper" }, detail: bsScene },
+            { src: `${BS}/cuadradas/concreto.webp`, title: { es: "Caja par", en: "Shoe box" }, detail: bsScene },
+            { src: `${BS}/cuadradas/estudio.webp`, title: { es: "Caja par", en: "Shoe box" }, detail: bsScene },
+            { src: `${BS}/cuadradas/caja-abierta.webp`, title: { es: "Caja par y papel interior", en: "Shoe box and tissue paper" }, detail: bsScene },
           ],
         },
       ],
@@ -3613,8 +3613,8 @@ const bSafeStory: CaseStory = {
           width: "wide",
           label: { es: "Modelos", en: "Models" },
           items: [
-            { src: `${BS}/modelos.webp`, title: { es: "Tres de los cinco modelos", en: "Three of the five models" }, detail: bsScene },
-            ...bsModels.map((m) => ({ src: `/img/projects/b-safe-vistas/piezas/vista-${m.key}-2.webp`, title: m.title, detail: { es: "Vista de estudio", en: "Studio view" } })),
+            { src: `${BS}/cuadradas/modelos.webp`, title: { es: "Tres de los cinco modelos", en: "Three of the five models" }, detail: bsScene },
+            ...bsModels.map((m) => ({ src: `${BS}/cuadradas/vista-${m.key}.webp`, title: m.title, detail: { es: "Vista de estudio", en: "Studio view" } })),
           ],
         },
       ],
@@ -3761,8 +3761,8 @@ const dexaStory: CaseStory = {
         {
           kind: "palette",
           colors: [
-            { name: { es: "Negro", en: "Black" }, hex: "#161616", codes: ["RGB 22 22 22", "CMYK 0 0 0 100", "Pantone Neutral Black C"] },
-            { name: { es: "Lima", en: "Lime" }, hex: "#94D500", codes: ["RGB 148 213 0", "CMYK 50 0 100 0", "Pantone 375 C"] },
+            { name: { es: "Negro", en: "Black" }, hex: "#161616", codes: ["RGB 22 22 22", "CMYK 0 0 0 100", "PMS Neutral Black C"] },
+            { name: { es: "Lima", en: "Lime" }, hex: "#94D500", codes: ["RGB 148 213 0", "CMYK 50 0 100 0", "PMS 375 C"] },
           ],
         },
         { kind: "image", size: "solo", image: { src: `${DX}/anchas/area-ancho.webp`, title: { es: "Área de protección", en: "Clear space" }, detail: { es: "X = la altura de la suela", en: "X = the height of the sole" } } },
@@ -3779,9 +3779,9 @@ const dexaStory: CaseStory = {
           width: "wide",
           label: { es: "Montajes", en: "Mockups" },
           items: [
-            { src: `${DX}/hangtag.webp`, title: { es: "Hangtag", en: "Hangtag" }, detail: dxScene },
-            { src: `${DX}/suela.webp`, title: { es: "Suela", en: "Sole" }, detail: dxScene },
-            { src: `${DX}/talon.webp`, title: { es: "Talón", en: "Heel" }, detail: dxScene },
+            { src: `${DX}/cuadradas/hangtag.webp`, title: { es: "Hangtag", en: "Hangtag" }, detail: dxScene },
+            { src: `${DX}/cuadradas/suela.webp`, title: { es: "Suela", en: "Sole" }, detail: dxScene },
+            { src: `${DX}/cuadradas/talon.webp`, title: { es: "Talón", en: "Heel" }, detail: dxScene },
           ],
         },
       ],
