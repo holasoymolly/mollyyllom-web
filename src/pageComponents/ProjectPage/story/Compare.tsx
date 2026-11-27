@@ -38,7 +38,7 @@ export const Compare: FC<CompareProps> = ({ before, after, hint, label }) => {
         if (!entry.isIntersecting) return;
         io.disconnect();
         timer = window.setTimeout(() => {
-          if (!touched.current) setX(30);
+          if (!touched.current) setX(22);
         }, 700);
       },
       { threshold: 0.6 },
