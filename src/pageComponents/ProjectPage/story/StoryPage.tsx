@@ -114,21 +114,37 @@ export const StoryPage: FC<{ project: Project }> = ({ project }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [project.slug]);
 
-  // Full-width blocks run under the index column, so the index steps aside.
+  // Wide and bleed blocks run under the index column, so the index steps aside
+  // whenever any of them (with its captions and controls) overlaps the index
+  // vertically, with some air. Measured, not guessed: it holds at the end of
+  // the story too, where the last wide block slides under the sticky index.
+  const nav = useRef<HTMLElement>(null);
   const [wideInView, setWideInView] = useState(false);
   useEffect(() => {
-    const els = root.current?.querySelectorAll('[data-wide]');
-    if (!els?.length || typeof IntersectionObserver === 'undefined') return;
-    const seen = new Set<Element>();
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => (e.isIntersecting ? seen.add(e.target) : seen.delete(e.target)));
-        setWideInView(seen.size > 0);
-      },
-      { rootMargin: '-15% 0px -15% 0px' },
-    );
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
+    const air = 32;
+    let frame = 0;
+    const check = () => {
+      frame = 0;
+      const n = nav.current?.getBoundingClientRect();
+      if (!n || n.height === 0) return setWideInView(false);
+      let hit = false;
+      root.current?.querySelectorAll('[data-wide]').forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.bottom > n.top - air && r.top < n.bottom + air) hit = true;
+      });
+      setWideInView(hit);
+    };
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(check);
+    };
+    check();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      if (frame) cancelAnimationFrame(frame);
+    };
   }, [project.slug, lang]);
 
   const { scrollYProgress } = useScroll();
@@ -455,7 +471,7 @@ export const StoryPage: FC<{ project: Project }> = ({ project }) => {
       )}
 
       <div className={s.body}>
-        <nav className={s.index} aria-label={t.projects.chapters}>
+        <nav ref={nav} className={s.index} aria-label={t.projects.chapters}>
           <ol>
             {chapters.map((c, i) => (
               <li key={c.id}>
