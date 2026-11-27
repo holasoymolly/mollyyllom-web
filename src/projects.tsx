@@ -784,6 +784,73 @@ const pixeledFlexiesVol2Project: Project = {
   ],
 };
 
+const thingiesProject: Project = {
+  slug: "thingies",
+  title: "Thingies Monsters",
+  client: "Mollyverse",
+  year: "2024",
+  role: "Ilustración, sistema generativo y dirección de arte",
+  roleEn: "Illustration, generative system and art direction",
+  scope: ["Ilustración", "Título", "Sistema de rasgos", "Arte generativo", "Mint"],
+  scopeEn: ["Illustration", "Title", "Trait system", "Generative art", "Mint"],
+  gridLabel: "Colección NFT · Ilustración",
+  gridLabelEn: "NFT collection · Illustration",
+  brief: "Thingies Monsters es el World 03 del Mollyverse y salió en 2024. Después de dos volúmenes de Flexies, que son más serios, quería algo que se riera: 200 monstruos con la boca abierta, exagerados y con mucha personalidad. El reto era salir del píxel sin perder la mano.",
+  briefEn: "Thingies Monsters is World 03 of the Mollyverse and came out in 2024. After two volumes of Flexies, which are more serious, I wanted something that laughs: 200 monsters with their mouths wide open, exaggerated and full of personality. The challenge was leaving pixels behind without losing my hand.",
+  shipped: [
+    "El monstruo base, un cuerpo de trapecio con una boca enorme llena de dientes, y el título de la colección tal como lo lleva la app.",
+    "163 variantes dibujadas a mano en 8 categorías: 50 ojos, 40 pelos, 25 accesorios y lo demás.",
+    "200 piezas en cuatro rarezas: 20 Legendary, 40 Epic, 60 Rare y 80 Common.",
+    "La página de la colección, una ficha por pieza y el mint en la app del Mollyverse.",
+  ],
+  shippedEn: [
+    "The base monster, a trapezoid body with a huge mouth full of teeth, and the collection's title as the app carries it.",
+    "163 variations drawn by hand across 8 categories: 50 eyes, 40 hairstyles, 25 accessories and the rest.",
+    "200 pieces in four rarities: 20 Legendary, 40 Epic, 60 Rare and 80 Common.",
+    "The collection page, a page for every piece and the mint in the Mollyverse app.",
+  ],
+  outcome: ["Salió en 2024 y volvió a la app en mayo de 2026, a 0,02 SOL y hasta cinco por wallet. Se agotó."],
+  outcomeEn: ["It came out in 2024 and came back to the app in May 2026, at 0.02 SOL and up to five per wallet. It sold out."],
+  credits: [
+    "Arte, generador, app y mint: Molly Yllom, con ayuda de Kelvin y herramientas de IA",
+  ],
+  creditsEn: [
+    "Art, generator, app and mint: Molly Yllom, with help from Kelvin and AI tools",
+  ],
+  portfolioImage: "/img/projects/thingies/th-cortes.mp4",
+  heroImage: "/img/projects/thingies/th-x-MY-01.webp",
+  paragraphs: [
+    "Los Thingies nacieron como un respiro de los Flexies. Todos tienen el mismo cuerpo, un trapecio con patas que parecen ir corriendo, y una boca que ocupa media cara. Lo que cambia es todo lo demás: los ojos, el pelo, la lengua, la nariz y unos lentes que a veces son estrellas y a veces corazones.",
+    "Esta vez dejé el píxel y dibujé con línea. Hice cada rasgo a mano, 163 en total, y el generador solo decidió cómo se combinaban. Los ojos son la categoría más grande, con 50 variantes, porque en un monstruo así la mirada lo cambia todo.",
+  ],
+  paragraphsEn: [
+    "The Thingies were born as a break from the Flexies. They all share the same body, a trapezoid with legs that look like they're running, and a mouth that takes up half the face. Everything else changes: the eyes, the hair, the tongue, the nose, and glasses that are sometimes stars and sometimes hearts.",
+    "This time I left pixels behind and drew with line. I made every trait by hand, 163 in all, and the generator only decided how they came together. The eyes are the biggest category, with 50 variations, because on a monster like this the look changes everything.",
+  ],
+  images: [
+    "/img/projects/thingies/th-x-MY-02.webp",
+    "/img/projects/thingies/th-x-MY-03.webp",
+    "/img/projects/thingies/th-celular-mockup.webp",
+    "/img/projects/thingies/th-x-MY-04.webp",
+    "/img/projects/thingies/th-x-MY-05.webp",
+    "/img/projects/thingies/th-laptop-mockup.webp",
+    "/img/projects/thingies/th-x-MY-06b.webp",
+    "/img/projects/thingies/th-escena-mockup.webp",
+    "/img/projects/thingies/th-x-MY-08.webp",
+  ],
+  imagesEn: [
+    "/img/projects/thingies/th-x-MY-02.webp",
+    "/img/projects/thingies/th-x-MY-03-en.webp",
+    "/img/projects/thingies/th-celular-mockup.webp",
+    "/img/projects/thingies/th-x-MY-04.webp",
+    "/img/projects/thingies/th-x-MY-05-en.webp",
+    "/img/projects/thingies/th-laptop-mockup.webp",
+    "/img/projects/thingies/th-x-MY-06b-en.webp",
+    "/img/projects/thingies/th-escena-mockup.webp",
+    "/img/projects/thingies/th-x-MY-08.webp",
+  ],
+};
+
 const mollyverseProject: Project = {
   slug: "mollyverse",
   title: "Mollyverse",
@@ -2507,6 +2574,7 @@ export const activeProjects = [
   mollyverseProject,
   theUnhingedProject,
   mdpProject,
+  thingiesProject,
   pixeledFlexiesVol2Project,
   pixeledFlexiesVol1Project,
   bSafeVistasProject,
