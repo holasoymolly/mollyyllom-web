@@ -178,6 +178,188 @@ export const projectTitle = (project: Project, lang: "es" | "en"): string =>
 
 export const HOME_GRID_LIMIT = 12;
 
+const COL = "/img/projects/la-colmena";
+const COLP = `${COL}/piezas`;
+const colCover: Bilingual = { es: "Portada", en: "Cover" };
+const colIssue = (n: number): Bilingual => ({ es: `No. ${n}`, en: `No. ${n}` });
+const colPages = (p: string): Bilingual => ({ es: `Págs. ${p}`, en: `Pages ${p}` });
+
+/**
+ * La Colmena told in chapters. Pieces are loose (covers and spreads rendered
+ * from the final PDFs at their native 150 ppi size, never enlarged). There is
+ * no `origin`: the "before" covers only exist at 453 × 604 (Issuu's viewer)
+ * and `origin` would stretch them, so they open the first chapter in a wall.
+ * Figures in `stats` come from the five final PDFs
+ * and from issue 47's eight interior versions.
+ */
+const laColmenaStory: CaseStory = {
+  cover: {
+    variant: "top",
+    promise: {
+      es: "La revista del INTEC, rediseñada desde la portada hasta la última página. Van cinco números.",
+      en: "INTEC's university magazine, redesigned from the cover to the last page. Five issues so far.",
+    },
+  },
+  chapters: [
+    {
+      id: "encargo",
+      label: { es: "El encargo", en: "The brief" },
+      heading: { es: "Una revista que se sintiera como el campus.", en: "A magazine that felt like the campus." },
+      text: {
+        es: "La Colmena es la revista del INTEC y sale cada trimestre. Cuando me la pasaron en el número 43, llevaba años con la misma cara: una foto de estudio, los titulares chiquitos en una esquina y, por dentro, columnas apretadas con fotos en rectángulo. Yo quería que se sintiera como el campus, con gente real contando lo que hace, y que cada número tuviera su personalidad sin dejar de ser La Colmena.",
+        en: "La Colmena is INTEC's university magazine, out every quarter. When it landed on my desk at issue 43, it had worn the same face for years: a studio photo, tiny headlines tucked in a corner and, inside, tight columns with boxed photos. I wanted it to feel like the campus, real people talking about what they do, and I wanted every issue to have its own personality while still being La Colmena.",
+      },
+      blocks: [
+        {
+          // The covers before the redesign only exist at 453 × 604 (Issuu's
+          // viewer), so they go in a wall, which never enlarges a piece.
+          kind: "wall",
+          columns: { desktop: 3, phone: 3 },
+          items: [40, 41, 42].map((n) => ({
+            src: `${COLP}/colmena-antes-${n}.webp`,
+            title: colIssue(n),
+            detail: { es: "Antes del rediseño", en: "Before the redesign" },
+          })),
+        },
+        {
+          kind: "stats",
+          items: [
+            { value: "5", label: { es: "números, del 43 al 47", en: "issues, 43 to 47" } },
+            { value: "28", label: { es: "páginas en cada número", en: "pages in every issue" } },
+            { value: "8", label: { es: "versiones del interior de la 47 antes de imprenta", en: "versions of issue 47's inside pages before print" } },
+          ],
+        },
+        {
+          kind: "image",
+          size: "bleed",
+          image: { src: `${COL}/colmena-fotos-1.webp`, title: colIssue(43), detail: { es: "Recién salida de imprenta", en: "Fresh off the press" } },
+        },
+      ],
+    },
+    {
+      id: "portadas",
+      label: { es: "Las portadas", en: "The covers" },
+      heading: { es: "Cada portada se arma alrededor de una persona.", en: "Every cover is built around one person." },
+      text: {
+        es: "El logo del hexágono funcionaba y se quedó. Todo lo demás lo volví a pensar. La portada ahora se arma alrededor de una persona: su nombre va enorme detrás, o escrito a mano, y unas flechas te llevan a las páginas donde está su historia. Con eso la revista dejó de verse como un boletín y empezó a verse como algo que uno quiere agarrar de la mesa.",
+        en: "The hexagon logo worked, so it stayed. Everything else I rethought. The cover is now built around one person: their name runs huge behind them, or written by hand, and a few arrows point you to the pages where their story is. That alone took the magazine from newsletter to something you actually want to pick up off the table.",
+      },
+      blocks: [
+        {
+          kind: "carousel",
+          large: true,
+          width: "wide",
+          label: { es: "Portadas", en: "Covers" },
+          items: [
+            { src: `${COLP}/colmena-portada-43.webp`, title: colIssue(43), detail: { es: "Gladeline Rapozo", en: "Gladeline Rapozo" } },
+            { src: `${COLP}/colmena-portada-44.webp`, title: colIssue(44), detail: { es: "Maestros de la medicina", en: "Maestros de la medicina" } },
+            { src: `${COLP}/colmena-portada-45.webp`, title: colIssue(45), detail: { es: "Arturo del Villar", en: "Arturo del Villar" } },
+            { src: `${COLP}/colmena-portada-46.webp`, title: colIssue(46), detail: { es: "Francina Hungría", en: "Francina Hungría" } },
+            { src: `${COLP}/colmena-portada-47.webp`, title: colIssue(47), detail: { es: "Ana Veras", en: "Ana Veras" } },
+          ],
+        },
+      ],
+    },
+    {
+      id: "por-dentro",
+      label: { es: "Por dentro", en: "Inside" },
+      heading: { es: "Lo que promete la portada sigue adentro.", en: "What the cover promises carries on inside." },
+      text: {
+        es: "La historia de portada repite adentro el mismo juego: el nombre gigante de Gladeline, «Maestros» cortado por tres retratos, Arturo del Villar escrito a mano, Francina Hungría en línea detrás de ella.",
+        en: "The cover story plays the same game inside: Gladeline's name set huge, “Maestros” cut by three portraits, Arturo del Villar written by hand, Francina Hungría in outline behind her.",
+      },
+      blocks: [
+        {
+          kind: "pairs",
+          static: true,
+          width: "wide",
+          label: { es: "Números", en: "Issues" },
+          items: [
+            { n: 43, pag: "8–9" },
+            { n: 44, pag: "14–15" },
+            { n: 45, pag: "14–15" },
+            { n: 46, pag: "4–5" },
+          ].map(({ n, pag }) => ({
+            title: colIssue(n),
+            a: { src: `${COLP}/colmena-portada-${n}.webp`, detail: colCover },
+            b: { src: `${COLP}/colmena-pliego-${n}.webp`, detail: colPages(pag) },
+          })),
+        },
+        {
+          kind: "image",
+          size: "bleed",
+          image: { src: `${COL}/colmena-fotos-2.webp`, title: colIssue(43), detail: { es: "Lettering, íconos y garabatos, en papel", en: "Lettering, icons and doodles, in print" } },
+        },
+      ],
+    },
+    {
+      id: "sistema",
+      label: { es: "El sistema", en: "The system" },
+      heading: { es: "Un sistema con espacio para jugar.", en: "A system with room to play." },
+      text: {
+        es: "Por dentro armé un sistema con espacio para jugar. Todo el texto va en Akzidenz Grotesk, cada sección tiene su color y los garabatos e íconos se dibujan con el mismo trazo redondo, así que hasta una página de datos tiene algo de mano. El hexágono del logo también se volvió recurso: un panal para ordenar fotos, cifras o bases de datos. La 43 abrió con una paleta amplia; desde la 44, cada número se apoya en los rojos y naranjas de INTEC.",
+        en: "Inside, I built a system with room to play. All the text is set in Akzidenz Grotesk, each section has its own colour, and the doodles and icons share the same round stroke, so even a page full of data feels hand-made. The hexagon from the logo turned into a tool too: a honeycomb to hold photos, numbers or databases. Issue 43 opened with a wide palette; from 44 on, every issue leans on INTEC's reds and oranges.",
+      },
+      blocks: [
+        {
+          kind: "image",
+          size: "wide",
+          image: { src: `${COLP}/colmena-pliego-47-sistema.webp`, title: colIssue(47), detail: { es: "Págs. 2–3: el panal, los íconos y los garabatos", en: "Pages 2–3: the honeycomb, the icons and the doodles" } },
+        },
+        {
+          kind: "image",
+          size: "solo",
+          image: { src: `${COLP}/colmena-sistema-tipografia.webp`, title: { es: "Tipografía", en: "Typeface" }, detail: { es: "Todo el texto de la revista, de los titulares a las notas al pie", en: "Every word in the magazine, from headlines to footnotes" } },
+        },
+        {
+          // The fills with the most area in issues 44 to 46 (read from the final PDFs).
+          kind: "palette",
+          colors: [
+            { name: { es: "Rojo", en: "Red" }, hex: "#CF2E19", codes: ["RGB 207 46 25"] },
+            { name: { es: "Rojo oscuro", en: "Dark red" }, hex: "#AC1209", codes: ["RGB 172 18 9"] },
+            { name: { es: "Naranja", en: "Orange" }, hex: "#FA7622", codes: ["RGB 250 118 34"] },
+            { name: { es: "Amarillo", en: "Yellow" }, hex: "#F9D138", codes: ["RGB 249 209 56"] },
+          ],
+        },
+      ],
+    },
+    {
+      id: "una-portada",
+      label: { es: "Una portada", en: "One cover" },
+      heading: { es: "De «Preguntar» a «Cuestionar».", en: "From “Preguntar” to “Cuestionar”." },
+      text: {
+        es: "Cada número arranca con un moodboard y las fotos que manda INTEC. Para la 47 llevé tres caminos con las fotos de Ana Veras, en blanco y negro, a color y a página completa, y escogieron el primero. El lettering pasó de «Preguntar» a «Cuestionar» para abrir el lema del número.",
+        en: "Every issue starts with a moodboard and the photos INTEC sends over. For 47 I brought three directions with Ana Veras's photos, black and white, full colour and full bleed, and they picked the first. The lettering went from “Preguntar” to “Cuestionar” to open the issue's motto.",
+      },
+      blocks: [
+        {
+          // Same art, same frame (the top band of the cover, rendered from
+          // Molly's .ai files at 2700 × 1350): only the word changes.
+          kind: "compare",
+          width: "wide",
+          before: { src: `${COLP}/colmena-compara-preguntar.webp`, title: { es: "Propuesta", en: "Proposal" }, detail: { es: "«Preguntar, investigar, transformar»", en: "“Preguntar, investigar, transformar”" } },
+          after: { src: `${COLP}/colmena-compara-cuestionar.webp`, title: { es: "Final", en: "Final" }, detail: { es: "«Cuestionar, investigar, transformar»", en: "“Cuestionar, investigar, transformar”" } },
+          hint: { es: "Arrastra la línea o usa las flechas.", en: "Drag the line or use the arrows." },
+        },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 3, phone: 1 },
+          items: [
+            { src: `${COLP}/colmena-propuesta-1.webp`, title: { es: "Propuesta 1", en: "Proposal 1" }, detail: { es: "En blanco y negro. La escogida", en: "Black and white. The one they picked" } },
+            { src: `${COLP}/colmena-propuesta-2.webp`, title: { es: "Propuesta 2", en: "Proposal 2" }, detail: { es: "A color", en: "Full colour" } },
+            { src: `${COLP}/colmena-propuesta-3.webp`, title: { es: "Propuesta 3", en: "Proposal 3" }, detail: { es: "A página completa", en: "Full bleed" } },
+          ],
+        },
+      ],
+    },
+  ],
+  closing: {
+    image: { src: `${COL}/colmena-lino-mockup.webp`, title: colIssue(47), detail: colPages("4–5") },
+    more: [`${COL}/colmena-serie-mockup.webp`, `${COL}/colmena-pared-mockup.webp`, `${COL}/colmena-marmol-mockup.webp`],
+  },
+};
+
 const laColmenaProject: Project = {
   slug: "la-colmena",
   title: "La Colmena",
@@ -224,6 +406,7 @@ const laColmenaProject: Project = {
   portfolioImage: "/img/projects/la-colmena/colmena-cortes.mp4",
   heroImage: "/img/projects/la-colmena/colmena-x-MY-01.webp",
   heroSwipe: 5,
+  story: laColmenaStory,
   paragraphs: [
     "El logo del hexágono funcionaba y se quedó. Todo lo demás lo volví a pensar. La portada ahora se arma alrededor de una persona: su nombre va enorme detrás, o escrito a mano, y unas flechas te llevan a las páginas donde está su historia. Con eso la revista dejó de verse como un boletín y empezó a verse como algo que uno quiere agarrar de la mesa.",
     "Por dentro armé un sistema con espacio para jugar. Todo el texto va en Akzidenz Grotesk, cada sección tiene su color y los garabatos e íconos se dibujan con el mismo trazo redondo, así que hasta una página de datos tiene algo de mano. El hexágono del logo también se volvió recurso: un panal para ordenar fotos, cifras o bases de datos.",
