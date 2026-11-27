@@ -5372,9 +5372,9 @@ const ixScene: Bilingual = { es: "Montaje", en: "Mockup" };
 const ixRoutes: { key: string; name: Bilingual }[] = [
   { key: "01", name: { es: "Intersección", en: "Intersection" } },
   { key: "02", name: { es: "Nodos", en: "Nodes" } },
-  { key: "03", name: { es: "Integrado", en: "Integrated" } },
-  { key: "04", name: { es: "Evolución", en: "Evolution" } },
-  { key: "05", name: { es: "ADN", en: "DNA" } },
+  { key: "03", name: { es: "Símbolo integrado", en: "Integrated symbol" } },
+  { key: "04", name: { es: "Evolución del logo actual", en: "Evolution of the current logo" } },
+  { key: "05", name: { es: "ADN del ícono", en: "The icon's DNA" } },
 ];
 const inetxusStory: CaseStory = {
   cover: {
@@ -5413,12 +5413,12 @@ const inetxusStory: CaseStory = {
         {
           kind: "wall",
           width: "wide",
-          columns: { desktop: 5, phone: 2 },
+          columns: { desktop: 3, phone: 1 },
           ratio: "4/3",
           items: ixRoutes.map((r) => ({
             src: `${IXP}/ruta-${r.key}.webp`,
-            title: r.name,
-            detail: r.key === "01" ? { es: "Ruta 01, la que se quedó", en: "Route 01, the one that stayed" } : { es: `Ruta ${r.key}`, en: `Route ${r.key}` },
+            title: r.key === "01" ? { es: `${r.name.es} · la elegida`, en: `${r.name.en} · the one chosen` } : r.name,
+            detail: { es: `Ruta ${r.key}`, en: `Route ${r.key}` },
           })),
         },
         {
