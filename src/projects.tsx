@@ -662,12 +662,10 @@ const mollyverseProject: Project = {
   outcome: ["La app está en la dApp Store de Solana para el Seeker y en la web."],
   outcomeEn: ["The app is live on the Solana dApp Store for the Seeker and on the web."],
   credits: [
-    "Marca, diseño de producto, dirección de arte y colecciones: Molly Yllom",
-    "Apoyo técnico: equipo de Aerosol",
+    "Marca, diseño de producto, dirección de arte y colecciones: Molly Yllom, con apoyo de Aerosol",
   ],
   creditsEn: [
-    "Brand, product design, art direction and collections: Molly Yllom",
-    "Technical support: the Aerosol team",
+    "Brand, product design, art direction and collections: Molly Yllom, with support from Aerosol",
   ],
   portfolioImage: "/img/projects/mollyverse/mollyverse-cortes.mp4",
   heroImage: "/img/projects/mollyverse/mollyverse-x-MY-01.webp",
