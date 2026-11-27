@@ -943,8 +943,136 @@ const aerosolProject: Project = {
   ],
 };
 
+const AR = "/img/projects/aerosol-rebrand-2026";
+const ARP = `${AR}/piezas`;
+const arPost = (es: string, en: string): Bilingual => ({ es: `Post en X, ${es}`, en: `Post on X, ${en}` });
+
+/**
+ * Aerosol · Refinamiento 2026 told in chapters (F3, 27 Nov 2026). The brief and
+ * the two paragraphs are the approved copy, word for word. BORRADOR para Molly:
+ * the promise, chapter labels and headings, the system chapter's text and the
+ * captions. The 2025/2026 compare is rendered from the two logo SVGs, aligned on
+ * the letters. The phone now shows aerosol.build (live, 27 Nov), not the X
+ * profile: devices show the product or its site. Videos are the 1920 masters.
+ */
+const aerosolRefinamientoStory: CaseStory = {
+  cover: {
+    variant: "top",
+    promise: {
+      es: "La misma Aerosol, solo más afilada: un logo refinado y la campaña para estrenarlo.",
+      en: "Same Aerosol, only sharper: a refined logo and the campaign that launched it.",
+    },
+  },
+  chapters: [
+    {
+      id: "encargo",
+      label: { es: "El encargo", en: "The brief" },
+      heading: { es: "Refinar, no empezar de cero.", en: "Refine, don't start over." },
+      text: {
+        es: "Aerosol ya no era un solo producto: se había vuelto un estudio con varios, y el logo seguía hablando como el de un proyecto. La gota tenía lentes y sonrisa, mucha personalidad para una marca que ahora tenía que firmar al lado de socios, caber en un favicon y abrir una presentación. El pedido fue refinar, no empezar de cero: que se siguiera viendo Aerosol, solo que más limpio, y presentarlo sin que pareciera que la empresa se estaba reinventando.",
+        en: "Aerosol wasn't one product anymore. It had become a studio with several, and the logo still spoke like a single project's. The drip wore sunglasses and a smile, a lot of personality for a mark that now had to sign next to partners, fit in a favicon and open a deck. The ask was to refine, not start over: still clearly Aerosol, just cleaner, and to launch it without making it look like the company was reinventing itself.",
+      },
+      blocks: [
+        { kind: "image", size: "bleed", image: { src: `${ARP}/campana-familia.webp`, title: { es: "La familia", en: "The family" }, detail: arPost("20 de noviembre", "20 November") } },
+      ],
+    },
+    {
+      id: "gota",
+      label: { es: "La gota", en: "The drip" },
+      heading: { es: "Sin lentes ni sonrisa.", en: "No sunglasses, no smile." },
+      text: {
+        es: "La regla fue no reinventar nada. Le quité a la gota los lentes y la sonrisa, que eran lo que la hacía personaje y no marca, y dejé todo lo que la hacía Aerosol: la forma, el chorrito y las gotitas alrededor. Así el logo funciona igual de favicon que en un banner, y Splat, con sus lentes, se queda donde mejor vive: en el contenido.",
+        en: "The rule was to reinvent nothing. I took the sunglasses and the smile off the drip, since they were what made it a character instead of a mark, and kept everything that made it Aerosol: the shape, the drip and the spray drops around it. Now the logo works the same as a favicon as it does on a banner, and Splat, sunglasses and all, stays where he lives best: in the content.",
+      },
+      blocks: [
+        {
+          kind: "compare",
+          width: "wide",
+          before: { src: `${ARP}/logo-antes-2025.webp`, title: { es: "2025", en: "2025" }, detail: { es: "La gota con lentes y sonrisa", en: "The drip with sunglasses and a smile" } },
+          after: { src: `${ARP}/logo-despues-2026.webp`, title: { es: "2026", en: "2026" }, detail: { es: "La misma gota, sin el personaje", en: "The same drip, without the character" } },
+          hint: { es: "Arrastra la línea o usa las flechas.", en: "Drag the line or use the arrows." },
+        },
+        { kind: "image", size: "solo", image: { src: `${ARP}/celular-web-mockup.webp`, title: { es: "aerosol.build en el celular", en: "aerosol.build on a phone" }, detail: { es: "En vivo, en una escena hecha para Aerosol", en: "Live, in a scene made for Aerosol" } } },
+      ],
+    },
+    {
+      id: "sistema",
+      label: { es: "El sistema", en: "The system" },
+      heading: { es: "De un banner a 16\u00a0px.", en: "From a banner down to 16\u00a0px." },
+      text: {
+        es: "Con la gota limpia, el resto se ordenó solo. El logo vive en horizontal, apilado o como la gota sola, en claro y en oscuro, y la gota se sigue leyendo como ícono a 16 px. El morado y el coral mandan, con seis amigos para cuando hace falta más color. Y para la voz, una sola letra: Rubik, con cuatro roles fijos, del titular grande a la etiqueta.",
+        en: "Once the drip was clean, the rest fell into place. The logo lives horizontal, stacked or as the drip on its own, on light and on dark, and the drip still reads as an icon at 16 px. Purple and coral lead, with six friends for when you need more color. And for the voice, one typeface: Rubik, with four fixed roles, from the big headline down to the label.",
+      },
+      blocks: [
+        { kind: "image", size: "bleed", image: { src: `${AR}/aerosol-rebrand-x-MY-03a.webp`, title: { es: "El logo", en: "The logo" }, detail: { es: "Horizontal y apilado, en claro y en oscuro", en: "Horizontal and stacked, on light and on dark" } } },
+        { kind: "image", size: "wide", image: { src: `${AR}/aerosol-rebrand-x-MY-03b.webp`, title: { es: "La gota sola", en: "The drip on its own" }, detail: { es: "Y como ícono a 64, 32 y 16 px", en: "And as an icon at 64, 32 and 16 px" } } },
+        {
+          kind: "palette",
+          colors: [
+            { name: { es: "Morado", en: "Purple" }, hex: "#3C1253" },
+            { name: { es: "Coral", en: "Coral" }, hex: "#FB7B56" },
+          ],
+        },
+        {
+          kind: "palette",
+          colors: [
+            { name: { es: "Lila", en: "Lilac" }, hex: "#945EC7" },
+            { name: { es: "Rojo", en: "Red" }, hex: "#F23A30" },
+            { name: { es: "Rosa", en: "Pink" }, hex: "#F24B80" },
+            { name: { es: "Amarillo", en: "Yellow" }, hex: "#F0C300" },
+            { name: { es: "Verde", en: "Green" }, hex: "#00C461" },
+            { name: { es: "Turquesa", en: "Turquoise" }, hex: "#28C9DB" },
+          ],
+        },
+        { kind: "image", size: "wide", image: { src: `${AR}/aerosol-rebrand-x-MY-04-en.webp`, title: { es: "Rubik", en: "Rubik" }, detail: { es: "Cuatro roles, con frases de la campaña", en: "Four roles, set in lines from the campaign" } } },
+      ],
+    },
+    {
+      id: "campana",
+      label: { es: "La campaña", en: "The campaign" },
+      heading: { es: "Enseñarlo, no explicarlo.", en: "Show it, don't explain it." },
+      text: {
+        es: "La campaña tenía que contar lo mismo: que es la misma Aerosol, solo más afilada. Por eso no explica el logo trazo por trazo, lo enseña. Primero un acercamiento a la gota, después la gota cayendo, y el día del reveal el antes convirtiéndose en el después. De ahí salió el resto: un manifiesto, la familia de productos y una tipografía, Rubik, que pone la voz del estudio en cada titular.",
+        en: "The campaign had to say the same thing: same Aerosol, only sharper. So it doesn't explain the logo stroke by stroke. It shows it. First a close-up of the drip, then the drip falling, and on reveal day the before turning into the after. Everything else grew from there: a manifesto, the product family and one typeface, Rubik, that gives the studio the same voice in every headline.",
+      },
+      blocks: [
+        { kind: "image", size: "solo", image: { src: `${ARP}/video-antes-despues.mp4`, title: { es: "El reveal", en: "The reveal" }, detail: { es: "Video fijado en @aerosolbuild, 4 de noviembre", en: "Video pinned on @aerosolbuild, 4 November" } } },
+        {
+          kind: "carousel",
+          large: true,
+          width: "wide",
+          label: { es: "La campaña en X", en: "The campaign on X" },
+          items: [
+            { src: `${ARP}/campana-gota-de-cerca.webp`, title: { es: "El primer teaser", en: "The first teaser" }, detail: arPost("2 de noviembre", "2 November") },
+            { src: `${ARP}/campana-antes-despues.webp`, title: { es: "Same Aerosol. Sharper.", en: "Same Aerosol. Sharper." }, detail: arPost("4 de noviembre", "4 November") },
+            { src: `${ARP}/campana-vision.webp`, title: { es: "We build cool things.", en: "We build cool things." }, detail: arPost("6 de noviembre", "6 November") },
+            { src: `${ARP}/campana-onchain-or-not.webp`, title: { es: "Onchain or not.", en: "Onchain or not." }, detail: arPost("9 de noviembre", "9 November") },
+            { src: `${ARP}/campana-design-build-ship.webp`, title: { es: "Design. Build. Ship.", en: "Design. Build. Ship." }, detail: arPost("11 de noviembre", "11 November") },
+            { src: `${ARP}/campana-paleta.webp`, title: { es: "Purple, coral and a few friends.", en: "Purple, coral and a few friends." }, detail: arPost("13 de noviembre", "13 November") },
+            { src: `${ARP}/campana-more-products.webp`, title: { es: "More products. More people using them.", en: "More products. More people using them." }, detail: arPost("16 de noviembre", "16 November") },
+          ],
+        },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 2, phone: 1 },
+          items: [
+            { src: `${ARP}/video-manifiesto.mp4`, title: { es: "El manifiesto", en: "The manifesto" }, detail: arPost("6 de noviembre", "6 November") },
+            { src: `${ARP}/video-familia.mp4`, title: { es: "La familia", en: "The family" }, detail: arPost("10 de noviembre", "10 November") },
+          ],
+        },
+        { kind: "image", size: "solo", image: { src: `${AR}/aerosol-rebrand-laptop-mockup.webp`, title: { es: "aerosol.build", en: "aerosol.build" }, detail: { es: "La web, ya en Rubik", en: "The site, now in Rubik" } } },
+      ],
+    },
+  ],
+  closing: {
+    image: { src: `${ARP}/campana-banner-x.webp`, title: { es: "El banner de @aerosolbuild", en: "The @aerosolbuild banner" }, detail: { es: "En el perfil desde el 4 de noviembre", en: "On the profile since 4 November" } },
+  },
+};
+
 const aerosolRefinamientoProject: Project = {
   slug: "aerosol-rebrand-2026",
+  story: aerosolRefinamientoStory,
   title: "Aerosol · Refinamiento 2026",
   titleEn: "Aerosol · Refinement 2026",
   client: "Aerosol",
