@@ -4,7 +4,8 @@ import { FC, Fragment, ReactNode, useEffect, useRef } from 'react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { TransitionLink } from '@/components/TransitionLink';
-import { projectsBySlug, activeProjects, projectTitle } from '../../projects';
+import { projectsBySlug, activeProjects, projectTitle, type Project } from '../../projects';
+import { getImageDimensions } from '@/lib/imageDimensions';
 import { QuoteBanner } from '@/components/QuoteBanner';
 import { ProtectedImage } from '@/components/ProtectedImage';
 import { motion } from 'framer-motion';
@@ -12,6 +13,18 @@ import { useLanguage } from '@/context/LanguageContext';
 import { trackProjectViewed } from '@/lib/analytics';
 import { ProjectHero } from './ProjectHero';
 import { StoryPage } from './story/StoryPage';
+
+/**
+ * A still for the prev/next thumbnails: the grid tile when it is an image,
+ * its poster when the tile is a video, and the cover as the last resort.
+ * Never a video's first frame.
+ */
+const thumbFor = (p: Project): string => {
+  const tile = p.portfolioImage;
+  if (!/\.(mp4|webm|mov)$/i.test(tile)) return tile;
+  const poster = tile.replace(/\.(mp4|webm|mov)$/i, '-poster.webp');
+  return getImageDimensions(poster) ? poster : p.heroImage;
+};
 
 interface ProjectPageProps {
   slug: string;
@@ -342,7 +355,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
               className="relative flex items-center gap-5 px-6 md:px-16 lg:px-24 py-10 border-b md:border-b-0 md:border-r border-indigo-950/10 group hover:bg-indigo-950/5 transition-colors duration-300 overflow-hidden"
             >
               <div className="relative shrink-0 w-16 h-16 rounded overflow-hidden border border-indigo-950/10">
-                <ProtectedImage src={prevProject.heroImage} alt={projectTitle(prevProject, lang)} fill sizes="64px" className="object-cover" />
+                <ProtectedImage src={thumbFor(prevProject)} alt={projectTitle(prevProject, lang)} fill sizes="64px" className="object-cover" />
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-violet-500 text-xs font-bold tracking-[0.25em] uppercase flex items-center gap-2 group-hover:-translate-x-1 transition-transform duration-300">
@@ -369,7 +382,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
                 </span>
               </div>
               <div className="relative shrink-0 w-16 h-16 rounded overflow-hidden border border-indigo-950/10">
-                <ProtectedImage src={nextProject.heroImage} alt={projectTitle(nextProject, lang)} fill sizes="64px" className="object-cover" />
+                <ProtectedImage src={thumbFor(nextProject)} alt={projectTitle(nextProject, lang)} fill sizes="64px" className="object-cover" />
               </div>
             </TransitionLink>
           ) : <div />}
