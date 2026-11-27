@@ -5807,6 +5807,98 @@ const dinerologyProject: Project = {
   ],
 };
 
+const RO = "/img/projects/riccie-oriach";
+const ROP = `${RO}/piezas`;
+const roMockup: Bilingual = { es: "Montaje", en: "Mockup" };
+
+/**
+ * Riccie Oriach told in chapters. The logo pieces are rendered from the 2021
+ * vector master (Molly's Drive, 01 CLIENTES/Riccie Oriach/Logo 2021), each on
+ * white or on one of the brand's own colours; the merch mockups are the
+ * originals already in the folder. The palette codes are transcribed from the
+ * brand sheet (riccie-oriach-logo-04).
+ */
+const riccieOriachStory: CaseStory = {
+  cover: {
+    variant: "top",
+    promise: {
+      es: "Un elefante que también es una R, para una música que no cabe en un solo género.",
+      en: "An elephant that is also an R, for music that won't fit in a single genre.",
+    },
+  },
+  chapters: [
+    {
+      id: "encargo",
+      label: { es: "El encargo", en: "The brief" },
+      heading: { es: "Un artista que lo mezcla todo.", en: "An artist who mixes it all." },
+      text: {
+        es: "Esta es la identidad visual que trabajé para Riccie Oriach, un talentoso cantautor dominicano. Riccie Oriach es un artista que expande los sonidos del rock latino con una ola de fusiones caribeñas. Inspirándose en su eclecticismo y sensibilidades artísticas, Riccie ha fusionado ritmos propios de la República Dominicana como la salve, los palos, el gagá, el merengue y el pripri, con estilos internacionales como el rock, el hip-hop, la salsa e incluso el punk.",
+        en: "This is the visual identity I created for Riccie Oriach, a talented Dominican singer-songwriter. Riccie Oriach is an artist who expands Latin rock sounds with a wave of Caribbean fusions. Drawing from his eclecticism and artistic sensibilities, Riccie has blended rhythms native to the Dominican Republic, salve, palos, gagá, merengue and pripri, with international styles like rock, hip-hop, salsa, and even punk.",
+      },
+      blocks: [
+        { kind: "image", size: "bleed", image: { src: `${RO}/riccie-oriach-camiseta-mockup.webp`, title: { es: "Camiseta", en: "T-shirt" }, detail: roMockup } },
+      ],
+    },
+    {
+      id: "logo",
+      label: { es: "El logo", en: "The logo" },
+      heading: { es: "Un elefante dentro de una R.", en: "An elephant inside an R." },
+      text: {
+        es: "El objetivo del logo era capturar visualmente la personalidad única de Riccie Oriach como artista. A través de un diseño distintivo y poderoso, busqué transmitir la energía y la pasión que Riccie infunde en su música.",
+        en: "The goal of the logo was to visually capture Riccie Oriach's unique personality as an artist. Through a distinctive and powerful design, I sought to convey the energy and passion that Riccie infuses into his music.",
+      },
+      blocks: [
+        { kind: "image", size: "wide", image: { src: `${ROP}/logo-horizontal.webp`, title: { es: "Logo horizontal", en: "Horizontal logo" }, detail: { es: "A todo color", en: "Full color" } } },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 3, phone: 1 },
+          ratio: "1/1",
+          items: [
+            { src: `${ROP}/logo-vertical.webp`, title: { es: "Logo vertical", en: "Vertical logo" }, detail: { es: "A todo color", en: "Full color" } },
+            { src: `${ROP}/logo-vertical-cafe.webp`, title: { es: "Logo vertical", en: "Vertical logo" }, detail: { es: "En negativo, sobre café", en: "Reversed, on brown" } },
+            { src: `${ROP}/logo-vertical-mostaza.webp`, title: { es: "Logo vertical", en: "Vertical logo" }, detail: { es: "En negativo, sobre mostaza", en: "Reversed, on mustard" } },
+          ],
+        },
+        {
+          kind: "palette",
+          colors: [
+            { name: { es: "Verde", en: "Green" }, hex: "#8F993E", codes: ["RGB 143 153 62", "CMYK 47 27 96 5", "Pantone 7495 C"] },
+            { name: { es: "Café", en: "Brown" }, hex: "#443635", codes: ["RGB 68 54 53", "CMYK 60 66 62 54", "Pantone 439 C"] },
+            { name: { es: "Mostaza", en: "Mustard" }, hex: "#D29E0E", codes: ["RGB 210 158 14", "CMYK 19 37 100 1", "Pantone 7555 C"] },
+          ],
+        },
+      ],
+    },
+    {
+      id: "aplicaciones",
+      label: { es: "Aplicaciones", en: "Applications" },
+      heading: { es: "En la gorra, la taza y la patineta.", en: "On the cap, the mug and the skateboard." },
+      blocks: [
+        { kind: "image", size: "bleed", image: { src: `${ROP}/logo-horizontal-verde.webp`, title: { es: "Logo horizontal", en: "Horizontal logo" }, detail: { es: "En negativo, sobre verde", en: "Reversed, on green" } } },
+        {
+          kind: "carousel",
+          large: true,
+          width: "wide",
+          label: { es: "Montajes", en: "Mockups" },
+          items: [
+            { src: `${RO}/riccie-oriach-bag-mockup.webp`, title: { es: "Bolso de tela", en: "Tote bag" }, detail: roMockup },
+            { src: `${RO}/riccie-oriach-bucket-hat-mockup.webp`, title: { es: "Sombrero de pescador", en: "Bucket hat" }, detail: roMockup },
+            { src: `${RO}/riccie-oriach-flathat-mockup.webp`, title: { es: "Gorra", en: "Cap" }, detail: roMockup },
+            { src: `${RO}/riccie-oriach-mug-mockup.webp`, title: { es: "Tazas", en: "Mugs" }, detail: roMockup },
+            { src: `${RO}/riccie-oriach-skateboard-mockup.webp`, title: { es: "Patinetas", en: "Skateboards" }, detail: roMockup },
+            { src: `${RO}/riccie-oriach-sticker-mockup.webp`, title: { es: "Sticker", en: "Sticker" }, detail: roMockup },
+            { src: `${RO}/riccie-oriach-acrilico-mockup.webp`, title: { es: "Placa de acrílico", en: "Acrylic plaque" }, detail: roMockup },
+          ],
+        },
+      ],
+    },
+  ],
+  closing: {
+    image: { src: `${RO}/riccie-oriach-car-sticker-mockup.webp`, title: { es: "Sticker para carro", en: "Car sticker" }, detail: roMockup },
+  },
+};
+
 const riccieOriachProject: Project = {
   slug: "riccie-oriach",
   title: "Riccie Oriach",
@@ -5869,6 +5961,7 @@ const riccieOriachProject: Project = {
     "/img/projects/riccie-oriach/riccie-oriach-sticker-mockup.webp",
     "/img/projects/riccie-oriach/riccie-oriach-car-sticker-mockup.webp",
   ],
+  story: riccieOriachStory,
 };
 
 const greenSpiritProject: Project = {
