@@ -7,7 +7,8 @@ import { Footer } from "@/components/Footer";
 import { TransitionLink } from "@/components/TransitionLink";
 import { ProtectedImage } from "@/components/ProtectedImage";
 import { useLanguage } from "@/context/LanguageContext";
-import { projectTitle, projectsBySlug } from "@/projects";
+import { projectTitle } from "@/lib/projectTitle";
+import type { GridItem } from "@/lib/projectSlices";
 import { trackBookingCTAClicked, trackEmailCTAClicked } from "@/lib/analytics";
 import { BOOKING_CALL_URL } from "@/lib/booking";
 
@@ -17,7 +18,6 @@ import { BOOKING_CALL_URL } from "@/lib/booking";
  * landing there read "looking for a job". This one speaks only to companies
  * commissioning brand and website work: no availability, no resume.
  */
-const CASE_SLUGS = ["canteras-del-tropico", "bh-mobiliario", "alliance", "aerosol"];
 
 const ease = [0.25, 0.1, 0.25, 1] as const;
 
@@ -32,10 +32,10 @@ const TwoLineHeading: FC<{ text: string; dark?: boolean }> = ({ text, dark }) =>
   );
 };
 
-export const BusinessPage: FC = () => {
+/** `cases` comes from the route (businessGridItems in src/lib/projectSlices.ts). */
+export const BusinessPage: FC<{ cases: GridItem[] }> = ({ cases }) => {
   const { lang, t } = useLanguage();
   const b = t.business;
-  const cases = CASE_SLUGS.map((slug) => projectsBySlug[slug]).filter(Boolean);
   const [titleFirst, ...titleRest] = b.title.split("\n");
   const mailto = `mailto:hola@mollyyllom.com?subject=${encodeURIComponent(b.emailSubject)}`;
 

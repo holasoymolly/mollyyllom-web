@@ -7,7 +7,7 @@ import { ProtectedImage } from '@/components/ProtectedImage';
 import { useLanguage } from '@/context/LanguageContext';
 import { getImageDimensions } from '@/lib/imageDimensions';
 import type { Bilingual, Project, StoryBlock, StoryImage, StoryWidth } from '../../../projects';
-import { projectTitle } from '../../../projects';
+import { projectTitle } from '@/lib/projectTitle';
 import { Carousel } from './Carousel';
 import { Compare } from './Compare';
 import s from './story.module.css';

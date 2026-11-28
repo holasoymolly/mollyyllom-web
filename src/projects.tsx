@@ -182,8 +182,7 @@ export interface CaseStory {
  * ever lost, it just stops appearing on the home page.
  */
 /** The project's title in the reader's language. */
-export const projectTitle = (project: Project, lang: "es" | "en"): string =>
-  lang === "en" ? project.titleEn ?? project.title : project.title;
+export { projectTitle } from "@/lib/projectTitle";
 
 export const HOME_GRID_LIMIT = 12;
 

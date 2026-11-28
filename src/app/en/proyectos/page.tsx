@@ -1,3 +1,4 @@
+import { allGridItems } from "@/lib/projectSlices";
 import type { Metadata } from "next";
 import { ProjectsPage } from "@/pageComponents/ProjectsPage";
 import { languageAlternates } from "@/i18n/metadata";
@@ -18,5 +19,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ProjectsPage />;
+  return <ProjectsPage items={allGridItems()} />;
 }

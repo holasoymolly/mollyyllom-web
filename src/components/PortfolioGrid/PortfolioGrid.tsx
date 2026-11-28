@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from "react";
-import { activeProjects, homeProjects, projectTitle } from "@/projects";
+import { projectTitle } from "@/lib/projectTitle";
+import type { GridItem } from "@/lib/projectSlices";
 import { TransitionLink } from "@/components/TransitionLink";
 import { ProtectedImage } from "@/components/ProtectedImage";
 import { useLanguage } from "@/context/LanguageContext";
@@ -31,16 +32,21 @@ const largeTiles = (count: number, pattern: number[]): boolean[] => {
 };
 
 export const PortfolioGrid = ({
+  items,
   showHeader = true,
-  limit,
+  home = false,
 }: {
+  /**
+   * The tiles, sliced on the server (`homeGridItems` / `allGridItems` in
+   * src/lib/projectSlices.ts) so the browser never downloads every case.
+   */
+  items: GridItem[];
   showHeader?: boolean;
-  /** Home grid: the first N of `homeProjects` (its own order). Omit to show every project. */
-  limit?: number;
+  /** Home grid: rows of 2 · 3 and its own spacing. */
+  home?: boolean;
 }) => {
   const { lang, t } = useLanguage();
-  const items = limit ? homeProjects.slice(0, limit) : activeProjects;
-  const large = largeTiles(items.length, limit ? [2, 3] : [2, 3, 3]);
+  const large = largeTiles(items.length, home ? [2, 3] : [2, 3, 3]);
   // Focus mode: only while the mouse is on a tile. Nothing is dimmed at rest, and
   // touch screens never get it (Molly, 27 nov 2026). The styles are in globals.css.
   const [focus, setFocus] = useState<number | null>(null);
@@ -70,7 +76,7 @@ export const PortfolioGrid = ({
 
       {/* Grid */}
       <div
-        className={`pg-grid px-6 md:px-16 lg:px-24 ${limit ? 'pg-grid-home' : ''}`}
+        className={`pg-grid px-6 md:px-16 lg:px-24 ${home ? 'pg-grid-home' : ''}`}
         data-dim={focus !== null || undefined}
         onPointerLeave={() => setFocus(null)}
       >
@@ -85,10 +91,13 @@ export const PortfolioGrid = ({
                   alt={title}
                   fill
                   lazyVideo
+                  // The first row is above the fold: its poster loads first
+                  // (it is the page's LCP), the video still waits for screen.
+                  posterPriority={index < 2}
                   sizes={
                     isLarge
                       ? "(min-width: 700px) 50vw, 100vw"
-                      : limit
+                      : home
                         ? "(min-width: 700px) 33vw, 100vw"
                         : "(min-width: 700px) 33vw, 50vw"
                   }

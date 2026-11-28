@@ -1,3 +1,4 @@
+import { homeGridItems } from '@/lib/projectSlices';
 import { Availability } from './Availability';
 import { Banner } from './Banner';
 import { Marquee } from './Marquee';
@@ -14,7 +15,7 @@ export const Main = () => {
       <Availability />
       <Marquee />
       <MediaSection />
-      <PortfolioGrid limit={HOME_GRID_LIMIT} />
+      <PortfolioGrid items={homeGridItems(HOME_GRID_LIMIT)} home />
       <Services />
       <QuoteBanner />
     </main>

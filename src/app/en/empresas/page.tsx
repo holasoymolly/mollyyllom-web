@@ -1,3 +1,4 @@
+import { businessGridItems } from "@/lib/projectSlices";
 import type { Metadata } from "next";
 import { BusinessPage } from "@/pageComponents/BusinessPage";
 import { languageAlternates } from "@/i18n/metadata";
@@ -18,5 +19,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <BusinessPage />;
+  return <BusinessPage cases={businessGridItems()} />;
 }

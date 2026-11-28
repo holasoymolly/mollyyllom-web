@@ -4,8 +4,9 @@ import { FC, Fragment, ReactNode, useEffect, useRef } from 'react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { TransitionLink } from '@/components/TransitionLink';
-import { projectsBySlug, activeProjects, projectTitle, type Project } from '../../projects';
-import { getImageDimensions } from '@/lib/imageDimensions';
+import type { Project } from '../../projects';
+import { projectTitle } from '@/lib/projectTitle';
+import type { NavItem } from '@/lib/projectSlices';
 import { QuoteBanner } from '@/components/QuoteBanner';
 import { ProtectedImage } from '@/components/ProtectedImage';
 import { motion } from 'framer-motion';
@@ -15,26 +16,20 @@ import { ProjectHero } from './ProjectHero';
 import { StoryPage } from './story/StoryPage';
 
 /**
- * A still for the prev/next thumbnails: the grid tile when it is an image,
- * its poster when the tile is a video, and the cover as the last resort.
- * Never a video's first frame.
+ * The route (a server component) passes this case's own data and its
+ * neighbours (src/lib/projectSlices.ts), so the browser never downloads every
+ * case to show one.
  */
-const thumbFor = (p: Project): string => {
-  const tile = p.portfolioImage;
-  if (!/\.(mp4|webm|mov)$/i.test(tile)) return tile;
-  const poster = tile.replace(/\.(mp4|webm|mov)$/i, '-poster.webp');
-  return getImageDimensions(poster) ? poster : p.heroImage;
-};
-
 interface ProjectPageProps {
-  slug: string;
+  project?: Project;
+  /** 1-based position of the case in `activeProjects`, for the NN / NN counter. */
+  position: number;
+  total: number;
+  prev: NavItem | null;
+  next: NavItem | null;
 }
 
-export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
-  const project = projectsBySlug[slug];
-  const projectIndex = activeProjects.findIndex((p) => p.slug === slug);
-  const prevProject = projectIndex > 0 ? activeProjects[projectIndex - 1] : null;
-  const nextProject = projectIndex < activeProjects.length - 1 ? activeProjects[projectIndex + 1] : null;
+export const ProjectPage: FC<ProjectPageProps> = ({ project, position, total, prev: prevProject, next: nextProject }) => {
   const { lang, t } = useLanguage();
 
   const title = project ? projectTitle(project, lang) : '';
@@ -235,7 +230,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.05, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          {String(projectIndex + 1).padStart(2, '0')} / {String(activeProjects.length).padStart(2, '0')}
+          {String(position).padStart(2, '0')} / {String(total).padStart(2, '0')}
         </motion.p>
         <motion.h1
           className="text-5xl sm:text-6xl md:text-7xl font-black leading-[0.9] tracking-tight"
@@ -356,7 +351,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
               className="relative flex items-center gap-5 px-6 md:px-16 lg:px-24 py-10 border-b md:border-b-0 md:border-r border-indigo-950/10 group hover:bg-indigo-950/5 transition-colors duration-300 overflow-hidden"
             >
               <div className="relative shrink-0 w-16 h-16 rounded overflow-hidden border border-indigo-950/10">
-                <ProtectedImage src={thumbFor(prevProject)} alt={projectTitle(prevProject, lang)} fill sizes="64px" className="object-cover" />
+                <ProtectedImage src={prevProject.thumb} alt={projectTitle(prevProject, lang)} fill sizes="64px" className="object-cover" />
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-violet-500 text-xs font-bold tracking-[0.25em] uppercase flex items-center gap-2 group-hover:-translate-x-1 transition-transform duration-300">
@@ -383,7 +378,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ slug }) => {
                 </span>
               </div>
               <div className="relative shrink-0 w-16 h-16 rounded overflow-hidden border border-indigo-950/10">
-                <ProtectedImage src={thumbFor(nextProject)} alt={projectTitle(nextProject, lang)} fill sizes="64px" className="object-cover" />
+                <ProtectedImage src={nextProject.thumb} alt={projectTitle(nextProject, lang)} fill sizes="64px" className="object-cover" />
               </div>
             </TransitionLink>
           ) : <div />}

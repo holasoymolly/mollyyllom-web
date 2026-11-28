@@ -7,8 +7,9 @@ import { QuoteBanner } from "@/components/QuoteBanner";
 import { FC } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
+import type { GridItem } from "@/lib/projectSlices";
 
-export const ProjectsPage: FC = () => {
+export const ProjectsPage: FC<{ items: GridItem[] }> = ({ items }) => {
   const { t } = useLanguage();
 
   return (
@@ -43,7 +44,7 @@ export const ProjectsPage: FC = () => {
         </motion.p>
       </section>
 
-      <PortfolioGrid showHeader={false} />
+      <PortfolioGrid items={items} showHeader={false} />
 
       <QuoteBanner />
       <Footer />
