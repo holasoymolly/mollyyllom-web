@@ -20,11 +20,13 @@ export const roboto = localFont({
   fallback: ["Arial", "Helvetica", "sans-serif"],
 });
 
+// Plex Mono loads 400 and 500 only: nothing on the site sets it bolder (checked
+// page by page on 28 Nov 2026), and every weight listed here is preloaded on
+// every page. The 700 file stays in ./fonts in case a label ever needs it.
 export const plexMono = localFont({
   src: [
     { path: "./fonts/ibm-plex-mono-latin-400-normal.woff2", weight: "400", style: "normal" },
     { path: "./fonts/ibm-plex-mono-latin-500-normal.woff2", weight: "500", style: "normal" },
-    { path: "./fonts/ibm-plex-mono-latin-700-normal.woff2", weight: "700", style: "normal" },
   ],
   variable: "--font-plex-mono",
   display: "swap",
