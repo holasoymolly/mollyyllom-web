@@ -4967,6 +4967,7 @@ const mvStore: Bilingual = { es: "Ficha de la dApp Store, v2.0.0", en: "dApp Sto
 const mollyverseStory: CaseStory = {
   cover: {
     variant: "top",
+    media: `${MVP}/portada-laptop.webp`,
     promise: {
       es: "La casa de mis colecciones: un sello con su propia cara, que le deja la portada a cada disco.",
       en: "A home for my collections: a label with its own face that leaves the cover to every record.",
@@ -4982,7 +4983,7 @@ const mollyverseStory: CaseStory = {
         en: "The Mollyverse is my platform for launching hand-drawn art collections on Solana. It needed a brand with its own character that still left room for every collection to have its own face. It had to hold up as a favicon, as an icon on the Seeker store and as a banner on X, and stay away from the usual crypto look with its neon gradients.",
       },
       blocks: [
-        { kind: "image", size: "bleed", image: { src: `${MV}/mollyverse-laptop-mockup.webp`, title: { es: "mollyverse.art", en: "mollyverse.art" }, detail: { es: "En vivo, en una escena hecha para el Mollyverse", en: "Live, in a scene made for the Mollyverse" } } },
+        { kind: "image", size: "bleed", image: { src: `${MV}/mollyverse-x-celular-mockup.webp`, title: { es: "The Unhinged en la app", en: "The Unhinged in the app" }, detail: { es: "En vivo, en una escena hecha para el Mollyverse", en: "Live, in a scene made for the Mollyverse" } } },
       ],
     },
     {
@@ -5048,7 +5049,6 @@ const mollyverseStory: CaseStory = {
             { src: `${MVP}/tienda-4.webp`, title: { es: "Multiple worlds, one universe", en: "Multiple worlds, one universe" }, detail: mvStore },
           ],
         },
-        { kind: "image", size: "solo", image: { src: `${MV}/mollyverse-demo-tienda.mp4`, title: { es: "El demo de la tienda", en: "The store demo" }, detail: { es: "Video de la ficha", en: "The listing's video" } } },
       ],
     },
     {
@@ -5065,9 +5065,7 @@ const mollyverseStory: CaseStory = {
       ],
     },
   ],
-  closing: {
-    image: { src: `${MV}/mollyverse-x-celular-mockup.webp`, title: { es: "The Unhinged en la app", en: "The Unhinged in the app" }, detail: { es: "En vivo", en: "Live" } },
-  },
+
 };
 
 const mollyverseProject: Project = {
