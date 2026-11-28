@@ -347,7 +347,15 @@
     "width": 3125,
     "height": 1042
   },
+  "/img/projects/aerosol/12-poster.webp": {
+    "width": 1080,
+    "height": 1080
+  },
   "/img/projects/aerosol/12.mp4": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/img/projects/aerosol/13-poster.webp": {
     "width": 1080,
     "height": 1080
   },
@@ -366,6 +374,10 @@
   "/img/projects/aerosol/2.webp": {
     "width": 2917,
     "height": 834
+  },
+  "/img/projects/aerosol/3-poster.webp": {
+    "width": 1080,
+    "height": 1080
   },
   "/img/projects/aerosol/3.mp4": {
     "width": 1080,
@@ -387,6 +399,10 @@
     "width": 2917,
     "height": 834
   },
+  "/img/projects/aerosol/8-poster.webp": {
+    "width": 1080,
+    "height": 1080
+  },
   "/img/projects/aerosol/8.mp4": {
     "width": 1080,
     "height": 1080
@@ -394,6 +410,14 @@
   "/img/projects/aerosol/9.webp": {
     "width": 2917,
     "height": 626
+  },
+  "/img/projects/aerosol/piezas/logo-apilado.webp": {
+    "width": 1100,
+    "height": 400
+  },
+  "/img/projects/aerosol/piezas/logo-horizontal.webp": {
+    "width": 1100,
+    "height": 400
   },
   "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-antes-despues-poster.webp": {
     "width": 1440,

@@ -997,7 +997,134 @@ const burnClaimProject: Project = {
   ],
 };
 
+const AE = "/img/projects/aerosol";
+const AEP = `${AE}/piezas`;
+const aeScene = (n: number, es: string, en: string): StoryImage => ({ src: `${AE}/${n}.mp4`, title: { es, en }, detail: { es: "Animación", en: "Animation" } });
+
+/**
+ * Aerosol · Identity 2025 told in chapters (F3, 28 Nov 2026). Brief and the
+ * three paragraphs are the approved copy, word for word. BORRADOR para Molly:
+ * the promise, chapter labels and headings, captions. The logo cards are
+ * crops of the approved panels 2 and 4 around the logo (never enlarged); the
+ * legacy SVGs differ in the spray drops, so they are not used. Palette codes
+ * transcribed from 5.webp; Lilac's RGB there reads "R 52", a typo for its own
+ * HEX #945EC7 (148, 94, 199). The four scene videos now have posters.
+ */
+const aerosolStory: CaseStory = {
+  cover: {
+    variant: "top",
+    media: `${AE}/11.webp`,
+    promise: {
+      es: "Una marca para dejar huella: una gota de pintura que se volvió el personaje de todo un estudio.",
+      en: "A brand about leaving your mark: a paint drip that became the character of a whole studio.",
+    },
+  },
+  chapters: [
+    {
+      id: "encargo",
+      label: { es: "El encargo", en: "The brief" },
+      heading: { es: "Un producto real que se veía de lado.", en: "A real product that looked like a side project." },
+      text: {
+        es: "Aerosol construye herramientas para el ecosistema Solana. El producto ya funcionaba y tenía usuarios reales, pero la marca lo hacía ver como un proyecto secundario, y los productos se iban acumulando sin un sistema que los relacionara entre sí.",
+        en: "Aerosol builds tools for the Solana ecosystem. The product already worked and had real users, but the brand made it look like a side project, and products were piling up with no system relating them to each other.",
+      },
+      blocks: [
+        { kind: "image", size: "bleed", image: { src: `${AE}/1.webp`, title: { es: "La gota", en: "The drip" }, detail: { es: "El isotipo", en: "The symbol" } } },
+      ],
+    },
+    {
+      id: "gota",
+      label: { es: "La gota", en: "The drip" },
+      heading: { es: "Dejar tu marca.", en: "Leave your mark." },
+      text: {
+        es: "Aerosol es un estudio de producto construido sobre Solana. La identidad nace de una idea muy simple: dejar tu marca. De ahí sale la gota de pintura que reemplaza la O del logotipo y que terminó convirtiéndose en el personaje central de todo el sistema.",
+        en: "Aerosol is a product studio built on Solana. The identity comes from a very simple idea: leaving your mark. That is where the paint drip replacing the O in the wordmark comes from, and it ended up becoming the central character of the whole system.",
+      },
+      blocks: [
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 2, phone: 1 },
+          items: [
+            { src: `${AEP}/logo-horizontal.webp`, title: { es: "Logo horizontal", en: "Horizontal logo" } },
+            { src: `${AEP}/logo-apilado.webp`, title: { es: "Con la gota arriba", en: "With the drip on top" } },
+          ],
+        },
+        { kind: "image", size: "bleed", image: { src: `${AE}/7.webp`, title: { es: "En blanco y negro", en: "In black and white" } } },
+      ],
+    },
+    {
+      id: "color",
+      label: { es: "El color", en: "The colour" },
+      heading: { es: "Morado, coral y una paleta para la pantalla.", en: "Purple, coral and a palette made for screens." },
+      text: {
+        es: "El sistema visual combina un morado profundo con coral y una paleta amplia de colores saturados, pensada para vivir en pantalla: redes, interfaces de producto, avatares y piezas de comunidad. La gota funciona sola como isotipo y también como personaje que habita escenas ilustradas, de día y de noche, en la ciudad y en la montaña.",
+        en: "The visual system pairs a deep purple with coral and a wide palette of saturated colors, built to live on screen: social, product interfaces, avatars and community pieces. The drip works on its own as a symbol and also as a character living inside illustrated scenes, by day and by night, in the city and in the mountains.",
+      },
+      blocks: [
+        {
+          kind: "palette",
+          colors: [
+            { name: { es: "Morado", en: "Purple" }, hex: "#3C1253", codes: ["Pantone 2627 C", "CMYK 85 100 31 34", "RGB 60 18 83"] },
+            { name: { es: "Coral", en: "Coral" }, hex: "#FB7B56", codes: ["Pantone 2024 C", "CMYK 0 65 68 0", "RGB 251 123 86"] },
+          ],
+        },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 2, phone: 1 },
+          items: [
+            { src: `${AE}/9.webp`, title: { es: "La gota sobre morado", en: "The drip on purple" } },
+            { src: `${AE}/10.webp`, title: { es: "La gota sobre coral", en: "The drip on coral" } },
+          ],
+        },
+        {
+          kind: "palette",
+          colors: [
+            { name: { es: "Rojo", en: "Red" }, hex: "#F23A30", codes: ["Pantone 3556 C", "CMYK 0 91 88 0", "RGB 242 58 48"] },
+            { name: { es: "Lila", en: "Lilac" }, hex: "#945EC7", codes: ["Pantone 2083 C", "CMYK 52 72 0 0", "RGB 148 94 199"] },
+            { name: { es: "Amarillo", en: "Yellow" }, hex: "#F0C300", codes: ["Pantone 7406 C", "CMYK 7 21 100 0", "RGB 240 195 0"] },
+            { name: { es: "Rosa", en: "Pink" }, hex: "#F24B80", codes: ["Pantone 1915 C", "CMYK 0 86 23 0", "RGB 242 75 128"] },
+          ],
+        },
+        {
+          kind: "palette",
+          colors: [
+            { name: { es: "Verde", en: "Green" }, hex: "#00C461", codes: ["Pantone 2420 C", "CMYK 79 0 85 0", "RGB 0 196 97"] },
+            { name: { es: "Turquesa", en: "Turquoise" }, hex: "#28C9DB", codes: ["Pantone 2226 C", "CMYK 65 0 16 0", "RGB 40 201 219"] },
+            { name: { es: "Menta", en: "Mint" }, hex: "#5FD8CA", codes: ["Pantone 3533 C", "CMYK 54 0 29 0", "RGB 95 216 202"] },
+          ],
+        },
+      ],
+    },
+    {
+      id: "feed",
+      label: { es: "En el feed", en: "In the feed" },
+      heading: { es: "Hecha para una comunidad que se mueve rápido.", en: "Made for a community that moves fast." },
+      text: {
+        es: "Es un branding digital-first, hecho para una comunidad que se mueve rápido. Cada elemento está pensado para ser reconocible en un feed, escalable a cualquier formato y lo suficientemente flexible para que el equipo siga construyendo sobre él.",
+        en: "It is a digital-first brand, made for a community that moves fast. Every element is designed to be recognizable in a feed, scalable to any format and flexible enough for the team to keep building on top of it.",
+      },
+      blocks: [
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 4, phone: 2 },
+          items: [
+            aeScene(3, "En la montaña", "In the mountains"),
+            aeScene(8, "Con lentes", "In shades"),
+            aeScene(12, "El río", "The river"),
+            aeScene(13, "De noche", "At night"),
+          ],
+        },
+        { kind: "image", size: "wide", image: { src: `${AE}/6.webp`, title: { es: "Apilado, en negativo", en: "Stacked, reversed" } } },
+      ],
+    },
+  ],
+};
+
 const aerosolProject: Project = {
+  story: aerosolStory,
   slug: "aerosol",
   title: "Aerosol · Identidad 2025",
   titleEn: "Aerosol · Identity 2025",
