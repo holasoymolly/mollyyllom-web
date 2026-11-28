@@ -1,3 +1,5 @@
+import { ogImageFor } from "@/lib/og";
+import { caseNeighbours } from "@/lib/projectSlices";
 import type { Metadata } from "next";
 import { ProjectPage } from "@/pageComponents/ProjectPage";
 import { activeProjects, projectTitle, projectsBySlug } from "@/projects";
@@ -38,12 +40,7 @@ export async function generateMetadata(props: {
       title: `${title} | MOLLY YLLOM`,
       description,
       url: `/en/proyectos/${project.slug}`,
-      images: [
-        {
-          url: project.heroImage,
-          alt: `${title} | MOLLY YLLOM`,
-        },
-      ],
+      images: [ogImageFor(project.slug, project.heroImage, `${title} | MOLLY YLLOM`)],
       locale: "en_US",
       alternateLocale: "es_ES",
     },
@@ -52,5 +49,5 @@ export async function generateMetadata(props: {
 
 export default async function Page(props: { params: Promise<{ slug: string }> }) {
   const { slug } = await props.params;
-  return <ProjectPage slug={slug} />;
+  return <ProjectPage project={projectsBySlug[slug]} {...caseNeighbours(slug)} />;
 }

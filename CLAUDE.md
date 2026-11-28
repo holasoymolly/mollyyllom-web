@@ -49,6 +49,9 @@ Non-trivial changes ship as a sequence of small commits (one per logical phase),
 - `src/components/` — Shared UI components (`Header`, `Footer`, `AppDrawer`, `PortfolioGrid`, etc.).
 
 ### Data files
+
+> **Never import `@/projects` (or `src/projects.tsx`) from a `'use client'` component.** It holds every case with all its copy and story; imported from client code it ships to every page (about 80 KB compressed, measured 28 Nov 2026). Server code slices it in `src/lib/projectSlices.ts` (`allGridItems`, `homeGridItems`, `businessGridItems`, `caseNeighbours`) and passes only what a component renders as props; `projectTitle` lives in `src/lib/projectTitle.ts`. Type-only imports (`import type { Project }`) are fine.
+
 - `src/projects.tsx` — All portfolio projects as static data. Exports `activeProjects` (ordered array) and `projectsBySlug` (lookup map). A title with descriptive words carries a hand-written `titleEn` (brand names stay as they are); every surface reads it through `projectTitle(project, lang)`, and analytics keep the Spanish `title` so the series stays one.
 - `src/i18n/translations.ts` — All UI strings for the site-wide ES/EN toggle.
 - `src/context/LanguageContext.tsx` — `useLanguage()` hook providing `lang`, `t` (translations), and `toggleLanguage`.
@@ -100,6 +103,9 @@ Consequences to keep in mind:
 - Route segments stay Spanish under `/en` (`/en/proyectos`, not `/en/projects`). The prefix is then a pure string operation, which is what keeps the helpers this small.
 
 ### SEO metadata
+
+- **Share images:** every case gets `public/og/<slug>.jpg` (1200 × 630 JPEG) made by `scripts/generate-og-images.js` from its `heroImage` (or the poster of its `heroMedia`), in `prebuild` and committed. The case metadata uses it through `ogImageFor()` in `src/lib/og.ts`, with width and height, and falls back to the hero if the file is missing. After changing a hero, run `npm run og-images` and commit the image.
+
 
 Per-route metadata lives on the **server-component `page.tsx`** wrappers in `src/app/...` — not on the client `pageComponents/...` implementations:
 

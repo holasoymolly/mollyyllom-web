@@ -7,12 +7,13 @@
   },
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/generate-image-manifest.js && node scripts/generate-image-variants.js",
+    "prebuild": "node scripts/generate-image-manifest.js && node scripts/generate-image-variants.js && node scripts/generate-og-images.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "image-manifest": "node scripts/generate-image-manifest.js",
-    "image-variants": "node scripts/generate-image-variants.js"
+    "image-variants": "node scripts/generate-image-variants.js",
+    "og-images": "node scripts/generate-og-images.js"
   },
   "dependencies": {
     "@amplitude/unified": "^1.1.28",
