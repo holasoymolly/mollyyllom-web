@@ -1029,7 +1029,17 @@ const aerosolStory: CaseStory = {
         en: "Aerosol builds tools for the Solana ecosystem. The product already worked and had real users, but the brand made it look like a side project, and products were piling up with no system relating them to each other.",
       },
       blocks: [
-        { kind: "image", size: "bleed", image: { src: `${AE}/1.webp`, title: { es: "La gota", en: "The drip" }, detail: { es: "El isotipo", en: "The symbol" } } },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 4, phone: 2 },
+          items: [
+            aeScene(3, "En la montaña", "In the mountains"),
+            aeScene(8, "Con lentes", "In shades"),
+            aeScene(12, "El río", "The river"),
+            aeScene(13, "De noche", "At night"),
+          ],
+        },
       ],
     },
     {
@@ -1041,15 +1051,7 @@ const aerosolStory: CaseStory = {
         en: "Aerosol is a product studio built on Solana. The identity comes from a very simple idea: leaving your mark. That is where the paint drip replacing the O in the wordmark comes from, and it ended up becoming the central character of the whole system.",
       },
       blocks: [
-        {
-          kind: "wall",
-          width: "wide",
-          columns: { desktop: 2, phone: 1 },
-          items: [
-            { src: `${AEP}/logo-horizontal.webp`, title: { es: "Logo horizontal", en: "Horizontal logo" } },
-            { src: `${AEP}/logo-apilado.webp`, title: { es: "Con la gota arriba", en: "With the drip on top" } },
-          ],
-        },
+        { kind: "image", size: "wide", image: { src: `${AEP}/logo-horizontal-grande.webp`, title: { es: "El logo", en: "The logo" }, detail: { es: "La gota en la O", en: "The drip in the O" } } },
         { kind: "image", size: "bleed", image: { src: `${AE}/7.webp`, title: { es: "En blanco y negro", en: "In black and white" } } },
       ],
     },
@@ -1067,6 +1069,7 @@ const aerosolStory: CaseStory = {
           colors: [
             { name: { es: "Morado", en: "Purple" }, hex: "#3C1253", codes: ["Pantone 2627 C", "CMYK 85 100 31 34", "RGB 60 18 83"] },
             { name: { es: "Coral", en: "Coral" }, hex: "#FB7B56", codes: ["Pantone 2024 C", "CMYK 0 65 68 0", "RGB 251 123 86"] },
+            { name: { es: "Lila", en: "Lilac" }, hex: "#945EC7", codes: ["Pantone 2083 C", "CMYK 52 72 0 0", "RGB 148 94 199"] },
           ],
         },
         {
@@ -1082,9 +1085,8 @@ const aerosolStory: CaseStory = {
           kind: "palette",
           colors: [
             { name: { es: "Rojo", en: "Red" }, hex: "#F23A30", codes: ["Pantone 3556 C", "CMYK 0 91 88 0", "RGB 242 58 48"] },
-            { name: { es: "Lila", en: "Lilac" }, hex: "#945EC7", codes: ["Pantone 2083 C", "CMYK 52 72 0 0", "RGB 148 94 199"] },
-            { name: { es: "Amarillo", en: "Yellow" }, hex: "#F0C300", codes: ["Pantone 7406 C", "CMYK 7 21 100 0", "RGB 240 195 0"] },
             { name: { es: "Rosa", en: "Pink" }, hex: "#F24B80", codes: ["Pantone 1915 C", "CMYK 0 86 23 0", "RGB 242 75 128"] },
+            { name: { es: "Amarillo", en: "Yellow" }, hex: "#F0C300", codes: ["Pantone 7406 C", "CMYK 7 21 100 0", "RGB 240 195 0"] },
           ],
         },
         {
@@ -1106,17 +1108,7 @@ const aerosolStory: CaseStory = {
         en: "It is a digital-first brand, made for a community that moves fast. Every element is designed to be recognizable in a feed, scalable to any format and flexible enough for the team to keep building on top of it.",
       },
       blocks: [
-        {
-          kind: "wall",
-          width: "wide",
-          columns: { desktop: 4, phone: 2 },
-          items: [
-            aeScene(3, "En la montaña", "In the mountains"),
-            aeScene(8, "Con lentes", "In shades"),
-            aeScene(12, "El río", "The river"),
-            aeScene(13, "De noche", "At night"),
-          ],
-        },
+        { kind: "image", size: "solo", image: { src: `${AE}/14.mp4`, title: { es: "La gota celebra", en: "The drip celebrates" }, detail: { es: "Animación", en: "Animation" } } },
         { kind: "image", size: "wide", image: { src: `${AE}/6.webp`, title: { es: "Apilado, en negativo", en: "Stacked, reversed" } } },
       ],
     },
@@ -5061,7 +5053,16 @@ const mollyverseStory: CaseStory = {
       },
       blocks: [
         { kind: "image", size: "wide", image: { src: `${MV}/mollyverse-x-MY-05.webp`, title: { es: "Mollyverse Verify", en: "Mollyverse Verify" }, detail: { es: "El logo y la página /verify, en vivo", en: "The logo and the /verify page, live" } } },
-        { kind: "image", size: "bleed", image: { src: `${MV}/mollyverse-x-MY-07.webp`, title: { es: "@elmollyverso", en: "@elmollyverso" }, detail: { es: "Siete posts", en: "Seven posts" } } },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 3, phone: 1 },
+          items: [
+            { src: `${MVP}/post-2026-11-17-flexy-select.webp`, title: { es: "Choose your Flexy.", en: "Choose your Flexy." }, detail: { es: "Post de @elmollyverso", en: "@elmollyverso post" } },
+            { src: `${MVP}/post-2026-11-11-group-chat-1.webp`, title: { es: "The group chat", en: "The group chat" }, detail: { es: "Post de @elmollyverso", en: "@elmollyverso post" } },
+            { src: `${MVP}/post-2026-11-24-glasses.webp`, title: { es: "Better with 1, or 2?", en: "Better with 1, or 2?" }, detail: { es: "Post de @elmollyverso", en: "@elmollyverso post" } },
+          ],
+        },
       ],
     },
   ],

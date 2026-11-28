@@ -411,13 +411,9 @@
     "width": 2917,
     "height": 626
   },
-  "/img/projects/aerosol/piezas/logo-apilado.webp": {
-    "width": 1100,
-    "height": 400
-  },
-  "/img/projects/aerosol/piezas/logo-horizontal.webp": {
-    "width": 1100,
-    "height": 400
+  "/img/projects/aerosol/piezas/logo-horizontal-grande.webp": {
+    "width": 2800,
+    "height": 1000
   },
   "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-antes-despues-poster.webp": {
     "width": 1440,
@@ -3102,6 +3098,18 @@
   "/img/projects/mollyverse/piezas/portada-laptop.webp": {
     "width": 3456,
     "height": 1944
+  },
+  "/img/projects/mollyverse/piezas/post-2026-11-11-group-chat-1.webp": {
+    "width": 1080,
+    "height": 1350
+  },
+  "/img/projects/mollyverse/piezas/post-2026-11-17-flexy-select.webp": {
+    "width": 1080,
+    "height": 1350
+  },
+  "/img/projects/mollyverse/piezas/post-2026-11-24-glasses.webp": {
+    "width": 1080,
+    "height": 1350
   },
   "/img/projects/mollyverse/piezas/tienda-1.webp": {
     "width": 2250,
