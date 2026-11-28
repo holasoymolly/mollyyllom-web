@@ -36,7 +36,7 @@ export const MediaSection = () => {
       {/* Dark panel — right half */}
       <div className="w-full md:w-1/2 bg-indigo-950 text-stone-200 flex flex-col justify-between p-8 md:p-10 lg:p-14">
         <motion.p
-          className="text-violet-400 text-xs font-bold tracking-[0.3em] uppercase"
+          className="text-violet-300 label-mono"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

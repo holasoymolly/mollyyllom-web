@@ -28,7 +28,7 @@ export const Services = () => {
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, delay: index * 0.07, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <span className="text-violet-500 text-xs font-bold tracking-widest pt-1">
+            <span className="text-violet-500 label-mono pt-1.5">
               {String(index + 1).padStart(2, '0')}
             </span>
             <h3 className="text-xl md:text-2xl font-black text-indigo-950 group-hover:text-violet-900 transition-colors duration-300 leading-snug">

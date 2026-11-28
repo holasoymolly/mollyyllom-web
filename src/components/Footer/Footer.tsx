@@ -54,7 +54,7 @@ export const Footer: React.FC = () => {
 
         {/* Navigation */}
         <nav className="flex flex-col gap-3">
-          <span className="text-violet-400 text-xs font-bold tracking-[0.2em] uppercase mb-1">
+          <span className="text-violet-300 label-mono mb-1">
             {t.footer.pages}
           </span>
           {navLinks.map(({ href, label, external, iconSrc }) => (
@@ -90,7 +90,7 @@ export const Footer: React.FC = () => {
         {/* Social + Newsletter */}
         <div className="flex flex-col gap-8">
           <div>
-            <span className="text-violet-400 text-xs font-bold tracking-[0.2em] uppercase mb-4 block">
+            <span className="text-violet-300 label-mono mb-4 block">
               {t.footer.follow}
             </span>
             <div className="flex gap-4 items-center">
@@ -110,7 +110,7 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="flex flex-col gap-3">
-            <span className="text-violet-400 text-xs font-bold tracking-[0.2em] uppercase block">
+            <span className="text-violet-300 label-mono block">
               {t.footer.newsletter}
             </span>
             {subscribed ? (

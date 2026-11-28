@@ -55,7 +55,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ project, position, total, pr
       key: 'brief',
       content: (
         <div className="flex flex-col gap-3">
-          <span className="text-violet-500 text-[10px] font-bold tracking-[0.25em] uppercase">
+          <span className="text-violet-500 label-mono">
             {t.projects.brief}
           </span>
           <p className="text-lg text-indigo-950/70 leading-relaxed border-l-2 border-violet-500 pl-5">
@@ -102,7 +102,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ project, position, total, pr
         <div className="flex flex-col gap-12">
           {shipped && shipped.length > 0 && (
             <div className="flex flex-col gap-6">
-              <span className="text-violet-500 text-[10px] font-bold tracking-[0.25em] uppercase">
+              <span className="text-violet-500 label-mono">
                 {t.projects.shipped}
               </span>
               <ol className="grid grid-cols-1 gap-x-12 gap-y-6 md:grid-cols-2">
@@ -119,7 +119,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ project, position, total, pr
           )}
           {outcome && outcome.length > 0 && (
             <div className="flex flex-col gap-4">
-              <span className="text-violet-500 text-[10px] font-bold tracking-[0.25em] uppercase">
+              <span className="text-violet-500 label-mono">
                 {t.projects.outcome}
               </span>
               <div className="flex flex-col gap-3 border-l-2 border-violet-500 pl-5">
@@ -218,14 +218,14 @@ export const ProjectPage: FC<ProjectPageProps> = ({ project, position, total, pr
         >
           <TransitionLink
             href="/proyectos"
-            className="inline-flex items-center gap-2 text-slate-400 hover:text-violet-400 transition-colors duration-200 text-xs font-bold tracking-[0.2em] uppercase group"
+            className="inline-flex items-center gap-2 text-slate-300 hover:text-violet-300 transition-colors duration-200 label-mono group"
           >
             <span className="inline-block transition-transform duration-200 group-hover:-translate-x-1">←</span>
             {t.projects.backLink}
           </TransitionLink>
         </motion.div>
         <motion.p
-          className="text-violet-400 text-xs font-bold tracking-[0.3em] uppercase mb-6"
+          className="text-violet-300 label-mono mb-6"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.05, ease: [0.25, 0.1, 0.25, 1] }}
@@ -253,7 +253,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ project, position, total, pr
               <dl className="flex flex-wrap gap-x-14 gap-y-6">
                 {meta.map((item) => (
                   <div key={item.label} className="flex flex-col gap-1.5">
-                    <dt className="text-violet-400 text-[10px] font-bold tracking-[0.25em] uppercase">
+                    <dt className="text-violet-300 label-mono">
                       {item.label}
                     </dt>
                     <dd className="text-stone-200 text-base font-bold max-w-xs">{item.value}</dd>
@@ -263,7 +263,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ project, position, total, pr
             )}
             {scope && scope.length > 0 && (
               <div className="flex flex-col gap-2.5">
-                <span className="text-violet-400 text-[10px] font-bold tracking-[0.25em] uppercase">
+                <span className="text-violet-300 label-mono">
                   {t.projects.scope}
                 </span>
                 <ul className="flex flex-wrap gap-2">
@@ -321,7 +321,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ project, position, total, pr
         {credits && credits.length > 0 && (
           <section className="bg-stone-200 px-6 md:px-16 lg:px-24 py-16">
             <div className="max-w-3xl mx-auto flex flex-col gap-3 border-t border-indigo-950/10 pt-8">
-              <span className="text-violet-500 text-[10px] font-bold tracking-[0.25em] uppercase">
+              <span className="text-violet-500 label-mono">
                 {t.projects.credits}
               </span>
               {credits.map((line) => {
@@ -354,7 +354,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ project, position, total, pr
                 <ProtectedImage src={prevProject.thumb} alt={projectTitle(prevProject, lang)} fill sizes="64px" className="object-cover" />
               </div>
               <div className="flex flex-col gap-1">
-                <span className="text-violet-500 text-xs font-bold tracking-[0.25em] uppercase flex items-center gap-2 group-hover:-translate-x-1 transition-transform duration-300">
+                <span className="text-violet-500 label-mono flex items-center gap-2 group-hover:-translate-x-1 transition-transform duration-300">
                   {t.projects.prev}
                 </span>
                 <span className="text-xl md:text-2xl font-black text-indigo-950 leading-tight group-hover:text-violet-900 transition-colors duration-300">
@@ -370,7 +370,7 @@ export const ProjectPage: FC<ProjectPageProps> = ({ project, position, total, pr
               className="relative flex items-center justify-end gap-5 px-6 md:px-16 lg:px-24 py-10 text-right group hover:bg-indigo-950/5 transition-colors duration-300 overflow-hidden"
             >
               <div className="flex flex-col gap-1 items-end">
-                <span className="text-violet-500 text-xs font-bold tracking-[0.25em] uppercase flex items-center gap-2 group-hover:translate-x-1 transition-transform duration-300">
+                <span className="text-violet-500 label-mono flex items-center gap-2 group-hover:translate-x-1 transition-transform duration-300">
                   {t.projects.next}
                 </span>
                 <span className="text-xl md:text-2xl font-black text-indigo-950 leading-tight group-hover:text-violet-900 transition-colors duration-300">

@@ -57,7 +57,7 @@ export const PortfolioGrid = ({
       {showHeader && (
         <div className="px-6 md:px-16 lg:px-24 py-14 flex items-end justify-between border-b border-indigo-950/10">
           <div>
-            <span className="text-violet-500 text-xs font-bold tracking-[0.25em] uppercase">
+            <span className="text-violet-500 label-mono">
               {t.portfolio.label}
             </span>
             <h2 className="text-4xl md:text-5xl font-black text-indigo-950 mt-2 leading-none">

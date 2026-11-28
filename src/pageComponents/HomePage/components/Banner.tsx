@@ -23,7 +23,7 @@ export const Banner = () => {
     <section className="bg-indigo-950 text-stone-200 min-h-[75vh] sm:min-h-[88vh] flex flex-col justify-between px-6 sm:px-10 md:px-16 lg:px-24 pt-14 md:pt-20 pb-8 sm:pb-12">
       <div>
         <motion.p
-          className="text-violet-400 text-xs font-semibold tracking-[0.3em] uppercase mb-8"
+          className="text-violet-300 label-mono mb-8"
           {...fadeUp(0.15)}
         >
           {t.home.studioLabel}
