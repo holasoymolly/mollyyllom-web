@@ -1085,11 +1085,9 @@ const aerosolRefinamientoProject: Project = {
   outcomeEn: ["The new logo shipped on 4 November 2026, with the reveal pinned on @aerosolbuild."],
   credits: [
     "Refinamiento del logo, dirección de arte y campaña: Molly Yllom",
-    "Desarrollo web: equipo de Aerosol",
   ],
   creditsEn: [
     "Logo refinement, art direction and campaign: Molly Yllom",
-    "Web development: the Aerosol team",
   ],
   portfolioImage: "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-gota-animada-portada.mp4",
   heroImage: "/img/projects/aerosol-rebrand-2026/aerosol-rebrand-x-MY-01.webp",
