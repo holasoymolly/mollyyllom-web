@@ -10,7 +10,9 @@
   --line: rgba(30, 27, 75, 0.14);
   --bg: #e7e5e4;
   --accent: #8b5cf6;
-  --m: clamp(24px, 6vw, 96px);
+  /* Same side margins as the header and the grid (px-6 md:px-16 lg:px-24),
+     so every left edge on the page lines up with the logo. */
+  --m: 24px;
   --m2: clamp(0px, 2.2vw, 32px);
   --gap: clamp(12px, 1.6vw, 24px);
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -19,6 +21,17 @@
   background: var(--bg);
   color: var(--ink);
   overflow-x: clip;
+}
+
+@media (min-width: 768px) {
+  .root {
+    --m: 64px;
+  }
+}
+@media (min-width: 1024px) {
+  .root {
+    --m: 96px;
+  }
 }
 
 /* ---------- reading progress ---------- */
@@ -109,7 +122,7 @@
 }
 .coverOver .coverText {
   position: absolute;
-  left: clamp(24px, 3.6vw, 60px);
+  left: calc(var(--m) - var(--m2));
   top: clamp(28px, 4.2vw, 68px);
   max-width: 40%;
   animation: rise 1s 0.15s var(--ease) both;
@@ -124,7 +137,7 @@
   grid-template-columns: 7fr 5fr;
   gap: var(--gap);
   align-items: end;
-  padding: clamp(28px, 4vw, 64px) calc(var(--m2) + clamp(24px, 3.6vw, 60px)) clamp(28px, 3vw, 44px);
+  padding: clamp(28px, 4vw, 64px) var(--m) clamp(28px, 3vw, 44px);
   animation: rise 1s var(--ease) both;
 }
 .coverTop .promise {
@@ -163,7 +176,7 @@
   grid-template-columns: repeat(4, auto);
   justify-content: start;
   gap: 18px clamp(28px, 4vw, 72px);
-  padding: 24px calc(var(--m2) + clamp(24px, 3.6vw, 60px)) 0;
+  padding: 24px var(--m) 0;
   font-size: 14px;
 }
 .facts dt {
