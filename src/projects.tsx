@@ -5271,6 +5271,233 @@ const aerosolificationProject: Project = {
   ],
 };
 
+const DY = "/img/projects/daydream";
+const DYP = `${DY}/piezas`;
+const dyScreen = (file: string, es: string, en: string): StoryImage => ({
+  src: `${DYP}/pantalla-${file}.webp`,
+  title: { es, en },
+  detail: { es: "Propuesta de la app", en: "App proposal" },
+});
+const dyTeaser = (file: string, line: string): StoryImage => ({
+  src: `${DYP}/teaser-${file}.webp`,
+  title: { es: line, en: line },
+  detail: { es: "Teaser del lanzamiento", en: "Launch teaser" },
+});
+
+/**
+ * Daydream told in chapters (F3, 28 Nov 2026). Loose pieces from
+ * `04-portafolio/daydream/piezas-story.py`: the app screens at their native
+ * 3x size with only their rounded corners, the four launch teasers as they
+ * are, and a type specimen with no labels (the palette panel becomes the
+ * `palette` block). The logo plates (02a, 02b, 02c) carry no words and keep
+ * their brand grounds. Four of the six videos go in, and only the screens and teasers no other piece already shows: the Window loop, the
+ * laptop, horizon and a look inside (app tour already plays on the laptop,
+ * and read what you sign repeats the Blocked screen of the terrace).
+ * Chapter texts reuse the approved brief and paragraphs; headings, the
+ * promise, the launch text and captions are new drafts for Molly.
+ */
+const daydreamStory: CaseStory = {
+  cover: {
+    variant: "top",
+    promise: {
+      es: "Una wallet de Solana que se siente como mirar por la ventana un día claro.",
+      en: "A Solana wallet that feels like looking out the window on a clear day.",
+    },
+  },
+  chapters: [
+    {
+      id: "encargo",
+      label: { es: "El encargo", en: "The brief" },
+      heading: { es: "Nada de fantasmas, escudos ni carteras.", en: "No ghosts, no shields, no wallets." },
+      text: {
+        es: "Daydream es la wallet de Solana que está armando Aerosol, para gente que vive on-chain. El nombre ya lo decía casi todo: soñar despierto, calma, claridad. Me tocaba hacerle una marca de verdad, con el proceso completo, que se sintiera un poco jovial pero seria, sobria y moderna. Y con una condición que me puse yo: nada de fantasmas, escudos ni carteras, que es lo que tiene medio mundo en crypto.",
+        en: "Daydream is the Solana wallet Aerosol is building, for people who live on-chain. The name already said most of it: daydreaming, calm, clarity. My job was to give it a real brand, the full process, something a little playful but still serious, sober and modern. And I set myself one rule: no ghosts, no shields, no wallets, because that's what half of crypto already has.",
+      },
+      blocks: [
+        {
+          kind: "image",
+          size: "bleed",
+          image: {
+            src: `${DY}/daydream-cornisa-mockup.webp`,
+            title: { es: "Home", en: "Home" },
+            detail: { es: "La app, con el cielo detrás", en: "The app, with the sky behind it" },
+          },
+        },
+      ],
+    },
+    {
+      id: "ventana",
+      label: { es: "La Ventana", en: "The Window" },
+      heading: { es: "Medio sol con el cielo adentro.", en: "Half a sun with the sky inside." },
+      text: {
+        es: "A este logo le di vueltas. Hubo una D, hubo una luna, hubo un personaje que se leía de noche, y una wallet que se llama Daydream tiene que ser de día. Al final la respuesta fue la más sencilla: una ventana. Medio sol, el cielo adentro y dos nubes que se salen por el borde, como cuando te quedas mirando por la ventana y se te va el tiempo. Se lee a 24 px y tiene su guiño literal, que era justo lo que buscaba.",
+        en: "This logo took a few turns. There was a D, there was a moon, there was a character that read like nighttime, and a wallet called Daydream has to live in the daytime. The answer ended up being the simplest one: a window. Half a sun, the sky inside, and two clouds slipping out past the edge, like when you stare out the window and lose track of time. It reads at 24 px and it has its little literal wink, which is exactly what I was after.",
+      },
+      blocks: [
+        {
+          kind: "image",
+          size: "wide",
+          image: {
+            src: `${DY}/daydream-x-MY-02a.webp`,
+            title: { es: "El logo a todo color", en: "The full-color logo" },
+            detail: { es: "Horizontal y apilado, sobre el morado", en: "Horizontal and stacked, on the purple" },
+          },
+        },
+        {
+          kind: "image",
+          size: "solo",
+          image: {
+            src: `${DY}/daydream-ventana-loop.mp4`,
+            title: { es: "La Ventana, animada", en: "The Window, animated" },
+            detail: { es: "Las dos nubes cruzan a distinta velocidad", en: "The two clouds drift at different speeds" },
+          },
+        },
+      ],
+    },
+    {
+      id: "sistema",
+      label: { es: "El sistema", en: "The system" },
+      heading: { es: "El cielo de fondo y el morado para lo oscuro.", en: "Sky for the ground, purple for the dark." },
+      text: {
+        es: "Después vino todo lo demás. El cielo pasó a ser el fondo de la marca y de la app, lo oscuro va en el morado de Aerosol y nunca en negro, y a la e del nombre le dibujé un travesaño recto que termina en el recuadro de la a. Las nubes del logo se mueven en la animación y son las mismas que flotan en la app.",
+        en: "Then came everything else. The sky became the ground for the brand and the app, the dark parts go in Aerosol's purple and never in black, and I drew the e in the name a straight crossbar that ends in the a's square tab. The clouds in the logo drift in the animation, and they're the same ones floating around the app.",
+      },
+      blocks: [
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 2, phone: 1 },
+          items: [
+            { src: `${DY}/daydream-x-MY-02c.webp`, title: { es: "En blanco", en: "In white" }, detail: { es: "Sobre el cielo de la app", en: "On the app's sky" } },
+            { src: `${DY}/daydream-x-MY-02b.webp`, title: { es: "A una tinta", en: "One ink" }, detail: { es: "En morado, sobre Cloud", en: "In purple, on Cloud" } },
+          ],
+        },
+        {
+          kind: "palette",
+          colors: [
+            { name: { es: "Sky", en: "Sky" }, hex: "#7CC0FF", codes: ["R124 G192 B255"] },
+            { name: { es: "Purple", en: "Purple" }, hex: "#3C1253", codes: ["R60 G18 B83"] },
+            { name: { es: "Cloud", en: "Cloud" }, hex: "#F7F4FA", codes: ["R247 G244 B250"] },
+            { name: { es: "Dusk", en: "Dusk" }, hex: "#4A1A66", codes: ["R74 G26 B102"] },
+          ],
+        },
+        {
+          kind: "image",
+          size: "wide",
+          image: {
+            src: `${DYP}/letra.webp`,
+            title: { es: "La letra", en: "Type" },
+            detail: { es: "Funnel Display, Funnel Sans y Geist Mono para las cifras", en: "Funnel Display, Funnel Sans and Geist Mono for the figures" },
+          },
+        },
+      ],
+    },
+    {
+      id: "app",
+      label: { es: "La app", en: "The app" },
+      heading: { es: "Antes de aprobar, ves qué firmas.", en: "Before you approve, you see what you sign." },
+      text: {
+        es: "La propuesta de la app la pensé con poco texto, íconos claros y la idea de que firmar algo en Solana no te quite la calma: antes de aprobar, ves qué estás firmando.",
+        en: "I designed the app proposal with very little text, clear icons and one idea in mind: signing something on Solana shouldn't cost you your calm. Before you approve, you see what you're signing.",
+      },
+      blocks: [
+        {
+          kind: "image",
+          size: "bleed",
+          image: {
+            src: `${DY}/daydream-laptop-video-mockup.mp4`,
+            title: { es: "Life inside the Window", en: "Life inside the Window" },
+            detail: { es: "La presentación de la app, con el recorrido corriendo", en: "The app presentation, with the tour playing" },
+          },
+        },
+        {
+          kind: "image",
+          size: "wide",
+          image: {
+            src: `${DY}/daydream-tres-celulares-mockup.webp`,
+            title: { es: "Enviar a varias wallets", en: "Sending to several wallets" },
+            detail: { es: "Send, revisión y envío, en una sola transacción", en: "Send, review and sending, in a single transaction" },
+          },
+        },
+        {
+          kind: "carousel",
+          large: true,
+          width: "wide",
+          label: { es: "Más pantallas de la propuesta", en: "More screens from the proposal" },
+          items: [
+            dyScreen("transaction", "Transacción", "Transaction"),
+            dyScreen("activity", "Actividad", "Activity"),
+            dyScreen("token", "Token", "Token"),
+            dyScreen("contacts", "Contactos", "Contacts"),
+            dyScreen("browser", "Navegador", "Browser"),
+          ],
+        },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 2, phone: 1 },
+          items: [
+            { src: `${DY}/daydream-ventana-mockup.webp`, title: { es: "Approve", en: "Approve" }, detail: { es: "Lo que vas a firmar, simulado antes", en: "What you're about to sign, simulated first" } },
+            { src: `${DY}/daydream-terraza-mockup.webp`, title: { es: "Bloqueado", en: "Blocked" }, detail: { es: "Un drainer, frenado antes de firmar", en: "A drainer, stopped before you sign" } },
+          ],
+        },
+      ],
+    },
+    {
+      id: "lanzamiento",
+      label: { es: "El lanzamiento", en: "The launch" },
+      heading: { es: "Algo en el horizonte.", en: "Something on the horizon." },
+      text: {
+        es: "Para el lanzamiento armé los teasers sobre el mismo cielo, con una frase corta cada uno y la app asomándose, y unos videos breves donde las nubes y el nombre se mueven igual que en la marca.",
+        en: "For the launch I made the teasers on the same sky, one short line each with the app peeking in, plus a few short videos where the clouds and the name move just like they do in the brand.",
+      },
+      blocks: [
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 2, phone: 1 },
+          ratio: "16/9",
+          items: [
+            dyTeaser("horizon", "Something's on the horizon."),
+            { src: `${DY}/daydream-video-horizon.mp4`, title: { es: "Horizon", en: "Horizon" }, detail: { es: "Video del lanzamiento", en: "Launch video" } },
+            dyTeaser("solana-only", "Solana only. On purpose."),
+            { src: `${DY}/daydream-video-a-look-inside.mp4`, title: { es: "A look inside", en: "A look inside" }, detail: { es: "Video del lanzamiento", en: "Launch video" } },
+          ],
+        },
+      ],
+    },
+    {
+      id: "criterio",
+      label: { es: "El criterio", en: "The calls" },
+      heading: { es: "Muchas opciones, una sola decisión.", en: "Lots of options, one call." },
+      text: {
+        es: "Todo esto lo hice con herramientas de IA como apoyo, pero cada decisión fue mía: qué ronda seguía, cuándo una idea se estaba pareciendo demasiado a Phantom, qué pantalla sobraba. La IA me dejó probar muchísimas más opciones en mucho menos tiempo. Saber cuál es la buena sigue siendo trabajo de diseñadora. Hasta las fotos de este caso salieron así: el cielo, la luz y cada toma los escogí yo.",
+        en: "I made all of this with AI tools as support, but every call was mine: which round to keep pushing, when an idea was drifting too close to Phantom, which screen didn't need to be there. AI let me try a lot more options in a lot less time. Knowing which one is the one is still a designer's job. Even the photos in this case went that way: I picked the sky, the light and every single take.",
+      },
+      blocks: [
+        {
+          kind: "image",
+          size: "wide",
+          image: {
+            src: `${DY}/daydream-mesa-agentes-mockup.webp`,
+            title: { es: "Agents", en: "Agents" },
+            detail: { es: "La pantalla de los agentes, con su límite diario", en: "The agents screen, with its daily limit" },
+          },
+        },
+        {
+          kind: "image",
+          size: "bleed",
+          image: {
+            src: `${DY}/daydream-cama-mockup.webp`,
+            title: { es: "Welcome", en: "Welcome" },
+            detail: { es: "La primera pantalla", en: "The first screen" },
+          },
+        },
+      ],
+    },
+  ],
+};
+
 const daydreamProject: Project = {
   slug: "daydream",
   title: "Daydream",
@@ -5363,6 +5590,7 @@ const daydreamProject: Project = {
     "/img/projects/daydream/daydream-video-app-tour.mp4",
     "/img/projects/daydream/daydream-cama-mockup.webp",
   ],
+  story: daydreamStory,
 };
 
 const spotlightProject: Project = {

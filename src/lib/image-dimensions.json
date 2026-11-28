@@ -1599,6 +1599,38 @@
     "width": 2800,
     "height": 1440
   },
+  "/img/projects/daydream/piezas/letra.webp": {
+    "width": 2800,
+    "height": 1440
+  },
+  "/img/projects/daydream/piezas/pantalla-activity.webp": {
+    "width": 1170,
+    "height": 2532
+  },
+  "/img/projects/daydream/piezas/pantalla-browser.webp": {
+    "width": 1170,
+    "height": 2532
+  },
+  "/img/projects/daydream/piezas/pantalla-contacts.webp": {
+    "width": 1170,
+    "height": 2532
+  },
+  "/img/projects/daydream/piezas/pantalla-token.webp": {
+    "width": 1170,
+    "height": 2532
+  },
+  "/img/projects/daydream/piezas/pantalla-transaction.webp": {
+    "width": 1170,
+    "height": 2532
+  },
+  "/img/projects/daydream/piezas/teaser-horizon.webp": {
+    "width": 3200,
+    "height": 1800
+  },
+  "/img/projects/daydream/piezas/teaser-solana-only.webp": {
+    "width": 3200,
+    "height": 1800
+  },
   "/img/projects/dexa/dexa-bota-mockup.webp": {
     "width": 2752,
     "height": 1536
