@@ -30,7 +30,7 @@ export const ContactPage: FC = () => {
       {/* Hero */}
       <section className="bg-indigo-950 text-stone-200 px-6 md:px-16 lg:px-24 pt-20 pb-24">
         <motion.p
-          className="text-violet-400 text-xs font-bold tracking-[0.3em] uppercase mb-6"
+          className="text-violet-300 label-mono mb-6"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
@@ -59,7 +59,7 @@ export const ContactPage: FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <span className="text-violet-500 text-xs font-bold tracking-[0.25em] uppercase">
+            <span className="text-violet-500 label-mono">
               {t.contact.emailLabel}
             </span>
             <a
@@ -79,7 +79,7 @@ export const ContactPage: FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.05, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <span className="text-violet-500 text-xs font-bold tracking-[0.25em] uppercase">
+            <span className="text-violet-500 label-mono">
               {t.contact.callLabel}
             </span>
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
@@ -106,7 +106,7 @@ export const ContactPage: FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.065, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <span className="text-violet-500 text-xs font-bold tracking-[0.25em] uppercase">
+            <span className="text-violet-500 label-mono">
               {t.contact.mentorshipLabel}
             </span>
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
@@ -137,7 +137,7 @@ export const ContactPage: FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.08, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <span className="text-violet-500 text-xs font-bold tracking-[0.25em] uppercase">
+            <span className="text-violet-500 label-mono">
               {t.contact.quoteLabel}
             </span>
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
@@ -164,7 +164,7 @@ export const ContactPage: FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <span className="text-violet-500 text-xs font-bold tracking-[0.25em] uppercase">
+            <span className="text-violet-500 label-mono">
               {t.contact.socialsLabel}
             </span>
             <div className="flex flex-wrap gap-4">

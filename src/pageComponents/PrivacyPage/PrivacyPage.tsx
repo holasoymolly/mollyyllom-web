@@ -116,7 +116,7 @@ export const PrivacyPage: FC = () => {
       <Header />
 
       <section className="bg-indigo-950 text-stone-200 px-6 md:px-16 lg:px-24 pt-20 pb-20">
-        <p className="text-violet-400 text-xs font-bold tracking-[0.3em] uppercase mb-6">{c.label}</p>
+        <p className="text-violet-300 label-mono mb-6">{c.label}</p>
         <h1 className="text-[clamp(2.25rem,10vw,3.5rem)] sm:text-6xl md:text-7xl font-black leading-[0.95] tracking-tight max-w-4xl">
           {c.title}
         </h1>

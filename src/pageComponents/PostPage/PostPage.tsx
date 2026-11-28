@@ -103,7 +103,7 @@ export const PostPage: FC<PostPageProps> = ({ slug }) => {
           >
             <TransitionLink
               href="/blog"
-              className="inline-flex items-center gap-2 text-slate-400 hover:text-violet-400 transition-colors duration-200 text-xs font-bold tracking-[0.2em] uppercase group"
+              className="inline-flex items-center gap-2 text-slate-300 hover:text-violet-300 transition-colors duration-200 label-mono group"
             >
               <span className="inline-block transition-transform duration-200 group-hover:-translate-x-1">←</span>
               {t.blog.backLink}
@@ -112,7 +112,7 @@ export const PostPage: FC<PostPageProps> = ({ slug }) => {
 
           {topic && (
             <motion.p
-              className="text-violet-400 text-xs font-bold tracking-[0.3em] uppercase mb-6"
+              className="text-violet-300 label-mono mb-6"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.05, ease: [0.25, 0.1, 0.25, 1] }}
@@ -131,7 +131,7 @@ export const PostPage: FC<PostPageProps> = ({ slug }) => {
           </motion.h1>
 
           <motion.div
-            className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] font-bold tracking-[0.25em] uppercase text-slate-400"
+            className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 label-mono text-slate-300"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
@@ -166,7 +166,7 @@ export const PostPage: FC<PostPageProps> = ({ slug }) => {
                 href={post.linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 pt-8 border-t border-indigo-950/10 text-violet-500 text-xs font-bold tracking-[0.25em] uppercase hover:text-violet-600 transition-colors duration-200"
+                className="mt-6 pt-8 border-t border-indigo-950/10 text-violet-500 label-mono hover:text-violet-600 transition-colors duration-200"
               >
                 {t.blog.originalPost}
               </a>
@@ -183,7 +183,7 @@ export const PostPage: FC<PostPageProps> = ({ slug }) => {
               href={`/blog/${newerPost.slug}`}
               className="flex flex-col gap-1 px-6 md:px-16 lg:px-24 py-10 border-b md:border-b-0 md:border-r border-indigo-950/10 group hover:bg-indigo-950/5 transition-colors duration-300"
             >
-              <span className="text-violet-500 text-xs font-bold tracking-[0.25em] uppercase group-hover:-translate-x-1 transition-transform duration-300">
+              <span className="text-violet-500 label-mono group-hover:-translate-x-1 transition-transform duration-300">
                 {t.blog.prev}
               </span>
               <span className="text-xl md:text-2xl font-black text-indigo-950 leading-tight group-hover:text-violet-900 transition-colors duration-300">
@@ -199,7 +199,7 @@ export const PostPage: FC<PostPageProps> = ({ slug }) => {
               href={`/blog/${olderPost.slug}`}
               className="flex flex-col gap-1 items-end text-right px-6 md:px-16 lg:px-24 py-10 group hover:bg-indigo-950/5 transition-colors duration-300"
             >
-              <span className="text-violet-500 text-xs font-bold tracking-[0.25em] uppercase group-hover:translate-x-1 transition-transform duration-300">
+              <span className="text-violet-500 label-mono group-hover:translate-x-1 transition-transform duration-300">
                 {t.blog.next}
               </span>
               <span className="text-xl md:text-2xl font-black text-indigo-950 leading-tight group-hover:text-violet-900 transition-colors duration-300">

@@ -19,7 +19,7 @@ export const BlogPage: FC = () => {
       {/* Hero */}
       <section className="bg-indigo-950 text-stone-200 px-6 md:px-16 lg:px-24 pt-20 pb-24">
         <motion.p
-          className="text-violet-400 text-xs font-bold tracking-[0.3em] uppercase mb-6"
+          className="text-violet-300 label-mono mb-6"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
@@ -68,7 +68,7 @@ export const BlogPage: FC = () => {
                       href={`/blog/${post.slug}`}
                       className="block bg-white rounded-2xl border border-stone-200 p-6 md:p-8 transition-colors duration-300 hover:border-violet-500/40 group"
                     >
-                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-4 text-[10px] font-bold tracking-[0.25em] uppercase">
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-4 label-mono">
                         {topic && <span className="text-violet-500">{topic}</span>}
                         {topic && <span className="text-indigo-950/20">·</span>}
                         <span className="text-indigo-950/40">{formatPostDate(post.date, lang)}</span>
@@ -84,7 +84,7 @@ export const BlogPage: FC = () => {
 
                       <p className="text-lg text-indigo-950/70 leading-relaxed mb-5">{excerpt}</p>
 
-                      <span className="text-violet-500 text-xs font-bold tracking-[0.25em] uppercase inline-flex items-center gap-2">
+                      <span className="text-violet-500 label-mono inline-flex items-center gap-2">
                         {t.blog.readCta}
                         <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">
                           →

@@ -46,7 +46,7 @@ export const BusinessPage: FC<{ cases: GridItem[] }> = ({ cases }) => {
       {/* Hero */}
       <section className="bg-indigo-950 text-stone-200 px-6 md:px-16 lg:px-24 pt-20 pb-24">
         <motion.p
-          className="text-violet-400 text-xs font-bold tracking-[0.3em] uppercase mb-6"
+          className="text-violet-300 label-mono mb-6"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease }}
@@ -85,7 +85,7 @@ export const BusinessPage: FC<{ cases: GridItem[] }> = ({ cases }) => {
 
       {/* What I do */}
       <section className="bg-stone-200 px-6 md:px-16 lg:px-24 py-20 md:py-28">
-        <span className="text-violet-500 text-xs font-bold tracking-[0.3em] uppercase">{b.offerLabel}</span>
+        <span className="text-violet-500 label-mono">{b.offerLabel}</span>
         <div className="mt-2 mb-12">
           <TwoLineHeading text={b.offerTitle} />
         </div>
@@ -102,7 +102,7 @@ export const BusinessPage: FC<{ cases: GridItem[] }> = ({ cases }) => {
       {/* Work */}
       <section className="bg-stone-200 border-t border-indigo-950/10">
         <div className="px-6 md:px-16 lg:px-24 py-14">
-          <span className="text-violet-500 text-xs font-bold tracking-[0.3em] uppercase">{b.casesLabel}</span>
+          <span className="text-violet-500 label-mono">{b.casesLabel}</span>
           <div className="mt-2">
             <TwoLineHeading text={b.casesTitle} />
           </div>
@@ -125,7 +125,7 @@ export const BusinessPage: FC<{ cases: GridItem[] }> = ({ cases }) => {
                 />
               </div>
               <div className="absolute inset-x-0 bottom-0 p-4 md:p-6 bg-gradient-to-t from-indigo-950/90 to-transparent">
-                <p className="text-violet-400 text-[10px] font-bold tracking-[0.2em] uppercase mb-1">
+                <p className="text-violet-300 label-mono mb-1">
                   {(lang === "en" ? item.gridLabelEn : item.gridLabel) ?? t.portfolio.brandingLabel}
                 </p>
                 <span className="text-stone-200 font-bold text-sm md:text-base leading-tight">{projectTitle(item, lang)}</span>
@@ -137,7 +137,7 @@ export const BusinessPage: FC<{ cases: GridItem[] }> = ({ cases }) => {
 
       {/* Process */}
       <section className="bg-indigo-950 px-6 md:px-16 lg:px-24 py-20 md:py-28">
-        <span className="text-violet-400 text-xs font-bold tracking-[0.3em] uppercase">{b.processLabel}</span>
+        <span className="text-violet-300 label-mono">{b.processLabel}</span>
         <div className="mt-2 mb-12">
           <TwoLineHeading text={b.processTitle} dark />
         </div>
@@ -156,7 +156,7 @@ export const BusinessPage: FC<{ cases: GridItem[] }> = ({ cases }) => {
       {/* Contact */}
       <section className="bg-stone-200 px-6 md:px-16 lg:px-24 py-20 md:py-28">
         <div className="max-w-3xl">
-          <span className="text-violet-500 text-xs font-bold tracking-[0.3em] uppercase">{b.ctaLabel}</span>
+          <span className="text-violet-500 label-mono">{b.ctaLabel}</span>
           <h2 className="text-4xl sm:text-5xl font-black text-indigo-950 leading-tight mt-2">{b.ctaTitle}</h2>
           <p className="text-indigo-950/70 text-lg leading-relaxed mt-6">{b.ctaBody}</p>
           <div className="flex flex-col sm:flex-row gap-4 mt-10">

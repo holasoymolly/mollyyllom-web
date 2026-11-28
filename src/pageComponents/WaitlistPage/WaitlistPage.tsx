@@ -31,7 +31,7 @@ export const WaitlistPage: FC = () => {
 
       <section className="bg-indigo-950 text-stone-200 px-6 md:px-16 lg:px-24 pt-20 pb-24">
         <motion.p
-          className="text-violet-400 text-xs font-bold tracking-[0.3em] uppercase mb-6"
+          className="text-violet-300 label-mono mb-6"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease }}

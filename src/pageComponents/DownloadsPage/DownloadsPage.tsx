@@ -20,7 +20,7 @@ export const DownloadsPage: React.FC = () => {
       {/* Hero */}
       <section className="bg-indigo-950 text-stone-200 px-6 md:px-16 lg:px-24 pt-20 pb-24">
         <motion.p
-          className="text-violet-400 text-xs font-bold tracking-[0.3em] uppercase mb-6"
+          className="text-violet-300 label-mono mb-6"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
@@ -56,7 +56,7 @@ export const DownloadsPage: React.FC = () => {
           const row = (
             <>
               {/* Number */}
-              <span className="text-violet-500 text-xs font-bold tracking-widest shrink-0 w-8">
+              <span className="text-violet-500 label-mono shrink-0 w-8 pt-0.5">
                 {String(index + 1).padStart(2, '0')}
               </span>
 
