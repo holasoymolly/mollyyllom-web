@@ -598,22 +598,22 @@ const burnThatShtStory: CaseStory = {
       label: { es: "Escoger, no reparar", en: "Pick, don't fix" },
       heading: { es: "Una foto generada no se arregla. Se escoge.", en: "You don't fix a generated photo. You pick one." },
       text: {
-        es: "Las fotos las hice con IA, y la primera lección fue que una foto generada no se arregla, se escoge. Pasé varias rondas retocando la misma toma, un dedo por aquí, una uña por allá, y cada arreglo rompía otra cosa. Así que cambié el método. Armé cada escena con un bloque gris donde iba el teléfono y pedí tandas de tomas con el Seeker ya en la mano, usando fotos reales de cómo se agarra un teléfono como referencia. De cada tanda me quedé con una y no la volví a pedir.",
-        en: "I made the photos with AI, and the first lesson was that you don't fix a generated photo, you pick one. I spent several rounds retouching the same shot, a finger here, a nail there, and every fix broke something else. So I changed the method. I set up each scene with a grey block where the phone would go and asked for batches of takes with the Seeker already in hand, using real photos of how people hold a phone as reference. From each batch I kept one and stopped there.",
+        // BORRADOR (QA 28 nov): el párrafo aprobado sin el bloque gris ni las fotos de referencia, menos literal.
+        es: "Las fotos las hice con IA, y la primera lección fue que una foto generada no se arregla, se escoge. Pasé varias rondas retocando la misma toma, un dedo por aquí, una uña por allá, y cada arreglo rompía otra cosa. Así que cambié el método: pedía tandas de tomas con el Seeker ya en la mano, y de cada tanda me quedaba con una y no la volvía a pedir.",
+        en: "I made the photos with AI, and the first lesson was that you don't fix a generated photo, you pick one. I spent several rounds retouching the same shot, a finger here, a nail there, and every fix broke something else. So I changed the method: I asked for batches of takes with the Seeker already in hand, kept one from each batch and stopped there.",
       },
       blocks: [
         {
-          kind: "carousel",
-          large: true,
+          kind: "pairs",
+          static: true,
           width: "wide",
-          label: { es: "Tomas de Lunge", en: "Lunge takes" },
+          label: { es: "Lunge, antes y después", en: "Lunge, before and after" },
           items: [
-            { src: `${BTSP}/toma-referencia.webp`, title: { es: "La escena", en: "The scene" }, detail: { es: "Con el bloque gris donde va el teléfono", en: "With a grey block where the phone goes" } },
-            { src: `${BTSP}/toma-a.webp`, title: { es: "Toma A", en: "Take A" }, detail: { es: "La elegida", en: "The one I kept" } },
-            { src: `${BTSP}/toma-b.webp`, title: { es: "Toma B", en: "Take B" } },
-            { src: `${BTSP}/toma-c.webp`, title: { es: "Toma C", en: "Take C" } },
-            { src: `${BTSP}/toma-d.webp`, title: { es: "Toma D", en: "Take D" } },
-            { src: `${BTSP}/toma-e.webp`, title: { es: "Toma E", en: "Take E" } },
+            {
+              title: { es: "Lunge", en: "Lunge" },
+              a: { src: `${BTSP}/lunge-antes-4x5.webp`, title: { es: "Antes", en: "Before" }, detail: { es: "La misma toma, retocada ronda tras ronda", en: "The same shot, retouched round after round" } },
+              b: { src: `${BTSP}/escena-lunge-4x5.webp`, title: { es: "Después", en: "After" }, detail: { es: "Una toma escogida de una tanda", en: "One take picked from a batch" } },
+            },
           ],
         },
       ],
@@ -628,29 +628,15 @@ const burnThatShtStory: CaseStory = {
       },
       blocks: [
         {
-          kind: "details",
-          groups: [
-            {
-              title: { es: "La cara", en: "The face" },
-              real: { src: `${BTSP}/realismo-cara-toma.webp`, detail: { es: "La toma, tal cual", en: "The take, as is" } },
-              final: { src: `${BTSP}/realismo-cara-pasada.webp`, detail: { es: "Con la pasada de realismo", en: "After the realism pass" } },
-            },
-            {
-              title: { es: "Los dedos", en: "The fingers" },
-              real: { src: `${BTSP}/realismo-dedos-toma.webp`, detail: { es: "La toma, tal cual", en: "The take, as is" } },
-              final: { src: `${BTSP}/realismo-dedos-pasada.webp`, detail: { es: "Con la pasada de realismo", en: "After the realism pass" } },
-            },
-          ],
-        },
-        {
           kind: "wall",
-          width: "wide",
-          columns: { desktop: 2, phone: 2 },
-          ratio: "4/5",
-          fit: "contain",
+          columns: { desktop: 3, phone: 3 },
           items: [
-            { src: `${BTSP}/capa-foto-hueco.webp`, title: { es: "La foto", en: "The photo" }, detail: { es: "Con el hueco donde va la pantalla", en: "With a hole where the screen goes" } },
-            { src: `${BTSP}/escena-lunge-4x5.webp`, title: { es: "La pieza", en: "The piece" }, detail: { es: "La app real en perspectiva, con titular, tag y cierre encima", en: "The real app in perspective, with headline, tag and closing on top" } },
+            { src: `${BTSP}/realismo-cara-toma.webp`, title: { es: "La toma", en: "The take" }, detail: { es: "Tal cual", en: "As is" } },
+            { src: `${BTSP}/realismo-cara-fiel.webp`, title: { es: "La pasada fiel", en: "The faithful pass" }, detail: { es: "Se queda", en: "Kept" } },
+            { src: `${BTSP}/realismo-cara-creativa.webp`, title: { es: "La creativa", en: "The creative one" }, detail: { es: "Descartada", en: "Dropped" } },
+            { src: `${BTSP}/realismo-zapatilla-toma.webp`, title: { es: "La toma", en: "The take" }, detail: { es: "Tal cual", en: "As is" } },
+            { src: `${BTSP}/realismo-zapatilla-fiel.webp`, title: { es: "La pasada fiel", en: "The faithful pass" }, detail: { es: "Se queda", en: "Kept" } },
+            { src: `${BTSP}/realismo-zapatilla-creativa.webp`, title: { es: "La creativa", en: "The creative one" }, detail: { es: "Cambia la zapatilla", en: "Changes the sneaker" } },
           ],
         },
         { kind: "image", size: "bleed", image: { src: `${BTS}/bts-seeker-mockup.webp`, title: { es: "La app v3 en un Seeker", en: "The v3 app on a Seeker" }, detail: { es: "La primera pantalla del onboarding, en vivo", en: "The first onboarding screen, live" } } },

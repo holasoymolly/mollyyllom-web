@@ -1263,10 +1263,6 @@
     "width": 2800,
     "height": 1440
   },
-  "/img/projects/burn-that-sht/piezas/capa-foto-hueco.webp": {
-    "width": 1614,
-    "height": 3197
-  },
   "/img/projects/burn-that-sht/piezas/cuadrado-hands-1x1.webp": {
     "width": 2160,
     "height": 2160
@@ -1311,11 +1307,19 @@
     "width": 1920,
     "height": 1080
   },
+  "/img/projects/burn-that-sht/piezas/lunge-antes-4x5.webp": {
+    "width": 2160,
+    "height": 2700
+  },
   "/img/projects/burn-that-sht/piezas/portada-crouch-16x9.webp": {
     "width": 3200,
     "height": 1800
   },
-  "/img/projects/burn-that-sht/piezas/realismo-cara-pasada.webp": {
+  "/img/projects/burn-that-sht/piezas/realismo-cara-creativa.webp": {
+    "width": 600,
+    "height": 600
+  },
+  "/img/projects/burn-that-sht/piezas/realismo-cara-fiel.webp": {
     "width": 600,
     "height": 600
   },
@@ -1323,11 +1327,15 @@
     "width": 600,
     "height": 600
   },
-  "/img/projects/burn-that-sht/piezas/realismo-dedos-pasada.webp": {
+  "/img/projects/burn-that-sht/piezas/realismo-zapatilla-creativa.webp": {
     "width": 600,
     "height": 600
   },
-  "/img/projects/burn-that-sht/piezas/realismo-dedos-toma.webp": {
+  "/img/projects/burn-that-sht/piezas/realismo-zapatilla-fiel.webp": {
+    "width": 600,
+    "height": 600
+  },
+  "/img/projects/burn-that-sht/piezas/realismo-zapatilla-toma.webp": {
     "width": 600,
     "height": 600
   },
@@ -1358,30 +1366,6 @@
   "/img/projects/burn-that-sht/piezas/sistema-tag-way-faster.webp": {
     "width": 960,
     "height": 960
-  },
-  "/img/projects/burn-that-sht/piezas/toma-a.webp": {
-    "width": 1856,
-    "height": 2304
-  },
-  "/img/projects/burn-that-sht/piezas/toma-b.webp": {
-    "width": 1856,
-    "height": 2304
-  },
-  "/img/projects/burn-that-sht/piezas/toma-c.webp": {
-    "width": 1856,
-    "height": 2304
-  },
-  "/img/projects/burn-that-sht/piezas/toma-d.webp": {
-    "width": 1856,
-    "height": 2304
-  },
-  "/img/projects/burn-that-sht/piezas/toma-e.webp": {
-    "width": 1856,
-    "height": 2304
-  },
-  "/img/projects/burn-that-sht/piezas/toma-referencia.webp": {
-    "width": 1638,
-    "height": 2048
   },
   "/img/projects/canteras-del-tropico/canteras-del-tropico-logo-01.webp": {
     "width": 2918,
