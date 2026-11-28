@@ -151,6 +151,7 @@ export const ProtectedImage = ({
           sizes={sizes ?? '100vw'}
           quality={90}
           priority={posterPriority}
+          fetchPriority={posterPriority ? 'high' : undefined}
           className={className}
           draggable={false}
         />
@@ -187,6 +188,10 @@ export const ProtectedImage = ({
         unoptimized={unoptimized}
         sizes={resolvedSizes}
         priority={priority}
+        // next/image's `priority` only preloads; without this the browser still
+        // fetches the hero at low priority, behind every script (La Colmena's
+        // hero finished at 4.2 s on a slow phone). Applies to the preload too.
+        fetchPriority={priority ? 'high' : undefined}
         style={style}
         className={className}
         draggable={false}
