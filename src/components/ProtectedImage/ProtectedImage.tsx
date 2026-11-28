@@ -15,6 +15,12 @@ interface ProtectedImageProps extends Omit<ImageProps, 'draggable' | 'width' | '
    * it behaves as before, since `preload="none"` would leave it blank.
    */
   lazyVideo?: boolean;
+  /**
+   * With `lazyVideo`: the poster loads first (preloaded, high priority) because
+   * it is above the fold and is the page's largest paint, while the video still
+   * waits until it is on screen. For the grid's first row.
+   */
+  posterPriority?: boolean;
 }
 
 const VIDEO_EXT = /\.(mp4|webm|mov)$/i;
@@ -96,6 +102,7 @@ export const ProtectedImage = ({
   priority,
   style,
   lazyVideo,
+  posterPriority,
   ...rest
 }: ProtectedImageProps) => {
   const srcStr = typeof src === 'string' ? src : '';
@@ -143,6 +150,7 @@ export const ProtectedImage = ({
           fill
           sizes={sizes ?? '100vw'}
           quality={90}
+          priority={posterPriority}
           className={className}
           draggable={false}
         />
