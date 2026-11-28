@@ -4824,8 +4824,128 @@ const thingiesProject: Project = {
   story: thingiesStory,
 };
 
+const MV = "/img/projects/mollyverse";
+const MVP = `${MV}/piezas`;
+const mvStore: Bilingual = { es: "Ficha de la dApp Store, v2.0.0", en: "dApp Store listing, v2.0.0" };
+
+/**
+ * Mollyverse told in chapters (F3, 28 Nov 2026). Brief and both paragraphs are
+ * the approved copy, word for word, split where a chapter needs part of one.
+ * BORRADOR para Molly: the promise, chapter labels and headings, the text of
+ * the Verify and X chapter, and the captions. Devices show the app or the
+ * site, never X (26 Nov). The type specimen is re-set with the repo's Early
+ * GameBoy (the panel carried a Spanish label and paragraph); palette from the
+ * app's code. The collections have their own cases and stay out of this one.
+ */
+const mollyverseStory: CaseStory = {
+  cover: {
+    variant: "top",
+    promise: {
+      es: "La casa de mis colecciones: un sello con su propia cara, que le deja la portada a cada disco.",
+      en: "A home for my collections: a label with its own face that leaves the cover to every record.",
+    },
+  },
+  chapters: [
+    {
+      id: "encargo",
+      label: { es: "El encargo", en: "The brief" },
+      heading: { es: "Una casa propia, no un launchpad.", en: "A home of my own, not a launchpad." },
+      text: {
+        es: "El Mollyverse es mi plataforma para lanzar colecciones de arte hechas a mano en Solana. Necesitaba una marca con carácter propio que a la vez le dejara espacio a cada colección para tener su cara. Tenía que verse bien de favicon, de ícono en la tienda del Seeker y de banner en X, y sin caer en la estética cripto de siempre, con sus degradados de neón.",
+        en: "The Mollyverse is my platform for launching hand-drawn art collections on Solana. It needed a brand with its own character that still left room for every collection to have its own face. It had to hold up as a favicon, as an icon on the Seeker store and as a banner on X, and stay away from the usual crypto look with its neon gradients.",
+      },
+      blocks: [
+        { kind: "image", size: "bleed", image: { src: `${MV}/mollyverse-laptop-mockup.webp`, title: { es: "mollyverse.art", en: "mollyverse.art" }, detail: { es: "En vivo, en una escena hecha para el Mollyverse", en: "Live, in a scene made for the Mollyverse" } } },
+      ],
+    },
+    {
+      id: "logo",
+      label: { es: "El logo", en: "The logo" },
+      heading: { es: "Un logo que se lee como un sello.", en: "A logo that reads like a stamp." },
+      text: {
+        es: "El Mollyverse nació porque quería una casa propia para mis colecciones, en vez de un launchpad que se ve igual para todo el mundo. Lo pensé como un sello de música: el sello tiene su cara y su criterio, y cada disco trae su propia portada. Por eso el logo se lee casi como un sello. Un marco, la palabra partida en dos líneas y el símbolo metido dentro de la o de molly.",
+        en: "I started the Mollyverse because I wanted a home of my own for my collections, instead of a launchpad that looks the same for everybody. I thought about it like a record label: the label has a face and a point of view, and every record gets its own cover. That's why the logo reads almost like a stamp. A frame, the word split over two lines, and the symbol tucked inside the o in molly.",
+      },
+      blocks: [
+        { kind: "image", size: "bleed", image: { src: `${MV}/mollyverse-x-MY-02a.webp`, title: { es: "El logo", en: "The logo" }, detail: { es: "A color sobre claro y en negativo sobre noche", en: "In colour on light and reversed on night" } } },
+        { kind: "image", size: "wide", image: { src: `${MV}/mollyverse-x-MY-02b.webp`, title: { es: "El símbolo", en: "The symbol" }, detail: { es: "Y el ícono de la app a 64, 32 y 16 px", en: "And the app icon at 64, 32 and 16 px" } } },
+      ],
+    },
+    {
+      id: "pixeles",
+      label: { es: "Píxeles y Inter", en: "Pixels and Inter" },
+      heading: { es: "Hecho a mano, cuadrito por cuadrito.", en: "Made by hand, square by square." },
+      text: {
+        es: "La marca está hecha de píxeles, igual que las piezas, y los titulares van en una letra de Game Boy para que se note que esto se hizo a mano, cuadrito por cuadrito. El texto va por el otro lado, en Inter, limpio, para que leer no cueste.",
+        en: "The brand is made of pixels, just like the pieces, and the headlines are set in a Game Boy typeface so you can tell it was made by hand, square by square. The body copy goes the other way, in clean Inter, so reading never gets in the way.",
+      },
+      blocks: [
+        { kind: "image", size: "wide", image: { src: `${MVP}/titulares-early-gameboy.webp`, title: { es: "Early GameBoy", en: "Early GameBoy" }, detail: { es: "Los titulares, con la línea de la web", en: "The headlines, with the site's line" } } },
+        {
+          kind: "palette",
+          colors: [
+            { name: { es: "Noche", en: "Night" }, hex: "#08080F" },
+            { name: { es: "Claro", en: "Light" }, hex: "#F4F3FF" },
+            { name: { es: "Violeta", en: "Violet" }, hex: "#7C3AED" },
+          ],
+        },
+        {
+          kind: "palette",
+          colors: [
+            { name: { es: "Lila", en: "Lilac" }, hex: "#A855F7" },
+            { name: { es: "Azul marco", en: "Frame blue" }, hex: "#4D88F6" },
+            { name: { es: "Rosa", en: "Pink" }, hex: "#F472B6" },
+          ],
+        },
+        { kind: "image", size: "solo", image: { src: `${MV}/mollyverse-mesa-mockup.webp`, title: { es: "La bienvenida de la app", en: "The app's welcome screen" }, detail: { es: "En vivo", en: "Live" } } },
+      ],
+    },
+    {
+      id: "app",
+      label: { es: "La app", en: "The app" },
+      heading: { es: "En la dApp Store, para el Seeker.", en: "On the dApp Store, for the Seeker." },
+      text: {
+        es: "Con ese sistema diseñé la app que salió en la dApp Store de Solana para el Seeker, la web y Mollyverse Verify, que es por donde cada holder entra a su espacio en Discord.",
+        en: "With that system I designed the app that shipped on the Solana dApp Store for the Seeker, the website, and Mollyverse Verify, which is how every holder gets into their corner of the Discord.",
+      },
+      blocks: [
+        { kind: "image", size: "bleed", image: { src: `${MV}/mollyverse-celular-mockup.webp`, title: { es: "El inicio de la app", en: "The app's home" }, detail: { es: "Captura real de la v2.0.0", en: "A real v2.0.0 capture" } } },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 4, phone: 2 },
+          items: [
+            { src: `${MVP}/tienda-1.webp`, title: { es: "Hand-crafted NFT worlds", en: "Hand-crafted NFT worlds" }, detail: mvStore },
+            { src: `${MVP}/tienda-2.webp`, title: { es: "Every trait drawn by hand", en: "Every trait drawn by hand" }, detail: mvStore },
+            { src: `${MVP}/tienda-3.webp`, title: { es: "Every piece tells a story", en: "Every piece tells a story" }, detail: mvStore },
+            { src: `${MVP}/tienda-4.webp`, title: { es: "Multiple worlds, one universe", en: "Multiple worlds, one universe" }, detail: mvStore },
+          ],
+        },
+        { kind: "image", size: "solo", image: { src: `${MV}/mollyverse-demo-tienda.mp4`, title: { es: "El demo de la tienda", en: "The store demo" }, detail: { es: "Video de la ficha", en: "The listing's video" } } },
+      ],
+    },
+    {
+      id: "comunidad",
+      label: { es: "Verify y X", en: "Verify and X" },
+      heading: { es: "La puerta del Discord y la voz en X.", en: "The door to the Discord and the voice on X." },
+      text: {
+        es: "Verify es por donde cada holder reclama su rol: pide su enlace en el Discord y vuelve a la página. Y en @elmollyverso los posts se arman como piezas del mundo, con los mismos personajes.",
+        en: "Verify is where every holder claims their role: they ask for their link in the Discord and come back to the page. And on @elmollyverso the posts are built like pieces of the world, with the same characters.",
+      },
+      blocks: [
+        { kind: "image", size: "wide", image: { src: `${MV}/mollyverse-x-MY-05.webp`, title: { es: "Mollyverse Verify", en: "Mollyverse Verify" }, detail: { es: "El logo y la página /verify, en vivo", en: "The logo and the /verify page, live" } } },
+        { kind: "image", size: "bleed", image: { src: `${MV}/mollyverse-x-MY-07.webp`, title: { es: "@elmollyverso", en: "@elmollyverso" }, detail: { es: "Siete posts", en: "Seven posts" } } },
+      ],
+    },
+  ],
+  closing: {
+    image: { src: `${MV}/mollyverse-x-celular-mockup.webp`, title: { es: "The Unhinged en la app", en: "The Unhinged in the app" }, detail: { es: "En vivo", en: "Live" } },
+  },
+};
+
 const mollyverseProject: Project = {
   slug: "mollyverse",
+  story: mollyverseStory,
   title: "Mollyverse",
   client: "Mollyverse",
   year: "2026",
