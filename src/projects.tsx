@@ -795,6 +795,7 @@ const bcStore: Bilingual = { es: "Ficha de la Solana dApp Store", en: "Solana dA
 const burnClaimStory: CaseStory = {
   cover: {
     variant: "top",
+    media: `${BCP}/portada-trio.webp`,
     promise: {
       es: "Una app para quemar lo que sobra en tu wallet y recuperar SOL, que se siente segura sin volverse seria.",
       en: "An app that burns the junk in your wallet and gets your SOL back, and feels safe without turning serious.",
@@ -810,7 +811,7 @@ const burnClaimStory: CaseStory = {
         en: "Burn & Claim reclaims rent from unused accounts and NFTs. It is an irreversible on-chain action, so the app had to look trustworthy before anyone would connect a wallet. The challenge was double: feel safe without turning solemn, and read as part of Aerosol while keeping a character of its own.",
       },
       blocks: [
-        { kind: "image", size: "bleed", image: { src: `${BC}/bc-trio-mockup.webp`, title: { es: "La v3", en: "v3" }, detail: { es: "Revisar, aprobar en Phantom y listo", en: "Review, approve in Phantom, done" } } },
+        { kind: "image", size: "bleed", image: { src: `${BC}/bc-flame-guy.webp`, title: { es: "Flame Guy", en: "Flame Guy" }, detail: { es: "El personaje, en algunas de sus poses", en: "The character, in a few of his poses" } } },
       ],
     },
     {
@@ -827,8 +828,8 @@ const burnClaimStory: CaseStory = {
           width: "wide",
           columns: { desktop: 2, phone: 1 },
           items: [
-            { src: `${BC}/2.webp`, title: { es: "Logo horizontal", en: "Horizontal logo" } },
-            { src: `${BC}/4.webp`, title: { es: "Logo apilado", en: "Stacked logo" } },
+            { src: `${BCP}/logo-horizontal.webp`, title: { es: "Logo horizontal", en: "Horizontal logo" } },
+            { src: `${BCP}/logo-apilado.webp`, title: { es: "Logo apilado", en: "Stacked logo" } },
           ],
         },
         {
@@ -841,7 +842,6 @@ const burnClaimStory: CaseStory = {
             { name: { es: "Amarillo", en: "Yellow" }, hex: "#F0C300", codes: ["Pantone 7406 C", "CMYK 7 21 100 0", "RGB 240 195 0"] },
           ],
         },
-        { kind: "image", size: "bleed", image: { src: `${BC}/bc-flame-guy.webp`, title: { es: "Flame Guy", en: "Flame Guy" }, detail: { es: "El personaje, en algunas de sus poses", en: "The character, in a few of his poses" } } },
       ],
     },
     {
