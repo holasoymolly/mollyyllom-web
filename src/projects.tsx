@@ -1038,20 +1038,19 @@ const aerosolRefinamientoStory: CaseStory = {
       blocks: [
         { kind: "image", size: "solo", image: { src: `${ARP}/video-antes-despues.mp4`, title: { es: "El reveal", en: "The reveal" }, detail: { es: "Video fijado en @aerosolbuild, 4 de noviembre", en: "Video pinned on @aerosolbuild, 4 November" } } },
         {
-          kind: "carousel",
-          large: true,
+          kind: "wall",
           width: "wide",
-          label: { es: "La campaña en X", en: "The campaign on X" },
+          columns: { desktop: 2, phone: 1 },
           items: [
             { src: `${ARP}/campana-gota-de-cerca.webp`, title: { es: "El primer teaser", en: "The first teaser" }, detail: arPost("2 de noviembre", "2 November") },
             { src: `${ARP}/campana-antes-despues.webp`, title: { es: "Same Aerosol. Sharper.", en: "Same Aerosol. Sharper." }, detail: arPost("4 de noviembre", "4 November") },
             { src: `${ARP}/campana-vision.webp`, title: { es: "We build cool things.", en: "We build cool things." }, detail: arPost("6 de noviembre", "6 November") },
             { src: `${ARP}/campana-onchain-or-not.webp`, title: { es: "Onchain or not.", en: "Onchain or not." }, detail: arPost("9 de noviembre", "9 November") },
             { src: `${ARP}/campana-design-build-ship.webp`, title: { es: "Design. Build. Ship.", en: "Design. Build. Ship." }, detail: arPost("11 de noviembre", "11 November") },
-            { src: `${ARP}/campana-paleta.webp`, title: { es: "Purple, coral and a few friends.", en: "Purple, coral and a few friends." }, detail: arPost("13 de noviembre", "13 November") },
             { src: `${ARP}/campana-more-products.webp`, title: { es: "More products. More people using them.", en: "More products. More people using them." }, detail: arPost("16 de noviembre", "16 November") },
           ],
         },
+        { kind: "image", size: "solo", image: { src: `${AR}/aerosol-rebrand-laptop-mockup.webp`, title: { es: "aerosol.build", en: "aerosol.build" }, detail: { es: "La web, ya en Rubik", en: "The site, now in Rubik" } } },
         {
           kind: "wall",
           width: "wide",
@@ -1061,7 +1060,6 @@ const aerosolRefinamientoStory: CaseStory = {
             { src: `${ARP}/video-familia.mp4`, title: { es: "La familia", en: "The family" }, detail: arPost("10 de noviembre", "10 November") },
           ],
         },
-        { kind: "image", size: "solo", image: { src: `${AR}/aerosol-rebrand-laptop-mockup.webp`, title: { es: "aerosol.build", en: "aerosol.build" }, detail: { es: "La web, ya en Rubik", en: "The site, now in Rubik" } } },
       ],
     },
   ],
