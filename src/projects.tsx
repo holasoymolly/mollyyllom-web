@@ -779,8 +779,143 @@ const burnThatShtProject: Project = {
   ],
 };
 
+const BC = "/img/projects/burn-claim";
+const BCP = `${BC}/piezas`;
+const bcStore: Bilingual = { es: "Ficha de la Solana dApp Store", en: "Solana dApp Store listing" };
+
+/**
+ * Burn & Claim told in chapters (F3, 28 Nov 2026). Brief and paragraphs are
+ * the approved copy, word for word, split where a chapter needs part of one.
+ * BORRADOR para Molly: the promise, chapter labels and headings, the store
+ * chapter's text and the captions. Lunge is out: its clean photo still has the
+ * screen that spilled past the frame (fixed only in the 4:5 and 1:1 pieces).
+ * Palette codes transcribed from 5.webp; Lilac's RGB there reads "R 52", a
+ * typo for its own HEX #945EC7 (148, 94, 199), which is what goes here.
+ */
+const burnClaimStory: CaseStory = {
+  cover: {
+    variant: "top",
+    promise: {
+      es: "Una app para quemar lo que sobra en tu wallet y recuperar SOL, que se siente segura sin volverse seria.",
+      en: "An app that burns the junk in your wallet and gets your SOL back, and feels safe without turning serious.",
+    },
+  },
+  chapters: [
+    {
+      id: "encargo",
+      label: { es: "El encargo", en: "The brief" },
+      heading: { es: "Confianza antes de conectar la wallet.", en: "Trust before anyone connects a wallet." },
+      text: {
+        es: "Burn & Claim recupera el rent de cuentas y NFTs que ya no se usan. Es una operación irreversible en cadena, así que la app tenía que verse confiable antes de que alguien conectara su wallet. El reto era doble: que se sintiera segura sin volverse solemne, y que se leyera como parte de Aerosol sin dejar de tener carácter propio.",
+        en: "Burn & Claim reclaims rent from unused accounts and NFTs. It is an irreversible on-chain action, so the app had to look trustworthy before anyone would connect a wallet. The challenge was double: feel safe without turning solemn, and read as part of Aerosol while keeping a character of its own.",
+      },
+      blocks: [
+        { kind: "image", size: "bleed", image: { src: `${BC}/bc-trio-mockup.webp`, title: { es: "La v3", en: "v3" }, detail: { es: "Revisar, aprobar en Phantom y listo", en: "Review, approve in Phantom, done" } } },
+      ],
+    },
+    {
+      id: "marca",
+      label: { es: "La marca", en: "The brand" },
+      heading: { es: "Una llama con forma de gota.", en: "A flame shaped like a drop." },
+      text: {
+        es: "Burn & Claim es una app de Solana que convierte la basura de tu wallet en SOL de vuelta. Tokens muertos, NFTs olvidados y cuentas vacías que llevan años ocupando espacio se queman en un solo flujo, y el rent regresa a tu bolsillo. La marca parte de una llama con forma de gota, un guiño directo a quemar y a recuperar valor al mismo tiempo. De ahí salió un personaje con lentes de sol que le baja la solemnidad a algo que en el fondo es una operación irreversible en cadena. Rojo intenso sobre morado profundo, tipografía condensada y muy gruesa, y un sistema que se sostiene igual en el isotipo suelto, en el logo completo y en blanco y negro.",
+        en: "Burn & Claim is a Solana app that turns the junk in your wallet back into SOL. Dead tokens, forgotten NFTs and empty accounts that have been sitting there for years get burned in a single flow, and the rent goes back into your pocket. The brand starts from a flame shaped like a drop, a direct nod to burning and reclaiming value at the same time. That grew into a character in sunglasses that takes the solemnity out of what is, underneath, an irreversible on chain operation. Bold red over deep purple, heavy condensed type, and a system that holds up equally well as a lone symbol, as the full lockup, and in black and white.",
+      },
+      blocks: [
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 2, phone: 1 },
+          items: [
+            { src: `${BC}/2.webp`, title: { es: "Logo horizontal", en: "Horizontal logo" } },
+            { src: `${BC}/4.webp`, title: { es: "Logo apilado", en: "Stacked logo" } },
+          ],
+        },
+        {
+          kind: "palette",
+          colors: [
+            { name: { es: "Morado", en: "Purple" }, hex: "#3C1253", codes: ["Pantone 2627 C", "CMYK 85 100 31 34", "RGB 60 18 83"] },
+            { name: { es: "Rojo", en: "Red" }, hex: "#F23A30", codes: ["Pantone 3556 C", "CMYK 0 91 88 0", "RGB 242 58 48"] },
+            { name: { es: "Coral", en: "Coral" }, hex: "#FB7B56", codes: ["Pantone 2024 C", "CMYK 0 65 68 0", "RGB 251 123 86"] },
+            { name: { es: "Lila", en: "Lilac" }, hex: "#945EC7", codes: ["Pantone 2083 C", "CMYK 52 72 0 0", "RGB 148 94 199"] },
+            { name: { es: "Amarillo", en: "Yellow" }, hex: "#F0C300", codes: ["Pantone 7406 C", "CMYK 7 21 100 0", "RGB 240 195 0"] },
+          ],
+        },
+        { kind: "image", size: "bleed", image: { src: `${BC}/bc-flame-guy.webp`, title: { es: "Flame Guy", en: "Flame Guy" }, detail: { es: "El personaje, en algunas de sus poses", en: "The character, in a few of his poses" } } },
+      ],
+    },
+    {
+      id: "app",
+      label: { es: "La app", en: "The app" },
+      heading: { es: "Ves lo que vuelve antes de firmar.", en: "You see what comes back before you sign." },
+      text: {
+        es: "El rediseño de la app llevó ese tono al producto, y la v3 lo terminó de aterrizar. Abres y ves de una vez cuánto SOL tienes por recuperar. Antes de firmar ves exactamente lo que vuelve, y una sola aprobación en Phantom cubre todo lo que escogiste. Flame Guy, el personaje, te acompaña en cada paso: se pone las gafas cuando hay algo que quemar y celebra cuando el SOL ya está de vuelta en tu wallet. La idea siempre fue que quemar se sintiera claro, controlado y hasta divertido.",
+        en: "The app redesign carried that tone into the product, and v3 finally nailed it down. You open it and see right away how much SOL you can get back. Before you sign, you see exactly what comes back, and a single Phantom approval covers everything you picked. Flame Guy, the character, walks you through every step: he puts the shades on when there's something to burn and celebrates once the SOL is back in your wallet. The whole point was always for burning to feel clear, controlled and even fun.",
+      },
+      blocks: [
+        { kind: "image", size: "wide", image: { src: `${BCP}/app-mayo-a-v3.webp`, title: { es: "De mayo a la v3", en: "From May to v3" }, detail: { es: "El diseño de mayo de 2026 y la v3 en vivo, en noviembre", en: "The May 2026 design and v3 live, in November" } } },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 4, phone: 2 },
+          items: [
+            { src: `${BCP}/v3-home.webp`, title: { es: "1 · Inicio", en: "1 · Home" }, detail: { es: "Lo que tienes por recuperar", en: "What you can get back" } },
+            { src: `${BCP}/v3-review.webp`, title: { es: "2 · Revisar", en: "2 · Review" }, detail: { es: "Lo que vuelve, antes de firmar", en: "What comes back, before you sign" } },
+            { src: `${BCP}/v3-send-ask.webp`, title: { es: "3 · Aprobar", en: "3 · Approve" }, detail: { es: "Una sola aprobación en Phantom", en: "One Phantom approval" } },
+            { src: `${BCP}/v3-results.webp`, title: { es: "4 · Listo", en: "4 · Done" }, detail: { es: "El SOL, de vuelta en tu wallet", en: "The SOL, back in your wallet" } },
+          ],
+        },
+      ],
+    },
+    {
+      id: "tienda",
+      label: { es: "En la tienda", en: "In the store" },
+      heading: { es: "Cuatro pantallas para contarla.", en: "Four screens to tell it." },
+      text: {
+        es: "La v3 salió en la Solana dApp Store para Seeker, con una ficha que cuenta la app en cuatro pantallas: tu wallet tiene SOL guardado, lo ves antes de firmar, apruebas una sola vez y listo.",
+        en: "v3 went out on the Solana dApp Store for Seeker, with a listing that tells the app in four screens: your wallet is holding SOL, you see it before you sign, you approve once, and that's it.",
+      },
+      blocks: [
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 4, phone: 2 },
+          items: [
+            { src: `${BCP}/tienda-1.webp`, title: { es: "Your wallet is holding SOL.", en: "Your wallet is holding SOL." }, detail: bcStore },
+            { src: `${BCP}/tienda-2.webp`, title: { es: "See it before you sign.", en: "See it before you sign." }, detail: bcStore },
+            { src: `${BCP}/tienda-3.webp`, title: { es: "Many items. One approval.", en: "Many items. One approval." }, detail: bcStore },
+            { src: `${BCP}/tienda-4.webp`, title: { es: "Burn it. Claim it.", en: "Burn it. Claim it." }, detail: bcStore },
+          ],
+        },
+      ],
+    },
+    {
+      id: "campana",
+      label: { es: "En la mano", en: "In people's hands" },
+      heading: { es: "La app, en las manos de la gente.", en: "The app, in people's hands." },
+      text: {
+        es: "Para el relanzamiento, la app salió en las manos de la gente, en la campaña «Burn That Sh*t».",
+        en: "For the relaunch, the app went out in people's hands, in the “Burn That Sh*t” campaign.",
+      },
+      blocks: [
+        { kind: "image", size: "bleed", image: { src: `${BC}/bc-campana-crouch.webp`, title: { es: "Crouch", en: "Crouch" }, detail: { es: "Foto de la campaña, con la v3 en pantalla", en: "Campaign photo, with v3 on screen" } } },
+        {
+          kind: "wall",
+          width: "wide",
+          columns: { desktop: 2, phone: 1 },
+          items: [
+            { src: `${BC}/bc-campana-hands.webp`, title: { es: "Hands", en: "Hands" }, detail: { es: "Foto de la campaña", en: "Campaign photo" } },
+            { src: `${BC}/bc-campana-seated.webp`, title: { es: "Seated", en: "Seated" }, detail: { es: "Foto de la campaña", en: "Campaign photo" } },
+          ],
+        },
+      ],
+    },
+  ],
+};
+
 const burnClaimProject: Project = {
   slug: "burn-claim",
+  story: burnClaimStory,
   title: "Burn & Claim",
   client: "Aerosol",
   year: "2024 - 2026",
