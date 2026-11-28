@@ -16,6 +16,12 @@
  * image added without running it still gets its variants on Vercel.
  *
  * Run standalone with `npm run image-variants`.
+ *
+ * `qualityOverrides` in image-variants.json lowers the quality of one image
+ * (key: its path under public/img without extension) when its variants are
+ * heavy and a lower quality shows no visible loss at 200 %. La Colmena's hero
+ * (28 Nov 2026): 80 instead of 90, phone variant 82 → 52 KB. Delete that
+ * image's variants in public/img-r to regenerate them after changing it.
  */
 const fs = require('fs');
 const path = require('path');
@@ -63,7 +69,7 @@ async function processFile(file) {
     fs.mkdirSync(path.dirname(out), { recursive: true });
     await sharp(file, { limitInputPixels: false })
       .resize({ width: w, withoutEnlargement: true })
-      .webp({ quality: config.quality, effort: 4 })
+      .webp({ quality: (config.qualityOverrides || {})[base] ?? config.quality, effort: 4 })
       .toFile(out);
     written++;
   }
