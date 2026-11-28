@@ -1,16 +1,10 @@
 'use client';
 
-import amplitude, { isAmplitudeEnabled } from '@/amplitude';
+import { amplitudeTrack } from '@/amplitude';
 import type { Language } from '@/i18n/translations';
 
-/**
- * No-ops outside production, where the SDK is never initialized — otherwise
- * these calls would sit in the SDK's pre-init queue forever.
- */
-const track = (name: string, props: Record<string, unknown>) => {
-  if (!isAmplitudeEnabled) return;
-  amplitude.track(name, props);
-};
+/** No-ops outside production, where the SDK is never loaded (see src/amplitude.ts). */
+const track = (name: string, props: Record<string, unknown>) => amplitudeTrack(name, props);
 
 /**
  * Named conversion events for Amplitude.
